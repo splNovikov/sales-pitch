@@ -4,20 +4,184 @@
  * Documentation: https://core.telegram.org/bots/api#sendmessage
  */
 
-import type {
-  EnrichedTelegramNotificationPayload,
-  TelegramNotificationPayload,
-} from '../../../src/shared/lib/telegram';
-import {
-  formatNotificationMessage,
-  getLocationFromIP,
-  sendTelegramNotification,
-} from '../../../src/shared/lib/telegram';
+// Types
+interface LocationData {
+  city?: string;
+  region?: string;
+  country?: string;
+  countryCode?: string;
+}
+
+interface TelegramNotificationPayload {
+  page: string;
+  fullUrl?: string;
+  timestamp: string;
+  userAgent?: string;
+  referer?: string;
+  ip?: string;
+  location?: LocationData;
+}
+
+interface EnrichedTelegramNotificationPayload
+  extends Omit<TelegramNotificationPayload, 'ip' | 'location'> {
+  ip: string;
+  location: LocationData | null;
+}
+
+interface IpApiResponse {
+  status: 'success' | 'fail';
+  message?: string;
+  country?: string;
+  countryCode?: string;
+  regionName?: string;
+  city?: string;
+}
+
+// Utility functions
+function escapeHtml(text: string): string {
+  return text
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function extractBrowserInfo(userAgent: string): string {
+  if (userAgent.includes('Chrome')) return 'Chrome';
+  if (userAgent.includes('Firefox')) return 'Firefox';
+  if (userAgent.includes('Safari') && !userAgent.includes('Chrome'))
+    return 'Safari';
+  if (userAgent.includes('Edge')) return 'Edge';
+  if (userAgent.includes('Opera')) return 'Opera';
+  return 'Unknown';
+}
+
+function isPrivateIp(ip: string): boolean {
+  return (
+    ip === 'unknown' ||
+    ip.startsWith('127.') ||
+    ip.startsWith('192.168.') ||
+    ip.startsWith('10.') ||
+    ip.startsWith('172.')
+  );
+}
+
+function formatNotificationMessage(
+  payload: EnrichedTelegramNotificationPayload
+): string {
+  const { page, fullUrl, timestamp, userAgent, referer, ip, location } =
+    payload;
+
+  let message = `🔔 <b>New Page Visit</b>\n\n`;
+
+  message += `📄 <b>Page:</b> ${escapeHtml(page)}\n`;
+
+  if (fullUrl) {
+    message += `🌍 <b>Full URL:</b> ${escapeHtml(fullUrl)}\n`;
+  }
+
+  message += `🕐 <b>Time:</b> ${new Date(timestamp).toLocaleString('ru-RU')}\n`;
+
+  if (ip && ip !== 'unknown') {
+    message += `📍 <b>IP:</b> ${escapeHtml(ip)}\n`;
+  }
+
+  // Add location information
+  if (location) {
+    const locationParts: string[] = [];
+
+    if (location.city) locationParts.push(location.city);
+    if (location.region) locationParts.push(location.region);
+    if (location.country) locationParts.push(location.country);
+
+    if (locationParts.length > 0) {
+      message += `🗺️ <b>Location:</b> ${escapeHtml(locationParts.join(', '))}\n`;
+    }
+  }
+
+  if (referer) {
+    message += `🔗 <b>Referer:</b> ${escapeHtml(referer)}\n`;
+  }
+
+  if (userAgent) {
+    const browser = extractBrowserInfo(userAgent);
+    message += `🌐 <b>Browser:</b> ${escapeHtml(browser)}\n`;
+  }
+
+  return message;
+}
+
+async function getLocationFromIP(ip: string): Promise<LocationData | null> {
+  // Skip localhost and private IPs
+  if (isPrivateIp(ip)) {
+    return null;
+  }
+
+  try {
+    const response = await fetch(
+      `http://ip-api.com/json/${ip}?fields=status,message,country,countryCode,regionName,city`,
+      {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+        },
+      }
+    );
+
+    if (!response.ok) {
+      return null;
+    }
+
+    const data = (await response.json()) as IpApiResponse;
+
+    // Check if request was successful
+    if (data.status === 'success') {
+      return {
+        city: data.city,
+        region: data.regionName,
+        country: data.country,
+        countryCode: data.countryCode,
+      };
+    }
+
+    return null;
+  } catch (error) {
+    // Silently fail - don't break notifications if geolocation fails
+    console.error('Failed to get location from IP:', error);
+    return null;
+  }
+}
+
+async function sendTelegramNotification(
+  message: string,
+  botToken: string,
+  chatId: string
+): Promise<void> {
+  const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+  const response = await fetch(telegramApiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: message,
+      parse_mode: 'HTML',
+    }),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => ({}));
+    throw new Error(
+      `Telegram API error: ${response.status} - ${JSON.stringify(errorData)}`
+    );
+  }
+}
 
 /**
  * Extracts client IP from request headers (considering proxies)
- * @param headers - Request headers
- * @returns Client IP address or 'unknown'
  */
 function extractClientIp(headers: Headers): string {
   const forwarded = headers.get('x-forwarded-for');
@@ -36,8 +200,6 @@ function extractClientIp(headers: Headers): string {
 
 /**
  * Validates notification payload
- * @param payload - Payload to validate
- * @returns Validation error message or null if valid
  */
 function validatePayload(
   payload: unknown
@@ -127,7 +289,7 @@ export default async function handler(
 
     // Format and send notification
     const message = formatNotificationMessage(enrichedPayload);
-    await sendTelegramNotification(message, { botToken, chatId });
+    await sendTelegramNotification(message, botToken, chatId);
 
     return Response.json({ success: true, message: 'Notification sent' });
   } catch (error) {
@@ -142,5 +304,3 @@ export default async function handler(
     );
   }
 }
-
-
