@@ -26,23 +26,3 @@
   justify-content: center;
   padding: var(--app-spacing-none);
 }
-
-.footer {
-  margin-top: var(--app-spacing-lg);
-  padding-top: var(--app-spacing-sm);
-  border-top: 1px solid var(--app-color-border-secondary);
-  background: transparent;
-  padding-inline: var(--app-spacing-none);
-}
-
-.footerContent {
-  width: 100%;
-}
-
-.companyLogo {
-  flex: 1;
-}
-
-.companyName {
-  font-size: var(--app-font-size-sm);
-}

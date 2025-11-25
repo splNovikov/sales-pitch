@@ -1,6 +1,30 @@
 .logo {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+.logoXS {
+  height: 20px;
+  width: auto;
+}
+
+.logoS {
+  height: 28px;
+  width: auto;
+}
+
+.logoM {
   height: 40px;
   width: auto;
-  display: block;
-  object-fit: contain;
+}
+
+.logoL {
+  height: 56px;
+  width: auto;
+}
+
+.logoXL {
+  height: 80px;
+  width: auto;
 }

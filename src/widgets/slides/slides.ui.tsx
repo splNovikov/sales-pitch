@@ -1,12 +1,16 @@
+import { Layout } from 'antd';
 import { Slide } from '~widgets/slide';
+import { SlidesFooter } from '~widgets/slides-footer';
 import { useSlidesNavigation, type SlideData } from './slides.hook';
+import styles from './slides.module.css';
+
+const { Content } = Layout;
 
 interface SlidesProps {
   slides: SlideData[];
-  companySlug: string;
 }
 
-export function Slides({ slides, companySlug }: SlidesProps) {
+export function Slides({ slides }: SlidesProps) {
   const {
     currentSlide,
     currentSlideIndex,
@@ -23,16 +27,19 @@ export function Slides({ slides, companySlug }: SlidesProps) {
   }
 
   return (
-    <Slide
-      slide={currentSlide}
-      companySlug={companySlug}
-      slideNumber={currentSlideIndex + 1}
-      totalSlides={totalSlides}
-      onPrevious={handlePrevious}
-      onNext={handleNext}
-      onGoToSlide={handleGoToSlide}
-      canGoPrevious={canGoPrevious}
-      canGoNext={canGoNext}
-    />
+    <Layout className={styles.slides}>
+      <Content className={styles.slidesContent}>
+        <Slide slide={currentSlide} />
+      </Content>
+      <SlidesFooter
+        currentSlide={currentSlideIndex + 1}
+        totalSlides={totalSlides}
+        onPrevious={handlePrevious}
+        onNext={handleNext}
+        onGoToSlide={handleGoToSlide}
+        canGoPrevious={canGoPrevious}
+        canGoNext={canGoNext}
+      />
+    </Layout>
   );
 }

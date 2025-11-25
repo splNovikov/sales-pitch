@@ -30,5 +30,5 @@ export default function SlidesPage() {
   const { slug } = useLoaderData() as { slug: string };
   const slides = getSlidesBySlug(slug);
 
-  return <Slides slides={slides} companySlug={slug} />;
+  return <Slides slides={slides} />;
 }

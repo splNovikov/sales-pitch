@@ -1,0 +1,18 @@
+.footer {
+  margin-top: var(--app-spacing-lg);
+  padding-top: var(--app-spacing-sm);
+  border-top: 1px solid var(--app-color-border-secondary);
+  background: transparent;
+  padding-inline: var(--app-spacing-none);
+}
+
+.footerContent {
+  width: 100%;
+}
+
+.companyLogo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: var(--app-spacing-sm);
+}
