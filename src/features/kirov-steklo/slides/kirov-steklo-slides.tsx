@@ -103,8 +103,14 @@ export const kirovStekloSlides: SlideData[] = [
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              fontSize: 'var(--app-font-size-lg)',
-              fontWeight: 500,
+              fontSize: 'var(--app-font-size-xl)',
+              fontWeight: 700,
+              background: `linear-gradient(135deg, var(--app-gradient-start) 0%, var(--app-gradient-end) 100%)`,
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              textDecoration: 'none',
+              display: 'inline-block',
             }}
           >
             kirovsteklo.ru
