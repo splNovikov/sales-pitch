@@ -38,10 +38,6 @@ import {
   CloseCircleOutlined,
   DollarOutlined,
   CalendarOutlined,
-  UsergroupAddOutlined,
-  ProjectOutlined,
-  BugOutlined,
-  BuildOutlined,
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 
@@ -2008,85 +2004,6 @@ export const kirovStekloSlides: SlideData[] = [
         </Card>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
-            <UsergroupAddOutlined
-              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
-            />
-            Состав команды проекта:
-          </Title>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} sm={12} lg={8}>
-              <Card size="small">
-                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
-                  <Title level={5} style={{ marginTop: 0 }}>
-                    <ProjectOutlined style={{ marginRight: 8 }} />
-                    Управление и анализ:
-                  </Title>
-                  <List
-                    size="small"
-                    dataSource={[
-                      'Project Manager',
-                      'Business Analyst',
-                      'UX/UI Designer',
-                    ]}
-                    renderItem={item => (
-                      <List.Item style={{ padding: '4px 0' }}>
-                        <Text>• {item}</Text>
-                      </List.Item>
-                    )}
-                  />
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12} lg={8}>
-              <Card size="small">
-                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
-                  <Title level={5} style={{ marginTop: 0 }}>
-                    <CodeOutlined style={{ marginRight: 8 }} />
-                    Разработка:
-                  </Title>
-                  <List
-                    size="small"
-                    dataSource={[
-                      'System Architect',
-                      'Backend Developer',
-                      'Frontend Developer',
-                    ]}
-                    renderItem={item => (
-                      <List.Item style={{ padding: '4px 0' }}>
-                        <Text>• {item}</Text>
-                      </List.Item>
-                    )}
-                  />
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12} lg={8}>
-              <Card size="small">
-                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
-                  <Title level={5} style={{ marginTop: 0 }}>
-                    <SafetyOutlined style={{ marginRight: 8 }} />
-                    Качество и инфраструктура:
-                  </Title>
-                  <List
-                    size="small"
-                    dataSource={[
-                      'DevOps Engineer',
-                      'QA Engineer',
-                      'Technical Writer',
-                    ]}
-                    renderItem={item => (
-                      <List.Item style={{ padding: '4px 0' }}>
-                        <Text>• {item}</Text>
-                      </List.Item>
-                    )}
-                  />
-                </Space>
-              </Card>
-            </Col>
-          </Row>
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
             <TeamOutlined
               style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
             />
@@ -2102,10 +2019,10 @@ export const kirovStekloSlides: SlideData[] = [
                   <List
                     size="small"
                     dataSource={[
-                      '1x Project Manager',
-                      '1x Business Analyst',
+                      '1x Менеджер проекта',
+                      '1x Бизнес-аналитик',
                       '1x Битрикс-разработчик',
-                      '1x DevOps (частично)',
+                      '1x DevOps-инженер (частично)',
                     ]}
                     renderItem={item => (
                       <List.Item style={{ padding: '4px 0' }}>
@@ -2125,14 +2042,12 @@ export const kirovStekloSlides: SlideData[] = [
                   <List
                     size="small"
                     dataSource={[
-                      '1x Project Manager',
-                      '1x Business Analyst',
-                      '1x UX/UI Designer',
-                      '1x System Architect',
-                      '2x Backend Developer',
-                      '2x Frontend Developer',
-                      '1x DevOps Engineer',
-                      '1x QA Engineer',
+                      '1x Менеджер проекта (включая роль бизнес-аналитика)',
+                      '1x UX/UI Designer (дизайнер интерфейсов)',
+                      '2x Backend Developer (Senior, серверная разработка)',
+                      '2x Frontend Developer (клиентская разработка)',
+                      '1x DevOps Engineer (инженер по инфраструктуре)',
+                      '1x QA Engineer (тестировщик)',
                     ]}
                     renderItem={item => (
                       <List.Item style={{ padding: '4px 0' }}>
@@ -2140,6 +2055,10 @@ export const kirovStekloSlides: SlideData[] = [
                       </List.Item>
                     )}
                   />
+                  <Divider style={{ margin: '8px 0' }} />
+                  <Text type="secondary" style={{ fontSize: '11px' }}>
+                    Примечание: Архитектура проектируется сеньорными инженерами
+                  </Text>
                 </Space>
               </Card>
             </Col>
@@ -2152,15 +2071,13 @@ export const kirovStekloSlides: SlideData[] = [
                   <List
                     size="small"
                     dataSource={[
-                      '1x Project Manager',
-                      '1x Business Analyst',
-                      '1x UX/UI Designer',
-                      '1x System Architect',
-                      '3x Backend Developer',
-                      '2x Frontend Developer',
-                      '1x DevOps Engineer',
-                      '1x QA Engineer',
-                      '1x Technical Writer',
+                      '1x Менеджер проекта (включая роль бизнес-аналитика)',
+                      '1x UX/UI Designer (дизайнер интерфейсов)',
+                      '3x Backend Developer (Senior, серверная разработка)',
+                      '2x Frontend Developer (клиентская разработка)',
+                      '1x DevOps Engineer (инженер по инфраструктуре)',
+                      '1x QA Engineer (тестировщик)',
+                      '1x Technical Writer (технический писатель)',
                     ]}
                     renderItem={item => (
                       <List.Item style={{ padding: '4px 0' }}>
@@ -2168,6 +2085,10 @@ export const kirovStekloSlides: SlideData[] = [
                       </List.Item>
                     )}
                   />
+                  <Divider style={{ margin: '8px 0' }} />
+                  <Text type="secondary" style={{ fontSize: '11px' }}>
+                    Примечание: Архитектура проектируется сеньорными инженерами
+                  </Text>
                 </Space>
               </Card>
             </Col>
@@ -2178,20 +2099,20 @@ export const kirovStekloSlides: SlideData[] = [
             <CheckCircleOutlinedIcon
               style={{ color: 'var(--ant-color-success)', marginRight: 8 }}
             />
-            Особенности команды:
+            Оптимизация команды:
           </Title>
           <Row gutter={[16, 16]}>
             <Col xs={24} sm={12}>
               <Card size="small">
                 <Space orientation="vertical" size="small" style={{ width: '100%' }}>
-                  <Text strong>Опытные специалисты:</Text>
+                  <Text strong>Эффективное использование ресурсов:</Text>
                   <List
                     size="small"
                     dataSource={[
+                      'Менеджер проекта выполняет роль бизнес-аналитика',
+                      'Архитектура проектируется сеньорными инженерами',
                       'Senior-уровень для ключевых ролей',
                       'Опыт работы с production-системами',
-                      'Знание best practices индустрии',
-                      'Опыт работы в команде',
                     ]}
                     renderItem={item => (
                       <List.Item style={{ padding: '4px 0' }}>
@@ -2209,7 +2130,7 @@ export const kirovStekloSlides: SlideData[] = [
                   <List
                     size="small"
                     dataSource={[
-                      'DevOps на всех этапах проекта',
+                      'DevOps-инженер на всех этапах проекта',
                       'Code review на каждом этапе',
                       'Регулярные демо и обратная связь',
                       'Документирование процесса',
