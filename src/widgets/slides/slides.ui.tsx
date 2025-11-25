@@ -2,15 +2,17 @@ import { Layout } from 'antd';
 import { Slide } from '~widgets/slide';
 import { SlidesFooter } from '~widgets/slides-footer';
 import { useSlidesNavigation, type SlideData } from './slides.hook';
+import { useSlidesNotifications } from './use-slides-notifications';
 import styles from './slides.module.css';
 
 const { Content } = Layout;
 
 interface SlidesProps {
   slides: SlideData[];
+  slug: string;
 }
 
-export function Slides({ slides }: SlidesProps) {
+export function Slides({ slides, slug }: SlidesProps) {
   const {
     currentSlide,
     currentSlideIndex,
@@ -21,6 +23,13 @@ export function Slides({ slides }: SlidesProps) {
     canGoPrevious,
     canGoNext,
   } = useSlidesNavigation(slides);
+
+  // Send notifications for presentation events
+  useSlidesNotifications({
+    slug,
+    currentSlideIndex,
+    totalSlides,
+  });
 
   if (!currentSlide) {
     return null;
