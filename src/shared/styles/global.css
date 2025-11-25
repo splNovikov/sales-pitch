@@ -41,7 +41,11 @@
     /* Gradient colors for slide headers */
     --app-gradient-start: #000000;
     --app-gradient-end: #3fc4ca;
-    --app-gradient-header: linear-gradient(to right, var(--app-gradient-start), var(--app-gradient-end));
+    --app-gradient-header: linear-gradient(
+      to right,
+      var(--app-gradient-start),
+      var(--app-gradient-end)
+    );
 
     /* Spacing scale (8px base unit) */
     --app-spacing-xs: 0.5rem; /* 8px */

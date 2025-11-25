@@ -25,9 +25,7 @@ export function SlidesNavigation({
 }: SlidesNavigationProps) {
   const progressPercentage = (currentSlide / totalSlides) * 100;
 
-  const handleProgressBarClick = (
-    event: React.MouseEvent<HTMLDivElement>
-  ) => {
+  const handleProgressBarClick = (event: React.MouseEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const clickX = event.clientX - rect.left;
     const percentage = clickX / rect.width;

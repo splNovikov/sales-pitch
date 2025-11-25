@@ -2572,7 +2572,8 @@ export const kirovStekloSlides: SlideData[] = [
               },
               {
                 key: '3',
-                scenario: 'Пессимистичная оценка (учитывает непредвиденные обстоятельства)',
+                scenario:
+                  'Пессимистичная оценка (учитывает непредвиденные обстоятельства)',
                 hours: 702,
                 cost: 1755000,
               },
@@ -2627,7 +2628,8 @@ export const kirovStekloSlides: SlideData[] = [
               },
               {
                 key: '3',
-                scenario: 'Пессимистичная оценка (учитывает непредвиденные обстоятельства)',
+                scenario:
+                  'Пессимистичная оценка (учитывает непредвиденные обстоятельства)',
                 hours: 2267,
                 cost: 4613000,
               },
@@ -2682,7 +2684,8 @@ export const kirovStekloSlides: SlideData[] = [
               },
               {
                 key: '3',
-                scenario: 'Пессимистичная оценка (учитывает непредвиденные обстоятельства)',
+                scenario:
+                  'Пессимистичная оценка (учитывает непредвиденные обстоятельства)',
                 hours: 2688,
                 cost: 5368000,
               },
@@ -2716,8 +2719,8 @@ export const kirovStekloSlides: SlideData[] = [
           <Space orientation="vertical" size="small" style={{ width: '100%' }}>
             <Text type="secondary" style={{ fontSize: '12px' }}>
               <WarningOutlined style={{ marginRight: 4 }} />
-              Пессимистичная оценка уже учитывает возможные задержки, доработки и изменения
-              требований
+              Пессимистичная оценка уже учитывает возможные задержки, доработки
+              и изменения требований
             </Text>
           </Space>
         </Card>
@@ -2747,24 +2750,40 @@ export const kirovStekloSlides: SlideData[] = [
               Финальная стоимость и дорожная карта
             </Title>
             <Divider />
-            <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+            <Space
+              orientation="vertical"
+              size="middle"
+              style={{ width: '100%' }}
+            >
               <Card>
-                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Text strong style={{ fontSize: '16px' }}>
-                    Финальная стоимость проекта с детальной дорожной картой будет
-                    предоставлена после:
+                    Финальная стоимость проекта с детальной дорожной картой
+                    будет предоставлена после:
                   </Text>
                   <List
                     size="large"
                     dataSource={[
                       {
-                        icon: <CheckCircleOutlined style={{ color: 'var(--ant-color-success)' }} />,
+                        icon: (
+                          <CheckCircleOutlined
+                            style={{ color: 'var(--ant-color-success)' }}
+                          />
+                        ),
                         title: 'Выбора варианта реализации',
                         description:
                           'Определение оптимального решения на основе ваших требований и бюджета',
                       },
                       {
-                        icon: <CalendarOutlined style={{ color: 'var(--app-color-primary)' }} />,
+                        icon: (
+                          <CalendarOutlined
+                            style={{ color: 'var(--app-color-primary)' }}
+                          />
+                        ),
                         title: '3-х часовых встреч по формулированию ТЗ',
                         description:
                           'Детальное обсуждение требований, бизнес-процессов и специфики проекта',
@@ -2783,10 +2802,17 @@ export const kirovStekloSlides: SlideData[] = [
                 </Space>
               </Card>
               <Card>
-                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
-                  <Text type="secondary" style={{ fontSize: '14px', textAlign: 'center' }}>
-                    Это позволит нам подготовить точную оценку с учетом всех нюансов вашего
-                    проекта и составить детальный план реализации
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text
+                    type="secondary"
+                    style={{ fontSize: '14px', textAlign: 'center' }}
+                  >
+                    Это позволит нам подготовить точную оценку с учетом всех
+                    нюансов вашего проекта и составить детальный план реализации
                   </Text>
                 </Space>
               </Card>
@@ -2816,7 +2842,11 @@ export const kirovStekloSlides: SlideData[] = [
               Благодарю за внимание
             </Title>
             <Divider />
-            <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+            <Space
+              orientation="vertical"
+              size="middle"
+              style={{ width: '100%' }}
+            >
               <Space direction="vertical" size="small">
                 <Text strong style={{ fontSize: '18px' }}>
                   Новиков Павел
@@ -2827,10 +2857,18 @@ export const kirovStekloSlides: SlideData[] = [
               </Space>
               <Divider style={{ margin: '16px 0' }} />
               <Space size="middle">
-                <PhoneOutlined style={{ fontSize: '18px', color: 'var(--app-color-primary)' }} />
+                <PhoneOutlined
+                  style={{
+                    fontSize: '18px',
+                    color: 'var(--app-color-primary)',
+                  }}
+                />
                 <Link
                   href="tel:+79085550606"
-                  style={{ fontSize: '18px', color: 'var(--app-color-primary)' }}
+                  style={{
+                    fontSize: '18px',
+                    color: 'var(--app-color-primary)',
+                  }}
                 >
                   8 908 555 0606
                 </Link>
