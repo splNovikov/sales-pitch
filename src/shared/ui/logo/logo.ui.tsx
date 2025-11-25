@@ -12,11 +12,7 @@ interface LogoProps {
   size?: LogoSize;
 }
 
-export default function Logo({
-  className,
-  fillColor,
-  size = 'm',
-}: LogoProps) {
+export default function Logo({ className, fillColor, size = 'm' }: LogoProps) {
   const { token } = useToken();
   const color = fillColor || token.colorText;
 
@@ -25,7 +21,11 @@ export default function Logo({
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 334 35"
       fill="none"
-      className={clsx(styles.logo, styles[`logo${size.toUpperCase()}`], className)}
+      className={clsx(
+        styles.logo,
+        styles[`logo${size.toUpperCase()}`],
+        className
+      )}
       aria-label="Logo"
     >
       <path
