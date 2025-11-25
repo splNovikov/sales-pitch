@@ -8,10 +8,6 @@ interface LogoProps {
 
 export default function Logo({ className }: LogoProps) {
   return (
-    <img
-      src={logoImage}
-      alt="Logo"
-      className={clsx(styles.logo, className)}
-    />
+    <img src={logoImage} alt="Logo" className={clsx(styles.logo, className)} />
   );
 }
