@@ -37,6 +37,11 @@ import {
   ClockCircleOutlined,
   CloseCircleOutlined,
   DollarOutlined,
+  CalendarOutlined,
+  UsergroupAddOutlined,
+  ProjectOutlined,
+  BugOutlined,
+  BuildOutlined,
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 
@@ -91,7 +96,7 @@ export const kirovStekloSlides: SlideData[] = [
               marginBottom: 0,
             }}
           >
-            Производство зеркал и стекол под индивидуальные размеры
+            Производство зеркал и стекол
           </Paragraph>
           <Link
             href="https://kirovsteklo.ru/"
@@ -1910,6 +1915,309 @@ export const kirovStekloSlides: SlideData[] = [
             непрерывную интеграцию и развертывание, что гарантирует стабильность
             и надежность создаваемого решения.
           </Paragraph>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'estimation-time-roles',
+    header: 'Оценка времени и команда проекта',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <CalendarOutlined
+              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+            />
+            Сроки разработки по вариантам:
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={8}>
+              <Card>
+                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                  <Title level={4} style={{ marginTop: 0 }}>
+                    <RocketOutlined
+                      style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+                    />
+                    Вариант 1: Битрикс
+                  </Title>
+                  <div>
+                    <Text strong>Сроки до MVP:</Text>
+                    <Title level={3} style={{ margin: '8px 0', color: 'var(--app-color-primary)' }}>
+                      2-3.5 месяца
+                    </Title>
+                  </div>
+                  <Divider style={{ margin: '8px 0' }} />
+                  <Text type="secondary" style={{ fontSize: '12px' }}>
+                    Акцент на настройку и конфигурацию существующей платформы
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={8}>
+              <Card>
+                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                  <Title level={4} style={{ marginTop: 0 }}>
+                    <ApiOutlined
+                      style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+                    />
+                    Вариант 2: Гибридное
+                  </Title>
+                  <div>
+                    <Text strong>Сроки до MVP:</Text>
+                    <Title level={3} style={{ margin: '8px 0', color: 'var(--app-color-primary)' }}>
+                      6-8.5 месяцев
+                    </Title>
+                  </div>
+                  <Divider style={{ margin: '8px 0' }} />
+                  <Text type="secondary" style={{ fontSize: '12px' }}>
+                    Разработка кастомного frontend + интеграция с CRM
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={8}>
+              <Card>
+                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                  <Title level={4} style={{ marginTop: 0 }}>
+                    <CodeOutlined
+                      style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+                    />
+                    Вариант 3: Своя система
+                  </Title>
+                  <div>
+                    <Text strong>Сроки до MVP:</Text>
+                    <Title level={3} style={{ margin: '8px 0', color: 'var(--app-color-primary)' }}>
+                      9-11.5 месяцев
+                    </Title>
+                  </div>
+                  <Divider style={{ margin: '8px 0' }} />
+                  <Text type="secondary" style={{ fontSize: '12px' }}>
+                    Полная разработка с нуля с учетом всех требований
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+        </Card>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <UsergroupAddOutlined
+              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+            />
+            Состав команды проекта:
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12} lg={8}>
+              <Card size="small">
+                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                  <Title level={5} style={{ marginTop: 0 }}>
+                    <ProjectOutlined style={{ marginRight: 8 }} />
+                    Управление и анализ:
+                  </Title>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Project Manager',
+                      'Business Analyst',
+                      'UX/UI Designer',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12} lg={8}>
+              <Card size="small">
+                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                  <Title level={5} style={{ marginTop: 0 }}>
+                    <CodeOutlined style={{ marginRight: 8 }} />
+                    Разработка:
+                  </Title>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'System Architect',
+                      'Backend Developer',
+                      'Frontend Developer',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12} lg={8}>
+              <Card size="small">
+                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                  <Title level={5} style={{ marginTop: 0 }}>
+                    <SafetyOutlined style={{ marginRight: 8 }} />
+                    Качество и инфраструктура:
+                  </Title>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'DevOps Engineer',
+                      'QA Engineer',
+                      'Technical Writer',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+        </Card>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <TeamOutlined
+              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+            />
+            Распределение ролей по вариантам:
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} lg={8}>
+              <Card size="small">
+                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                  <Tag color="blue" style={{ marginBottom: 8 }}>
+                    Вариант 1: Битрикс
+                  </Tag>
+                  <List
+                    size="small"
+                    dataSource={[
+                      '1x Project Manager',
+                      '1x Business Analyst',
+                      '1x Битрикс-разработчик',
+                      '1x DevOps (частично)',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} lg={8}>
+              <Card size="small">
+                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                  <Tag color="green" style={{ marginBottom: 8 }}>
+                    Вариант 2: Гибридное
+                  </Tag>
+                  <List
+                    size="small"
+                    dataSource={[
+                      '1x Project Manager',
+                      '1x Business Analyst',
+                      '1x UX/UI Designer',
+                      '1x System Architect',
+                      '2x Backend Developer',
+                      '2x Frontend Developer',
+                      '1x DevOps Engineer',
+                      '1x QA Engineer',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} lg={8}>
+              <Card size="small">
+                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                  <Tag color="orange" style={{ marginBottom: 8 }}>
+                    Вариант 3: Своя система
+                  </Tag>
+                  <List
+                    size="small"
+                    dataSource={[
+                      '1x Project Manager',
+                      '1x Business Analyst',
+                      '1x UX/UI Designer',
+                      '1x System Architect',
+                      '3x Backend Developer',
+                      '2x Frontend Developer',
+                      '1x DevOps Engineer',
+                      '1x QA Engineer',
+                      '1x Technical Writer',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+        </Card>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <CheckCircleOutlinedIcon
+              style={{ color: 'var(--ant-color-success)', marginRight: 8 }}
+            />
+            Особенности команды:
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12}>
+              <Card size="small">
+                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                  <Text strong>Опытные специалисты:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Senior-уровень для ключевых ролей',
+                      'Опыт работы с production-системами',
+                      'Знание best practices индустрии',
+                      'Опыт работы в команде',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small">
+                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                  <Text strong>Непрерывная поддержка:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'DevOps на всех этапах проекта',
+                      'Code review на каждом этапе',
+                      'Регулярные демо и обратная связь',
+                      'Документирование процесса',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+          </Row>
         </Card>
       </Space>
     ),
