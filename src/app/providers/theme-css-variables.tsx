@@ -41,11 +41,17 @@ export function ThemeCSSVariables() {
 
     // Border colors
     root.style.setProperty('--app-color-border', token.colorBorder);
-    root.style.setProperty('--app-color-border-secondary', token.colorBorderSecondary);
+    root.style.setProperty(
+      '--app-color-border-secondary',
+      token.colorBorderSecondary
+    );
 
     // Text colors
     root.style.setProperty('--app-color-text', token.colorText);
-    root.style.setProperty('--app-color-text-secondary', token.colorTextSecondary);
+    root.style.setProperty(
+      '--app-color-text-secondary',
+      token.colorTextSecondary
+    );
     root.style.setProperty('--app-color-text-heading', token.colorTextHeading);
 
     // Background colors
@@ -74,4 +80,3 @@ export function ThemeCSSVariables() {
 
   return null;
 }
-
