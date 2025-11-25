@@ -29,7 +29,7 @@ export interface TelegramNotificationPayload {
  * Enriched payload with server-side data (IP, location)
  */
 export interface EnrichedTelegramNotificationPayload
-  extends TelegramNotificationPayload {
+  extends Omit<TelegramNotificationPayload, 'ip' | 'location'> {
   ip: string;
   location: LocationData | null;
 }

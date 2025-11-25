@@ -4,11 +4,11 @@
  */
 
 import { useCallback } from 'react';
+import type { TelegramNotificationPayload } from './telegram-types';
 import {
   notifyPageVisit,
   sendNotification,
   type NotificationApiResponse,
-  type TelegramNotificationPayload,
 } from './telegram-notification-client';
 
 /**
