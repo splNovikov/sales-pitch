@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import logoImage from './logo.png';
+import logoImage from './logo.svg';
 import styles from './logo.module.css';
 
 interface LogoProps {

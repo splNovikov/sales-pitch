@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import { Layout } from 'antd';
-import { Slide } from './slide';
+import { Slide } from '~widgets/slide';
+import { useSlidesNavigation } from './slides.hook';
 import styles from './slides.module.css';
 
 const { Content } = Layout;
@@ -36,22 +36,22 @@ const mockSlides: SlideData[] = [
 ];
 
 export function Slides({ companySlug }: SlidesProps) {
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const slides = mockSlides; // TODO: Load slides based on companySlug
 
-  const handlePrevious = () => {
-    setCurrentSlideIndex(prev => Math.max(0, prev - 1));
-  };
+  const {
+    currentSlide,
+    currentSlideIndex,
+    totalSlides,
+    handlePrevious,
+    handleNext,
+    handleGoToSlide,
+    canGoPrevious,
+    canGoNext,
+  } = useSlidesNavigation(slides);
 
-  const handleNext = () => {
-    setCurrentSlideIndex(prev => Math.min(slides.length - 1, prev + 1));
-  };
-
-  const handleGoToSlide = (index: number) => {
-    setCurrentSlideIndex(index);
-  };
-
-  const currentSlide = slides[currentSlideIndex];
+  if (!currentSlide) {
+    return null;
+  }
 
   return (
     <Layout className={styles.slides}>
@@ -60,12 +60,12 @@ export function Slides({ companySlug }: SlidesProps) {
           slide={currentSlide}
           companySlug={companySlug}
           slideNumber={currentSlideIndex + 1}
-          totalSlides={slides.length}
+          totalSlides={totalSlides}
           onPrevious={handlePrevious}
           onNext={handleNext}
           onGoToSlide={handleGoToSlide}
-          canGoPrevious={currentSlideIndex > 0}
-          canGoNext={currentSlideIndex < slides.length - 1}
+          canGoPrevious={canGoPrevious}
+          canGoNext={canGoNext}
         />
       </Content>
     </Layout>
