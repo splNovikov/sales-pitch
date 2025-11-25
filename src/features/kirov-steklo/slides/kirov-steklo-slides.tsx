@@ -1,5 +1,6 @@
 import { Typography, List, Space, Divider, Card, Row, Col, Tag } from 'antd';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
+import kirovStekloImg from './img.png';
 import {
   MessageOutlined,
   ThunderboltOutlined,
@@ -65,9 +66,24 @@ export const kirovStekloSlides: SlideData[] = [
           size="middle"
           style={{ textAlign: 'center', maxWidth: '800px' }}
         >
-          <Title level={2} style={{ margin: 0, fontWeight: 500 }}>
-            Производственная компания Марата Гайнуловича
-          </Title>
+          <a
+            href="https://kirovsteklo.ru/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-block',
+              marginTop: 'var(--app-spacing-md)',
+            }}
+          >
+            <img
+              src={kirovStekloImg}
+              alt="Кировстекло"
+              style={{
+                maxWidth: '400px',
+                height: 'auto',
+              }}
+            />
+          </a>
           <Paragraph
             style={{
               fontSize: 'var(--app-font-size-lg)',
@@ -81,7 +97,10 @@ export const kirovStekloSlides: SlideData[] = [
             href="https://kirovsteklo.ru/"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ fontSize: 'var(--app-font-size-lg)' }}
+            style={{
+              fontSize: 'var(--app-font-size-lg)',
+              fontWeight: 500,
+            }}
           >
             kirovsteklo.ru
           </Link>
@@ -1754,9 +1773,9 @@ export const kirovStekloSlides: SlideData[] = [
             Профессиональная методология работы:
           </Title>
           <Paragraph>
-            Мы серьезно подходим к каждому проекту. Наша команда использует проверенные
-            методологии и лучшие практики индустрии, обеспечивая качественный результат на всех
-            этапах разработки.
+            Мы серьезно подходим к каждому проекту. Наша команда использует
+            проверенные методологии и лучшие практики индустрии, обеспечивая
+            качественный результат на всех этапах разработки.
           </Paragraph>
         </Card>
         <Card>
@@ -1826,7 +1845,11 @@ export const kirovStekloSlides: SlideData[] = [
           <Row gutter={[16, 16]}>
             <Col xs={24} sm={12}>
               <Card size="small">
-                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Text strong>На протяжении всего проекта:</Text>
                   <List
                     size="small"
@@ -1848,7 +1871,11 @@ export const kirovStekloSlides: SlideData[] = [
             </Col>
             <Col xs={24} sm={12}>
               <Card size="small">
-                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Text strong>Опытные специалисты:</Text>
                   <List
                     size="small"
@@ -1878,9 +1905,10 @@ export const kirovStekloSlides: SlideData[] = [
             Гарантии качества:
           </Title>
           <Paragraph>
-            На каждом этапе мы обеспечиваем высокое качество работы. Наша команда использует
-            code review, автоматизированное тестирование, непрерывную интеграцию и развертывание,
-            что гарантирует стабильность и надежность создаваемого решения.
+            На каждом этапе мы обеспечиваем высокое качество работы. Наша
+            команда использует code review, автоматизированное тестирование,
+            непрерывную интеграцию и развертывание, что гарантирует стабильность
+            и надежность создаваемого решения.
           </Paragraph>
         </Card>
       </Space>
