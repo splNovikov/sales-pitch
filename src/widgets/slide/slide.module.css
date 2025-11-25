@@ -2,7 +2,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: var(--app-spacing-lg);
+  padding: var(--app-spacing-sm) var(--app-spacing-lg);
   background: transparent;
   min-height: 0;
   overflow: hidden;

@@ -35,7 +35,10 @@ export default function LayoutHeader() {
             />
           )}
           <NavLink to={pathKeys.home} className={styles.logoLink}>
-            <Logo className={clsx(isMobile && styles.mobileLogoSize)} />
+            <Logo
+              className={clsx(isMobile && styles.mobileLogoSize)}
+              size="xs"
+            />
           </NavLink>
         </Flex>
 
