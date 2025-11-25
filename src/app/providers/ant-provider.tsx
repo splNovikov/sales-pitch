@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react';
 import { ConfigProvider } from 'antd';
-import enUS from 'antd/locale/en_US';
+import ruRU from 'antd/locale/ru_RU';
 import { appTheme } from './theme.config';
+import { ThemeCSSVariables } from './theme-css-variables';
 
 interface AntProviderProps {
   children: ReactNode;
@@ -9,7 +10,8 @@ interface AntProviderProps {
 
 export function AntProvider({ children }: AntProviderProps) {
   return (
-    <ConfigProvider theme={appTheme} locale={enUS}>
+    <ConfigProvider theme={appTheme} locale={ruRU}>
+      <ThemeCSSVariables />
       {children}
     </ConfigProvider>
   );

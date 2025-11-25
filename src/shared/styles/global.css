@@ -26,6 +26,38 @@
    * Add typography, default element styles, etc. here
    */
 
+  :root {
+    /* Theme colors - set by ThemeCSSVariables component */
+    --app-color-primary: #020a1c;
+    --app-color-primary-hover: rgba(2, 10, 28, 0.6);
+    --app-color-border: #d9d9d9;
+    --app-color-border-secondary: rgba(5, 5, 5, 0.06);
+    --app-color-text: rgba(0, 0, 0, 0.88);
+    --app-color-text-secondary: rgba(0, 0, 0, 0.45);
+    --app-color-text-heading: rgba(0, 0, 0, 0.88);
+    --app-color-bg: #ffffff;
+    --app-color-bg-secondary: #fafafa;
+
+    /* Spacing scale (8px base unit) */
+    --app-spacing-xs: 0.5rem; /* 8px */
+    --app-spacing-sm: 1rem; /* 16px */
+    --app-spacing-md: 1.5rem; /* 24px */
+    --app-spacing-lg: 2rem; /* 32px */
+    --app-spacing-xl: 3rem; /* 48px */
+    --app-spacing-xxl: 4rem; /* 64px */
+    --app-spacing-none: 0;
+
+    /* Typography scale */
+    --app-font-size-xs: 0.75rem; /* 12px */
+    --app-font-size-sm: 0.875rem; /* 14px */
+    --app-font-size-base: 1rem; /* 16px */
+    --app-font-size-lg: 1.25rem; /* 20px */
+    --app-font-size-xl: 1.5rem; /* 24px */
+    --app-font-size-2xl: 2rem; /* 32px */
+    --app-font-size-3xl: 2.5rem; /* 40px */
+    --app-font-size-4xl: 3rem; /* 48px */
+  }
+
   *,
   *::before,
   *::after {

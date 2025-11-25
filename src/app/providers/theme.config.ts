@@ -11,7 +11,7 @@ const COLORS = {
   sunsetOrange: '#ff4d4f',
 };
 
-const THEME_COLORS = {
+export const THEME_COLORS = {
   colorPrimary: COLORS.blueCharcoal,
   colorSuccess: COLORS.lima,
   colorWarning: COLORS.sun,
@@ -19,11 +19,35 @@ const THEME_COLORS = {
 
   white: COLORS.white,
 };
-const REFERENCED_COLORS = {
+
+export const REFERENCED_COLORS = {
   primaryLight: lightenColor(THEME_COLORS.colorPrimary, 100),
   primaryLightest: lightenColor(THEME_COLORS.colorPrimary, 200),
   primaryVeryLight: lightenColor(THEME_COLORS.colorPrimary, 220),
 };
+
+// Spacing scale (based on 8px base unit)
+export const SPACING = {
+  xs: '0.5rem', // 8px
+  sm: '1rem', // 16px
+  md: '1.5rem', // 24px
+  lg: '2rem', // 32px
+  xl: '3rem', // 48px
+  xxl: '4rem', // 64px
+  none: '0',
+} as const;
+
+// Typography scale
+export const TYPOGRAPHY = {
+  fontSizeXs: '0.75rem', // 12px
+  fontSizeSm: '0.875rem', // 14px
+  fontSizeBase: '1rem', // 16px
+  fontSizeLg: '1.25rem', // 20px
+  fontSizeXl: '1.5rem', // 24px
+  fontSize2xl: '2rem', // 32px
+  fontSize3xl: '2.5rem', // 40px
+  fontSize4xl: '3rem', // 48px
+} as const;
 
 export const appTheme: ThemeConfig = {
   algorithm: [defaultAlgorithm],

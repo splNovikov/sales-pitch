@@ -1,0 +1,32 @@
+.navigation {
+  /* Space component handles layout */
+}
+
+.indicators {
+  /* Space component handles layout */
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--app-color-border);
+  cursor: pointer;
+  padding: var(--app-spacing-none);
+  transition: background-color 0.2s;
+}
+
+.indicator:hover {
+  background-color: var(--app-color-primary-hover);
+}
+
+.indicatorActive {
+  background-color: var(--app-color-primary);
+}
+
+.slideCounter {
+  font-size: var(--app-font-size-sm);
+  color: var(--app-color-text-secondary);
+  min-width: 60px;
+}

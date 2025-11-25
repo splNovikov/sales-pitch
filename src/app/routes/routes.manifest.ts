@@ -32,6 +32,11 @@ export const routesManifest: RouteManifestEntry[] = [
     ],
   },
   {
+    path: pathKeys.slides,
+    loader: () =>
+      import('~pages/slides/slides-page.route').then(m => m.slidesPageRoute),
+  },
+  {
     path: pathKeys.page404,
     loader: () =>
       import('~pages/page-404/page-404.route').then(m => m.page404Route),
