@@ -1,7 +1,7 @@
 import { Typography, List, Space } from 'antd';
 import { type SlideData } from '~widgets/slides';
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph } = Typography;
 
 /**
  * Slides data for Kirov Steklo presentation
@@ -12,7 +12,7 @@ export const kirovStekloSlides: SlideData[] = [
     id: 'problem',
     header: 'Проблематика',
     content: (
-      <Space direction="vertical" size="large" style={{ width: '100%' }}>
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <div>
           <List
             size="large"
@@ -25,19 +25,37 @@ export const kirovStekloSlides: SlideData[] = [
             renderItem={item => <List.Item>{item}</List.Item>}
           />
         </div>
-
-        <div>
-          <Title level={3}>Главная цель</Title>
-          <Paragraph>
-            <Text strong>
-              Создание единой IT-системы для полного цикла управления заказами
-              от приема заявки до выдачи готовой продукции с полным отказом от
-              электронных таблиц
-            </Text>
-          </Paragraph>
-        </div>
+      </Space>
+    ),
+  },
+  {
+    id: 'goal',
+    header: 'Главная цель',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Title
+          level={2}
+          style={{
+            textAlign: 'center',
+            fontWeight: 400,
+            maxWidth: '800px',
+            margin: 0,
+          }}
+        >
+          Создание единой IT-системы для полного цикла управления заказами от
+          приема заявки до выдачи готовой продукции с полным отказом от
+          электронных таблиц
+        </Title>
       </Space>
     ),
   },
 ];
-
