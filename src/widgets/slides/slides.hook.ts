@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-interface SlideData {
+export interface SlideData {
   id: string;
   header?: string;
   content: React.ReactNode;
@@ -94,4 +94,3 @@ export function useSlidesNavigation(
     canGoNext,
   };
 }
-

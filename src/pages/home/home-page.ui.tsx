@@ -1,9 +1,12 @@
+import { Card, Typography } from 'antd';
+
+const { Title, Paragraph } = Typography;
+
 export default function HomePage() {
   return (
-    <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
-      <h1>Добро пожаловать в Sales Pitch</h1>
-      <p>Это минимальная версия приложения без бизнес-логики.</p>
-      <p>Структура проекта сохранена и готова к развитию.</p>
-    </div>
+    <Card style={{ maxWidth: '800px', margin: '0 auto' }}>
+      <Title level={1}>Добро пожаловать в ПРОКСИМА</Title>
+      <Paragraph>Мы делаем этот Айтишный мир... Проще...</Paragraph>
+    </Card>
   );
 }

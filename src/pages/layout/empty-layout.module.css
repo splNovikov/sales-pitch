@@ -1,11 +1,14 @@
-.slides {
-  height: 100vh;
+.emptyLayout {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.slidesContent {
+.content {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 0;
+  margin: 0;
+  max-width: none;
 }
