@@ -119,6 +119,10 @@ async function getLocationFromIP(ip: string): Promise<LocationData | null> {
   }
 
   try {
+    // Add timeout to prevent hanging
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 3000); // 3 second timeout
+
     const response = await fetch(
       `http://ip-api.com/json/${ip}?fields=status,message,country,countryCode,regionName,city`,
       {
@@ -126,8 +130,11 @@ async function getLocationFromIP(ip: string): Promise<LocationData | null> {
         headers: {
           Accept: 'application/json',
         },
+        signal: controller.signal,
       }
     );
+
+    clearTimeout(timeoutId);
 
     if (!response.ok) {
       return null;
@@ -160,23 +167,38 @@ async function sendTelegramNotification(
 ): Promise<void> {
   const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
-  const response = await fetch(telegramApiUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text: message,
-      parse_mode: 'HTML',
-    }),
-  });
+  // Add timeout to prevent hanging
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
 
-  if (!response.ok) {
-    const errorData = await response.json().catch(() => ({}));
-    throw new Error(
-      `Telegram API error: ${response.status} - ${JSON.stringify(errorData)}`
-    );
+  try {
+    const response = await fetch(telegramApiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+        parse_mode: 'HTML',
+      }),
+      signal: controller.signal,
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(
+        `Telegram API error: ${response.status} - ${JSON.stringify(errorData)}`
+      );
+    }
+  } catch (error) {
+    clearTimeout(timeoutId);
+    if (error instanceof Error && error.name === 'AbortError') {
+      throw new Error('Telegram API request timeout');
+    }
+    throw error;
   }
 }
 
@@ -217,10 +239,12 @@ function validatePayload(
  * Handles POST and GET requests for Telegram notifications
  */
 export default async function handler(
-  request: Request
+  req: Request
 ): Promise<Response> {
+  const method = req.method || 'GET';
+
   // Handle GET requests
-  if (request.method === 'GET') {
+  if (method === 'GET') {
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
@@ -232,9 +256,9 @@ export default async function handler(
   }
 
   // Handle POST requests
-  if (request.method !== 'POST') {
+  if (method !== 'POST') {
     return Response.json(
-      { error: `Method ${request.method} not allowed` },
+      { error: `Method ${method} not allowed` },
       { status: 405 }
     );
   }
@@ -255,7 +279,7 @@ export default async function handler(
     // Parse request body
     let payload: unknown;
     try {
-      payload = await request.json();
+      payload = await req.json();
     } catch {
       return Response.json(
         { error: 'Invalid JSON in request body' },
@@ -272,12 +296,20 @@ export default async function handler(
     }
 
     // Get client IP (considering proxies)
-    const ip = extractClientIp(request.headers);
+    const ip = extractClientIp(req.headers);
 
     // Get location from IP (non-blocking - won't delay notification if it fails)
+    // Use Promise.race to ensure we don't wait too long
     let location = null;
     if (ip && ip !== 'unknown') {
-      location = await getLocationFromIP(ip);
+      try {
+        location = await Promise.race([
+          getLocationFromIP(ip),
+          new Promise<null>(resolve => setTimeout(() => resolve(null), 2000)),
+        ]);
+      } catch {
+        location = null;
+      }
     }
 
     // Add IP and location to payload
