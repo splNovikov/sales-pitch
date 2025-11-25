@@ -1,9 +1,8 @@
 .footer {
   margin-top: var(--app-spacing-lg);
-  padding-top: var(--app-spacing-sm);
+  padding: var(--app-spacing-sm) var(--app-spacing-lg);
   border-top: 1px solid var(--app-color-border-secondary);
   background: transparent;
-  padding-inline: var(--app-spacing-none);
 }
 
 .footerContent {
@@ -14,5 +13,4 @@
   flex: 1;
   display: flex;
   align-items: center;
-  padding: var(--app-spacing-sm);
 }
