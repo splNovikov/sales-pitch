@@ -1,4 +1,14 @@
-import { Typography, List, Space, Divider, Card, Row, Col, Tag } from 'antd';
+import {
+  Typography,
+  List,
+  Space,
+  Divider,
+  Card,
+  Row,
+  Col,
+  Tag,
+  Table,
+} from 'antd';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
 import kirovStekloImg from './img.png';
 import {
@@ -1946,16 +1956,29 @@ export const kirovStekloSlides: SlideData[] = [
           <Row gutter={[16, 16]}>
             <Col xs={24} sm={8}>
               <Card>
-                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Title level={4} style={{ marginTop: 0 }}>
                     <RocketOutlined
-                      style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+                      style={{
+                        marginRight: 8,
+                        color: 'var(--app-color-primary)',
+                      }}
                     />
                     Вариант 1: Битрикс
                   </Title>
                   <div>
                     <Text strong>Сроки до MVP:</Text>
-                    <Title level={3} style={{ margin: '8px 0', color: 'var(--app-color-primary)' }}>
+                    <Title
+                      level={3}
+                      style={{
+                        margin: '8px 0',
+                        color: 'var(--app-color-primary)',
+                      }}
+                    >
                       2-3.5 месяца
                     </Title>
                   </div>
@@ -1968,16 +1991,29 @@ export const kirovStekloSlides: SlideData[] = [
             </Col>
             <Col xs={24} sm={8}>
               <Card>
-                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Title level={4} style={{ marginTop: 0 }}>
                     <ApiOutlined
-                      style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+                      style={{
+                        marginRight: 8,
+                        color: 'var(--app-color-primary)',
+                      }}
                     />
                     Вариант 2: Гибридное
                   </Title>
                   <div>
                     <Text strong>Сроки до MVP:</Text>
-                    <Title level={3} style={{ margin: '8px 0', color: 'var(--app-color-primary)' }}>
+                    <Title
+                      level={3}
+                      style={{
+                        margin: '8px 0',
+                        color: 'var(--app-color-primary)',
+                      }}
+                    >
                       6-8.5 месяцев
                     </Title>
                   </div>
@@ -1990,16 +2026,29 @@ export const kirovStekloSlides: SlideData[] = [
             </Col>
             <Col xs={24} sm={8}>
               <Card>
-                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Title level={4} style={{ marginTop: 0 }}>
                     <CodeOutlined
-                      style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+                      style={{
+                        marginRight: 8,
+                        color: 'var(--app-color-primary)',
+                      }}
                     />
                     Вариант 3: Своя система
                   </Title>
                   <div>
                     <Text strong>Сроки до MVP:</Text>
-                    <Title level={3} style={{ margin: '8px 0', color: 'var(--app-color-primary)' }}>
+                    <Title
+                      level={3}
+                      style={{
+                        margin: '8px 0',
+                        color: 'var(--app-color-primary)',
+                      }}
+                    >
                       9-11.5 месяцев
                     </Title>
                   </div>
@@ -2022,7 +2071,11 @@ export const kirovStekloSlides: SlideData[] = [
           <Row gutter={[16, 16]}>
             <Col xs={24} lg={8}>
               <Card size="small">
-                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="blue" style={{ marginBottom: 8 }}>
                     Вариант 1: Битрикс
                   </Tag>
@@ -2045,7 +2098,11 @@ export const kirovStekloSlides: SlideData[] = [
             </Col>
             <Col xs={24} lg={8}>
               <Card size="small">
-                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="green" style={{ marginBottom: 8 }}>
                     Вариант 2: Гибридное
                   </Tag>
@@ -2074,7 +2131,11 @@ export const kirovStekloSlides: SlideData[] = [
             </Col>
             <Col xs={24} lg={8}>
               <Card size="small">
-                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="orange" style={{ marginBottom: 8 }}>
                     Вариант 3: Своя система
                   </Tag>
@@ -2114,7 +2175,11 @@ export const kirovStekloSlides: SlideData[] = [
           <Row gutter={[16, 16]}>
             <Col xs={24} sm={12}>
               <Card size="small">
-                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Text strong>Эффективное использование ресурсов:</Text>
                   <List
                     size="small"
@@ -2135,7 +2200,11 @@ export const kirovStekloSlides: SlideData[] = [
             </Col>
             <Col xs={24} sm={12}>
               <Card size="small">
-                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Text strong>Непрерывная поддержка:</Text>
                   <List
                     size="small"
@@ -2155,6 +2224,335 @@ export const kirovStekloSlides: SlideData[] = [
               </Card>
             </Col>
           </Row>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'estimation-hours',
+    header: 'Оценка в человеко-часах',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <ClockCircleOutlined
+              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+            />
+            Вариант 1: Битрикс
+          </Title>
+          <Table
+            size="small"
+            pagination={false}
+            dataSource={[
+              {
+                key: '1',
+                role: 'Менеджер проекта',
+                count: 1,
+                hoursPerPerson: 320,
+                totalHours: 320,
+              },
+              {
+                key: '2',
+                role: 'Бизнес-аналитик',
+                count: 1,
+                hoursPerPerson: 240,
+                totalHours: 240,
+              },
+              {
+                key: '3',
+                role: 'Битрикс-разработчик',
+                count: 1,
+                hoursPerPerson: 480,
+                totalHours: 480,
+              },
+              {
+                key: '4',
+                role: 'DevOps-инженер',
+                count: 1,
+                hoursPerPerson: 120,
+                totalHours: 120,
+              },
+            ]}
+            columns={[
+              {
+                title: 'Роль',
+                dataIndex: 'role',
+                key: 'role',
+              },
+              {
+                title: 'Количество',
+                dataIndex: 'count',
+                key: 'count',
+                align: 'center',
+                render: (count: number) => `${count}x`,
+              },
+              {
+                title: 'Часов на человека',
+                dataIndex: 'hoursPerPerson',
+                key: 'hoursPerPerson',
+                align: 'center',
+                render: (hours: number) => `${hours} ч`,
+              },
+              {
+                title: 'Всего часов',
+                dataIndex: 'totalHours',
+                key: 'totalHours',
+                align: 'center',
+                render: (hours: number) => <Text strong>{hours} ч</Text>,
+              },
+            ]}
+            summary={() => (
+              <Table.Summary fixed>
+                <Table.Summary.Row>
+                  <Table.Summary.Cell index={0}>
+                    <Text strong>Итого:</Text>
+                  </Table.Summary.Cell>
+                  <Table.Summary.Cell index={1} />
+                  <Table.Summary.Cell index={2} />
+                  <Table.Summary.Cell index={3}>
+                    <Text
+                      strong
+                      style={{
+                        fontSize: '16px',
+                        color: 'var(--app-color-primary)',
+                      }}
+                    >
+                      1,160 ч
+                    </Text>
+                  </Table.Summary.Cell>
+                </Table.Summary.Row>
+              </Table.Summary>
+            )}
+          />
+        </Card>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <ClockCircleOutlined
+              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+            />
+            Вариант 2: Гибридное
+          </Title>
+          <Table
+            size="small"
+            pagination={false}
+            dataSource={[
+              {
+                key: '1',
+                role: 'Менеджер проекта (включая BA)',
+                count: 1,
+                hoursPerPerson: 560,
+                totalHours: 560,
+              },
+              {
+                key: '2',
+                role: 'UX/UI Designer',
+                count: 1,
+                hoursPerPerson: 320,
+                totalHours: 320,
+              },
+              {
+                key: '3',
+                role: 'Backend Developer (Senior)',
+                count: 2,
+                hoursPerPerson: 640,
+                totalHours: 1280,
+              },
+              {
+                key: '4',
+                role: 'Frontend Developer',
+                count: 2,
+                hoursPerPerson: 600,
+                totalHours: 1200,
+              },
+              {
+                key: '5',
+                role: 'DevOps Engineer',
+                count: 1,
+                hoursPerPerson: 320,
+                totalHours: 320,
+              },
+              {
+                key: '6',
+                role: 'QA Engineer',
+                count: 1,
+                hoursPerPerson: 400,
+                totalHours: 400,
+              },
+            ]}
+            columns={[
+              {
+                title: 'Роль',
+                dataIndex: 'role',
+                key: 'role',
+              },
+              {
+                title: 'Количество',
+                dataIndex: 'count',
+                key: 'count',
+                align: 'center',
+                render: (count: number) => `${count}x`,
+              },
+              {
+                title: 'Часов на человека',
+                dataIndex: 'hoursPerPerson',
+                key: 'hoursPerPerson',
+                align: 'center',
+                render: (hours: number) => `${hours} ч`,
+              },
+              {
+                title: 'Всего часов',
+                dataIndex: 'totalHours',
+                key: 'totalHours',
+                align: 'center',
+                render: (hours: number) => <Text strong>{hours} ч</Text>,
+              },
+            ]}
+            summary={() => (
+              <Table.Summary fixed>
+                <Table.Summary.Row>
+                  <Table.Summary.Cell index={0}>
+                    <Text strong>Итого:</Text>
+                  </Table.Summary.Cell>
+                  <Table.Summary.Cell index={1} />
+                  <Table.Summary.Cell index={2} />
+                  <Table.Summary.Cell index={3}>
+                    <Text
+                      strong
+                      style={{
+                        fontSize: '16px',
+                        color: 'var(--app-color-primary)',
+                      }}
+                    >
+                      4,080 ч
+                    </Text>
+                  </Table.Summary.Cell>
+                </Table.Summary.Row>
+              </Table.Summary>
+            )}
+          />
+          <Divider style={{ margin: '12px 0' }} />
+          <Text type="secondary" style={{ fontSize: '12px' }}>
+            Примечание: Архитектура проектируется сеньорными инженерами (учтено
+            в часах Backend Developer)
+          </Text>
+        </Card>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <ClockCircleOutlined
+              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+            />
+            Вариант 3: Своя система
+          </Title>
+          <Table
+            size="small"
+            pagination={false}
+            dataSource={[
+              {
+                key: '1',
+                role: 'Менеджер проекта (включая BA)',
+                count: 1,
+                hoursPerPerson: 720,
+                totalHours: 720,
+              },
+              {
+                key: '2',
+                role: 'UX/UI Designer',
+                count: 1,
+                hoursPerPerson: 480,
+                totalHours: 480,
+              },
+              {
+                key: '3',
+                role: 'Backend Developer (Senior)',
+                count: 3,
+                hoursPerPerson: 960,
+                totalHours: 2880,
+              },
+              {
+                key: '4',
+                role: 'Frontend Developer',
+                count: 2,
+                hoursPerPerson: 800,
+                totalHours: 1600,
+              },
+              {
+                key: '5',
+                role: 'DevOps Engineer',
+                count: 1,
+                hoursPerPerson: 480,
+                totalHours: 480,
+              },
+              {
+                key: '6',
+                role: 'QA Engineer',
+                count: 1,
+                hoursPerPerson: 560,
+                totalHours: 560,
+              },
+              {
+                key: '7',
+                role: 'Technical Writer',
+                count: 1,
+                hoursPerPerson: 240,
+                totalHours: 240,
+              },
+            ]}
+            columns={[
+              {
+                title: 'Роль',
+                dataIndex: 'role',
+                key: 'role',
+              },
+              {
+                title: 'Количество',
+                dataIndex: 'count',
+                key: 'count',
+                align: 'center',
+                render: (count: number) => `${count}x`,
+              },
+              {
+                title: 'Часов на человека',
+                dataIndex: 'hoursPerPerson',
+                key: 'hoursPerPerson',
+                align: 'center',
+                render: (hours: number) => `${hours} ч`,
+              },
+              {
+                title: 'Всего часов',
+                dataIndex: 'totalHours',
+                key: 'totalHours',
+                align: 'center',
+                render: (hours: number) => <Text strong>{hours} ч</Text>,
+              },
+            ]}
+            summary={() => (
+              <Table.Summary fixed>
+                <Table.Summary.Row>
+                  <Table.Summary.Cell index={0}>
+                    <Text strong>Итого:</Text>
+                  </Table.Summary.Cell>
+                  <Table.Summary.Cell index={1} />
+                  <Table.Summary.Cell index={2} />
+                  <Table.Summary.Cell index={3}>
+                    <Text
+                      strong
+                      style={{
+                        fontSize: '16px',
+                        color: 'var(--app-color-primary)',
+                      }}
+                    >
+                      6,960 ч
+                    </Text>
+                  </Table.Summary.Cell>
+                </Table.Summary.Row>
+              </Table.Summary>
+            )}
+          />
+          <Divider style={{ margin: '12px 0' }} />
+          <Text type="secondary" style={{ fontSize: '12px' }}>
+            Примечание: Архитектура проектируется сеньорными инженерами (учтено
+            в часах Backend Developer)
+          </Text>
         </Card>
       </Space>
     ),
