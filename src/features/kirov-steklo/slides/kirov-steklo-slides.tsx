@@ -2082,10 +2082,9 @@ export const kirovStekloSlides: SlideData[] = [
                   <List
                     size="small"
                     dataSource={[
-                      '1x Менеджер проекта',
-                      '1x Бизнес-аналитик',
-                      '1x Битрикс-разработчик',
-                      '1x DevOps-инженер (частично)',
+                      '1x Менеджер проекта (15%)',
+                      '1x Битрикс-разработчик (включая роль бизнес-аналитика)',
+                      '1x DevOps-инженер (10%)',
                     ]}
                     renderItem={item => (
                       <List.Item style={{ padding: '4px 0' }}>
@@ -2109,7 +2108,7 @@ export const kirovStekloSlides: SlideData[] = [
                   <List
                     size="small"
                     dataSource={[
-                      '1x Менеджер проекта (включая роль бизнес-аналитика)',
+                      '1x Менеджер проекта (включая BA, 15%)',
                       '1x UX/UI Designer (дизайнер интерфейсов)',
                       '2x Backend Developer (Senior, серверная разработка)',
                       '2x Frontend Developer (клиентская разработка)',
@@ -2142,13 +2141,12 @@ export const kirovStekloSlides: SlideData[] = [
                   <List
                     size="small"
                     dataSource={[
-                      '1x Менеджер проекта (включая роль бизнес-аналитика)',
+                      '1x Менеджер проекта (включая BA, 15%)',
                       '1x UX/UI Designer (дизайнер интерфейсов)',
                       '3x Backend Developer (Senior, серверная разработка)',
                       '2x Frontend Developer (клиентская разработка)',
                       '1x DevOps Engineer (инженер по инфраструктуре)',
                       '1x QA Engineer (тестировщик)',
-                      '1x Technical Writer (технический писатель)',
                     ]}
                     renderItem={item => (
                       <List.Item style={{ padding: '4px 0' }}>
@@ -2246,31 +2244,24 @@ export const kirovStekloSlides: SlideData[] = [
             dataSource={[
               {
                 key: '1',
-                role: 'Менеджер проекта',
+                role: 'Менеджер проекта (15%)',
                 count: 1,
-                hoursPerPerson: 320,
-                totalHours: 320,
+                hoursPerPerson: 48,
+                totalHours: 48,
               },
               {
                 key: '2',
-                role: 'Бизнес-аналитик',
-                count: 1,
-                hoursPerPerson: 240,
-                totalHours: 240,
-              },
-              {
-                key: '3',
-                role: 'Битрикс-разработчик',
+                role: 'Битрикс-разработчик (включая роль бизнес-аналитика)',
                 count: 1,
                 hoursPerPerson: 480,
                 totalHours: 480,
               },
               {
-                key: '4',
-                role: 'DevOps-инженер',
+                key: '3',
+                role: 'DevOps-инженер (10%)',
                 count: 1,
-                hoursPerPerson: 120,
-                totalHours: 120,
+                hoursPerPerson: 12,
+                totalHours: 12,
               },
             ]}
             columns={[
@@ -2317,7 +2308,7 @@ export const kirovStekloSlides: SlideData[] = [
                         color: 'var(--app-color-primary)',
                       }}
                     >
-                      1,160 ч
+                      540 ч
                     </Text>
                   </Table.Summary.Cell>
                 </Table.Summary.Row>
@@ -2338,45 +2329,45 @@ export const kirovStekloSlides: SlideData[] = [
             dataSource={[
               {
                 key: '1',
-                role: 'Менеджер проекта (включая BA)',
+                role: 'Менеджер проекта (включая BA, 15%)',
                 count: 1,
-                hoursPerPerson: 560,
-                totalHours: 560,
+                hoursPerPerson: 84,
+                totalHours: 84,
               },
               {
                 key: '2',
                 role: 'UX/UI Designer',
                 count: 1,
-                hoursPerPerson: 320,
-                totalHours: 320,
+                hoursPerPerson: 240,
+                totalHours: 240,
               },
               {
                 key: '3',
                 role: 'Backend Developer (Senior)',
                 count: 2,
-                hoursPerPerson: 640,
-                totalHours: 1280,
+                hoursPerPerson: 240,
+                totalHours: 480,
               },
               {
                 key: '4',
                 role: 'Frontend Developer',
                 count: 2,
-                hoursPerPerson: 600,
-                totalHours: 1200,
+                hoursPerPerson: 200,
+                totalHours: 400,
               },
               {
                 key: '5',
                 role: 'DevOps Engineer',
                 count: 1,
-                hoursPerPerson: 320,
-                totalHours: 320,
+                hoursPerPerson: 240,
+                totalHours: 240,
               },
               {
                 key: '6',
                 role: 'QA Engineer',
                 count: 1,
-                hoursPerPerson: 400,
-                totalHours: 400,
+                hoursPerPerson: 300,
+                totalHours: 300,
               },
             ]}
             columns={[
@@ -2423,7 +2414,7 @@ export const kirovStekloSlides: SlideData[] = [
                         color: 'var(--app-color-primary)',
                       }}
                     >
-                      4,080 ч
+                      1,744 ч
                     </Text>
                   </Table.Summary.Cell>
                 </Table.Summary.Row>
@@ -2449,52 +2440,45 @@ export const kirovStekloSlides: SlideData[] = [
             dataSource={[
               {
                 key: '1',
-                role: 'Менеджер проекта (включая BA)',
+                role: 'Менеджер проекта (включая BA, 15%)',
                 count: 1,
-                hoursPerPerson: 720,
-                totalHours: 720,
+                hoursPerPerson: 108,
+                totalHours: 108,
               },
               {
                 key: '2',
                 role: 'UX/UI Designer',
                 count: 1,
-                hoursPerPerson: 480,
-                totalHours: 480,
+                hoursPerPerson: 240,
+                totalHours: 240,
               },
               {
                 key: '3',
                 role: 'Backend Developer (Senior)',
                 count: 3,
-                hoursPerPerson: 960,
-                totalHours: 2880,
+                hoursPerPerson: 240,
+                totalHours: 720,
               },
               {
                 key: '4',
                 role: 'Frontend Developer',
                 count: 2,
-                hoursPerPerson: 800,
-                totalHours: 1600,
+                hoursPerPerson: 200,
+                totalHours: 400,
               },
               {
                 key: '5',
                 role: 'DevOps Engineer',
                 count: 1,
-                hoursPerPerson: 480,
-                totalHours: 480,
+                hoursPerPerson: 240,
+                totalHours: 240,
               },
               {
                 key: '6',
                 role: 'QA Engineer',
                 count: 1,
-                hoursPerPerson: 560,
-                totalHours: 560,
-              },
-              {
-                key: '7',
-                role: 'Technical Writer',
-                count: 1,
-                hoursPerPerson: 240,
-                totalHours: 240,
+                hoursPerPerson: 300,
+                totalHours: 300,
               },
             ]}
             columns={[
@@ -2541,7 +2525,7 @@ export const kirovStekloSlides: SlideData[] = [
                         color: 'var(--app-color-primary)',
                       }}
                     >
-                      6,960 ч
+                      2,068 ч
                     </Text>
                   </Table.Summary.Cell>
                 </Table.Summary.Row>
@@ -2553,6 +2537,260 @@ export const kirovStekloSlides: SlideData[] = [
             Примечание: Архитектура проектируется сеньорными инженерами (учтено
             в часах Backend Developer)
           </Text>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'estimation-cost',
+    header: 'Оценка стоимости',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <DollarOutlined
+              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+            />
+            Вариант 1: Битрикс
+          </Title>
+          <Table
+            size="small"
+            pagination={false}
+            dataSource={[
+              {
+                key: '1',
+                scenario: 'Оптимистичная оценка',
+                hours: 432,
+                cost: 1080000,
+              },
+              {
+                key: '2',
+                scenario: 'Средняя оценка',
+                hours: 540,
+                cost: 1350000,
+              },
+              {
+                key: '3',
+                scenario: 'Пессимистичная оценка (учитывает непредвиденные обстоятельства)',
+                hours: 702,
+                cost: 1755000,
+              },
+            ]}
+            columns={[
+              {
+                title: 'Сценарий',
+                dataIndex: 'scenario',
+                key: 'scenario',
+              },
+              {
+                title: 'Часов',
+                dataIndex: 'hours',
+                key: 'hours',
+                align: 'center',
+                render: (hours: number) => `${hours.toLocaleString('ru-RU')} ч`,
+              },
+              {
+                title: 'Стоимость',
+                dataIndex: 'cost',
+                key: 'cost',
+                align: 'center',
+                render: (cost: number) => (
+                  <Text strong>{cost.toLocaleString('ru-RU')} ₽</Text>
+                ),
+              },
+            ]}
+          />
+        </Card>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <DollarOutlined
+              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+            />
+            Вариант 2: Гибридное
+          </Title>
+          <Table
+            size="small"
+            pagination={false}
+            dataSource={[
+              {
+                key: '1',
+                scenario: 'Оптимистичная оценка',
+                hours: 1395,
+                cost: 2839000,
+              },
+              {
+                key: '2',
+                scenario: 'Средняя оценка',
+                hours: 1744,
+                cost: 3549000,
+              },
+              {
+                key: '3',
+                scenario: 'Пессимистичная оценка (учитывает непредвиденные обстоятельства)',
+                hours: 2267,
+                cost: 4613000,
+              },
+            ]}
+            columns={[
+              {
+                title: 'Сценарий',
+                dataIndex: 'scenario',
+                key: 'scenario',
+              },
+              {
+                title: 'Часов',
+                dataIndex: 'hours',
+                key: 'hours',
+                align: 'center',
+                render: (hours: number) => `${hours.toLocaleString('ru-RU')} ч`,
+              },
+              {
+                title: 'Стоимость',
+                dataIndex: 'cost',
+                key: 'cost',
+                align: 'center',
+                render: (cost: number) => (
+                  <Text strong>{cost.toLocaleString('ru-RU')} ₽</Text>
+                ),
+              },
+            ]}
+          />
+        </Card>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <DollarOutlined
+              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+            />
+            Вариант 3: Своя система
+          </Title>
+          <Table
+            size="small"
+            pagination={false}
+            dataSource={[
+              {
+                key: '1',
+                scenario: 'Оптимистичная оценка',
+                hours: 1654,
+                cost: 3304000,
+              },
+              {
+                key: '2',
+                scenario: 'Средняя оценка',
+                hours: 2068,
+                cost: 4129600,
+              },
+              {
+                key: '3',
+                scenario: 'Пессимистичная оценка (учитывает непредвиденные обстоятельства)',
+                hours: 2688,
+                cost: 5368000,
+              },
+            ]}
+            columns={[
+              {
+                title: 'Сценарий',
+                dataIndex: 'scenario',
+                key: 'scenario',
+              },
+              {
+                title: 'Часов',
+                dataIndex: 'hours',
+                key: 'hours',
+                align: 'center',
+                render: (hours: number) => `${hours.toLocaleString('ru-RU')} ч`,
+              },
+              {
+                title: 'Стоимость',
+                dataIndex: 'cost',
+                key: 'cost',
+                align: 'center',
+                render: (cost: number) => (
+                  <Text strong>{cost.toLocaleString('ru-RU')} ₽</Text>
+                ),
+              },
+            ]}
+          />
+        </Card>
+        <Card>
+          <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+            <Text type="secondary" style={{ fontSize: '12px' }}>
+              <WarningOutlined style={{ marginRight: 4 }} />
+              Пессимистичная оценка уже учитывает возможные задержки, доработки и изменения
+              требований
+            </Text>
+          </Space>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'final-estimation-process',
+    header: 'Процесс формирования финальной оценки',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Card style={{ maxWidth: '900px', width: '100%' }}>
+          <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+            <Title level={3} style={{ textAlign: 'center', marginTop: 0 }}>
+              <FileTextOutlined
+                style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+              />
+              Финальная стоимость и дорожная карта
+            </Title>
+            <Divider />
+            <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+              <Card>
+                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                  <Text strong style={{ fontSize: '16px' }}>
+                    Финальная стоимость проекта с детальной дорожной картой будет
+                    предоставлена после:
+                  </Text>
+                  <List
+                    size="large"
+                    dataSource={[
+                      {
+                        icon: <CheckCircleOutlined style={{ color: 'var(--ant-color-success)' }} />,
+                        title: 'Выбора варианта реализации',
+                        description:
+                          'Определение оптимального решения на основе ваших требований и бюджета',
+                      },
+                      {
+                        icon: <CalendarOutlined style={{ color: 'var(--app-color-primary)' }} />,
+                        title: '3-х часовых встреч по формулированию ТЗ',
+                        description:
+                          'Детальное обсуждение требований, бизнес-процессов и специфики проекта',
+                      },
+                    ]}
+                    renderItem={item => (
+                      <List.Item>
+                        <List.Item.Meta
+                          avatar={item.icon}
+                          title={<Text strong>{item.title}</Text>}
+                          description={item.description}
+                        />
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+              <Card>
+                <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+                  <Text type="secondary" style={{ fontSize: '14px', textAlign: 'center' }}>
+                    Это позволит нам подготовить точную оценку с учетом всех нюансов вашего
+                    проекта и составить детальный план реализации
+                  </Text>
+                </Space>
+              </Card>
+            </Space>
+          </Space>
         </Card>
       </Space>
     ),
