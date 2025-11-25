@@ -1,0 +1,93 @@
+.animatedSteps {
+  width: 100%;
+  overflow: visible;
+  position: relative;
+}
+
+.animatedSteps :global(.ant-steps) {
+  overflow: visible;
+}
+
+.animatedSteps :global(.ant-steps-vertical) {
+  overflow: visible;
+}
+
+.animatedSteps :global(.ant-steps-vertical .ant-steps-item) {
+  overflow: visible;
+}
+
+.animatedSteps :global(.ant-steps-vertical .ant-steps-item-tail) {
+  left: 16px;
+}
+
+.animatedSteps :global(.ant-steps-vertical .ant-steps-item-icon) {
+  margin-right: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.animatedSteps :global(.ant-steps-vertical .ant-steps-item-icon-wrapper) {
+  position: relative;
+  overflow: visible;
+}
+
+.stepItem {
+  transition:
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+  opacity: 0.6;
+}
+
+.stepItemActive {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.animatedSteps :global(.ant-steps-item-icon) {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: visible;
+  position: relative;
+}
+
+.animatedSteps :global(.ant-steps-item-icon-container) {
+  overflow: visible;
+  position: relative;
+}
+
+.animatedSteps :global(.ant-steps-item) {
+  overflow: visible;
+}
+
+.animatedSteps :global(.ant-steps-item-active .ant-steps-item-icon) {
+  animation: pulse 1.5s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.animatedSteps :global(.ant-steps-item-icon-wrapper) {
+  overflow: visible;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0
+      color-mix(in srgb, var(--ant-color-primary) 40%, transparent);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 0 0 4px
+      color-mix(in srgb, var(--ant-color-primary) 10%, transparent);
+  }
+}
+
+.animatedSteps :global(.ant-steps-item-title),
+.animatedSteps :global(.ant-steps-item-description) {
+  transition: color 0.3s ease-in-out;
+}
+
+.animatedSteps :global(.ant-steps-item-active .ant-steps-item-title),
+.animatedSteps :global(.ant-steps-item-active .ant-steps-item-description) {
+  color: var(--ant-color-primary);
+}

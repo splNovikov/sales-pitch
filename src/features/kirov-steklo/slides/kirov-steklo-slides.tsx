@@ -1,14 +1,5 @@
-import {
-  Typography,
-  List,
-  Space,
-  Divider,
-  Card,
-  Row,
-  Col,
-  Tag,
-  Steps,
-} from 'antd';
+import { Typography, List, Space, Divider, Card, Row, Col, Tag } from 'antd';
+import { AnimatedSteps } from '~shared/ui/animated-steps';
 import {
   MessageOutlined,
   ThunderboltOutlined,
@@ -160,8 +151,7 @@ export const kirovStekloSlides: SlideData[] = [
           }}
         >
           Создание единой IT-системы для полного цикла управления заказами от
-          приема заявки до выдачи готовой продукции с полным отказом от
-          электронных таблиц
+          приема заявки до выдачи готовой продукции
         </Title>
       </Space>
     ),
@@ -561,47 +551,51 @@ export const kirovStekloSlides: SlideData[] = [
     header: 'Процесс: От заявки до производства',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Steps
-          direction="vertical"
-          size="small"
-          items={[
-            {
-              title: 'Клиент заполняет форму',
-              description:
-                'Указывает основные параметры, система валидирует только критичные поля',
-              icon: <FormOutlined />,
-            },
-            {
-              title: 'Интеллектуальная обработка заявки',
-              description:
-                'Система ИИ анализирует данные, извлекает параметры и дозаполняет недостающую информацию',
-              icon: <ThunderboltOutlined />,
-            },
-            {
-              title: 'Подготовка структурированной заявки',
-              description:
-                'Формирование полной заявки с техническими параметрами, готовой для обработки оператором',
-              icon: <CheckCircleOutlined />,
-            },
-            {
-              title: 'Менеджер обрабатывает заявку',
-              description:
-                'Проверяет подготовленные данные, рассчитывает стоимость, создает КП (минимум вопросов к клиенту)',
-              icon: <UserOutlined />,
-            },
-            {
-              title: 'Согласование и оплата',
-              description:
-                'Отправка КП, выставление счета, подтверждение оплаты',
-              icon: <CreditCardOutlined />,
-            },
-            {
-              title: 'Создание производственной карточки',
-              description: 'Автоматическое создание карточки для производства',
-              icon: <ShopOutlined />,
-            },
-          ]}
-        />
+        <Card>
+          <AnimatedSteps
+            direction="vertical"
+            size="small"
+            stepInterval={2500}
+            items={[
+              {
+                title: 'Клиент заполняет форму',
+                description:
+                  'Указывает основные параметры, система валидирует только критичные поля',
+                icon: <FormOutlined />,
+              },
+              {
+                title: 'Интеллектуальная обработка заявки',
+                description:
+                  'Система ИИ анализирует данные, извлекает параметры и дозаполняет недостающую информацию',
+                icon: <ThunderboltOutlined />,
+              },
+              {
+                title: 'Подготовка структурированной заявки',
+                description:
+                  'Формирование полной заявки с техническими параметрами, готовой для обработки оператором',
+                icon: <CheckCircleOutlined />,
+              },
+              {
+                title: 'Менеджер обрабатывает заявку',
+                description:
+                  'Проверяет подготовленные данные, рассчитывает стоимость, создает КП (минимум вопросов к клиенту)',
+                icon: <UserOutlined />,
+              },
+              {
+                title: 'Согласование и оплата',
+                description:
+                  'Отправка КП, выставление счета, подтверждение оплаты',
+                icon: <CreditCardOutlined />,
+              },
+              {
+                title: 'Создание производственной карточки',
+                description:
+                  'Автоматическое создание карточки для производства',
+                icon: <ShopOutlined />,
+              },
+            ]}
+          />
+        </Card>
       </Space>
     ),
   },
@@ -756,9 +750,10 @@ export const kirovStekloSlides: SlideData[] = [
             />
             Анализ и подготовка заявки системой ИИ:
           </Title>
-          <Steps
+          <AnimatedSteps
             direction="vertical"
             size="small"
+            stepInterval={2500}
             items={[
               {
                 title: 'Анализ поступившей информации',
@@ -922,9 +917,10 @@ export const kirovStekloSlides: SlideData[] = [
             />
             Механизм обнаружения и дедупликации:
           </Title>
-          <Steps
+          <AnimatedSteps
             direction="vertical"
             size="small"
+            stepInterval={2500}
             items={[
               {
                 title: 'Нормализация контактных данных',
@@ -1063,9 +1059,10 @@ export const kirovStekloSlides: SlideData[] = [
             <UserOutlined style={{ marginRight: 8 }} />
             Действия менеджера:
           </Title>
-          <Steps
+          <AnimatedSteps
             direction="vertical"
             size="small"
+            stepInterval={2500}
             items={[
               {
                 title: 'Открывает подготовленную заявку',
@@ -1107,9 +1104,10 @@ export const kirovStekloSlides: SlideData[] = [
             <CreditCardOutlined style={{ marginRight: 8 }} />
             Процесс оплаты:
           </Title>
-          <Steps
+          <AnimatedSteps
             direction="vertical"
             size="small"
+            stepInterval={2500}
             items={[
               {
                 title: 'Менеджер создает КП',
@@ -1300,9 +1298,10 @@ export const kirovStekloSlides: SlideData[] = [
             />
             Как это работает:
           </Title>
-          <Steps
+          <AnimatedSteps
             direction="vertical"
             size="small"
+            stepInterval={2500}
             items={[
               {
                 title: 'Форма на сайте отправляет данные в Битрикс24',
@@ -1393,9 +1392,10 @@ export const kirovStekloSlides: SlideData[] = [
             />
             Как это работает:
           </Title>
-          <Steps
+          <AnimatedSteps
             direction="vertical"
             size="small"
+            stepInterval={2500}
             items={[
               {
                 title: 'Форма отправляет данные на наш сервер',
@@ -1481,9 +1481,10 @@ export const kirovStekloSlides: SlideData[] = [
             />
             Как это работает:
           </Title>
-          <Steps
+          <AnimatedSteps
             direction="vertical"
             size="small"
+            stepInterval={2500}
             items={[
               {
                 title: 'Форма отправляет данные в вашу систему',
