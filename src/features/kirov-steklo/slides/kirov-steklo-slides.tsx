@@ -48,6 +48,7 @@ import {
   CloseCircleOutlined,
   DollarOutlined,
   CalendarOutlined,
+  PhoneOutlined,
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 
@@ -2789,6 +2790,51 @@ export const kirovStekloSlides: SlideData[] = [
                   </Text>
                 </Space>
               </Card>
+            </Space>
+          </Space>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'thank-you',
+    header: undefined,
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Card style={{ maxWidth: '800px', width: '100%', textAlign: 'center' }}>
+          <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+            <Title level={1} style={{ marginTop: 0, marginBottom: 0 }}>
+              Благодарю за внимание
+            </Title>
+            <Divider />
+            <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+              <Space direction="vertical" size="small">
+                <Text strong style={{ fontSize: '18px' }}>
+                  Новиков Павел
+                </Text>
+                <Text type="secondary" style={{ fontSize: '16px' }}>
+                  Технический директор компании Проксима
+                </Text>
+              </Space>
+              <Divider style={{ margin: '16px 0' }} />
+              <Space size="middle">
+                <PhoneOutlined style={{ fontSize: '18px', color: 'var(--app-color-primary)' }} />
+                <Link
+                  href="tel:+79085550606"
+                  style={{ fontSize: '18px', color: 'var(--app-color-primary)' }}
+                >
+                  8 908 555 0606
+                </Link>
+              </Space>
             </Space>
           </Space>
         </Card>
