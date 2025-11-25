@@ -20,6 +20,11 @@
 .headerTitle {
   margin: var(--app-spacing-none);
   font-size: var(--app-font-size-2xl);
+  background: var(--app-gradient-header);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .content {
