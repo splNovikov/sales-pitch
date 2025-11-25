@@ -1,0 +1,61 @@
+.layoutHeader {
+  border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 0 50px;
+}
+
+.layoutHeader.mobile {
+  padding: 0 16px;
+}
+
+.headerToggle {
+  font-size: 18px;
+}
+
+.headerContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.headerStart {
+  gap: 16px;
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.2s ease-in-out;
+  line-height: 0;
+}
+
+.logoLink:hover {
+  opacity: 0.8;
+}
+
+.mobileLogoSize {
+  height: 32px;
+}
+
+.desktopMenu {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  margin-left: 48px;
+}
+
+.drawerHeader {
+  padding: 16px;
+  border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+}
+
+.drawerContent {
+  flex-direction: column;
+  flex: 1;
+}
+
+.drawerMenu {
+  border: none;
+}
