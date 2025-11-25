@@ -79,7 +79,7 @@ export const kirovStekloSlides: SlideData[] = [
               src={kirovStekloImg}
               alt="Кировстекло"
               style={{
-                maxWidth: '400px',
+                maxWidth: '200px',
                 height: 'auto',
               }}
             />
