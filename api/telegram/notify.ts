@@ -37,6 +37,22 @@ interface IpApiResponse {
   city?: string;
 }
 
+interface VercelRequest {
+  method?: string;
+  headers: Record<string, string | string[] | undefined>;
+  body?: string | unknown;
+}
+
+interface VercelResponse {
+  status: (code: number) => VercelResponse;
+  json: (data: unknown) => void;
+}
+
+// Constants
+const GEOLOCATION_TIMEOUT = 2000; // 2 seconds
+const TELEGRAM_API_TIMEOUT = 5000; // 5 seconds
+const IP_API_TIMEOUT = 3000; // 3 seconds
+
 // Utility functions
 function escapeHtml(text: string): string {
   return text
@@ -73,63 +89,60 @@ function formatNotificationMessage(
   const { page, fullUrl, timestamp, userAgent, referer, ip, location } =
     payload;
 
-  let message = `🔔 <b>New Page Visit</b>\n\n`;
-
-  message += `📄 <b>Page:</b> ${escapeHtml(page)}\n`;
+  const parts: string[] = ['🔔 <b>New Page Visit</b>\n\n'];
+  parts.push(`📄 <b>Page:</b> ${escapeHtml(page)}\n`);
 
   if (fullUrl) {
-    message += `🌍 <b>Full URL:</b> ${escapeHtml(fullUrl)}\n`;
+    parts.push(`🌍 <b>Full URL:</b> ${escapeHtml(fullUrl)}\n`);
   }
 
-  message += `🕐 <b>Time:</b> ${new Date(timestamp).toLocaleString('ru-RU')}\n`;
+  parts.push(
+    `🕐 <b>Time:</b> ${new Date(timestamp).toLocaleString('ru-RU')}\n`
+  );
 
   if (ip && ip !== 'unknown') {
-    message += `📍 <b>IP:</b> ${escapeHtml(ip)}\n`;
+    parts.push(`📍 <b>IP:</b> ${escapeHtml(ip)}\n`);
   }
 
-  // Add location information
   if (location) {
     const locationParts: string[] = [];
-
     if (location.city) locationParts.push(location.city);
     if (location.region) locationParts.push(location.region);
     if (location.country) locationParts.push(location.country);
 
     if (locationParts.length > 0) {
-      message += `🗺️ <b>Location:</b> ${escapeHtml(locationParts.join(', '))}\n`;
+      parts.push(
+        `🗺️ <b>Location:</b> ${escapeHtml(locationParts.join(', '))}\n`
+      );
     }
   }
 
   if (referer) {
-    message += `🔗 <b>Referer:</b> ${escapeHtml(referer)}\n`;
+    parts.push(`🔗 <b>Referer:</b> ${escapeHtml(referer)}\n`);
   }
 
   if (userAgent) {
     const browser = extractBrowserInfo(userAgent);
-    message += `🌐 <b>Browser:</b> ${escapeHtml(browser)}\n`;
+    parts.push(`🌐 <b>Browser:</b> ${escapeHtml(browser)}\n`);
   }
 
-  return message;
+  return parts.join('');
 }
 
 async function getLocationFromIP(ip: string): Promise<LocationData | null> {
-  // Skip localhost and private IPs
   if (isPrivateIp(ip)) {
     return null;
   }
 
   try {
-    // Add timeout to prevent hanging
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 3000); // 3 second timeout
+    const timeoutId = setTimeout(() => controller.abort(), IP_API_TIMEOUT);
 
     const response = await fetch(
       `http://ip-api.com/json/${ip}?fields=status,message,country,countryCode,regionName,city`,
       {
         method: 'GET',
-        headers: {
-          Accept: 'application/json',
-        },
+        headers: { Accept: 'application/json' },
         signal: controller.signal,
       }
     );
@@ -142,7 +155,6 @@ async function getLocationFromIP(ip: string): Promise<LocationData | null> {
 
     const data = (await response.json()) as IpApiResponse;
 
-    // Check if request was successful
     if (data.status === 'success') {
       return {
         city: data.city,
@@ -155,7 +167,9 @@ async function getLocationFromIP(ip: string): Promise<LocationData | null> {
     return null;
   } catch (error) {
     // Silently fail - don't break notifications if geolocation fails
-    console.error('Failed to get location from IP:', error);
+    if (error instanceof Error && error.name !== 'AbortError') {
+      console.error('Failed to get location from IP:', error);
+    }
     return null;
   }
 }
@@ -166,17 +180,13 @@ async function sendTelegramNotification(
   chatId: string
 ): Promise<void> {
   const telegramApiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
-
-  // Add timeout to prevent hanging
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+  const timeoutId = setTimeout(() => controller.abort(), TELEGRAM_API_TIMEOUT);
 
   try {
     const response = await fetch(telegramApiUrl, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         chat_id: chatId,
         text: message,
@@ -202,9 +212,6 @@ async function sendTelegramNotification(
   }
 }
 
-/**
- * Extracts client IP from request headers (considering proxies)
- */
 function extractClientIp(
   headers: Record<string, string | string[] | undefined>
 ): string {
@@ -222,9 +229,6 @@ function extractClientIp(
   return 'unknown';
 }
 
-/**
- * Validates notification payload
- */
 function validatePayload(
   payload: unknown
 ): payload is TelegramNotificationPayload {
@@ -236,23 +240,28 @@ function validatePayload(
   return !!(p.page && p.timestamp);
 }
 
+function parseRequestBody(body: string | unknown): unknown {
+  if (typeof body === 'string') {
+    try {
+      return JSON.parse(body);
+    } catch {
+      return null;
+    }
+  }
+  return body;
+}
+
 /**
  * Vercel Serverless Function handler
- * Standard Vercel format with req/res
  */
-export default async function handler(req: any, res: any): Promise<void> {
-  console.log('[Telegram Notify] Handler called', {
-    method: req?.method,
-    url: req?.url,
-    hasBody: !!req?.body,
-    timestamp: new Date().toISOString(),
-  });
+export default async function handler(
+  req: VercelRequest,
+  res: VercelResponse
+): Promise<void> {
+  const method = req.method || 'GET';
 
-  const method = req?.method || 'GET';
-
-  // Handle GET requests
+  // Handle GET requests - configuration check
   if (method === 'GET') {
-    console.log('[Telegram Notify] GET request');
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
@@ -266,73 +275,55 @@ export default async function handler(req: any, res: any): Promise<void> {
 
   // Handle POST requests
   if (method !== 'POST') {
-    console.log('[Telegram Notify] Method not allowed:', method);
     res.status(405).json({ error: `Method ${method} not allowed` });
     return;
   }
-
-  console.log('[Telegram Notify] POST request received');
 
   try {
     // Validate environment variables
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
-    console.log('[Telegram Notify] Environment check', {
-      hasBotToken: !!botToken,
-      hasChatId: !!chatId,
-    });
-
     if (!botToken || !chatId) {
-      console.error('[Telegram Notify] Missing Telegram configuration');
+      console.error('Missing Telegram configuration');
       res.status(500).json({ error: 'Telegram bot not configured' });
       return;
     }
 
     // Parse request body
-    let payload: unknown;
-    try {
-      payload = req.body ? (typeof req.body === 'string' ? JSON.parse(req.body) : req.body) : null;
-      console.log('[Telegram Notify] Body parsed', {
-        hasPayload: !!payload,
-        page: (payload as { page?: string })?.page,
-      });
-    } catch (error) {
-      console.error('[Telegram Notify] JSON parse error:', error);
+    const payload = parseRequestBody(req.body);
+    if (!payload) {
       res.status(400).json({ error: 'Invalid JSON in request body' });
       return;
     }
 
     // Validate required fields
     if (!validatePayload(payload)) {
-      console.error('[Telegram Notify] Validation failed', payload);
-      res.status(400).json({ error: 'Missing required fields: page, timestamp' });
+      res
+        .status(400)
+        .json({ error: 'Missing required fields: page, timestamp' });
       return;
     }
 
-    // Get client IP (considering proxies)
-    const headers = req.headers || {};
-    const ip = extractClientIp(headers);
-    console.log('[Telegram Notify] Client IP:', ip);
+    // Get client IP
+    const ip = extractClientIp(req.headers);
 
-    // Get location from IP (non-blocking - won't delay notification if it fails)
-    // Use Promise.race to ensure we don't wait too long
-    let location = null;
+    // Get location from IP (non-blocking with timeout)
+    let location: LocationData | null = null;
     if (ip && ip !== 'unknown') {
       try {
-        console.log('[Telegram Notify] Getting location for IP:', ip);
         location = await Promise.race([
           getLocationFromIP(ip),
-          new Promise<null>(resolve => setTimeout(() => resolve(null), 2000)),
+          new Promise<null>(resolve =>
+            setTimeout(() => resolve(null), GEOLOCATION_TIMEOUT)
+          ),
         ]);
-        console.log('[Telegram Notify] Location result:', location);
-      } catch (error) {
-        console.error('[Telegram Notify] Location error:', error);
+      } catch {
         location = null;
       }
     }
 
-    // Add IP and location to payload
+    // Enrich payload with server-side data
     const enrichedPayload: EnrichedTelegramNotificationPayload = {
       ...payload,
       ip,
@@ -340,16 +331,12 @@ export default async function handler(req: any, res: any): Promise<void> {
     };
 
     // Format and send notification
-    console.log('[Telegram Notify] Formatting message');
     const message = formatNotificationMessage(enrichedPayload);
-    console.log('[Telegram Notify] Sending to Telegram');
     await sendTelegramNotification(message, botToken, chatId);
-    console.log('[Telegram Notify] Notification sent successfully');
 
     res.status(200).json({ success: true, message: 'Notification sent' });
   } catch (error) {
-    console.error('[Telegram Notify] Error:', error);
-    console.error('[Telegram Notify] Error stack:', error instanceof Error ? error.stack : 'No stack');
+    console.error('Error processing Telegram notification:', error);
 
     res.status(500).json({
       error: 'Failed to send notification',
