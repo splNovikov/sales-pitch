@@ -1,29 +1,15 @@
 import { useLoaderData } from 'react-router-dom';
-import { Typography } from 'antd';
 import { Slides, type SlideData } from '~widgets/slides';
+import { kirovStekloSlides } from '~features/kirov-steklo/slides/kirov-steklo-slides';
 
-const { Text } = Typography;
-
-// Temporary mock data - will be replaced with actual data loading based on slug
+// Load slides based on company slug
 const getSlidesBySlug = (slug: string): SlideData[] => {
-  // TODO: Load slides from API or data source based on slug
-  return [
-    {
-      id: '1',
-      header: 'Welcome',
-      content: <Text>Slide 1 Content for {slug}</Text>,
-    },
-    {
-      id: '2',
-      header: 'Overview',
-      content: <Text>Slide 2 Content for {slug}</Text>,
-    },
-    {
-      id: '3',
-      header: 'Conclusion',
-      content: <Text>Slide 3 Content for {slug}</Text>,
-    },
-  ];
+  // Map company slugs to their slide sets
+  const slidesMap: Record<string, SlideData[]> = {
+    'kirov-steklo': kirovStekloSlides,
+  };
+
+  return slidesMap[slug] || [];
 };
 
 export default function SlidesPage() {

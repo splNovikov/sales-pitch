@@ -1,7 +1,8 @@
 .emptyLayout {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .content {
@@ -11,4 +12,6 @@
   padding: 0;
   margin: 0;
   max-width: none;
+  min-height: 0;
+  overflow: hidden;
 }

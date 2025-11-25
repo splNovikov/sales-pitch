@@ -1,5 +1,5 @@
 .footer {
-  margin-top: var(--app-spacing-lg);
+  flex-shrink: 0;
   padding: var(--app-spacing-sm) var(--app-spacing-lg);
   border-top: 1px solid var(--app-color-border-secondary);
   background: transparent;
