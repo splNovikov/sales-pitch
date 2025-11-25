@@ -205,16 +205,18 @@ async function sendTelegramNotification(
 /**
  * Extracts client IP from request headers (considering proxies)
  */
-function extractClientIp(headers: Headers): string {
-  const forwarded = headers.get('x-forwarded-for');
+function extractClientIp(
+  headers: Record<string, string | string[] | undefined>
+): string {
+  const forwarded = headers['x-forwarded-for'];
   if (forwarded) {
-    // Take the first IP from the chain
-    return forwarded.split(',')[0].trim();
+    const ip = Array.isArray(forwarded) ? forwarded[0] : forwarded;
+    return ip.split(',')[0].trim();
   }
 
-  const realIp = headers.get('x-real-ip');
+  const realIp = headers['x-real-ip'];
   if (realIp) {
-    return realIp;
+    return Array.isArray(realIp) ? realIp[0] : realIp;
   }
 
   return 'unknown';
@@ -236,78 +238,96 @@ function validatePayload(
 
 /**
  * Vercel Serverless Function handler
- * Handles POST and GET requests for Telegram notifications
+ * Standard Vercel format with req/res
  */
-export default async function handler(
-  req: Request
-): Promise<Response> {
-  const method = req.method || 'GET';
+export default async function handler(req: any, res: any): Promise<void> {
+  console.log('[Telegram Notify] Handler called', {
+    method: req?.method,
+    url: req?.url,
+    hasBody: !!req?.body,
+    timestamp: new Date().toISOString(),
+  });
+
+  const method = req?.method || 'GET';
 
   // Handle GET requests
   if (method === 'GET') {
+    console.log('[Telegram Notify] GET request');
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
-    return Response.json({
+    res.status(200).json({
       configured: !!(botToken && chatId),
       hasBotToken: !!botToken,
       hasChatId: !!chatId,
     });
+    return;
   }
 
   // Handle POST requests
   if (method !== 'POST') {
-    return Response.json(
-      { error: `Method ${method} not allowed` },
-      { status: 405 }
-    );
+    console.log('[Telegram Notify] Method not allowed:', method);
+    res.status(405).json({ error: `Method ${method} not allowed` });
+    return;
   }
+
+  console.log('[Telegram Notify] POST request received');
 
   try {
     // Validate environment variables
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
     const chatId = process.env.TELEGRAM_CHAT_ID;
 
+    console.log('[Telegram Notify] Environment check', {
+      hasBotToken: !!botToken,
+      hasChatId: !!chatId,
+    });
+
     if (!botToken || !chatId) {
-      console.error('Missing Telegram configuration');
-      return Response.json(
-        { error: 'Telegram bot not configured' },
-        { status: 500 }
-      );
+      console.error('[Telegram Notify] Missing Telegram configuration');
+      res.status(500).json({ error: 'Telegram bot not configured' });
+      return;
     }
 
     // Parse request body
     let payload: unknown;
     try {
-      payload = await req.json();
-    } catch {
-      return Response.json(
-        { error: 'Invalid JSON in request body' },
-        { status: 400 }
-      );
+      payload = req.body ? (typeof req.body === 'string' ? JSON.parse(req.body) : req.body) : null;
+      console.log('[Telegram Notify] Body parsed', {
+        hasPayload: !!payload,
+        page: (payload as { page?: string })?.page,
+      });
+    } catch (error) {
+      console.error('[Telegram Notify] JSON parse error:', error);
+      res.status(400).json({ error: 'Invalid JSON in request body' });
+      return;
     }
 
     // Validate required fields
     if (!validatePayload(payload)) {
-      return Response.json(
-        { error: 'Missing required fields: page, timestamp' },
-        { status: 400 }
-      );
+      console.error('[Telegram Notify] Validation failed', payload);
+      res.status(400).json({ error: 'Missing required fields: page, timestamp' });
+      return;
     }
 
     // Get client IP (considering proxies)
-    const ip = extractClientIp(req.headers);
+    const headers = req.headers || {};
+    const ip = extractClientIp(headers);
+    console.log('[Telegram Notify] Client IP:', ip);
 
     // Get location from IP (non-blocking - won't delay notification if it fails)
     // Use Promise.race to ensure we don't wait too long
     let location = null;
     if (ip && ip !== 'unknown') {
       try {
+        console.log('[Telegram Notify] Getting location for IP:', ip);
         location = await Promise.race([
           getLocationFromIP(ip),
           new Promise<null>(resolve => setTimeout(() => resolve(null), 2000)),
         ]);
-      } catch {
+        console.log('[Telegram Notify] Location result:', location);
+      } catch (error) {
+        console.error('[Telegram Notify] Location error:', error);
         location = null;
       }
     }
@@ -320,19 +340,20 @@ export default async function handler(
     };
 
     // Format and send notification
+    console.log('[Telegram Notify] Formatting message');
     const message = formatNotificationMessage(enrichedPayload);
+    console.log('[Telegram Notify] Sending to Telegram');
     await sendTelegramNotification(message, botToken, chatId);
+    console.log('[Telegram Notify] Notification sent successfully');
 
-    return Response.json({ success: true, message: 'Notification sent' });
+    res.status(200).json({ success: true, message: 'Notification sent' });
   } catch (error) {
-    console.error('Error processing Telegram notification:', error);
+    console.error('[Telegram Notify] Error:', error);
+    console.error('[Telegram Notify] Error stack:', error instanceof Error ? error.stack : 'No stack');
 
-    return Response.json(
-      {
-        error: 'Failed to send notification',
-        message: error instanceof Error ? error.message : 'Unknown error',
-      },
-      { status: 500 }
-    );
+    res.status(500).json({
+      error: 'Failed to send notification',
+      message: error instanceof Error ? error.message : 'Unknown error',
+    });
   }
 }
