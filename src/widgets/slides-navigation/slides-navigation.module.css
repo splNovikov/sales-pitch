@@ -114,3 +114,31 @@
     height: 24px;
   }
 }
+
+/* Very small phones - larger buttons when logo is hidden */
+@media (max-width: 360px) {
+  .progressContainer {
+    min-width: 100px;
+    max-width: 250px;
+  }
+
+  .navigation {
+    gap: var(--app-spacing-sm);
+  }
+
+  .navButton {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .progressBar {
+    height: 10px;
+  }
+
+  .slideCounter {
+    width: 55px;
+    min-width: 55px;
+    font-size: var(--app-font-size-sm);
+  }
+}

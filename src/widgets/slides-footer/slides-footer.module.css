@@ -18,3 +18,14 @@
   display: flex;
   align-items: center;
 }
+
+/* Hide logo on very small phones to give more space to navigation buttons */
+@media (max-width: 540px) {
+  .companyLogo {
+    display: none;
+  }
+
+  .footerContent {
+    justify-content: center !important;
+  }
+}

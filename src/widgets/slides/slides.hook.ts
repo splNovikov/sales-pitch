@@ -24,6 +24,7 @@ export interface UseSlidesNavigationResult {
  * - Manages current slide index state
  * - Provides navigation handlers (previous, next, go to slide)
  * - Handles keyboard navigation (ArrowLeft, ArrowRight)
+ * - Handles custom slide events (slideleft, slideright)
  * - Ignores keyboard events when user is typing in input fields
  *
  * @param slides - Array of slide data
@@ -76,6 +77,25 @@ export function useSlidesNavigation(
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handlePrevious, handleNext]);
+
+  // Handle custom slide events (slideleft, slideright)
+  useEffect(() => {
+    const handleSlideLeft = () => {
+      handlePrevious();
+    };
+
+    const handleSlideRight = () => {
+      handleNext();
+    };
+
+    window.addEventListener('slideleft', handleSlideLeft);
+    window.addEventListener('slideright', handleSlideRight);
+
+    return () => {
+      window.removeEventListener('slideleft', handleSlideLeft);
+      window.removeEventListener('slideright', handleSlideRight);
     };
   }, [handlePrevious, handleNext]);
 
