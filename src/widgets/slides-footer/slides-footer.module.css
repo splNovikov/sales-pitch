@@ -1,8 +1,12 @@
 .footer {
   flex-shrink: 0;
   padding: var(--app-spacing-sm) var(--app-spacing-lg);
-  border-top: 1px solid var(--app-color-border-secondary);
+  border-top: none;
+  box-shadow: 0 -2px 8px 0 rgba(0, 0, 0, 0.08), 0 -1px 0 0 var(--app-color-border);
   background: transparent;
+  min-height: 64px; /* Fixed height to prevent jumping */
+  display: flex;
+  align-items: center;
 }
 
 .footerContent {

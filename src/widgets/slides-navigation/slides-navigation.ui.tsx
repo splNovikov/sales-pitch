@@ -1,6 +1,5 @@
-import { Button, Space, Typography } from 'antd';
+import { Button, Typography } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
-import clsx from 'clsx';
 import styles from './slides-navigation.module.css';
 
 const { Text } = Typography;
@@ -24,31 +23,51 @@ export function SlidesNavigation({
   canGoPrevious,
   canGoNext,
 }: SlidesNavigationProps) {
+  const progressPercentage = (currentSlide / totalSlides) * 100;
+
+  const handleProgressBarClick = (
+    event: React.MouseEvent<HTMLDivElement>
+  ) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const percentage = clickX / rect.width;
+    const targetSlideIndex = Math.min(
+      Math.floor(percentage * totalSlides),
+      totalSlides - 1
+    );
+    onGoToSlide(targetSlideIndex);
+  };
+
   return (
-    <Space className={styles.navigation} size="middle" align="center">
+    <div className={styles.navigation}>
       {/* Previous Button */}
       <Button
+        className={styles.navButton}
         icon={<LeftOutlined />}
         onClick={onPrevious}
         disabled={!canGoPrevious}
         aria-label="Previous slide"
       />
 
-      {/* Slide Indicators */}
-      <Space className={styles.indicators} size="small">
-        {Array.from({ length: totalSlides }, (_, index) => (
-          <button
-            key={index}
-            onClick={() => onGoToSlide(index)}
-            className={clsx(
-              styles.indicator,
-              index === currentSlide - 1 && styles.indicatorActive
-            )}
-            aria-label={`Go to slide ${index + 1}`}
-            aria-current={index === currentSlide - 1 ? 'true' : 'false'}
+      {/* Progress Bar Container */}
+      <div className={styles.progressContainer}>
+        {/* Progress Bar */}
+        <div
+          className={styles.progressBar}
+          onClick={handleProgressBarClick}
+          role="progressbar"
+          aria-valuenow={currentSlide}
+          aria-valuemin={1}
+          aria-valuemax={totalSlides}
+          aria-label="Slide progress"
+        >
+          {/* Progress Fill */}
+          <div
+            className={styles.progressFill}
+            style={{ width: `${progressPercentage}%` }}
           />
-        ))}
-      </Space>
+        </div>
+      </div>
 
       {/* Slide Counter */}
       <Text type="secondary" className={styles.slideCounter}>
@@ -57,11 +76,12 @@ export function SlidesNavigation({
 
       {/* Next Button */}
       <Button
+        className={styles.navButton}
         icon={<RightOutlined />}
         onClick={onNext}
         disabled={!canGoNext}
         aria-label="Next slide"
       />
-    </Space>
+    </div>
   );
 }
