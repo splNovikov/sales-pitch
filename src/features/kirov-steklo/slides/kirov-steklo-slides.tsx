@@ -112,6 +112,16 @@ export const kirovStekloSlides: SlideData[] = [
             kirovsteklo.ru
           </Link>
         </Space>
+        <Text
+          type="secondary"
+          style={{
+            fontSize: '11px',
+            opacity: 0.6,
+            marginTop: 'auto',
+          }}
+        >
+          25.11.2025
+        </Text>
       </Space>
     ),
   },
