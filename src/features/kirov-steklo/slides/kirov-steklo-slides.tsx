@@ -9,8 +9,6 @@ import {
   Tag,
   Table,
 } from 'antd';
-import { AnimatedSteps } from '~shared/ui/animated-steps';
-import kirovStekloImg from './img.png';
 import {
   MessageOutlined,
   ThunderboltOutlined,
@@ -50,7 +48,9 @@ import {
   CalendarOutlined,
   PhoneOutlined,
 } from '@ant-design/icons';
+import { AnimatedSteps } from '~shared/ui/animated-steps';
 import { type SlideData } from '~widgets/slides';
+import kirovStekloImg from './img.png';
 
 const { Title, Paragraph, Text, Link } = Typography;
 

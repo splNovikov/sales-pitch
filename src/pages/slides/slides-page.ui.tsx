@@ -1,6 +1,6 @@
 import { useLoaderData } from 'react-router-dom';
-import { Slides, type SlideData } from '~widgets/slides';
 import { kirovStekloSlides } from '~features/kirov-steklo/slides/kirov-steklo-slides';
+import { Slides, type SlideData } from '~widgets/slides';
 
 // Load slides based on company slug
 const getSlidesBySlug = (slug: string): SlideData[] => {

@@ -4,12 +4,14 @@
  * Documentation: https://core.telegram.org/bots/api#sendmessage
  */
 
-import type { EnrichedTelegramNotificationPayload } from '../../../src/shared/lib/telegram';
+import type {
+  EnrichedTelegramNotificationPayload,
+  TelegramNotificationPayload,
+} from '../../../src/shared/lib/telegram';
 import {
   formatNotificationMessage,
   getLocationFromIP,
   sendTelegramNotification,
-  type TelegramNotificationPayload,
 } from '../../../src/shared/lib/telegram';
 
 /**
@@ -49,10 +51,32 @@ function validatePayload(
 }
 
 /**
- * POST handler for Telegram notifications
- * Validates request and sends notification to Telegram
+ * Vercel Serverless Function handler
+ * Handles POST and GET requests for Telegram notifications
  */
-export async function POST(request: Request): Promise<Response> {
+export default async function handler(
+  request: Request
+): Promise<Response> {
+  // Handle GET requests
+  if (request.method === 'GET') {
+    const botToken = process.env.TELEGRAM_BOT_TOKEN;
+    const chatId = process.env.TELEGRAM_CHAT_ID;
+
+    return Response.json({
+      configured: !!(botToken && chatId),
+      hasBotToken: !!botToken,
+      hasChatId: !!chatId,
+    });
+  }
+
+  // Handle POST requests
+  if (request.method !== 'POST') {
+    return Response.json(
+      { error: `Method ${request.method} not allowed` },
+      { status: 405 }
+    );
+  }
+
   try {
     // Validate environment variables
     const botToken = process.env.TELEGRAM_BOT_TOKEN;
@@ -70,7 +94,7 @@ export async function POST(request: Request): Promise<Response> {
     let payload: unknown;
     try {
       payload = await request.json();
-    } catch (error) {
+    } catch {
       return Response.json(
         { error: 'Invalid JSON in request body' },
         { status: 400 }
@@ -119,17 +143,4 @@ export async function POST(request: Request): Promise<Response> {
   }
 }
 
-/**
- * GET handler - returns configuration status (for debugging)
- */
-export async function GET(): Promise<Response> {
-  const botToken = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
-
-  return Response.json({
-    configured: !!(botToken && chatId),
-    hasBotToken: !!botToken,
-    hasChatId: !!chatId,
-  });
-}
 
