@@ -3,6 +3,7 @@ import { kirovStekloSlides } from '~features/kirov-steklo/slides/kirov-steklo-sl
 import { niteosSlides } from '~features/niteos/slides/niteos-slides';
 import { niteosShortSlides } from '~features/niteos/slides/niteos-short-slides';
 import { hanskonnerSlides } from '~features/hanskonner/slides/hanskonner-slides';
+import { smzSlides } from '~features/smz/slides';
 import { Slides, type SlideData } from '~widgets/slides';
 
 // Load slides based on company slug
@@ -13,6 +14,7 @@ const getSlidesBySlug = (slug: string): SlideData[] => {
     niteos: niteosSlides,
     'niteos-first-turn': niteosShortSlides,
     hanskonner: hanskonnerSlides,
+    smz: smzSlides,
   };
 
   return slidesMap[slug] || [];

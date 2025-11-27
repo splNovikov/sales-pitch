@@ -53,6 +53,7 @@ export function useSlidesNotifications(
       'niteos',
       'niteos-first-turn',
       'hanskonner',
+      'smz',
     ];
     if (
       supportedSlugs.includes(slug) &&
@@ -84,6 +85,7 @@ export function useSlidesNotifications(
       'niteos',
       'niteos-first-turn',
       'hanskonner',
+      'smz',
     ];
     if (
       supportedSlugs.includes(slug) &&
