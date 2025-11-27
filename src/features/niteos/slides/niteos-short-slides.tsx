@@ -118,61 +118,6 @@ export const niteosShortSlides: SlideData[] = [
     ),
   },
   {
-    id: 'key-contacts',
-    header: 'Ключевые контакты',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <UserOutlined
-              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
-            />
-            Основной контакт для переговоров
-          </Title>
-          <Descriptions column={1} bordered size="small">
-            <Descriptions.Item label="ФИО">
-              <Text strong>Исламов Артур Айратович</Text>
-            </Descriptions.Item>
-            <Descriptions.Item label="Должность">
-              Коммерческий директор
-            </Descriptions.Item>
-            <Descriptions.Item label="Роль">
-              Директор по продажам / Управление клиентской базой
-            </Descriptions.Item>
-            <Descriptions.Item label="Статус">
-              <Tag color="green">ОСНОВНОЙ КОНТАКТ</Tag>
-            </Descriptions.Item>
-            <Descriptions.Item label="Интересы">
-              ROI, качество обработки заявок, автоматизация, брендинг
-            </Descriptions.Item>
-            <Descriptions.Item label="Условие">
-              <Text type="warning" strong>
-                Готов слушать предложения ПРИ УСЛОВИИ четкого плана ROI
-              </Text>
-            </Descriptions.Item>
-          </Descriptions>
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <UserOutlined style={{ marginRight: 8 }} />
-            ЛПР для утверждения
-          </Title>
-          <Descriptions column={1} bordered size="small">
-            <Descriptions.Item label="ФИО">
-              <Text strong>Калугин Антон Андреевич</Text>
-            </Descriptions.Item>
-            <Descriptions.Item label="Должность">
-              Генеральный директор
-            </Descriptions.Item>
-            <Descriptions.Item label="Роль">
-              Финальное утверждение крупных контрактов
-            </Descriptions.Item>
-          </Descriptions>
-        </Card>
-      </Space>
-    ),
-  },
-  {
     id: 'history-achievements',
     header: 'История и достижения',
     content: (
@@ -299,7 +244,7 @@ export const niteosShortSlides: SlideData[] = [
                   dataSource={[
                     'Управление отделом продаж',
                     'Ответственен за ROI',
-                    'Недоволен текущим IT-подрядчиком',
+                    'Фокус на качество обработки заявок',
                     'Готов слушать при условии плана ROI',
                   ]}
                   renderItem={item => (
@@ -420,36 +365,6 @@ export const niteosShortSlides: SlideData[] = [
                 </Space>
               </Card>
             </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <Tag color="orange">ВАЖНО</Tag>
-                  <Text strong>Боль #3: Устаревший бренд</Text>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Визуальный стиль не обновлялся
-                  </Text>
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <Tag color="red">КРИТИЧНО</Tag>
-                  <Text strong>Боль #4: Отрицательный ROI</Text>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Текущий IT-подрядчик не решил проблемы
-                  </Text>
-                </Space>
-              </Card>
-            </Col>
           </Row>
         </Card>
         <Card>
@@ -547,6 +462,41 @@ export const niteosShortSlides: SlideData[] = [
               </Card>
             </Col>
           </Row>
+        </Card>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <MessageOutlined
+              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+            />
+            Подтверждение проблемы: Отзывы с Яндекс
+          </Title>
+          <Paragraph>
+            Клиенты в отзывах на Яндекс подтверждают проблемы с обработкой
+            заявок:
+          </Paragraph>
+          <List
+            size="small"
+            dataSource={[
+              'Потеря крупных контрактов из-за качества обработки заявок',
+              'Задержки в ответах на запросы',
+              'Некорректная обработка заявок приводит к потере клиентов',
+              'Упоминание о потерянном контракте на 15 млн руб.',
+            ]}
+            renderItem={item => (
+              <List.Item
+                style={{ padding: '4px 0', justifyContent: 'flex-start' }}
+              >
+                <WarningOutlined
+                  style={{ color: '#ff4d4f', marginRight: 8 }}
+                />
+                <Text>{item}</Text>
+              </List.Item>
+            )}
+          />
+          <Divider style={{ margin: '12px 0' }} />
+          <Text type="secondary" style={{ fontSize: '12px' }}>
+            Источник: Яндекс.Карты, отзывы клиентов НИТЕОС
+          </Text>
         </Card>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
@@ -684,532 +634,6 @@ export const niteosShortSlides: SlideData[] = [
             )}
           />
         </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'pain-3-brand',
-    header: 'Боль #3: Устаревший бренд',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
-            Проблемы брендинга
-          </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Визуальный стиль (логотип, цвета) устарел',
-              'Веб-сайт выглядит старомодно (по меркам 2025)',
-              'Презентационные материалы не привлекают',
-              'Снизилась узнаваемость на фоне конкурентов (ГАЛАД, ФЕРЕКС)',
-            ]}
-            renderItem={item => (
-              <List.Item
-                style={{ padding: '4px 0', justifyContent: 'flex-start' }}
-              >
-                <CloseOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <TagOutlined style={{ marginRight: 8 }} />
-            Интересы компании
-          </Title>
-          <Paragraph>
-            Готовы обновить бренд,{' '}
-            <Text strong>если это повысит узнаваемость</Text>. Хотят
-            соответствовать современным стандартам.
-          </Paragraph>
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
-            Нужное решение
-          </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Редизайн логотипа и фирменного стиля',
-              'Обновление веб-сайта',
-              'Обновление презентационных материалов',
-              'Новые маркетинговые материалы',
-            ]}
-            renderItem={item => (
-              <List.Item
-                style={{ padding: '4px 0', justifyContent: 'flex-start' }}
-              >
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'pain-4-roi',
-    header: 'Боль #4: Отрицательный ROI от IT-подрядчика',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
-            Текущая ситуация
-          </Title>
-          <List
-            size="small"
-            dataSource={[
-              'ROI — отрицательный (компания потеряла деньги)',
-              'Решения не решили реальные проблемы',
-              'Потрачены деньги впустую',
-              'Результаты не измеримы',
-              'Не помог улучшить обработку заявок',
-              'Нет интеграции с основными системами',
-              'Нет улучшения скорости продаж',
-            ]}
-            renderItem={item => (
-              <List.Item
-                style={{ padding: '4px 0', justifyContent: 'flex-start' }}
-              >
-                <CloseOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
-            Готовность слушать новые предложения
-          </Title>
-          <Paragraph>
-            <Text strong>ДА, готов связываться с новым подрядчиком</Text>
-          </Paragraph>
-          <Divider style={{ margin: '12px 0' }} />
-          <Text strong>НО ТОЛЬКО если мы предложим:</Text>
-          <List
-            size="small"
-            dataSource={[
-              'Четкий план улучшения ROI в цифрах (план A, B, C)',
-              'Измеримые метрики (KPI, сроки)',
-              'Расчет финансовой отдачи',
-              'Риск-менеджмент',
-              'Гарантии результатов',
-            ]}
-            renderItem={item => (
-              <List.Item
-                style={{ padding: '4px 0', justifyContent: 'flex-start' }}
-              >
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-        <Card style={{ backgroundColor: '#fff7e6' }}>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <WarningOutlined style={{ color: '#faad14', marginRight: 8 }} />
-            Ключевое требование
-          </Title>
-          <Paragraph style={{ fontSize: '16px', fontStyle: 'italic' }}>
-            "Связываться с новым IT-подрядчиком готов ТОЛЬКО если будет
-            предложен четкий ПЛАН по улучшению ROI В ЦИФРАХ"
-          </Paragraph>
-        </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'social-media',
-    header: 'Социальные сети и интернет-присутствие',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
-            ВЫВОД: Компания ПОЛНОСТЬЮ отсутствует в социальных сетях
-          </Title>
-          <Table
-            size="small"
-            pagination={false}
-            dataSource={[
-              {
-                key: '1',
-                platform: 'LinkedIn',
-                status: '❌ Не найдено',
-                comment: 'Отсутствует корпоративный профиль',
-              },
-              {
-                key: '2',
-                platform: 'VK (ВКонтакте)',
-                status: '❌ Не найдено',
-                comment: 'Отсутствует официальная группа',
-              },
-              {
-                key: '3',
-                platform: 'Telegram',
-                status: '❌ Не найдено',
-                comment: 'Отсутствует официальный канал',
-              },
-              {
-                key: '4',
-                platform: 'Facebook',
-                status: '❌ Не найдено',
-                comment: 'Нет официального профиля',
-              },
-              {
-                key: '5',
-                platform: 'Instagram',
-                status: '❌ Не найдено',
-                comment: 'Отсутствует страница компании',
-              },
-              {
-                key: '6',
-                platform: 'YouTube',
-                status: '❌ Не найдено',
-                comment: 'Нет официального канала',
-              },
-              {
-                key: '7',
-                platform: 'Сайт компании',
-                status: '✅ Есть',
-                comment: 'https://niteos.ru — актуальный, развитый сайт',
-              },
-            ]}
-            columns={[
-              {
-                title: 'Платформа',
-                dataIndex: 'platform',
-                key: 'platform',
-              },
-              {
-                title: 'Статус',
-                dataIndex: 'status',
-                key: 'status',
-                align: 'center',
-              },
-              {
-                title: 'Комментарий',
-                dataIndex: 'comment',
-                key: 'comment',
-              },
-            ]}
-          />
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <MessageOutlined style={{ marginRight: 8 }} />
-            Основное средство коммуникации
-          </Title>
-          <Paragraph>
-            Контактная форма на сайте — время ответа:{' '}
-            <Text strong>5 минут</Text>
-          </Paragraph>
-        </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'media-publications',
-    header: 'Публикации в СМИ и новости',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <FileTextOutlined style={{ marginRight: 8 }} />
-            Позитивные новости (2023-2025)
-          </Title>
-          <List
-            size="small"
-            dataSource={[
-              {
-                title: 'ИННОПРОМ-2023',
-                date: '14 июля 2023',
-                link: 'https://niteos.ru/company/news/innoprom_2023_priglashaem_na_stend_niteos_/',
-                linkText: 'niteos.ru',
-              },
-              {
-                title: 'Статья об энергоэффективности',
-                date: '10 ноября 2025 — СВЕЖАЯ!',
-                link: 'https://niteos.ru/company/news/energoeffektivnost_led_svetilnikov_kak_snizit_raskhody_na_elektroenergiyu_vmeste_s_niteos/',
-                linkText: 'niteos.ru',
-              },
-              {
-                title: 'Материал об импортозамещении',
-                date: '1 июня 2024',
-                link: 'https://niteos.ru/company/news/importozameshchenie_svetodiodnykh_svetilnikov/',
-                linkText: 'niteos.ru',
-              },
-              {
-                title: 'Упоминание на портале utilicon',
-                date: '29.10.2025',
-                link: 'https://utilicon.ru/tpost/n2c1tzg3g1-evolyutsiya-sveta-dlya-gorodov-ot-niteos',
-                linkText: 'utilicon',
-              },
-              {
-                title: 'Упоминание на портале Elec.ru',
-                date: '14.07.2023',
-                link: 'https://www.elec.ru/news/2023/07/14/mishustin-i-minnikhanov-ledel-i-fereks-na-innoprom.html',
-                linkText: 'elec.ru',
-              },
-            ]}
-            renderItem={item => (
-              <List.Item style={{ justifyContent: 'flex-start' }}>
-                <List.Item.Meta
-                  title={
-                    <Space>
-                      <Text strong>{item.title}</Text>
-                      {item.link && (
-                        <Link
-                          href={item.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          style={{ fontSize: '12px' }}
-                        >
-                          ({item.linkText})
-                        </Link>
-                      )}
-                    </Space>
-                  }
-                  description={item.date}
-                />
-              </List.Item>
-            )}
-          />
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
-            Видимость в рейтингах
-          </Title>
-          <Paragraph>
-            НИТЕОС <Text strong>НЕ ВКЛЮЧЕНА</Text> в топ-рейтинг российских
-            производителей 2025 года.
-          </Paragraph>
-          <Divider style={{ margin: '12px 0' }} />
-          <Text strong>Лидеры включают:</Text>
-          <List
-            size="small"
-            dataSource={[
-              'ГАЛАД (#1)',
-              'ФЕРЕКС (#2)',
-              'Varton',
-              'Navigator',
-              'ARTELAMP',
-            ]}
-            renderItem={item => (
-              <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
-                <Text>• {item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'competitors',
-    header: 'Анализ конкурентов',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <TrophyOutlined style={{ marginRight: 8 }} />
-            Основные конкуренты
-          </Title>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} sm={12}>
-              <Card>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <Tag color="gold">ТОП-1</Tag>
-                  <Title level={5} style={{ marginTop: 0 }}>
-                    ГАЛАД
-                  </Title>
-                  <Text type="secondary">Премиум-лидер</Text>
-                  <List
-                    size="small"
-                    dataSource={[
-                      'Позиция: ТОП-1 рейтинга 2025',
-                      'История: 25+ лет',
-                      'Крупные мощности',
-                      'Ценовой сегмент: Премиум',
-                    ]}
-                    renderItem={item => (
-                      <List.Item
-                        style={{ padding: '4px 0', textAlign: 'left' }}
-                      >
-                        <Text>• {item}</Text>
-                      </List.Item>
-                    )}
-                  />
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <Tag color="silver">ТОП-2</Tag>
-                  <Title level={5} style={{ marginTop: 0 }}>
-                    ФЕРЕКС
-                  </Title>
-                  <Text type="secondary">Растущий лидер</Text>
-                  <List
-                    size="small"
-                    dataSource={[
-                      'Позиция: ТОП-2 рейтинга 2025',
-                      'История: 23 года',
-                      'Производство: 50 000 шт/месяц',
-                      'Входит в IEK GROUP',
-                      'Ценовой сегмент: ЖКХ, вандалозащита',
-                    ]}
-                    renderItem={item => (
-                      <List.Item
-                        style={{ padding: '4px 0', textAlign: 'left' }}
-                      >
-                        <Text>• {item}</Text>
-                      </List.Item>
-                    )}
-                  />
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <Tag color="blue">ТОП</Tag>
-                  <Title level={5} style={{ marginTop: 0 }}>
-                    Varton
-                  </Title>
-                  <Text type="secondary">Импортозамещение</Text>
-                  <List
-                    size="small"
-                    dataSource={[
-                      'В топ-лидерах импортозамещения',
-                      'Ниша: Офисное освещение',
-                    ]}
-                    renderItem={item => (
-                      <List.Item
-                        style={{ padding: '4px 0', textAlign: 'left' }}
-                      >
-                        <Text>• {item}</Text>
-                      </List.Item>
-                    )}
-                  />
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <Tag color="cyan">ТОП</Tag>
-                  <Title level={5} style={{ marginTop: 0 }}>
-                    Navigator
-                  </Title>
-                  <Text type="secondary">Массовый бюджет</Text>
-                  <List
-                    size="small"
-                    dataSource={[
-                      'ТОП промышленные светильники',
-                      'Самые низкие цены',
-                      'Огромный объем продаж',
-                    ]}
-                    renderItem={item => (
-                      <List.Item
-                        style={{ padding: '4px 0', textAlign: 'left' }}
-                      >
-                        <Text>• {item}</Text>
-                      </List.Item>
-                    )}
-                  />
-                </Space>
-              </Card>
-            </Col>
-          </Row>
-        </Card>
-        <Row gutter={[16, 16]}>
-          <Col xs={24} sm={12}>
-            <Card>
-              <Title level={4} style={{ marginTop: 0 }}>
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                Конкурентные преимущества НИТЕОС
-              </Title>
-              <List
-                size="small"
-                dataSource={[
-                  'Широкий ассортимент: 200+ серий, 1500+ модификаций',
-                  'Собственное КБ и разработки',
-                  'Универсальность (все сегменты)',
-                  '15 лет опыта, 9000+ проектов',
-                  'Российское производство',
-                ]}
-                renderItem={item => (
-                  <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
-                    <CheckCircleOutlined
-                      style={{ color: '#52c41a', marginRight: 8 }}
-                    />
-                    <Text>{item}</Text>
-                  </List.Item>
-                )}
-              />
-            </Card>
-          </Col>
-          <Col xs={24} sm={12}>
-            <Card>
-              <Title level={4} style={{ marginTop: 0 }}>
-                <CloseOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
-                Конкурентные недостатки НИТЕОС
-              </Title>
-              <List
-                size="small"
-                dataSource={[
-                  'Не входит в топ-рейтинги 2025',
-                  'Отсутствие социальных сетей',
-                  'Слабый бренд (не обновлялся)',
-                  'Ограниченные мощности (15К vs 50К у ФЕРЕКС)',
-                  'Выручка падает (-11% в 2024)',
-                  'Проблемы с обработкой заявок',
-                  'Разрозненные таблицы вместо системы',
-                ]}
-                renderItem={item => (
-                  <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
-                    <CloseOutlined
-                      style={{ color: '#ff4d4f', marginRight: 8 }}
-                    />
-                    <Text>{item}</Text>
-                  </List.Item>
-                )}
-              />
-            </Card>
-          </Col>
-        </Row>
       </Space>
     ),
   },
