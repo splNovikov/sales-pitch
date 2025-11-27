@@ -10,7 +10,7 @@ const getSlidesBySlug = (slug: string): SlideData[] => {
   const slidesMap: Record<string, SlideData[]> = {
     'kirov-steklo': kirovStekloSlides,
     niteos: niteosSlides,
-    'niteos-short': niteosShortSlides,
+    'niteos-first-turn': niteosShortSlides,
   };
 
   return slidesMap[slug] || [];
