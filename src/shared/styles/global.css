@@ -118,4 +118,9 @@
    *   background: custom-color;
    * }
    */
+
+  /* Ensure List items align to the left */
+  .ant-list-item {
+    justify-content: flex-start !important;
+  }
 }

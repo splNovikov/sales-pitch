@@ -1,5 +1,6 @@
 import { useLoaderData } from 'react-router-dom';
 import { kirovStekloSlides } from '~features/kirov-steklo/slides/kirov-steklo-slides';
+import { niteosSlides } from '~features/niteos/slides/niteos-slides';
 import { Slides, type SlideData } from '~widgets/slides';
 
 // Load slides based on company slug
@@ -7,6 +8,7 @@ const getSlidesBySlug = (slug: string): SlideData[] => {
   // Map company slugs to their slide sets
   const slidesMap: Record<string, SlideData[]> = {
     'kirov-steklo': kirovStekloSlides,
+    niteos: niteosSlides,
   };
 
   return slidesMap[slug] || [];

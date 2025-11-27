@@ -47,8 +47,13 @@ export function useSlidesNotifications(
       return;
     }
 
-    // Only send for kirov-steklo presentation
-    if (slug === 'kirov-steklo' && currentSlideIndex === 0 && totalSlides > 0) {
+    // Send for supported presentations
+    const supportedSlugs = ['kirov-steklo', 'niteos'];
+    if (
+      supportedSlugs.includes(slug) &&
+      currentSlideIndex === 0 &&
+      totalSlides > 0
+    ) {
       startNotificationSent.current = true;
 
       notifyPageVisit(
@@ -68,9 +73,10 @@ export function useSlidesNotifications(
       return;
     }
 
-    // Only send for kirov-steklo presentation
+    // Send for supported presentations
+    const supportedSlugs = ['kirov-steklo', 'niteos'];
     if (
-      slug === 'kirov-steklo' &&
+      supportedSlugs.includes(slug) &&
       currentSlideIndex === totalSlides - 1 &&
       totalSlides > 0
     ) {
