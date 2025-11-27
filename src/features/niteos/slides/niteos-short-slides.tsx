@@ -20,20 +20,15 @@ import {
   ThunderboltOutlined,
   DatabaseOutlined,
   GlobalOutlined,
-  TeamOutlined,
   PhoneOutlined,
-  MailOutlined,
   FileTextOutlined,
-  ShopOutlined,
   SettingOutlined,
   CloseOutlined,
   TagOutlined,
   TrophyOutlined,
-  BankOutlined,
   BuildOutlined,
   SafetyOutlined,
   WarningTwoTone,
-  CreditCardOutlined,
   MessageOutlined,
   RobotOutlined,
   ApiOutlined,
@@ -41,6 +36,7 @@ import {
 } from '@ant-design/icons';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
 import { type SlideData } from '~widgets/slides';
+import niteosLogo from './niteos.png';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
@@ -68,20 +64,25 @@ export const niteosShortSlides: SlideData[] = [
           size="middle"
           style={{ textAlign: 'center', maxWidth: '800px' }}
         >
-          <Title
-            level={1}
+          <a
+            href="https://niteos.ru"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-              fontSize: '48px',
-              fontWeight: 700,
-              background: `linear-gradient(135deg, var(--app-gradient-start) 0%, var(--app-gradient-end) 100%)`,
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              marginBottom: 'var(--app-spacing-md)',
+              display: 'inline-block',
+              marginTop: 'var(--app-spacing-md)',
             }}
           >
-            НИТЕОС
-          </Title>
+            <img
+              src={niteosLogo}
+              alt="НИТЕОС"
+              style={{
+                maxWidth: '300px',
+                height: 'auto',
+                display: 'block',
+              }}
+            />
+          </a>
           <Paragraph
             style={{
               fontSize: 'var(--app-font-size-xl)',
@@ -1381,9 +1382,9 @@ export const niteosShortSlides: SlideData[] = [
                 icon: <FileTextOutlined />,
               },
               {
-                title: 'ИИ анализирует содержимое',
+                title: 'AI агент валидирует заявку',
                 description:
-                  'Читает текст, анализирует изображения, извлекает ключевую информацию',
+                  'AI агент анализирует содержимое заявки, использует кастомный поиск для сопоставления с каталогом продукции',
                 icon: <ThunderboltOutlined />,
               },
               {
@@ -1415,9 +1416,7 @@ export const niteosShortSlides: SlideData[] = [
         </Card>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
-            <CheckCircleOutlined
-              style={{ color: '#52c41a', marginRight: 8 }}
-            />
+            <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
             Преимущества ИИ-решения
           </Title>
           <Row gutter={[16, 16]}>
@@ -1429,7 +1428,10 @@ export const niteosShortSlides: SlideData[] = [
                   style={{ width: '100%' }}
                 >
                   <Text strong>Скорость обработки:</Text>
-                  <Title level={3} style={{ margin: '8px 0', color: '#52c41a' }}>
+                  <Title
+                    level={3}
+                    style={{ margin: '8px 0', color: '#52c41a' }}
+                  >
                     Мгновенно
                   </Title>
                   <Text type="secondary">24/7 без перерывов</Text>
@@ -1444,7 +1446,10 @@ export const niteosShortSlides: SlideData[] = [
                   style={{ width: '100%' }}
                 >
                   <Text strong>Точность распределения:</Text>
-                  <Title level={3} style={{ margin: '8px 0', color: '#52c41a' }}>
+                  <Title
+                    level={3}
+                    style={{ margin: '8px 0', color: '#52c41a' }}
+                  >
                     95%+
                   </Title>
                   <Text type="secondary">Правильная маршрутизация</Text>
@@ -1459,7 +1464,10 @@ export const niteosShortSlides: SlideData[] = [
                   style={{ width: '100%' }}
                 >
                   <Text strong>Экономия времени:</Text>
-                  <Title level={3} style={{ margin: '8px 0', color: '#52c41a' }}>
+                  <Title
+                    level={3}
+                    style={{ margin: '8px 0', color: '#52c41a' }}
+                  >
                     80-100 ч/мес
                   </Title>
                   <Text type="secondary">Сотрудников</Text>
@@ -1474,7 +1482,10 @@ export const niteosShortSlides: SlideData[] = [
                   style={{ width: '100%' }}
                 >
                   <Text strong>Снижение ошибок:</Text>
-                  <Title level={3} style={{ margin: '8px 0', color: '#52c41a' }}>
+                  <Title
+                    level={3}
+                    style={{ margin: '8px 0', color: '#52c41a' }}
+                  >
                     -70%
                   </Title>
                   <Text type="secondary">Неправильных распределений</Text>
@@ -1558,7 +1569,7 @@ export const niteosShortSlides: SlideData[] = [
                 dataIndex: 'after',
                 key: 'after',
                 align: 'center',
-                render: (text) => <Text strong>{text}</Text>,
+                render: text => <Text strong>{text}</Text>,
               },
               {
                 title: 'Улучшение',
@@ -1709,10 +1720,7 @@ export const niteosShortSlides: SlideData[] = [
             <Col xs={24}>
               <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
                 <Text strong>ROI:</Text>
-                <Title
-                  level={2}
-                  style={{ margin: '8px 0', color: '#52c41a' }}
-                >
+                <Title level={2} style={{ margin: '8px 0', color: '#52c41a' }}>
                   500-750%
                 </Title>
                 <Text type="secondary">В первый год</Text>
@@ -1726,13 +1734,16 @@ export const niteosShortSlides: SlideData[] = [
             Сроки внедрения
           </Title>
           <Descriptions column={1} bordered size="small">
-            <Descriptions.Item label="Разработка ИИ-модуля">
-              2-3 месяца
+            <Descriptions.Item label="Подключение AI агента">
+              1 месяц
             </Descriptions.Item>
             <Descriptions.Item label="Интеграция с системой">
               1 месяц
             </Descriptions.Item>
-            <Descriptions.Item label="Обучение и тестирование">
+            <Descriptions.Item label="Этап тестирования (параллельная работа)">
+              1 месяц
+            </Descriptions.Item>
+            <Descriptions.Item label="Тестирование и настройка">
               1 месяц
             </Descriptions.Item>
             <Descriptions.Item label="Общий срок">
@@ -1761,13 +1772,13 @@ export const niteosShortSlides: SlideData[] = [
               {
                 title: 'Модуль приема заявок',
                 description:
-                  'Единая точка входа для всех каналов: сайт, email, Telegram, WhatsApp, звонки',
+                  'Единая точка входа для всех каналов: сайт, email, Telegram, WhatsApp, звонки. Донастройка входящей формы для улучшения качества данных',
                 icon: <GlobalOutlined />,
               },
               {
-                title: 'ИИ-модуль анализа',
+                title: 'AI агент для валидации',
                 description:
-                  'NLP для обработки текста, компьютерное зрение для изображений, классификация заявок',
+                  'Подключение AI агента для анализа заявок, валидации данных и классификации. Кастомный поиск в помощь агенту для работы с каталогом продукции',
                 icon: <RobotOutlined />,
               },
               {
@@ -1799,22 +1810,20 @@ export const niteosShortSlides: SlideData[] = [
         </Card>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
-            <CheckCircleOutlined
-              style={{ color: '#52c41a', marginRight: 8 }}
-            />
-            Ключевые возможности ИИ
+            <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
+            Ключевые возможности решения
           </Title>
           <Row gutter={[16, 16]}>
             <Col xs={24} sm={12}>
               <Card size="small">
-                <Text strong>Обработка текста</Text>
+                <Text strong>AI агент для валидации</Text>
                 <List
                   size="small"
                   dataSource={[
-                    'Извлечение ключевой информации',
+                    'Валидация входящих заявок',
                     'Определение типа заявки',
-                    'Анализ тональности',
-                    'Выявление критичных параметров',
+                    'Проверка полноты данных',
+                    'Извлечение ключевой информации',
                   ]}
                   renderItem={item => (
                     <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
@@ -1826,14 +1835,52 @@ export const niteosShortSlides: SlideData[] = [
             </Col>
             <Col xs={24} sm={12}>
               <Card size="small">
-                <Text strong>Обработка изображений</Text>
+                <Text strong>Кастомный поиск</Text>
                 <List
                   size="small"
                   dataSource={[
-                    'Распознавание эскизов светильников',
-                    'Анализ технических чертежей',
-                    'Извлечение параметров из фото',
-                    'Определение типа изделия',
+                    'Поиск по каталогу продукции',
+                    'Сопоставление заявки с ассортиментом',
+                    'Определение типа светильника',
+                    'Работа с базой знаний компании',
+                  ]}
+                  renderItem={item => (
+                    <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
+                      <Text>• {item}</Text>
+                    </List.Item>
+                  )}
+                />
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small">
+                <Text strong>Донастройка входящей формы</Text>
+                <List
+                  size="small"
+                  dataSource={[
+                    'Оптимизация полей формы',
+                    'Улучшение структуры данных',
+                    'Автозаполнение на основе истории',
+                    'Валидация на этапе заполнения',
+                  ]}
+                  renderItem={item => (
+                    <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
+                      <Text>• {item}</Text>
+                    </List.Item>
+                  )}
+                />
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small">
+                <Text strong>Кастомный поиск</Text>
+                <List
+                  size="small"
+                  dataSource={[
+                    'Поиск по каталогу продукции (200+ серий)',
+                    'Сопоставление заявки с ассортиментом',
+                    'Автоматическое определение типа светильника',
+                    'Интеграция с базой знаний компании',
                   ]}
                   renderItem={item => (
                     <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
@@ -1853,25 +1900,6 @@ export const niteosShortSlides: SlideData[] = [
                     'Учет загрузки менеджеров',
                     'Приоритизация срочных заявок',
                     'История работы с клиентом',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
-                      <Text>• {item}</Text>
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small">
-                <Text strong>Обучение и улучшение</Text>
-                <List
-                  size="small"
-                  dataSource={[
-                    'Самообучение на основе обратной связи',
-                    'Улучшение точности со временем',
-                    'Адаптация под специфику компании',
-                    'Анализ успешных кейсов',
                   ]}
                   renderItem={item => (
                     <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
@@ -1979,9 +2007,7 @@ export const niteosShortSlides: SlideData[] = [
         </Card>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
-            <CheckCircleOutlined
-              style={{ color: '#52c41a', marginRight: 8 }}
-            />
+            <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
             Дополнительные преимущества
           </Title>
           <List
@@ -1992,7 +2018,7 @@ export const niteosShortSlides: SlideData[] = [
               'Консистентность: одинаковое качество обработки',
               'Снижение нагрузки на сотрудников',
               'Возможность перераспределения ресурсов',
-              'Накопление знаний: ИИ учится на каждом кейсе',
+              'Постоянная настройка AI агента под специфику компании',
             ]}
             renderItem={item => (
               <List.Item
@@ -2031,9 +2057,9 @@ export const niteosShortSlides: SlideData[] = [
                 icon: <FileTextOutlined />,
               },
               {
-                title: 'Этап 2: Разработка ИИ-модуля (2-3 месяца)',
+                title: 'Этап 2: Подключение AI агента (1 месяц)',
                 description:
-                  'Создание моделей обработки текста и изображений, модуль маршрутизации',
+                  'Подключение AI агента для валидации, разработка кастомного поиска, донастройка входящей формы',
                 icon: <ApiOutlined />,
               },
               {
@@ -2043,15 +2069,21 @@ export const niteosShortSlides: SlideData[] = [
                 icon: <SettingOutlined />,
               },
               {
-                title: 'Этап 4: Тестирование и обучение (1 месяц)',
+                title: 'Этап 4: Параллельное тестирование (1 месяц)',
                 description:
-                  'Тестирование на реальных заявках, обучение ИИ, настройка точности',
+                  'AI агент работает параллельно с текущей системой. Валидация работы агента на реальных заявках без переключения на новую модель. Сбор обратной связи и метрик',
                 icon: <CheckCircleOutlined />,
               },
               {
-                title: 'Этап 5: Запуск и мониторинг',
+                title: 'Этап 5: Финальная настройка (1 месяц)',
                 description:
-                  'Постепенный запуск, мониторинг метрик, доработка по обратной связи',
+                  'Настройка AI агента на основе результатов тестирования, оптимизация кастомного поиска, подготовка к запуску',
+                icon: <CheckCircleOutlined />,
+              },
+              {
+                title: 'Этап 6: Запуск и мониторинг',
+                description:
+                  'Переключение на новую модель работы с AI агентом, мониторинг метрик, доработка по обратной связи',
                 icon: <BarChartOutlined />,
               },
             ]}
@@ -2088,7 +2120,7 @@ export const niteosShortSlides: SlideData[] = [
                   size="small"
                   dataSource={[
                     '3 месяца бесплатной поддержки',
-                    'Обучение ИИ на новых данных',
+                    'Настройка AI агента на новых данных',
                     'Техническая поддержка 24/7',
                   ]}
                   renderItem={item => (
@@ -2162,4 +2194,3 @@ export const niteosShortSlides: SlideData[] = [
     ),
   },
 ];
-
