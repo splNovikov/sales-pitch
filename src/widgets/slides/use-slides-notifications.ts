@@ -48,7 +48,7 @@ export function useSlidesNotifications(
     }
 
     // Send for supported presentations
-    const supportedSlugs = ['kirov-steklo', 'niteos'];
+    const supportedSlugs = ['kirov-steklo', 'niteos', 'niteos-short'];
     if (
       supportedSlugs.includes(slug) &&
       currentSlideIndex === 0 &&
@@ -74,7 +74,7 @@ export function useSlidesNotifications(
     }
 
     // Send for supported presentations
-    const supportedSlugs = ['kirov-steklo', 'niteos'];
+    const supportedSlugs = ['kirov-steklo', 'niteos', 'niteos-short'];
     if (
       supportedSlugs.includes(slug) &&
       currentSlideIndex === totalSlides - 1 &&
