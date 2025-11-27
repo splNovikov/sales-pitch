@@ -1245,24 +1245,52 @@ export const niteosSlides: SlideData[] = [
               {
                 title: 'ИННОПРОМ-2023',
                 date: '14 июля 2023',
+                link: 'https://niteos.ru/company/news/innoprom_2023_priglashaem_na_stend_niteos_/',
+                linkText: 'niteos.ru',
               },
               {
                 title: 'Статья об энергоэффективности',
                 date: '10 ноября 2025 — СВЕЖАЯ!',
+                link: 'https://niteos.ru/company/news/energoeffektivnost_led_svetilnikov_kak_snizit_raskhody_na_elektroenergiyu_vmeste_s_niteos/',
+                linkText: 'niteos.ru',
               },
               {
                 title: 'Материал об импортозамещении',
-                date: '31 май 2024',
+                date: '1 июня 2024',
+                link: 'https://niteos.ru/company/news/importozameshchenie_svetodiodnykh_svetilnikov/',
+                linkText: 'niteos.ru',
+              },
+              {
+                title: 'Упоминание на портале utilicon',
+                date: '29.10.2025',
+                link: 'https://utilicon.ru/tpost/n2c1tzg3g1-evolyutsiya-sveta-dlya-gorodov-ot-niteos',
+                linkText: 'utilicon',
               },
               {
                 title: 'Упоминание на портале Elec.ru',
-                date: 'Каталог',
+                date: '14.07.2023',
+                link: 'https://www.elec.ru/news/2023/07/14/mishustin-i-minnikhanov-ledel-i-fereks-na-innoprom.html',
+                linkText: 'elec.ru',
               },
             ]}
             renderItem={item => (
               <List.Item style={{ justifyContent: 'flex-start' }}>
                 <List.Item.Meta
-                  title={<Text strong>{item.title}</Text>}
+                  title={
+                    <Space>
+                      <Text strong>{item.title}</Text>
+                      {item.link && (
+                        <Link
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ fontSize: '12px' }}
+                        >
+                          ({item.linkText})
+                        </Link>
+                      )}
+                    </Space>
+                  }
                   description={item.date}
                 />
               </List.Item>
