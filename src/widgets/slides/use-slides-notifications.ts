@@ -48,7 +48,12 @@ export function useSlidesNotifications(
     }
 
     // Send for supported presentations
-    const supportedSlugs = ['kirov-steklo', 'niteos', 'niteos-first-turn'];
+    const supportedSlugs = [
+      'kirov-steklo',
+      'niteos',
+      'niteos-first-turn',
+      'hanskonner',
+    ];
     if (
       supportedSlugs.includes(slug) &&
       currentSlideIndex === 0 &&
@@ -74,7 +79,12 @@ export function useSlidesNotifications(
     }
 
     // Send for supported presentations
-    const supportedSlugs = ['kirov-steklo', 'niteos', 'niteos-first-turn'];
+    const supportedSlugs = [
+      'kirov-steklo',
+      'niteos',
+      'niteos-first-turn',
+      'hanskonner',
+    ];
     if (
       supportedSlugs.includes(slug) &&
       currentSlideIndex === totalSlides - 1 &&
