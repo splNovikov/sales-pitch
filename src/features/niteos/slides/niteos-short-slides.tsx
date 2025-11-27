@@ -11,7 +11,6 @@ import {
   Descriptions,
 } from 'antd';
 import {
-  UserOutlined,
   DollarOutlined,
   WarningOutlined,
   CheckCircleOutlined,
@@ -486,9 +485,7 @@ export const niteosShortSlides: SlideData[] = [
               <List.Item
                 style={{ padding: '4px 0', justifyContent: 'flex-start' }}
               >
-                <WarningOutlined
-                  style={{ color: '#ff4d4f', marginRight: 8 }}
-                />
+                <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
                 <Text>{item}</Text>
               </List.Item>
             )}
