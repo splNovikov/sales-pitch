@@ -12,8 +12,6 @@ import {
 import {
   UserOutlined,
   PhoneOutlined,
-  MailOutlined,
-  GlobalOutlined,
   ShopOutlined,
   SettingOutlined,
   SafetyOutlined,
@@ -21,10 +19,7 @@ import {
   QuestionCircleOutlined,
   CheckCircleOutlined,
   WarningOutlined,
-  ApiOutlined,
   DatabaseOutlined,
-  CodeOutlined,
-  RocketOutlined,
   ThunderboltOutlined,
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
