@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 
 export interface SlideData {
   id: string;
-  header?: string;
+  header?: string | React.ReactNode;
   content: React.ReactNode;
 }
 

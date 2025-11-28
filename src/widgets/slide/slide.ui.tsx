@@ -7,7 +7,7 @@ const { Title } = Typography;
 interface SlideProps {
   slide: {
     id: string;
-    header?: string;
+    header?: string | React.ReactNode;
     content: React.ReactNode;
   };
 }

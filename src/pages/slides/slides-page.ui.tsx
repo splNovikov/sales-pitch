@@ -8,6 +8,7 @@ import {
   smzBriefSlides,
   smzSolutionSlides,
 } from '~features/smz/slides';
+import { proximaSlides } from '~features/proxima/slides';
 import { Slides, type SlideData } from '~widgets/slides';
 
 // Load slides based on company slug
@@ -21,6 +22,7 @@ const getSlidesBySlug = (slug: string): SlideData[] => {
     smz: smzSlides,
     'smz-brief': smzBriefSlides,
     'smz-solution': smzSolutionSlides,
+    proxima: proximaSlides,
   };
 
   return slidesMap[slug] || [];
