@@ -1,13 +1,4 @@
-import {
-  Typography,
-  List,
-  Space,
-  Divider,
-  Card,
-  Row,
-  Col,
-  Tag,
-} from 'antd';
+import { Typography, List, Space, Divider, Card, Row, Col, Tag } from 'antd';
 import {
   RocketOutlined,
   CheckCircleOutlined,
@@ -16,7 +7,6 @@ import {
   DatabaseOutlined,
   SafetyOutlined,
   GlobalOutlined,
-  UserOutlined,
   FileTextOutlined,
   SettingOutlined,
   ApiOutlined,
@@ -145,9 +135,7 @@ export const smzSolutionSlides: SlideData[] = [
               >
                 <div>
                   <Text strong>Сроки:</Text>
-                  <Paragraph style={{ margin: '4px 0' }}>
-                    3-4 месяца
-                  </Paragraph>
+                  <Paragraph style={{ margin: '4px 0' }}>3-4 месяца</Paragraph>
                 </div>
                 <div>
                   <Text strong>Ключевые преимущества:</Text>
@@ -207,9 +195,7 @@ export const smzSolutionSlides: SlideData[] = [
               >
                 <div>
                   <Text strong>Сроки:</Text>
-                  <Paragraph style={{ margin: '4px 0' }}>
-                    6-8 месяцев
-                  </Paragraph>
+                  <Paragraph style={{ margin: '4px 0' }}>6-8 месяцев</Paragraph>
                 </div>
                 <div>
                   <Text strong>Ключевые преимущества:</Text>
@@ -264,9 +250,7 @@ export const smzSolutionSlides: SlideData[] = [
               >
                 <div>
                   <Text strong>Сроки:</Text>
-                  <Paragraph style={{ margin: '4px 0' }}>
-                    1-2 месяца
-                  </Paragraph>
+                  <Paragraph style={{ margin: '4px 0' }}>1-2 месяца</Paragraph>
                 </div>
                 <div>
                   <Text strong type="danger">
@@ -769,7 +753,23 @@ export const smzSolutionSlides: SlideData[] = [
           </Title>
           <Row gutter={[16, 16]}>
             <Col xs={24} sm={12}>
-              <Card>
+              <Card
+                style={{
+                  backgroundColor: '#e6f7ff',
+                  border: '2px solid #1890ff',
+                }}
+              >
+                <Tag
+                  color="blue"
+                  style={{
+                    position: 'absolute',
+                    top: '16px',
+                    right: '16px',
+                    fontSize: '12px',
+                  }}
+                >
+                  РЕКОМЕНДУЕТСЯ
+                </Tag>
                 <Title level={5} style={{ marginTop: 0 }}>
                   <FileTextOutlined
                     style={{
@@ -777,19 +777,27 @@ export const smzSolutionSlides: SlideData[] = [
                       color: 'var(--app-color-primary)',
                     }}
                   />
-                  CommerceML 2.0
+                  Файловый обмен (CommerceML 2.0)
                 </Title>
                 <List
                   size="small"
                   dataSource={[
-                    'Стандартный формат обмена',
+                    'Стандартный механизм обмена',
                     'Поддержка в 1С:УП 8.3',
                     'Обмен каталогом, ценами, остатками',
                     'Файловый обмен через защищённый каталог',
+                    'Надёжный и проверенный способ',
                   ]}
                   renderItem={item => (
                     <List.Item style={{ padding: '2px 0', fontSize: '12px' }}>
-                      <Text>• {item}</Text>
+                      <CheckCircleOutlined
+                        style={{
+                          color: '#1890ff',
+                          marginRight: 8,
+                          fontSize: '12px',
+                        }}
+                      />
+                      <Text>{item}</Text>
                     </List.Item>
                   )}
                 />
@@ -823,6 +831,20 @@ export const smzSolutionSlides: SlideData[] = [
               </Card>
             </Col>
           </Row>
+        </Card>
+        <Card style={{ backgroundColor: '#e6f7ff' }}>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <CheckCircleOutlined style={{ color: '#1890ff', marginRight: 8 }} />
+            Наша рекомендация
+          </Title>
+          <Paragraph>
+            <Text strong>
+              Рекомендуем стандартный механизм обмена через файловый обмен
+              (CommerceML 2.0). Это надёжный, проверенный способ, который
+              обеспечивает безопасный обмен данными через защищённый каталог без
+              прямого подключения 1С к интернету.
+            </Text>
+          </Paragraph>
         </Card>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
@@ -869,8 +891,35 @@ export const smzSolutionSlides: SlideData[] = [
           </Title>
           <Row gutter={[16, 16]}>
             <Col xs={24} sm={12}>
+              <Card
+                size="small"
+                style={{
+                  backgroundColor: '#e6f7ff',
+                  border: '2px solid #1890ff',
+                }}
+              >
+                <Tag
+                  color="blue"
+                  style={{
+                    position: 'absolute',
+                    top: '8px',
+                    right: '8px',
+                    fontSize: '10px',
+                  }}
+                >
+                  РЕКОМЕНДУЕТСЯ
+                </Tag>
+                <Text strong>Файловый обмен (CommerceML 2.0)</Text>
+                <Paragraph style={{ fontSize: '12px', marginTop: '8px' }}>
+                  Обмен через защищённый каталог на файловом сервере с
+                  ограниченным доступом. Стандартный механизм, не требует
+                  прямого подключения 1С к интернету.
+                </Paragraph>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
               <Card size="small">
-                <Text strong>Вариант 1: Промежуточный сервер-шлюз</Text>
+                <Text strong>Промежуточный сервер-шлюз</Text>
                 <Paragraph style={{ fontSize: '12px', marginTop: '8px' }}>
                   Отдельный сервер между сайтом и 1С, который обеспечивает
                   безопасный обмен данными
@@ -879,22 +928,45 @@ export const smzSolutionSlides: SlideData[] = [
             </Col>
             <Col xs={24} sm={12}>
               <Card size="small">
-                <Text strong>Вариант 2: Файловый обмен</Text>
-                <Paragraph style={{ fontSize: '12px', marginTop: '8px' }}>
-                  Обмен через защищённый каталог на файловом сервере с
-                  ограниченным доступом
-                </Paragraph>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small">
-                <Text strong>Вариант 3: API-прослойка с токенами</Text>
+                <Text strong>API-прослойка с токенами</Text>
                 <Paragraph style={{ fontSize: '12px', marginTop: '8px' }}>
                   REST API с токенами доступа и ограничением IP-адресов
                 </Paragraph>
               </Card>
             </Col>
           </Row>
+        </Card>
+        <Card style={{ backgroundColor: '#fff7e6' }}>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <FileTextOutlined style={{ color: '#faad14', marginRight: 8 }} />
+            Согласование с 1С-безопасниками
+          </Title>
+          <Paragraph>
+            <Text strong>
+              Необходимо согласовать выбранный механизм обмена данными с
+              1С-безопасниками компании. Мы подготовим детальную схему
+              безопасности и техническое описание для согласования.
+            </Text>
+          </Paragraph>
+          <List
+            size="small"
+            dataSource={[
+              'Детальная схема архитектуры обмена',
+              'Описание всех мер безопасности',
+              'Технические спецификации',
+              'План тестирования безопасности',
+            ]}
+            renderItem={item => (
+              <List.Item
+                style={{ padding: '4px 0', justifyContent: 'flex-start' }}
+              >
+                <CheckCircleOutlined
+                  style={{ color: '#faad14', marginRight: 8 }}
+                />
+                <Text>{item}</Text>
+              </List.Item>
+            )}
+          />
         </Card>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
@@ -1037,126 +1109,6 @@ export const smzSolutionSlides: SlideData[] = [
                     1-2 месяца
                   </Title>
                   <Text type="danger">Вариант 3: Доработка</Text>
-                </Space>
-              </Card>
-            </Col>
-          </Row>
-        </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'advantages',
-    header: 'Преимущества нашего решения',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <ThunderboltOutlined
-              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
-            />
-            Почему выбирают нас
-          </Title>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <CheckCircleOutlined
-                    style={{ color: '#1890ff', fontSize: '24px' }}
-                  />
-                  <Text strong>Опыт работы с Bitrix</Text>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Глубокое знание платформы и её возможностей
-                  </Text>
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <CheckCircleOutlined
-                    style={{ color: '#52c41a', fontSize: '24px' }}
-                  />
-                  <Text strong>Интеграция с 1С</Text>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Опыт настройки безопасного обмена данными
-                  </Text>
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <CheckCircleOutlined
-                    style={{ color: '#faad14', fontSize: '24px' }}
-                  />
-                  <Text strong>Красивый дизайн</Text>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Новый шаблон или кастомный интерфейс
-                  </Text>
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <CheckCircleOutlined
-                    style={{ color: '#ff4d4f', fontSize: '24px' }}
-                  />
-                  <Text strong>Безопасность</Text>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Гарантированная защита данных 1С
-                  </Text>
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#f0f9ff' }}>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <CheckCircleOutlined
-                    style={{ color: '#1890ff', fontSize: '24px' }}
-                  />
-                  <Text strong>Поддержка</Text>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Техническая поддержка и сопровождение
-                  </Text>
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <CheckCircleOutlined
-                    style={{ color: '#52c41a', fontSize: '24px' }}
-                  />
-                  <Text strong>Сроки</Text>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Чёткие сроки и этапы разработки
-                  </Text>
                 </Space>
               </Card>
             </Col>
