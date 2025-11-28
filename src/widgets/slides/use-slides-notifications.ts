@@ -56,6 +56,7 @@ export function useSlidesNotifications(
       'smz',
       'smz-brief',
       'smz-solution',
+      'proxima',
     ];
     if (
       supportedSlugs.includes(slug) &&
@@ -90,6 +91,7 @@ export function useSlidesNotifications(
       'smz',
       'smz-brief',
       'smz-solution',
+      'proxima',
     ];
     if (
       supportedSlugs.includes(slug) &&
