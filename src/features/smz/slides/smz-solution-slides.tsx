@@ -7,7 +7,6 @@ import {
   Row,
   Col,
   Tag,
-  Table,
 } from 'antd';
 import {
   RocketOutlined,
@@ -18,19 +17,16 @@ import {
   SafetyOutlined,
   GlobalOutlined,
   UserOutlined,
-  MailOutlined,
   FileTextOutlined,
   SettingOutlined,
   ApiOutlined,
   CreditCardOutlined,
-  BarChartOutlined,
   PhoneOutlined,
   CalendarOutlined,
   ClockCircleOutlined,
   BuildOutlined,
   TrophyOutlined,
   CodeOutlined,
-  WarningOutlined,
   CloseOutlined,
 } from '@ant-design/icons';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
@@ -690,11 +686,14 @@ export const smzSolutionSlides: SlideData[] = [
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
             <CreditCardOutlined style={{ marginRight: 8 }} />
-            Корзина и оформление заказа
+            Корзина, оформление заказа и личный кабинет
           </Title>
           <Row gutter={[16, 16]}>
             <Col xs={24} sm={12}>
               <Card size="small">
+                <Title level={5} style={{ marginTop: 0, fontSize: '14px' }}>
+                  Корзина и оформление
+                </Title>
                 <List
                   size="small"
                   dataSource={[
@@ -722,51 +721,36 @@ export const smzSolutionSlides: SlideData[] = [
             <Col xs={24} sm={12}>
               <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
                 <Title level={5} style={{ marginTop: 0, fontSize: '14px' }}>
-                  Многоуровневые цены
+                  Личный кабинет и многоуровневые цены
                 </Title>
                 <List
                   size="small"
                   dataSource={[
+                    'Многоуровневые цены определяются личным кабинетом',
                     'Розничные цены (B2C)',
                     'Оптовые цены (B2B)',
                     'Дилерские цены',
-                    'Автоматическое определение уровня',
+                    'История заказов с детализацией',
+                    'Повторные заказы (быстрое оформление)',
+                    'Отслеживание статусов заказов',
+                    'Управление профилем и реквизитами',
                   ]}
                   renderItem={item => (
                     <List.Item style={{ padding: '2px 0', fontSize: '12px' }}>
-                      <Text>• {item}</Text>
+                      <CheckCircleOutlined
+                        style={{
+                          color: '#52c41a',
+                          marginRight: 8,
+                          fontSize: '12px',
+                        }}
+                      />
+                      <Text>{item}</Text>
                     </List.Item>
                   )}
                 />
               </Card>
             </Col>
           </Row>
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <UserOutlined style={{ marginRight: 8 }} />
-            Личный кабинет
-          </Title>
-          <List
-            size="small"
-            dataSource={[
-              'История заказов с детализацией',
-              'Повторные заказы (быстрое оформление)',
-              'Отслеживание статусов заказов',
-              'Управление профилем и реквизитами',
-              'Разные уровни доступа (B2B / B2C)',
-            ]}
-            renderItem={item => (
-              <List.Item
-                style={{ padding: '4px 0', justifyContent: 'flex-start' }}
-              >
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
         </Card>
       </Space>
     ),
