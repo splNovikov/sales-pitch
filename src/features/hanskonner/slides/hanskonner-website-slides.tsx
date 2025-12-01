@@ -24,6 +24,10 @@ import {
   SyncOutlined,
   AppstoreOutlined,
   TrophyOutlined,
+  CarOutlined,
+  DollarOutlined,
+  ReloadOutlined,
+  HistoryOutlined,
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
@@ -33,7 +37,10 @@ import ruskonMain2 from './ruskon_main_2.png';
 import ruskonMain3 from './ruskon_main_3.png';
 import ruskonMain4 from './ruskon_main_4.png';
 import ruskonMain5 from './ruskon_main_5.png';
-import ruskonMain6 from './ruskon_main_6.png';
+import ruskonPdp1 from './ruskon_pdp_1.png';
+import ruskonPdp2 from './ruskon_pdp_2.png';
+import ruskonPdp3 from './ruskon_pdp_3.png';
+import ruskonSubcategory from './ruskon_subcategory.png';
 import ruskonProfile1 from './ruskon_profile_1.png';
 import ruskonProfile2 from './ruskon_profile_2.png';
 import ruskonOrder from './ruskon_order.png';
@@ -467,7 +474,7 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
             <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
-            Преимущества для B2B бизнеса
+            Основные преимущества
           </Title>
           <Row gutter={[16, 16]}>
             <Col xs={24} sm={12}>
@@ -481,20 +488,11 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                     <ShopOutlined style={{ marginRight: 8 }} />
                     Готовая e-commerce функциональность
                   </Text>
-                  <List
-                    size="small"
-                    dataSource={[
-                      'Корзина и оформление заказов',
-                      'Управление каталогом товаров',
-                      'Система скидок и промокодов',
-                      'Разные типы цен для B2B',
-                    ]}
-                    renderItem={item => (
-                      <List.Item style={{ padding: '2px 0' }}>
-                        <Text>• {item}</Text>
-                      </List.Item>
-                    )}
-                  />
+                  <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                    Стандартный набор функций для интернет-магазина: корзина,
+                    каталог, базовые личные кабинеты. Подходит для типовых
+                    задач.
+                  </Paragraph>
                 </Space>
               </Card>
             </Col>
@@ -506,79 +504,13 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                   style={{ width: '100%' }}
                 >
                   <Text strong>
-                    <UserOutlined style={{ marginRight: 8 }} />
-                    Личные кабинеты из коробки
-                  </Text>
-                  <List
-                    size="small"
-                    dataSource={[
-                      'Разные типы пользователей',
-                      'Персональные прайс-листы',
-                      'История заказов',
-                      'Управление профилем',
-                    ]}
-                    renderItem={item => (
-                      <List.Item style={{ padding: '2px 0' }}>
-                        <Text>• {item}</Text>
-                      </List.Item>
-                    )}
-                  />
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <Text strong>
-                    <SyncOutlined style={{ marginRight: 8 }} />
-                    Интеграции из коробки
-                  </Text>
-                  <List
-                    size="small"
-                    dataSource={[
-                      'Готовые модули для 1С',
-                      'Интеграция с платежными системами',
-                      'Подключение CRM',
-                      'Синхронизация склада',
-                    ]}
-                    renderItem={item => (
-                      <List.Item style={{ padding: '2px 0' }}>
-                        <Text>• {item}</Text>
-                      </List.Item>
-                    )}
-                  />
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <Text strong>
                     <SettingOutlined style={{ marginRight: 8 }} />
-                    Удобное управление контентом
+                    Быстрый старт
                   </Text>
-                  <List
-                    size="small"
-                    dataSource={[
-                      'Редактирование без программиста',
-                      'Множество готовых шаблонов',
-                      'Визуальный редактор',
-                      'SEO инструменты',
-                    ]}
-                    renderItem={item => (
-                      <List.Item style={{ padding: '2px 0' }}>
-                        <Text>• {item}</Text>
-                      </List.Item>
-                    )}
-                  />
+                  <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                    Возможность запустить сайт за короткий срок с готовыми
+                    шаблонами и базовыми настройками без глубокой кастомизации.
+                  </Paragraph>
                 </Space>
               </Card>
             </Col>
@@ -587,16 +519,14 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
             <ThunderboltOutlined style={{ marginRight: 8 }} />
-            Когда выбирать шаблонный фронтенд
+            Когда это действительно подходит
           </Title>
           <List
             size="large"
             dataSource={[
-              'Нужна быстрая запуск интернет-магазина',
-              'Требуется стандартный набор функций e-commerce',
-              'Важна возможность самостоятельного обновления контента',
-              'Есть готовые интеграции, которые нужны (1С, платежи)',
-              'Планируется активная работа с каталогом товаров',
+              'Нужен быстрый запуск стандартного интернет-магазина',
+              'Требуется базовый набор функций без специфических требований',
+              'Важна возможность самостоятельного обновления контента без программистов',
             ]}
             renderItem={item => (
               <List.Item>
@@ -611,6 +541,20 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
               </List.Item>
             )}
           />
+        </Card>
+        <Card
+          style={{ backgroundColor: '#fff7e6', border: '1px solid #faad14' }}
+        >
+          <Title level={5} style={{ marginTop: 0 }}>
+            <ThunderboltOutlined style={{ marginRight: 8 }} />
+            Важно понимать
+          </Title>
+          <Paragraph style={{ marginBottom: 0 }}>
+            Шаблонный фронтенд имеет ограничения по кастомизации и не подходит
+            для сложных B2B-задач, уникальной логики работы с дилерами и
+            продвинутых интеграций. Для профессиональных решений, как у
+            HansKonner, лучше выбрать кастомный фронтенд.
+          </Paragraph>
         </Card>
       </Space>
     ),
@@ -740,12 +684,20 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
             </Col>
           </Row>
         </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'why-custom-for-hanskonner',
+    header: 'Почему кастомный фронтенд идеален для HansKonner',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card
           style={{ backgroundColor: '#f6ffed', border: '2px solid #52c41a' }}
         >
           <Title level={4} style={{ marginTop: 0, color: '#52c41a' }}>
             <ThunderboltOutlined style={{ marginRight: 8 }} />
-            Почему кастомный фронтенд идеален для HansKonner
+            Кастомный фронтенд — идеальное решение для Вашего бизнеса
           </Title>
           <List
             size="large"
@@ -772,6 +724,19 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
               </List.Item>
             )}
           />
+        </Card>
+        <Card style={{ backgroundColor: '#e6f7ff' }}>
+          <Title level={5} style={{ marginTop: 0 }}>
+            <RocketOutlined style={{ marginRight: 8 }} />
+            Индивидуальный подход
+          </Title>
+          <Paragraph style={{ marginBottom: 0 }}>
+            Кастомный фронтенд позволяет создать решение, полностью
+            адаптированное под специфику Вашего бизнеса. Мы не ограничены
+            рамками готовых шаблонов и можем реализовать любую логику работы с
+            каталогом, дилерами и интеграциями, необходимую для эффективной
+            работы HansKonner.
+          </Paragraph>
         </Card>
       </Space>
     ),
@@ -1071,8 +1036,8 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
     ),
   },
   {
-    id: 'ruskon-main-6',
-    header: 'Рускон: Главная страница',
+    id: 'ruskon-pdp-1',
+    header: 'Рускон: Страница товара',
     content: (
       <Space
         orientation="vertical"
@@ -1087,8 +1052,107 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
         <Card style={{ maxWidth: '1200px', width: '100%' }}>
           <Card style={{ textAlign: 'center' }}>
             <img
-              src={ruskonMain6}
-              alt="Рускон - Главная страница 6"
+              src={ruskonPdp1}
+              alt="Рускон - Страница товара 1"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: '75vh',
+                objectFit: 'contain',
+                borderRadius: '8px',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+              }}
+            />
+          </Card>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-pdp-2',
+    header: 'Рускон: Страница товара',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Card style={{ maxWidth: '1200px', width: '100%' }}>
+          <Card style={{ textAlign: 'center' }}>
+            <img
+              src={ruskonPdp2}
+              alt="Рускон - Страница товара 2"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: '75vh',
+                objectFit: 'contain',
+                borderRadius: '8px',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+              }}
+            />
+          </Card>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-pdp-3',
+    header: 'Рускон: Страница товара',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Card style={{ maxWidth: '1200px', width: '100%' }}>
+          <Card style={{ textAlign: 'center' }}>
+            <img
+              src={ruskonPdp3}
+              alt="Рускон - Страница товара 3"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: '75vh',
+                objectFit: 'contain',
+                borderRadius: '8px',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+              }}
+            />
+          </Card>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-subcategory',
+    header: 'Рускон: Подкатегория',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Card style={{ maxWidth: '1200px', width: '100%' }}>
+          <Card style={{ textAlign: 'center' }}>
+            <img
+              src={ruskonSubcategory}
+              alt="Рускон - Подкатегория"
               style={{
                 width: '100%',
                 height: 'auto',
@@ -1144,7 +1208,12 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                 }}
               />
             </Card>
-            <Card style={{ backgroundColor: '#f6ffed', border: '1px solid #52c41a' }}>
+            <Card
+              style={{
+                backgroundColor: '#f6ffed',
+                border: '1px solid #52c41a',
+              }}
+            >
               <Row gutter={[16, 8]}>
                 <Col xs={24} sm={12}>
                   <List
@@ -1230,7 +1299,12 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                 }}
               />
             </Card>
-            <Card style={{ backgroundColor: '#e6f7ff', border: '1px solid #1890ff' }}>
+            <Card
+              style={{
+                backgroundColor: '#e6f7ff',
+                border: '1px solid #1890ff',
+              }}
+            >
               <Row gutter={[16, 8]}>
                 <Col xs={24} sm={12}>
                   <List
@@ -1297,8 +1371,8 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                 Список всех заказов
               </Title>
               <Paragraph style={{ fontSize: '16px', marginBottom: 16 }}>
-                Удобное управление всеми заказами: фильтрация, поиск, сортировка и
-                быстрый доступ к детальной информации по каждому заказу
+                Удобное управление всеми заказами: фильтрация, поиск, сортировка
+                и быстрый доступ к детальной информации по каждому заказу
               </Paragraph>
             </Card>
             <Card style={{ textAlign: 'center' }}>
@@ -1315,7 +1389,12 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                 }}
               />
             </Card>
-            <Card style={{ backgroundColor: '#f6ffed', border: '1px solid #52c41a' }}>
+            <Card
+              style={{
+                backgroundColor: '#f6ffed',
+                border: '1px solid #52c41a',
+              }}
+            >
               <Row gutter={[16, 8]}>
                 <Col xs={24} sm={12}>
                   <List
@@ -1401,7 +1480,12 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                 }}
               />
             </Card>
-            <Card style={{ backgroundColor: '#fff7e6', border: '1px solid #faad14' }}>
+            <Card
+              style={{
+                backgroundColor: '#fff7e6',
+                border: '1px solid #faad14',
+              }}
+            >
               <Row gutter={[16, 8]}>
                 <Col xs={24} sm={12}>
                   <List
@@ -1442,6 +1526,168 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
               </Row>
             </Card>
           </Space>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-advantages',
+    header: 'В чём крутость кейса Рускон',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <TrophyOutlined style={{ marginRight: 8 }} />
+            Ключевые возможности реализованы
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12} md={8}>
+              <Card
+                size="small"
+                style={{
+                  backgroundColor: '#e6f7ff',
+                  border: '1px solid #1890ff',
+                  height: '100%',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%', textAlign: 'center' }}
+                >
+                  <DatabaseOutlined
+                    style={{ fontSize: '32px', color: '#1890ff' }}
+                  />
+                  <Text strong style={{ fontSize: '16px', display: 'block' }}>
+                    Синхронизация остатков
+                  </Text>
+                  <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                    По множеству складов в реальном времени с автоматическим
+                    обновлением доступности товаров
+                  </Paragraph>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <Card
+                size="small"
+                style={{
+                  backgroundColor: '#f6ffed',
+                  border: '1px solid #52c41a',
+                  height: '100%',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%', textAlign: 'center' }}
+                >
+                  <CarOutlined style={{ fontSize: '32px', color: '#52c41a' }} />
+                  <Text strong style={{ fontSize: '16px', display: 'block' }}>
+                    Управление доставкой
+                  </Text>
+                  <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                    Полноценная система доставки с выбором способа, расчётом
+                    стоимости и отслеживанием статусов
+                  </Paragraph>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <Card
+                size="small"
+                style={{
+                  backgroundColor: '#fff7e6',
+                  border: '1px solid #faad14',
+                  height: '100%',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%', textAlign: 'center' }}
+                >
+                  <DollarOutlined
+                    style={{ fontSize: '32px', color: '#faad14' }}
+                  />
+                  <Text strong style={{ fontSize: '16px', display: 'block' }}>
+                    Многоуровневые цены
+                  </Text>
+                  <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                    Гибкая система цен для разных категорий дилеров с
+                    автоматическим применением персональных условий
+                  </Paragraph>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <Card
+                size="small"
+                style={{
+                  backgroundColor: '#e6f7ff',
+                  border: '1px solid #1890ff',
+                  height: '100%',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%', textAlign: 'center' }}
+                >
+                  <HistoryOutlined
+                    style={{ fontSize: '32px', color: '#1890ff' }}
+                  />
+                  <Text strong style={{ fontSize: '16px', display: 'block' }}>
+                    История заказов
+                  </Text>
+                  <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                    Полная история всех заказов с возможностью просмотра
+                    деталей, статусов и документов по каждому заказу
+                  </Paragraph>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <Card
+                size="small"
+                style={{
+                  backgroundColor: '#f6ffed',
+                  border: '1px solid #52c41a',
+                  height: '100%',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%', textAlign: 'center' }}
+                >
+                  <ReloadOutlined
+                    style={{ fontSize: '32px', color: '#52c41a' }}
+                  />
+                  <Text strong style={{ fontSize: '16px', display: 'block' }}>
+                    Повтор заказа
+                  </Text>
+                  <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                    Удобная функция повторного заказа из истории с возможностью
+                    корректировки количества и состава
+                  </Paragraph>
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+        </Card>
+        <Card
+          style={{ backgroundColor: '#e6f7ff', border: '1px solid #1890ff' }}
+        >
+          <Title level={5} style={{ marginTop: 0 }}>
+            <RocketOutlined style={{ marginRight: 8 }} />
+            Почему это важно
+          </Title>
+          <Paragraph style={{ marginBottom: 0 }}>
+            Все эти функции реализованы на практике и работают в реальном
+            проекте Рускон. Это не обещания — это проверенные решения, которые
+            мы можем применить и для Вашего проекта HansKonner.
+          </Paragraph>
         </Card>
       </Space>
     ),
