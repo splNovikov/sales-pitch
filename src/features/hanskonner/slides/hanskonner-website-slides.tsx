@@ -21,10 +21,7 @@ import {
   UserOutlined,
   SearchOutlined,
   ControlOutlined,
-  LockOutlined,
   SyncOutlined,
-  DashboardOutlined,
-  FolderOutlined,
   AppstoreOutlined,
   TrophyOutlined,
 } from '@ant-design/icons';
@@ -37,7 +34,7 @@ const { Title, Paragraph, Text, Link } = Typography;
 /**
  * Slides data for HansKonner website development presentation
  * Презентация о веб-разработке для HansKonner
- * Фокус на объяснении процесса разработки и двух вариантах: Битрикс vs Кастомный фронтенд
+ * Фокус на объяснении процесса разработки и двух вариантах: Шаблонный vs Кастомный фронтенд
  */
 export const hanskonnerWebsiteSlides: SlideData[] = [
   {
@@ -361,7 +358,7 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                     style={{ fontSize: '48px', color: '#1890ff' }}
                   />
                   <Title level={3} style={{ marginTop: 16, marginBottom: 8 }}>
-                    Битрикс (Аспро)
+                    Шаблонный фронтенд
                   </Title>
                   <Tag
                     color="blue"
@@ -369,6 +366,11 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                   >
                     Готовая платформа
                   </Tag>
+                  <div style={{ marginTop: 8 }}>
+                    <Text type="secondary" style={{ fontSize: '13px' }}>
+                      Шаблон 1С-Битрикс: Аспро
+                    </Text>
+                  </div>
                 </div>
                 <Paragraph style={{ textAlign: 'center' }}>
                   Мощная система на базе готовой платформы с огромным набором
@@ -449,7 +451,7 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
   },
   {
     id: 'bitrix-advantages',
-    header: 'Битрикс (Аспро) — когда это идеально',
+    header: 'Шаблонный фронтенд — когда это идеально',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card>
@@ -575,7 +577,7 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
             <ThunderboltOutlined style={{ marginRight: 8 }} />
-            Когда выбирать Битрикс
+            Когда выбирать шаблонный фронтенд
           </Title>
           <List
             size="large"
@@ -765,128 +767,6 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
     ),
   },
   {
-    id: 'comparison',
-    header: 'Сравнение подходов',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ textAlign: 'center', marginTop: 0 }}>
-            Что выбрать для HansKonner?
-          </Title>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} md={12}>
-              <Card
-                title={
-                  <Space>
-                    <AppstoreOutlined style={{ color: '#1890ff' }} />
-                    <Text strong>Битрикс (Аспро)</Text>
-                  </Space>
-                }
-                style={{ height: '100%' }}
-              >
-                <Space
-                  orientation="vertical"
-                  size="middle"
-                  style={{ width: '100%' }}
-                >
-                  <List
-                    size="small"
-                    dataSource={[
-                      '✓ Быстрый запуск интернет-магазина',
-                      '✓ Готовая работа с каталогом',
-                      '✓ Личные кабинеты дилеров',
-                      '✓ Интеграция с 1С из коробки',
-                      '✓ Управление контентом без программиста',
-                      '✓ Множество готовых модулей',
-                    ]}
-                    renderItem={item => (
-                      <List.Item style={{ padding: '4px 0', border: 'none' }}>
-                        <Text>{item}</Text>
-                      </List.Item>
-                    )}
-                  />
-                  <Divider style={{ margin: '8px 0' }} />
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Идеально, если нужен быстрый запуск с проверенными функциями
-                  </Text>
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} md={12}>
-              <Card
-                title={
-                  <Space>
-                    <CodeOutlined
-                      style={{ color: '#52c41a', fontSize: '24px' }}
-                    />
-                    <Text strong style={{ fontSize: '18px' }}>
-                      Кастомный фронтенд
-                    </Text>
-                    <Tag color="success" style={{ marginLeft: 8 }}>
-                      Рекомендуем
-                    </Tag>
-                  </Space>
-                }
-                style={{
-                  height: '100%',
-                  border: '2px solid #52c41a',
-                  backgroundColor: '#f6ffed',
-                }}
-              >
-                <Space
-                  orientation="vertical"
-                  size="middle"
-                  style={{ width: '100%' }}
-                >
-                  <List
-                    size="small"
-                    dataSource={[
-                      '✓ Полная кастомизация под задачи',
-                      '✓ Максимальная производительность',
-                      '✓ Уникальный пользовательский опыт',
-                      '✓ Гибкая интеграция с любыми системами',
-                      '✓ Полный контроль над функциональностью',
-                      '✓ Современные технологии',
-                    ]}
-                    renderItem={item => (
-                      <List.Item style={{ padding: '4px 0', border: 'none' }}>
-                        <Text>{item}</Text>
-                      </List.Item>
-                    )}
-                  />
-                  <Divider style={{ margin: '8px 0' }} />
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Идеально, если нужен уникальный продукт с полным контролем
-                  </Text>
-                </Space>
-              </Card>
-            </Col>
-          </Row>
-        </Card>
-        <Card
-          style={{ backgroundColor: '#f6ffed', border: '2px solid #52c41a' }}
-        >
-          <Title level={5} style={{ marginTop: 0, color: '#52c41a' }}>
-            <ThunderboltOutlined style={{ marginRight: 8 }} />
-            Рекомендация для HansKonner
-          </Title>
-          <Paragraph style={{ marginBottom: 0, fontSize: '16px' }}>
-            <Text strong>
-              Для Вашего бизнеса мы рекомендуем кастомный фронтенд.
-            </Text>
-            <br />
-            <br />
-            Учитывая Вашу специфику — большой каталог инструментов, работу с
-            дилерской сетью, необходимость сложных фильтров и интеграций —
-            именно кастомный фронтенд даст Вам максимальную гибкость,
-            производительность и возможность создать уникальный пользовательский
-            опыт, который выделит HansKonner среди конкурентов.
-          </Paragraph>
-        </Card>
-      </Space>
-    ),
-  },
-  {
     id: 'features-for-hanskonner',
     header: 'Что мы можем сделать для HansKonner',
     content: (
@@ -1060,122 +940,6 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                       </List.Item>
                     )}
                   />
-                </Space>
-              </Card>
-            </Col>
-          </Row>
-        </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'additional-features',
-    header: 'Дополнительные возможности',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <ThunderboltOutlined style={{ marginRight: 8 }} />
-            Что еще мы можем предложить
-          </Title>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} sm={12}>
-              <Card
-                size="small"
-                style={{ backgroundColor: '#e6f7ff', height: '100%' }}
-              >
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <FolderOutlined
-                    style={{
-                      fontSize: '32px',
-                      color: '#1890ff',
-                      marginBottom: 8,
-                    }}
-                  />
-                  <Text strong>Объединение каталогов</Text>
-                  <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
-                    Единый каталог для всех Ваших брендов (HansKonner, Sturm) с
-                    удобной навигацией и фильтрацией
-                  </Paragraph>
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card
-                size="small"
-                style={{ backgroundColor: '#f6ffed', height: '100%' }}
-              >
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <LockOutlined
-                    style={{
-                      fontSize: '32px',
-                      color: '#52c41a',
-                      marginBottom: 8,
-                    }}
-                  />
-                  <Text strong>Безопасность</Text>
-                  <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
-                    Защита данных, безопасные платежи, контроль доступа для
-                    разных типов пользователей
-                  </Paragraph>
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card
-                size="small"
-                style={{ backgroundColor: '#fff7e6', height: '100%' }}
-              >
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <GlobalOutlined
-                    style={{
-                      fontSize: '32px',
-                      color: '#faad14',
-                      marginBottom: 8,
-                    }}
-                  />
-                  <Text strong>SEO оптимизация</Text>
-                  <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
-                    Улучшение видимости в поисковых системах, правильная
-                    структура, быстрая индексация
-                  </Paragraph>
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card
-                size="small"
-                style={{ backgroundColor: '#f6ffed', height: '100%' }}
-              >
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <DashboardOutlined
-                    style={{
-                      fontSize: '32px',
-                      color: '#52c41a',
-                      marginBottom: 8,
-                    }}
-                  />
-                  <Text strong>Администрирование</Text>
-                  <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
-                    Удобная панель управления для обновления каталога, работы с
-                    заказами, аналитики
-                  </Paragraph>
                 </Space>
               </Card>
             </Col>
@@ -1486,10 +1250,10 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                       }}
                     />
                     <Link
-                      href="mailto:pnovikov@proxima.systems"
+                      href="mailto:p.novikov@proxima.ooo"
                       style={{ fontSize: '15px' }}
                     >
-                      pnovikov@proxima.systems
+                      p.novikov@proxima.ooo
                     </Link>
                   </Space>
                   <Space size="small">
@@ -1500,11 +1264,76 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                       }}
                     />
                     <Link
-                      href="https://proxima.systems"
+                      href="https://proxima24.ru/"
                       target="_blank"
                       style={{ fontSize: '15px' }}
                     >
-                      proxima.systems
+                      proxima24.ru
+                    </Link>
+                  </Space>
+                </Space>
+              </Space>
+            </Card>
+            <Card
+              size="small"
+              style={{ backgroundColor: '#fff7e6', marginTop: 8 }}
+            >
+              <Space
+                orientation="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Title level={5} style={{ marginTop: 0, marginBottom: 4 }}>
+                  <UserOutlined style={{ marginRight: 8 }} />
+                  Ситяков Артём
+                </Title>
+                <Text type="secondary" style={{ fontSize: '13px' }}>
+                  Руководитель отдела маркетинга
+                </Text>
+                <Divider style={{ margin: '8px 0' }} />
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Space size="small">
+                    <PhoneOutlined
+                      style={{
+                        fontSize: '16px',
+                        color: 'var(--app-color-primary)',
+                      }}
+                    />
+                    <Link href="tel:+79271108488" style={{ fontSize: '15px' }}>
+                      +7 927 110 84 88
+                    </Link>
+                  </Space>
+                  <Space size="small">
+                    <MailOutlined
+                      style={{
+                        fontSize: '16px',
+                        color: 'var(--app-color-primary)',
+                      }}
+                    />
+                    <Link
+                      href="mailto:a.sityakov@proxima.ooo"
+                      style={{ fontSize: '15px' }}
+                    >
+                      a.sityakov@proxima.ooo
+                    </Link>
+                  </Space>
+                  <Space size="small">
+                    <GlobalOutlined
+                      style={{
+                        fontSize: '16px',
+                        color: 'var(--app-color-primary)',
+                      }}
+                    />
+                    <Link
+                      href="https://proxima24.ru/"
+                      target="_blank"
+                      style={{ fontSize: '15px' }}
+                    >
+                      proxima24.ru
                     </Link>
                   </Space>
                 </Space>
