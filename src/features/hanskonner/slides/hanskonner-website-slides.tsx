@@ -28,6 +28,16 @@ import {
 import { type SlideData } from '~widgets/slides';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
 import hanskonnerLogo from './hanskonner-logo.png';
+import ruskonMain1 from './ruskon_main_1.png';
+import ruskonMain2 from './ruskon_main_2.png';
+import ruskonMain3 from './ruskon_main_3.png';
+import ruskonMain4 from './ruskon_main_4.png';
+import ruskonMain5 from './ruskon_main_5.png';
+import ruskonMain6 from './ruskon_main_6.png';
+import ruskonProfile1 from './ruskon_profile_1.png';
+import ruskonProfile2 from './ruskon_profile_2.png';
+import ruskonOrder from './ruskon_order.png';
+import ruskonOrders from './ruskon_orders.png';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
@@ -762,6 +772,813 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
               </List.Item>
             )}
           />
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-intro',
+    header: 'Похожий кейс: Рускон',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <TeamOutlined style={{ marginRight: 8 }} />
+            Почему мы решили показать этот кейс
+          </Title>
+          <Paragraph style={{ fontSize: '16px', marginBottom: 16 }}>
+            Перед тем, как рассказать о возможностях для HansKonner, мы хотим
+            показать Вам реальный пример работы с похожим проектом.
+          </Paragraph>
+          <Card
+            size="small"
+            style={{
+              backgroundColor: '#e6f7ff',
+              border: '1px solid #1890ff',
+              marginTop: 16,
+            }}
+          >
+            <Title level={5} style={{ marginTop: 0, color: '#1890ff' }}>
+              <CheckCircleOutlined style={{ marginRight: 8 }} />
+              Кейс Рускон — максимально похож на Ваш
+            </Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Мы специально выбрали этот проект, потому что он решает те же
+              задачи, что и проект для HansKonner: большой каталог инструментов,
+              работа с дилерами, интеграции, B2B функционал. Это поможет Вам
+              увидеть, как наши решения работают в похожей ситуации.
+            </Paragraph>
+          </Card>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-about',
+    header: 'О проекте Рускон',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <BuildOutlined style={{ marginRight: 8 }} />
+            Что мы сделали
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong style={{ fontSize: '16px' }}>
+                    <ShopOutlined style={{ marginRight: 8 }} />
+                    Каталог инструментов
+                  </Text>
+                  <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                    Создали структурированный каталог с детальными
+                    характеристиками, фотографиями, фильтрами и поиском для
+                    удобной работы с большим ассортиментом инструментов.
+                  </Paragraph>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong style={{ fontSize: '16px' }}>
+                    <UserOutlined style={{ marginRight: 8 }} />
+                    Личные кабинеты дилеров
+                  </Text>
+                  <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                    Реализовали систему персональных кабинетов с индивидуальными
+                    ценами, квотами, историей заказов и доступом к маркетинговым
+                    материалам.
+                  </Paragraph>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong style={{ fontSize: '16px' }}>
+                    <ApiOutlined style={{ marginRight: 8 }} />
+                    Интеграции
+                  </Text>
+                  <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                    Настроили синхронизацию с 1С, интеграцию со складом для
+                    отображения наличия в реальном времени и автоматическую
+                    обработку заказов.
+                  </Paragraph>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong style={{ fontSize: '16px' }}>
+                    <SearchOutlined style={{ marginRight: 8 }} />
+                    Умный поиск
+                  </Text>
+                  <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                    Внедрили продвинутую систему поиска с множественной
+                    фильтрацией по характеристикам, сравнением товаров и
+                    рекомендациями.
+                  </Paragraph>
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-main-1',
+    header: 'Рускон: Главная страница',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Card style={{ maxWidth: '1200px', width: '100%' }}>
+          <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+            <Card>
+              <Title level={4} style={{ marginTop: 0 }}>
+                <GlobalOutlined style={{ marginRight: 8 }} />
+                Главная страница сайта
+              </Title>
+              <Paragraph style={{ fontSize: '16px', marginBottom: 16 }}>
+                Современный и профессиональный дизайн главной страницы с удобной
+                навигацией и эффективной подачей информации
+              </Paragraph>
+            </Card>
+            <Card style={{ textAlign: 'center' }}>
+              <img
+                src={ruskonMain1}
+                alt="Рускон - Главная страница 1"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxHeight: '70vh',
+                  objectFit: 'contain',
+                  borderRadius: '8px',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+                }}
+              />
+            </Card>
+          </Space>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-main-2',
+    header: 'Рускон: Главная страница',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Card style={{ maxWidth: '1200px', width: '100%' }}>
+          <Card style={{ textAlign: 'center' }}>
+            <img
+              src={ruskonMain2}
+              alt="Рускон - Главная страница 2"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: '75vh',
+                objectFit: 'contain',
+                borderRadius: '8px',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+              }}
+            />
+          </Card>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-main-3',
+    header: 'Рускон: Главная страница',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Card style={{ maxWidth: '1200px', width: '100%' }}>
+          <Card style={{ textAlign: 'center' }}>
+            <img
+              src={ruskonMain3}
+              alt="Рускон - Главная страница 3"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: '75vh',
+                objectFit: 'contain',
+                borderRadius: '8px',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+              }}
+            />
+          </Card>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-main-4',
+    header: 'Рускон: Главная страница',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Card style={{ maxWidth: '1200px', width: '100%' }}>
+          <Card style={{ textAlign: 'center' }}>
+            <img
+              src={ruskonMain4}
+              alt="Рускон - Главная страница 4"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: '75vh',
+                objectFit: 'contain',
+                borderRadius: '8px',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+              }}
+            />
+          </Card>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-main-5',
+    header: 'Рускон: Главная страница',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Card style={{ maxWidth: '1200px', width: '100%' }}>
+          <Card style={{ textAlign: 'center' }}>
+            <img
+              src={ruskonMain5}
+              alt="Рускон - Главная страница 5"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: '75vh',
+                objectFit: 'contain',
+                borderRadius: '8px',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+              }}
+            />
+          </Card>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-main-6',
+    header: 'Рускон: Главная страница',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Card style={{ maxWidth: '1200px', width: '100%' }}>
+          <Card style={{ textAlign: 'center' }}>
+            <img
+              src={ruskonMain6}
+              alt="Рускон - Главная страница 6"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: '75vh',
+                objectFit: 'contain',
+                borderRadius: '8px',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+              }}
+            />
+          </Card>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-showcase-1',
+    header: 'Личный кабинет B2B: Профиль',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Card style={{ maxWidth: '1200px', width: '100%' }}>
+          <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+            <Card>
+              <Title level={4} style={{ marginTop: 0 }}>
+                <UserOutlined style={{ marginRight: 8 }} />
+                Личный кабинет дилера: Профиль
+              </Title>
+              <Paragraph style={{ fontSize: '16px', marginBottom: 16 }}>
+                Профессиональная реализация профиля дилера с персональными
+                настройками, индивидуальными ценами и полным контролем над
+                данными
+              </Paragraph>
+            </Card>
+            <Card style={{ textAlign: 'center' }}>
+              <img
+                src={ruskonProfile1}
+                alt="Личный кабинет B2B - Профиль"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxHeight: '70vh',
+                  objectFit: 'contain',
+                  borderRadius: '8px',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+                }}
+              />
+            </Card>
+            <Card style={{ backgroundColor: '#f6ffed', border: '1px solid #52c41a' }}>
+              <Row gutter={[16, 8]}>
+                <Col xs={24} sm={12}>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Индивидуальные настройки профиля',
+                      'Персональные цены для дилера',
+                      'Управление контактными данными',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <CheckCircleOutlined
+                          style={{ color: '#52c41a', marginRight: 8 }}
+                        />
+                        <Text>{item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Col>
+                <Col xs={24} sm={12}>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Удобный и интуитивный интерфейс',
+                      'Профессиональный уровень реализации',
+                      'Интеграция с учетными системами',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <CheckCircleOutlined
+                          style={{ color: '#52c41a', marginRight: 8 }}
+                        />
+                        <Text>{item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Col>
+              </Row>
+            </Card>
+          </Space>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-showcase-2',
+    header: 'Личный кабинет B2B: Профиль (продолжение)',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Card style={{ maxWidth: '1200px', width: '100%' }}>
+          <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+            <Card>
+              <Title level={4} style={{ marginTop: 0 }}>
+                <UserOutlined style={{ marginRight: 8 }} />
+                Дополнительные возможности профиля
+              </Title>
+              <Paragraph style={{ fontSize: '16px', marginBottom: 16 }}>
+                Расширенные функции профиля дилера: управление квотами,
+                настройками доступа и детальная информация для эффективной
+                работы
+              </Paragraph>
+            </Card>
+            <Card style={{ textAlign: 'center' }}>
+              <img
+                src={ruskonProfile2}
+                alt="Личный кабинет B2B - Профиль (продолжение)"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxHeight: '70vh',
+                  objectFit: 'contain',
+                  borderRadius: '8px',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+                }}
+              />
+            </Card>
+            <Card style={{ backgroundColor: '#e6f7ff', border: '1px solid #1890ff' }}>
+              <Row gutter={[16, 8]}>
+                <Col xs={24} sm={12}>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Управление квотами и лимитами',
+                      'Настройки прав доступа',
+                      'Детальная информация о дилере',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <CheckCircleOutlined
+                          style={{ color: '#1890ff', marginRight: 8 }}
+                        />
+                        <Text>{item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Col>
+                <Col xs={24} sm={12}>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'История взаимодействий',
+                      'Полный контроль над данными',
+                      'Гибкость настроек под потребности',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <CheckCircleOutlined
+                          style={{ color: '#1890ff', marginRight: 8 }}
+                        />
+                        <Text>{item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Col>
+              </Row>
+            </Card>
+          </Space>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-showcase-orders',
+    header: 'Личный кабинет B2B: Заказы',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Card style={{ maxWidth: '1200px', width: '100%' }}>
+          <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+            <Card>
+              <Title level={4} style={{ marginTop: 0 }}>
+                <ShoppingCartOutlined style={{ marginRight: 8 }} />
+                Список всех заказов
+              </Title>
+              <Paragraph style={{ fontSize: '16px', marginBottom: 16 }}>
+                Удобное управление всеми заказами: фильтрация, поиск, сортировка и
+                быстрый доступ к детальной информации по каждому заказу
+              </Paragraph>
+            </Card>
+            <Card style={{ textAlign: 'center' }}>
+              <img
+                src={ruskonOrders}
+                alt="Личный кабинет B2B - Заказы"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxHeight: '70vh',
+                  objectFit: 'contain',
+                  borderRadius: '8px',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+                }}
+              />
+            </Card>
+            <Card style={{ backgroundColor: '#f6ffed', border: '1px solid #52c41a' }}>
+              <Row gutter={[16, 8]}>
+                <Col xs={24} sm={12}>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'История всех заказов в одном месте',
+                      'Фильтрация и поиск по заказам',
+                      'Отображение статусов в реальном времени',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <CheckCircleOutlined
+                          style={{ color: '#52c41a', marginRight: 8 }}
+                        />
+                        <Text>{item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Col>
+                <Col xs={24} sm={12}>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Сортировка по различным параметрам',
+                      'Быстрый доступ к деталям заказа',
+                      'Понятный и удобный интерфейс',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <CheckCircleOutlined
+                          style={{ color: '#52c41a', marginRight: 8 }}
+                        />
+                        <Text>{item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Col>
+              </Row>
+            </Card>
+          </Space>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-showcase-order',
+    header: 'Личный кабинет B2B: Детализация заказа',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100%',
+        }}
+      >
+        <Card style={{ maxWidth: '1200px', width: '100%' }}>
+          <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+            <Card>
+              <Title level={4} style={{ marginTop: 0 }}>
+                <FileTextOutlined style={{ marginRight: 8 }} />
+                Детальная информация о заказе
+              </Title>
+              <Paragraph style={{ fontSize: '16px', marginBottom: 16 }}>
+                Полная детализация заказа: состав товаров, статусы, документы и
+                отслеживание выполнения — всё в одном месте для удобной работы
+                дилера
+              </Paragraph>
+            </Card>
+            <Card style={{ textAlign: 'center' }}>
+              <img
+                src={ruskonOrder}
+                alt="Личный кабинет B2B - Детализация заказа"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxHeight: '70vh',
+                  objectFit: 'contain',
+                  borderRadius: '8px',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+                }}
+              />
+            </Card>
+            <Card style={{ backgroundColor: '#fff7e6', border: '1px solid #faad14' }}>
+              <Row gutter={[16, 8]}>
+                <Col xs={24} sm={12}>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Полная детализация состава заказа',
+                      'Статусы выполнения в реальном времени',
+                      'Информация о документах и счетах',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <CheckCircleOutlined
+                          style={{ color: '#faad14', marginRight: 8 }}
+                        />
+                        <Text>{item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Col>
+                <Col xs={24} sm={12}>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Отслеживание этапов выполнения',
+                      'Удобный интерфейс для работы',
+                      'Интеграция с учетными системами',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <CheckCircleOutlined
+                          style={{ color: '#faad14', marginRight: 8 }}
+                        />
+                        <Text>{item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Col>
+              </Row>
+            </Card>
+          </Space>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-similarity',
+    header: 'Почему Рускон похож на HansKonner',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <ThunderboltOutlined style={{ marginRight: 8 }} />
+            Ключевые сходства
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12}>
+              <Card
+                size="small"
+                style={{
+                  backgroundColor: '#f6ffed',
+                  border: '1px solid #52c41a',
+                }}
+              >
+                <CheckCircleOutlined
+                  style={{
+                    color: '#52c41a',
+                    fontSize: '24px',
+                    marginBottom: 8,
+                  }}
+                />
+                <Text strong style={{ fontSize: '16px', display: 'block' }}>
+                  Большой каталог инструментов
+                </Text>
+                <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                  Оба проекта требуют работы с обширным каталогом товаров,
+                  множеством характеристик и вариантов комплектации.
+                </Paragraph>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card
+                size="small"
+                style={{
+                  backgroundColor: '#e6f7ff',
+                  border: '1px solid #1890ff',
+                }}
+              >
+                <CheckCircleOutlined
+                  style={{
+                    color: '#1890ff',
+                    fontSize: '24px',
+                    marginBottom: 8,
+                  }}
+                />
+                <Text strong style={{ fontSize: '16px', display: 'block' }}>
+                  Работа с дилерами
+                </Text>
+                <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                  Система персональных кабинетов, индивидуальные цены, квоты и
+                  управление отношениями с дилерами — одинаково важны для обоих
+                  проектов.
+                </Paragraph>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card
+                size="small"
+                style={{
+                  backgroundColor: '#fff7e6',
+                  border: '1px solid #faad14',
+                }}
+              >
+                <CheckCircleOutlined
+                  style={{
+                    color: '#faad14',
+                    fontSize: '24px',
+                    marginBottom: 8,
+                  }}
+                />
+                <Text strong style={{ fontSize: '16px', display: 'block' }}>
+                  Интеграции с 1С и складом
+                </Text>
+                <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                  Оба проекта нуждаются в синхронизации данных с учётными
+                  системами, складами и автоматизации процессов B2B.
+                </Paragraph>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card
+                size="small"
+                style={{
+                  backgroundColor: '#f6ffed',
+                  border: '1px solid #52c41a',
+                }}
+              >
+                <CheckCircleOutlined
+                  style={{
+                    color: '#52c41a',
+                    fontSize: '24px',
+                    marginBottom: 8,
+                  }}
+                />
+                <Text strong style={{ fontSize: '16px', display: 'block' }}>
+                  B2B фокус
+                </Text>
+                <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                  Основная аудитория — профессиональные клиенты, которым нужны
+                  крупные заказы, работа со счетами и специальные условия.
+                </Paragraph>
+              </Card>
+            </Col>
+          </Row>
+        </Card>
+        <Card style={{ backgroundColor: '#e6f7ff' }}>
+          <Title level={5} style={{ marginTop: 0 }}>
+            <RocketOutlined style={{ marginRight: 8 }} />
+            Почему это важно
+          </Title>
+          <Paragraph style={{ marginBottom: 0 }}>
+            Опыт работы с похожим проектом означает, что мы уже понимаем
+            специфику Вашего бизнеса и знаем, какие решения действительно
+            работают. Мы не экспериментируем — мы применяем проверенные подходы
+            к Вашим задачам.
+          </Paragraph>
         </Card>
       </Space>
     ),
