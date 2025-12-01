@@ -1,14 +1,4 @@
-import {
-  Typography,
-  List,
-  Space,
-  Divider,
-  Card,
-  Row,
-  Col,
-  Tag,
-  Descriptions,
-} from 'antd';
+import { Typography, List, Space, Divider, Card, Row, Col, Tag } from 'antd';
 import {
   GlobalOutlined,
   RocketOutlined,
@@ -24,13 +14,11 @@ import {
   SettingOutlined,
   BuildOutlined,
   SafetyOutlined,
-  CloudOutlined,
   PhoneOutlined,
   MailOutlined,
   FileTextOutlined,
   ShoppingCartOutlined,
   UserOutlined,
-  LinkOutlined,
   SearchOutlined,
   ControlOutlined,
   LockOutlined,
@@ -200,7 +188,8 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
             items={[
               {
                 title: 'Исследование и планирование',
-                description: 'Изучаем Ваш бизнес, потребности клиентов, анализируем конкурентов',
+                description:
+                  'Изучаем Ваш бизнес, потребности клиентов, анализируем конкурентов',
                 icon: <SearchOutlined />,
               },
               {
@@ -258,7 +247,11 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                   style={{ width: '100%' }}
                 >
                   <CodeOutlined
-                    style={{ fontSize: '32px', color: '#1890ff', marginBottom: 8 }}
+                    style={{
+                      fontSize: '32px',
+                      color: '#1890ff',
+                      marginBottom: 8,
+                    }}
                   />
                   <Text strong>Фронтенд</Text>
                   <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
@@ -275,7 +268,11 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                   style={{ width: '100%' }}
                 >
                   <DatabaseOutlined
-                    style={{ fontSize: '32px', color: '#52c41a', marginBottom: 8 }}
+                    style={{
+                      fontSize: '32px',
+                      color: '#52c41a',
+                      marginBottom: 8,
+                    }}
                   />
                   <Text strong>Бэкенд</Text>
                   <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
@@ -292,7 +289,11 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                   style={{ width: '100%' }}
                 >
                   <ApiOutlined
-                    style={{ fontSize: '32px', color: '#faad14', marginBottom: 8 }}
+                    style={{
+                      fontSize: '32px',
+                      color: '#faad14',
+                      marginBottom: 8,
+                    }}
                   />
                   <Text strong>Интеграции</Text>
                   <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
@@ -309,7 +310,11 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                   style={{ width: '100%' }}
                 >
                   <MobileOutlined
-                    style={{ fontSize: '32px', color: '#1890ff', marginBottom: 8 }}
+                    style={{
+                      fontSize: '32px',
+                      color: '#1890ff',
+                      marginBottom: 8,
+                    }}
                   />
                   <Text strong>Адаптивность</Text>
                   <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
@@ -358,7 +363,10 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                   <Title level={3} style={{ marginTop: 16, marginBottom: 8 }}>
                     Битрикс (Аспро)
                   </Title>
-                  <Tag color="blue" style={{ fontSize: '14px', padding: '4px 12px' }}>
+                  <Tag
+                    color="blue"
+                    style={{ fontSize: '14px', padding: '4px 12px' }}
+                  >
                     Готовая платформа
                   </Tag>
                 </div>
@@ -413,7 +421,11 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                   </Title>
                   <Tag
                     color="success"
-                    style={{ fontSize: '16px', padding: '6px 16px', fontWeight: 'bold' }}
+                    style={{
+                      fontSize: '16px',
+                      padding: '6px 16px',
+                      fontWeight: 'bold',
+                    }}
                   >
                     Гибкое решение
                   </Tag>
@@ -425,8 +437,8 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                     fontWeight: 500,
                   }}
                 >
-                  Полностью индивидуальное решение, созданное специально под Ваши
-                  задачи
+                  Полностью индивидуальное решение, созданное специально под
+                  Ваши задачи
                 </Paragraph>
               </Space>
             </Card>
@@ -442,9 +454,7 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
-            <CheckCircleOutlined
-              style={{ color: '#52c41a', marginRight: 8 }}
-            />
+            <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
             Преимущества для B2B бизнеса
           </Title>
           <Row gutter={[16, 16]}>
@@ -579,7 +589,11 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
             renderItem={item => (
               <List.Item>
                 <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 12, fontSize: '18px' }}
+                  style={{
+                    color: '#52c41a',
+                    marginRight: 12,
+                    fontSize: '18px',
+                  }}
                 />
                 <Text style={{ fontSize: '16px' }}>{item}</Text>
               </List.Item>
@@ -596,9 +610,7 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
-            <CheckCircleOutlined
-              style={{ color: '#52c41a', marginRight: 8 }}
-            />
+            <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
             Преимущества для B2B бизнеса
           </Title>
           <Row gutter={[16, 16]}>
@@ -716,7 +728,9 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
             </Col>
           </Row>
         </Card>
-        <Card style={{ backgroundColor: '#f6ffed', border: '2px solid #52c41a' }}>
+        <Card
+          style={{ backgroundColor: '#f6ffed', border: '2px solid #52c41a' }}
+        >
           <Title level={4} style={{ marginTop: 0, color: '#52c41a' }}>
             <ThunderboltOutlined style={{ marginRight: 8 }} />
             Почему кастомный фронтенд идеален для HansKonner
@@ -734,9 +748,15 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
             renderItem={item => (
               <List.Item>
                 <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 12, fontSize: '20px' }}
+                  style={{
+                    color: '#52c41a',
+                    marginRight: 12,
+                    fontSize: '20px',
+                  }}
                 />
-                <Text strong style={{ fontSize: '16px' }}>{item}</Text>
+                <Text strong style={{ fontSize: '16px' }}>
+                  {item}
+                </Text>
               </List.Item>
             )}
           />
@@ -787,8 +807,7 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                   />
                   <Divider style={{ margin: '8px 0' }} />
                   <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Идеально, если нужен быстрый запуск с проверенными
-                    функциями
+                    Идеально, если нужен быстрый запуск с проверенными функциями
                   </Text>
                 </Space>
               </Card>
@@ -797,7 +816,9 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
               <Card
                 title={
                   <Space>
-                    <CodeOutlined style={{ color: '#52c41a', fontSize: '24px' }} />
+                    <CodeOutlined
+                      style={{ color: '#52c41a', fontSize: '24px' }}
+                    />
                     <Text strong style={{ fontSize: '18px' }}>
                       Кастомный фронтенд
                     </Text>
@@ -842,7 +863,9 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
             </Col>
           </Row>
         </Card>
-        <Card style={{ backgroundColor: '#f6ffed', border: '2px solid #52c41a' }}>
+        <Card
+          style={{ backgroundColor: '#f6ffed', border: '2px solid #52c41a' }}
+        >
           <Title level={5} style={{ marginTop: 0, color: '#52c41a' }}>
             <ThunderboltOutlined style={{ marginRight: 8 }} />
             Рекомендация для HansKonner
@@ -854,10 +877,10 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
             <br />
             <br />
             Учитывая Вашу специфику — большой каталог инструментов, работу с
-            дилерской сетью, необходимость сложных фильтров и интеграций — именно
-            кастомный фронтенд даст Вам максимальную гибкость, производительность и
-            возможность создать уникальный пользовательский опыт, который выделит
-            HansKonner среди конкурентов.
+            дилерской сетью, необходимость сложных фильтров и интеграций —
+            именно кастомный фронтенд даст Вам максимальную гибкость,
+            производительность и возможность создать уникальный пользовательский
+            опыт, который выделит HansKonner среди конкурентов.
           </Paragraph>
         </Card>
       </Space>
@@ -1057,32 +1080,46 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
           </Title>
           <Row gutter={[16, 16]}>
             <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#e6f7ff', height: '100%' }}>
+              <Card
+                size="small"
+                style={{ backgroundColor: '#e6f7ff', height: '100%' }}
+              >
                 <Space
                   orientation="vertical"
                   size="small"
                   style={{ width: '100%' }}
                 >
                   <FolderOutlined
-                    style={{ fontSize: '32px', color: '#1890ff', marginBottom: 8 }}
+                    style={{
+                      fontSize: '32px',
+                      color: '#1890ff',
+                      marginBottom: 8,
+                    }}
                   />
                   <Text strong>Объединение каталогов</Text>
                   <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
-                    Единый каталог для всех Ваших брендов (HansKonner, Sturm)
-                    с удобной навигацией и фильтрацией
+                    Единый каталог для всех Ваших брендов (HansKonner, Sturm) с
+                    удобной навигацией и фильтрацией
                   </Paragraph>
                 </Space>
               </Card>
             </Col>
             <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#f6ffed', height: '100%' }}>
+              <Card
+                size="small"
+                style={{ backgroundColor: '#f6ffed', height: '100%' }}
+              >
                 <Space
                   orientation="vertical"
                   size="small"
                   style={{ width: '100%' }}
                 >
                   <LockOutlined
-                    style={{ fontSize: '32px', color: '#52c41a', marginBottom: 8 }}
+                    style={{
+                      fontSize: '32px',
+                      color: '#52c41a',
+                      marginBottom: 8,
+                    }}
                   />
                   <Text strong>Безопасность</Text>
                   <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
@@ -1093,14 +1130,21 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
               </Card>
             </Col>
             <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#fff7e6', height: '100%' }}>
+              <Card
+                size="small"
+                style={{ backgroundColor: '#fff7e6', height: '100%' }}
+              >
                 <Space
                   orientation="vertical"
                   size="small"
                   style={{ width: '100%' }}
                 >
                   <GlobalOutlined
-                    style={{ fontSize: '32px', color: '#faad14', marginBottom: 8 }}
+                    style={{
+                      fontSize: '32px',
+                      color: '#faad14',
+                      marginBottom: 8,
+                    }}
                   />
                   <Text strong>SEO оптимизация</Text>
                   <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
@@ -1111,14 +1155,21 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
               </Card>
             </Col>
             <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#f6ffed', height: '100%' }}>
+              <Card
+                size="small"
+                style={{ backgroundColor: '#f6ffed', height: '100%' }}
+              >
                 <Space
                   orientation="vertical"
                   size="small"
                   style={{ width: '100%' }}
                 >
                   <DashboardOutlined
-                    style={{ fontSize: '32px', color: '#52c41a', marginBottom: 8 }}
+                    style={{
+                      fontSize: '32px',
+                      color: '#52c41a',
+                      marginBottom: 8,
+                    }}
                   />
                   <Text strong>Администрирование</Text>
                   <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
@@ -1151,7 +1202,7 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
               {
                 title: 'Знакомство и анализ',
                 description:
-                    'Изучаем Ваш бизнес, обсуждаем задачи, анализируем текущее состояние',
+                  'Изучаем Ваш бизнес, обсуждаем задачи, анализируем текущее состояние',
                 icon: <TeamOutlined />,
               },
               {
@@ -1313,9 +1364,7 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                   size="small"
                   style={{ width: '100%', textAlign: 'center' }}
                 >
-                  <ApiOutlined
-                    style={{ fontSize: '32px', color: '#1890ff' }}
-                  />
+                  <ApiOutlined style={{ fontSize: '32px', color: '#1890ff' }} />
                   <Text strong>Интеграции</Text>
                   <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
                     Опыт работы с 1С, CRM, ERP и другими системами
@@ -1352,7 +1401,8 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                   />
                   <Text strong>Результат</Text>
                   <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
-                    Фокусируемся на бизнес-результате, а не только на технологиях
+                    Фокусируемся на бизнес-результате, а не только на
+                    технологиях
                   </Paragraph>
                 </Space>
               </Card>
@@ -1391,7 +1441,10 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
       >
         <Card style={{ maxWidth: '800px', width: '100%' }}>
           <Space orientation="vertical" size="small" style={{ width: '100%' }}>
-            <Title level={3} style={{ textAlign: 'center', marginTop: 0, marginBottom: 8 }}>
+            <Title
+              level={3}
+              style={{ textAlign: 'center', marginTop: 0, marginBottom: 8 }}
+            >
               Свяжитесь с нами
             </Title>
             <Divider style={{ margin: '8px 0' }} />
@@ -1409,7 +1462,11 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                   Технический директор компании Проксима
                 </Text>
                 <Divider style={{ margin: '8px 0' }} />
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Space size="small">
                     <PhoneOutlined
                       style={{
@@ -1453,13 +1510,29 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
                 </Space>
               </Space>
             </Card>
-            <Card size="small" style={{ backgroundColor: '#e6f7ff', marginTop: 8 }}>
-              <Paragraph style={{ marginBottom: 0, textAlign: 'center', fontSize: '14px' }}>
+            <Card
+              size="small"
+              style={{ backgroundColor: '#e6f7ff', marginTop: 8 }}
+            >
+              <Paragraph
+                style={{
+                  marginBottom: 0,
+                  textAlign: 'center',
+                  fontSize: '14px',
+                }}
+              >
                 <Text strong>
                   Готовы обсудить, как мы можем помочь Вашему бизнесу
                 </Text>
               </Paragraph>
-              <Paragraph style={{ marginTop: 4, marginBottom: 0, textAlign: 'center', fontSize: '13px' }}>
+              <Paragraph
+                style={{
+                  marginTop: 4,
+                  marginBottom: 0,
+                  textAlign: 'center',
+                  fontSize: '13px',
+                }}
+              >
                 <Text type="secondary">
                   Предложим оптимальное решение и расскажем подробнее о процессе
                   работы
@@ -1521,4 +1594,3 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
     ),
   },
 ];
-
