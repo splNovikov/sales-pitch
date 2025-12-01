@@ -920,32 +920,20 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
         }}
       >
         <Card style={{ maxWidth: '1200px', width: '100%' }}>
-          <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-            <Card>
-              <Title level={4} style={{ marginTop: 0 }}>
-                <GlobalOutlined style={{ marginRight: 8 }} />
-                Главная страница сайта
-              </Title>
-              <Paragraph style={{ fontSize: '16px', marginBottom: 16 }}>
-                Современный и профессиональный дизайн главной страницы с удобной
-                навигацией и эффективной подачей информации
-              </Paragraph>
-            </Card>
-            <Card style={{ textAlign: 'center' }}>
-              <img
-                src={ruskonMain1}
-                alt="Рускон - Главная страница 1"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  maxHeight: '70vh',
-                  objectFit: 'contain',
-                  borderRadius: '8px',
-                  boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
-                }}
-              />
-            </Card>
-          </Space>
+          <Card style={{ textAlign: 'center' }}>
+            <img
+              src={ruskonMain1}
+              alt="Рускон - Главная страница 1"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: '75vh',
+                objectFit: 'contain',
+                borderRadius: '8px',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.15)',
+              }}
+            />
+          </Card>
         </Card>
       </Space>
     ),
