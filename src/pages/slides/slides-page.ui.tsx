@@ -2,7 +2,10 @@ import { useLoaderData } from 'react-router-dom';
 import { kirovStekloSlides } from '~features/kirov-steklo/slides/kirov-steklo-slides';
 import { niteosSlides } from '~features/niteos/slides/niteos-slides';
 import { niteosShortSlides } from '~features/niteos/slides/niteos-short-slides';
-import { hanskonnerSlides } from '~features/hanskonner/slides/hanskonner-slides';
+import {
+  hanskonnerSlides,
+  hanskonnerWebsiteSlides,
+} from '~features/hanskonner/slides';
 import {
   smzSlides,
   smzBriefSlides,
@@ -19,6 +22,7 @@ const getSlidesBySlug = (slug: string): SlideData[] => {
     niteos: niteosSlides,
     'niteos-first-turn': niteosShortSlides,
     hanskonner: hanskonnerSlides,
+    'hanskonner-website': hanskonnerWebsiteSlides,
     smz: smzSlides,
     'smz-brief': smzBriefSlides,
     'smz-solution': smzSolutionSlides,
