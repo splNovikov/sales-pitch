@@ -32,6 +32,9 @@ import {
   CalculatorOutlined,
   SendOutlined,
   CheckCircleTwoTone,
+  UserOutlined,
+  MailOutlined,
+  GlobalOutlined,
 } from '@ant-design/icons';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
 import { type SlideData } from '~widgets/slides';
@@ -104,7 +107,7 @@ export const niteosAdvancedSlides: SlideData[] = [
             marginTop: 'auto',
           }}
         >
-          28.11.2025
+          01.12.2025
         </Text>
       </Space>
     ),
@@ -120,6 +123,51 @@ export const niteosAdvancedSlides: SlideData[] = [
             Выявленные проблемы
           </Title>
           <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Tag color="orange">ОБОЗНАЧЕНА НОВАЯ</Tag>
+                  <Text strong>Распределение заявок</Text>
+                  <Text type="secondary" style={{ fontSize: '12px' }}>
+                    Рандомайзер вместо умного распределения
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Tag color="orange">ОБОЗНАЧЕНА НОВАЯ</Tag>
+                  <Text strong>Зависшие сделки в воронке</Text>
+                  <Text type="secondary" style={{ fontSize: '12px' }}>
+                    Копятся на стадиях, нет системы работы
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Tag color="orange">ОБОЗНАЧЕНА НОВАЯ</Tag>
+                  <Text strong>Распределение расчетов</Text>
+                  <Text type="secondary" style={{ fontSize: '12px' }}>
+                    40 т.р./мес на диспетчеризацию
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
             <Col xs={24} sm={12}>
               <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
                 <Space
@@ -150,83 +198,14 @@ export const niteosAdvancedSlides: SlideData[] = [
                 </Space>
               </Card>
             </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <Tag color="red">НОВАЯ ПРОБЛЕМА</Tag>
-                  <Text strong>Распределение заявок</Text>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Рандомайзер вместо умного распределения
-                  </Text>
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <Tag color="red">НОВАЯ ПРОБЛЕМА</Tag>
-                  <Text strong>Зависшие сделки в воронке</Text>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Копятся на стадиях, нет системы работы
-                  </Text>
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <Tag color="red">НОВАЯ ПРОБЛЕМА</Tag>
-                  <Text strong>Распределение расчетов</Text>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    40 т.р./мес на диспетчеризацию
-                  </Text>
-                </Space>
-              </Card>
-            </Col>
           </Row>
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <DollarOutlined style={{ marginRight: 8 }} />
-            Финансовое воздействие
-          </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Падение выручки на -11% (23.8 млн руб.)',
-              'Потеря крупных контрактов (15 млн руб.)',
-              '40 т.р./мес на диспетчеризацию расчетов (480 т.р./год)',
-              'Потеря клиентов из-за качества обработки',
-              'Зависшие сделки в воронке теряют актуальность',
-            ]}
-            renderItem={item => (
-              <List.Item
-                style={{ padding: '4px 0', justifyContent: 'flex-start' }}
-              >
-                <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
         </Card>
       </Space>
     ),
   },
   {
     id: 'new-questions',
-    header: 'Новые вопросы от заказчика',
+    header: 'Дополнительные вопросы',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card>
@@ -237,8 +216,8 @@ export const niteosAdvancedSlides: SlideData[] = [
             Вопросы от Артура Айратовича
           </Title>
           <Paragraph>
-            После первого предложения заказчик выявил дополнительные проблемы,
-            которые можно решить с помощью ИИ ассистента:
+            После первого предложения были выявлены дополнительные проблемы,
+            которые можно решить с помощью сервиса автоматизации:
           </Paragraph>
         </Card>
         <Card>
@@ -288,10 +267,11 @@ export const niteosAdvancedSlides: SlideData[] = [
                   <List
                     size="small"
                     dataSource={[
-                      'Умное распределение на основе ИИ',
-                      'Автоматическая аналитика качества',
+                      'Аналитика качества распределения',
+                      'Алгоритмическое распределение (приоритет)',
                       'Приоритизация по важности и срочности',
                       'Учет загрузки и компетенций менеджеров',
+                      'AI агент — где алгоритм не справляется',
                     ]}
                     renderItem={item => (
                       <List.Item
@@ -357,7 +337,7 @@ export const niteosAdvancedSlides: SlideData[] = [
                   <List
                     size="small"
                     dataSource={[
-                      'Автоматический анализ "теплоты" клиента',
+                      'Автоматический анализ "теплоты" контакта',
                       'Умные напоминания через предпочитаемый канал',
                       'Определение актуальности сотрудничества',
                       'Предложения дополнительных скидок',
@@ -452,19 +432,20 @@ export const niteosAdvancedSlides: SlideData[] = [
   },
   {
     id: 'solution-overview',
-    header: 'Решение: ИИ ассистент для комплексной автоматизации',
+    header: 'Решение: Сервис автоматизации',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
-            <RobotOutlined
+            <SettingOutlined
               style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
             />
             Комплексное решение
           </Title>
           <Paragraph>
-            ИИ ассистент решает все выявленные проблемы, используя умные
-            алгоритмы вместо ручной работы и рандомайзеров.
+            Сервис автоматизации решает все выявленные проблемы, используя
+            алгоритмические решения в приоритете. Где алгоритм не справляется —
+            подключаем AI агента.
           </Paragraph>
         </Card>
         <Row gutter={[16, 16]}>
@@ -488,10 +469,10 @@ export const niteosAdvancedSlides: SlideData[] = [
                 <List
                   size="small"
                   dataSource={[
-                    'Анализ типа и сложности заявки',
-                    'Учет компетенций менеджеров',
-                    'Приоритизация по важности',
-                    'Автоматическая аналитика качества',
+                    'Аналитика качества распределения',
+                    'Алгоритмическое распределение (приоритет)',
+                    'Учет компетенций и загрузки',
+                    'AI агент — где алгоритм не справляется',
                   ]}
                   renderItem={item => (
                     <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
@@ -522,7 +503,7 @@ export const niteosAdvancedSlides: SlideData[] = [
                 <List
                   size="small"
                   dataSource={[
-                    'Анализ "теплоты" клиента',
+                    'Анализ "теплоты" контакта',
                     'Умные напоминания (не прозвоны)',
                     'Определение актуальности',
                     'Предложения скидок',
@@ -575,44 +556,474 @@ export const niteosAdvancedSlides: SlideData[] = [
     ),
   },
   {
+    id: 'requests-distribution-detail',
+    header: 'Сервис распределения заявок',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <TagOutlined style={{ marginRight: 8 }} />
+            Как сейчас обрабатываются заявки (As-Is)
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>Основные проблемы:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Распределение через рандомайзер без логики',
+                      'Аналитика качества выполняется вручную в таблицах',
+                      'Нет прозрачных критериев, кому и почему ушла заявка',
+                      'Сложно понять, где теряется время и качество',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '4px 0', textAlign: 'left' }}
+                      >
+                        <CloseOutlined
+                          style={{ color: '#ff4d4f', marginRight: 8 }}
+                        />
+                        <Text>{item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>Последствия для компании:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Неравномерная загрузка специалистов',
+                      'Сложные заявки могут уходить неподходящим исполнителям',
+                      'Повторные перекидывания заявки между сотрудниками',
+                      'Рост сроков обработки и потеря доверия к процессу',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '4px 0', textAlign: 'left' }}
+                      >
+                        <WarningOutlined
+                          style={{ color: '#ff4d4f', marginRight: 8 }}
+                        />
+                        <Text>{item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+        </Card>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
+            Как будет работать сервис распределения заявок (To-Be)
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>Шаг 1 — Аналитика распределения:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Сбор истории распределения по всем каналам',
+                      'Метрики по времени реакции, количеству перекидок, загрузке',
+                      'Выявление узких мест и типовых ошибок распределения',
+                      'Формирование базы для алгоритмики',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '4px 0', textAlign: 'left' }}
+                      >
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>Шаг 2 — Алгоритмическое распределение:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Правила распределения по типу заявки и сложности',
+                      'Учет компетенций и текущей загрузки исполнителей',
+                      'Приоритизация срочных и стратегически важных запросов',
+                      'Прозрачные критерии: видно, почему заявка ушла именно туда',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '4px 0', textAlign: 'left' }}
+                      >
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+          <Row gutter={[16, 16]} style={{ marginTop: 16 }}>
+            <Col xs={24} sm={12}>
+              <Card size="small">
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>Шаг 3 — Подключение AI агента точечно:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'AI агент разбирает нетиповые или неполные заявки',
+                      'Помогает классифицировать сложные запросы',
+                      'Предлагает рекомендацию по распределению при низкой уверенности алгоритма',
+                      'Все решения можно просмотреть и скорректировать вручную',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '4px 0', textAlign: 'left' }}
+                      >
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small">
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>Что видит команда:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Дашборд с очередями по исполнителям и статусами заявок',
+                      'Понятные причины, почему заявка попала к конкретному человеку',
+                      'Сигналы о перегрузке отдельных исполнителей',
+                      'Отчеты для руководства по качеству распределения',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '4px 0', textAlign: 'left' }}
+                      >
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'calculations-service-detail',
+    header: 'Сервис распределения светотехнических расчетов',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <CalculatorOutlined style={{ marginRight: 8 }} />
+            Как сейчас распределяются расчеты (As-Is)
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>Организация процесса:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Дополнительные 40 т.р./мес за диспетчеризацию',
+                      'Ручное распределение задач по расчетам',
+                      'Опора на личное знание загрузки исполнителей',
+                      'Сложно отследить историю, кто и что делал',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '4px 0', textAlign: 'left' }}
+                      >
+                        <CloseOutlined
+                          style={{ color: '#ff4d4f', marginRight: 8 }}
+                        />
+                        <Text>{item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>Риски для компании:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Отсутствие приоритизации по сложности и срокам',
+                      'Невозможно быстро перераспределить нагрузку',
+                      'Часть расчетов может задерживаться без прозрачной причины',
+                      'Нет базы знаний по типовым расчетам и решениям',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '4px 0', textAlign: 'left' }}
+                      >
+                        <WarningOutlined
+                          style={{ color: '#ff4d4f', marginRight: 8 }}
+                        />
+                        <Text>{item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+        </Card>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
+            Как будет работать сервис распределения расчетов (To-Be)
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>Шаг 1 — Классификация расчета:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Определение типа объекта и области применения',
+                      'Оценка сложности по набору входных параметров',
+                      'Разделение задач на типовые и нетиповые',
+                      'Сохранение шаблонов для повторяющихся сценариев',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '4px 0', textAlign: 'left' }}
+                      >
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>Шаг 2 — Алгоритмическое распределение:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Учет квалификации специалистов по типам объектов',
+                      'Распределение с учетом текущей загрузки и сроков',
+                      'Приоритет срочных и критичных расчетов',
+                      'Автоматическое формирование очереди задач',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '4px 0', textAlign: 'left' }}
+                      >
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+          <Row gutter={[16, 16]} style={{ marginTop: 16 }}>
+            <Col xs={24} sm={12}>
+              <Card size="small">
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>Шаг 3 — Подключение AI агента:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Подсказки по выбору оптимальных типовых решений',
+                      'Анализ нетиповых задач на основе базы знаний',
+                      'Рекомендации по уточнению исходных данных',
+                      'Поддержка при разборе сложных проектов',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '4px 0', textAlign: 'left' }}
+                      >
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small">
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>Что видит команда:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Единую очередь расчетов с приоритетами и сроками',
+                      'Статус каждой задачи и ответственного исполнителя',
+                      'Понимание, где теряется время и почему',
+                      'Экономию 40 т.р./мес за счет отказа от ручной диспетчеризации',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '4px 0', textAlign: 'left' }}
+                      >
+                        <Text>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+        </Card>
+      </Space>
+    ),
+  },
+  {
     id: 'funnel-solution-detail',
-    header: 'Работа с воронкой: Умный подход (без прозвонов)',
+    header: 'Работа с воронкой: подход без прозвонов',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
             <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
-            Почему не прозвоны через ИИ?
+            Как обычно работают с воронкой на рынке
           </Title>
           <Paragraph>
-            Для прозвонов лучше использовать существующие решения. Мы предлагаем
-            более эффективный подход:
+            На рынке для «разогрева» воронки часто используют сервисы дозвона и
+            робо-звонки. Формально задача решается — но метод устаревший и
+            воспринимается как навязчивый.
           </Paragraph>
-          <List
-            size="small"
-            dataSource={[
-              'Прозвоны через ИИ — не наш фокус (используйте готовые решения)',
-              'Более эффективно: прощупать теплоту клиента через его предпочитаемый канал',
-              'Если клиент звонил — попробовать связаться через WhatsApp/Telegram',
-              'Если писал в Telegram — напомнить через Telegram',
-              'Персонализированный подход повышает отклик',
-            ]}
-            renderItem={item => (
-              <List.Item
-                style={{ padding: '4px 0', justifyContent: 'flex-start' }}
-              >
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>Существующие решения по дозвонам:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Автообзвоны и робо-звонки по базе',
+                      'Скрипты колл-центров с массовыми звонками',
+                      'Попытки «вернуть интерес» через серию телефонных контактов',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '4px 0', textAlign: 'left' }}
+                      >
+                        <CloseOutlined
+                          style={{ color: '#ff4d4f', marginRight: 8 }}
+                        />
+                        <Text>{item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>Почему это устаревший метод:</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Телефонный канал часто воспринимается как навязчивый',
+                      'Сложно встроиться в контекст предыдущего общения',
+                      'Низкая персонализация и высокий «шум» для команды',
+                      'Не учитывается, как контакт привык коммуницировать',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '4px 0', textAlign: 'left' }}
+                      >
+                        <WarningOutlined
+                          style={{ color: '#ff4d4f', marginRight: 8 }}
+                        />
+                        <Text>{item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+          </Row>
         </Card>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
             <SendOutlined style={{ marginRight: 8 }} />
-            Как работает умная работа с воронкой
+            Наш подход: сервис работает в том же канале, откуда пришёл контакт
           </Title>
           <AnimatedSteps
             direction="vertical"
@@ -620,13 +1031,13 @@ export const niteosAdvancedSlides: SlideData[] = [
             stepInterval={2500}
             items={[
               {
-                title: 'Анализ активности клиента',
+                title: 'Анализ активности контакта',
                 description:
-                  'ИИ анализирует историю взаимодействий, последний контакт, активность на сайте',
+                  'Система анализирует, откуда пришёл контакт (WhatsApp, Telegram, email, сайт) и когда было последнее взаимодействие',
                 icon: <BarChartOutlined />,
               },
               {
-                title: 'Определение "теплоты" клиента',
+                title: 'Определение "теплоты" контакта',
                 description:
                   'Автоматическая оценка вероятности закрытия сделки на основе данных',
                 icon: <ThunderboltOutlined />,
@@ -634,19 +1045,19 @@ export const niteosAdvancedSlides: SlideData[] = [
               {
                 title: 'Выбор канала связи',
                 description:
-                  'Автоматический выбор предпочитаемого канала: WhatsApp, Telegram, Email, SMS',
+                  'Сервис выбирает тот же канал, в котором был исходный диалог: если общение шло в Telegram/WhatsApp — продолжение там же',
                 icon: <MessageOutlined />,
               },
               {
                 title: 'Генерация персонализированного сообщения',
                 description:
-                  'ИИ создает персональное сообщение с учетом истории и контекста',
+                  'Система создает персональное сообщение с учетом истории и контекста диалога в выбранном канале',
                 icon: <FileTextOutlined />,
               },
               {
                 title: 'Предложение дополнительной скидки',
                 description:
-                  'Для "теплых" клиентов автоматически предлагается дополнительная скидка',
+                  'Для "теплых" контактов автоматически предлагается дополнительная скидка',
                 icon: <TagOutlined />,
               },
               {
@@ -690,438 +1101,26 @@ export const niteosAdvancedSlides: SlideData[] = [
     ),
   },
   {
-    id: 'variant-b',
-    header: 'Вариант B: Оптимальный план (РЕКОМЕНДУЕТСЯ)',
+    id: 'technical-specification',
+    header: 'Техническое задание',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card style={{ backgroundColor: '#e6f7ff' }}>
           <Title level={4} style={{ marginTop: 0 }}>
-            <TrophyOutlined style={{ marginRight: 8, color: '#1890ff' }} />
-            Рекомендуемый вариант
+            <FileTextOutlined
+              style={{ marginRight: 8, color: '#1890ff' }}
+            />
+            Составление ТЗ
           </Title>
           <Paragraph>
-            Оптимальный баланс между инвестициями и результатами. Решает все
-            выявленные проблемы.
+            Техническое задание будет составлено совместно с Артуром Айратовичем
+            на основе детального анализа текущих процессов и требований компании.
           </Paragraph>
         </Card>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
-            <RocketOutlined style={{ marginRight: 8 }} />
-            Что входит в план
-          </Title>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} sm={12}>
-              <Card size="small">
-                <Text strong>1. Умное распределение заявок</Text>
-                <List
-                  size="small"
-                  dataSource={[
-                    'ИИ-анализ типа и сложности заявки',
-                    'Учет компетенций и загрузки менеджеров',
-                    'Автоматическая аналитика качества',
-                    'Приоритизация по важности и срочности',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
-                      <Text>• {item}</Text>
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small">
-                <Text strong>2. Управление воронкой</Text>
-                <List
-                  size="small"
-                  dataSource={[
-                    'Анализ "теплоты" клиента',
-                    'Умные напоминания через предпочитаемый канал',
-                    'Определение актуальности сотрудничества',
-                    'Предложения дополнительных скидок',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
-                      <Text>• {item}</Text>
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small">
-                <Text strong>3. Автоматизация расчетов</Text>
-                <List
-                  size="small"
-                  dataSource={[
-                    'Автоматическое распределение светотехнических расчетов',
-                    'Учет загрузки и компетенций специалистов',
-                    'Приоритизация по сложности',
-                    'Экономия 40 т.р./мес на диспетчеризации',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
-                      <Text>• {item}</Text>
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small">
-                <Text strong>4. CRM и интеграция</Text>
-                <List
-                  size="small"
-                  dataSource={[
-                    'Единая CRM система',
-                    'Интеграция всех систем',
-                    'Единая база данных',
-                    'Аналитика в реальном времени',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
-                      <Text>• {item}</Text>
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </Col>
-          </Row>
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <DollarOutlined style={{ marginRight: 8 }} />
-            Финансовые показатели
-          </Title>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} sm={12}>
-              <Card size="small">
-                <Text strong>Инвестиция:</Text>
-                <Title level={3} style={{ margin: '8px 0' }}>
-                  1.2-1.5 млн руб.
-                </Title>
-                <Text type="secondary">Разработка и внедрение</Text>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
-                <Text strong>Экономия на диспетчеризации:</Text>
-                <Title level={3} style={{ margin: '8px 0', color: '#52c41a' }}>
-                  480 т.р./год
-                </Title>
-                <Text type="secondary">40 т.р./мес × 12 месяцев</Text>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
-                <Text strong>Возврат клиентов:</Text>
-                <Title level={3} style={{ margin: '8px 0', color: '#52c41a' }}>
-                  +5-7 млн руб./год
-                </Title>
-                <Text type="secondary">7-10% выручки</Text>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
-                <Text strong>Возврат зависших сделок:</Text>
-                <Title level={3} style={{ margin: '8px 0', color: '#52c41a' }}>
-                  +2-3 млн руб./год
-                </Title>
-                <Text type="secondary">3-5% от воронки</Text>
-              </Card>
-            </Col>
-            <Col xs={24}>
-              <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
-                <Text strong>ROI:</Text>
-                <Title level={2} style={{ margin: '8px 0', color: '#1890ff' }}>
-                  400-500%
-                </Title>
-                <Text type="secondary">В первый год</Text>
-              </Card>
-            </Col>
-          </Row>
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <ClockCircleOutlined style={{ marginRight: 8 }} />
-            Сроки внедрения
-          </Title>
-          <Descriptions column={1} bordered size="small">
-            <Descriptions.Item label="Этап 1: Умное распределение заявок">
-              2-3 месяца
-            </Descriptions.Item>
-            <Descriptions.Item label="Этап 2: Управление воронкой">
-              2-3 месяца
-            </Descriptions.Item>
-            <Descriptions.Item label="Этап 3: Автоматизация расчетов">
-              2-3 месяца
-            </Descriptions.Item>
-            <Descriptions.Item label="Этап 4: Интеграция и тестирование">
-              3-4 месяца
-            </Descriptions.Item>
-            <Descriptions.Item label="Общий срок">
-              <Text strong>12-14 месяцев</Text>
-            </Descriptions.Item>
-          </Descriptions>
-        </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'comparison-variants',
-    header: 'Сравнение вариантов решения',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <BarChartOutlined style={{ marginRight: 8 }} />
-            Варианты решения
-          </Title>
-          <Table
-            size="small"
-            pagination={false}
-            dataSource={[
-              {
-                key: '1',
-                variant: 'Вариант A: Минимальный',
-                features: 'Только распределение заявок',
-                investment: '600 тыс. руб.',
-                time: '3-4 месяца',
-                roi: '300-400%',
-                solves: 'Частично',
-                status: 'warning',
-              },
-              {
-                key: '2',
-                variant: 'Вариант B: Оптимальный (РЕКОМЕНДУЕТСЯ)',
-                features: 'Распределение + Воронка + Расчеты + CRM',
-                investment: '1.2-1.5 млн руб.',
-                time: '12-14 месяцев',
-                roi: '400-500%',
-                solves: 'Все проблемы',
-                status: 'success',
-              },
-              {
-                key: '3',
-                variant: 'Вариант C: Максимальный',
-                features: 'Все из B + Полная цифровая трансформация',
-                investment: '2.5+ млн руб.',
-                time: '18+ месяцев',
-                roi: '240-300%',
-                solves: 'Все + избыточно',
-                status: 'default',
-              },
-            ]}
-            columns={[
-              {
-                title: 'Вариант',
-                dataIndex: 'variant',
-                key: 'variant',
-                render: (text, record) => (
-                  <Space>
-                    {record.status === 'success' && (
-                      <Tag color="green">РЕКОМЕНДУЕТСЯ</Tag>
-                    )}
-                    <Text strong={record.status === 'success'}>{text}</Text>
-                  </Space>
-                ),
-              },
-              {
-                title: 'Функционал',
-                dataIndex: 'features',
-                key: 'features',
-              },
-              {
-                title: 'Инвестиция',
-                dataIndex: 'investment',
-                key: 'investment',
-                align: 'center',
-              },
-              {
-                title: 'Срок',
-                dataIndex: 'time',
-                key: 'time',
-                align: 'center',
-              },
-              {
-                title: 'ROI',
-                dataIndex: 'roi',
-                key: 'roi',
-                align: 'center',
-                render: (roi, record) => <Tag color={record.status}>{roi}</Tag>,
-              },
-              {
-                title: 'Решает проблемы',
-                dataIndex: 'solves',
-                key: 'solves',
-                align: 'center',
-              },
-            ]}
-          />
-        </Card>
-        <Card style={{ backgroundColor: '#e6f7ff' }}>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <CheckCircleTwoTone
-              twoToneColor="#52c41a"
-              style={{ marginRight: 8 }}
-            />
-            Почему Вариант B оптимален?
-          </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Решает все выявленные проблемы компании',
-              'Оптимальный баланс инвестиций и результатов',
-              'Высокий ROI (400-500%) в первый год',
-              'Экономия 480 т.р./год на диспетчеризации',
-              'Возврат клиентов и зависших сделок',
-              'Реалистичные сроки внедрения (12-14 месяцев)',
-            ]}
-            renderItem={item => (
-              <List.Item
-                style={{ padding: '4px 0', justifyContent: 'flex-start' }}
-              >
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'expected-results',
-    header: 'Ожидаемые результаты',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <BarChartOutlined style={{ marginRight: 8 }} />
-            Ключевые улучшения
-          </Title>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} sm={12} md={8}>
-              <Card size="small" style={{ textAlign: 'center' }}>
-                <Title level={2} style={{ margin: 0, color: '#52c41a' }}>
-                  -50%
-                </Title>
-                <Text>Ошибки распределения</Text>
-                <div style={{ marginTop: 8 }}>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Вместо рандомайзера
-                  </Text>
-                </div>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12} md={8}>
-              <Card size="small" style={{ textAlign: 'center' }}>
-                <Title level={2} style={{ margin: 0, color: '#52c41a' }}>
-                  480 т.р./год
-                </Title>
-                <Text>Экономия на диспетчеризации</Text>
-                <div style={{ marginTop: 8 }}>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Автоматизация расчетов
-                  </Text>
-                </div>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12} md={8}>
-              <Card size="small" style={{ textAlign: 'center' }}>
-                <Title level={2} style={{ margin: 0, color: '#52c41a' }}>
-                  +3-5%
-                </Title>
-                <Text>Возврат зависших сделок</Text>
-                <div style={{ marginTop: 8 }}>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Умная работа с воронкой
-                  </Text>
-                </div>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12} md={8}>
-              <Card size="small" style={{ textAlign: 'center' }}>
-                <Title level={2} style={{ margin: 0, color: '#52c41a' }}>
-                  +40-60%
-                </Title>
-                <Text>Отклик на напоминания</Text>
-                <div style={{ marginTop: 8 }}>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Персонализированный подход
-                  </Text>
-                </div>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12} md={8}>
-              <Card size="small" style={{ textAlign: 'center' }}>
-                <Title level={2} style={{ margin: 0, color: '#52c41a' }}>
-                  +7-10%
-                </Title>
-                <Text>Возврат клиентов</Text>
-                <div style={{ marginTop: 8 }}>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    5-7 млн руб./год
-                  </Text>
-                </div>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12} md={8}>
-              <Card size="small" style={{ textAlign: 'center' }}>
-                <Title level={2} style={{ margin: 0, color: '#1890ff' }}>
-                  400-500%
-                </Title>
-                <Text>ROI</Text>
-                <div style={{ marginTop: 8 }}>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    В первый год
-                  </Text>
-                </div>
-              </Card>
-            </Col>
-          </Row>
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
             <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
-            Дополнительные преимущества
-          </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Автоматическая аналитика качества распределения (вместо ручной)',
-              'Умное определение "теплоты" клиента без прозвонов',
-              'Персонализированные напоминания через предпочитаемый канал',
-              'Автоматическое предложение дополнительных скидок',
-              'Подсветка менеджеру обратной связи и рекомендаций',
-              'Снижение нагрузки на сотрудников на 30-40%',
-            ]}
-            renderItem={item => (
-              <List.Item
-                style={{ padding: '4px 0', justifyContent: 'flex-start' }}
-              >
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'next-steps',
-    header: 'Следующие шаги',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <RocketOutlined style={{ marginRight: 8 }} />
-            План внедрения
+            Процесс составления ТЗ
           </Title>
           <AnimatedSteps
             direction="vertical"
@@ -1129,95 +1128,69 @@ export const niteosAdvancedSlides: SlideData[] = [
             stepInterval={2500}
             items={[
               {
-                title: 'Этап 1: Анализ и проектирование (2-3 недели)',
+                title: 'Анализ текущих процессов',
                 description:
-                  'Детальный анализ текущих процессов, проектирование ИИ-модулей, определение требований',
+                  'Изучение существующих бизнес-процессов, выявление узких мест и возможностей оптимизации',
+                icon: <BarChartOutlined />,
+              },
+              {
+                title: 'Определение требований',
+                description:
+                  'Совместное определение функциональных и нефункциональных требований к системе',
                 icon: <FileTextOutlined />,
               },
               {
-                title: 'Этап 2: Умное распределение заявок (2-3 месяца)',
+                title: 'Проектирование решения',
                 description:
-                  'Разработка и внедрение ИИ-модуля для умного распределения заявок с аналитикой',
-                icon: <TagOutlined />,
-              },
-              {
-                title: 'Этап 3: Управление воронкой (2-3 месяца)',
-                description:
-                  'Разработка системы анализа "теплоты" клиента и умных напоминаний',
-                icon: <FunnelPlotOutlined />,
-              },
-              {
-                title: 'Этап 4: Автоматизация расчетов (2-3 месяца)',
-                description:
-                  'Разработка автоматического распределения светотехнических расчетов',
-                icon: <CalculatorOutlined />,
-              },
-              {
-                title: 'Этап 5: Интеграция и тестирование (3-4 месяца)',
-                description:
-                  'Интеграция всех модулей, тестирование, настройка, обучение сотрудников',
+                  'Разработка архитектуры решения с приоритетом на алгоритмические методы',
                 icon: <SettingOutlined />,
               },
               {
-                title: 'Этап 6: Запуск и мониторинг',
+                title: 'Определение точек подключения AI',
                 description:
-                  'Запуск системы, мониторинг метрик, доработка по обратной связи',
-                icon: <BarChartOutlined />,
+                  'Выявление задач, где алгоритмические методы не справляются и требуется AI агент',
+                icon: <RobotOutlined />,
+              },
+              {
+                title: 'Согласование ТЗ',
+                description:
+                  'Финальное согласование технического задания с Артуром Айратовичем',
+                icon: <CheckCircleOutlined />,
               },
             ]}
           />
         </Card>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
-            <SafetyOutlined style={{ marginRight: 8 }} />
-            Гарантии и поддержка
+            <RocketOutlined style={{ marginRight: 8 }} />
+            Преимущества совместной работы
           </Title>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} sm={12}>
-              <Card size="small">
-                <Text strong>Гарантии:</Text>
-                <List
-                  size="small"
-                  dataSource={[
-                    'Точность распределения: 95%+',
-                    'Экономия на диспетчеризации: 40 т.р./мес',
-                    'Если результаты ниже обещанных — доработка бесплатно',
-                    'Постоянный мониторинг качества',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
-                      <Text>• {item}</Text>
-                    </List.Item>
-                  )}
+          <List
+            size="small"
+            dataSource={[
+              'Точное понимание потребностей компании',
+              'Учет специфики бизнес-процессов НИТЕОС',
+              'Оптимальный баланс алгоритмических решений и AI',
+              'Реалистичные сроки и бюджет',
+              'Максимальная эффективность решения',
+            ]}
+            renderItem={item => (
+              <List.Item
+                style={{ padding: '4px 0', justifyContent: 'flex-start' }}
+              >
+                <CheckCircleOutlined
+                  style={{ color: '#52c41a', marginRight: 8 }}
                 />
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small">
-                <Text strong>Поддержка:</Text>
-                <List
-                  size="small"
-                  dataSource={[
-                    '3 месяца бесплатной поддержки',
-                    'Настройка ИИ-модулей на новых данных',
-                    'Техническая поддержка 24/7',
-                    'Обучение сотрудников',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0', textAlign: 'left' }}>
-                      <Text>• {item}</Text>
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </Col>
-          </Row>
+                <Text>{item}</Text>
+              </List.Item>
+            )}
+          />
         </Card>
       </Space>
     ),
   },
   {
-    id: 'thank-you',
+    id: 'contacts',
     header: undefined,
     content: (
       <Space
@@ -1225,49 +1198,177 @@ export const niteosAdvancedSlides: SlideData[] = [
         size="large"
         style={{
           width: '100%',
-          justifyContent: 'center',
+          justifyContent: 'flex-start',
           alignItems: 'center',
           height: '100%',
+          padding: '8px 0',
         }}
       >
-        <Card style={{ maxWidth: '800px', width: '100%', textAlign: 'center' }}>
-          <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-            <Title level={1} style={{ marginTop: 0, marginBottom: 0 }}>
-              Благодарю за внимание
-            </Title>
-            <Divider />
-            <Space
-              orientation="vertical"
-              size="middle"
-              style={{ width: '100%' }}
+        <Card style={{ maxWidth: '800px', width: '100%' }}>
+          <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+            <Title
+              level={3}
+              style={{ textAlign: 'center', marginTop: 0, marginBottom: 8 }}
             >
-              <Space direction="vertical" size="small">
-                <Text strong style={{ fontSize: '18px' }}>
+              Свяжитесь с нами
+            </Title>
+            <Divider style={{ margin: '8px 0' }} />
+            <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
+              <Space
+                orientation="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Title level={5} style={{ marginTop: 0, marginBottom: 4 }}>
+                  <UserOutlined style={{ marginRight: 8 }} />
                   Новиков Павел
-                </Text>
-                <Text type="secondary" style={{ fontSize: '16px' }}>
+                </Title>
+                <Text type="secondary" style={{ fontSize: '13px' }}>
                   Технический директор компании Проксима
                 </Text>
-              </Space>
-              <Divider style={{ margin: '16px 0' }} />
-              <Space size="middle">
-                <PhoneOutlined
-                  style={{
-                    fontSize: '18px',
-                    color: 'var(--app-color-primary)',
-                  }}
-                />
-                <Link
-                  href="tel:+79085550606"
-                  style={{
-                    fontSize: '18px',
-                    color: 'var(--app-color-primary)',
-                  }}
+                <Divider style={{ margin: '8px 0' }} />
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
                 >
-                  8 908 555 0606
-                </Link>
+                  <Space size="small">
+                    <PhoneOutlined
+                      style={{
+                        fontSize: '16px',
+                        color: 'var(--app-color-primary)',
+                      }}
+                    />
+                    <Link href="tel:+79085550606" style={{ fontSize: '15px' }}>
+                      8 908 555 0606
+                    </Link>
+                  </Space>
+                  <Space size="small">
+                    <MailOutlined
+                      style={{
+                        fontSize: '16px',
+                        color: 'var(--app-color-primary)',
+                      }}
+                    />
+                    <Link
+                      href="mailto:p.novikov@proxima.ooo"
+                      style={{ fontSize: '15px' }}
+                    >
+                      p.novikov@proxima.ooo
+                    </Link>
+                  </Space>
+                  <Space size="small">
+                    <GlobalOutlined
+                      style={{
+                        fontSize: '16px',
+                        color: 'var(--app-color-primary)',
+                      }}
+                    />
+                    <Link
+                      href="https://proxima24.ru/"
+                      target="_blank"
+                      style={{ fontSize: '15px' }}
+                    >
+                      proxima24.ru
+                    </Link>
+                  </Space>
+                </Space>
               </Space>
-            </Space>
+            </Card>
+            <Card
+              size="small"
+              style={{ backgroundColor: '#fff7e6', marginTop: 8 }}
+            >
+              <Space
+                orientation="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Title level={5} style={{ marginTop: 0, marginBottom: 4 }}>
+                  <UserOutlined style={{ marginRight: 8 }} />
+                  Ситяков Артём
+                </Title>
+                <Text type="secondary" style={{ fontSize: '13px' }}>
+                  Руководитель отдела маркетинга
+                </Text>
+                <Divider style={{ margin: '8px 0' }} />
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Space size="small">
+                    <PhoneOutlined
+                      style={{
+                        fontSize: '16px',
+                        color: 'var(--app-color-primary)',
+                      }}
+                    />
+                    <Link href="tel:+79271108488" style={{ fontSize: '15px' }}>
+                      +7 927 110 84 88
+                    </Link>
+                  </Space>
+                  <Space size="small">
+                    <MailOutlined
+                      style={{
+                        fontSize: '16px',
+                        color: 'var(--app-color-primary)',
+                      }}
+                    />
+                    <Link
+                      href="mailto:a.sityakov@proxima.ooo"
+                      style={{ fontSize: '15px' }}
+                    >
+                      a.sityakov@proxima.ooo
+                    </Link>
+                  </Space>
+                  <Space size="small">
+                    <GlobalOutlined
+                      style={{
+                        fontSize: '16px',
+                        color: 'var(--app-color-primary)',
+                      }}
+                    />
+                    <Link
+                      href="https://proxima24.ru/"
+                      target="_blank"
+                      style={{ fontSize: '15px' }}
+                    >
+                      proxima24.ru
+                    </Link>
+                  </Space>
+                </Space>
+              </Space>
+            </Card>
+            <Card
+              size="small"
+              style={{ backgroundColor: '#e6f7ff', marginTop: 8 }}
+            >
+              <Paragraph
+                style={{
+                  marginBottom: 0,
+                  textAlign: 'center',
+                  fontSize: '14px',
+                }}
+              >
+                <Text strong>
+                  Готовы обсудить, как мы можем помочь Вашему бизнесу
+                </Text>
+              </Paragraph>
+              <Paragraph
+                style={{
+                  marginTop: 4,
+                  marginBottom: 0,
+                  textAlign: 'center',
+                  fontSize: '13px',
+                }}
+              >
+                <Text type="secondary">
+                  Предложим оптимальное решение и расскажем подробнее о процессе
+                  работы
+                </Text>
+              </Paragraph>
+            </Card>
           </Space>
         </Card>
       </Space>
