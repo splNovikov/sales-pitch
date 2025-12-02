@@ -19,17 +19,10 @@ import {
   LinkOutlined,
 } from '@ant-design/icons';
 import Logo from '~shared/ui/logo';
-import chevronLogo from './chevron.png';
 import { type SlideData } from '~widgets/slides';
+import chevronLogo from './chevron.png';
 
 const { Title, Paragraph, Text, Link } = Typography;
-
-/**
- * Presentation metadata constants
- * These are used both in slides and in presentations.config.ts
- */
-export const proximaCreatedAt = '2024-02-18T00:00:00Z';
-export const proximaTitle = 'Proxima — кейс';
 
 /**
  * Component for animated card appearance

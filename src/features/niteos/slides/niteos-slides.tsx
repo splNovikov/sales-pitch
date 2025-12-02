@@ -38,15 +38,9 @@ import {
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 import { formatDateForSlide } from '~shared/lib/date.utils';
+import { niteosCreatedAt } from './niteos.meta';
 
 const { Title, Paragraph, Text, Link } = Typography;
-
-/**
- * Presentation metadata constants
- * These are used both in slides and in presentations.config.ts
- */
-export const niteosCreatedAt = '2025-11-27T00:00:00Z';
-export const niteosTitle = 'Niteos — основная презентация';
 
 /**
  * Slides data for Niteos presentation

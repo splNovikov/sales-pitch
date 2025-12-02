@@ -49,13 +49,6 @@ import ruskonOrders from './ruskon_orders.png';
 const { Title, Paragraph, Text, Link } = Typography;
 
 /**
- * Presentation metadata constants
- * These are used both in slides and in presentations.config.ts
- */
-export const hanskonnerWebsiteCreatedAt = '2025-11-27T00:00:00Z';
-export const hanskonnerWebsiteTitle = 'Hanskonner — сайт';
-
-/**
  * Slides data for HansKonner website development presentation
  * Презентация о веб-разработке для HansKonner
  * Фокус на объяснении процесса разработки и двух вариантах: Шаблонный vs Кастомный фронтенд

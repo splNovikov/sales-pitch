@@ -23,16 +23,10 @@ import {
 import { AnimatedSteps } from '~shared/ui/animated-steps';
 import { type SlideData } from '~widgets/slides';
 import { formatDateForSlide } from '~shared/lib/date.utils';
+import { niteosAdvancedCreatedAt } from './niteos-advanced.meta';
 import niteosLogo from './niteos.png';
 
 const { Title, Paragraph, Text, Link } = Typography;
-
-/**
- * Presentation metadata constants
- * These are used both in slides and in presentations.config.ts
- */
-export const niteosAdvancedCreatedAt = '2025-12-01T00:00:00Z';
-export const niteosAdvancedTitle = 'Niteos — расширенное решение';
 
 /**
  * Advanced slides data for Niteos presentation

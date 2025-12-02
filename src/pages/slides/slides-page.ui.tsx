@@ -13,6 +13,7 @@ import {
   smzSolutionSlides,
 } from '~features/smz/slides';
 import { proximaSlides } from '~features/proxima/slides';
+import { tatneftSlides } from '~features/jaxel/slides';
 import { presentationSlugs } from '~shared/lib/presentations.config';
 import { Slides, type SlideData } from '~widgets/slides';
 
@@ -28,6 +29,7 @@ const slidesMap: Record<string, SlideData[]> = {
   'smz-brief': smzBriefSlides,
   'smz-solution': smzSolutionSlides,
   proxima: proximaSlides,
+  tatneft: tatneftSlides,
 };
 
 /**

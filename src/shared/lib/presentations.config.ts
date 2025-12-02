@@ -6,39 +6,44 @@
 import {
   kirovStekloCreatedAt,
   kirovStekloTitle,
-} from '~features/kirov-steklo/slides/kirov-steklo-slides';
+} from '~features/kirov-steklo/slides/kirov-steklo.meta';
 import {
   niteosCreatedAt,
   niteosTitle,
-} from '~features/niteos/slides/niteos-slides';
+} from '~features/niteos/slides/niteos.meta';
 import {
   niteosAdvancedCreatedAt,
   niteosAdvancedTitle,
-} from '~features/niteos/slides/niteos-advanced-slides';
+} from '~features/niteos/slides/niteos-advanced.meta';
 import {
   niteosShortCreatedAt,
   niteosShortTitle,
-} from '~features/niteos/slides/niteos-short-slides';
+} from '~features/niteos/slides/niteos-short.meta';
 import {
   hanskonnerCreatedAt,
   hanskonnerTitle,
-} from '~features/hanskonner/slides/hanskonner-slides';
+} from '~features/hanskonner/slides/hanskonner.meta';
 import {
   hanskonnerWebsiteCreatedAt,
   hanskonnerWebsiteTitle,
-} from '~features/hanskonner/slides/hanskonner-website-slides';
+} from '~features/hanskonner/slides/hanskonner-website.meta';
+import { smzCreatedAt, smzTitle } from '~features/smz/slides/smz.meta';
 import {
   smzBriefCreatedAt,
   smzBriefTitle,
-  smzCreatedAt,
+} from '~features/smz/slides/smz-brief.meta';
+import {
   smzSolutionCreatedAt,
   smzSolutionTitle,
-  smzTitle,
-} from '~features/smz/slides';
+} from '~features/smz/slides/smz-solution.meta';
 import {
   proximaCreatedAt,
   proximaTitle,
-} from '~features/proxima/slides/proxima-slides';
+} from '~features/proxima/slides/proxima.meta';
+import {
+  tatneftCreatedAt,
+  tatneftTitle,
+} from '~features/jaxel/slides/tatneft.meta';
 
 /**
  * Presentation metadata
@@ -143,6 +148,13 @@ export const presentations: PresentationMeta[] = [
     createdAt: proximaCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
+  },
+  {
+    slug: 'tatneft',
+    title: tatneftTitle,
+    createdAt: tatneftCreatedAt,
+    notificationsEnabled: false,
+    showOnVisibility: false,
   },
 ];
 
