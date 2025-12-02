@@ -7,6 +7,7 @@ import {
   hanskonnerSlides,
   hanskonnerWebsiteSlides,
 } from '~features/hanskonner/slides';
+import { hanskonnerRebornSlides } from '~features/hanskonner/slides-2';
 import {
   smzSlides,
   smzBriefSlides,
@@ -25,6 +26,7 @@ const slidesMap: Record<string, SlideData[]> = {
   'niteos-advanced': niteosAdvancedSlides,
   hanskonner: hanskonnerSlides,
   'hanskonner-website': hanskonnerWebsiteSlides,
+  'hanskonner-reborn': hanskonnerRebornSlides,
   smz: smzSlides,
   'smz-brief': smzBriefSlides,
   'smz-solution': smzSolutionSlides,

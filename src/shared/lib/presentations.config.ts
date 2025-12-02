@@ -27,6 +27,10 @@ import {
   hanskonnerWebsiteCreatedAt,
   hanskonnerWebsiteTitle,
 } from '~features/hanskonner/slides/hanskonner-website.meta';
+import {
+  hanskonnerRebornCreatedAt,
+  hanskonnerRebornTitle,
+} from '~features/hanskonner/slides-2/hanskonner-reborn.meta';
 import { smzCreatedAt, smzTitle } from '~features/smz/slides/smz.meta';
 import {
   smzBriefCreatedAt,
@@ -118,6 +122,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'hanskonner-website',
     title: hanskonnerWebsiteTitle,
     createdAt: hanskonnerWebsiteCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'hanskonner-reborn',
+    title: hanskonnerRebornTitle,
+    createdAt: hanskonnerRebornCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
