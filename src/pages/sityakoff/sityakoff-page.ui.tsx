@@ -8,17 +8,11 @@ export default function SityakoffPage() {
   return (
     <Card>
       <List
-        itemLayout="vertical"
+        size="small"
         dataSource={visiblePresentations}
         renderItem={item => (
           <List.Item key={item.slug}>
-            <List.Item.Meta
-              title={
-                <Link to={`/slides/${item.slug}`}>
-                  {item.title} ({item.slug})
-                </Link>
-              }
-            />
+            <Link to={`/slides/${item.slug}`}>{item.title}</Link>
           </List.Item>
         )}
       />
