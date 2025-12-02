@@ -3,5 +3,5 @@ export const pathKeys = {
   home: '/',
   page404: '/404/',
   slides: '/slides/:slug',
-  sityakoff: '/sityakoff',
+  visibility: '/visibility',
 } as const;

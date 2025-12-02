@@ -1,17 +1,5 @@
+import { Typography, List, Space, Divider, Card, Row, Col, Tag } from 'antd';
 import {
-  Typography,
-  List,
-  Space,
-  Divider,
-  Card,
-  Row,
-  Col,
-  Tag,
-  Table,
-  Descriptions,
-} from 'antd';
-import {
-  DollarOutlined,
   WarningOutlined,
   CheckCircleOutlined,
   BarChartOutlined,
@@ -22,25 +10,29 @@ import {
   SettingOutlined,
   CloseOutlined,
   TagOutlined,
-  TrophyOutlined,
-  SafetyOutlined,
   WarningTwoTone,
   MessageOutlined,
   RobotOutlined,
-  ClockCircleOutlined,
   FunnelPlotOutlined,
   CalculatorOutlined,
   SendOutlined,
-  CheckCircleTwoTone,
   UserOutlined,
   MailOutlined,
   GlobalOutlined,
 } from '@ant-design/icons';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
 import { type SlideData } from '~widgets/slides';
+import { formatDateForSlide } from '~shared/lib/date.utils';
 import niteosLogo from './niteos.png';
 
 const { Title, Paragraph, Text, Link } = Typography;
+
+/**
+ * Presentation metadata constants
+ * These are used both in slides and in presentations.config.ts
+ */
+export const niteosAdvancedCreatedAt = '2025-12-01T00:00:00Z';
+export const niteosAdvancedTitle = 'Niteos — расширенное решение';
 
 /**
  * Advanced slides data for Niteos presentation
@@ -107,7 +99,7 @@ export const niteosAdvancedSlides: SlideData[] = [
             marginTop: 'auto',
           }}
         >
-          01.12.2025
+          {formatDateForSlide(niteosAdvancedCreatedAt)}
         </Text>
       </Space>
     ),
@@ -1107,14 +1099,13 @@ export const niteosAdvancedSlides: SlideData[] = [
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card style={{ backgroundColor: '#e6f7ff' }}>
           <Title level={4} style={{ marginTop: 0 }}>
-            <FileTextOutlined
-              style={{ marginRight: 8, color: '#1890ff' }}
-            />
+            <FileTextOutlined style={{ marginRight: 8, color: '#1890ff' }} />
             Составление ТЗ
           </Title>
           <Paragraph>
             Техническое задание будет составлено совместно с Артуром Айратовичем
-            на основе детального анализа текущих процессов и требований компании.
+            на основе детального анализа текущих процессов и требований
+            компании.
           </Paragraph>
         </Card>
         <Card>

@@ -31,9 +31,17 @@ import {
   YoutubeOutlined,
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
+import { formatDateForSlide } from '~shared/lib/date.utils';
 import hanskonnerImage from './image.png';
 
 const { Title, Paragraph, Text, Link } = Typography;
+
+/**
+ * Presentation metadata constants
+ * These are used both in slides and in presentations.config.ts
+ */
+export const hanskonnerCreatedAt = '2025-11-27T00:00:00Z';
+export const hanskonnerTitle = 'Hanskonner — стратегия';
 
 /**
  * Slides data for HansKonner presentation
@@ -109,7 +117,7 @@ export const hanskonnerSlides: SlideData[] = [
             marginTop: 'auto',
           }}
         >
-          27.11.2025
+          {formatDateForSlide(hanskonnerCreatedAt)}
         </Text>
       </Space>
     ),

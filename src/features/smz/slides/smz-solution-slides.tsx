@@ -21,14 +21,18 @@ import {
 } from '@ant-design/icons';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
 import { type SlideData } from '~widgets/slides';
+import { formatDateForSlide } from '~shared/lib/date.utils';
 import smzSolutionImage from './solution-image.svg';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
 /**
- * Slides data for SMZ Solution presentation
- * Our solution: 3 variants with comparison
+ * Presentation metadata constants
+ * These are used both in slides and in presentations.config.ts
  */
+export const smzSolutionCreatedAt = '2025-11-27T00:00:00Z';
+export const smzSolutionTitle = 'СМЗ — решение';
+
 export const smzSolutionSlides: SlideData[] = [
   {
     id: 'title',
@@ -100,7 +104,7 @@ export const smzSolutionSlides: SlideData[] = [
             marginTop: 'auto',
           }}
         >
-          27.11.2025
+          {formatDateForSlide(smzSolutionCreatedAt)}
         </Text>
       </Space>
     ),

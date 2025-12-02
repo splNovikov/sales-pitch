@@ -50,9 +50,17 @@ import {
 } from '@ant-design/icons';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
 import { type SlideData } from '~widgets/slides';
+import { formatDateForSlide } from '~shared/lib/date.utils';
 import kirovStekloImg from './img.png';
 
 const { Title, Paragraph, Text, Link } = Typography;
+
+/**
+ * Presentation metadata constants
+ * These are used both in slides and in presentations.config.ts
+ */
+export const kirovStekloCreatedAt = '2025-11-25T00:00:00Z';
+export const kirovStekloTitle = 'Киров-Стекло — автоматизация заказов';
 
 /**
  * Slides data for Kirov Steklo presentation
@@ -131,7 +139,7 @@ export const kirovStekloSlides: SlideData[] = [
             marginTop: 'auto',
           }}
         >
-          25.11.2025
+          {formatDateForSlide(kirovStekloCreatedAt)}
         </Text>
       </Space>
     ),

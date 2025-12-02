@@ -3,6 +3,43 @@
  * Single source of truth for presentation metadata
  */
 
+import {
+  kirovStekloCreatedAt,
+  kirovStekloTitle,
+} from '~features/kirov-steklo/slides/kirov-steklo-slides';
+import {
+  niteosCreatedAt,
+  niteosTitle,
+} from '~features/niteos/slides/niteos-slides';
+import {
+  niteosAdvancedCreatedAt,
+  niteosAdvancedTitle,
+} from '~features/niteos/slides/niteos-advanced-slides';
+import {
+  niteosShortCreatedAt,
+  niteosShortTitle,
+} from '~features/niteos/slides/niteos-short-slides';
+import {
+  hanskonnerCreatedAt,
+  hanskonnerTitle,
+} from '~features/hanskonner/slides/hanskonner-slides';
+import {
+  hanskonnerWebsiteCreatedAt,
+  hanskonnerWebsiteTitle,
+} from '~features/hanskonner/slides/hanskonner-website-slides';
+import {
+  smzBriefCreatedAt,
+  smzBriefTitle,
+  smzCreatedAt,
+  smzSolutionCreatedAt,
+  smzSolutionTitle,
+  smzTitle,
+} from '~features/smz/slides';
+import {
+  proximaCreatedAt,
+  proximaTitle,
+} from '~features/proxima/slides/proxima-slides';
+
 /**
  * Presentation metadata
  */
@@ -20,13 +57,17 @@ export interface PresentationMeta {
    */
   description?: string;
   /**
+   * Date when presentation was created (ISO string format)
+   */
+  createdAt: string;
+  /**
    * Whether to send notifications for this presentation (default: true)
    */
   notificationsEnabled?: boolean;
   /**
-   * Whether to show this presentation on /sityakoff page (default: true)
+   * Whether to show this presentation on /visibility page (default: true)
    */
-  showOnSityakoff?: boolean;
+  showOnVisibility?: boolean;
 }
 
 /**
@@ -35,63 +76,73 @@ export interface PresentationMeta {
 export const presentations: PresentationMeta[] = [
   {
     slug: 'kirov-steklo',
-    title: 'Киров-Стекло — автоматизация заказов',
+    title: kirovStekloTitle,
+    createdAt: kirovStekloCreatedAt,
     notificationsEnabled: true,
-    showOnSityakoff: true,
+    showOnVisibility: true,
   },
   {
     slug: 'niteos',
-    title: 'Niteos — основная презентация',
+    title: niteosTitle,
+    createdAt: niteosCreatedAt,
     notificationsEnabled: true,
-    showOnSityakoff: true,
+    showOnVisibility: true,
   },
   {
     slug: 'niteos-first-turn',
-    title: 'Niteos — первый заход',
+    title: niteosShortTitle,
+    createdAt: niteosShortCreatedAt,
     notificationsEnabled: true,
-    showOnSityakoff: true,
+    showOnVisibility: true,
   },
   {
     slug: 'niteos-advanced',
-    title: 'Niteos — расширенное решение',
+    title: niteosAdvancedTitle,
+    createdAt: niteosAdvancedCreatedAt,
     notificationsEnabled: true,
-    showOnSityakoff: true,
+    showOnVisibility: true,
   },
   {
     slug: 'hanskonner',
-    title: 'Hanskonner — стратегия',
+    title: hanskonnerTitle,
+    createdAt: hanskonnerCreatedAt,
     notificationsEnabled: true,
-    showOnSityakoff: true,
+    showOnVisibility: true,
   },
   {
     slug: 'hanskonner-website',
-    title: 'Hanskonner — сайт',
+    title: hanskonnerWebsiteTitle,
+    createdAt: hanskonnerWebsiteCreatedAt,
     notificationsEnabled: true,
-    showOnSityakoff: true,
+    showOnVisibility: true,
   },
   {
     slug: 'smz',
-    title: 'СМЗ — полная презентация',
+    title: smzTitle,
+    createdAt: smzCreatedAt,
     notificationsEnabled: true,
-    showOnSityakoff: true,
+    showOnVisibility: true,
   },
   {
     slug: 'smz-brief',
-    title: 'СМЗ — краткий бриф',
+    title: smzBriefTitle,
+    createdAt: smzBriefCreatedAt,
     notificationsEnabled: true,
-    showOnSityakoff: true,
+    showOnVisibility: true,
   },
   {
     slug: 'smz-solution',
-    title: 'СМЗ — решение',
+    title: smzSolutionTitle,
+    createdAt: smzSolutionCreatedAt,
     notificationsEnabled: true,
-    showOnSityakoff: true,
+    showOnVisibility: true,
   },
   {
     slug: 'proxima',
-    title: 'Proxima — кейс',
+    title: proximaTitle,
+    createdAt: proximaCreatedAt,
     notificationsEnabled: true,
-    showOnSityakoff: true,
+    showOnVisibility: true,
   },
 ];
 
@@ -117,8 +168,21 @@ export function getPresentationsWithNotifications(): PresentationMeta[] {
 }
 
 /**
- * Get all presentations visible on /sityakoff page
+ * Get all presentations visible on /visibility page
  */
 export function getVisiblePresentations(): PresentationMeta[] {
-  return presentations.filter(p => p.showOnSityakoff !== false);
+  return presentations.filter(p => p.showOnVisibility !== false);
+}
+
+/**
+ * Check if presentation is new (created less than 3 days ago)
+ * @param createdAt - ISO date string
+ * @returns True if presentation is less than 3 days old
+ */
+export function isPresentationNew(createdAt: string): boolean {
+  const createdDate = new Date(createdAt);
+  const now = new Date();
+  const daysDiff =
+    (now.getTime() - createdDate.getTime()) / (1000 * 60 * 60 * 24);
+  return daysDiff < 3;
 }

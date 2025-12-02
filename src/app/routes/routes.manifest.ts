@@ -30,10 +30,10 @@ export const routesManifest: RouteManifestEntry[] = [
           import('~pages/home/home-page.route').then(m => m.homePageRoute),
       },
       {
-        path: pathKeys.sityakoff,
+        path: pathKeys.visibility,
         loader: () =>
-          import('~pages/sityakoff/sityakoff-page.route').then(
-            m => m.sityakoffPageRoute
+          import('~pages/visibility/visibility-page.route').then(
+            m => m.visibilityPageRoute
           ),
       },
     ],

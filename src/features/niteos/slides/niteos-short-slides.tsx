@@ -35,9 +35,17 @@ import {
 } from '@ant-design/icons';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
 import { type SlideData } from '~widgets/slides';
+import { formatDateForSlide } from '~shared/lib/date.utils';
 import niteosLogo from './niteos.png';
 
 const { Title, Paragraph, Text, Link } = Typography;
+
+/**
+ * Presentation metadata constants
+ * These are used both in slides and in presentations.config.ts
+ */
+export const niteosShortCreatedAt = '2025-11-27T00:00:00Z';
+export const niteosShortTitle = 'Niteos — первый заход';
 
 /**
  * Short slides data for Niteos presentation
@@ -111,7 +119,7 @@ export const niteosShortSlides: SlideData[] = [
             marginTop: 'auto',
           }}
         >
-          27.11.2025
+          {formatDateForSlide(niteosShortCreatedAt)}
         </Text>
       </Space>
     ),

@@ -23,13 +23,17 @@ import {
   ThunderboltOutlined,
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
+import { formatDateForSlide } from '~shared/lib/date.utils';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
 /**
- * Slides data for SMZ Brief Q&A presentation
- * Based on brif-tz-full.md documentation
+ * Presentation metadata constants
+ * These are used both in slides and in presentations.config.ts
  */
+export const smzBriefCreatedAt = '2025-11-27T00:00:00Z';
+export const smzBriefTitle = 'СМЗ — краткий бриф';
+
 export const smzBriefSlides: SlideData[] = [
   {
     id: 'title',
@@ -90,7 +94,7 @@ export const smzBriefSlides: SlideData[] = [
             marginTop: 'auto',
           }}
         >
-          27.11.2025
+          {formatDateForSlide(smzBriefCreatedAt)}
         </Text>
       </Space>
     ),

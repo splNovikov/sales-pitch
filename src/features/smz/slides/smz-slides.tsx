@@ -35,8 +35,16 @@ import {
   ClockCircleOutlined,
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
+import { formatDateForSlide } from '~shared/lib/date.utils';
 
 const { Title, Paragraph, Text, Link } = Typography;
+
+/**
+ * Presentation metadata constants
+ * These are used both in slides and in presentations.config.ts
+ */
+export const smzCreatedAt = '2025-11-27T00:00:00Z';
+export const smzTitle = 'СМЗ — полная презентация';
 
 /**
  * Slides data for SMZ (Сиверский Метизный Завод) presentation
@@ -105,7 +113,7 @@ export const smzSlides: SlideData[] = [
             marginTop: 'auto',
           }}
         >
-          27.11.2025
+          {formatDateForSlide(smzCreatedAt)}
         </Text>
       </Space>
     ),
