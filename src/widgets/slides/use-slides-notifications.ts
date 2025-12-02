@@ -1,10 +1,12 @@
 /**
  * Hook for sending Telegram notifications on presentation events
  * Tracks when user starts and completes a presentation
+ * Automatically enabled for all presentations with notificationsEnabled !== false
  */
 
 import { useEffect, useRef } from 'react';
 import { notifyPageVisit } from '~shared/lib/telegram';
+import { getPresentationsWithNotifications } from '~shared/lib/presentations.config';
 
 /**
  * Options for useSlidesNotifications hook
@@ -29,7 +31,17 @@ export interface UseSlidesNotificationsOptions {
 }
 
 /**
+ * Get list of slugs with notifications enabled
+ * Cached to avoid recalculating on every render
+ */
+const getNotificationEnabledSlugs = (): string[] => {
+  return getPresentationsWithNotifications().map(p => p.slug);
+};
+
+/**
  * Hook to send notifications when user starts or completes a presentation
+ * Automatically works for all presentations configured in presentations.config.ts
+ * with notificationsEnabled !== false
  * @param options - Configuration options
  */
 export function useSlidesNotifications(
@@ -47,20 +59,10 @@ export function useSlidesNotifications(
       return;
     }
 
-    // Send for supported presentations
-    const supportedSlugs = [
-      'kirov-steklo',
-      'niteos',
-      'niteos-first-turn',
-      'hanskonner',
-      'hanskonner-website',
-      'smz',
-      'smz-brief',
-      'smz-solution',
-      'proxima',
-    ];
+    // Check if this presentation has notifications enabled
+    const notificationEnabledSlugs = getNotificationEnabledSlugs();
     if (
-      supportedSlugs.includes(slug) &&
+      notificationEnabledSlugs.includes(slug) &&
       currentSlideIndex === 0 &&
       totalSlides > 0
     ) {
@@ -83,20 +85,10 @@ export function useSlidesNotifications(
       return;
     }
 
-    // Send for supported presentations
-    const supportedSlugs = [
-      'kirov-steklo',
-      'niteos',
-      'niteos-first-turn',
-      'hanskonner',
-      'hanskonner-website',
-      'smz',
-      'smz-brief',
-      'smz-solution',
-      'proxima',
-    ];
+    // Check if this presentation has notifications enabled
+    const notificationEnabledSlugs = getNotificationEnabledSlugs();
     if (
-      supportedSlugs.includes(slug) &&
+      notificationEnabledSlugs.includes(slug) &&
       currentSlideIndex === totalSlides - 1 &&
       totalSlides > 0
     ) {

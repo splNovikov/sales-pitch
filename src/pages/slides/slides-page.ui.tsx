@@ -12,22 +12,33 @@ import {
   smzSolutionSlides,
 } from '~features/smz/slides';
 import { proximaSlides } from '~features/proxima/slides';
+import { presentationSlugs } from '~shared/lib/presentations.config';
 import { Slides, type SlideData } from '~widgets/slides';
 
-// Load slides based on company slug
+// Map company slugs to their slide sets
+const slidesMap: Record<string, SlideData[]> = {
+  'kirov-steklo': kirovStekloSlides,
+  niteos: niteosSlides,
+  'niteos-first-turn': niteosShortSlides,
+  hanskonner: hanskonnerSlides,
+  'hanskonner-website': hanskonnerWebsiteSlides,
+  smz: smzSlides,
+  'smz-brief': smzBriefSlides,
+  'smz-solution': smzSolutionSlides,
+  proxima: proximaSlides,
+};
+
+/**
+ * Load slides based on company slug
+ * Validates slug against presentations config
+ */
 const getSlidesBySlug = (slug: string): SlideData[] => {
-  // Map company slugs to their slide sets
-  const slidesMap: Record<string, SlideData[]> = {
-    'kirov-steklo': kirovStekloSlides,
-    niteos: niteosSlides,
-    'niteos-first-turn': niteosShortSlides,
-    hanskonner: hanskonnerSlides,
-    'hanskonner-website': hanskonnerWebsiteSlides,
-    smz: smzSlides,
-    'smz-brief': smzBriefSlides,
-    'smz-solution': smzSolutionSlides,
-    proxima: proximaSlides,
-  };
+  // Optional: validate slug exists in config
+  if (!presentationSlugs.includes(slug)) {
+    console.warn(
+      `Presentation slug "${slug}" not found in presentations config`
+    );
+  }
 
   return slidesMap[slug] || [];
 };

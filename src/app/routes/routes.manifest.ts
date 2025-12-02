@@ -29,6 +29,13 @@ export const routesManifest: RouteManifestEntry[] = [
         loader: () =>
           import('~pages/home/home-page.route').then(m => m.homePageRoute),
       },
+      {
+        path: pathKeys.sityakoff,
+        loader: () =>
+          import('~pages/sityakoff/sityakoff-page.route').then(
+            m => m.sityakoffPageRoute
+          ),
+      },
     ],
   },
   {
