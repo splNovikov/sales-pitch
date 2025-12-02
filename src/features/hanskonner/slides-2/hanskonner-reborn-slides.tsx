@@ -150,15 +150,15 @@ export const hanskonnerRebornSlides: SlideData[] = [
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
             <RocketOutlined style={{ color: '#52c41a', marginRight: 8 }} />
-            Новый сайт: hanskonner-reborn.lovable.app
+            Новый сайт: hanskonner-reborn.vercel.app
           </Title>
           <Link
-            href="https://hanskonner-reborn.lovable.app/"
+            href="https://hanskonner-reborn.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
             style={{ fontSize: '16px' }}
           >
-            https://hanskonner-reborn.lovable.app/
+            https://hanskonner-reborn.vercel.app/
           </Link>
           <Paragraph style={{ marginTop: 16, marginBottom: 0 }}>
             <Text type="secondary">
