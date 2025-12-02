@@ -52,6 +52,12 @@ export const presentations: PresentationMeta[] = [
     showOnSityakoff: true,
   },
   {
+    slug: 'niteos-advanced',
+    title: 'Niteos — расширенное решение',
+    notificationsEnabled: true,
+    showOnSityakoff: true,
+  },
+  {
     slug: 'hanskonner',
     title: 'Hanskonner — стратегия',
     notificationsEnabled: true,

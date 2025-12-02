@@ -2,6 +2,7 @@ import { useLoaderData } from 'react-router-dom';
 import { kirovStekloSlides } from '~features/kirov-steklo/slides/kirov-steklo-slides';
 import { niteosSlides } from '~features/niteos/slides/niteos-slides';
 import { niteosShortSlides } from '~features/niteos/slides/niteos-short-slides';
+import { niteosAdvancedSlides } from '~features/niteos/slides/niteos-advanced-slides';
 import {
   hanskonnerSlides,
   hanskonnerWebsiteSlides,
@@ -20,6 +21,7 @@ const slidesMap: Record<string, SlideData[]> = {
   'kirov-steklo': kirovStekloSlides,
   niteos: niteosSlides,
   'niteos-first-turn': niteosShortSlides,
+  'niteos-advanced': niteosAdvancedSlides,
   hanskonner: hanskonnerSlides,
   'hanskonner-website': hanskonnerWebsiteSlides,
   smz: smzSlides,
