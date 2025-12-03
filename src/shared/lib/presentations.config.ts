@@ -48,6 +48,10 @@ import {
   tatneftCreatedAt,
   tatneftTitle,
 } from '~features/jaxel/slides/tatneft.meta';
+import {
+  solarisUnionCreatedAt,
+  solarisUnionTitle,
+} from '~features/solaris-union/slides/solaris-union.meta';
 
 /**
  * Presentation metadata
@@ -166,6 +170,13 @@ export const presentations: PresentationMeta[] = [
     createdAt: tatneftCreatedAt,
     notificationsEnabled: false,
     showOnVisibility: false,
+  },
+  {
+    slug: 'solaris-union',
+    title: solarisUnionTitle,
+    createdAt: solarisUnionCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
   },
 ];
 

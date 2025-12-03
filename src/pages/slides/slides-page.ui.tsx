@@ -15,6 +15,7 @@ import {
 } from '~features/smz/slides';
 import { proximaSlides } from '~features/proxima/slides';
 import { tatneftSlides } from '~features/jaxel/slides';
+import { solarisUnionSlides } from '~features/solaris-union/slides';
 import { presentationSlugs } from '~shared/lib/presentations.config';
 import { Slides, type SlideData } from '~widgets/slides';
 
@@ -32,6 +33,7 @@ const slidesMap: Record<string, SlideData[]> = {
   'smz-solution': smzSolutionSlides,
   proxima: proximaSlides,
   tatneft: tatneftSlides,
+  'solaris-union': solarisUnionSlides,
 };
 
 /**
