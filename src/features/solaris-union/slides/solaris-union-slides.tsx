@@ -10,7 +10,6 @@ import {
   Descriptions,
 } from 'antd';
 import {
-  CalendarOutlined,
   MobileOutlined,
   RocketOutlined,
   CheckCircleOutlined,
@@ -28,8 +27,6 @@ import {
   WarningOutlined,
   CloseOutlined,
   GlobalOutlined,
-  DesktopOutlined,
-  PhoneOutlined,
   LinkOutlined,
   SyncOutlined,
   EyeOutlined,
@@ -40,6 +37,8 @@ import { formatDateForSlide } from '~shared/lib/date.utils';
 import { solarisUnionCreatedAt } from './solaris-union.meta';
 import ozon1 from './ozon_1.PNG';
 import ozon2 from './ozon_2.PNG';
+import wallet from './wallet.PNG';
+import begu from './begu.PNG';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
@@ -106,13 +105,16 @@ export const solarisUnionSlides: SlideData[] = [
           </Title>
           <Descriptions bordered column={1} size="small">
             <Descriptions.Item label="Жёсткий срок">
-              <Tag color="red" style={{ fontSize: '14px', padding: '4px 12px' }}>
+              <Tag
+                color="red"
+                style={{ fontSize: '14px', padding: '4px 12px' }}
+              >
                 2 недели
               </Tag>
             </Descriptions.Item>
             <Descriptions.Item label="Цель MVP">
-              Собрать и обкатать основной пользовательский сценарий: установка
-              → регистрация → добавление родственников → визуализация
+              Собрать и обкатать основной пользовательский сценарий: установка →
+              регистрация → добавление родственников → визуализация
               генеалогического древа
             </Descriptions.Item>
           </Descriptions>
@@ -443,8 +445,15 @@ export const solarisUnionSlides: SlideData[] = [
           </Title>
           <Row gutter={[16, 16]}>
             <Col xs={24} sm={12}>
-              <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-                <Tag color="green" style={{ fontSize: '16px', padding: '8px 16px' }}>
+              <Space
+                orientation="vertical"
+                size="middle"
+                style={{ width: '100%' }}
+              >
+                <Tag
+                  color="green"
+                  style={{ fontSize: '16px', padding: '8px 16px' }}
+                >
                   100+ миллионов пользователей
                 </Tag>
                 <Text>
@@ -454,7 +463,11 @@ export const solarisUnionSlides: SlideData[] = [
               </Space>
             </Col>
             <Col xs={24} sm={12}>
-              <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+              <Space
+                orientation="vertical"
+                size="middle"
+                style={{ width: '100%' }}
+              >
                 <List
                   size="small"
                   dataSource={[
@@ -484,11 +497,14 @@ export const solarisUnionSlides: SlideData[] = [
             <WarningOutlined style={{ marginRight: 8, color: '#faad14' }} />
             Установка приложения — барьер для пользователей
           </Title>
-          <Paragraph type="secondary" style={{ fontSize: '13px', marginBottom: 0 }}>
+          <Paragraph
+            type="secondary"
+            style={{ fontSize: '13px', marginBottom: 0 }}
+          >
             Процесс регистрации отбрасывает самое большое количество
-            пользователей по статистике. Telegram Mini App устраняет этот
-            барьер — пользователь просто открывает приложение прямо в Telegram,
-            где уже авторизован.
+            пользователей по статистике. Telegram Mini App устраняет этот барьер
+            — пользователь просто открывает приложение прямо в Telegram, где уже
+            авторизован.
           </Paragraph>
         </Card>
       </Space>
@@ -574,7 +590,8 @@ export const solarisUnionSlides: SlideData[] = [
                 />
                 <Divider style={{ margin: '12px 0' }} />
                 <Text strong style={{ color: '#52c41a' }}>
-                  За 2 недели — <Text underline>реально, если сильно постараться</Text>
+                  За 2 недели —{' '}
+                  <Text underline>реально, если сильно постараться</Text>
                 </Text>
               </Card>
             </Col>
@@ -583,9 +600,7 @@ export const solarisUnionSlides: SlideData[] = [
 
         <Card style={{ backgroundColor: '#fff7e6' }}>
           <Title level={4} style={{ marginTop: 0 }}>
-            <CheckCircleOutlined
-              style={{ marginRight: 8, color: '#52c41a' }}
-            />
+            <CheckCircleOutlined style={{ marginRight: 8, color: '#52c41a' }} />
             Всё из ТЗ реализуемо в Mini App
           </Title>
           <Paragraph style={{ marginBottom: 12 }}>
@@ -652,32 +667,98 @@ export const solarisUnionSlides: SlideData[] = [
           </Paragraph>
         </Card>
 
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <MessageOutlined style={{ marginRight: 8 }} />
-            Ozon Fresh — заказ продуктов через Telegram
-          </Title>
-          <Space
-            orientation="vertical"
-            size="middle"
-            style={{ width: '100%' }}
-          >
-            <Link
-              href="https://t.me/ozonfresh_zakaz_bot"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ fontSize: '16px' }}
-            >
-              <LinkOutlined style={{ marginRight: 8 }} />
-              https://t.me/ozonfresh_zakaz_bot
-            </Link>
-            <Paragraph type="secondary" style={{ marginBottom: 0 }}>
-              Крупный маркетплейс Ozon использует Telegram Mini App для продажи
-              продуктов. Полнофункциональный интерфейс с каталогом, корзиной,
-              оплатой и отслеживанием заказов.
-            </Paragraph>
-          </Space>
-        </Card>
+        <Row gutter={[16, 16]}>
+          <Col xs={24} md={8}>
+            <Card>
+              <Title level={4} style={{ marginTop: 0 }}>
+                <MessageOutlined style={{ marginRight: 8 }} />
+                Ozon Fresh
+              </Title>
+              <Space
+                orientation="vertical"
+                size="middle"
+                style={{ width: '100%' }}
+              >
+                <Link
+                  href="https://t.me/ozonfresh_zakaz_bot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '14px' }}
+                >
+                  <LinkOutlined style={{ marginRight: 8 }} />
+                  t.me/ozonfresh_zakaz_bot
+                </Link>
+                <Paragraph
+                  type="secondary"
+                  style={{ marginBottom: 0, fontSize: '13px' }}
+                >
+                  Маркетплейс Ozon использует Mini App для продажи продуктов.
+                  Полнофункциональный интерфейс с каталогом и оплатой.
+                </Paragraph>
+              </Space>
+            </Card>
+          </Col>
+          <Col xs={24} md={8}>
+            <Card>
+              <Title level={4} style={{ marginTop: 0 }}>
+                <MessageOutlined style={{ marginRight: 8 }} />
+                Wallet
+              </Title>
+              <Space
+                orientation="vertical"
+                size="middle"
+                style={{ width: '100%' }}
+              >
+                <Link
+                  href="https://t.me/wallet"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '14px' }}
+                >
+                  <LinkOutlined style={{ marginRight: 8 }} />
+                  t.me/wallet
+                </Link>
+                <Paragraph
+                  type="secondary"
+                  style={{ marginBottom: 0, fontSize: '13px' }}
+                >
+                  Криптовалютный кошелёк от Telegram. Платёжный инструмент с
+                  полноценным интерфейсом для управления активами.
+                </Paragraph>
+              </Space>
+            </Card>
+          </Col>
+          <Col xs={24} md={8}>
+            <Card>
+              <Title level={4} style={{ marginTop: 0 }}>
+                <MessageOutlined style={{ marginRight: 8 }} />
+                Begy App
+              </Title>
+              <Space
+                orientation="vertical"
+                size="middle"
+                style={{ width: '100%' }}
+              >
+                <Link
+                  href="https://t.me/BegyApp_bot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '14px' }}
+                >
+                  <LinkOutlined style={{ marginRight: 8 }} />
+                  t.me/BegyApp_bot
+                </Link>
+                <Paragraph
+                  type="secondary"
+                  style={{ marginBottom: 0, fontSize: '13px' }}
+                >
+                  Социальное приложение с полнофункциональным интерфейсом.
+                  Демонстрирует возможности Mini App для сложных приложений.
+                </Paragraph>
+              </Space>
+            </Card>
+          </Col>
+        </Row>
       </Space>
     ),
   },
@@ -687,8 +768,8 @@ export const solarisUnionSlides: SlideData[] = [
     content: (
       <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
         <Paragraph style={{ marginBottom: 12, fontSize: '14px' }}>
-          Как видно на скриншотах, Mini App Ozon Fresh предоставляет
-          полноценный интерфейс для заказа продуктов:
+          Как видно на скриншотах, Mini App Ozon Fresh предоставляет полноценный
+          интерфейс для заказа продуктов:
         </Paragraph>
         <Row gutter={[12, 12]}>
           <Col xs={24} md={12}>
@@ -771,7 +852,11 @@ export const solarisUnionSlides: SlideData[] = [
                 renderItem={item => (
                   <List.Item style={{ padding: '2px 0' }}>
                     <CheckCircleOutlined
-                      style={{ color: '#52c41a', marginRight: 8, fontSize: '12px' }}
+                      style={{
+                        color: '#52c41a',
+                        marginRight: 8,
+                        fontSize: '12px',
+                      }}
                     />
                     <Text type="secondary" style={{ fontSize: '12px' }}>
                       {item}
@@ -799,6 +884,212 @@ export const solarisUnionSlides: SlideData[] = [
                 >
                   <LinkOutlined style={{ marginRight: 6 }} />
                   t.me/ozonfresh_zakaz_bot
+                </Link>
+              </Space>
+            </Card>
+          </Col>
+        </Row>
+      </Space>
+    ),
+  },
+  {
+    id: 'wallet-examples',
+    header: 'Wallet — пример Telegram Mini App',
+    content: (
+      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+        <Paragraph style={{ marginBottom: 12, fontSize: '14px' }}>
+          Wallet — криптовалютный кошелёк от Telegram с полнофункциональным
+          интерфейсом для управления активами и проведения транзакций:
+        </Paragraph>
+        <Row gutter={[12, 12]} justify="center">
+          <Col xs={24} md={16}>
+            <Card size="small" bordered style={{ padding: '8px' }}>
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%', textAlign: 'center' }}
+              >
+                <Text strong style={{ fontSize: '13px' }}>
+                  Интерфейс кошелька Wallet
+                </Text>
+                <div style={{ overflow: 'hidden', borderRadius: 6 }}>
+                  <img
+                    src={wallet}
+                    alt="Wallet Mini App - интерфейс кошелька"
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      maxHeight: '55vh',
+                      objectFit: 'contain',
+                      display: 'block',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                    }}
+                  />
+                </div>
+              </Space>
+            </Card>
+          </Col>
+        </Row>
+
+        <Row gutter={[12, 12]}>
+          <Col xs={24} md={16}>
+            <Card
+              size="small"
+              style={{ backgroundColor: '#f6ffed', padding: '12px' }}
+            >
+              <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                <CheckCircleOutlined
+                  style={{ marginRight: 8, color: '#52c41a' }}
+                />
+                Что демонстрирует этот пример
+              </Title>
+              <List
+                size="small"
+                dataSource={[
+                  'Сложные финансовые интерфейсы в Mini App',
+                  'Безопасная работа с криптовалютами',
+                  'Интеграция с блокчейном и платежными системами',
+                  'Профессиональный UI/UX на уровне нативных приложений',
+                  'Доступность на всех платформах без установки',
+                ]}
+                renderItem={item => (
+                  <List.Item style={{ padding: '2px 0' }}>
+                    <CheckCircleOutlined
+                      style={{
+                        color: '#52c41a',
+                        marginRight: 8,
+                        fontSize: '12px',
+                      }}
+                    />
+                    <Text type="secondary" style={{ fontSize: '12px' }}>
+                      {item}
+                    </Text>
+                  </List.Item>
+                )}
+              />
+            </Card>
+          </Col>
+          <Col xs={24} md={8}>
+            <Card size="small" style={{ padding: '12px', height: '100%' }}>
+              <Space
+                orientation="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong style={{ fontSize: '13px' }}>
+                  Попробовать пример:
+                </Text>
+                <Link
+                  href="https://t.me/wallet"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '13px', wordBreak: 'break-all' }}
+                >
+                  <LinkOutlined style={{ marginRight: 6 }} />
+                  t.me/wallet
+                </Link>
+              </Space>
+            </Card>
+          </Col>
+        </Row>
+      </Space>
+    ),
+  },
+  {
+    id: 'begy-examples',
+    header: 'Begy App — пример Telegram Mini App',
+    content: (
+      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+        <Paragraph style={{ marginBottom: 12, fontSize: '14px' }}>
+          Begy App — социальное приложение с полнофункциональным интерфейсом,
+          демонстрирующее возможности Mini App для сложных социальных платформ:
+        </Paragraph>
+        <Row gutter={[12, 12]} justify="center">
+          <Col xs={24} md={16}>
+            <Card size="small" bordered style={{ padding: '8px' }}>
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%', textAlign: 'center' }}
+              >
+                <Text strong style={{ fontSize: '13px' }}>
+                  Интерфейс Begy App
+                </Text>
+                <div style={{ overflow: 'hidden', borderRadius: 6 }}>
+                  <img
+                    src={begu}
+                    alt="Begy App Mini App - интерфейс приложения"
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      maxHeight: '55vh',
+                      objectFit: 'contain',
+                      display: 'block',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                    }}
+                  />
+                </div>
+              </Space>
+            </Card>
+          </Col>
+        </Row>
+
+        <Row gutter={[12, 12]}>
+          <Col xs={24} md={16}>
+            <Card
+              size="small"
+              style={{ backgroundColor: '#f6ffed', padding: '12px' }}
+            >
+              <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                <CheckCircleOutlined
+                  style={{ marginRight: 8, color: '#52c41a' }}
+                />
+                Что демонстрирует этот пример
+              </Title>
+              <List
+                size="small"
+                dataSource={[
+                  'Социальные функции в Mini App',
+                  'Сложная навигация и множество экранов',
+                  'Профессиональный дизайн интерфейса',
+                  'Работа с пользовательскими данными',
+                  'Интеграция социальных функций и профилей',
+                ]}
+                renderItem={item => (
+                  <List.Item style={{ padding: '2px 0' }}>
+                    <CheckCircleOutlined
+                      style={{
+                        color: '#52c41a',
+                        marginRight: 8,
+                        fontSize: '12px',
+                      }}
+                    />
+                    <Text type="secondary" style={{ fontSize: '12px' }}>
+                      {item}
+                    </Text>
+                  </List.Item>
+                )}
+              />
+            </Card>
+          </Col>
+          <Col xs={24} md={8}>
+            <Card size="small" style={{ padding: '12px', height: '100%' }}>
+              <Space
+                orientation="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong style={{ fontSize: '13px' }}>
+                  Попробовать пример:
+                </Text>
+                <Link
+                  href="https://t.me/BegyApp_bot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '13px', wordBreak: 'break-all' }}
+                >
+                  <LinkOutlined style={{ marginRight: 6 }} />
+                  t.me/BegyApp_bot
                 </Link>
               </Space>
             </Card>
@@ -900,4 +1191,3 @@ export const solarisUnionSlides: SlideData[] = [
     ),
   },
 ];
-
