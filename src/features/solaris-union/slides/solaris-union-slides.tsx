@@ -32,13 +32,16 @@ import {
   PhoneOutlined,
   LinkOutlined,
   SyncOutlined,
+  EyeOutlined,
 } from '@ant-design/icons';
 import Logo from '~shared/ui/logo';
 import { type SlideData } from '~widgets/slides';
 import { formatDateForSlide } from '~shared/lib/date.utils';
 import { solarisUnionCreatedAt } from './solaris-union.meta';
+import ozon1 from './ozon_1.PNG';
+import ozon2 from './ozon_2.PNG';
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph, Text, Link } = Typography;
 
 /**
  * Slides data for Solaris Union MVP presentation
@@ -627,6 +630,270 @@ export const solarisUnionSlides: SlideData[] = [
           >
             Импорт контактов в Telegram реализован проще и удобнее, чем в
             нативном приложении — это базовый функционал платформы.
+          </Paragraph>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'telegram-examples-intro',
+    header: 'Примеры Telegram Mini App',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card style={{ backgroundColor: '#f0f5ff' }}>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <EyeOutlined style={{ marginRight: 8 }} />
+            Реальные примеры успешных Mini App
+          </Title>
+          <Paragraph>
+            Telegram Mini App уже используются крупными компаниями для создания
+            полнофункциональных приложений. Вот примеры, которые демонстрируют
+            возможности платформы:
+          </Paragraph>
+        </Card>
+
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <MessageOutlined style={{ marginRight: 8 }} />
+            Ozon Fresh — заказ продуктов через Telegram
+          </Title>
+          <Space
+            orientation="vertical"
+            size="middle"
+            style={{ width: '100%' }}
+          >
+            <Link
+              href="https://t.me/ozonfresh_zakaz_bot"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontSize: '16px' }}
+            >
+              <LinkOutlined style={{ marginRight: 8 }} />
+              https://t.me/ozonfresh_zakaz_bot
+            </Link>
+            <Paragraph type="secondary" style={{ marginBottom: 0 }}>
+              Крупный маркетплейс Ozon использует Telegram Mini App для продажи
+              продуктов. Полнофункциональный интерфейс с каталогом, корзиной,
+              оплатой и отслеживанием заказов.
+            </Paragraph>
+          </Space>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'ozon-examples',
+    header: 'Ozon Fresh — пример Telegram Mini App',
+    content: (
+      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+        <Paragraph style={{ marginBottom: 12, fontSize: '14px' }}>
+          Как видно на скриншотах, Mini App Ozon Fresh предоставляет
+          полноценный интерфейс для заказа продуктов:
+        </Paragraph>
+        <Row gutter={[12, 12]}>
+          <Col xs={24} md={12}>
+            <Card size="small" bordered style={{ padding: '8px' }}>
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong style={{ fontSize: '13px' }}>
+                  Главный экран с каталогом
+                </Text>
+                <div style={{ overflow: 'hidden', borderRadius: 6 }}>
+                  <img
+                    src={ozon1}
+                    alt="Ozon Fresh Mini App - главный экран"
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      maxHeight: '55vh',
+                      objectFit: 'contain',
+                      display: 'block',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                    }}
+                  />
+                </div>
+              </Space>
+            </Card>
+          </Col>
+          <Col xs={24} md={12}>
+            <Card size="small" bordered style={{ padding: '8px' }}>
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong style={{ fontSize: '13px' }}>
+                  Интерфейс выбора товаров
+                </Text>
+                <div style={{ overflow: 'hidden', borderRadius: 6 }}>
+                  <img
+                    src={ozon2}
+                    alt="Ozon Fresh Mini App - выбор товаров"
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      maxHeight: '55vh',
+                      objectFit: 'contain',
+                      display: 'block',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                    }}
+                  />
+                </div>
+              </Space>
+            </Card>
+          </Col>
+        </Row>
+
+        <Row gutter={[12, 12]}>
+          <Col xs={24} md={16}>
+            <Card
+              size="small"
+              style={{ backgroundColor: '#f6ffed', padding: '12px' }}
+            >
+              <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                <CheckCircleOutlined
+                  style={{ marginRight: 8, color: '#52c41a' }}
+                />
+                Что демонстрирует этот пример
+              </Title>
+              <List
+                size="small"
+                dataSource={[
+                  'Полноценный UI/UX как в нативном приложении',
+                  'Сложные интерфейсы с каталогом и выбором товаров',
+                  'Интеграция с платежными системами',
+                  'Работа на всех платформах (iOS, Android, Desktop)',
+                  'Мгновенный доступ без установки',
+                ]}
+                renderItem={item => (
+                  <List.Item style={{ padding: '2px 0' }}>
+                    <CheckCircleOutlined
+                      style={{ color: '#52c41a', marginRight: 8, fontSize: '12px' }}
+                    />
+                    <Text type="secondary" style={{ fontSize: '12px' }}>
+                      {item}
+                    </Text>
+                  </List.Item>
+                )}
+              />
+            </Card>
+          </Col>
+          <Col xs={24} md={8}>
+            <Card size="small" style={{ padding: '12px', height: '100%' }}>
+              <Space
+                orientation="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong style={{ fontSize: '13px' }}>
+                  Попробовать пример:
+                </Text>
+                <Link
+                  href="https://t.me/ozonfresh_zakaz_bot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ fontSize: '13px', wordBreak: 'break-all' }}
+                >
+                  <LinkOutlined style={{ marginRight: 6 }} />
+                  t.me/ozonfresh_zakaz_bot
+                </Link>
+              </Space>
+            </Card>
+          </Col>
+        </Row>
+      </Space>
+    ),
+  },
+  {
+    id: 'conclusion',
+    header: 'Заключение',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card style={{ backgroundColor: '#e6f7ff' }}>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <RocketOutlined style={{ marginRight: 8 }} />
+            Почему Telegram Mini App для Solaris Union?
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#ffffff' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>
+                    <ThunderboltOutlined style={{ marginRight: 8 }} />
+                    Технические преимущества
+                  </Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Быстрая разработка (2 недели реальны)',
+                      'Одна кодовая база для всех платформ',
+                      'Все функции из ТЗ реализуемы',
+                      'UI/UX на 99% как нативное приложение',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <CheckCircleOutlined
+                          style={{ color: '#52c41a', marginRight: 8 }}
+                        />
+                        <Text type="secondary" style={{ fontSize: '12px' }}>
+                          {item}
+                        </Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Card size="small" style={{ backgroundColor: '#ffffff' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong>
+                    <UserOutlined style={{ marginRight: 8 }} />
+                    Бизнес-преимущества
+                  </Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      '100+ млн пользователей Telegram в России',
+                      'Упрощённая регистрация и вход',
+                      'Нет барьера установки приложения',
+                      'Дешевле в разработке и поддержке',
+                    ]}
+                    renderItem={item => (
+                      <List.Item style={{ padding: '4px 0' }}>
+                        <CheckCircleOutlined
+                          style={{ color: '#52c41a', marginRight: 8 }}
+                        />
+                        <Text type="secondary" style={{ fontSize: '12px' }}>
+                          {item}
+                        </Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+        </Card>
+
+        <Card style={{ backgroundColor: '#fff7e6' }}>
+          <Paragraph style={{ marginBottom: 0, fontSize: '16px' }}>
+            <Text strong>
+              Telegram Mini App — оптимальное решение для проекта Solaris Union
+              в условиях жёстких сроков и необходимости охватить максимальную
+              аудиторию.
+            </Text>
           </Paragraph>
         </Card>
       </Space>
