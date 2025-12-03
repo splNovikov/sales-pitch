@@ -21,6 +21,10 @@ import aboutAfter from './images/about_after.png';
 import aboutBefore from './images/about_before.png';
 import hitsAfter from './images/hits_after.png';
 import hitsBefore from './images/hits_before.png';
+import mobile1After from './images/mobile_1_after.PNG';
+import mobile1Before from './images/mobile_1_before.PNG';
+import mobile2After from './images/mobile_2_after.PNG';
+import mobile2Before from './images/mobile_2_before.PNG';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
@@ -488,6 +492,124 @@ export const hanskonnerRebornSlides: SlideData[] = [
             обновлённый раздел при сохранении того же функционала.
           </Text>
         </Paragraph>
+      </Space>
+    ),
+  },
+  {
+    id: 'mobile-before-after',
+    header: 'Мобильная версия: до / после',
+    content: (
+      <Space
+        orientation="vertical"
+        size="large"
+        style={{ width: '100%' }}
+      >
+        <Row gutter={[16, 16]} justify="center">
+          <Col xs={12} md={6}>
+            <Card
+              bordered
+              style={{
+                backgroundColor: '#fff1f0',
+              }}
+            >
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong>Мобильный экран 1 — до</Text>
+                <img
+                  src={mobile1Before}
+                  alt="Текущий мобильный экран 1 Hanskonner"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: 8,
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                  }}
+                />
+              </Space>
+            </Card>
+          </Col>
+          <Col xs={12} md={6}>
+            <Card
+              bordered
+              style={{
+                backgroundColor: '#f6ffed',
+              }}
+            >
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong>Мобильный экран 1 — после</Text>
+                <img
+                  src={mobile1After}
+                  alt="Новый мобильный экран 1 Hanskonner"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: 8,
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.12)',
+                  }}
+                />
+              </Space>
+            </Card>
+          </Col>
+          <Col xs={12} md={6}>
+            <Card
+              bordered
+              style={{
+                backgroundColor: '#fff1f0',
+              }}
+            >
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong>Мобильный экран 2 — до</Text>
+                <img
+                  src={mobile2Before}
+                  alt="Текущий мобильный экран 2 Hanskonner"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: 8,
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                  }}
+                />
+              </Space>
+            </Card>
+          </Col>
+          <Col xs={12} md={6}>
+            <Card
+              bordered
+              style={{
+                backgroundColor: '#f6ffed',
+              }}
+            >
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong>Мобильный экран 2 — после</Text>
+                <img
+                  src={mobile2After}
+                  alt="Новый мобильный экран 2 Hanskonner"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: 8,
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.12)',
+                  }}
+                />
+              </Space>
+            </Card>
+          </Col>
+        </Row>
       </Space>
     ),
   },
