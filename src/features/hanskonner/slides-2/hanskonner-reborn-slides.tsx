@@ -15,6 +15,10 @@ import { type SlideData } from '~widgets/slides';
 import { formatDateForSlide } from '~shared/lib/date.utils';
 import { hanskonnerRebornCreatedAt } from './hanskonner-reborn.meta';
 import hanskonnerLogo from '../slides/hanskonner-logo.png';
+import bannerAfter from './images/banner_after.png';
+import bannerBefore from './images/banner_before.png';
+import aboutAfter from './images/about_after.png';
+import aboutBefore from './images/about_before.png';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
@@ -162,7 +166,9 @@ export const hanskonnerRebornSlides: SlideData[] = [
           </Link>
           <Paragraph style={{ marginTop: 16, marginBottom: 0 }}>
             <Text type="secondary">
-              (будет перенесён на нормальное доменное имя)
+              На этом этапе мы сосредоточились на обновлении визуальной части
+              сайта. Функциональные улучшения (поиск, фильтры, личные кабинеты и
+              т.п.) планируются отдельным следующим этапом.
             </Text>
           </Paragraph>
         </Card>
@@ -181,15 +187,15 @@ export const hanskonnerRebornSlides: SlideData[] = [
                 >
                   <Text strong>
                     <ShopOutlined style={{ marginRight: 8 }} />
-                    Полноценный каталог
+                    Обновлённый визуальный вид каталога
                   </Text>
                   <List
                     size="small"
                     dataSource={[
-                      'Удобная навигация по категориям',
-                      'Мощный поиск по товарам',
-                      'Фильтры и сортировка',
-                      'Детальные карточки товаров',
+                      'Единый визуальный стиль для всех товарных карточек',
+                      'Более аккуратная сетка и читаемое представление ассортимента',
+                      'Акценты на бренде и ключевых характеристиках инструмента',
+                      'Макет, который можно дальше наращивать функционалом',
                     ]}
                     renderItem={item => (
                       <List.Item style={{ padding: '4px 0' }}>
@@ -212,15 +218,15 @@ export const hanskonnerRebornSlides: SlideData[] = [
                 >
                   <Text strong>
                     <ThunderboltOutlined style={{ marginRight: 8 }} />
-                    Современный дизайн
+                    Современный интерфейс с прицелом на развитие
                   </Text>
                   <List
                     size="small"
                     dataSource={[
-                      'Адаптивная вёрстка',
-                      'Быстрая загрузка',
-                      'Удобный интерфейс',
-                      'Профессиональный вид',
+                      'Современный чистый дизайн без визуального шума',
+                      'Удобное восприятие информации на разных устройствах',
+                      'Структура блоков, подготовленная под будущие фильтры и поиск',
+                      'Дизайн, который можно расширять личными кабинетами и онлайн-заказами',
                     ]}
                     renderItem={item => (
                       <List.Item style={{ padding: '4px 0' }}>
@@ -244,11 +250,11 @@ export const hanskonnerRebornSlides: SlideData[] = [
           <List
             size="default"
             dataSource={[
-              'Полнофункциональный каталог с удобной навигацией',
-              'Современный и профессиональный дизайн',
-              'Оптимизация для всех устройств (десктоп, планшет, мобильный)',
-              'Быстрая работа и удобный пользовательский опыт',
-              'Готовая структура для дальнейшего развития',
+              'Современная визуальная подача существующего каталога',
+              'Единый, профессиональный внешний вид сайта в стиле Hanskonner',
+              'Оптимизация визуала под различные устройства',
+              'Более удобное визуальное восприятие ассортимента',
+              'Готовый визуальный фундамент для добавления поиска, фильтров и личных кабинетов',
             ]}
             renderItem={item => (
               <List.Item
@@ -268,6 +274,150 @@ export const hanskonnerRebornSlides: SlideData[] = [
     ),
   },
   {
+    id: 'banner-before-after',
+    header: 'Первый экран: до / после',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Row gutter={[24, 24]} align="middle" justify="center">
+          <Col xs={24} md={12}>
+            <Card
+              bordered
+              style={{
+                backgroundColor: '#fff1f0',
+              }}
+            >
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong>Текущий вариант (до)</Text>
+                <img
+                  src={bannerBefore}
+                  alt="Текущий вариант экрана Hanskonner"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: 8,
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                  }}
+                />
+              </Space>
+            </Card>
+          </Col>
+
+          <Col xs={24} md={12}>
+            <Card
+              bordered
+              style={{
+                backgroundColor: '#f6ffed',
+              }}
+            >
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong>Новый вариант (после)</Text>
+                <img
+                  src={bannerAfter}
+                  alt="Новый вариант экрана Hanskonner"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: 8,
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.12)',
+                  }}
+                />
+              </Space>
+            </Card>
+          </Col>
+        </Row>
+        <Paragraph
+          style={{ marginTop: 8, fontSize: 'var(--app-font-size-sm)' }}
+        >
+          <Text type="secondary">
+            Слева — новый визуальный макет первого экрана, справа — текущий
+            вариант с сайта hanskonner.ru. Мы показываем, как может выглядеть
+            обновлённый визуал при сохранении того же функционала.
+          </Text>
+        </Paragraph>
+      </Space>
+    ),
+  },
+  {
+    id: 'about-before-after',
+    header: 'Экран «О компании»: до / после',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Row gutter={[24, 24]} align="middle" justify="center">
+          <Col xs={24} md={12}>
+            <Card
+              bordered
+              style={{
+                backgroundColor: '#fff1f0',
+              }}
+            >
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong>Текущий вариант (до)</Text>
+                <img
+                  src={aboutBefore}
+                  alt="Текущий вариант экрана «О компании» Hanskonner"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: 8,
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                  }}
+                />
+              </Space>
+            </Card>
+          </Col>
+
+          <Col xs={24} md={12}>
+            <Card
+              bordered
+              style={{
+                backgroundColor: '#f6ffed',
+              }}
+            >
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong>Новый вариант (после)</Text>
+                <img
+                  src={aboutAfter}
+                  alt="Новый вариант экрана «О компании» Hanskonner"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: 8,
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.12)',
+                  }}
+                />
+              </Space>
+            </Card>
+          </Col>
+        </Row>
+        <Paragraph
+          style={{ marginTop: 8, fontSize: 'var(--app-font-size-sm)' }}
+        >
+          <Text type="secondary">
+            Слева — новый визуальный макет экрана «О компании», справа — текущий
+            вариант с сайта hanskonner.ru. Мы показываем, как может выглядеть
+            обновлённый раздел при сохранении того же функционала.
+          </Text>
+        </Paragraph>
+      </Space>
+    ),
+  },
+  {
     id: 'prototype-note',
     header: 'Это только начало',
     content: (
@@ -278,9 +428,8 @@ export const hanskonnerRebornSlides: SlideData[] = [
             Текущая версия — это макет
           </Title>
           <Paragraph style={{ fontSize: 'var(--app-font-size-md)' }}>
-            Мы создали базовую версию улучшенного сайта с каталогом, чтобы
-            показать возможности и направление развития. Это основа, которую
-            можно и нужно развивать дальше.
+            Мы создали улучшенную версию сайта, чтобы показать возможности и
+            направление развития. Это основа, которую можно развивать дальше.
           </Paragraph>
         </Card>
         <Card>
@@ -305,31 +454,6 @@ export const hanskonnerRebornSlides: SlideData[] = [
                       'Страница контактов с картой',
                       'Формы обратной связи',
                       'Блог и новости',
-                    ]}
-                    renderItem={item => (
-                      <List.Item style={{ padding: '4px 0' }}>
-                        <Text>• {item}</Text>
-                      </List.Item>
-                    )}
-                  />
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12}>
-              <Card size="small" style={{ backgroundColor: '#f0f0f0' }}>
-                <Space
-                  orientation="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <Text strong>Дополнительные возможности:</Text>
-                  <List
-                    size="small"
-                    dataSource={[
-                      'Личные кабинеты для дилеров',
-                      'Интеграция с ERP системами',
-                      'Система заказов и корзина',
-                      'Расширенный поиск и фильтры',
                       'Мультиязычность',
                     ]}
                     renderItem={item => (
@@ -341,6 +465,7 @@ export const hanskonnerRebornSlides: SlideData[] = [
                 </Space>
               </Card>
             </Col>
+            <Col xs={24} sm={12}></Col>
           </Row>
         </Card>
         <Card style={{ backgroundColor: '#fff7e6' }}>
