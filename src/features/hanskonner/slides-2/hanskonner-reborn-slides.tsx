@@ -19,6 +19,8 @@ import bannerAfter from './images/banner_after.png';
 import bannerBefore from './images/banner_before.png';
 import aboutAfter from './images/about_after.png';
 import aboutBefore from './images/about_before.png';
+import hitsAfter from './images/hits_after.png';
+import hitsBefore from './images/hits_before.png';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
@@ -418,6 +420,78 @@ export const hanskonnerRebornSlides: SlideData[] = [
     ),
   },
   {
+    id: 'hits-before-after',
+    header: 'Блок с хитами: до / после',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Row gutter={[24, 24]} align="middle" justify="center">
+          <Col xs={24} md={12}>
+            <Card
+              bordered
+              style={{
+                backgroundColor: '#fff1f0',
+              }}
+            >
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong>Текущий вариант (до)</Text>
+                <img
+                  src={hitsBefore}
+                  alt="Текущий вариант блока с хитами Hanskonner"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: 8,
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                  }}
+                />
+              </Space>
+            </Card>
+          </Col>
+
+          <Col xs={24} md={12}>
+            <Card
+              bordered
+              style={{
+                backgroundColor: '#f6ffed',
+              }}
+            >
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong>Новый вариант (после)</Text>
+                <img
+                  src={hitsAfter}
+                  alt="Новый вариант блока с хитами Hanskonner"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    borderRadius: 8,
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.12)',
+                  }}
+                />
+              </Space>
+            </Card>
+          </Col>
+        </Row>
+        <Paragraph
+          style={{ marginTop: 8, fontSize: 'var(--app-font-size-sm)' }}
+        >
+          <Text type="secondary">
+            Слева — новый визуальный макет блока с хитами, справа — текущий
+            вариант с сайта hanskonner.ru. Показываем, как может выглядеть
+            обновлённый раздел при сохранении того же функционала.
+          </Text>
+        </Paragraph>
+      </Space>
+    ),
+  },
+  {
     id: 'prototype-note',
     header: 'Это только начало',
     content: (
@@ -491,163 +565,206 @@ export const hanskonnerRebornSlides: SlideData[] = [
         size="large"
         style={{
           width: '100%',
-          justifyContent: 'center',
-          alignItems: 'center',
           minHeight: '400px',
         }}
       >
-        <Card
-          style={{
-            maxWidth: '800px',
-            width: '100%',
-            backgroundColor: '#f6ffed',
-          }}
-        >
+        <Space orientation="vertical" size="large" style={{ width: '100%' }}>
           <Space
-            orientation="vertical"
+            direction="vertical"
             size="large"
-            style={{ width: '100%', textAlign: 'center' }}
+            style={{ width: '100%' }}
           >
-            <Title level={2} style={{ marginTop: 0 }}>
-              <DollarOutlined style={{ marginRight: 8 }} />
-              Варианты сотрудничества
-            </Title>
-            <Divider />
-            <Row gutter={[24, 24]}>
-              <Col xs={24} md={12}>
-                <Card
-                  style={{
-                    height: '100%',
-                    backgroundColor: '#ffffff',
-                    border: '2px solid #d9d9d9',
-                  }}
-                >
-                  <Space
-                    orientation="vertical"
-                    size="middle"
-                    style={{ width: '100%' }}
-                  >
-                    <Title level={3} style={{ marginTop: 0, color: '#595959' }}>
-                      Базовый вариант
-                    </Title>
-                    <Title
-                      level={1}
-                      style={{
-                        marginTop: 0,
-                        marginBottom: 0,
-                        color: '#1890ff',
-                      }}
-                    >
-                      75
-                    </Title>
-                    <Text
-                      type="secondary"
-                      style={{ fontSize: 'var(--app-font-size-lg)' }}
-                    >
-                      тысяч рублей
-                    </Text>
-                    <Divider style={{ margin: '16px 0' }} />
-                    <List
-                      size="small"
-                      dataSource={[
-                        'Улучшенный сайт в текущем виде',
-                        'Полнофункциональный каталог',
-                        'Современный дизайн',
-                        'Адаптивная вёрстка',
-                      ]}
-                      renderItem={item => (
-                        <List.Item style={{ padding: '4px 0', border: 'none' }}>
-                          <CheckCircleOutlined
-                            style={{ color: '#52c41a', marginRight: 8 }}
-                          />
-                          <Text>{item}</Text>
-                        </List.Item>
-                      )}
-                    />
-                  </Space>
-                </Card>
-              </Col>
-              <Col xs={24} md={12}>
-                <Card
-                  style={{
-                    height: '100%',
-                    backgroundColor: '#e6f7ff',
-                    border: '2px solid #1890ff',
-                  }}
-                >
-                  <Space
-                    orientation="vertical"
-                    size="middle"
-                    style={{ width: '100%' }}
-                  >
-                    <Tag
-                      color="blue"
-                      style={{
-                        position: 'absolute',
-                        top: 16,
-                        right: 16,
-                        fontSize: '12px',
-                      }}
-                    >
-                      Рекомендуется
-                    </Tag>
-                    <Title level={3} style={{ marginTop: 0, color: '#1890ff' }}>
-                      С циклом доработок
-                    </Title>
-                    <Title
-                      level={1}
-                      style={{
-                        marginTop: 0,
-                        marginBottom: 0,
-                        color: '#1890ff',
-                      }}
-                    >
-                      100
-                    </Title>
-                    <Text
-                      type="secondary"
-                      style={{ fontSize: 'var(--app-font-size-lg)' }}
-                    >
-                      тысяч рублей
-                    </Text>
-                    <Divider style={{ margin: '16px 0' }} />
-                    <List
-                      size="small"
-                      dataSource={[
-                        'Всё из базового варианта',
-                        'Цикл доработок по вашим пожеланиям',
-                        'Дополнительные блоки и страницы',
-                        'Формы обратной связи',
-                        'Интеграции и расширенный функционал',
-                      ]}
-                      renderItem={item => (
-                        <List.Item style={{ padding: '4px 0', border: 'none' }}>
-                          <CheckCircleOutlined
-                            style={{ color: '#1890ff', marginRight: 8 }}
-                          />
-                          <Text>{item}</Text>
-                        </List.Item>
-                      )}
-                    />
-                  </Space>
-                </Card>
-              </Col>
-            </Row>
-            <Divider />
-            <Paragraph
+            <div
               style={{
-                marginBottom: 0,
-                fontSize: 'var(--app-font-size-md)',
-                color: '#595959',
+                width: '100%',
+                padding: '24px 32px',
+                backgroundColor: '#ffffff',
               }}
             >
-              <Text>
-                Готовы обсудить детали и ответить на все вопросы. Свяжитесь с
-                нами для уточнения сроков и условий работы.
-              </Text>
-            </Paragraph>
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Title
+                  level={3}
+                  style={{ marginTop: 0, marginBottom: 4, color: '#595959' }}
+                >
+                  Базовый вариант — 75&nbsp;000&nbsp;₽
+                </Title>
+                <Text
+                  type="secondary"
+                  style={{ fontSize: 'var(--app-font-size-md)' }}
+                >
+                  Оставляем визуально главную страницу как в текущем макете и
+                  доводим до production-состояния.
+                </Text>
+                <List
+                  size="small"
+                  style={{
+                    textAlign: 'left',
+                    margin: '12px auto 0',
+                    maxWidth: 800,
+                  }}
+                  dataSource={[
+                    'Главная страница в текущем визуальном стиле (как на макете)',
+                    'Адаптивная вёрстка под различные экраны',
+                    'Оптимизация кода и структуры под SEO',
+                    'Доработка и завершение работ по Backend',
+                  ]}
+                  renderItem={item => (
+                    <List.Item
+                      style={{
+                        padding: '4px 0',
+                        border: 'none',
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                      }}
+                    >
+                      <CheckCircleOutlined
+                        style={{ color: '#52c41a', marginRight: 8 }}
+                      />
+                      <Text>{item}</Text>
+                    </List.Item>
+                  )}
+                />
+              </Space>
+            </div>
+
+            <div
+              style={{
+                width: '100%',
+                padding: '24px 32px',
+                backgroundColor: '#e6f7ff',
+              }}
+            >
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Text strong type="secondary" style={{ fontSize: 12 }}>
+                  ПРИОРИТЕТНЫЙ ВАРИАНТ
+                </Text>
+                <Title
+                  level={3}
+                  style={{ marginTop: 0, marginBottom: 4, color: '#1890ff' }}
+                >
+                  Расширенный вариант — 100&nbsp;000&nbsp;₽
+                </Title>
+                <Text
+                  type="secondary"
+                  style={{ fontSize: 'var(--app-font-size-md)' }}
+                >
+                  По вашему желанию частично обновляем дизайн и добавляем
+                  необходимые страницы и формы.
+                </Text>
+                <List
+                  size="small"
+                  style={{
+                    textAlign: 'left',
+                    margin: '12px auto 0',
+                    maxWidth: 800,
+                  }}
+                  dataSource={[
+                    'Всё из базового варианта',
+                    'Частичное обновление дизайна по вашим пожеланиям',
+                    'Детальные страницы товаров',
+                    'Страница контактов с дополнительной информацией',
+                    'Новые и дополнительные формы обратной связи',
+                  ]}
+                  renderItem={item => (
+                    <List.Item
+                      style={{
+                        padding: '4px 0',
+                        border: 'none',
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                      }}
+                    >
+                      <CheckCircleOutlined
+                        style={{ color: '#1890ff', marginRight: 8 }}
+                      />
+                      <Text>{item}</Text>
+                    </List.Item>
+                  )}
+                />
+              </Space>
+            </div>
+
+            <div
+              style={{
+                width: '100%',
+                padding: '24px 32px',
+                backgroundColor: '#ffffff',
+              }}
+            >
+              <Space
+                direction="vertical"
+                size="small"
+                style={{ width: '100%' }}
+              >
+                <Title
+                  level={3}
+                  style={{ marginTop: 0, marginBottom: 4, color: '#595959' }}
+                >
+                  Вариант с CMS Strapi — 125&nbsp;000&nbsp;₽
+                </Title>
+                <Text
+                  type="secondary"
+                  style={{ fontSize: 'var(--app-font-size-md)' }}
+                >
+                  Всё как во втором варианте, но с интеграцией с CMS Strapi,
+                  чтобы вы могли сами управлять контентом через админку.
+                </Text>
+                <List
+                  size="small"
+                  style={{
+                    textAlign: 'left',
+                    margin: '12px auto 0',
+                    maxWidth: 800,
+                  }}
+                  dataSource={[
+                    'Всё из расширенного варианта',
+                    'Интеграция сайта с CMS Strapi',
+                    'Возможность править тексты, изображения и товары через админку',
+                    'Независимость от разработчиков для повседневных правок контента',
+                    'Готовность к дальнейшему масштабированию и развитию проекта',
+                  ]}
+                  renderItem={item => (
+                    <List.Item
+                      style={{
+                        padding: '4px 0',
+                        border: 'none',
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                      }}
+                    >
+                      <CheckCircleOutlined
+                        style={{ color: '#52c41a', marginRight: 8 }}
+                      />
+                      <Text>{item}</Text>
+                    </List.Item>
+                  )}
+                />
+              </Space>
+            </div>
           </Space>
-        </Card>
+
+          <Divider />
+          <Paragraph
+            style={{
+              marginBottom: 0,
+              fontSize: 'var(--app-font-size-md)',
+              color: '#595959',
+            }}
+          >
+            <Text>
+              Готовы обсудить детали и ответить на все вопросы. Свяжитесь с нами
+              для уточнения сроков и условий работы.
+            </Text>
+          </Paragraph>
+        </Space>
       </Space>
     ),
   },
