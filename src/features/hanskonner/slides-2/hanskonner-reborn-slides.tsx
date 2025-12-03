@@ -1,4 +1,4 @@
-import { Typography, List, Space, Divider, Card, Row, Col, Tag } from 'antd';
+import { Typography, List, Space, Divider, Card, Row, Col } from 'antd';
 import {
   GlobalOutlined,
   WarningOutlined,
@@ -6,7 +6,6 @@ import {
   RocketOutlined,
   ShopOutlined,
   BuildOutlined,
-  DollarOutlined,
   ThunderboltOutlined,
   PlusCircleOutlined,
   EyeOutlined,
