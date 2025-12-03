@@ -22,6 +22,16 @@ import {
   CloudOutlined,
   ClockCircleOutlined,
   CodeOutlined,
+  MessageOutlined,
+  ThunderboltOutlined,
+  DollarOutlined,
+  WarningOutlined,
+  CloseOutlined,
+  GlobalOutlined,
+  DesktopOutlined,
+  PhoneOutlined,
+  LinkOutlined,
+  SyncOutlined,
 } from '@ant-design/icons';
 import Logo from '~shared/ui/logo';
 import { type SlideData } from '~widgets/slides';
@@ -266,6 +276,358 @@ export const solarisUnionSlides: SlideData[] = [
             AI-архивариус, реставрация фото, интеграции с соцсетями, голосовые
             капсулы, социальная лента, корпоративные модули, биллинг
           </Text>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'platform-comparison',
+    header: 'Telegram Mini App vs Нативное приложение',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Row gutter={[16, 16]}>
+          <Col xs={24} lg={12}>
+            <Card
+              style={{
+                height: '100%',
+                borderColor: '#ff4d4f',
+                borderWidth: 2,
+              }}
+            >
+              <Title level={4} style={{ marginTop: 0, color: '#ff4d4f' }}>
+                <MobileOutlined style={{ marginRight: 8 }} />
+                Нативное приложение (iOS/Android)
+              </Title>
+              <List
+                size="small"
+                dataSource={[
+                  'Требует отдельной разработки для iOS и Android',
+                  'Длительная разработка и тестирование',
+                  'Процесс установки — барьер для пользователей',
+                  'Высокая стоимость разработки',
+                  'Необходимость публикации в App Store и Google Play',
+                ]}
+                renderItem={item => (
+                  <List.Item
+                    style={{ padding: '8px 0', justifyContent: 'flex-start' }}
+                  >
+                    <CloseOutlined
+                      style={{ color: '#ff4d4f', marginRight: 8 }}
+                    />
+                    <Text>{item}</Text>
+                  </List.Item>
+                )}
+              />
+            </Card>
+          </Col>
+          <Col xs={24} lg={12}>
+            <Card
+              style={{
+                height: '100%',
+                borderColor: '#52c41a',
+                borderWidth: 2,
+                backgroundColor: '#f6ffed',
+              }}
+            >
+              <Title level={4} style={{ marginTop: 0, color: '#52c41a' }}>
+                <MessageOutlined style={{ marginRight: 8 }} />
+                Telegram Mini App
+              </Title>
+              <List
+                size="small"
+                dataSource={[
+                  'Одна кодовая база для всех платформ',
+                  'Быстрая разработка и запуск',
+                  'Не требует установки — сразу в Telegram',
+                  'Значительно дешевле в разработке',
+                  'Мгновенная публикация без модерации',
+                ]}
+                renderItem={item => (
+                  <List.Item
+                    style={{ padding: '8px 0', justifyContent: 'flex-start' }}
+                  >
+                    <CheckCircleOutlined
+                      style={{ color: '#52c41a', marginRight: 8 }}
+                    />
+                    <Text>{item}</Text>
+                  </List.Item>
+                )}
+              />
+            </Card>
+          </Col>
+        </Row>
+      </Space>
+    ),
+  },
+  {
+    id: 'telegram-advantages',
+    header: 'Преимущества Telegram Mini App',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <ThunderboltOutlined style={{ marginRight: 8 }} />
+            Ключевые преимущества
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12} lg={8}>
+              <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%', textAlign: 'center' }}
+                >
+                  <DollarOutlined
+                    style={{
+                      fontSize: '32px',
+                      color: 'var(--app-color-primary)',
+                    }}
+                  />
+                  <Text strong>Быстрее и дешевле</Text>
+                  <Text type="secondary" style={{ fontSize: '12px' }}>
+                    Значительно сокращает время и стоимость разработки
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12} lg={8}>
+              <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%', textAlign: 'center' }}
+                >
+                  <GlobalOutlined
+                    style={{
+                      fontSize: '32px',
+                      color: 'var(--app-color-primary)',
+                    }}
+                  />
+                  <Text strong>Все платформы сразу</Text>
+                  <Text type="secondary" style={{ fontSize: '12px' }}>
+                    iOS, Android, Desktop — одна кодовая база
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} sm={12} lg={8}>
+              <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%', textAlign: 'center' }}
+                >
+                  <SyncOutlined
+                    style={{
+                      fontSize: '32px',
+                      color: 'var(--app-color-primary)',
+                    }}
+                  />
+                  <Text strong>UI/UX как нативное</Text>
+                  <Text type="secondary" style={{ fontSize: '12px' }}>
+                    На 99% ощущается как полноценное приложение
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+        </Card>
+
+        <Card style={{ backgroundColor: '#f6ffed' }}>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <UserOutlined style={{ marginRight: 8 }} />
+            Аудитория Telegram в России
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} sm={12}>
+              <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+                <Tag color="green" style={{ fontSize: '16px', padding: '8px 16px' }}>
+                  100+ миллионов пользователей
+                </Tag>
+                <Text>
+                  <Text strong>2/3 граждан России</Text> зарегистрированы в
+                  Telegram — это упрощает доступ к приложению
+                </Text>
+              </Space>
+            </Col>
+            <Col xs={24} sm={12}>
+              <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+                <List
+                  size="small"
+                  dataSource={[
+                    'Упрощённая регистрация через Telegram',
+                    'Не нужна установка приложения',
+                    'Импорт контактов — базовый функционал Telegram',
+                    'Сокращается воронка конверсии',
+                  ]}
+                  renderItem={item => (
+                    <List.Item style={{ padding: '4px 0' }}>
+                      <CheckCircleOutlined
+                        style={{ color: '#52c41a', marginRight: 8 }}
+                      />
+                      <Text type="secondary" style={{ fontSize: '13px' }}>
+                        {item}
+                      </Text>
+                    </List.Item>
+                  )}
+                />
+              </Space>
+            </Col>
+          </Row>
+        </Card>
+
+        <Card>
+          <Title level={5} style={{ marginTop: 0 }}>
+            <WarningOutlined style={{ marginRight: 8, color: '#faad14' }} />
+            Установка приложения — барьер для пользователей
+          </Title>
+          <Paragraph type="secondary" style={{ fontSize: '13px', marginBottom: 0 }}>
+            Процесс регистрации отбрасывает самое большое количество
+            пользователей по статистике. Telegram Mini App устраняет этот
+            барьер — пользователь просто открывает приложение прямо в Telegram,
+            где уже авторизован.
+          </Paragraph>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'deadline-reality',
+    header: 'Реальность сроков: 2 недели',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <ClockCircleOutlined style={{ marginRight: 8 }} />
+            Что реально успеть за 2 недели?
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} lg={12}>
+              <Card
+                size="small"
+                style={{
+                  borderColor: '#ff4d4f',
+                  borderWidth: 2,
+                  height: '100%',
+                }}
+              >
+                <Title level={5} style={{ marginTop: 0, color: '#ff4d4f' }}>
+                  <CloseOutlined style={{ marginRight: 8 }} />
+                  Нативное приложение
+                </Title>
+                <List
+                  size="small"
+                  dataSource={[
+                    'Разработка для iOS',
+                    'Разработка для Android',
+                    'Тестирование на разных устройствах',
+                    'Процедура публикации в сторы',
+                    'Модерация (до нескольких недель)',
+                  ]}
+                  renderItem={item => (
+                    <List.Item style={{ padding: '4px 0' }}>
+                      <Text type="secondary" style={{ fontSize: '12px' }}>
+                        ❌ {item}
+                      </Text>
+                    </List.Item>
+                  )}
+                />
+                <Divider style={{ margin: '12px 0' }} />
+                <Text strong style={{ color: '#ff4d4f' }}>
+                  За 2 недели — <Text underline>невозможно</Text>
+                </Text>
+              </Card>
+            </Col>
+            <Col xs={24} lg={12}>
+              <Card
+                size="small"
+                style={{
+                  borderColor: '#52c41a',
+                  borderWidth: 2,
+                  backgroundColor: '#f6ffed',
+                  height: '100%',
+                }}
+              >
+                <Title level={5} style={{ marginTop: 0, color: '#52c41a' }}>
+                  <CheckCircleOutlined style={{ marginRight: 8 }} />
+                  Telegram Mini App
+                </Title>
+                <List
+                  size="small"
+                  dataSource={[
+                    'Разработка одной кодовой базы',
+                    'Поддержка всех платформ автоматически',
+                    'Быстрое тестирование',
+                    'Мгновенная публикация',
+                    'Без модерации',
+                  ]}
+                  renderItem={item => (
+                    <List.Item style={{ padding: '4px 0' }}>
+                      <Text type="secondary" style={{ fontSize: '12px' }}>
+                        ✅ {item}
+                      </Text>
+                    </List.Item>
+                  )}
+                />
+                <Divider style={{ margin: '12px 0' }} />
+                <Text strong style={{ color: '#52c41a' }}>
+                  За 2 недели — <Text underline>реально, если сильно постараться</Text>
+                </Text>
+              </Card>
+            </Col>
+          </Row>
+        </Card>
+
+        <Card style={{ backgroundColor: '#fff7e6' }}>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <CheckCircleOutlined
+              style={{ marginRight: 8, color: '#52c41a' }}
+            />
+            Всё из ТЗ реализуемо в Mini App
+          </Title>
+          <Paragraph style={{ marginBottom: 12 }}>
+            Все функции, описанные в техническом задании, можно реализовать на
+            основе Telegram Mini App без каких-либо ограничений:
+          </Paragraph>
+          <Row gutter={[8, 8]}>
+            <Col xs={24} sm={12} md={8}>
+              <Tag color="blue" style={{ margin: '4px' }}>
+                Onboarding и авторизация
+              </Tag>
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <Tag color="blue" style={{ margin: '4px' }}>
+                Генеалогическое древо
+              </Tag>
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <Tag color="blue" style={{ margin: '4px' }}>
+                Добавление родственников
+              </Tag>
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <Tag color="blue" style={{ margin: '4px' }}>
+                Импорт контактов
+              </Tag>
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <Tag color="blue" style={{ margin: '4px' }}>
+                Загрузка фото
+              </Tag>
+            </Col>
+            <Col xs={24} sm={12} md={8}>
+              <Tag color="blue" style={{ margin: '4px' }}>
+                Профили пользователей
+              </Tag>
+            </Col>
+          </Row>
+          <Paragraph
+            type="secondary"
+            style={{ fontSize: '13px', marginTop: 12, marginBottom: 0 }}
+          >
+            Импорт контактов в Telegram реализован проще и удобнее, чем в
+            нативном приложении — это базовый функционал платформы.
+          </Paragraph>
         </Card>
       </Space>
     ),
