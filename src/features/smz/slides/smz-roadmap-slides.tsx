@@ -22,6 +22,9 @@ import {
   SettingOutlined,
   GlobalOutlined,
   PhoneOutlined,
+  AuditOutlined,
+  ShopOutlined,
+  ExperimentOutlined,
 } from '@ant-design/icons';
 import { Roadmap, type RoadmapItem } from '~shared/ui/roadmap';
 import { type SlideData } from '~widgets/slides';
@@ -151,7 +154,7 @@ const roadmapItems: RoadmapItem[] = [
 ];
 
 // Общая стоимость с лицензией
-const totalCost = 250000;
+const totalCost = 200000;
 
 export const smzRoadmapSlides: SlideData[] = [
   {
@@ -303,6 +306,80 @@ export const smzRoadmapSlides: SlideData[] = [
               Последовательная реализация этапов, регулярное согласование с
               заказчиком, тестирование на каждом этапе, гибкость в адаптации под
               требования.
+            </Paragraph>
+          </Space>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'roadmap-1c',
+    header: 'Дорожная карта по подготовке 1С',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card>
+          <Paragraph style={{ marginBottom: 'var(--app-spacing-md)' }}>
+            Поэтапный план подготовки системы 1С для корректной выгрузки данных
+            на сайт
+          </Paragraph>
+        </Card>
+        <Card>
+          <Roadmap
+            items={[
+              {
+                title: 'Проведение аудита и планирование',
+                description:
+                  'Аудит текущей базы 1С, создание структуры каталога (иерархии), разработка единого стандарта заполнения карточек товаров',
+                duration: '1-2 недели',
+                icon: <AuditOutlined />,
+                color: 'blue',
+              },
+              {
+                title: 'Подготовка системы и справочников',
+                description:
+                  'Проверка и обновление конфигурации, настройка дополнительных реквизитов для фильтрации, создание транзитного каталога при необходимости',
+                duration: 'Несколько дней',
+                icon: <SettingOutlined />,
+                color: 'cyan',
+              },
+              {
+                title: 'Наполнение карточек товаров',
+                description:
+                  'Заполнение основной информации (наименование, описание, артикул, категория), загрузка изображений, настройка торговых предложений, установка цен и остатков',
+                duration: 'По объему работ',
+                icon: <ShopOutlined />,
+                color: 'green',
+              },
+              {
+                title: 'Тестовая выгрузка и проверка',
+                description:
+                  'Выгрузка тестовой группы товаров на тестовую версию сайта, комплексная проверка отображения (структура, контент, варианты, цены), внесение корректировок',
+                duration: '1-2 недели',
+                icon: <ExperimentOutlined />,
+                color: 'orange',
+              },
+              {
+                title: 'Промышленная эксплуатация и поддержка',
+                description:
+                  'Запуск автоматического обмена данными, мониторинг работы, поддержка и сопровождение',
+                duration: 'Постоянно',
+                icon: <PlayCircleOutlined />,
+                color: 'purple',
+              },
+            ]}
+            mode="alternate"
+          />
+        </Card>
+        <Card style={{ backgroundColor: '#fff7e6' }}>
+          <Space direction="vertical" size="small" style={{ width: '100%' }}>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <CheckCircleOutlined style={{ color: '#faad14', marginRight: 8 }} />
+              Важно
+            </Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Качественная подготовка данных в 1С — основа успешной работы
+              интернет-магазина. Правильная структура и единые стандарты
+              заполнения обеспечат корректное отображение товаров на сайте.
             </Paragraph>
           </Space>
         </Card>
