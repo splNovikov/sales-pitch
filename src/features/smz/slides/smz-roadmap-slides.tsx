@@ -321,10 +321,56 @@ export const smzRoadmapSlides: SlideData[] = [
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card>
-          <Paragraph style={{ marginBottom: 'var(--app-spacing-md)' }}>
-            Поэтапный план подготовки системы 1С для корректной выгрузки данных
-            на сайт
-          </Paragraph>
+          <Space
+            direction="vertical"
+            size="middle"
+            style={{ width: '100%', marginBottom: 'var(--app-spacing-md)' }}
+          >
+            <Row gutter={[16, 16]}>
+              <Col xs={24} sm={8}>
+                <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
+                  <Space
+                    orientation="vertical"
+                    size="small"
+                    style={{ width: '100%', textAlign: 'center' }}
+                  >
+                    <Title level={3} style={{ margin: 0, color: '#1890ff' }}>
+                      2-3 месяца
+                    </Title>
+                    <Text>Общий срок реализации</Text>
+                  </Space>
+                </Card>
+              </Col>
+              <Col xs={24} sm={8}>
+                <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
+                  <Space
+                    orientation="vertical"
+                    size="small"
+                    style={{ width: '100%', textAlign: 'center' }}
+                  >
+                    <Title level={3} style={{ margin: 0, color: '#52c41a' }}>
+                      13 этапов
+                    </Title>
+                    <Text>Логически связанных шагов</Text>
+                  </Space>
+                </Card>
+              </Col>
+              <Col xs={24} sm={8}>
+                <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
+                  <Space
+                    orientation="vertical"
+                    size="small"
+                    style={{ width: '100%', textAlign: 'center' }}
+                  >
+                    <Title level={3} style={{ margin: 0, color: '#faad14' }}>
+                      0 ₽
+                    </Title>
+                    <Text>Стоимость работ</Text>
+                  </Space>
+                </Card>
+              </Col>
+            </Row>
+          </Space>
         </Card>
         <Card>
           <Roadmap
@@ -392,14 +438,6 @@ export const smzRoadmapSlides: SlideData[] = [
                 duration: 'По объему работ',
                 icon: <PictureOutlined />,
                 color: 'magenta',
-              },
-              {
-                title: 'Настройка торговых предложений',
-                description:
-                  'Оформление вариантов товара (размер, цвет) как торговых предложений. Указание характеристик, артикулов, загрузка изображений для каждого варианта',
-                duration: 'По объему работ',
-                icon: <ShoppingOutlined />,
-                color: 'gold',
               },
               {
                 title: 'Установка цен и остатков',
