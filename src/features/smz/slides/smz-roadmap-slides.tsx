@@ -35,7 +35,8 @@ const roadmapItems: RoadmapItem[] = [
     title: 'Инициация и аналитика',
     description:
       'Сбор требований, аудит текущего сайта, согласование целей и ограничений, подготовка ТЗ',
-    duration: '1-2 недели',
+    duration: '1 неделя',
+    cost: 5 * 8 * 1500, // 5 дней × 8 часов × 1500 ₽/час = 60,000 ₽
     icon: <FileTextOutlined />,
     color: 'blue',
   },
@@ -43,7 +44,8 @@ const roadmapItems: RoadmapItem[] = [
     title: 'Выбор и покупка шаблона Аспро',
     description:
       'Подбор шаблона под задачи, проверка требований, покупка и регистрация лицензий',
-    duration: '3-5 дней',
+    duration: '2 дня',
+    cost: 2 * 8 * 1500, // 2 дня × 8 часов × 1500 ₽/час = 24,000 ₽
     icon: <ShoppingOutlined />,
     color: 'blue',
   },
@@ -51,7 +53,8 @@ const roadmapItems: RoadmapItem[] = [
     title: 'Техническая подготовка инфраструктуры',
     description:
       'Подготовка сервера/хостинга, установка 1С-Битрикс, настройка окружений, организация бэкапов',
-    duration: '1 неделя',
+    duration: '2 дня',
+    cost: 2 * 8 * 1500, // 2 дня × 8 часов × 1500 ₽/час = 24,000 ₽
     icon: <SettingOutlined />,
     color: 'blue',
   },
@@ -59,7 +62,8 @@ const roadmapItems: RoadmapItem[] = [
     title: 'Разворачивание шаблона Аспро',
     description:
       'Установка шаблона, базовая настройка модулей, структуры каталогов, первичная проверка работоспособности',
-    duration: '1-2 недели',
+    duration: '1 неделя',
+    cost: 5 * 8 * 1500, // 5 дней × 8 часов × 1500 ₽/час = 60,000 ₽
     icon: <RocketOutlined />,
     color: 'cyan',
   },
@@ -67,15 +71,17 @@ const roadmapItems: RoadmapItem[] = [
     title: 'Интеграция и выгрузка из 1С',
     description:
       'Настройка обмена данными (CommerceML 2.0), выгрузка каталога, цен, остатков, обратная выгрузка заказов, тестирование',
-    duration: '2-3 недели',
+    duration: '2.5 недели',
+    cost: 13 * 8 * 1500, // 13 дней × 8 часов × 1500 ₽/час = 156,000 ₽
     icon: <DatabaseOutlined />,
     color: 'green',
   },
   {
-    title: 'Сокрытие неиспользуемого функционала',
+    title: 'Скрытие неиспользуемого функционала',
     description:
       'Определение и отключение неиспользуемых модулей, скрытие лишних разделов, упрощение интерфейса',
-    duration: '1 неделя',
+    duration: '3 дня',
+    cost: 3 * 8 * 1500, // 3 дня × 8 часов × 1500 ₽/час = 36,000 ₽
     icon: <EyeInvisibleOutlined />,
     color: 'orange',
   },
@@ -84,6 +90,7 @@ const roadmapItems: RoadmapItem[] = [
     description:
       'Изменение цветовой схемы, размещение логотипа, настройка шрифтов и UI-элементов под брендбук',
     duration: '1-2 недели',
+    cost: 8 * 8 * 1500, // 8 дней × 8 часов × 1500 ₽/час = 96,000 ₽
     icon: <BgColorsOutlined />,
     color: 'purple',
   },
@@ -92,6 +99,7 @@ const roadmapItems: RoadmapItem[] = [
     description:
       'Отрисовка до 3 баннеров для главной, до 5 баннеров для внутренних страниц, иконки для каталога, подготовка текстового контента',
     duration: '2-3 недели',
+    cost: 13 * 8 * 1500, // 13 дней × 8 часов × 1500 ₽/час = 156,000 ₽
     icon: <PictureOutlined />,
     color: 'magenta',
   },
@@ -100,6 +108,7 @@ const roadmapItems: RoadmapItem[] = [
     description:
       'Структурирование каталога, настройка фильтров и сортировок, умный поиск, оптимизация карточки товара',
     duration: '1-2 недели',
+    cost: 8 * 8 * 1500, // 8 дней × 8 часов × 1500 ₽/час = 96,000 ₽
     icon: <SearchOutlined />,
     color: 'geekblue',
   },
@@ -108,6 +117,7 @@ const roadmapItems: RoadmapItem[] = [
     description:
       'Базовая SEO-настройка (ЧПУ, мета-теги, микроразметка), подключение аналитики, редиректы со старого сайта',
     duration: '1-2 недели',
+    cost: 8 * 8 * 1500, // 8 дней × 8 часов × 1500 ₽/час = 96,000 ₽
     icon: <GlobalOutlined />,
     color: 'lime',
   },
@@ -116,6 +126,7 @@ const roadmapItems: RoadmapItem[] = [
     description:
       'Функциональное тестирование, кроссбраузерность, адаптивность, проверка безопасности и производительности',
     duration: '2 недели',
+    cost: 10 * 8 * 1500, // 10 дней × 8 часов × 1500 ₽/час = 120,000 ₽
     icon: <SafetyOutlined />,
     color: 'gold',
   },
@@ -124,6 +135,7 @@ const roadmapItems: RoadmapItem[] = [
     description:
       'Обучение сотрудников работе с каталогом и заказами, подготовка инструкций и видео-гайдов',
     duration: '1 неделя',
+    cost: 5 * 8 * 1500, // 5 дней × 8 часов × 1500 ₽/час = 60,000 ₽
     icon: <UserOutlined />,
     color: 'cyan',
   },
@@ -132,10 +144,14 @@ const roadmapItems: RoadmapItem[] = [
     description:
       'Перенос на боевой сервер, финальная проверка, мониторинг, регламентное сопровождение',
     duration: '1 неделя + сопровождение',
+    cost: 5 * 8 * 1500, // 5 дней × 8 часов × 1500 ₽/час = 60,000 ₽ (без учета сопровождения)
     icon: <PlayCircleOutlined />,
     color: 'green',
   },
 ];
+
+// Общая стоимость с лицензией
+const totalCost = 250000;
 
 export const smzRoadmapSlides: SlideData[] = [
   {
@@ -218,7 +234,7 @@ export const smzRoadmapSlides: SlideData[] = [
             style={{ width: '100%', marginBottom: 'var(--app-spacing-md)' }}
           >
             <Row gutter={[16, 16]}>
-              <Col xs={24} sm={12}>
+              <Col xs={24} sm={8}>
                 <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
                   <Space
                     orientation="vertical"
@@ -232,7 +248,7 @@ export const smzRoadmapSlides: SlideData[] = [
                   </Space>
                 </Card>
               </Col>
-              <Col xs={24} sm={12}>
+              <Col xs={24} sm={8}>
                 <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
                   <Space
                     orientation="vertical"
@@ -243,6 +259,31 @@ export const smzRoadmapSlides: SlideData[] = [
                       13 этапов
                     </Title>
                     <Text>Логически связанных шагов</Text>
+                  </Space>
+                </Card>
+              </Col>
+              <Col xs={24} sm={8}>
+                <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
+                  <Space
+                    orientation="vertical"
+                    size="small"
+                    style={{ width: '100%', textAlign: 'center' }}
+                  >
+                    <Space
+                      direction="vertical"
+                      size="small"
+                      style={{ width: '100%' }}
+                    >
+                      <Title level={3} style={{ margin: 0, color: '#faad14' }}>
+                        {totalCost.toLocaleString('ru-RU')} ₽
+                      </Title>
+                      <Text style={{ fontSize: '12px' }}>
+                        + лицензия 1С Битрикс Малый бизнес 41 000 ₽
+                      </Text>
+                      <Text style={{ fontSize: '12px' }}>
+                        + шаблон Аспро (95 000 ₽ - 115 000 ₽)
+                      </Text>
+                    </Space>
                   </Space>
                 </Card>
               </Col>

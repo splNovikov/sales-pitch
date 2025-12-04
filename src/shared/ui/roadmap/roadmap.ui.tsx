@@ -29,6 +29,10 @@ export interface RoadmapItem {
    * Optional status tag
    */
   status?: string;
+  /**
+   * Optional cost in rubles
+   */
+  cost?: number;
 }
 
 export interface RoadmapProps {
@@ -87,12 +91,14 @@ export function Roadmap({
                   <Text strong style={{ fontSize: '16px' }}>
                     {item.title}
                   </Text>
-                  {item.duration && (
-                    <Tag color={item.color || 'blue'}>{item.duration}</Tag>
-                  )}
-                  {item.status && (
-                    <Tag color="default">{item.status}</Tag>
-                  )}
+                  <Space wrap>
+                    {item.duration && (
+                      <Tag color={item.color || 'blue'}>{item.duration}</Tag>
+                    )}
+                    {item.status && (
+                      <Tag color="default">{item.status}</Tag>
+                    )}
+                  </Space>
                 </Space>
                 {item.description && (
                   <Text type="secondary" style={{ fontSize: '14px' }}>
