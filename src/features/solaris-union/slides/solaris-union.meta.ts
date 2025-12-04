@@ -5,4 +5,3 @@
 
 export const solarisUnionCreatedAt = '2025-12-03T00:00:00Z';
 export const solarisUnionTitle = 'Solaris Union — MVP';
-

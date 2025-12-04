@@ -498,11 +498,7 @@ export const hanskonnerRebornSlides: SlideData[] = [
     id: 'mobile-before-after',
     header: 'Мобильная версия: до / после',
     content: (
-      <Space
-        orientation="vertical"
-        size="large"
-        style={{ width: '100%' }}
-      >
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Row gutter={[16, 16]} justify="center">
           <Col xs={12} md={6}>
             <Card
@@ -690,11 +686,7 @@ export const hanskonnerRebornSlides: SlideData[] = [
         }}
       >
         <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-          <Space
-            direction="vertical"
-            size="large"
-            style={{ width: '100%' }}
-          >
+          <Space direction="vertical" size="large" style={{ width: '100%' }}>
             <div
               style={{
                 width: '100%',

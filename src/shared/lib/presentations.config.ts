@@ -41,6 +41,10 @@ import {
   smzSolutionTitle,
 } from '~features/smz/slides/smz-solution.meta';
 import {
+  smzRoadmapCreatedAt,
+  smzRoadmapTitle,
+} from '~features/smz/slides/smz-roadmap.meta';
+import {
   proximaCreatedAt,
   proximaTitle,
 } from '~features/proxima/slides/proxima.meta';
@@ -154,6 +158,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'smz-solution',
     title: smzSolutionTitle,
     createdAt: smzSolutionCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'smz-roadmap',
+    title: smzRoadmapTitle,
+    createdAt: smzRoadmapCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },

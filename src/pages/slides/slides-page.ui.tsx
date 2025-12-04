@@ -12,6 +12,7 @@ import {
   smzSlides,
   smzBriefSlides,
   smzSolutionSlides,
+  smzRoadmapSlides,
 } from '~features/smz/slides';
 import { proximaSlides } from '~features/proxima/slides';
 import { tatneftSlides } from '~features/jaxel/slides';
@@ -31,6 +32,7 @@ const slidesMap: Record<string, SlideData[]> = {
   smz: smzSlides,
   'smz-brief': smzBriefSlides,
   'smz-solution': smzSolutionSlides,
+  'smz-roadmap': smzRoadmapSlides,
   proxima: proximaSlides,
   tatneft: tatneftSlides,
   'solaris-union': solarisUnionSlides,
