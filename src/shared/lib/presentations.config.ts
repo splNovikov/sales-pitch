@@ -56,6 +56,10 @@ import {
   solarisUnionCreatedAt,
   solarisUnionTitle,
 } from '~features/solaris-union/slides/solaris-union.meta';
+import {
+  targetPitchCreatedAt,
+  targetPitchTitle,
+} from '~features/target-pitch/slides/target-pitch.meta';
 
 /**
  * Presentation metadata
@@ -186,6 +190,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'solaris-union',
     title: solarisUnionTitle,
     createdAt: solarisUnionCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'target-pitch',
+    title: targetPitchTitle,
+    createdAt: targetPitchCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },

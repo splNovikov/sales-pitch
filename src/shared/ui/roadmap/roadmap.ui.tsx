@@ -54,7 +54,7 @@ export interface RoadmapProps {
 
 /**
  * Roadmap component for displaying project timeline
- * 
+ *
  * Displays a visual timeline of project stages with descriptions,
  * durations, and optional icons.
  */
@@ -95,9 +95,7 @@ export function Roadmap({
                     {item.duration && (
                       <Tag color={item.color || 'blue'}>{item.duration}</Tag>
                     )}
-                    {item.status && (
-                      <Tag color="default">{item.status}</Tag>
-                    )}
+                    {item.status && <Tag color="default">{item.status}</Tag>}
                   </Space>
                 </Space>
                 {item.description && (
@@ -113,4 +111,3 @@ export function Roadmap({
     </div>
   );
 }
-

@@ -17,6 +17,7 @@ import {
 import { proximaSlides } from '~features/proxima/slides';
 import { tatneftSlides } from '~features/jaxel/slides';
 import { solarisUnionSlides } from '~features/solaris-union/slides';
+import { targetPitchSlides } from '~features/target-pitch/slides';
 import { presentationSlugs } from '~shared/lib/presentations.config';
 import { Slides, type SlideData } from '~widgets/slides';
 
@@ -36,6 +37,7 @@ const slidesMap: Record<string, SlideData[]> = {
   proxima: proximaSlides,
   tatneft: tatneftSlides,
   'solaris-union': solarisUnionSlides,
+  'target-pitch': targetPitchSlides,
 };
 
 /**

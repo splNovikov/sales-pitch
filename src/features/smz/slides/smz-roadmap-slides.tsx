@@ -1,11 +1,4 @@
-import {
-  Typography,
-  Space,
-  Divider,
-  Card,
-  Row,
-  Col,
-} from 'antd';
+import { Typography, Space, Divider, Card, Row, Col } from 'antd';
 import {
   RocketOutlined,
   CheckCircleOutlined,
@@ -302,7 +295,9 @@ export const smzRoadmapSlides: SlideData[] = [
         <Card style={{ backgroundColor: '#fff7e6' }}>
           <Space direction="vertical" size="small" style={{ width: '100%' }}>
             <Title level={4} style={{ marginTop: 0 }}>
-              <CheckCircleOutlined style={{ color: '#faad14', marginRight: 8 }} />
+              <CheckCircleOutlined
+                style={{ color: '#faad14', marginRight: 8 }}
+              />
               Ключевые принципы
             </Title>
             <Paragraph style={{ marginBottom: 0 }}>
@@ -486,7 +481,9 @@ export const smzRoadmapSlides: SlideData[] = [
         <Card style={{ backgroundColor: '#fff7e6' }}>
           <Space direction="vertical" size="small" style={{ width: '100%' }}>
             <Title level={4} style={{ marginTop: 0 }}>
-              <CheckCircleOutlined style={{ color: '#faad14', marginRight: 8 }} />
+              <CheckCircleOutlined
+                style={{ color: '#faad14', marginRight: 8 }}
+              />
               Важно
             </Title>
             <Paragraph style={{ marginBottom: 0 }}>
