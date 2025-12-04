@@ -1,0 +1,15 @@
+.roadmap {
+  width: 100%;
+  padding: var(--app-spacing-md) 0;
+}
+
+.roadmapCard {
+  transition: all 0.3s ease;
+  border: 1px solid var(--app-color-border);
+}
+
+.roadmapCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
