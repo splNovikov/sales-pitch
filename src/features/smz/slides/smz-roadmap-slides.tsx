@@ -358,7 +358,7 @@ export const smzRoadmapSlides: SlideData[] = [
                     style={{ width: '100%', textAlign: 'center' }}
                   >
                     <Title level={3} style={{ margin: 0, color: '#faad14' }}>
-                      0 ₽
+                      160 000 ₽
                     </Title>
                     <Text>Стоимость работ</Text>
                   </Space>
