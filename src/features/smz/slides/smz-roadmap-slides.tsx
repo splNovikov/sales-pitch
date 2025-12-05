@@ -20,7 +20,7 @@ import {
   ExperimentOutlined,
   DollarOutlined,
   SyncOutlined,
-  EditOutlined,
+  EditOutlined, MailOutlined,
 } from '@ant-design/icons';
 import { Roadmap, type RoadmapItem } from '~shared/ui/roadmap';
 import { type SlideData } from '~widgets/slides';
@@ -497,60 +497,240 @@ export const smzRoadmapSlides: SlideData[] = [
     ),
   },
   {
-    id: 'thank-you',
-    header: undefined,
+    id: 'contacts',
+    header: 'Давайте обсудим Ваш проект',
     content: (
-      <Space
-        orientation="vertical"
-        size="large"
-        style={{
-          width: '100%',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100%',
-        }}
-      >
-        <Card style={{ maxWidth: '800px', width: '100%', textAlign: 'center' }}>
-          <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-            <Title level={1} style={{ marginTop: 0, marginBottom: 0 }}>
-              Благодарю за внимание
-            </Title>
-            <Divider />
-            <Space
-              orientation="vertical"
-              size="middle"
-              style={{ width: '100%' }}
-            >
-              <Space direction="vertical" size="small">
-                <Text strong style={{ fontSize: '18px' }}>
-                  Новиков Павел
-                </Text>
-                <Text type="secondary" style={{ fontSize: '16px' }}>
-                  Технический директор компании Проксима
-                </Text>
+        <Space
+            orientation="vertical"
+            size="middle"
+            style={{
+              width: '100%',
+              justifyContent: 'flex-start',
+              alignItems: 'center',
+              height: '100%',
+              padding: '8px 0',
+            }}
+        >
+          <Card style={{ maxWidth: '1200px', width: '100%' }}>
+            <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+              <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%', textAlign: 'center' }}
+              >
+                <Title
+                    level={2}
+                    style={{
+                      textAlign: 'center',
+                      marginTop: 0,
+                      marginBottom: 8,
+                      fontSize: '32px',
+                    }}
+                >
+                  Свяжитесь с нами
+                </Title>
               </Space>
               <Divider style={{ margin: '16px 0' }} />
-              <Space size="middle">
-                <PhoneOutlined
-                  style={{
-                    fontSize: '18px',
-                    color: 'var(--app-color-primary)',
-                  }}
-                />
-                <Link
-                  href="tel:+79085550606"
-                  style={{
-                    fontSize: '18px',
-                    color: 'var(--app-color-primary)',
-                  }}
+              <Row gutter={[16, 16]}>
+                <Col xs={24} sm={12}>
+                  <Card size="small" style={{ backgroundColor: '#f6ffed', height: '100%' }}>
+                <Space
+                    orientation="vertical"
+                    size="small"
+                    style={{ width: '100%' }}
                 >
-                  8 908 555 0606
-                </Link>
-              </Space>
+                  <Title level={5} style={{ marginTop: 0, marginBottom: 4 }}>
+                    <UserOutlined style={{ marginRight: 8 }} />
+                    Новиков Павел
+                  </Title>
+                  <Text type="secondary" style={{ fontSize: '13px' }}>
+                    Технический директор
+                  </Text>
+                  <Divider style={{ margin: '8px 0' }} />
+                  <Space
+                      direction="vertical"
+                      size="small"
+                      style={{ width: '100%' }}
+                  >
+                    <Space size="small">
+                      <PhoneOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                      />
+                      <Link href="tel:+79085550606" style={{ fontSize: '15px' }}>
+                        +7 908 555 0606
+                      </Link>
+                    </Space>
+                    <Space size="small">
+                      <MailOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                      />
+                      <Link
+                          href="mailto:p.novikov@proxima.ooo"
+                          style={{ fontSize: '15px' }}
+                      >
+                        p.novikov@proxima.ooo
+                      </Link>
+                    </Space>
+                    <Space size="small">
+                      <GlobalOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                      />
+                      <Link
+                          href="https://proxima24.ru/"
+                          target="_blank"
+                          style={{ fontSize: '15px' }}
+                      >
+                        proxima24.ru
+                      </Link>
+                    </Space>
+                  </Space>
+                </Space>
+              </Card>
+                </Col>
+                <Col xs={24} sm={12}>
+                  <Card
+                      size="small"
+                      style={{ backgroundColor: '#fff7e6', height: '100%' }}
+                  >
+                <Space
+                    orientation="vertical"
+                    size="small"
+                    style={{ width: '100%' }}
+                >
+                  <Title level={5} style={{ marginTop: 0, marginBottom: 4 }}>
+                    <UserOutlined style={{ marginRight: 8 }} />
+                    Ситяков Артём
+                  </Title>
+                  <Text type="secondary" style={{ fontSize: '13px' }}>
+                    Руководитель отдела маркетинга
+                  </Text>
+                  <Divider style={{ margin: '8px 0' }} />
+                  <Space
+                      direction="vertical"
+                      size="small"
+                      style={{ width: '100%' }}
+                  >
+                    <Space size="small">
+                      <PhoneOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                      />
+                      <Link href="tel:+79271108488" style={{ fontSize: '15px' }}>
+                        +7 927 110 84 88
+                      </Link>
+                    </Space>
+                    <Space size="small">
+                      <MailOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                      />
+                      <Link
+                          href="mailto:a.sityakov@proxima.ooo"
+                          style={{ fontSize: '15px' }}
+                      >
+                        a.sityakov@proxima.ooo
+                      </Link>
+                    </Space>
+                    <Space size="small">
+                      <GlobalOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                      />
+                      <Link
+                          href="https://proxima24.ru/"
+                          target="_blank"
+                          style={{ fontSize: '15px' }}
+                      >
+                        proxima24.ru
+                      </Link>
+                    </Space>
+                  </Space>
+                </Space>
+              </Card>
+                </Col>
+                <Col xs={24} sm={12}>
+                  <Card size="small" style={{ backgroundColor: '#f6ffed', height: '100%' }}>
+                <Space
+                    orientation="vertical"
+                    size="small"
+                    style={{ width: '100%' }}
+                >
+                  <Title level={5} style={{ marginTop: 0, marginBottom: 4 }}>
+                    <UserOutlined style={{ marginRight: 8 }} />
+                    Сайгина Юлия
+                  </Title>
+                  <Text type="secondary" style={{ fontSize: '13px' }}>
+                    Руководитель проектов
+                  </Text>
+                  <Divider style={{ margin: '8px 0' }} />
+                  <Space
+                      direction="vertical"
+                      size="small"
+                      style={{ width: '100%' }}
+                  >
+                    <Space size="small">
+                      <PhoneOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                      />
+                      <Link href="tel:+79033856349" style={{ fontSize: '15px' }}>
+                        +7 903 385 6349
+                      </Link>
+                    </Space>
+                    <Space size="small">
+                      <MailOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                      />
+                      <Link
+                          href="mailto:y.saigina@proxima.ooo"
+                          style={{ fontSize: '15px' }}
+                      >
+                        y.saigina@proxima.ooo
+                      </Link>
+                    </Space>
+                    <Space size="small">
+                      <GlobalOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                      />
+                      <Link
+                          href="https://proxima24.ru/"
+                          target="_blank"
+                          style={{ fontSize: '15px' }}
+                      >
+                        proxima24.ru
+                      </Link>
+                    </Space>
+                  </Space>
+                </Space>
+              </Card>
+                </Col>
+              </Row>
             </Space>
-          </Space>
-        </Card>
-      </Space>
+          </Card>
+        </Space>
     ),
   },
 ];
