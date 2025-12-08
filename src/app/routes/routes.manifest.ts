@@ -36,6 +36,20 @@ export const routesManifest: RouteManifestEntry[] = [
             m => m.visibilityPageRoute
           ),
       },
+      {
+        path: pathKeys.questionnaires,
+        loader: () =>
+          import('~pages/questionnaires/questionnaires-list-page.route').then(
+            m => m.questionnairesListPageRoute
+          ),
+      },
+      {
+        path: pathKeys.questionnaireAnswers,
+        loader: () =>
+          import('~pages/questionnaires/questionnaire-answers-page.route').then(
+            m => m.questionnaireAnswersPageRoute
+          ),
+      },
     ],
   },
   {
