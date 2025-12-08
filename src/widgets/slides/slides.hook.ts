@@ -35,15 +35,27 @@ export function useSlidesNavigation(
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const handlePrevious = useCallback(() => {
-    setCurrentSlideIndex(prev => Math.max(0, prev - 1));
+    setCurrentSlideIndex(prev => {
+      const newIndex = Math.max(0, prev - 1);
+      // Scroll to top when slide changes
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return newIndex;
+    });
   }, []);
 
   const handleNext = useCallback(() => {
-    setCurrentSlideIndex(prev => Math.min(slides.length - 1, prev + 1));
+    setCurrentSlideIndex(prev => {
+      const newIndex = Math.min(slides.length - 1, prev + 1);
+      // Scroll to top when slide changes
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return newIndex;
+    });
   }, [slides.length]);
 
   const handleGoToSlide = useCallback((index: number) => {
     setCurrentSlideIndex(index);
+    // Scroll to top when slide changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   // Keyboard navigation
@@ -78,6 +90,11 @@ export function useSlidesNavigation(
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [handlePrevious, handleNext]);
+
+  // Scroll to top when slide index changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentSlideIndex]);
 
   const currentSlide = slides[currentSlideIndex];
   const canGoPrevious = currentSlideIndex > 0;

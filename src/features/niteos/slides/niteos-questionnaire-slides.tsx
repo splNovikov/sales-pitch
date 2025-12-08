@@ -1,27 +1,15 @@
-import {
-  Typography,
-  List,
-  Space,
-  Divider,
-  Card,
-  Row,
-  Col,
-  Tag,
-  Descriptions,
-} from 'antd';
+import { Typography, List, Space, Divider, Card, Row, Col, Tag } from 'antd';
 import {
   QuestionCircleOutlined,
   WarningOutlined,
   CheckCircleOutlined,
   BarChartOutlined,
   UserOutlined,
-  ClockCircleOutlined,
   DollarOutlined,
   FileTextOutlined,
   SettingOutlined,
   DatabaseOutlined,
   TeamOutlined,
-  MessageOutlined,
   PhoneOutlined,
   MailOutlined,
   GlobalOutlined,
@@ -31,6 +19,8 @@ import { type SlideData } from '~widgets/slides';
 import { formatDateForSlide } from '~shared/lib/date.utils';
 import { niteosQuestionnaireCreatedAt } from './niteos-questionnaire.meta';
 import niteosLogo from './niteos.png';
+import { QuestionnaireSectionForm } from './questionnaire-section-form';
+import { QuestionnaireReviewProblem1 } from './questionnaire-review';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
@@ -282,33 +272,7 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <FileTextOutlined style={{ marginRight: 8 }} />
             1. Текущий процесс распределения заявок
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Как работает рандомайзер распределения заявок? Опишите механизм работы.',
-              'В кого рандомайзер распределяет заявки? Сколько человек в пуле распределения? Какие у них должности и компетенции?',
-              'Сколько времени в среднем занимает распределение одной заявки через рандомайзер?',
-              'Какие каналы поступления заявок используются? (сайт, email, телефон, мессенджеры, другие)',
-              'В каком формате приходят заявки? (форма на сайте, письмо, звонок, файл)',
-              'Есть ли единая точка входа для всех заявок или они приходят в разные системы?',
-              'Что происходит с заявкой после распределения через рандомайзер? Опишите дальнейший процесс обработки.',
-              'В каких системах ведутся статусы заявок после распределения? (CRM, таблицы, другие системы)',
-              'Какие статусы заявок существуют в системе? Перечислите все статусы от поступления до закрытия.',
-              'Как отслеживается движение заявки по статусам? Есть ли автоматическое обновление или это делается вручную?',
-              'Какие критерии должны учитываться при распределении заявок? (тип продукции, регион, сложность, компетенции менеджера, загрузка, другие)',
-              'Есть ли приоритизация заявок? Как определяется срочность и важность?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
+          <QuestionnaireSectionForm sectionId="problem-1-q1-process" />
         </Card>
       </Space>
     ),
@@ -323,29 +287,7 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
             2. Выявленные проблемы и их последствия
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Какие конкретные проблемы возникают при распределении заявок? Опишите каждую.',
-              'Как часто происходят ошибки распределения? (в % от общего количества заявок)',
-              'Какие типы ошибок наиболее частые? (неправильный специалист, потеря заявки, задержка, другие)',
-              'Что происходит, когда заявка распределена неправильно? Как это обнаруживается?',
-              'Сколько времени теряется на перераспределение неправильно распределенных заявок?',
-              'Сколько покупателей ушло из-за проблем с распределением заявок? (за последний год)',
-              'Какая финансовая потеря связана с неправильным распределением? (упущенная выручка)',
-              'Есть ли случаи, когда заявка теряется полностью? Как часто это происходит?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
+          <QuestionnaireSectionForm sectionId="problem-1-q2-problems" />
         </Card>
       </Space>
     ),
@@ -360,29 +302,7 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <UserOutlined style={{ marginRight: 8 }} />
             3. Человеческий фактор и документация
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Какая документация доступна сотруднику на уровне 1 для правильного распределения?',
-              'Используют ли сотрудники эту документацию при распределении? Почему нет, если не используют?',
-              'Как часто сотрудники открывают и читают документацию перед распределением заявки?',
-              'Есть ли инструкции/чек-листы для распределения заявок? Используются ли они?',
-              'Какие знания требуются от сотрудника на уровне 1 для правильного распределения?',
-              'Как часто сотрудники обращаются за помощью к коллегам при распределении?',
-              'Есть ли обучение новых сотрудников процессу распределения? Как оно проходит?',
-              'Как контролируется качество распределения? Есть ли обратная связь от уровня 2?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
+          <QuestionnaireSectionForm sectionId="problem-1-q3-human-factor" />
         </Card>
       </Space>
     ),
@@ -397,29 +317,7 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <DatabaseOutlined style={{ marginRight: 8 }} />
             4. Качество данных в заявках
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Какой процент заявок приходит с неполными данными?',
-              'Какие поля чаще всего отсутствуют или заполнены некорректно?',
-              'Как обнаруживается неполнота данных? На каком этапе?',
-              'Что происходит с недозаполненными заявками? Как запрашиваются недостающие данные?',
-              'Сколько времени уходит на запрос и получение недостающих данных от покупателя?',
-              'Есть ли валидация данных на этапе поступления заявки?',
-              'Как часто покупатели не отвечают на запросы дополнительной информации?',
-              'Какая информация критична для правильного распределения заявки?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
+          <QuestionnaireSectionForm sectionId="problem-1-q4-data" />
         </Card>
       </Space>
     ),
@@ -434,29 +332,7 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <BarChartOutlined style={{ marginRight: 8 }} />
             5. Объемы заявок и нагрузка
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Сколько заявок в среднем поступает в день? В неделю? В месяц?',
-              'Есть ли сезонность в поступлении заявок? Когда пиковые периоды?',
-              'Как распределяется нагрузка между сотрудниками на уровне 1?',
-              'Есть ли перегрузка сотрудников? В какие периоды?',
-              'Сколько времени сотрудник тратит на распределение заявок от общего рабочего времени?',
-              'Есть ли очередь необработанных заявок? Какой средний размер очереди?',
-              'Какой максимальный срок обработки заявки от поступления до распределения?',
-              'Влияет ли объем заявок на качество распределения? Как?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
+          <QuestionnaireSectionForm sectionId="problem-1-q5-volume" />
         </Card>
       </Space>
     ),
@@ -471,29 +347,7 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <SettingOutlined style={{ marginRight: 8 }} />
             6. Используемые системы и инструменты
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Какие системы используются для работы с заявками? (CRM, почта, таблицы, другие)',
-              'Есть ли автоматизация в процессе распределения? Какая?',
-              'Как хранятся заявки? В какой системе?',
-              'Есть ли интеграция между системами? Какая?',
-              'Какие инструменты использует сотрудник на уровне 1 для распределения?',
-              'Есть ли доступ к каталогу продукции при распределении? Как он организован?',
-              'Используются ли шаблоны или чек-листы в электронном виде?',
-              'Есть ли аналитика по распределению заявок? Какие метрики отслеживаются?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
+          <QuestionnaireSectionForm sectionId="problem-1-q6-systems" />
         </Card>
       </Space>
     ),
@@ -508,34 +362,7 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <BarChartOutlined style={{ marginRight: 8 }} />
             7. Метрики эффективности
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Как сейчас анализируется качество распределения заявок? Опишите процесс.',
-              'Где хранится аналитика по распределению? (таблицы Excel, CRM, другие системы)',
-              'Сколько времени уходит на ручной анализ качества распределения? (в часах в неделю/месяц)',
-              'Какие метрики используются для оценки качества распределения заявок?',
-              'Какой процент заявок распределяется правильно с первого раза через рандомайзер?',
-              'Как отслеживается, кому и почему ушла заявка? Есть ли прозрачность процесса?',
-              'Среднее время от поступления заявки до начала работы специалиста?',
-              'Какой процент заявок обрабатывается в течение установленных сроков?',
-              'Есть ли SLA по времени обработки заявок? Какое?',
-              'Как отслеживается конверсия заявок в сделки?',
-              'Какая доля заявок конвертируется в успешные сделки?',
-              'Есть ли метрики удовлетворенности покупателей процессом обработки заявок?',
-              'Какие проблемы выявляются при ручном анализе качества распределения?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
+          <QuestionnaireSectionForm sectionId="problem-1-q7-metrics" />
         </Card>
       </Space>
     ),
@@ -550,32 +377,15 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
             8. Ожидаемое решение
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Какое идеальное решение проблемы распределения заявок вы видите?',
-              'Какие функции должны быть в системе распределения заявок?',
-              'Должна ли система полностью автоматизировать распределение или помогать сотруднику?',
-              'Какие критерии важны при выборе решения? (скорость, точность, стоимость, другие)',
-              'Какой результат вы ожидаете от внедрения решения? (в цифрах)',
-              'Какие риски вы видите при автоматизации распределения?',
-              'Готовы ли вы к изменению текущих процессов? В какой степени?',
-              'Есть ли ограничения по бюджету на решение проблемы?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
+          <QuestionnaireSectionForm sectionId="problem-1-q8-expectations" />
         </Card>
       </Space>
     ),
+  },
+  {
+    id: 'problem-1-review',
+    header: 'Проверка и отправка ответов: Распределение заявок',
+    content: <QuestionnaireReviewProblem1 />,
   },
   {
     id: 'problem-2-overview',
@@ -1004,29 +814,7 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
             10. Ожидаемое решение
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Какое идеальное решение проблемы зависших сделок вы видите?',
-              'Какие функции должны быть в системе для работы с зависшими сделками?',
-              'Должна ли система автоматически определять зависшие сделки?',
-              'Должна ли система автоматически напоминать менеджерам о зависших сделках?',
-              'Должна ли система автоматически эскалировать зависшие сделки?',
-              'Какие критерии важны при выборе решения? (автоматизация, аналитика, стоимость, другие)',
-              'Какой результат вы ожидаете от внедрения решения? (в цифрах)',
-              'Есть ли ограничения по бюджету на решение проблемы?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
+          <QuestionnaireSectionForm sectionId="problem-2-q10-expectations" />
         </Card>
       </Space>
     ),
