@@ -19,8 +19,14 @@ import { type SlideData } from '~widgets/slides';
 import { formatDateForSlide } from '~shared/lib/date.utils';
 import { niteosQuestionnaireCreatedAt } from './niteos-questionnaire.meta';
 import niteosLogo from './niteos.png';
-import { QuestionnaireSectionForm } from './questionnaire-section-form';
-import { QuestionnaireReviewProblem1 } from './questionnaire-review';
+import {
+  QuestionnaireSectionForm,
+  QuestionnaireReview,
+} from '~shared/ui/questionnaire';
+import {
+  niteosQuestionnaireConfig,
+  niteosQuestionnaireQuestions,
+} from './niteos-questionnaire-config';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
@@ -272,7 +278,11 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <FileTextOutlined style={{ marginRight: 8 }} />
             1. Текущий процесс распределения заявок
           </Title>
-          <QuestionnaireSectionForm sectionId="problem-1-q1-process" />
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-1-q1-process"
+            storageKey={niteosQuestionnaireConfig.storageKey}
+          />
         </Card>
       </Space>
     ),
@@ -287,7 +297,11 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
             2. Выявленные проблемы и их последствия
           </Title>
-          <QuestionnaireSectionForm sectionId="problem-1-q2-problems" />
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-1-q2-problems"
+            storageKey={niteosQuestionnaireConfig.storageKey}
+          />
         </Card>
       </Space>
     ),
@@ -302,7 +316,11 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <UserOutlined style={{ marginRight: 8 }} />
             3. Человеческий фактор и документация
           </Title>
-          <QuestionnaireSectionForm sectionId="problem-1-q3-human-factor" />
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-1-q3-human-factor"
+            storageKey={niteosQuestionnaireConfig.storageKey}
+          />
         </Card>
       </Space>
     ),
@@ -317,7 +335,11 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <DatabaseOutlined style={{ marginRight: 8 }} />
             4. Качество данных в заявках
           </Title>
-          <QuestionnaireSectionForm sectionId="problem-1-q4-data" />
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-1-q4-data"
+            storageKey={niteosQuestionnaireConfig.storageKey}
+          />
         </Card>
       </Space>
     ),
@@ -332,7 +354,11 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <BarChartOutlined style={{ marginRight: 8 }} />
             5. Объемы заявок и нагрузка
           </Title>
-          <QuestionnaireSectionForm sectionId="problem-1-q5-volume" />
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-1-q5-volume"
+            storageKey={niteosQuestionnaireConfig.storageKey}
+          />
         </Card>
       </Space>
     ),
@@ -347,7 +373,11 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <SettingOutlined style={{ marginRight: 8 }} />
             6. Используемые системы и инструменты
           </Title>
-          <QuestionnaireSectionForm sectionId="problem-1-q6-systems" />
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-1-q6-systems"
+            storageKey={niteosQuestionnaireConfig.storageKey}
+          />
         </Card>
       </Space>
     ),
@@ -362,7 +392,11 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <BarChartOutlined style={{ marginRight: 8 }} />
             7. Метрики эффективности
           </Title>
-          <QuestionnaireSectionForm sectionId="problem-1-q7-metrics" />
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-1-q7-metrics"
+            storageKey={niteosQuestionnaireConfig.storageKey}
+          />
         </Card>
       </Space>
     ),
@@ -377,7 +411,11 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
             8. Ожидаемое решение
           </Title>
-          <QuestionnaireSectionForm sectionId="problem-1-q8-expectations" />
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-1-q8-expectations"
+            storageKey={niteosQuestionnaireConfig.storageKey}
+          />
         </Card>
       </Space>
     ),
@@ -385,7 +423,17 @@ export const niteosQuestionnaireSlides: SlideData[] = [
   {
     id: 'problem-1-review',
     header: 'Проверка и отправка ответов: Распределение заявок',
-    content: <QuestionnaireReviewProblem1 />,
+    content: (
+      <QuestionnaireReview
+        questions={niteosQuestionnaireQuestions}
+        filterQuestions={q => q.section.startsWith('problem-1-')}
+        title="Распределение заявок"
+        successMessage='Ваши ответы по теме "Распределение заявок" успешно отправлены на сервер.'
+        emptyMessage='Вы еще не заполнили ни одного вопроса по теме "Распределение заявок". Вернитесь к предыдущим слайдам и заполните форму.'
+        storageKey={niteosQuestionnaireConfig.storageKey}
+        apiUrl={niteosQuestionnaireConfig.apiUrl}
+      />
+    ),
   },
   {
     id: 'problem-2-overview',
@@ -814,7 +862,11 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
             10. Ожидаемое решение
           </Title>
-          <QuestionnaireSectionForm sectionId="problem-2-q10-expectations" />
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-2-q10-expectations"
+            storageKey={niteosQuestionnaireConfig.storageKey}
+          />
         </Card>
       </Space>
     ),

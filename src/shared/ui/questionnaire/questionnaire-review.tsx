@@ -9,44 +9,72 @@ import {
   message,
 } from 'antd';
 import { SendOutlined, CheckCircleOutlined } from '@ant-design/icons';
-import { getAllSavedAnswers } from './questionnaire-section-form';
-import { niteosQuestionnaireQuestions } from './questionnaire-utils';
+import type {
+  Question,
+  Answer,
+  QuestionnaireFormData,
+} from './questionnaire.types';
+import {
+  getQuestionnaireAnswers,
+  clearQuestionnaireAnswers,
+} from './questionnaire-storage';
 
 const { Title, Paragraph, Text } = Typography;
 
-const QUESTIONNAIRE_SLUG = 'niteos-quiz';
-const API_URL = `https://strapi-be.proxima24.ru/api/questionnaires/${QUESTIONNAIRE_SLUG}/answers`;
-
-interface Answer {
-  questionId: string;
-  questionText: string;
-  value: string;
-}
-
-interface FormData {
-  answers: Answer[];
-  metadata: {
-    respondentEmail: string;
-  };
+export interface QuestionnaireReviewProps {
+  /**
+   * All questions
+   */
+  questions: Question[];
+  /**
+   * Function to filter questions for this review section
+   */
+  filterQuestions: (question: Question) => boolean;
+  /**
+   * Title for the review section
+   */
+  title: string;
+  /**
+   * Success message after submission
+   */
+  successMessage: string;
+  /**
+   * Message when no answers are filled
+   */
+  emptyMessage: string;
+  /**
+   * Storage key for localStorage
+   */
+  storageKey: string;
+  /**
+   * API URL for submitting answers
+   */
+  apiUrl: string;
 }
 
 /**
- * Component for reviewing and submitting answers for Problem 1 (Request Distribution)
+ * Component for reviewing and submitting questionnaire answers
  */
-export function QuestionnaireReviewProblem1() {
+export function QuestionnaireReview({
+  questions,
+  filterQuestions,
+  title,
+  successMessage,
+  emptyMessage,
+  storageKey,
+  apiUrl,
+}: QuestionnaireReviewProps) {
   const [loading, setLoading] = React.useState(false);
   const [submitted, setSubmitted] = React.useState(false);
 
-  // Get all questions for Problem 1
-  const problem1Questions = niteosQuestionnaireQuestions.filter(q =>
-    q.section.startsWith('problem-1-')
-  );
+  // Get filtered questions
+  const filteredQuestions = questions.filter(filterQuestions);
 
   // Get saved answers
-  const savedAnswers = getAllSavedAnswers();
+  const savedAnswers = getQuestionnaireAnswers(storageKey);
 
-  // Filter answers for Problem 1 only
-  const problem1Answers: Answer[] = problem1Questions
+  // Filter answers for this section only
+  const sectionAnswers: Answer[] = filteredQuestions
     .map(question => {
       const value = savedAnswers[question.questionId]?.trim();
       if (!value) return null;
@@ -59,15 +87,15 @@ export function QuestionnaireReviewProblem1() {
     .filter((answer): answer is Answer => answer !== null);
 
   const handleSubmit = async () => {
-    if (problem1Answers.length === 0) {
+    if (sectionAnswers.length === 0) {
       message.warning('Нет ответов для отправки');
       return;
     }
 
     setLoading(true);
     try {
-      const formData: FormData = {
-        answers: problem1Answers,
+      const formData: QuestionnaireFormData = {
+        answers: sectionAnswers,
         metadata: {
           respondentEmail: '',
         },
@@ -75,14 +103,14 @@ export function QuestionnaireReviewProblem1() {
 
       // Log for debugging
       console.log('Отправка данных на бекенд:', {
-        url: API_URL,
-        answersCount: problem1Answers.length,
+        url: apiUrl,
+        answersCount: sectionAnswers.length,
         data: formData,
       });
 
-      message.info(`Отправка ${problem1Answers.length} ответов на сервер...`);
+      message.info(`Отправка ${sectionAnswers.length} ответов на сервер...`);
 
-      const response = await fetch(API_URL, {
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -109,18 +137,12 @@ export function QuestionnaireReviewProblem1() {
       console.log('Успешный ответ сервера:', result);
 
       message.success(
-        `Ответы успешно отправлены! Отправлено ${problem1Answers.length} ответов.`
+        `Ответы успешно отправлены! Отправлено ${sectionAnswers.length} ответов.`
       );
 
-      // Clear only Problem 1 answers from localStorage
-      const allAnswers = getAllSavedAnswers();
-      problem1Questions.forEach(question => {
-        delete allAnswers[question.questionId];
-      });
-      localStorage.setItem(
-        'niteos-questionnaire-answers',
-        JSON.stringify(allAnswers)
-      );
+      // Clear only answers for this section from localStorage
+      const questionIds = filteredQuestions.map(q => q.questionId);
+      clearQuestionnaireAnswers(storageKey, questionIds);
 
       setSubmitted(true);
     } catch (error) {
@@ -147,10 +169,7 @@ export function QuestionnaireReviewProblem1() {
           <Title level={4} style={{ marginTop: 0 }}>
             Спасибо!
           </Title>
-          <Paragraph>
-            Ваши ответы по теме "Распределение заявок" успешно отправлены на
-            сервер.
-          </Paragraph>
+          <Paragraph>{successMessage}</Paragraph>
           <Paragraph type="secondary">
             Теперь вы можете перейти к следующей теме.
           </Paragraph>
@@ -159,17 +178,14 @@ export function QuestionnaireReviewProblem1() {
     );
   }
 
-  if (problem1Answers.length === 0) {
+  if (sectionAnswers.length === 0) {
     return (
       <Card>
         <Space orientation="vertical" size="large" style={{ width: '100%' }}>
           <Title level={4} style={{ marginTop: 0 }}>
-            Проверка ответов: Распределение заявок
+            Проверка ответов: {title}
           </Title>
-          <Paragraph>
-            Вы еще не заполнили ни одного вопроса по теме "Распределение
-            заявок". Вернитесь к предыдущим слайдам и заполните форму.
-          </Paragraph>
+          <Paragraph>{emptyMessage}</Paragraph>
         </Space>
       </Card>
     );
@@ -180,19 +196,19 @@ export function QuestionnaireReviewProblem1() {
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <div>
           <Title level={4} style={{ marginTop: 0 }}>
-            Проверка ответов: Распределение заявок
+            Проверка ответов: {title}
           </Title>
           <Paragraph>
             Проверьте ваши ответы перед отправкой. Всего заполнено вопросов:{' '}
-            <Text strong>{problem1Answers.length}</Text> из{' '}
-            {problem1Questions.length}
+            <Text strong>{sectionAnswers.length}</Text> из{' '}
+            {filteredQuestions.length}
           </Paragraph>
         </div>
 
         <Divider />
 
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          {problem1Answers.map((answer, index) => (
+          {sectionAnswers.map((answer, index) => (
             <Card key={answer.questionId} size="small">
               <Descriptions
                 column={1}
@@ -220,7 +236,7 @@ export function QuestionnaireReviewProblem1() {
           onClick={handleSubmit}
           block
         >
-          Отправить ответы ({problem1Answers.length})
+          Отправить ответы ({sectionAnswers.length})
         </Button>
       </Space>
     </Card>
