@@ -250,6 +250,31 @@ export function QuestionnaireReview({
           </Paragraph>
         </div>
 
+        <Button
+          type="default"
+          size="large"
+          icon={<SendOutlined />}
+          loading={loading}
+          onClick={handleSubmit}
+          block
+          style={{
+            backgroundColor: '#52c41a',
+            borderColor: '#52c41a',
+            color: '#ffffff',
+            fontWeight: 500,
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.backgroundColor = '#73d13d';
+            e.currentTarget.style.borderColor = '#73d13d';
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.backgroundColor = '#52c41a';
+            e.currentTarget.style.borderColor = '#52c41a';
+          }}
+        >
+          Отправить ответы ({sectionAnswers.length})
+        </Button>
+
         <Divider />
 
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
@@ -270,19 +295,6 @@ export function QuestionnaireReview({
             </Card>
           ))}
         </Space>
-
-        <Divider />
-
-        <Button
-          type="primary"
-          size="large"
-          icon={<SendOutlined />}
-          loading={loading}
-          onClick={handleSubmit}
-          block
-        >
-          Отправить ответы ({sectionAnswers.length})
-        </Button>
       </Space>
     </Card>
   );
