@@ -10,9 +10,6 @@ import {
   SettingOutlined,
   DatabaseOutlined,
   TeamOutlined,
-  PhoneOutlined,
-  MailOutlined,
-  GlobalOutlined,
   RocketOutlined,
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
@@ -25,10 +22,11 @@ import {
 } from '~shared/ui/questionnaire';
 import {
   niteosQuestionnaireConfig,
+  niteosQuestionnaireConfig2,
   niteosQuestionnaireQuestions,
 } from './niteos-questionnaire-config';
 
-const { Title, Paragraph, Text, Link } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 /**
  * Questionnaire slides for Niteos
@@ -526,28 +524,10 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <BarChartOutlined style={{ marginRight: 8 }} />
             1. Масштаб проблемы
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Сколько всего сделок сейчас в воронке продаж?',
-              'Сколько из них можно считать зависшими? (в % и абсолютных числах)',
-              'Какое определение "зависшей сделки" используется в вашей компании? (критерии)',
-              'Какой средний срок нахождения сделки в воронке до закрытия или отсева?',
-              'Какой срок считается нормальным для сделки в вашей отрасли?',
-              'Сколько сделок зависают более 30 дней? Более 60 дней? Более 90 дней?',
-              'Какой процент от общего количества сделок составляют зависшие?',
-              'Какой средний размер зависшей сделки? (в рублях)',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-2-q1-scale"
+            storageKey={niteosQuestionnaireConfig2.storageKey}
           />
         </Card>
       </Space>
@@ -563,29 +543,10 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
             2. Причины зависания сделок
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Какие основные причины зависания сделок вы видите? Перечислите все.',
-              'Какой процент зависших сделок связан с отсутствием активности менеджера?',
-              'Какой процент связан с отсутствием активности покупателя?',
-              'Есть ли зависшие сделки из-за отсутствия необходимой информации/документов?',
-              'Сколько сделок зависают из-за ожидания решения от покупателя?',
-              'Есть ли зависшие сделки из-за внутренних процессов компании? (согласования, производство, другие)',
-              'Какой процент зависших сделок связан с ценовыми вопросами?',
-              'Есть ли зависшие сделки из-за технических проблем? (недостаточная информация о продукции, расчеты, другие)',
-              'Сколько сделок зависают из-за конкурентов или альтернативных решений?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-2-q2-reasons"
+            storageKey={niteosQuestionnaireConfig2.storageKey}
           />
         </Card>
       </Space>
@@ -601,28 +562,10 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <FileTextOutlined style={{ marginRight: 8 }} />
             3. Типы зависших сделок
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Есть ли категории зависших сделок? Какие? (по типу продукции, по покупателю, по этапу воронки, другие)',
-              'На каких этапах воронки чаще всего зависают сделки? Перечислите этапы.',
-              'Есть ли типы продукции, по которым чаще зависают сделки?',
-              'Есть ли типы покупателей, с которыми чаще зависают сделки? (B2B, B2G, частные, другие)',
-              'Зависают ли чаще крупные или мелкие сделки?',
-              'Есть ли региональные особенности в зависании сделок?',
-              'Есть ли сезонность в зависании сделок?',
-              'Какие сделки имеют наибольшую вероятность зависания? (характеристики)',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-2-q3-types"
+            storageKey={niteosQuestionnaireConfig2.storageKey}
           />
         </Card>
       </Space>
@@ -638,30 +581,10 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <SettingOutlined style={{ marginRight: 8 }} />
             4. Процессы работы с зависшими сделками
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Есть ли сейчас система работы с зависшими сделками? Опишите её или объясните, почему её нет.',
-              'Как сейчас определяются зависшие сделки? Есть ли автоматическое определение или это делается вручную?',
-              'На каких стадиях воронки чаще всего копятся сделки? Перечислите конкретные стадии.',
-              'Как часто пересматриваются зависшие сделки? (ежедневно, еженедельно, ежемесячно, никогда)',
-              'Кто отвечает за работу с зависшими сделками? (менеджер, руководитель отдела, никто, другие)',
-              'Есть ли автоматические напоминания менеджерам о зависших сделках? Если нет, почему?',
-              'Как определяется, актуально ли еще сотрудничество с покупателем по зависшей сделке?',
-              'Есть ли система работы с "холодными" сделками? Как она работает?',
-              'Как сейчас предлагаются дополнительные скидки для "разморозки" сделок?',
-              'Есть ли процесс "разморозки" зависших сделок? Как он работает?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-2-q4-process"
+            storageKey={niteosQuestionnaireConfig2.storageKey}
           />
         </Card>
       </Space>
@@ -677,28 +600,10 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <UserOutlined style={{ marginRight: 8 }} />
             5. Работа менеджеров с зависшими сделками
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Как менеджеры работают с зависшими сделками? Опишите типичный сценарий.',
-              'Сколько времени менеджер тратит на работу с зависшими сделками? (в % от рабочего времени)',
-              'Есть ли у менеджеров мотивация работать с зависшими сделками?',
-              'Как менеджеры определяют, стоит ли продолжать работу с зависшей сделкой?',
-              'Есть ли у менеджеров инструменты для работы с зависшими сделками? Какие?',
-              'Как часто менеджеры контактируют с покупателями по зависшим сделкам?',
-              'Какие действия менеджеры предпринимают для "разморозки" сделки?',
-              'Есть ли случаи, когда менеджеры "забывают" о зависших сделках? Почему?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-2-q5-manager"
+            storageKey={niteosQuestionnaireConfig2.storageKey}
           />
         </Card>
       </Space>
@@ -714,28 +619,10 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <TeamOutlined style={{ marginRight: 8 }} />
             6. Поведение покупателей по зависшим сделкам
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Как часто покупатели сами инициируют контакт по зависшей сделке?',
-              'Как покупатели реагируют на напоминания о зависшей сделке?',
-              'Есть ли случаи, когда покупатель "забыл" о сделке? Как часто?',
-              'Какие причины покупатели называют при отказе от продолжения сделки?',
-              'Есть ли случаи, когда покупатель просто перестает отвечать? Как часто?',
-              'Какой процент зависших сделок в итоге закрывается успешно?',
-              'Какой процент зависших сделок закрывается как потерянные?',
-              'Есть ли закономерности в поведении покупателей по зависшим сделкам?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-2-q6-client"
+            storageKey={niteosQuestionnaireConfig2.storageKey}
           />
         </Card>
       </Space>
@@ -751,28 +638,10 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <DollarOutlined style={{ marginRight: 8 }} />
             7. Влияние зависших сделок на бизнес
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Какая сумма в рублях "заморожена" в зависших сделках?',
-              'Как зависшие сделки влияют на прогноз продаж?',
-              'Как зависшие сделки влияют на планирование производства?',
-              'Есть ли влияние на загрузку менеджеров? Какое?',
-              'Как зависшие сделки влияют на моральный климат в отделе продаж?',
-              'Есть ли влияние на репутацию компании? Какое?',
-              'Какая финансовая потеря связана с зависшими сделками? (упущенная выручка)',
-              'Есть ли возможность перераспределить ресурсы с зависших сделок на новые?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-2-q7-impact"
+            storageKey={niteosQuestionnaireConfig2.storageKey}
           />
         </Card>
       </Space>
@@ -788,28 +657,10 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <SettingOutlined style={{ marginRight: 8 }} />
             8. Системы и инструменты для работы с зависшими сделками
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Какие системы используются для отслеживания зависших сделок?',
-              'Есть ли автоматическое определение зависших сделок в системе?',
-              'Есть ли автоматические уведомления о зависших сделках?',
-              'Как визуализируются зависшие сделки в системе? (дашборды, отчеты, другие)',
-              'Есть ли аналитика по зависшим сделкам? Какие метрики отслеживаются?',
-              'Можно ли в системе фильтровать и сортировать зависшие сделки?',
-              'Есть ли интеграция между системой учета сделок и другими системами?',
-              'Какие инструменты используются для работы с покупателями по зависшим сделкам?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-2-q8-systems"
+            storageKey={niteosQuestionnaireConfig2.storageKey}
           />
         </Card>
       </Space>
@@ -825,28 +676,10 @@ export const niteosQuestionnaireSlides: SlideData[] = [
             <BarChartOutlined style={{ marginRight: 8 }} />
             9. Метрики и KPI по зависшим сделкам
           </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Какие метрики используются для отслеживания зависших сделок?',
-              'Какой процент зависших сделок считается нормальным?',
-              'Есть ли KPI для менеджеров по работе с зависшими сделками?',
-              'Как отслеживается динамика зависших сделок? (рост/снижение)',
-              'Есть ли метрики времени нахождения сделки в каждом этапе воронки?',
-              'Какой средний срок "разморозки" зависшей сделки?',
-              'Есть ли метрики конверсии зависших сделок в закрытые?',
-              'Как оценивается эффективность работы с зависшими сделками?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
+          <QuestionnaireSectionForm
+            questions={niteosQuestionnaireQuestions}
+            sectionId="problem-2-q9-metrics"
+            storageKey={niteosQuestionnaireConfig2.storageKey}
           />
         </Card>
       </Space>
@@ -865,49 +698,25 @@ export const niteosQuestionnaireSlides: SlideData[] = [
           <QuestionnaireSectionForm
             questions={niteosQuestionnaireQuestions}
             sectionId="problem-2-q10-expectations"
-            storageKey={niteosQuestionnaireConfig.storageKey}
+            storageKey={niteosQuestionnaireConfig2.storageKey}
           />
         </Card>
       </Space>
     ),
   },
   {
-    id: 'additional-questions',
-    header: 'Дополнительные вопросы',
+    id: 'problem-2-review',
+    header: 'Проверка и отправка ответов: Зависшие сделки',
     content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <QuestionCircleOutlined
-              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
-            />
-            Общие вопросы для понимания контекста
-          </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Есть ли связь между проблемами распределения заявок и зависшими сделками? Какая?',
-              'Влияет ли качество распределения заявок на количество зависших сделок?',
-              'Есть ли другие проблемы в процессах продаж, которые нужно учесть?',
-              'Какие изменения в процессах продаж планируются в ближайшее время?',
-              'Есть ли ограничения или требования, которые нужно учесть при разработке решения?',
-              'Кто будет принимать решение о внедрении решения?',
-              'Какие сроки ожидаются для внедрения решения?',
-              'Есть ли опыт внедрения подобных решений в компании? Какой?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item
-                style={{ padding: '8px 0', justifyContent: 'flex-start' }}
-              >
-                <Text strong style={{ marginRight: 8 }}>
-                  {index + 1}.
-                </Text>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-      </Space>
+      <QuestionnaireReview
+        questions={niteosQuestionnaireQuestions}
+        filterQuestions={q => q.section.startsWith('problem-2-')}
+        title="Проверка ответов: Зависшие сделки"
+        successMessage='Ваши ответы по теме "Зависшие сделки" успешно отправлены на сервер.'
+        emptyMessage='Вы еще не заполнили ни одного вопроса по теме "Зависшие сделки". Вернитесь к предыдущим слайдам и заполните форму.'
+        storageKey={niteosQuestionnaireConfig2.storageKey}
+        apiUrl={niteosQuestionnaireConfig2.apiUrl}
+      />
     ),
   },
   {
@@ -1008,94 +817,6 @@ export const niteosQuestionnaireSlides: SlideData[] = [
               </List.Item>
             )}
           />
-        </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'contacts',
-    header: 'Контакты',
-    content: (
-      <Space
-        orientation="vertical"
-        size="large"
-        style={{
-          width: '100%',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100%',
-        }}
-      >
-        <Card style={{ maxWidth: '800px', width: '100%' }}>
-          <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-            <Title level={3} style={{ textAlign: 'center', marginTop: 0 }}>
-              Контакты для связи
-            </Title>
-            <Divider />
-            <Card>
-              <Space
-                orientation="vertical"
-                size="small"
-                style={{ width: '100%' }}
-              >
-                <Tag color="blue" style={{ marginBottom: 8 }}>
-                  ОСНОВНОЙ КОНТАКТ
-                </Tag>
-                <Title level={4} style={{ marginTop: 0 }}>
-                  Исламов Артур Айратович
-                </Title>
-                <Text type="secondary">Коммерческий директор</Text>
-                <Divider style={{ margin: '12px 0' }} />
-                <Text>
-                  <Text strong>Готовность:</Text> Слушает предложения при
-                  условии плана ROI
-                </Text>
-              </Space>
-            </Card>
-            <Divider />
-            <Space direction="vertical" size="small" style={{ width: '100%' }}>
-              <Space>
-                <PhoneOutlined
-                  style={{
-                    fontSize: '18px',
-                    color: 'var(--app-color-primary)',
-                  }}
-                />
-                <Link href="tel:+78432504051" style={{ fontSize: '16px' }}>
-                  +7 (843) 250-40-51
-                </Link>
-              </Space>
-              <Space>
-                <MailOutlined
-                  style={{
-                    fontSize: '18px',
-                    color: 'var(--app-color-primary)',
-                  }}
-                />
-                <Link href="mailto:mail@niteos.ru" style={{ fontSize: '16px' }}>
-                  mail@niteos.ru
-                </Link>
-              </Space>
-              <Space>
-                <GlobalOutlined
-                  style={{
-                    fontSize: '18px',
-                    color: 'var(--app-color-primary)',
-                  }}
-                />
-                <Link
-                  href="https://niteos.ru"
-                  target="_blank"
-                  style={{ fontSize: '16px' }}
-                >
-                  https://niteos.ru
-                </Link>
-              </Space>
-              <Text type="secondary" style={{ marginTop: 8 }}>
-                г. Казань, ул. Дементьева, д. 2Б, корп. 4, офис 330
-              </Text>
-            </Space>
-          </Space>
         </Card>
       </Space>
     ),
