@@ -79,9 +79,9 @@ export function QuestionnaireReview({
       const savedValue = savedAnswers[question.questionId];
       const otherFieldName = `${question.questionId}_other`;
       const otherValue = savedAnswers[otherFieldName];
-      
+
       if (!savedValue) return null;
-      
+
       // Handle different question types
       let displayValue: string;
       if (question.type === 'checkbox') {
@@ -99,14 +99,15 @@ export function QuestionnaireReview({
                 return option ? option.label : v;
               })
               .filter(v => v !== '__other__'); // Remove "__other__" if no otherValue
-            displayValue = processedArray.length > 0 ? processedArray.join(', ') : '';
+            displayValue =
+              processedArray.length > 0 ? processedArray.join(', ') : '';
           } else {
             displayValue = String(savedValue);
           }
         } catch {
           displayValue = String(savedValue);
         }
-        
+
         // Don't show if empty or only "__other__" without value
         if (!displayValue || displayValue.trim() === '') return null;
       } else if (question.type === 'radio') {
@@ -114,15 +115,17 @@ export function QuestionnaireReview({
           displayValue = otherValue;
         } else {
           // Try to find label for the value
-          const option = question.options?.find(opt => opt.value === savedValue);
+          const option = question.options?.find(
+            opt => opt.value === savedValue
+          );
           displayValue = option ? option.label : String(savedValue).trim();
         }
       } else {
         displayValue = String(savedValue).trim();
       }
-      
+
       if (!displayValue || displayValue === '__other__') return null;
-      
+
       return {
         questionId: question.questionId,
         questionText: question.questionText,
@@ -204,35 +207,41 @@ export function QuestionnaireReview({
 
   if (submitted) {
     return (
-      <Card>
-        <Space
-          orientation="vertical"
-          size="large"
-          style={{ width: '100%', textAlign: 'center' }}
-        >
-          <CheckCircleOutlined style={{ fontSize: '48px', color: '#52c41a' }} />
-          <Title level={4} style={{ marginTop: 0 }}>
-            Спасибо!
-          </Title>
-          <Paragraph>{successMessage}</Paragraph>
-          <Paragraph type="secondary">
-            Теперь вы можете перейти к следующей теме.
-          </Paragraph>
-        </Space>
-      </Card>
+      <div style={{ maxWidth: '800px', margin: '0 auto', width: '100%' }}>
+        <Card>
+          <Space
+            orientation="vertical"
+            size="large"
+            style={{ width: '100%', textAlign: 'center' }}
+          >
+            <CheckCircleOutlined
+              style={{ fontSize: '48px', color: '#52c41a' }}
+            />
+            <Title level={4} style={{ marginTop: 0 }}>
+              Спасибо!
+            </Title>
+            <Paragraph>{successMessage}</Paragraph>
+            <Paragraph type="secondary">
+              Теперь вы можете перейти к следующей теме.
+            </Paragraph>
+          </Space>
+        </Card>
+      </div>
     );
   }
 
   if (sectionAnswers.length === 0) {
     return (
-      <Card>
-        <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-          <Title level={4} style={{ marginTop: 0 }}>
-            Проверка ответов: {title}
-          </Title>
-          <Paragraph>{emptyMessage}</Paragraph>
-        </Space>
-      </Card>
+      <div style={{ maxWidth: '800px', margin: '0 auto', width: '100%' }}>
+        <Card>
+          <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+            <Title level={4} style={{ marginTop: 0 }}>
+              Проверка ответов: {title}
+            </Title>
+            <Paragraph>{emptyMessage}</Paragraph>
+          </Space>
+        </Card>
+      </div>
     );
   }
 

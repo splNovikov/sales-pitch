@@ -19,6 +19,7 @@ import niteosLogo from './niteos.png';
 import {
   QuestionnaireSectionForm,
   QuestionnaireReview,
+  QuestionnaireCardWrapper,
 } from '~shared/ui/questionnaire';
 import {
   niteosQuestionnaireConfig,
@@ -271,17 +272,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Распределение заявок — Процесс',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <FileTextOutlined style={{ marginRight: 8 }} />
-            1. Текущий процесс распределения заявок
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-1-q1-process"
-            storageKey={niteosQuestionnaireConfig.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <FileTextOutlined style={{ marginRight: 8 }} />
+              1. Текущий процесс распределения заявок
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-1-q1-process"
+              storageKey={niteosQuestionnaireConfig.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -290,17 +293,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Распределение заявок — Проблемы',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
-            2. Выявленные проблемы и их последствия
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-1-q2-problems"
-            storageKey={niteosQuestionnaireConfig.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
+              2. Выявленные проблемы и их последствия
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-1-q2-problems"
+              storageKey={niteosQuestionnaireConfig.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -309,17 +314,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Распределение заявок — Человеческий фактор',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <UserOutlined style={{ marginRight: 8 }} />
-            3. Человеческий фактор и документация
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-1-q3-human-factor"
-            storageKey={niteosQuestionnaireConfig.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <UserOutlined style={{ marginRight: 8 }} />
+              3. Человеческий фактор и документация
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-1-q3-human-factor"
+              storageKey={niteosQuestionnaireConfig.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -328,17 +335,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Распределение заявок — Данные и информация',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <DatabaseOutlined style={{ marginRight: 8 }} />
-            4. Качество данных в заявках
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-1-q4-data"
-            storageKey={niteosQuestionnaireConfig.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <DatabaseOutlined style={{ marginRight: 8 }} />
+              4. Качество данных в заявках
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-1-q4-data"
+              storageKey={niteosQuestionnaireConfig.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -347,17 +356,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Распределение заявок — Объемы и нагрузка',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <BarChartOutlined style={{ marginRight: 8 }} />
-            5. Объемы заявок и нагрузка
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-1-q5-volume"
-            storageKey={niteosQuestionnaireConfig.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <BarChartOutlined style={{ marginRight: 8 }} />
+              5. Объемы заявок и нагрузка
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-1-q5-volume"
+              storageKey={niteosQuestionnaireConfig.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -366,17 +377,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Распределение заявок — Системы и инструменты',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <SettingOutlined style={{ marginRight: 8 }} />
-            6. Используемые системы и инструменты
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-1-q6-systems"
-            storageKey={niteosQuestionnaireConfig.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <SettingOutlined style={{ marginRight: 8 }} />
+              6. Используемые системы и инструменты
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-1-q6-systems"
+              storageKey={niteosQuestionnaireConfig.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -385,17 +398,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Распределение заявок — Метрики и KPI',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <BarChartOutlined style={{ marginRight: 8 }} />
-            7. Метрики эффективности
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-1-q7-metrics"
-            storageKey={niteosQuestionnaireConfig.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <BarChartOutlined style={{ marginRight: 8 }} />
+              7. Метрики эффективности
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-1-q7-metrics"
+              storageKey={niteosQuestionnaireConfig.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -404,17 +419,21 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Распределение заявок — Ожидания',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
-            8. Ожидаемое решение
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-1-q8-expectations"
-            storageKey={niteosQuestionnaireConfig.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <CheckCircleOutlined
+                style={{ color: '#52c41a', marginRight: 8 }}
+              />
+              8. Ожидаемое решение
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-1-q8-expectations"
+              storageKey={niteosQuestionnaireConfig.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -422,15 +441,17 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     id: 'problem-1-review',
     header: 'Проверка и отправка ответов: Распределение заявок',
     content: (
-      <QuestionnaireReview
-        questions={niteosQuestionnaireQuestions}
-        filterQuestions={q => q.section.startsWith('problem-1-')}
-        title="Распределение заявок"
-        successMessage='Ваши ответы по теме "Распределение заявок" успешно отправлены на сервер.'
-        emptyMessage='Вы еще не заполнили ни одного вопроса по теме "Распределение заявок". Вернитесь к предыдущим слайдам и заполните форму.'
-        storageKey={niteosQuestionnaireConfig.storageKey}
-        apiUrl={niteosQuestionnaireConfig.apiUrl}
-      />
+      <QuestionnaireCardWrapper>
+        <QuestionnaireReview
+          questions={niteosQuestionnaireQuestions}
+          filterQuestions={q => q.section.startsWith('problem-1-')}
+          title="Распределение заявок"
+          successMessage='Ваши ответы по теме "Распределение заявок" успешно отправлены на сервер.'
+          emptyMessage='Вы еще не заполнили ни одного вопроса по теме "Распределение заявок". Вернитесь к предыдущим слайдам и заполните форму.'
+          storageKey={niteosQuestionnaireConfig.storageKey}
+          apiUrl={niteosQuestionnaireConfig.apiUrl}
+        />
+      </QuestionnaireCardWrapper>
     ),
   },
   {
@@ -519,17 +540,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Зависшие сделки — Масштаб проблемы',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <BarChartOutlined style={{ marginRight: 8 }} />
-            1. Масштаб проблемы
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-2-q1-scale"
-            storageKey={niteosQuestionnaireConfig2.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <BarChartOutlined style={{ marginRight: 8 }} />
+              1. Масштаб проблемы
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-2-q1-scale"
+              storageKey={niteosQuestionnaireConfig2.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -538,17 +561,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Зависшие сделки — Причины зависания',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
-            2. Причины зависания сделок
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-2-q2-reasons"
-            storageKey={niteosQuestionnaireConfig2.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
+              2. Причины зависания сделок
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-2-q2-reasons"
+              storageKey={niteosQuestionnaireConfig2.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -557,17 +582,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Зависшие сделки — Типы и категории',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <FileTextOutlined style={{ marginRight: 8 }} />
-            3. Типы зависших сделок
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-2-q3-types"
-            storageKey={niteosQuestionnaireConfig2.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <FileTextOutlined style={{ marginRight: 8 }} />
+              3. Типы зависших сделок
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-2-q3-types"
+              storageKey={niteosQuestionnaireConfig2.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -576,17 +603,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Зависшие сделки — Процессы работы',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <SettingOutlined style={{ marginRight: 8 }} />
-            4. Процессы работы с зависшими сделками
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-2-q4-process"
-            storageKey={niteosQuestionnaireConfig2.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <SettingOutlined style={{ marginRight: 8 }} />
+              4. Процессы работы с зависшими сделками
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-2-q4-process"
+              storageKey={niteosQuestionnaireConfig2.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -595,17 +624,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Зависшие сделки — Работа менеджеров',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <UserOutlined style={{ marginRight: 8 }} />
-            5. Работа менеджеров с зависшими сделками
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-2-q5-manager"
-            storageKey={niteosQuestionnaireConfig2.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <UserOutlined style={{ marginRight: 8 }} />
+              5. Работа менеджеров с зависшими сделками
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-2-q5-manager"
+              storageKey={niteosQuestionnaireConfig2.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -614,17 +645,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Зависшие сделки — Поведение покупателей',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <TeamOutlined style={{ marginRight: 8 }} />
-            6. Поведение покупателей по зависшим сделкам
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-2-q6-client"
-            storageKey={niteosQuestionnaireConfig2.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <TeamOutlined style={{ marginRight: 8 }} />
+              6. Поведение покупателей по зависшим сделкам
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-2-q6-client"
+              storageKey={niteosQuestionnaireConfig2.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -633,17 +666,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Зависшие сделки — Влияние на бизнес',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <DollarOutlined style={{ marginRight: 8 }} />
-            7. Влияние зависших сделок на бизнес
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-2-q7-impact"
-            storageKey={niteosQuestionnaireConfig2.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <DollarOutlined style={{ marginRight: 8 }} />
+              7. Влияние зависших сделок на бизнес
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-2-q7-impact"
+              storageKey={niteosQuestionnaireConfig2.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -652,17 +687,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Зависшие сделки — Системы и инструменты',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <SettingOutlined style={{ marginRight: 8 }} />
-            8. Системы и инструменты для работы с зависшими сделками
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-2-q8-systems"
-            storageKey={niteosQuestionnaireConfig2.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <SettingOutlined style={{ marginRight: 8 }} />
+              8. Системы и инструменты для работы с зависшими сделками
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-2-q8-systems"
+              storageKey={niteosQuestionnaireConfig2.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -671,17 +708,19 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Зависшие сделки — Метрики и KPI',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <BarChartOutlined style={{ marginRight: 8 }} />
-            9. Метрики и KPI по зависшим сделкам
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-2-q9-metrics"
-            storageKey={niteosQuestionnaireConfig2.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <BarChartOutlined style={{ marginRight: 8 }} />
+              9. Метрики и KPI по зависшим сделкам
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-2-q9-metrics"
+              storageKey={niteosQuestionnaireConfig2.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -690,17 +729,21 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     header: 'Вопросы: Зависшие сделки — Ожидания',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
-            10. Ожидаемое решение
-          </Title>
-          <QuestionnaireSectionForm
-            questions={niteosQuestionnaireQuestions}
-            sectionId="problem-2-q10-expectations"
-            storageKey={niteosQuestionnaireConfig2.storageKey}
-          />
-        </Card>
+        <QuestionnaireCardWrapper>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              <CheckCircleOutlined
+                style={{ color: '#52c41a', marginRight: 8 }}
+              />
+              10. Ожидаемое решение
+            </Title>
+            <QuestionnaireSectionForm
+              questions={niteosQuestionnaireQuestions}
+              sectionId="problem-2-q10-expectations"
+              storageKey={niteosQuestionnaireConfig2.storageKey}
+            />
+          </Card>
+        </QuestionnaireCardWrapper>
       </Space>
     ),
   },
@@ -708,15 +751,17 @@ export const niteosQuestionnaireSlides: SlideData[] = [
     id: 'problem-2-review',
     header: 'Проверка и отправка ответов: Зависшие сделки',
     content: (
-      <QuestionnaireReview
-        questions={niteosQuestionnaireQuestions}
-        filterQuestions={q => q.section.startsWith('problem-2-')}
-        title="Проверка ответов: Зависшие сделки"
-        successMessage='Ваши ответы по теме "Зависшие сделки" успешно отправлены на сервер.'
-        emptyMessage='Вы еще не заполнили ни одного вопроса по теме "Зависшие сделки". Вернитесь к предыдущим слайдам и заполните форму.'
-        storageKey={niteosQuestionnaireConfig2.storageKey}
-        apiUrl={niteosQuestionnaireConfig2.apiUrl}
-      />
+      <QuestionnaireCardWrapper>
+        <QuestionnaireReview
+          questions={niteosQuestionnaireQuestions}
+          filterQuestions={q => q.section.startsWith('problem-2-')}
+          title="Проверка ответов: Зависшие сделки"
+          successMessage='Ваши ответы по теме "Зависшие сделки" успешно отправлены на сервер.'
+          emptyMessage='Вы еще не заполнили ни одного вопроса по теме "Зависшие сделки". Вернитесь к предыдущим слайдам и заполните форму.'
+          storageKey={niteosQuestionnaireConfig2.storageKey}
+          apiUrl={niteosQuestionnaireConfig2.apiUrl}
+        />
+      </QuestionnaireCardWrapper>
     ),
   },
   {
