@@ -20,6 +20,10 @@ import {
   niteosShortTitle,
 } from '~features/niteos/slides/niteos-short.meta';
 import {
+  niteosQuestionnaireCreatedAt,
+  niteosQuestionnaireTitle,
+} from '~features/niteos/slides/niteos-questionnaire.meta';
+import {
   hanskonnerCreatedAt,
   hanskonnerTitle,
 } from '~features/hanskonner/slides/hanskonner.meta';
@@ -120,6 +124,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'niteos-advanced',
     title: niteosAdvancedTitle,
     createdAt: niteosAdvancedCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'niteos-questionnaire',
+    title: niteosQuestionnaireTitle,
+    createdAt: niteosQuestionnaireCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },

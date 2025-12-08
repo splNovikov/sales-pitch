@@ -3,6 +3,7 @@ import { kirovStekloSlides } from '~features/kirov-steklo/slides/kirov-steklo-sl
 import { niteosSlides } from '~features/niteos/slides/niteos-slides';
 import { niteosShortSlides } from '~features/niteos/slides/niteos-short-slides';
 import { niteosAdvancedSlides } from '~features/niteos/slides/niteos-advanced-slides';
+import { niteosQuestionnaireSlides } from '~features/niteos/slides/niteos-questionnaire-slides';
 import {
   hanskonnerSlides,
   hanskonnerWebsiteSlides,
@@ -27,6 +28,7 @@ const slidesMap: Record<string, SlideData[]> = {
   niteos: niteosSlides,
   'niteos-first-turn': niteosShortSlides,
   'niteos-advanced': niteosAdvancedSlides,
+  'niteos-questionnaire': niteosQuestionnaireSlides,
   hanskonner: hanskonnerSlides,
   'hanskonner-website': hanskonnerWebsiteSlides,
   'hanskonner-reborn': hanskonnerRebornSlides,
