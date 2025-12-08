@@ -2,13 +2,9 @@
  * Utility functions for extracting questions from questionnaire slides
  */
 
-export interface Question {
-  questionId: string;
-  questionText: string;
-  section: string;
-  sectionTitle: string;
-  order: number;
-}
+import type { Question } from '~shared/ui/questionnaire';
+
+export type { Question };
 
 /**
  * Complete list of questions from niteos questionnaire
@@ -43,18 +39,33 @@ export const niteosQuestionnaireQuestions: Question[] = [
   {
     questionId: 'problem-1-q1-process-4',
     questionText:
-      'Какие каналы поступления заявок используются? (сайт, email, телефон, мессенджеры, другие)',
+      'Какие каналы поступления заявок используются?',
     section: 'problem-1-q1-process',
     sectionTitle: 'Вопросы: Распределение заявок — Процесс',
     order: 4,
+    type: 'checkbox',
+    options: [
+      { label: 'Сайт', value: 'site' },
+      { label: 'Email', value: 'email' },
+      { label: 'Телефон', value: 'phone' },
+      { label: 'Мессенджеры', value: 'messengers' },
+    ],
+    allowOther: true,
   },
   {
     questionId: 'problem-1-q1-process-5',
-    questionText:
-      'В каком формате приходят заявки? (форма на сайте, письмо, звонок, файл)',
+    questionText: 'В каком формате приходят заявки?',
     section: 'problem-1-q1-process',
     sectionTitle: 'Вопросы: Распределение заявок — Процесс',
     order: 5,
+    type: 'checkbox',
+    options: [
+      { label: 'Форма на сайте', value: 'site-form' },
+      { label: 'Письмо', value: 'email' },
+      { label: 'Звонок', value: 'call' },
+      { label: 'Файл', value: 'file' },
+    ],
+    allowOther: true,
   },
   {
     questionId: 'problem-1-q1-process-6',
@@ -63,6 +74,12 @@ export const niteosQuestionnaireQuestions: Question[] = [
     section: 'problem-1-q1-process',
     sectionTitle: 'Вопросы: Распределение заявок — Процесс',
     order: 6,
+    type: 'radio',
+    options: [
+      { label: 'Единая точка входа', value: 'single' },
+      { label: 'Разные системы', value: 'multiple' },
+      { label: 'Частично единая, частично разные', value: 'mixed' },
+    ],
   },
   {
     questionId: 'problem-1-q1-process-7',

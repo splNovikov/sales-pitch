@@ -76,12 +76,57 @@ export function QuestionnaireReview({
   // Filter answers for this section only
   const sectionAnswers: Answer[] = filteredQuestions
     .map(question => {
-      const value = savedAnswers[question.questionId]?.trim();
-      if (!value) return null;
+      const savedValue = savedAnswers[question.questionId];
+      const otherFieldName = `${question.questionId}_other`;
+      const otherValue = savedAnswers[otherFieldName];
+      
+      if (!savedValue) return null;
+      
+      // Handle different question types
+      let displayValue: string;
+      if (question.type === 'checkbox') {
+        try {
+          const arrayValue = JSON.parse(savedValue);
+          if (Array.isArray(arrayValue) && arrayValue.length > 0) {
+            // Replace "__other__" with actual other value and get labels
+            const processedArray = arrayValue
+              .map(v => {
+                if (v === '__other__' && otherValue) {
+                  return otherValue;
+                }
+                // Try to find label for the value
+                const option = question.options?.find(opt => opt.value === v);
+                return option ? option.label : v;
+              })
+              .filter(v => v !== '__other__'); // Remove "__other__" if no otherValue
+            displayValue = processedArray.length > 0 ? processedArray.join(', ') : '';
+          } else {
+            displayValue = String(savedValue);
+          }
+        } catch {
+          displayValue = String(savedValue);
+        }
+        
+        // Don't show if empty or only "__other__" without value
+        if (!displayValue || displayValue.trim() === '') return null;
+      } else if (question.type === 'radio') {
+        if (savedValue === '__other__' && otherValue) {
+          displayValue = otherValue;
+        } else {
+          // Try to find label for the value
+          const option = question.options?.find(opt => opt.value === savedValue);
+          displayValue = option ? option.label : String(savedValue).trim();
+        }
+      } else {
+        displayValue = String(savedValue).trim();
+      }
+      
+      if (!displayValue || displayValue === '__other__') return null;
+      
       return {
         questionId: question.questionId,
         questionText: question.questionText,
-        value: value,
+        value: displayValue,
       };
     })
     .filter((answer): answer is Answer => answer !== null);
