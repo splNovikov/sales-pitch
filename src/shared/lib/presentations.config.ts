@@ -64,6 +64,10 @@ import {
   targetPitchCreatedAt,
   targetPitchTitle,
 } from '~features/target-pitch/slides/target-pitch.meta';
+import {
+  eksimaAnalysisCreatedAt,
+  eksimaAnalysisTitle,
+} from '~features/eksima/slides/eksima-analysis.meta';
 
 /**
  * Presentation metadata
@@ -208,6 +212,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'target-pitch',
     title: targetPitchTitle,
     createdAt: targetPitchCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'eksima-analysis',
+    title: eksimaAnalysisTitle,
+    createdAt: eksimaAnalysisCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
