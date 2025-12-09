@@ -36,8 +36,9 @@ import {
 import { type SlideData } from '~widgets/slides';
 import { formatDateForSlide } from '~shared/lib/date.utils';
 import { eksimaAnalysisCreatedAt } from './eksima-analysis.meta';
+import eksimaLogo from './img.png';
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph, Text, Link } = Typography;
 
 /**
  * Slides data for EKSIMA company analysis presentation
@@ -63,10 +64,26 @@ export const eksimaAnalysisSlides: SlideData[] = [
           size="large"
           style={{ textAlign: 'center', maxWidth: '900px' }}
         >
-          <Title level={1} style={{ marginTop: 0 }}>
-            <ShopOutlined style={{ marginRight: 16, color: '#1890ff' }} />
-            EKSIMA
-          </Title>
+          <a
+            href="https://www.plitka-eksima.ru/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-block',
+              marginTop: 'var(--app-spacing-md)',
+            }}
+          >
+            <img
+              src={eksimaLogo}
+              alt="EKSIMA"
+              style={{
+                maxWidth: '400px',
+                height: 'auto',
+                display: 'block',
+                cursor: 'pointer',
+              }}
+            />
+          </a>
           <Title level={2} style={{ marginTop: 'var(--app-spacing-lg)' }}>
             Комплексный анализ компании для сотрудничества
           </Title>
@@ -99,9 +116,34 @@ export const eksimaAnalysisSlides: SlideData[] = [
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <ShopOutlined style={{ marginRight: 8 }} />О компании EKSIMA
-          </Title>
+          <Space
+            direction="horizontal"
+            size="middle"
+            style={{ marginBottom: 16, alignItems: 'center' }}
+          >
+            <a
+              href="https://www.plitka-eksima.ru/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block',
+              }}
+            >
+              <img
+                src={eksimaLogo}
+                alt="EKSIMA"
+                style={{
+                  maxWidth: '120px',
+                  height: 'auto',
+                  display: 'block',
+                  cursor: 'pointer',
+                }}
+              />
+            </a>
+            <Title level={4} style={{ marginTop: 0, marginBottom: 0 }}>
+              О компании EKSIMA
+            </Title>
+          </Space>
           <Paragraph style={{ fontSize: 'var(--app-font-size-md)' }}>
             <Text strong>EKSIMA</Text> – керамическая студия и оптовый поставщик
             керамической плитки и керамогранита, функционирующая на российском
