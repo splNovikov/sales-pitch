@@ -68,6 +68,10 @@ import {
   eksimaAnalysisCreatedAt,
   eksimaAnalysisTitle,
 } from '~features/eksima/slides/eksima-analysis.meta';
+import {
+  eksimaWebsiteAnalysisCreatedAt,
+  eksimaWebsiteAnalysisTitle,
+} from '~features/eksima/slides/eksima-website-analysis.meta';
 
 /**
  * Presentation metadata
@@ -219,6 +223,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'eksima-analysis',
     title: eksimaAnalysisTitle,
     createdAt: eksimaAnalysisCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'eksima-website-analysis',
+    title: eksimaWebsiteAnalysisTitle,
+    createdAt: eksimaWebsiteAnalysisCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
