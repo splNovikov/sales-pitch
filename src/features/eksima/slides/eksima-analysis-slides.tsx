@@ -38,7 +38,7 @@ import { formatDateForSlide } from '~shared/lib/date.utils';
 import { eksimaAnalysisCreatedAt } from './eksima-analysis.meta';
 import eksimaLogo from './img.png';
 
-const { Title, Paragraph, Text, Link } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 /**
  * Slides data for EKSIMA company analysis presentation
