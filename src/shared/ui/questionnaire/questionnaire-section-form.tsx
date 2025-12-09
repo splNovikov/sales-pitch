@@ -71,7 +71,9 @@ function loadSavedAnswers(
           sectionAnswers[`${question.questionId}_other`] = otherValue;
         }
       } else {
-        const isInOptions = question.options?.some(opt => opt.value === savedValue);
+        const isInOptions = question.options?.some(
+          opt => opt.value === savedValue
+        );
         if (!isInOptions && question.allowOther) {
           // Value is not in options, so it's "other" (old format)
           sectionAnswers[`${question.questionId}_other`] = savedValue;
@@ -163,7 +165,10 @@ export function QuestionnaireSectionForm({
         const otherValue = formValues[otherFieldName];
 
         if (question.type === 'checkbox') {
-          const { processedArray, hasOther } = processCheckboxValue(value, otherValue);
+          const { processedArray, hasOther } = processCheckboxValue(
+            value,
+            otherValue
+          );
 
           if (processedArray.length > 0) {
             allAnswers[questionId] = JSON.stringify(processedArray);
@@ -177,7 +182,9 @@ export function QuestionnaireSectionForm({
             delete allAnswers[otherFieldName];
           }
         } else if (question.type === 'radio') {
-          const hasOtherRadio = Boolean(otherValue && String(otherValue).trim());
+          const hasOtherRadio = Boolean(
+            otherValue && String(otherValue).trim()
+          );
           if (hasOtherRadio) {
             allAnswers[questionId] = '__other__';
             allAnswers[otherFieldName] = String(otherValue).trim();
@@ -191,7 +198,10 @@ export function QuestionnaireSectionForm({
             }
           }
         } else {
-          const stringValue = typeof value === 'string' ? value.trim() : String(value || '').trim();
+          const stringValue =
+            typeof value === 'string'
+              ? value.trim()
+              : String(value || '').trim();
           if (stringValue) {
             allAnswers[questionId] = stringValue;
           } else {
@@ -234,7 +244,10 @@ export function QuestionnaireSectionForm({
               {questionType === 'radio' && question.options ? (
                 <>
                   <Radio.Group>
-                    <Space direction="vertical" style={{ width: '100%', display: 'flex' }}>
+                    <Space
+                      direction="vertical"
+                      style={{ width: '100%', display: 'flex' }}
+                    >
                       {question.options.map(option => (
                         <Radio key={option.value} value={option.value}>
                           {option.label}
@@ -255,7 +268,10 @@ export function QuestionnaireSectionForm({
                 </>
               ) : questionType === 'checkbox' && question.options ? (
                 <Checkbox.Group>
-                  <Space direction="vertical" style={{ width: '100%', display: 'flex' }}>
+                  <Space
+                    direction="vertical"
+                    style={{ width: '100%', display: 'flex' }}
+                  >
                     {question.options.map(option => (
                       <Checkbox key={option.value} value={option.value}>
                         {option.label}

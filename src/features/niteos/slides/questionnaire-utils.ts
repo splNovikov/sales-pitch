@@ -279,8 +279,7 @@ export const niteosQuestionnaireQuestions: Question[] = [
   },
   {
     questionId: 'problem-1-q8-expectations-2',
-    questionText:
-      'Какие функции должны быть в системе распределения заявок?',
+    questionText: 'Какие функции должны быть в системе распределения заявок?',
     section: 'problem-1-q8-expectations',
     sectionTitle: 'Вопросы: Распределение заявок — Ожидания',
     order: 34,
@@ -366,8 +365,7 @@ export const niteosQuestionnaireQuestions: Question[] = [
   },
   {
     questionId: 'problem-2-q2-reasons-3',
-    questionText:
-      'Какой процент связан с отсутствием активности покупателя?',
+    questionText: 'Какой процент связан с отсутствием активности покупателя?',
     section: 'problem-2-q2-reasons',
     sectionTitle: 'Вопросы: Зависшие сделки — Причины зависания',
     order: 9,
@@ -529,8 +527,7 @@ export const niteosQuestionnaireQuestions: Question[] = [
   },
   {
     questionId: 'problem-2-q8-systems-3',
-    questionText:
-      'Есть ли автоматические уведомления о зависших сделках?',
+    questionText: 'Есть ли автоматические уведомления о зависших сделках?',
     section: 'problem-2-q8-systems',
     sectionTitle: 'Вопросы: Зависшие сделки — Системы и инструменты',
     order: 29,
@@ -554,24 +551,21 @@ export const niteosQuestionnaireQuestions: Question[] = [
   },
   {
     questionId: 'problem-2-q9-metrics-2',
-    questionText:
-      'Какой процент зависших сделок считается нормальным?',
+    questionText: 'Какой процент зависших сделок считается нормальным?',
     section: 'problem-2-q9-metrics',
     sectionTitle: 'Вопросы: Зависшие сделки — Метрики и KPI',
     order: 32,
   },
   {
     questionId: 'problem-2-q9-metrics-3',
-    questionText:
-      'Как отслеживается динамика зависших сделок? (рост/снижение)',
+    questionText: 'Как отслеживается динамика зависших сделок? (рост/снижение)',
     section: 'problem-2-q9-metrics',
     sectionTitle: 'Вопросы: Зависшие сделки — Метрики и KPI',
     order: 33,
   },
   {
     questionId: 'problem-2-q9-metrics-4',
-    questionText:
-      'Есть ли метрики конверсии зависших сделок в закрытые?',
+    questionText: 'Есть ли метрики конверсии зависших сделок в закрытые?',
     section: 'problem-2-q9-metrics',
     sectionTitle: 'Вопросы: Зависшие сделки — Метрики и KPI',
     order: 34,
@@ -595,8 +589,7 @@ export const niteosQuestionnaireQuestions: Question[] = [
   },
   {
     questionId: 'problem-2-q10-expectations-3',
-    questionText:
-      'Должна ли система автоматически определять зависшие сделки?',
+    questionText: 'Должна ли система автоматически определять зависшие сделки?',
     section: 'problem-2-q10-expectations',
     sectionTitle: 'Вопросы: Зависшие сделки — Ожидания',
     order: 37,

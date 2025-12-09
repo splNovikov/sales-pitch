@@ -5,7 +5,7 @@ export default async function questionnaireAnswersPageLoader({
   params,
 }: LoaderFunctionArgs) {
   const slug = params.slug;
-  
+
   if (!slug) {
     throw new Error('Questionnaire slug is required');
   }
@@ -18,4 +18,3 @@ export default async function questionnaireAnswersPageLoader({
     return [];
   }
 }
-

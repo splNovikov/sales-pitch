@@ -38,7 +38,8 @@ export default function QuestionnairesListPage() {
               onClick={() => navigate(`/questionnaires/${questionnaire.slug}`)}
               onMouseEnter={e => {
                 e.currentTarget.style.borderColor = '#52c41a';
-                e.currentTarget.style.boxShadow = '0 2px 8px rgba(82, 196, 26, 0.2)';
+                e.currentTarget.style.boxShadow =
+                  '0 2px 8px rgba(82, 196, 26, 0.2)';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.borderColor = '#d9d9d9';
@@ -84,4 +85,3 @@ export default function QuestionnairesListPage() {
     </Card>
   );
 }
-

@@ -68,23 +68,27 @@ export async function getQuestionnaireSubmissions(
   slug: string
 ): Promise<QuestionnaireSubmission[]> {
   try {
-    const response = await fetch(`${API_BASE_URL}/questionnaires/${slug}/answers`);
-    
+    const response = await fetch(
+      `${API_BASE_URL}/questionnaires/${slug}/answers`
+    );
+
     if (!response.ok) {
-      throw new Error(`Failed to fetch submissions: ${response.status} ${response.statusText}`);
+      throw new Error(
+        `Failed to fetch submissions: ${response.status} ${response.statusText}`
+      );
     }
 
     const data: QuestionnaireResponse = await response.json();
-    
+
     if (!data.success || !data.data) {
       throw new Error('Invalid response format');
     }
 
     const { questionnaire, answers } = data.data;
-    
+
     // Group answers by submittedAt to create submissions
     const submissionsMap = new Map<string, QuestionnaireAnswer[]>();
-    
+
     answers.forEach(answer => {
       const submittedAt = answer.submittedAt;
       if (!submissionsMap.has(submittedAt)) {
@@ -92,13 +96,15 @@ export async function getQuestionnaireSubmissions(
       }
       submissionsMap.get(submittedAt)!.push(answer);
     });
-    
+
     // Convert map to array of submissions
-    const submissions: QuestionnaireSubmission[] = Array.from(submissionsMap.entries())
+    const submissions: QuestionnaireSubmission[] = Array.from(
+      submissionsMap.entries()
+    )
       .map(([submittedAt, submissionAnswers]) => {
         // Get respondentEmail from first answer (they should all be the same for same submission)
         const respondentEmail = submissionAnswers[0]?.respondentEmail || null;
-        
+
         return {
           id: submittedAt, // Use submittedAt as unique ID
           questionnaireSlug: questionnaire.slug,
@@ -110,9 +116,11 @@ export async function getQuestionnaireSubmissions(
       })
       .sort((a, b) => {
         // Sort by submittedAt descending (newest first)
-        return new Date(b.submittedAt).getTime() - new Date(a.submittedAt).getTime();
+        return (
+          new Date(b.submittedAt).getTime() - new Date(a.submittedAt).getTime()
+        );
       });
-    
+
     return submissions;
   } catch (error) {
     console.error('Error fetching questionnaire submissions:', error);
@@ -131,22 +139,23 @@ export async function getQuestionnaireSubmission(
     const response = await fetch(
       `${API_BASE_URL}/questionnaires/${slug}/answers/${submissionId}`
     );
-    
+
     if (!response.ok) {
-      throw new Error(`Failed to fetch submission: ${response.status} ${response.statusText}`);
+      throw new Error(
+        `Failed to fetch submission: ${response.status} ${response.statusText}`
+      );
     }
 
     const data = await response.json();
-    
+
     // Handle different response formats
     if (data.data) {
       return data.data;
     }
-    
+
     return data;
   } catch (error) {
     console.error('Error fetching questionnaire submission:', error);
     throw error;
   }
 }
-

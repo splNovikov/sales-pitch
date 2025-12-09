@@ -41,7 +41,7 @@ describe('questionnaire-storage', () => {
     });
 
     it('returns parsed data from localStorage', () => {
-      const testData = { 'q1': 'answer1', 'q2': 'answer2' };
+      const testData = { q1: 'answer1', q2: 'answer2' };
       localStorageMock.setItem('test-key', JSON.stringify(testData));
 
       const result = getQuestionnaireAnswers('test-key');
@@ -50,7 +50,7 @@ describe('questionnaire-storage', () => {
 
     it('handles invalid JSON gracefully', () => {
       localStorageMock.setItem('test-key', 'invalid json');
-      
+
       // Should return empty object on error
       const result = getQuestionnaireAnswers('test-key');
       expect(result).toEqual({});
@@ -59,7 +59,7 @@ describe('questionnaire-storage', () => {
 
   describe('saveQuestionnaireAnswers', () => {
     it('saves answers to localStorage', () => {
-      const testData = { 'q1': 'answer1', 'q2': 'answer2' };
+      const testData = { q1: 'answer1', q2: 'answer2' };
       saveQuestionnaireAnswers('test-key', testData);
 
       const saved = JSON.parse(localStorageMock.getItem('test-key') || '{}');
@@ -67,9 +67,9 @@ describe('questionnaire-storage', () => {
     });
 
     it('overwrites existing data', () => {
-      localStorageMock.setItem('test-key', JSON.stringify({ 'q1': 'old' }));
-      
-      const newData = { 'q1': 'new', 'q2': 'answer2' };
+      localStorageMock.setItem('test-key', JSON.stringify({ q1: 'old' }));
+
+      const newData = { q1: 'new', q2: 'answer2' };
       saveQuestionnaireAnswers('test-key', newData);
 
       const saved = JSON.parse(localStorageMock.getItem('test-key') || '{}');
@@ -80,20 +80,20 @@ describe('questionnaire-storage', () => {
   describe('clearQuestionnaireAnswers', () => {
     it('removes specific question IDs from storage', () => {
       const testData = {
-        'q1': 'answer1',
-        'q2': 'answer2',
-        'q3': 'answer3',
+        q1: 'answer1',
+        q2: 'answer2',
+        q3: 'answer3',
       };
       localStorageMock.setItem('test-key', JSON.stringify(testData));
 
       clearQuestionnaireAnswers('test-key', ['q1', 'q3']);
 
       const saved = JSON.parse(localStorageMock.getItem('test-key') || '{}');
-      expect(saved).toEqual({ 'q2': 'answer2' });
+      expect(saved).toEqual({ q2: 'answer2' });
     });
 
     it('handles non-existent question IDs gracefully', () => {
-      const testData = { 'q1': 'answer1' };
+      const testData = { q1: 'answer1' };
       localStorageMock.setItem('test-key', JSON.stringify(testData));
 
       clearQuestionnaireAnswers('test-key', ['q999']);
@@ -105,12 +105,11 @@ describe('questionnaire-storage', () => {
 
   describe('clearAllQuestionnaireAnswers', () => {
     it('removes all data for the storage key', () => {
-      localStorageMock.setItem('test-key', JSON.stringify({ 'q1': 'answer1' }));
-      
+      localStorageMock.setItem('test-key', JSON.stringify({ q1: 'answer1' }));
+
       clearAllQuestionnaireAnswers('test-key');
 
       expect(localStorageMock.getItem('test-key')).toBeNull();
     });
   });
 });
-

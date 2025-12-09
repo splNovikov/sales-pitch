@@ -95,7 +95,9 @@ describe('QuestionnaireSectionForm', () => {
       />
     );
 
-    expect(screen.getByPlaceholderText(/введите ваш ответ/i)).toBeInTheDocument();
+    expect(
+      screen.getByPlaceholderText(/введите ваш ответ/i)
+    ).toBeInTheDocument();
   });
 
   it('renders radio group for radio questions', () => {
@@ -244,4 +246,3 @@ describe('QuestionnaireSectionForm', () => {
     expect(container.firstChild).toBeNull();
   });
 });
-
