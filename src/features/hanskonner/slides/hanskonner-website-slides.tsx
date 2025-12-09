@@ -31,7 +31,7 @@ import {
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
-import hanskonnerLogo from './hanskonner-logo.png';
+import { AnimatedHanskonnerLogo } from './animated-hanskonner-logo';
 import ruskonMain1 from './ruskon_main_1.png';
 import ruskonMain2 from './ruskon_main_2.png';
 import ruskonMain3 from './ruskon_main_3.png';
@@ -73,17 +73,7 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
           size="large"
           style={{ textAlign: 'center', maxWidth: '900px' }}
         >
-          <img
-            src={hanskonnerLogo}
-            alt="HansKonner"
-            style={{
-              maxWidth: '500px',
-              width: '100%',
-              height: 'auto',
-              display: 'block',
-              margin: '0 auto',
-            }}
-          />
+          <AnimatedHanskonnerLogo maxWidth="500px" />
           <Title level={2} style={{ marginTop: 'var(--app-spacing-lg)' }}>
             Современные веб-решения для B2B
           </Title>
@@ -2449,16 +2439,7 @@ export const hanskonnerWebsiteSlides: SlideData[] = [
               size="middle"
               style={{ width: '100%' }}
             >
-              <img
-                src={hanskonnerLogo}
-                alt="HansKonner"
-                style={{
-                  maxWidth: '200px',
-                  height: 'auto',
-                  display: 'block',
-                  margin: '0 auto',
-                }}
-              />
+              <AnimatedHanskonnerLogo maxWidth="200px" />
               <Paragraph
                 style={{
                   fontSize: 'var(--app-font-size-lg)',

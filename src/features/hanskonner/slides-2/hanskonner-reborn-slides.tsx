@@ -13,7 +13,7 @@ import {
 import { type SlideData } from '~widgets/slides';
 import { formatDateForSlide } from '~shared/lib/date.utils';
 import { hanskonnerRebornCreatedAt } from './hanskonner-reborn.meta';
-import hanskonnerLogo from '../slides/hanskonner-logo.png';
+import { AnimatedHanskonnerLogo } from '../slides/animated-hanskonner-logo';
 import bannerAfter from './images/banner_after.png';
 import bannerBefore from './images/banner_before.png';
 import aboutAfter from './images/about_after.png';
@@ -51,17 +51,7 @@ export const hanskonnerRebornSlides: SlideData[] = [
           size="large"
           style={{ textAlign: 'center', maxWidth: '900px' }}
         >
-          <img
-            src={hanskonnerLogo}
-            alt="HansKonner"
-            style={{
-              maxWidth: '500px',
-              width: '100%',
-              height: 'auto',
-              display: 'block',
-              margin: '0 auto',
-            }}
-          />
+          <AnimatedHanskonnerLogo maxWidth="500px" />
           <Title level={2} style={{ marginTop: 'var(--app-spacing-lg)' }}>
             Улучшенная версия сайта с каталогом
           </Title>
