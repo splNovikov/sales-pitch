@@ -19,7 +19,6 @@ import {
   DatabaseOutlined,
   DollarOutlined,
   LinkOutlined,
-  QuestionCircleOutlined,
   SettingOutlined,
   ShoppingCartOutlined,
   MobileOutlined,
@@ -28,8 +27,10 @@ import {
 import { type SlideData } from '~widgets/slides';
 import { formatDateForSlide } from '~shared/lib/date.utils';
 import { saratovupakovkaCreatedAt } from './saratovupakovka.meta';
+import example68 from './68.png';
+import example98 from './98.png';
 
-const { Title, Paragraph, Text, Link } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 export const saratovupakovkaSlides: SlideData[] = [
   {
@@ -429,7 +430,7 @@ export const saratovupakovkaSlides: SlideData[] = [
                     fontWeight: 700,
                   }}
                 >
-                  от 150k
+                  от 68k
                 </Title>
                 <List
                   size="small"
@@ -484,7 +485,7 @@ export const saratovupakovkaSlides: SlideData[] = [
                     fontWeight: 700,
                   }}
                 >
-                  от 200k+
+                  от 98k
                 </Title>
                 <List
                   size="small"
@@ -539,15 +540,6 @@ export const saratovupakovkaSlides: SlideData[] = [
               Шаблон Aspro уже содержит все необходимые компоненты для
               полноценной работы интернет-магазина:
             </Text>
-          </Paragraph>
-          <Paragraph>
-            <Link
-              href="https://aspro.ru/marketplace/?srsltid=AfmBOopBDrxEmV2MAiYzJu2lCLm2rBgnV5Y-I2RgRePygU46Yt8hiF5I"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Каталог решений Aspro
-            </Link>
           </Paragraph>
           <Row gutter={[16, 16]} style={{ marginTop: '16px' }}>
             <Col xs={24} sm={12}>
@@ -631,38 +623,6 @@ export const saratovupakovkaSlides: SlideData[] = [
               </Card>
             </Col>
           </Row>
-          <List
-            size="small"
-            header={<Text strong>Примеры готовых решений на Aspro:</Text>}
-            dataSource={[
-              {
-                title: 'Аспро: Максимум — функциональный интернет-магазин',
-                url: 'https://aspro.ru/marketplace/?srsltid=AfmBOopBDrxEmV2MAiYzJu2lCLm2rBgnV5Y-I2RgRePygU46Yt8hiF5I',
-              },
-              {
-                title: 'Аспро: Лайтшоп — быстрый запуск для любого масштаба',
-                url: 'https://aspro.ru/marketplace/?srsltid=AfmBOopBDrxEmV2MAiYzJu2lCLm2rBgnV5Y-I2RgRePygU46Yt8hiF5I',
-              },
-              {
-                title: 'Аспро: Оптимус — универсальный интернет-магазин',
-                url: 'https://aspro.ru/marketplace/?srsltid=AfmBOopBDrxEmV2MAiYzJu2lCLm2rBgnV5Y-I2RgRePygU46Yt8hiF5I',
-              },
-            ]}
-            renderItem={item => (
-              <List.Item
-                style={{
-                  padding: '6px 0',
-                  borderBottom: 'none',
-                  alignItems: 'flex-start',
-                }}
-              >
-                <Link href={item.url} target="_blank" rel="noreferrer">
-                  {item.title}
-                </Link>
-              </List.Item>
-            )}
-            style={{ marginTop: '16px' }}
-          />
           <Alert
             message="Главное требование: нормальная работа с 1С"
             description={
@@ -695,45 +655,198 @@ export const saratovupakovkaSlides: SlideData[] = [
     ),
   },
   {
+    id: 'example-68',
+    header: 'Пример реализации на Aspro: от 68 000 ₽',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card>
+          <Space
+            orientation="vertical"
+            size="large"
+            style={{ width: '100%', textAlign: 'center' }}
+          >
+            <img
+              src={example68}
+              alt="Пример сайта на Aspro за 68 тыс руб"
+              style={{
+                width: '100%',
+                maxWidth: '1200px',
+                height: 'auto',
+                objectFit: 'contain',
+                margin: '0 auto',
+                borderRadius: '8px',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+              }}
+            />
+            <Space orientation="vertical" size="small">
+              <Text strong style={{ fontSize: '18px' }}>
+                Пример реализованного сайта на Aspro
+              </Text>
+              <Tag
+                color="blue"
+                style={{ fontSize: '16px', padding: '6px 16px' }}
+              >
+                Стоимость: 68 000 ₽
+              </Tag>
+            </Space>
+          </Space>
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'example-98',
+    header: 'Пример реализации на Aspro: от 98 000 ₽',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card>
+          <Space
+            orientation="vertical"
+            size="large"
+            style={{ width: '100%', textAlign: 'center' }}
+          >
+            <img
+              src={example98}
+              alt="Пример сайта на Aspro за 98 тыс руб"
+              style={{
+                width: '100%',
+                maxWidth: '1200px',
+                height: 'auto',
+                objectFit: 'contain',
+                margin: '0 auto',
+                borderRadius: '8px',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+              }}
+            />
+            <Space orientation="vertical" size="small">
+              <Text strong style={{ fontSize: '18px' }}>
+                Пример реализованного сайта на Aspro
+              </Text>
+              <Tag
+                color="green"
+                style={{ fontSize: '16px', padding: '6px 16px' }}
+              >
+                Стоимость: 98 000 ₽
+              </Tag>
+            </Space>
+          </Space>
+        </Card>
+      </Space>
+    ),
+  },
+  {
     id: 'next-steps',
     header: 'Следующий шаг',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Alert
+          message="Критические уточнения перед расчетом бюджета"
+          description="Эти вопросы помогут точно определить стоимость и сроки реализации"
+          type="warning"
+          showIcon
+          style={{ marginBottom: '24px' }}
+        />
         <Card>
-          <Title level={3} style={{ marginTop: 0 }}>
-            <QuestionCircleOutlined
+          <Title level={4} style={{ marginTop: 0 }}>
+            <DatabaseOutlined
               style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
             />
-            Давайте подробнее обсудим ваши потребности:
+            1️⃣ 1С СИСТЕМА
           </Title>
           <List
-            size="large"
+            size="small"
             dataSource={[
-              'Сколько товаров в каталоге?',
-              'Как они сейчас хранятся/обновляются?',
-              'Нужна ли интеграция с 1С или ручное добавление товаров?',
+              'Какая версия 1С у вас? (Управление торговлей, УХ, Предприятие 8?)',
+              'Есть ли уже товары, цены, остатки в 1С?',
+              'Заполнены ли карточки товаров подробно (описание, фото)?',
+              'Нужна ли синхронизация в реальном времени или периодическая выгрузка?',
             ]}
-            renderItem={(item, index) => (
+            renderItem={item => (
               <List.Item
                 style={{
-                  padding: '16px 0',
-                  borderBottom: '1px solid #f0f0f0',
+                  padding: '8px 0',
+                  borderBottom: 'none',
                 }}
               >
-                <Space size="middle">
-                  <Tag
-                    color="blue"
-                    style={{
-                      fontSize: '16px',
-                      padding: '4px 12px',
-                      minWidth: '40px',
-                      textAlign: 'center',
-                    }}
-                  >
-                    {index + 1}
-                  </Tag>
-                  <Text style={{ fontSize: '16px' }}>{item}</Text>
-                </Space>
+                <Text>☐ {item}</Text>
+              </List.Item>
+            )}
+          />
+        </Card>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <ShopOutlined
+              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+            />
+            2️⃣ КАТАЛОГ ТОВАРОВ
+          </Title>
+          <List
+            size="small"
+            dataSource={[
+              'Сколько товаров планируете выставить? (100? 1000? 10000?)',
+              'Нужны ли фильтры/сортировка или просто список?',
+              'Каждый товар имеет несколько вариантов/артикулов?',
+            ]}
+            renderItem={item => (
+              <List.Item
+                style={{
+                  padding: '8px 0',
+                  borderBottom: 'none',
+                }}
+              >
+                <Text>☐ {item}</Text>
+              </List.Item>
+            )}
+          />
+        </Card>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <ShoppingCartOutlined
+              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+            />
+            3️⃣ ЗАКАЗЫ
+          </Title>
+          <List
+            size="small"
+            dataSource={[
+              'Формат заказа: минимум (просто название товара + количество)?',
+              'Нужна корзина или просто форма заказа?',
+              'На какой email приходят заказы?',
+            ]}
+            renderItem={item => (
+              <List.Item
+                style={{
+                  padding: '8px 0',
+                  borderBottom: 'none',
+                }}
+              >
+                <Text>☐ {item}</Text>
+              </List.Item>
+            )}
+          />
+        </Card>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <MobileOutlined
+              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+            />
+            4️⃣ ДИЗАЙН & ФУНКЦИОНАЛ
+          </Title>
+          <List
+            size="small"
+            dataSource={[
+              'Нужен красивый дизайн или функциональность важнее?',
+              'Нужна ли авторизация/регистрация или просто форма?',
+              'Какой мобильный трафик ожидаете?',
+            ]}
+            renderItem={item => (
+              <List.Item
+                style={{
+                  padding: '8px 0',
+                  borderBottom: 'none',
+                }}
+              >
+                <Text>☐ {item}</Text>
               </List.Item>
             )}
           />
