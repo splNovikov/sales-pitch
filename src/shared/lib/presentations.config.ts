@@ -76,6 +76,10 @@ import {
   proposalAiCreatedAt,
   proposalAiTitle,
 } from '~features/proposal-ai/slides/proposal-ai.meta';
+import {
+  saratovupakovkaCreatedAt,
+  saratovupakovkaTitle,
+} from '~features/saratovupakovka/slides/saratovupakovka.meta';
 
 /**
  * Presentation metadata
@@ -241,6 +245,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'proposal-ai',
     title: proposalAiTitle,
     createdAt: proposalAiCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'saratovupakovka',
+    title: saratovupakovkaTitle,
+    createdAt: saratovupakovkaCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
