@@ -72,6 +72,10 @@ import {
   eksimaWebsiteAnalysisCreatedAt,
   eksimaWebsiteAnalysisTitle,
 } from '~features/eksima/slides/eksima-website-analysis.meta';
+import {
+  proposalAiCreatedAt,
+  proposalAiTitle,
+} from '~features/proposal-ai/slides/proposal-ai.meta';
 
 /**
  * Presentation metadata
@@ -230,6 +234,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'eksima-website-analysis',
     title: eksimaWebsiteAnalysisTitle,
     createdAt: eksimaWebsiteAnalysisCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'proposal-ai',
+    title: proposalAiTitle,
+    createdAt: proposalAiCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },

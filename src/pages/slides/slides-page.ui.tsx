@@ -21,6 +21,7 @@ import { solarisUnionSlides } from '~features/solaris-union/slides';
 import { targetPitchSlides } from '~features/target-pitch/slides';
 import { eksimaAnalysisSlides } from '~features/eksima/slides/eksima-analysis-slides';
 import { eksimaWebsiteAnalysisSlides } from '~features/eksima/slides/eksima-website-analysis-slides';
+import { proposalAiSlides } from '~features/proposal-ai/slides';
 import { presentationSlugs } from '~shared/lib/presentations.config';
 import { Slides, type SlideData } from '~widgets/slides';
 
@@ -44,6 +45,7 @@ const slidesMap: Record<string, SlideData[]> = {
   'target-pitch': targetPitchSlides,
   'eksima-analysis': eksimaAnalysisSlides,
   'eksima-website-analysis': eksimaWebsiteAnalysisSlides,
+  'proposal-ai': proposalAiSlides,
 };
 
 /**

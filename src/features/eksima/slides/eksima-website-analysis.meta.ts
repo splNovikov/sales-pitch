@@ -4,5 +4,5 @@
  */
 
 export const eksimaWebsiteAnalysisCreatedAt = '2025-12-09T00:00:00Z';
-export const eksimaWebsiteAnalysisTitle = 'EKSIMA — анализ веб-сайта и рекомендации по улучшению';
-
+export const eksimaWebsiteAnalysisTitle =
+  'EKSIMA — анализ веб-сайта и рекомендации по улучшению';
