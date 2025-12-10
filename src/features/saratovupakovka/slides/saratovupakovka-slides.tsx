@@ -23,6 +23,8 @@ import {
   ShoppingCartOutlined,
   MobileOutlined,
   FileTextOutlined,
+  UserOutlined,
+  GlobalOutlined,
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 import { formatDateForSlide } from '~shared/lib/date.utils';
@@ -30,7 +32,7 @@ import { saratovupakovkaCreatedAt } from './saratovupakovka.meta';
 import example68 from './68.png';
 import example98 from './98.png';
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph, Text, Link } = Typography;
 
 export const saratovupakovkaSlides: SlideData[] = [
   {
@@ -735,126 +737,6 @@ export const saratovupakovkaSlides: SlideData[] = [
     ),
   },
   {
-    id: 'next-steps',
-    header: 'Следующий шаг',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Alert
-          message="Критические уточнения перед расчетом бюджета"
-          description="Эти вопросы помогут точно определить стоимость и сроки реализации"
-          type="warning"
-          showIcon
-          style={{ marginBottom: '24px' }}
-        />
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <DatabaseOutlined
-              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
-            />
-            1️⃣ 1С СИСТЕМА
-          </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Какая версия 1С у вас? (Управление торговлей, УХ, Предприятие 8?)',
-              'Есть ли уже товары, цены, остатки в 1С?',
-              'Заполнены ли карточки товаров подробно (описание, фото)?',
-              'Нужна ли синхронизация в реальном времени или периодическая выгрузка?',
-            ]}
-            renderItem={item => (
-              <List.Item
-                style={{
-                  padding: '8px 0',
-                  borderBottom: 'none',
-                }}
-              >
-                <Text>☐ {item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <ShopOutlined
-              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
-            />
-            2️⃣ КАТАЛОГ ТОВАРОВ
-          </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Сколько товаров планируете выставить? (100? 1000? 10000?)',
-              'Нужны ли фильтры/сортировка или просто список?',
-              'Каждый товар имеет несколько вариантов/артикулов?',
-            ]}
-            renderItem={item => (
-              <List.Item
-                style={{
-                  padding: '8px 0',
-                  borderBottom: 'none',
-                }}
-              >
-                <Text>☐ {item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <ShoppingCartOutlined
-              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
-            />
-            3️⃣ ЗАКАЗЫ
-          </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Формат заказа: минимум (просто название товара + количество)?',
-              'Нужна корзина или просто форма заказа?',
-              'На какой email приходят заказы?',
-            ]}
-            renderItem={item => (
-              <List.Item
-                style={{
-                  padding: '8px 0',
-                  borderBottom: 'none',
-                }}
-              >
-                <Text>☐ {item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <MobileOutlined
-              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
-            />
-            4️⃣ ДИЗАЙН & ФУНКЦИОНАЛ
-          </Title>
-          <List
-            size="small"
-            dataSource={[
-              'Нужен красивый дизайн или функциональность важнее?',
-              'Нужна ли авторизация/регистрация или просто форма?',
-              'Какой мобильный трафик ожидаете?',
-            ]}
-            renderItem={item => (
-              <List.Item
-                style={{
-                  padding: '8px 0',
-                  borderBottom: 'none',
-                }}
-              >
-                <Text>☐ {item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-      </Space>
-    ),
-  },
-  {
     id: 'critical-clarifications',
     header: 'Критические уточнения',
     content: (
@@ -974,6 +856,240 @@ export const saratovupakovkaSlides: SlideData[] = [
               </List.Item>
             )}
           />
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'contacts',
+    header: 'Давайте обсудим Ваш проект',
+    content: (
+      <Space
+        orientation="vertical"
+        size="middle"
+        style={{
+          width: '100%',
+          justifyContent: 'flex-start',
+          alignItems: 'center',
+          height: '100%',
+          padding: '8px 0',
+        }}
+      >
+        <Card style={{ maxWidth: '1200px', width: '100%' }}>
+          <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+            <Row gutter={[16, 16]}>
+              <Col xs={24} sm={12}>
+                <Card
+                  size="small"
+                  style={{ backgroundColor: '#f6ffed', height: '100%' }}
+                >
+                  <Space
+                    orientation="vertical"
+                    size="small"
+                    style={{ width: '100%' }}
+                  >
+                    <Title level={5} style={{ marginTop: 0, marginBottom: 4 }}>
+                      <UserOutlined style={{ marginRight: 8 }} />
+                      Новиков Павел
+                    </Title>
+                    <Text type="secondary" style={{ fontSize: '13px' }}>
+                      Технический директор
+                    </Text>
+                    <Divider style={{ margin: '8px 0' }} />
+                    <Space
+                      direction="vertical"
+                      size="small"
+                      style={{ width: '100%' }}
+                    >
+                      <Space size="small">
+                        <PhoneOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                        />
+                        <Link
+                          href="tel:+79085550606"
+                          style={{ fontSize: '15px' }}
+                        >
+                          +7 908 555 0606
+                        </Link>
+                      </Space>
+                      <Space size="small">
+                        <MailOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                        />
+                        <Link
+                          href="mailto:p.novikov@proxima.ooo"
+                          style={{ fontSize: '15px' }}
+                        >
+                          p.novikov@proxima.ooo
+                        </Link>
+                      </Space>
+                      <Space size="small">
+                        <GlobalOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                        />
+                        <Link
+                          href="https://proxima24.ru/"
+                          target="_blank"
+                          style={{ fontSize: '15px' }}
+                        >
+                          proxima24.ru
+                        </Link>
+                      </Space>
+                    </Space>
+                  </Space>
+                </Card>
+              </Col>
+              <Col xs={24} sm={12}>
+                <Card
+                  size="small"
+                  style={{ backgroundColor: '#fff7e6', height: '100%' }}
+                >
+                  <Space
+                    orientation="vertical"
+                    size="small"
+                    style={{ width: '100%' }}
+                  >
+                    <Title level={5} style={{ marginTop: 0, marginBottom: 4 }}>
+                      <UserOutlined style={{ marginRight: 8 }} />
+                      Ситяков Артём
+                    </Title>
+                    <Text type="secondary" style={{ fontSize: '13px' }}>
+                      Руководитель отдела маркетинга
+                    </Text>
+                    <Divider style={{ margin: '8px 0' }} />
+                    <Space
+                      direction="vertical"
+                      size="small"
+                      style={{ width: '100%' }}
+                    >
+                      <Space size="small">
+                        <PhoneOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                        />
+                        <Link
+                          href="tel:+79271108488"
+                          style={{ fontSize: '15px' }}
+                        >
+                          +7 927 110 84 88
+                        </Link>
+                      </Space>
+                      <Space size="small">
+                        <MailOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                        />
+                        <Link
+                          href="mailto:a.sityakov@proxima.ooo"
+                          style={{ fontSize: '15px' }}
+                        >
+                          a.sityakov@proxima.ooo
+                        </Link>
+                      </Space>
+                      <Space size="small">
+                        <GlobalOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                        />
+                        <Link
+                          href="https://proxima24.ru/"
+                          target="_blank"
+                          style={{ fontSize: '15px' }}
+                        >
+                          proxima24.ru
+                        </Link>
+                      </Space>
+                    </Space>
+                  </Space>
+                </Card>
+              </Col>
+              <Col xs={24} sm={12}>
+                <Card
+                  size="small"
+                  style={{ backgroundColor: '#f6ffed', height: '100%' }}
+                >
+                  <Space
+                    orientation="vertical"
+                    size="small"
+                    style={{ width: '100%' }}
+                  >
+                    <Title level={5} style={{ marginTop: 0, marginBottom: 4 }}>
+                      <UserOutlined style={{ marginRight: 8 }} />
+                      Киселёв Евгений
+                    </Title>
+                    <Text type="secondary" style={{ fontSize: '13px' }}>
+                      Руководитель проектов
+                    </Text>
+                    <Divider style={{ margin: '8px 0' }} />
+                    <Space
+                      direction="vertical"
+                      size="small"
+                      style={{ width: '100%' }}
+                    >
+                      <Space size="small">
+                        <PhoneOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                        />
+                        <Link
+                          href="tel:+79232864072"
+                          style={{ fontSize: '15px' }}
+                        >
+                          +7 923 286 4072
+                        </Link>
+                      </Space>
+                      <Space size="small">
+                        <MailOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                        />
+                        <Link
+                          href="mailto:e.kiselev@proxima.ooo"
+                          style={{ fontSize: '15px' }}
+                        >
+                          e.kiselev@proxima.ooo
+                        </Link>
+                      </Space>
+                      <Space size="small">
+                        <GlobalOutlined
+                          style={{
+                            fontSize: '16px',
+                            color: 'var(--app-color-primary)',
+                          }}
+                        />
+                        <Link
+                          href="https://proxima24.ru/"
+                          target="_blank"
+                          style={{ fontSize: '15px' }}
+                        >
+                          proxima24.ru
+                        </Link>
+                      </Space>
+                    </Space>
+                  </Space>
+                </Card>
+              </Col>
+            </Row>
+          </Space>
         </Card>
       </Space>
     ),
