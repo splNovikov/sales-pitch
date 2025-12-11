@@ -80,6 +80,10 @@ import {
   saratovupakovkaCreatedAt,
   saratovupakovkaTitle,
 } from '~features/saratovupakovka/slides/saratovupakovka.meta';
+import {
+  ppuPipesSolutionCreatedAt,
+  ppuPipesSolutionTitle,
+} from '~features/ppu-pipes/slides/ppu-pipes-solution.meta';
 
 /**
  * Presentation metadata
@@ -252,6 +256,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'saratovupakovka',
     title: saratovupakovkaTitle,
     createdAt: saratovupakovkaCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'ppu-pipes-solution',
+    title: ppuPipesSolutionTitle,
+    createdAt: ppuPipesSolutionCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },

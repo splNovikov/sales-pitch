@@ -23,6 +23,7 @@ import { eksimaAnalysisSlides } from '~features/eksima/slides/eksima-analysis-sl
 import { eksimaWebsiteAnalysisSlides } from '~features/eksima/slides/eksima-website-analysis-slides';
 import { proposalAiSlides } from '~features/proposal-ai/slides';
 import { saratovupakovkaSlides } from '~features/saratovupakovka/slides';
+import { ppuPipesSolutionSlides } from '~features/ppu-pipes/slides';
 import { presentationSlugs } from '~shared/lib/presentations.config';
 import { Slides, type SlideData } from '~widgets/slides';
 
@@ -48,6 +49,7 @@ const slidesMap: Record<string, SlideData[]> = {
   'eksima-website-analysis': eksimaWebsiteAnalysisSlides,
   'proposal-ai': proposalAiSlides,
   saratovupakovka: saratovupakovkaSlides,
+  'ppu-pipes-solution': ppuPipesSolutionSlides,
 };
 
 /**
