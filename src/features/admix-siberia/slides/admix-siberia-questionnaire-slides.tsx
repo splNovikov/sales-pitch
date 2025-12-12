@@ -58,17 +58,6 @@ export const admixSiberiaQuestionnaireSlides: SlideData[] = [
           >
             Адмикс-Сибирь
           </Title>
-          <Title
-            level={2}
-            style={{
-              fontSize: '36px',
-              fontWeight: 600,
-              marginTop: 'var(--app-spacing-md)',
-              marginBottom: 'var(--app-spacing-md)',
-            }}
-          >
-            Опросник по стилю дизайна
-          </Title>
           <Paragraph
             style={{
               fontSize: 'var(--app-font-size-xl)',
