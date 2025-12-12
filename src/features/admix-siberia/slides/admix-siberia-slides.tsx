@@ -438,12 +438,6 @@ export const admixSiberiaSlides: SlideData[] = [
               />
               Вопрос 1: Ассоциации с брендом
             </Title>
-            <Paragraph style={{ fontSize: '18px', marginBottom: '24px' }}>
-              <Text strong>
-                С чем должно ассоциироваться название "Адмикс-Сибирь" у клиентов
-                компании?
-              </Text>
-            </Paragraph>
             <QuestionnaireSectionForm
               questions={admixSiberiaQuestionnaireQuestions}
               sectionId="design-q1-associations"
@@ -467,12 +461,6 @@ export const admixSiberiaSlides: SlideData[] = [
               />
               Вопрос 2: Визуальный стиль
             </Title>
-            <Paragraph style={{ fontSize: '18px', marginBottom: '24px' }}>
-              <Text strong>
-                Какой визуальный стиль предпочтителен для представления
-                продукции компании?
-              </Text>
-            </Paragraph>
             <QuestionnaireSectionForm
               questions={admixSiberiaQuestionnaireQuestions}
               sectionId="design-q2-visual-style"
@@ -496,11 +484,6 @@ export const admixSiberiaSlides: SlideData[] = [
               />
               Вопрос 3: Цветовая палитра
             </Title>
-            <Paragraph style={{ fontSize: '18px', marginBottom: '24px' }}>
-              <Text strong>
-                Какая цветовая палитра лучше отражает компанию?
-              </Text>
-            </Paragraph>
             <QuestionnaireSectionForm
               questions={admixSiberiaQuestionnaireQuestions}
               sectionId="design-q3-color-palette"
@@ -524,12 +507,6 @@ export const admixSiberiaSlides: SlideData[] = [
               />
               Вопрос 4: Эмоциональное восприятие
             </Title>
-            <Paragraph style={{ fontSize: '18px', marginBottom: '24px' }}>
-              <Text strong>
-                Какие эмоции должен вызывать сайт у посетителя при первом
-                знакомстве?
-              </Text>
-            </Paragraph>
             <QuestionnaireSectionForm
               questions={admixSiberiaQuestionnaireQuestions}
               sectionId="design-q4-emotions"
