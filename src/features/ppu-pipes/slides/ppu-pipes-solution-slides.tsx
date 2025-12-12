@@ -35,8 +35,6 @@ import ruskonPdp1 from '~features/hanskonner/slides/ruskon_pdp_1.png';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
-
-
 export const ppuPipesSolutionSlides: SlideData[] = [
   {
     id: 'title',
@@ -1113,8 +1111,6 @@ export const ppuPipesSolutionSlides: SlideData[] = [
     ),
   },
 
-
-
   {
     id: 'thank-you',
     header: undefined,
@@ -1170,8 +1166,8 @@ export const ppuPipesSolutionSlides: SlideData[] = [
                         </Link>
                       </Space>
                       <Link
-                          href="mailto:p.novikov@proxima.ooo"
-                          style={{ fontSize: '15px' }}
+                        href="mailto:p.novikov@proxima.ooo"
+                        style={{ fontSize: '15px' }}
                       >
                         p.novikov@proxima.ooo
                       </Link>
