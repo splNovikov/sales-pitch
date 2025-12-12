@@ -58,6 +58,11 @@ export async function getQuestionnaires(): Promise<QuestionnaireInfo[]> {
       title: 'Niteos — Зависшие сделки',
       description: 'Опросник по проблематике зависших сделок в воронке',
     },
+    {
+      slug: 'admix-siberia-quiz',
+      title: 'Адмикс-Сибирь — Стиль дизайна',
+      description: 'Опросник для определения стиля дизайна сайта',
+    },
   ];
 }
 

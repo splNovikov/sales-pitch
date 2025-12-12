@@ -24,6 +24,10 @@ import { eksimaWebsiteAnalysisSlides } from '~features/eksima/slides/eksima-webs
 import { proposalAiSlides } from '~features/proposal-ai/slides';
 import { saratovupakovkaSlides } from '~features/saratovupakovka/slides';
 import { ppuPipesSolutionSlides } from '~features/ppu-pipes/slides';
+import {
+  admixSiberiaSlides,
+  admixSiberiaQuestionnaireSlides,
+} from '~features/admix-siberia/slides';
 import { presentationSlugs } from '~shared/lib/presentations.config';
 import { Slides, type SlideData } from '~widgets/slides';
 
@@ -50,6 +54,8 @@ const slidesMap: Record<string, SlideData[]> = {
   'proposal-ai': proposalAiSlides,
   saratovupakovka: saratovupakovkaSlides,
   'ppu-pipes-solution': ppuPipesSolutionSlides,
+  'admix-siberia': admixSiberiaSlides,
+  'admix-siberia-quiz': admixSiberiaQuestionnaireSlides,
 };
 
 /**

@@ -221,9 +221,6 @@ export function QuestionnaireReview({
               Спасибо!
             </Title>
             <Paragraph>{successMessage}</Paragraph>
-            <Paragraph type="secondary">
-              Теперь вы можете перейти к следующей теме.
-            </Paragraph>
           </Space>
         </Card>
       </div>

@@ -66,6 +66,8 @@ function loadSavedAnswers(
       }
     } else if (question.type === 'radio') {
       if (savedValue === '__other__') {
+        // Set radio to "__other__" and load other value
+        sectionAnswers[question.questionId] = '__other__';
         const otherValue = savedAnswers[`${question.questionId}_other`];
         if (otherValue) {
           sectionAnswers[`${question.questionId}_other`] = otherValue;
@@ -76,6 +78,7 @@ function loadSavedAnswers(
         );
         if (!isInOptions && question.allowOther) {
           // Value is not in options, so it's "other" (old format)
+          sectionAnswers[question.questionId] = '__other__';
           sectionAnswers[`${question.questionId}_other`] = savedValue;
         } else {
           sectionAnswers[question.questionId] = savedValue;
@@ -125,6 +128,7 @@ export function QuestionnaireSectionForm({
   storageKey,
 }: QuestionnaireSectionFormProps) {
   const [form] = Form.useForm();
+  const formValues = Form.useWatch([], form);
 
   // Get questions for this section - memoize to avoid recreating on every render
   const sectionQuestions = React.useMemo(
@@ -182,16 +186,32 @@ export function QuestionnaireSectionForm({
             delete allAnswers[otherFieldName];
           }
         } else if (question.type === 'radio') {
-          const hasOtherRadio = Boolean(
-            otherValue && String(otherValue).trim()
-          );
-          if (hasOtherRadio) {
-            allAnswers[questionId] = '__other__';
-            allAnswers[otherFieldName] = String(otherValue).trim();
-          } else if (value && value !== '__other__') {
+          // If user selected "__other__" option and filled the field
+          if (value === '__other__') {
+            const otherValueTrimmed = otherValue
+              ? String(otherValue).trim()
+              : '';
+            if (otherValueTrimmed) {
+              allAnswers[questionId] = '__other__';
+              allAnswers[otherFieldName] = otherValueTrimmed;
+            } else {
+              // "__other__" selected but no value - don't save
+              delete allAnswers[questionId];
+              if (otherFieldName in allAnswers) {
+                delete allAnswers[otherFieldName];
+              }
+            }
+          }
+          // If user selected a regular radio option
+          else if (value && value !== '__other__') {
             allAnswers[questionId] = String(value).trim();
-            delete allAnswers[otherFieldName];
-          } else {
+            // Clear other field if it exists
+            if (otherFieldName in allAnswers) {
+              delete allAnswers[otherFieldName];
+            }
+          }
+          // If no value selected
+          else {
             delete allAnswers[questionId];
             if (otherFieldName in allAnswers) {
               delete allAnswers[otherFieldName];
@@ -230,6 +250,7 @@ export function QuestionnaireSectionForm({
       {sectionQuestions.map(question => {
         const questionType = question.type || 'text';
         const otherFieldName = `${question.questionId}_other`;
+        const selectedValue = formValues?.[question.questionId];
 
         return (
           <React.Fragment key={question.questionId}>
@@ -253,18 +274,11 @@ export function QuestionnaireSectionForm({
                           {option.label}
                         </Radio>
                       ))}
+                      {question.allowOther && (
+                        <Radio value="__other__">Другое</Radio>
+                      )}
                     </Space>
                   </Radio.Group>
-                  {question.allowOther && (
-                    <Form.Item name={otherFieldName} style={{ marginTop: 8 }}>
-                      <TextArea
-                        rows={3}
-                        placeholder="Другое (укажите свое значение)"
-                        showCount
-                        maxLength={2000}
-                      />
-                    </Form.Item>
-                  )}
                 </>
               ) : questionType === 'checkbox' && question.options ? (
                 <Checkbox.Group>
@@ -288,6 +302,18 @@ export function QuestionnaireSectionForm({
                 />
               )}
             </Form.Item>
+            {questionType === 'radio' &&
+              question.allowOther &&
+              selectedValue === '__other__' && (
+                <Form.Item name={otherFieldName} style={{ marginTop: 8 }}>
+                  <TextArea
+                    rows={3}
+                    placeholder="Другое (укажите свое значение)"
+                    showCount
+                    maxLength={2000}
+                  />
+                </Form.Item>
+              )}
             {questionType === 'checkbox' && question.allowOther && (
               <Form.Item name={otherFieldName} style={{ marginTop: 8 }}>
                 <TextArea

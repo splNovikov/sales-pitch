@@ -84,6 +84,14 @@ import {
   ppuPipesSolutionCreatedAt,
   ppuPipesSolutionTitle,
 } from '~features/ppu-pipes/slides/ppu-pipes-solution.meta';
+import {
+  admixSiberiaCreatedAt,
+  admixSiberiaTitle,
+} from '~features/admix-siberia/slides/admix-siberia.meta';
+import {
+  admixSiberiaQuestionnaireCreatedAt,
+  admixSiberiaQuestionnaireTitle,
+} from '~features/admix-siberia/slides/admix-siberia-questionnaire.meta';
 
 /**
  * Presentation metadata
@@ -263,6 +271,20 @@ export const presentations: PresentationMeta[] = [
     slug: 'ppu-pipes-solution',
     title: ppuPipesSolutionTitle,
     createdAt: ppuPipesSolutionCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'admix-siberia',
+    title: admixSiberiaTitle,
+    createdAt: admixSiberiaCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'admix-siberia-quiz',
+    title: admixSiberiaQuestionnaireTitle,
+    createdAt: admixSiberiaQuestionnaireCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
