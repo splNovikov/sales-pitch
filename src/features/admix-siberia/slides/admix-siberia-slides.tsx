@@ -282,58 +282,97 @@ export const admixSiberiaSlides: SlideData[] = [
         <Card>
           <Title level={3} style={{ marginTop: 0 }}>
             <WarningOutlined style={{ marginRight: 8, color: '#ff4d4f' }} />
-            Что нужно решить
+            Известные требования
           </Title>
-          <List
-            size="large"
-            dataSource={[
-              {
-                icon: <FileTextOutlined style={{ color: '#1890ff' }} />,
-                text: 'Лендинги на 100 наименований товаров',
-                description:
-                  'Каждому товару нужен отдельный лендинг с полной информацией',
-              },
-              {
-                icon: <ShopOutlined style={{ color: '#1890ff' }} />,
-                text: 'Сайт-визитка, а не интернет-магазин',
-                description:
-                  'Магазин не нужен — нужен информационный сайт с каталогом товаров',
-              },
-              {
-                icon: <CodeOutlined style={{ color: '#ff4d4f' }} />,
-                text: 'Не шаблон — кастомная разработка',
-                description:
-                  'Требуется индивидуальное решение, разработанное специалистами компании',
-              },
-            ]}
-            renderItem={item => (
-              <List.Item
+          <Paragraph style={{ marginBottom: '24px', fontSize: '16px' }}>
+            Выявлены следующие требования к проекту:
+          </Paragraph>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} md={8}>
+              <Card
+                size="small"
                 style={{
-                  padding: '16px 0',
-                  borderBottom: '1px solid #f0f0f0',
+                  height: '100%',
+                  backgroundColor: '#f0f9ff',
+                  border: '1px solid #91d5ff',
                 }}
               >
-                <Space size="middle" style={{ width: '100%' }}>
-                  <div style={{ fontSize: '24px' }}>{item.icon}</div>
-                  <Space
-                    orientation="vertical"
-                    size="small"
-                    style={{ flex: 1 }}
-                  >
-                    <Text strong style={{ fontSize: '16px' }}>
-                      {item.text}
-                    </Text>
-                    <Text type="secondary">{item.description}</Text>
-                  </Space>
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <FileTextOutlined
+                    style={{ fontSize: '32px', color: '#1890ff' }}
+                  />
+                  <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                    100 наименований товаров
+                  </Title>
+                  <Text type="secondary" style={{ fontSize: '13px' }}>
+                    У заказчика представлено 100 наименований продукции
+                  </Text>
                 </Space>
-              </List.Item>
-            )}
-          />
+              </Card>
+            </Col>
+            <Col xs={24} md={8}>
+              <Card
+                size="small"
+                style={{
+                  height: '100%',
+                  backgroundColor: '#f6ffed',
+                  border: '1px solid #b7eb8f',
+                }}
+              >
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <ShopOutlined
+                    style={{ fontSize: '32px', color: '#52c41a' }}
+                  />
+                  <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                    Сайт-визитка
+                  </Title>
+                  <Text type="secondary" style={{ fontSize: '13px' }}>
+                    Информационный сайт с каталогом товаров, без функций
+                    интернет-магазина
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} md={8}>
+              <Card
+                size="small"
+                style={{
+                  height: '100%',
+                  backgroundColor: '#fff7e6',
+                  border: '1px solid #ffe58f',
+                }}
+              >
+                <Space
+                  orientation="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <CodeOutlined
+                    style={{ fontSize: '32px', color: '#fa8c16' }}
+                  />
+                  <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                    Кастомная разработка
+                  </Title>
+                  <Text type="secondary" style={{ fontSize: '13px' }}>
+                    Индивидуальное решение, разработанное специалистами компании
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+          </Row>
         </Card>
         <Alert
-          message="Задача"
-          description="Создать уникальный сайт-визитку с системой лендингов для 100 товаров, без использования готовых шаблонов."
-          type="warning"
+          message="Задача проекта"
+          description="Создать уникальный сайт-визитку с каталогом товаров, без использования готовых шаблонов."
+          type="info"
           showIcon
         />
       </Space>
