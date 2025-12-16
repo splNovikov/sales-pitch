@@ -28,6 +28,7 @@ import {
   admixSiberiaSlides,
   admixSiberiaQuestionnaireSlides,
 } from '~features/admix-siberia/slides';
+import { atisSlides } from '~features/a-tis/slides';
 import { presentationSlugs } from '~shared/lib/presentations.config';
 import { Slides, type SlideData } from '~widgets/slides';
 
@@ -56,6 +57,7 @@ const slidesMap: Record<string, SlideData[]> = {
   'ppu-pipes-solution': ppuPipesSolutionSlides,
   'admix-siberia': admixSiberiaSlides,
   'admix-siberia-quiz': admixSiberiaQuestionnaireSlides,
+  'a-tis': atisSlides,
 };
 
 /**

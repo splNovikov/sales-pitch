@@ -92,6 +92,7 @@ import {
   admixSiberiaQuestionnaireCreatedAt,
   admixSiberiaQuestionnaireTitle,
 } from '~features/admix-siberia/slides/admix-siberia-questionnaire.meta';
+import { atisCreatedAt, atisTitle } from '~features/a-tis/slides/atis.meta';
 
 /**
  * Presentation metadata
@@ -285,6 +286,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'admix-siberia-quiz',
     title: admixSiberiaQuestionnaireTitle,
     createdAt: admixSiberiaQuestionnaireCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'a-tis',
+    title: atisTitle,
+    createdAt: atisCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
