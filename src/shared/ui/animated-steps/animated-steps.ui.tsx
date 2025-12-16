@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { Steps, type StepsProps } from 'antd';
 import styles from './animated-steps.module.css';
 
@@ -36,19 +36,36 @@ export function AnimatedSteps({
   const [currentStep, setCurrentStep] = useState(0);
   const [isRunning, setIsRunning] = useState(autoStart);
   const itemsRef = useRef(items);
+  const isMountedRef = useRef(true);
   const itemsLength = items?.length || 0;
 
   useEffect(() => {
     itemsRef.current = items;
   }, [items]);
 
+  // Track mount status
   useEffect(() => {
-    if (!isRunning || !items || itemsLength === 0) {
+    isMountedRef.current = true;
+    return () => {
+      isMountedRef.current = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isRunning || !items || itemsLength === 0 || !isMountedRef.current) {
       return;
     }
 
     const interval = setInterval(() => {
+      if (!isMountedRef.current) {
+        return;
+      }
+
       setCurrentStep(prev => {
+        if (!isMountedRef.current) {
+          return prev;
+        }
+
         const nextStep = prev + 1;
         const currentItemsLength = itemsRef.current?.length || itemsLength;
 
@@ -61,26 +78,33 @@ export function AnimatedSteps({
       });
     }, stepInterval);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [isRunning, itemsLength, stepInterval, stopOnLast]);
 
+  // Reset state when items change or component remounts
   useEffect(() => {
+    if (!isMountedRef.current) {
+      return;
+    }
     setCurrentStep(0);
     setIsRunning(autoStart);
   }, [itemsLength, autoStart]);
 
+  // Memoize items to prevent unnecessary re-renders
+  const memoizedItems = useMemo(() => {
+    return items.map((item, index) => ({
+      ...item,
+      className: `${item.className || ''} ${styles.stepItem} ${
+        index === currentStep ? styles.stepItemActive : ''
+      }`.trim(),
+    }));
+  }, [items, currentStep]);
+
   return (
     <div className={styles.animatedSteps}>
-      <Steps
-        {...restProps}
-        current={currentStep}
-        items={items.map((item, index) => ({
-          ...item,
-          className: `${item.className || ''} ${styles.stepItem} ${
-            index === currentStep ? styles.stepItemActive : ''
-          }`.trim(),
-        }))}
-      />
+      <Steps {...restProps} current={currentStep} items={memoizedItems} />
     </div>
   );
 }
