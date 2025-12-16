@@ -105,7 +105,7 @@ export const atisSlides: SlideData[] = [
             stepInterval={2200}
             items={[
               {
-                title: 'Шаг 1. Создание данных',
+                title: 'Шаг 1. Создание товаров',
                 description:
                   'Подготовка каталога: парсинг, генерация через ИИ или комбинированный подход.',
               },
@@ -142,7 +142,7 @@ export const atisSlides: SlideData[] = [
   },
   {
     id: 'step-1-data',
-    header: 'Шаг 1. Создание данных',
+    header: 'Шаг 1. Создание товаров',
     content: (
       <Card>
         <Space direction="vertical" size="large" style={{ width: '100%' }}>
@@ -173,7 +173,7 @@ export const atisSlides: SlideData[] = [
                     Разовый парсинг
                   </Title>
                   <Text type="secondary" style={{ fontSize: 13 }}>
-                    Спарсить текущий каталог (или прайсы) и подготовить данные
+                    Спарсить текущий каталог (или прайсы) и подготовить товары
                     под Aspro. Подходит, если структура и цены меняются нечасто.
                   </Text>
                 </Space>
@@ -256,7 +256,7 @@ export const atisSlides: SlideData[] = [
               <Text type="secondary" style={{ fontSize: 13 }}>
                 <strong>Как будет выглядеть:</strong> Получите готовый файл с
                 товарами (название, описание, цена, характеристики, фото) в
-                формате, который сразу импортируется в каталог Aspro. Все данные
+                формате, который сразу импортируется в каталог Aspro. Все товары
                 будут структурированы, очищены от дублей и готовы к загрузке.
               </Text>
             </Space>
@@ -275,13 +275,13 @@ export const atisSlides: SlideData[] = [
               </Text>
               <Text type="secondary" style={{ fontSize: 13 }}>
                 <strong>Что это:</strong> Автоматизированный парсер, который не
-                только собирает данные один раз, но и регулярно обновляет цены
+                только собирает товары один раз, но и регулярно обновляет цены
                 по расписанию (например, раз в день или неделю).
               </Text>
               <Text type="secondary" style={{ fontSize: 13 }}>
                 <strong>Как будет выглядеть:</strong> Настроенный скрипт,
                 который автоматически обновляет цены и остатки в каталоге Aspro
-                по расписанию. Вы получаете актуальные данные без ручного
+                по расписанию. Вы получаете актуальные товары без ручного
                 вмешательства. Подходит, если прайсы меняются часто и нужно
                 поддерживать актуальность в автоматическом режиме.
               </Text>
@@ -740,7 +740,7 @@ export const atisSlides: SlideData[] = [
             Загрузка каталога и подключение систем
           </Title>
           <Paragraph>
-            На этом шаге данные из шага 1 попадают в боевой каталог.
+            На этом шаге товары из шага 1 попадают в боевой каталог.
           </Paragraph>
           <Row gutter={[16, 16]}>
             <Col xs={24} md={12}>
@@ -1042,7 +1042,7 @@ export const atisSlides: SlideData[] = [
                 }}
               >
                 цена при варианте «Разовый парсинг», скидка 15 000 ₽ при покупке
-                шаблона через нас
+                шаблона и лицензии через нас
               </Text>
             </Space>
           </Card>
@@ -1062,7 +1062,7 @@ export const atisSlides: SlideData[] = [
                   style={{ width: '100%' }}
                 >
                   <Tag color="blue">Шаг 1</Tag>
-                  <Text strong>Создание данных</Text>
+                  <Text strong>Создание товаров</Text>
                   <List
                     size="small"
                     dataSource={[
@@ -1103,8 +1103,8 @@ export const atisSlides: SlideData[] = [
                     48 000 ₽
                   </Text>
                   <Text type="secondary" style={{ fontSize: 12 }}>
-                    Разворачиваем Aspro: Максимум, чистим типовой контент и готовим
-                    сайт к работе под А‑ТИС.
+                    Разворачиваем Aspro: Максимум, чистим типовой контент и
+                    готовим сайт к работе под А‑ТИС.
                   </Text>
                 </Space>
               </Card>
@@ -1131,8 +1131,8 @@ export const atisSlides: SlideData[] = [
                     100 000 ₽
                   </Text>
                   <Text type="secondary" style={{ fontSize: 12 }}>
-                    Готовим семантическое ядро и структуру страниц так, чтобы сайт
-                    сразу мог собирать органический трафик.
+                    Готовим семантическое ядро и структуру страниц так, чтобы
+                    сайт сразу мог собирать органический трафик.
                   </Text>
                 </Space>
               </Card>
@@ -1233,7 +1233,8 @@ export const atisSlides: SlideData[] = [
                     24 000 ₽
                   </Text>
                   <Text type="secondary" style={{ fontSize: 12 }}>
-                    Финальное тестирование сайта и ключевых сценариев перед запуском.
+                    Финальное тестирование сайта и ключевых сценариев перед
+                    запуском.
                   </Text>
                 </Space>
               </Card>
@@ -1322,8 +1323,8 @@ export const atisSlides: SlideData[] = [
                   style={{ width: '100%' }}
                 >
                   <Tag color="orange">
-                    <WarningOutlined style={{ marginRight: 4 }} />
-                    С 1 января 2026
+                    <WarningOutlined style={{ marginRight: 4 }} />С 1 января
+                    2026
                   </Tag>
                   <Text strong style={{ fontSize: 18 }}>
                     Повышение цены
@@ -1355,7 +1356,7 @@ export const atisSlides: SlideData[] = [
           >
             <Space direction="vertical" size="small" style={{ width: '100%' }}>
               <Text strong style={{ fontSize: 15 }}>
-                При покупке лицензии через нас
+                При покупке шаблона и лицензии через нас
               </Text>
               <Text type="secondary" style={{ fontSize: 13 }}>
                 Мы можем помочь с приобретением лицензии Aspro: Максимум. При

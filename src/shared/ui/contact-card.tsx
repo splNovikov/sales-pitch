@@ -33,35 +33,43 @@ export function ContactCard({
   variant = 'green',
   size = 'md',
 }: ContactCardProps) {
-  const backgroundColorMap: Record<NonNullable<ContactCardProps['variant']>, string> =
-    {
-      green: '#f6ffed',
-      blue: '#e6f7ff',
-      orange: '#fff7e6',
-      gray: '#f5f5f5',
-      neutral: '#ffffff',
-    };
+  const backgroundColorMap: Record<
+    NonNullable<ContactCardProps['variant']>,
+    string
+  > = {
+    green: '#f6ffed',
+    blue: '#e6f7ff',
+    orange: '#fff7e6',
+    gray: '#f5f5f5',
+    neutral: '#ffffff',
+  };
 
-  const roleFontSizeMap: Record<NonNullable<ContactCardProps['size']>, number> =
-    {
-      sm: 12,
-      md: 13,
-      lg: 14,
-    };
+  const roleFontSizeMap: Record<
+    NonNullable<ContactCardProps['size']>,
+    number
+  > = {
+    sm: 12,
+    md: 13,
+    lg: 14,
+  };
 
-  const textFontSizeMap: Record<NonNullable<ContactCardProps['size']>, number> =
-    {
-      sm: 14,
-      md: 15,
-      lg: 16,
-    };
+  const textFontSizeMap: Record<
+    NonNullable<ContactCardProps['size']>,
+    number
+  > = {
+    sm: 14,
+    md: 15,
+    lg: 16,
+  };
 
-  const titleLevelMap: Record<NonNullable<ContactCardProps['size']>, 3 | 4 | 5> =
-    {
-      sm: 5,
-      md: 5,
-      lg: 4,
-    };
+  const titleLevelMap: Record<
+    NonNullable<ContactCardProps['size']>,
+    3 | 4 | 5
+  > = {
+    sm: 5,
+    md: 5,
+    lg: 4,
+  };
 
   const normalizedPhoneHref = `tel:${phone.replace(/[\s()-]/g, '')}`;
   const normalizedEmailHref = `mailto:${email}`;
@@ -80,11 +88,7 @@ export function ContactCard({
         height: '100%',
       }}
     >
-      <Space
-        orientation="vertical"
-        size="small"
-        style={{ width: '100%' }}
-      >
+      <Space orientation="vertical" size="small" style={{ width: '100%' }}>
         <Title
           level={titleLevelMap[size]}
           style={{ marginTop: 0, marginBottom: 4 }}
@@ -96,11 +100,7 @@ export function ContactCard({
           {role}
         </Text>
         <Divider style={{ margin: '8px 0' }} />
-        <Space
-          direction="vertical"
-          size="small"
-          style={{ width: '100%' }}
-        >
+        <Space direction="vertical" size="small" style={{ width: '100%' }}>
           <Space size="small">
             <PhoneOutlined
               style={{
@@ -151,5 +151,3 @@ export function ContactCard({
     </Card>
   );
 }
-
-
