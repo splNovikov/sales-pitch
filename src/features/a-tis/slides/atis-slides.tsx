@@ -11,7 +11,6 @@ import {
   RobotOutlined,
   BuildOutlined,
   SearchOutlined,
-  PictureOutlined,
   FileTextOutlined,
   CloudUploadOutlined,
   CheckCircleOutlined,
@@ -159,15 +158,21 @@ export const atisSlides: SlideData[] = [
                   border: '1px solid #91d5ff',
                 }}
               >
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="blue">Вариант 1</Tag>
                   <Title level={5} style={{ marginTop: 0 }}>
-                    <DatabaseOutlined style={{ marginRight: 8, color: '#1890ff' }} />
+                    <DatabaseOutlined
+                      style={{ marginRight: 8, color: '#1890ff' }}
+                    />
                     Разовый парсинг
                   </Title>
                   <Text type="secondary" style={{ fontSize: 13 }}>
-                    Спарсить текущий каталог (или прайсы) и подготовить данные под Aspro.
-                    Подходит, если структура и цены меняются нечасто.
+                    Спарсить текущий каталог (или прайсы) и подготовить данные
+                    под Aspro. Подходит, если структура и цены меняются нечасто.
                   </Text>
                 </Space>
               </Card>
@@ -181,15 +186,21 @@ export const atisSlides: SlideData[] = [
                   border: '1px solid #b7eb8f',
                 }}
               >
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="green">Вариант 2</Tag>
                   <Title level={5} style={{ marginTop: 0 }}>
-                    <SyncOutlined style={{ marginRight: 8, color: '#52c41a' }} />
+                    <SyncOutlined
+                      style={{ marginRight: 8, color: '#52c41a' }}
+                    />
                     Парсер с актуализацией
                   </Title>
                   <Text type="secondary" style={{ fontSize: 13 }}>
-                    Парсер, который регулярно обновляет цены и/или остатки по расписанию.
-                    Актуально, если прайсы меняются часто.
+                    Парсер, который регулярно обновляет цены и/или остатки по
+                    расписанию. Актуально, если прайсы меняются часто.
                   </Text>
                 </Space>
               </Card>
@@ -203,16 +214,22 @@ export const atisSlides: SlideData[] = [
                   border: '1px solid #ffd591',
                 }}
               >
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="orange">Вариант 3</Tag>
                   <Title level={5} style={{ marginTop: 0 }}>
-                    <RobotOutlined style={{ marginRight: 8, color: '#fa8c16' }} />
+                    <RobotOutlined
+                      style={{ marginRight: 8, color: '#fa8c16' }}
+                    />
                     Генерация через ИИ
                   </Title>
                   <Text type="secondary" style={{ fontSize: 13 }}>
-                    Генерация описаний и недостающих позиций по шаблонам. Используем
-                    этот вариант, только если парсинг или выгрузка данных невозможны
-                    или дают слишком «шумный» результат.
+                    Генерация описаний и недостающих позиций по шаблонам.
+                    Используем этот вариант, только если парсинг или выгрузка
+                    данных невозможны или дают слишком «шумный» результат.
                   </Text>
                 </Space>
               </Card>
@@ -248,7 +265,11 @@ export const atisSlides: SlideData[] = [
                   border: '1px solid #91d5ff',
                 }}
               >
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="blue">Инфраструктура</Tag>
                   <Text strong>Развёртывание</Text>
                   <List
@@ -277,7 +298,11 @@ export const atisSlides: SlideData[] = [
                   border: '1px solid #ffe58f',
                 }}
               >
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="orange">UX и контент</Tag>
                   <Text strong>Чистка типовых блоков</Text>
                   <List
@@ -306,7 +331,11 @@ export const atisSlides: SlideData[] = [
                   border: '1px solid #b7eb8f',
                 }}
               >
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="green">Айдентика и формы</Tag>
                   <Text strong>Фирменный стиль и заявки</Text>
                   <List
@@ -358,7 +387,11 @@ export const atisSlides: SlideData[] = [
                   border: '1px solid #b7eb8f',
                 }}
               >
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="green">1. Семантика</Tag>
                   <Text strong>Сбор запросов</Text>
                   <List
@@ -387,7 +420,11 @@ export const atisSlides: SlideData[] = [
                   border: '1px solid #91d5ff',
                 }}
               >
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="blue">2. Структура</Tag>
                   <Text strong>Карта запрос → страница</Text>
                   <List
@@ -416,7 +453,11 @@ export const atisSlides: SlideData[] = [
                   border: '1px solid #ffd591',
                 }}
               >
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="orange">3. Техника</Tag>
                   <Text strong>Метатеги и база SEO</Text>
                   <List
@@ -463,7 +504,11 @@ export const atisSlides: SlideData[] = [
                   border: '1px solid #b7eb8f',
                 }}
               >
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="green">Контент</Tag>
                   <Text strong>Тексты</Text>
                   <List
@@ -494,7 +539,11 @@ export const atisSlides: SlideData[] = [
                   border: '1px solid #91d5ff',
                 }}
               >
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="blue">Дизайн</Tag>
                   <Text strong>Визуал</Text>
                   <List
@@ -532,7 +581,9 @@ export const atisSlides: SlideData[] = [
             />
             Загрузка каталога и подключение систем
           </Title>
-          <Paragraph>На этом шаге данные из шага 1 попадают в боевой каталог.</Paragraph>
+          <Paragraph>
+            На этом шаге данные из шага 1 попадают в боевой каталог.
+          </Paragraph>
           <Row gutter={[16, 16]}>
             <Col xs={24} md={12}>
               <Card
@@ -543,7 +594,11 @@ export const atisSlides: SlideData[] = [
                   border: '1px solid #91d5ff',
                 }}
               >
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="blue">Каталог</Tag>
                   <Text strong>Импорт и проверка</Text>
                   <List
@@ -572,7 +627,11 @@ export const atisSlides: SlideData[] = [
                   border: '1px solid #b7eb8f',
                 }}
               >
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="green">Интеграции</Tag>
                   <Text strong>Заказы и заявки</Text>
                   <List
@@ -610,7 +669,8 @@ export const atisSlides: SlideData[] = [
             Финальный этап перед запуском
           </Title>
           <Paragraph>
-            Проверяем, что всё работает как ожидалось, и передаём проект в работу.
+            Проверяем, что всё работает как ожидалось, и передаём проект в
+            работу.
           </Paragraph>
           <Row gutter={[16, 16]}>
             <Col xs={24} md={12}>
@@ -622,7 +682,11 @@ export const atisSlides: SlideData[] = [
                   border: '1px solid #ffd591',
                 }}
               >
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="orange">Тестирование</Tag>
                   <Text strong>Проверка сценариев</Text>
                   <List
@@ -651,7 +715,11 @@ export const atisSlides: SlideData[] = [
                   border: '1px solid #b7eb8f',
                 }}
               >
-                <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
                   <Tag color="green">Передача</Tag>
                   <Text strong>Онбординг А‑ТИС</Text>
                   <List
