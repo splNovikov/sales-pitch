@@ -1042,7 +1042,7 @@ export const atisSlides: SlideData[] = [
                 }}
               >
                 цена при варианте «Разовый парсинг», скидка 15 000 ₽ при покупке
-                шаблона и лицензии через нас
+                шаблона через нас
               </Text>
             </Space>
           </Card>
@@ -1246,7 +1246,7 @@ export const atisSlides: SlideData[] = [
   },
   {
     id: 'license',
-    header: 'Стоимость лицензии Aspro: Максимум',
+    header: 'Стоимость шаблона и лицензии',
     content: (
       <Card>
         <Space direction="vertical" size="large" style={{ width: '100%' }}>
@@ -1254,20 +1254,30 @@ export const atisSlides: SlideData[] = [
             <TagOutlined
               style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
             />
-            Лицензия на решение Aspro: Максимум
+            Шаблон Aspro: Максимум и лицензия 1С-Битрикс
           </Title>
           <Paragraph>
-            Лицензия на решение Aspro: Максимум приобретается отдельно и не
-            входит в стоимость разработки. Важно: с Нового Года стоимость
-            лицензии увеличится.{' '}
+            Шаблон Aspro: Максимум и лицензия 1С-Битрикс «Малый бизнес»
+            приобретаются отдельно и не входят в стоимость разработки. Важно: с
+            Нового Года стоимость обоих компонентов увеличится.{' '}
             <Link
               href="https://aspro.ru/marketplace/solutions/aspro.max/"
               target="_blank"
             >
-              Подробнее на сайте Aspro
+              Подробнее о шаблоне на сайте Aspro
+            </Link>
+            {' '}
+            <Link
+              href="https://www.1c-bitrix.ru/products/cms/editions/smallbusiness.php"
+              target="_blank"
+            >
+              Подробнее о лицензии на сайте 1С-Битрикс
             </Link>
             .
           </Paragraph>
+          <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+            Шаблон Aspro: Максимум
+          </Title>
           <Row gutter={[16, 16]}>
             <Col xs={24} md={12}>
               <Card
@@ -1340,6 +1350,87 @@ export const atisSlides: SlideData[] = [
                     149 900 ₽
                   </Text>
                   <Text type="secondary" style={{ fontSize: 12 }}>
+                    Рекомендуем приобрести шаблон до конца года
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+          <Title level={5} style={{ marginTop: 16, marginBottom: 8 }}>
+            Лицензия 1С-Битрикс «Малый бизнес»
+          </Title>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} md={12}>
+              <Card
+                size="small"
+                style={{
+                  height: '100%',
+                  backgroundColor: '#e6f7ff',
+                  border: '1px solid #91d5ff',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Tag color="blue">Текущая стоимость</Tag>
+                  <Text strong style={{ fontSize: 18 }}>
+                    До 31 декабря 2025
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 24,
+                      fontWeight: 700,
+                      color: '#1890ff',
+                      marginTop: 8,
+                    }}
+                  >
+                    32 720 ₽
+                  </Text>
+                  <Text type="secondary" style={{ fontSize: 12 }}>
+                    <Link
+                      href="https://www.1c-bitrix.ru/products/cms/editions/smallbusiness.php"
+                      target="_blank"
+                    >
+                      Актуальная цена на сайте 1С-Битрикс
+                    </Link>
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} md={12}>
+              <Card
+                size="small"
+                style={{
+                  height: '100%',
+                  backgroundColor: '#fff7e6',
+                  border: '2px solid #fa8c16',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Tag color="orange">
+                    <WarningOutlined style={{ marginRight: 4 }} />С 1 января
+                    2026
+                  </Tag>
+                  <Text strong style={{ fontSize: 18 }}>
+                    Повышение цены
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 24,
+                      fontWeight: 700,
+                      color: '#fa8c16',
+                      marginTop: 8,
+                    }}
+                  >
+                    40 900 ₽
+                  </Text>
+                  <Text type="secondary" style={{ fontSize: 12 }}>
                     Рекомендуем приобрести лицензию до конца года
                   </Text>
                 </Space>
@@ -1359,9 +1450,9 @@ export const atisSlides: SlideData[] = [
                 При покупке шаблона и лицензии через нас
               </Text>
               <Text type="secondary" style={{ fontSize: 13 }}>
-                Мы можем помочь с приобретением лицензии Aspro: Максимум. При
-                покупке через нас вы получаете скидку 15 000 ₽ на общую
-                стоимость проекта.
+                Мы можем помочь с приобретением шаблона Aspro: Максимум и
+                лицензии 1С-Битрикс «Малый бизнес». При покупке через нас вы
+                получаете скидку 15 000 ₽ на общую стоимость проекта.
               </Text>
             </Space>
           </Card>
