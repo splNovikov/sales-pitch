@@ -51,7 +51,7 @@ export const atisSlides: SlideData[] = [
               style={{
                 width: '260px',
                 maxWidth: '100%',
-                height: '40px',
+                height: '60px',
                 background:
                   'linear-gradient(135deg, var(--app-gradient-start) 0%, var(--app-gradient-end) 100%)',
                 WebkitMaskImage: `url(${atisWhiteLogo})`,
@@ -72,7 +72,7 @@ export const atisSlides: SlideData[] = [
               marginBottom: 0,
             }}
           >
-            Коммерческое предложение по созданию сайта и наполнению контентом
+            Коммерческое предложение на разработку веб-сайта
           </Paragraph>
         </Space>
         <Text
