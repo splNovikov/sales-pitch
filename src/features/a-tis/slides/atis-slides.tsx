@@ -14,9 +14,11 @@ import {
   FileTextOutlined,
   CloudUploadOutlined,
   CheckCircleOutlined,
+  TagOutlined,
+  WarningOutlined,
 } from '@ant-design/icons';
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph, Text, Link } = Typography;
 
 export const atisSlides: SlideData[] = [
   {
@@ -199,8 +201,7 @@ export const atisSlides: SlideData[] = [
                     Парсер с актуализацией
                   </Title>
                   <Text type="secondary" style={{ fontSize: 13 }}>
-                    Парсер, который регулярно обновляет цены и/или остатки по
-                    расписанию. Актуально, если прайсы меняются часто.
+                    Парсер, который регулярно обновляет цены по расписанию.
                   </Text>
                 </Space>
               </Card>
@@ -235,6 +236,85 @@ export const atisSlides: SlideData[] = [
               </Card>
             </Col>
           </Row>
+          <Card
+            size="small"
+            style={{
+              backgroundColor: '#e6f7ff',
+              border: '1px solid #91d5ff',
+              marginTop: 16,
+            }}
+          >
+            <Space direction="vertical" size="small" style={{ width: '100%' }}>
+              <Text strong style={{ fontSize: 15 }}>
+                Разовый парсинг — 40 000 ₽
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Что это:</strong> Автоматический сбор данных о товарах
+                из ваших текущих источников (сайт, прайс-листы, Excel) с
+                последующей подготовкой под формат Aspro: Максимум.
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Как будет выглядеть:</strong> Получите готовый файл с
+                товарами (название, описание, цена, характеристики, фото) в
+                формате, который сразу импортируется в каталог Aspro. Все данные
+                будут структурированы, очищены от дублей и готовы к загрузке.
+              </Text>
+            </Space>
+          </Card>
+          <Card
+            size="small"
+            style={{
+              backgroundColor: '#f6ffed',
+              border: '1px solid #b7eb8f',
+              marginTop: 16,
+            }}
+          >
+            <Space direction="vertical" size="small" style={{ width: '100%' }}>
+              <Text strong style={{ fontSize: 15 }}>
+                Парсер с актуализацией — 75 000 ₽
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Что это:</strong> Автоматизированный парсер, который не
+                только собирает данные один раз, но и регулярно обновляет цены
+                по расписанию (например, раз в день или неделю).
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Как будет выглядеть:</strong> Настроенный скрипт,
+                который автоматически обновляет цены и остатки в каталоге Aspro
+                по расписанию. Вы получаете актуальные данные без ручного
+                вмешательства. Подходит, если прайсы меняются часто и нужно
+                поддерживать актуальность в автоматическом режиме.
+              </Text>
+            </Space>
+          </Card>
+          <Card
+            size="small"
+            style={{
+              backgroundColor: '#fff7e6',
+              border: '1px solid #ffd591',
+              marginTop: 16,
+            }}
+          >
+            <Space direction="vertical" size="small" style={{ width: '100%' }}>
+              <Text strong style={{ fontSize: 15 }}>
+                Генерация через ИИ — 100 000 ₽
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Что это:</strong> Генерация описаний товаров и
+                недостающих позиций с помощью искусственного интеллекта по
+                заданным шаблонам и стилю. Используется, когда парсинг
+                невозможен или даёт слишком «шумный» результат.
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Как будет выглядеть:</strong> Уникальные, читаемые
+                описания товаров, сгенерированные под ваш стиль и требования
+                SEO. Описания будут структурированы, без воды, с акцентом на
+                преимущества и характеристики. Хороший вариант для быстрого
+                «добивания» каталога под SEO, когда нужно много контента за
+                короткое время.
+              </Text>
+            </Space>
+          </Card>
         </Space>
       </Card>
     ),
@@ -357,6 +437,31 @@ export const atisSlides: SlideData[] = [
               </Card>
             </Col>
           </Row>
+          <Card
+            size="small"
+            style={{
+              backgroundColor: '#e6f7ff',
+              border: '1px solid #e6f7ff',
+              marginTop: 16,
+            }}
+          >
+            <Space direction="vertical" size="small" style={{ width: '100%' }}>
+              <Text strong style={{ fontSize: 15 }}>
+                Развёртывание и настройка / подготовка — 48 000 ₽
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Что это:</strong> Установка и базовая настройка Aspro:
+                Максимум на вашем хостинге с применением фирменного стиля А‑ТИС
+                и подготовкой всех необходимых форм и блоков.
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Как будет выглядеть:</strong> Готовый сайт с вашим
+                логотипом, цветами и шрифтами. Удалены все типовые демо-блоки,
+                настроены формы заявок, которые отправляют письма на вашу почту.
+                Сайт готов к наполнению контентом и товарами.
+              </Text>
+            </Space>
+          </Card>
         </Space>
       </Card>
     ),
@@ -478,6 +583,33 @@ export const atisSlides: SlideData[] = [
               </Card>
             </Col>
           </Row>
+          <Card
+            size="small"
+            style={{
+              backgroundColor: '#f6ffed',
+              border: '1px solid #b7eb8f',
+              marginTop: 16,
+            }}
+          >
+            <Space direction="vertical" size="small" style={{ width: '100%' }}>
+              <Text strong style={{ fontSize: 15 }}>
+                SEO и семантика — 100 000 ₽
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Что это:</strong> Сбор семантического ядра (запросы, по
+                которым вас ищут), создание карты соответствия запросов
+                страницам сайта и подготовка технического задания на метатеги
+                для всех ключевых страниц.
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Как будет выглядеть:</strong> Документ с семантическим
+                ядром (500–1000+ запросов), таблица «запрос → страница сайта»,
+                готовые title и description для главной, разделов каталога и
+                ключевых товаров. Настроены ЧПУ-URL, хлебные крошки,
+                sitemap.xml.
+              </Text>
+            </Space>
+          </Card>
         </Space>
       </Card>
     ),
@@ -565,6 +697,32 @@ export const atisSlides: SlideData[] = [
               </Card>
             </Col>
           </Row>
+          <Card
+            size="small"
+            style={{
+              backgroundColor: '#f6ffed',
+              border: '1px solid #b7eb8f',
+              marginTop: 16,
+            }}
+          >
+            <Space direction="vertical" size="small" style={{ width: '100%' }}>
+              <Text strong style={{ fontSize: 15 }}>
+                Контент и дизайн — 42 500 ₽
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Что это:</strong> Генерация всех текстов для сайта
+                (главная, о компании, описания категорий и товаров) и отрисовка
+                ключевых баннеров и изображений в фирменном стиле А‑ТИС.
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Как будет выглядеть:</strong> Все страницы заполнены
+                уникальными текстами, оптимизированными под SEO. Главная
+                страница и ключевые разделы имеют яркие баннеры с вашей
+                айдентикой. Тексты читаемые, без воды, с акцентом на
+                преимущества и выгоды для клиента.
+              </Text>
+            </Space>
+          </Card>
         </Space>
       </Card>
     ),
@@ -652,6 +810,83 @@ export const atisSlides: SlideData[] = [
               </Card>
             </Col>
           </Row>
+          <Card
+            size="small"
+            style={{
+              backgroundColor: '#e6f7ff',
+              border: '1px solid #91d5ff',
+              marginTop: 16,
+            }}
+          >
+            <Space direction="vertical" size="small" style={{ width: '100%' }}>
+              <Text strong style={{ fontSize: 15 }}>
+                Импорт и проверка каталога
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Что это:</strong> Загрузка всех подготовленных товаров в
+                каталог Aspro, проверка корректности отображения категорий,
+                работы фильтров, цен и характеристик.
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Как будет выглядеть:</strong> Полностью заполненный
+                каталог с товарами, ценами, фото и характеристиками. Все фильтры
+                работают корректно, товары правильно распределены по категориям,
+                цены отображаются верно.
+              </Text>
+            </Space>
+          </Card>
+          <Card
+            size="small"
+            style={{
+              backgroundColor: '#f6ffed',
+              border: '1px solid #b7eb8f',
+              marginTop: 16,
+            }}
+          >
+            <Space direction="vertical" size="small" style={{ width: '100%' }}>
+              <Text strong style={{ fontSize: 15 }}>
+                Заказы и заявки
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Что это:</strong> Настройка интеграции заказов и заявок
+                с вашей системой — отправка на почту, в CRM (например,
+                Битрикс24, amoCRM) или в 1С для автоматической обработки.
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Как будет выглядеть:</strong> Когда клиент оформляет
+                заказ в корзине или оставляет заявку через форму, данные
+                автоматически отправляются на указанный вами адрес или в вашу
+                CRM/1С. Проведено тестирование нескольких заказов для проверки
+                корректности работы.
+              </Text>
+            </Space>
+          </Card>
+          <Card
+            size="small"
+            style={{
+              backgroundColor: '#e6f7ff',
+              border: '1px solid #91d5ff',
+              marginTop: 16,
+            }}
+          >
+            <Space direction="vertical" size="small" style={{ width: '100%' }}>
+              <Text strong style={{ fontSize: 15 }}>
+                Загрузка данных — 48 000 ₽
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Что это:</strong> Импорт всех подготовленных товаров в
+                каталог Aspro, проверка корректности отображения, работы
+                фильтров и цен, а также настройка интеграции заказов с вашей
+                системой (почта, CRM, 1С).
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Как будет выглядеть:</strong> Полностью заполненный
+                каталог с товарами, ценами, фото и характеристиками. Все фильтры
+                работают, корзина функционирует, заказы автоматически уходят на
+                вашу почту или в CRM. Проведено тестирование нескольких заказов.
+              </Text>
+            </Space>
+          </Card>
         </Space>
       </Card>
     ),
@@ -740,6 +975,395 @@ export const atisSlides: SlideData[] = [
               </Card>
             </Col>
           </Row>
+          <Card
+            size="small"
+            style={{
+              backgroundColor: '#fff7e6',
+              border: '1px solid #ffd591',
+              marginTop: 16,
+            }}
+          >
+            <Space direction="vertical" size="small" style={{ width: '100%' }}>
+              <Text strong style={{ fontSize: 15 }}>
+                Тестирование и передача — 24 000 ₽
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Что это:</strong> Финальная проверка всех функций сайта
+                (поиск, каталог, корзина, формы), тестирование на разных
+                устройствах и браузерах, вычитка текстов и передача проекта
+                команде А‑ТИС с обучением.
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                <strong>Как будет выглядеть:</strong> Полностью протестированный
+                и готовый к работе сайт. Все функции проверены, ошибки
+                исправлены. Команда А‑ТИС получит доступы к админ-панели,
+                краткую инструкцию по работе с сайтом и контакты для поддержки.
+              </Text>
+            </Space>
+          </Card>
+        </Space>
+      </Card>
+    ),
+  },
+  {
+    id: 'pricing',
+    header: 'Оценка стоимости',
+    content: (
+      <Card>
+        <Space direction="vertical" size="large" style={{ width: '100%' }}>
+          <Card
+            style={{
+              backgroundColor: '#f6ffed',
+              border: '2px solid #52c41a',
+              marginBottom: 16,
+            }}
+          >
+            <Space
+              direction="vertical"
+              size="small"
+              style={{ width: '100%', textAlign: 'center' }}
+            >
+              <Text
+                style={{
+                  fontSize: 24,
+                  fontWeight: 600,
+                  color: '#52c41a',
+                  lineHeight: 1.3,
+                }}
+              >
+                302 500 ₽ → 287 500 ₽
+              </Text>
+              <Text
+                type="secondary"
+                style={{
+                  fontSize: 12,
+                  color: '#8c8c8c',
+                  marginTop: 4,
+                }}
+              >
+                цена при варианте «Разовый парсинг», скидка 15 000 ₽ при покупке
+                шаблона через нас
+              </Text>
+            </Space>
+          </Card>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} md={8}>
+              <Card
+                size="small"
+                style={{
+                  height: '100%',
+                  backgroundColor: '#e6f7ff',
+                  border: '1px solid #91d5ff',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Tag color="blue">Шаг 1</Tag>
+                  <Text strong>Создание данных</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Разовый парсинг — 40 000 ₽',
+                      'Парсер с актуализацией — 75 000 ₽',
+                      'Генерация через ИИ — 100 000 ₽',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '2px 0', borderBottom: 'none' }}
+                      >
+                        <Text style={{ fontSize: 13 }}>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} md={8}>
+              <Card
+                size="small"
+                style={{
+                  height: '100%',
+                  backgroundColor: '#fff7e6',
+                  border: '1px solid #ffe58f',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Tag color="orange">Шаг 2</Tag>
+                  <Text strong>Развёртывание</Text>
+                  <Text
+                    style={{ fontSize: 16, fontWeight: 600, color: '#fa8c16' }}
+                  >
+                    48 000 ₽
+                  </Text>
+                  <Text type="secondary" style={{ fontSize: 12 }}>
+                    Разворачиваем Aspro: Максимум, чистим типовой контент и готовим
+                    сайт к работе под А‑ТИС.
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} md={8}>
+              <Card
+                size="small"
+                style={{
+                  height: '100%',
+                  backgroundColor: '#f6ffed',
+                  border: '1px solid #b7eb8f',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Tag color="green">Шаг 3</Tag>
+                  <Text strong>SEO и семантика</Text>
+                  <Text
+                    style={{ fontSize: 16, fontWeight: 600, color: '#52c41a' }}
+                  >
+                    100 000 ₽
+                  </Text>
+                  <Text type="secondary" style={{ fontSize: 12 }}>
+                    Готовим семантическое ядро и структуру страниц так, чтобы сайт
+                    сразу мог собирать органический трафик.
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} md={12}>
+              <Card
+                size="small"
+                style={{
+                  height: '100%',
+                  backgroundColor: '#f6ffed',
+                  border: '1px solid #b7eb8f',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Tag color="green">Шаг 4</Tag>
+                  <Text strong>Контент и дизайн</Text>
+                  <List
+                    size="small"
+                    dataSource={[
+                      'Тексты на главную — 4 500 ₽',
+                      'Тексты о компании — 4 500 ₽',
+                      'Описания товаров — 17 000 ₽',
+                      'Баннеры — 9 000 ₽',
+                      'Прочие картинки — 7 500 ₽',
+                    ]}
+                    renderItem={item => (
+                      <List.Item
+                        style={{ padding: '2px 0', borderBottom: 'none' }}
+                      >
+                        <Text style={{ fontSize: 13 }}>• {item}</Text>
+                      </List.Item>
+                    )}
+                  />
+                  <Text
+                    style={{
+                      fontSize: 16,
+                      fontWeight: 600,
+                      color: '#52c41a',
+                      marginTop: 8,
+                    }}
+                  >
+                    Итого: 42 500 ₽
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} md={6}>
+              <Card
+                size="small"
+                style={{
+                  height: '100%',
+                  backgroundColor: '#e6f7ff',
+                  border: '1px solid #91d5ff',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Tag color="blue">Шаг 5</Tag>
+                  <Text strong>Загрузка данных</Text>
+                  <Text
+                    style={{ fontSize: 16, fontWeight: 600, color: '#1890ff' }}
+                  >
+                    48 000 ₽
+                  </Text>
+                  <Text type="secondary" style={{ fontSize: 12 }}>
+                    Импортируем подготовленный каталог, проверяем корректность
+                    категорий, фильтров и цен.
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} md={6}>
+              <Card
+                size="small"
+                style={{
+                  height: '100%',
+                  backgroundColor: '#fff7e6',
+                  border: '1px solid #ffd591',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Tag color="orange">Шаг 6</Tag>
+                  <Text strong>Тестирование</Text>
+                  <Text
+                    style={{ fontSize: 16, fontWeight: 600, color: '#fa8c16' }}
+                  >
+                    24 000 ₽
+                  </Text>
+                  <Text type="secondary" style={{ fontSize: 12 }}>
+                    Финальное тестирование сайта и ключевых сценариев перед запуском.
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+        </Space>
+      </Card>
+    ),
+  },
+  {
+    id: 'license',
+    header: 'Стоимость лицензии Aspro: Максимум',
+    content: (
+      <Card>
+        <Space direction="vertical" size="large" style={{ width: '100%' }}>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <TagOutlined
+              style={{ marginRight: 8, color: 'var(--app-color-primary)' }}
+            />
+            Лицензия на решение Aspro: Максимум
+          </Title>
+          <Paragraph>
+            Лицензия на решение Aspro: Максимум приобретается отдельно и не
+            входит в стоимость разработки. Важно: с Нового Года стоимость
+            лицензии увеличится.{' '}
+            <Link
+              href="https://aspro.ru/marketplace/solutions/aspro.max/"
+              target="_blank"
+            >
+              Подробнее на сайте Aspro
+            </Link>
+            .
+          </Paragraph>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} md={12}>
+              <Card
+                size="small"
+                style={{
+                  height: '100%',
+                  backgroundColor: '#e6f7ff',
+                  border: '1px solid #91d5ff',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Tag color="blue">Текущая стоимость</Tag>
+                  <Text strong style={{ fontSize: 18 }}>
+                    До 31 декабря 2025
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 24,
+                      fontWeight: 700,
+                      color: '#1890ff',
+                      marginTop: 8,
+                    }}
+                  >
+                    112 425 ₽
+                  </Text>
+                  <Text type="secondary" style={{ fontSize: 12 }}>
+                    <Link
+                      href="https://aspro.ru/marketplace/solutions/aspro.max/"
+                      target="_blank"
+                    >
+                      Актуальная цена на сайте Aspro
+                    </Link>
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+            <Col xs={24} md={12}>
+              <Card
+                size="small"
+                style={{
+                  height: '100%',
+                  backgroundColor: '#fff7e6',
+                  border: '2px solid #fa8c16',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
+                >
+                  <Tag color="orange">
+                    <WarningOutlined style={{ marginRight: 4 }} />
+                    С 1 января 2026
+                  </Tag>
+                  <Text strong style={{ fontSize: 18 }}>
+                    Повышение цены
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 24,
+                      fontWeight: 700,
+                      color: '#fa8c16',
+                      marginTop: 8,
+                    }}
+                  >
+                    149 900 ₽
+                  </Text>
+                  <Text type="secondary" style={{ fontSize: 12 }}>
+                    Рекомендуем приобрести лицензию до конца года
+                  </Text>
+                </Space>
+              </Card>
+            </Col>
+          </Row>
+          <Card
+            size="small"
+            style={{
+              backgroundColor: '#f6ffed',
+              border: '1px solid #b7eb8f',
+              marginTop: 8,
+            }}
+          >
+            <Space direction="vertical" size="small" style={{ width: '100%' }}>
+              <Text strong style={{ fontSize: 15 }}>
+                При покупке лицензии через нас
+              </Text>
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                Мы можем помочь с приобретением лицензии Aspro: Максимум. При
+                покупке через нас вы получаете скидку 15 000 ₽ на общую
+                стоимость проекта.
+              </Text>
+            </Space>
+          </Card>
         </Space>
       </Card>
     ),
