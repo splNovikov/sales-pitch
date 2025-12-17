@@ -28,6 +28,7 @@ import {
 import { type SlideData } from '~widgets/slides';
 import { formatDateForSlide } from '~shared/lib/date.utils';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
+import { ImageWithLoader } from '~shared/ui/image-with-loader';
 import { eksimaB2BCabinetCreatedAt } from './eksima-b2b-cabinet.meta';
 import eksimaLogo from './img.png';
 import ruskonProfileExample from './01_profile.png';
@@ -481,7 +482,7 @@ export const eksimaB2BCabinetSlides: SlideData[] = [
             padding: '8px 0',
           }}
         >
-          <img
+          <ImageWithLoader
             src={ruskonProfileExample}
             alt="Пример профиля оптового клиента (Рускон)"
             style={{
@@ -518,7 +519,7 @@ export const eksimaB2BCabinetSlides: SlideData[] = [
             padding: '8px 0',
           }}
         >
-          <img
+          <ImageWithLoader
             src={ruskonCatalog}
             alt="Каталог товаров"
             style={{
@@ -548,7 +549,7 @@ export const eksimaB2BCabinetSlides: SlideData[] = [
             overflow: 'auto',
           }}
         >
-          <img
+          <ImageWithLoader
             src={ruskonOrderSetup}
             alt="Оформление заказа"
             style={{
@@ -578,7 +579,7 @@ export const eksimaB2BCabinetSlides: SlideData[] = [
             overflow: 'auto',
           }}
         >
-          <img
+          <ImageWithLoader
             src={ruskonOrders}
             alt="Список заказов"
             style={{
@@ -607,7 +608,7 @@ export const eksimaB2BCabinetSlides: SlideData[] = [
             padding: '8px 0',
           }}
         >
-          <img
+          <ImageWithLoader
             src={ruskonHelp}
             alt="Раздел помощи"
             style={{

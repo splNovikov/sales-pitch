@@ -1,4 +1,5 @@
 import { Space, Typography, Divider } from 'antd';
+import { ImageWithLoader } from './image-with-loader';
 
 const { Title, Paragraph } = Typography;
 
@@ -46,13 +47,17 @@ export function SectionTitleSlide({
             overflow: 'hidden',
           }}
         >
-          <img
+          <ImageWithLoader
             src={imageSrc}
             alt={imageAlt ?? title}
             style={{
               width: '100%',
               height: '100%',
               objectFit: 'cover',
+            }}
+            containerStyle={{
+              width: '100%',
+              height: '100%',
             }}
           />
         </div>
