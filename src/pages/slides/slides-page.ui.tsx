@@ -21,6 +21,7 @@ import { solarisUnionSlides } from '~features/solaris-union/slides';
 import { targetPitchSlides } from '~features/target-pitch/slides';
 import { eksimaAnalysisSlides } from '~features/eksima/slides/eksima-analysis-slides';
 import { eksimaWebsiteAnalysisSlides } from '~features/eksima/slides/eksima-website-analysis-slides';
+import { eksimaB2BCabinetSlides } from '~features/eksima/slides/eksima-b2b-cabinet-slides';
 import { proposalAiSlides } from '~features/proposal-ai/slides';
 import { saratovupakovkaSlides } from '~features/saratovupakovka/slides';
 import { ppuPipesSolutionSlides } from '~features/ppu-pipes/slides';
@@ -52,6 +53,7 @@ const slidesMap: Record<string, SlideData[]> = {
   'target-pitch': targetPitchSlides,
   'eksima-analysis': eksimaAnalysisSlides,
   'eksima-website-analysis': eksimaWebsiteAnalysisSlides,
+  'eksima-b2b-cabinet': eksimaB2BCabinetSlides,
   'proposal-ai': proposalAiSlides,
   saratovupakovka: saratovupakovkaSlides,
   'ppu-pipes-solution': ppuPipesSolutionSlides,

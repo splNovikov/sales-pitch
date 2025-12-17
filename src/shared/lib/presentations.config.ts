@@ -73,6 +73,10 @@ import {
   eksimaWebsiteAnalysisTitle,
 } from '~features/eksima/slides/eksima-website-analysis.meta';
 import {
+  eksimaB2BCabinetCreatedAt,
+  eksimaB2BCabinetTitle,
+} from '~features/eksima/slides/eksima-b2b-cabinet.meta';
+import {
   proposalAiCreatedAt,
   proposalAiTitle,
 } from '~features/proposal-ai/slides/proposal-ai.meta';
@@ -251,6 +255,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'eksima-website-analysis',
     title: eksimaWebsiteAnalysisTitle,
     createdAt: eksimaWebsiteAnalysisCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'eksima-b2b-cabinet',
+    title: eksimaB2BCabinetTitle,
+    createdAt: eksimaB2BCabinetCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
