@@ -31,6 +31,10 @@ import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { eksimaB2BCabinetCreatedAt } from './eksima-b2b-cabinet.meta';
 import eksimaLogo from './img.png';
 import ruskonProfileExample from './01_profile.png';
+import ruskonCatalog from './02_catalog.png';
+import ruskonOrderSetup from './03_order_setup.png';
+import ruskonOrders from './04_orders.png';
+import ruskonHelp from './05_help.png';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -498,6 +502,135 @@ export const eksimaB2BCabinetSlides: SlideData[] = [
           </Paragraph>
         </Card>
       </Space>
+    ),
+  },
+  {
+    id: 'ruskon-catalog',
+    header: 'Каталог',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '100%',
+            padding: '8px 0',
+          }}
+        >
+          <img
+            src={ruskonCatalog}
+            alt="Каталог товаров"
+            style={{
+              maxHeight: 'calc(100vh - 300px)',
+              width: 'auto',
+              height: 'auto',
+              borderRadius: 8,
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
+            }}
+          />
+        </div>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-order-setup',
+    header: 'Оформление заказа',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'flex-start',
+            width: '100%',
+            padding: '8px 0',
+            overflow: 'auto',
+          }}
+        >
+          <img
+            src={ruskonOrderSetup}
+            alt="Оформление заказа"
+            style={{
+              maxWidth: '100%',
+              width: 'auto',
+              height: 'auto',
+              borderRadius: 8,
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
+            }}
+          />
+        </div>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-orders',
+    header: 'Заказы',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'flex-start',
+            width: '100%',
+            padding: '8px 0',
+            overflow: 'auto',
+          }}
+        >
+          <img
+            src={ruskonOrders}
+            alt="Список заказов"
+            style={{
+              maxWidth: '100%',
+              width: 'auto',
+              height: 'auto',
+              borderRadius: 8,
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
+            }}
+          />
+        </div>
+      </Space>
+    ),
+  },
+  {
+    id: 'ruskon-help',
+    header: 'Помощь',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '100%',
+            padding: '8px 0',
+          }}
+        >
+          <img
+            src={ruskonHelp}
+            alt="Раздел помощи"
+            style={{
+              maxHeight: 'calc(100vh - 300px)',
+              width: 'auto',
+              height: 'auto',
+              borderRadius: 8,
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
+            }}
+          />
+        </div>
+      </Space>
+    ),
+  },
+  {
+    id: 'implementation-phases-title',
+    header: undefined,
+    content: (
+      <SectionTitleSlide
+        title="Этапы реализации проекта"
+        imageSrc="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&h=800&fit=crop"
+        imageAlt="Список задач и этапов проекта"
+      />
     ),
   },
   {
