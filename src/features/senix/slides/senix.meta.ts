@@ -6,4 +6,3 @@
 export const senixCreatedAt = '2025-12-17T00:00:00Z';
 export const senixTitle =
   'SENIX (ООО "Ят-Рус") — анализ компании и возможности IT сотрудничества';
-

@@ -31,6 +31,7 @@ import {
 } from '~features/admix-siberia/slides';
 import { atisSlides } from '~features/a-tis/slides';
 import { senixSlides } from '~features/senix/slides/senix-slides';
+import { rosomakhatulSlides } from '~features/rosomaha/slides/rosomakhatul-slides';
 import { presentationSlugs } from '~shared/lib/presentations.config';
 import { Slides, type SlideData } from '~widgets/slides';
 
@@ -62,6 +63,7 @@ const slidesMap: Record<string, SlideData[]> = {
   'admix-siberia-quiz': admixSiberiaQuestionnaireSlides,
   'a-tis': atisSlides,
   senix: senixSlides,
+  rosomakhatul: rosomakhatulSlides,
 };
 
 /**

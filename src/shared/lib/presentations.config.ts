@@ -98,6 +98,10 @@ import {
 } from '~features/admix-siberia/slides/admix-siberia-questionnaire.meta';
 import { atisCreatedAt, atisTitle } from '~features/a-tis/slides/atis.meta';
 import { senixCreatedAt, senixTitle } from '~features/senix/slides/senix.meta';
+import {
+  rosomakhatulCreatedAt,
+  rosomakhatulTitle,
+} from '~features/rosomaha/slides/rosomakhatul.meta';
 
 /**
  * Presentation metadata
@@ -312,6 +316,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'senix',
     title: senixTitle,
     createdAt: senixCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'rosomakhatul',
+    title: rosomakhatulTitle,
+    createdAt: rosomakhatulCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },

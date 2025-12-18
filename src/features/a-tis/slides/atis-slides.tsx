@@ -1265,8 +1265,7 @@ export const atisSlides: SlideData[] = [
               target="_blank"
             >
               Подробнее о шаблоне на сайте Aspro
-            </Link>
-            {' '}
+            </Link>{' '}
             <Link
               href="https://www.1c-bitrix.ru/products/cms/editions/smallbusiness.php"
               target="_blank"

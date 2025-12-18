@@ -14,7 +14,6 @@ import {
   CheckCircleOutlined,
   RocketOutlined,
   UserOutlined,
-  GlobalOutlined,
   BuildOutlined,
   ThunderboltOutlined,
   TrophyOutlined,
@@ -22,7 +21,6 @@ import {
   ClockCircleOutlined,
   BarChartOutlined,
   ApiOutlined,
-  CodeOutlined,
   CreditCardOutlined,
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';

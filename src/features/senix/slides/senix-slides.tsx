@@ -178,9 +178,9 @@ export const senixSlides: SlideData[] = [
             <Text strong>
               оптовой торговли садово-огородной техникой и инвентарём
             </Text>
-            . Компания является официальным импортером и представителем в
-            России бренда <Text strong>SENIX</Text> – собственной торговой
-            марки китайского производителя высокотехнологичной техники.
+            . Компания является официальным импортером и представителем в России
+            бренда <Text strong>SENIX</Text> – собственной торговой марки
+            китайского производителя высокотехнологичной техники.
           </Paragraph>
         </Card>
       </Space>
@@ -547,9 +547,7 @@ export const senixSlides: SlideData[] = [
           <Col xs={24} md={12}>
             <Card style={{ backgroundColor: '#fff1f0' }}>
               <Title level={4} style={{ marginTop: 0 }}>
-                <WarningOutlined
-                  style={{ color: '#ff4d4f', marginRight: 8 }}
-                />
+                <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
                 Критические проблемы
               </Title>
               <List
@@ -762,8 +760,7 @@ export const senixSlides: SlideData[] = [
               {
                 key: '2',
                 category: 'Ценовой сегмент',
-                details:
-                  'Средний-премиум (дешевле премиума, дороже эконома)',
+                details: 'Средний-премиум (дешевле премиума, дороже эконома)',
               },
               {
                 key: '3',
@@ -982,9 +979,7 @@ export const senixSlides: SlideData[] = [
             ]}
             renderItem={item => (
               <List.Item style={{ padding: '4px 0' }}>
-                <WarningOutlined
-                  style={{ color: '#ff4d4f', marginRight: 8 }}
-                />
+                <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
                 <Text>{item}</Text>
               </List.Item>
             )}
@@ -1307,9 +1302,7 @@ export const senixSlides: SlideData[] = [
             ]}
             renderItem={item => (
               <List.Item style={{ padding: '4px 0' }}>
-                <WarningOutlined
-                  style={{ color: '#ff4d4f', marginRight: 8 }}
-                />
+                <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
                 <Text>{item}</Text>
               </List.Item>
             )}
@@ -1329,9 +1322,7 @@ export const senixSlides: SlideData[] = [
             ]}
             renderItem={item => (
               <List.Item style={{ padding: '4px 0' }}>
-                <WarningOutlined
-                  style={{ color: '#ff4d4f', marginRight: 8 }}
-                />
+                <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
                 <Text>{item}</Text>
               </List.Item>
             )}
@@ -1354,9 +1345,7 @@ export const senixSlides: SlideData[] = [
             ]}
             renderItem={item => (
               <List.Item style={{ padding: '4px 0' }}>
-                <WarningOutlined
-                  style={{ color: '#ff4d4f', marginRight: 8 }}
-                />
+                <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
                 <Text>{item}</Text>
               </List.Item>
             )}
@@ -1393,9 +1382,7 @@ export const senixSlides: SlideData[] = [
             ]}
             renderItem={item => (
               <List.Item style={{ padding: '4px 0' }}>
-                <WarningOutlined
-                  style={{ color: '#ff4d4f', marginRight: 8 }}
-                />
+                <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
                 <Text>{item}</Text>
               </List.Item>
             )}
@@ -1424,9 +1411,7 @@ export const senixSlides: SlideData[] = [
             ]}
             renderItem={item => (
               <List.Item style={{ padding: '4px 0' }}>
-                <WarningOutlined
-                  style={{ color: '#ff4d4f', marginRight: 8 }}
-                />
+                <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
                 <Text>{item}</Text>
               </List.Item>
             )}
@@ -1637,7 +1622,8 @@ export const senixSlides: SlideData[] = [
                 key: '2',
                 name: 'PATRIOT (Китай)',
                 position: 'Бюджет-средний',
-                advantages: 'Цена/качество оптимальны, достаточная функциональность',
+                advantages:
+                  'Цена/качество оптимальны, достаточная функциональность',
                 disadvantages: 'Слабый сервис, невысокая надежность',
                 marketShare: '~8-12%',
               },
@@ -1653,7 +1639,8 @@ export const senixSlides: SlideData[] = [
                 key: '4',
                 name: 'DeWALT (США)',
                 position: 'Премиум инструмент',
-                advantages: 'Профессиональная репутация, качество, FLEXVOLT 54V',
+                advantages:
+                  'Профессиональная репутация, качество, FLEXVOLT 54V',
                 disadvantages: 'Дорого, ориентирован на инструмент',
                 marketShare: '~5-8%',
               },
@@ -1752,9 +1739,7 @@ export const senixSlides: SlideData[] = [
               </Text>
             </div>
             <div style={{ marginTop: '10px', fontSize: '14px' }}>
-              <Text type="secondary">
-                (низкая) (высокая)
-              </Text>
+              <Text type="secondary">(низкая) (высокая)</Text>
             </div>
           </div>
         </Card>
@@ -1797,9 +1782,7 @@ export const senixSlides: SlideData[] = [
           <Col xs={24} md={12}>
             <Card style={{ backgroundColor: '#fff1f0' }}>
               <Title level={4} style={{ marginTop: 0 }}>
-                <WarningOutlined
-                  style={{ color: '#ff4d4f', marginRight: 8 }}
-                />
+                <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
                 Недостатки vs конкурентам
               </Title>
               <List
@@ -1855,9 +1838,7 @@ export const senixSlides: SlideData[] = [
             ]}
             renderItem={item => (
               <List.Item style={{ padding: '4px 0' }}>
-                <WarningOutlined
-                  style={{ color: '#faad14', marginRight: 8 }}
-                />
+                <WarningOutlined style={{ color: '#faad14', marginRight: 8 }} />
                 <Text>{item}</Text>
               </List.Item>
             )}
@@ -1915,9 +1896,7 @@ export const senixSlides: SlideData[] = [
             ]}
             renderItem={item => (
               <List.Item style={{ padding: '4px 0' }}>
-                <WarningOutlined
-                  style={{ color: '#ff4d4f', marginRight: 8 }}
-                />
+                <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
                 <Text>{item}</Text>
               </List.Item>
             )}
@@ -1980,9 +1959,7 @@ export const senixSlides: SlideData[] = [
             ]}
             renderItem={item => (
               <List.Item style={{ padding: '4px 0' }}>
-                <WarningOutlined
-                  style={{ color: '#ff4d4f', marginRight: 8 }}
-                />
+                <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
                 <Text>{item}</Text>
               </List.Item>
             )}
@@ -2044,9 +2021,7 @@ export const senixSlides: SlideData[] = [
             ]}
             renderItem={item => (
               <List.Item style={{ padding: '4px 0' }}>
-                <WarningOutlined
-                  style={{ color: '#ff4d4f', marginRight: 8 }}
-                />
+                <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
                 <Text>{item}</Text>
               </List.Item>
             )}
@@ -2133,9 +2108,7 @@ export const senixSlides: SlideData[] = [
           <Col xs={24} md={12}>
             <Card style={{ backgroundColor: '#fff7e6' }}>
               <Title level={4} style={{ marginTop: 0 }}>
-                <BuildOutlined
-                  style={{ color: '#faad14', marginRight: 8 }}
-                />
+                <BuildOutlined style={{ color: '#faad14', marginRight: 8 }} />
                 БОЛЬ #5: Нет управления запчастями
               </Title>
               <List
@@ -2171,9 +2144,7 @@ export const senixSlides: SlideData[] = [
             ]}
             renderItem={item => (
               <List.Item style={{ padding: '4px 0' }}>
-                <WarningOutlined
-                  style={{ color: '#faad14', marginRight: 8 }}
-                />
+                <WarningOutlined style={{ color: '#faad14', marginRight: 8 }} />
                 <Text>{item}</Text>
               </List.Item>
             )}
@@ -2258,15 +2229,11 @@ export const senixSlides: SlideData[] = [
             <DollarOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
             Стоимость: 1-3 млн руб | ROI: Огромный
           </Title>
-          <Text>
-            Спасает компанию от репутационного краха
-          </Text>
+          <Text>Спасает компанию от репутационного краха</Text>
         </Card>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
-            <CheckCircleOutlined
-              style={{ color: '#52c41a', marginRight: 8 }}
-            />
+            <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
             1. CRM + Helpdesk система (Высокий приоритет)
           </Title>
           <Row gutter={[16, 16]}>
@@ -2451,8 +2418,8 @@ export const senixSlides: SlideData[] = [
             )}
           />
           <Text strong style={{ display: 'block', marginTop: 8 }}>
-            Ожидаемый результат: Снижение среднего времени ремонта с 2.5
-            месяцев до 14 дней
+            Ожидаемый результат: Снижение среднего времени ремонта с 2.5 месяцев
+            до 14 дней
           </Text>
         </Card>
       </Space>
@@ -2465,9 +2432,7 @@ export const senixSlides: SlideData[] = [
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card style={{ backgroundColor: '#f6ffed' }}>
           <Title level={4} style={{ marginTop: 0 }}>
-            <ClockCircleOutlined
-              style={{ color: '#52c41a', marginRight: 8 }}
-            />
+            <ClockCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
             ФАЗА 3 (6-12 месяцев): ОПТИМИЗАЦИЯ И РОСТ
           </Title>
           <Text strong style={{ display: 'block', marginBottom: 8 }}>
@@ -2530,9 +2495,7 @@ export const senixSlides: SlideData[] = [
             ]}
             renderItem={item => (
               <List.Item style={{ padding: '4px 0' }}>
-                <WarningOutlined
-                  style={{ color: '#ff4d4f', marginRight: 8 }}
-                />
+                <WarningOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
                 <Text>{item}</Text>
               </List.Item>
             )}
@@ -2613,4 +2576,3 @@ export const senixSlides: SlideData[] = [
     ),
   },
 ];
-
