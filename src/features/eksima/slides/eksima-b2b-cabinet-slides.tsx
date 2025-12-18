@@ -498,7 +498,8 @@ export const eksimaB2BCabinetSlides: SlideData[] = [
           <Paragraph style={{ marginBottom: 0 }}>
             <Text strong>
               Такой же уровень детализации профиля (контакты, реквизиты, история
-              заказов и статусы) планируется реализовать и в B2B кабинете EKSIMA.
+              заказов и статусы) планируется реализовать и в B2B кабинете
+              EKSIMA.
             </Text>
           </Paragraph>
         </Card>
@@ -650,6 +651,7 @@ export const eksimaB2BCabinetSlides: SlideData[] = [
               'Сбор требований и детальное описание функционала',
               'Анализ текущих систем (1C, CRM, ERP)',
               'Проверка финансовой состояния компании',
+              'Дизайн и прототипирование (2 недели)',
             ]}
             renderItem={item => (
               <List.Item style={{ padding: '8px 0' }}>
@@ -689,25 +691,6 @@ export const eksimaB2BCabinetSlides: SlideData[] = [
                 />
               </Card>
             </Col>
-            <Col xs={24} md={12}>
-              <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
-                <Text strong>First Enhancement</Text>
-                <List
-                  size="small"
-                  dataSource={[
-                    'Оптовые скидки по объемам',
-                    'Интеграция с 1C',
-                    'Система платежей',
-                    'Отчеты для администратора',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0' }}>
-                      <Text>• {item}</Text>
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </Col>
           </Row>
         </Card>
         <Card>
@@ -717,7 +700,6 @@ export const eksimaB2BCabinetSlides: SlideData[] = [
           </Title>
           <List
             dataSource={[
-              'Дизайн и прототипирование (2 недели)',
               'Разработка backend (3-4 недели)',
               'Разработка frontend (3-4 недели)',
               'Тестирование и QA (2 недели)',
@@ -736,117 +718,6 @@ export const eksimaB2BCabinetSlides: SlideData[] = [
               </List.Item>
             )}
           />
-        </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'technologies',
-    header: 'Рекомендуемые технологии',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <CodeOutlined style={{ marginRight: 8 }} />
-            Технологический стек
-          </Title>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} md={12}>
-              <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
-                <Text strong>
-                  <CodeOutlined style={{ marginRight: 8 }} />
-                  Backend
-                </Text>
-                <List
-                  size="small"
-                  dataSource={[
-                    'Node.js + Express (быстрая разработка)',
-                    'PostgreSQL (надежная БД)',
-                    'Redis (кэширование)',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0' }}>
-                      <CheckCircleOutlined
-                        style={{ color: '#1890ff', marginRight: 8 }}
-                      />
-                      <Text>{item}</Text>
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </Col>
-            <Col xs={24} md={12}>
-              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
-                <Text strong>
-                  <ThunderboltOutlined style={{ marginRight: 8 }} />
-                  Frontend
-                </Text>
-                <List
-                  size="small"
-                  dataSource={[
-                    'React или Vue.js',
-                    'Next.js для SEO оптимизации',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0' }}>
-                      <CheckCircleOutlined
-                        style={{ color: '#52c41a', marginRight: 8 }}
-                      />
-                      <Text>{item}</Text>
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </Col>
-          </Row>
-          <Row gutter={[16, 16]} style={{ marginTop: 16 }}>
-            <Col xs={24} md={12}>
-              <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
-                <Text strong>
-                  <BuildOutlined style={{ marginRight: 8 }} />
-                  DevOps
-                </Text>
-                <List
-                  size="small"
-                  dataSource={[
-                    'Docker / Kubernetes (масштабируемость)',
-                    'CI/CD (GitHub Actions или GitLab CI)',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0' }}>
-                      <CheckCircleOutlined
-                        style={{ color: '#faad14', marginRight: 8 }}
-                      />
-                      <Text>{item}</Text>
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </Col>
-            <Col xs={24} md={12}>
-              <Card size="small" style={{ backgroundColor: '#f0f0f0' }}>
-                <Text strong>
-                  <GlobalOutlined style={{ marginRight: 8 }} />
-                  Hosting
-                </Text>
-                <List
-                  size="small"
-                  dataSource={[
-                    'Google Cloud / AWS / DigitalOcean',
-                    'CDN для статики (CloudFlare)',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0' }}>
-                      <CheckCircleOutlined
-                        style={{ color: '#595959', marginRight: 8 }}
-                      />
-                      <Text>{item}</Text>
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </Col>
-          </Row>
         </Card>
       </Space>
     ),
