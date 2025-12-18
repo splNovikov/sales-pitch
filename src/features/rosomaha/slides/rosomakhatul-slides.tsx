@@ -96,7 +96,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Быстрая статистика"
         subtitle="Ключевые финансовые показатели компании за 2024 год"
-        imageSrc="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=1200&h=800&fit=crop"
+        imageIndex={0}
         imageAlt="Финансовая статистика"
       />
     ),
@@ -181,7 +181,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Исходная информация о компании"
         subtitle="Реквизиты, базовые данные и точка входа для продаж"
-        imageSrc="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&h=800&fit=crop"
+        imageIndex={1}
         imageAlt="О компании"
       />
     ),
@@ -242,7 +242,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Чем компания занимается"
         subtitle="Основной вид деятельности, товары и целевая аудитория"
-        imageSrc="https://images.unsplash.com/photo-1581091012184-5c7b096d4350?w=1200&h=800&fit=crop"
+        imageIndex={2}
         imageAlt="Строительный инструмент"
       />
     ),
@@ -323,7 +323,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Финансовое здоровье"
         subtitle="Сильные стороны, вызовы и возможность для IT‑услуг"
-        imageSrc="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=800&fit=crop"
+        imageIndex={3}
         imageAlt="Финансовый анализ"
       />
     ),
@@ -398,7 +398,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Организационная структура"
         subtitle="Кто принимает решения и как устроена команда"
-        imageSrc="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=800&fit=crop"
+        imageIndex={4}
         imageAlt="Команда компании"
       />
     ),
@@ -466,7 +466,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Текущее состояние IT"
         subtitle="Внедренные системы и критические пробелы"
-        imageSrc="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=1200&h=800&fit=crop"
+        imageIndex={5}
         imageAlt="IT‑инфраструктура"
       />
     ),
@@ -556,7 +556,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Острые потребности"
         subtitle="Что срочно нужно компании для роста"
-        imageSrc="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=1200&h=800&fit=crop"
+        imageIndex={6}
         imageAlt="Потребности в IT"
       />
     ),
@@ -599,7 +599,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Конкурентная позиция"
         subtitle="Сегменты, конкуренты и преимущества ROSOMAKHA"
-        imageSrc="https://images.unsplash.com/photo-1553484771-371a605b060b?w=1200&h=800&fit=crop"
+        imageIndex={7}
         imageAlt="Конкуренция"
       />
     ),
@@ -675,7 +675,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Интернет‑присутствие"
         subtitle="Каналы и потенциал развития онлайн"
-        imageSrc="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=1200&h=800&fit=crop"
+        imageIndex={8}
         imageAlt="Онлайн‑присутствие"
       />
     ),
@@ -763,7 +763,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Репутация и надежность"
         subtitle="Финансовая и интернет‑репутация компании"
-        imageSrc="https://images.unsplash.com/photo-1523287562758-66c7fc58967a?w=1200&h=800&fit=crop"
+        imageIndex={9}
         imageAlt="Репутация компании"
       />
     ),
@@ -835,7 +835,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Потенциал для IT‑продажи"
         subtitle="Оценка по ключевым критериям"
-        imageSrc="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&h=800&fit=crop"
+        imageIndex={0}
         imageAlt="Потенциал клиента"
       />
     ),
@@ -931,7 +931,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Рекомендуемые решения"
         subtitle="Продуктовая линейка для продажи"
-        imageSrc="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&h=800&fit=crop"
+        imageIndex={1}
         imageAlt="Решения для клиента"
       />
     ),
@@ -972,7 +972,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="План холодной продажи"
         subtitle="Пошаговая стратегия выхода на клиента"
-        imageSrc="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=800&fit=crop"
+        imageIndex={2}
         imageAlt="План действий"
       />
     ),
@@ -1027,7 +1027,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Ключевые аргументы продажи"
         subtitle="Как убедить генерального директора"
-        imageSrc="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&h=800&fit=crop"
+        imageIndex={3}
         imageAlt="Аргументы продажи"
       />
     ),
@@ -1090,7 +1090,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Возражения и ответы"
         subtitle="Что может сказать ГД и как реагировать"
-        imageSrc="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=1200&h=800&fit=crop"
+        imageIndex={4}
         imageAlt="Работа с возражениями"
       />
     ),
@@ -1167,7 +1167,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Контрольный лист"
         subtitle="Что подготовить до, во время и после контакта"
-        imageSrc="https://images.unsplash.com/photo-1523287562758-66c7fc58967a?w=1200&h=800&fit=crop"
+        imageIndex={5}
         imageAlt="Чек‑лист"
       />
     ),
@@ -1246,7 +1246,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Контакты и быстрые ссылки"
         subtitle="Вся информация для звонка на одном слайде"
-        imageSrc="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?w=1200&h=800&fit=crop"
+        imageIndex={6}
         imageAlt="Контакты"
       />
     ),
@@ -1305,7 +1305,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Итоговая оценка"
         subtitle="Вероятность успеха холодной продажи"
-        imageSrc="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=800&fit=crop"
+        imageIndex={7}
         imageAlt="Оценка вероятности успеха"
       />
     ),
@@ -1362,7 +1362,7 @@ export const rosomakhatulSlides: SlideData[] = [
       <SectionTitleSlide
         title="Финальный слайд"
         subtitle="Резюме и первые шаги"
-        imageSrc="https://images.unsplash.com/photo-1485217988980-11786ced9454?w=1200&h=800&fit=crop"
+        imageIndex={8}
         imageAlt="Финальный резюме"
       />
     ),
