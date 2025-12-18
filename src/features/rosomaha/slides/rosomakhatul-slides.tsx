@@ -22,6 +22,8 @@ import { type SlideData } from '~widgets/slides';
 import { formatDateForSlide } from '~shared/lib/date.utils';
 import { rosomakhatulCreatedAt } from './rosomakhatul.meta';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
+import { ImageWithLoader } from '~shared/ui/image-with-loader';
+import mitexPhoto from './telegram-cloud-photo-size-2-5233670151763332979-y.jpg';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
@@ -87,6 +89,102 @@ export const rosomakhatulSlides: SlideData[] = [
           {formatDateForSlide(rosomakhatulCreatedAt)} • Москва
         </Text>
       </Space>
+    ),
+  },
+  {
+    id: 'how-we-met-title',
+    header: undefined,
+    content: (
+      <SectionTitleSlide
+        title="Как мы о них узнали"
+        subtitle="История знакомства с компанией"
+        imageIndex={1}
+        imageAlt="Знакомство"
+      />
+    ),
+  },
+  {
+    id: 'how-we-met-story',
+    header: 'Выставка MITEX',
+    content: (
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+        }}
+      >
+        <div
+          style={{
+            flexBasis: '50%',
+            maxWidth: '50%',
+            height: '100%',
+            overflow: 'hidden',
+          }}
+        >
+          <ImageWithLoader
+            src={mitexPhoto}
+            alt="Выставка MITEX"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+            }}
+            containerStyle={{
+              width: '100%',
+              height: '100%',
+            }}
+          />
+        </div>
+        <div
+          style={{
+            flex: 1,
+            padding: '40px',
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          <Card
+            style={{
+              width: '100%',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+            }}
+          >
+            <Space
+              direction="vertical"
+              size="large"
+              style={{ width: '100%' }}
+            >
+              <Paragraph
+                style={{
+                  fontSize: 'var(--app-font-size-base)',
+                  lineHeight: 1.7,
+                  marginBottom: 0,
+                  color: '#434343',
+                }}
+              >
+                На выставке MITEX мы познакомились с генеральным директором
+                компании Кириллом Кирилловым. Поводом для знакомства стало
+                обращение с замечанием о некорректной работе их сайта.
+              </Paragraph>
+              <Paragraph
+                style={{
+                  fontSize: 'var(--app-font-size-base)',
+                  lineHeight: 1.7,
+                  marginBottom: 0,
+                  color: '#434343',
+                }}
+              >
+                По словам представителей компании, мы стали первыми, кто обратил
+                их внимание на эту проблему подобным образом. В результате
+                состоялся конструктивный диалог, и была достигнута договорённость
+                о встрече в середине декабря для обсуждения возможностей
+                сотрудничества.
+              </Paragraph>
+            </Space>
+          </Card>
+        </div>
+      </div>
     ),
   },
   {
@@ -306,7 +404,7 @@ export const rosomakhatulSlides: SlideData[] = [
               >
                 <Paragraph style={{ marginBottom: 0, whiteSpace: 'pre-line' }}>
                   B2B ОПТОВАЯ ТОРГОВЛЯ (НЕ розница)
-                  {'\n'}↓{'\n'}Собственный веб-сайт + Ozon + Агрегаторы
+                  {'\n'}↓{'\n'}Собственный веб-сайт + Агрегаторы
                   {'\n'}↓{'\n'}Собственная логистика (своя ТМЦ)
                 </Paragraph>
               </Card>
@@ -491,7 +589,6 @@ export const rosomakhatulSlides: SlideData[] = [
                   'WMS: Клеверенс (февраль 2024)',
                   'Мобильные терминалы: Urovo DT40',
                   'Веб‑сайт с каталогом',
-                  'Интеграция Ozon',
                 ]}
                 renderItem={item => (
                   <List.Item style={{ padding: '4px 0' }}>
@@ -580,7 +677,7 @@ export const rosomakhatulSlides: SlideData[] = [
             {'\n'} Потенциальный ROI: +15% управления запасами
             {'\n'}
             {'\n'}3. ИНТЕГРАЦИЯ МАРКЕТПЛЕЙСОВ
-            {'\n'} Проблема: только Ozon, упускает Wildberries (+20–30% выручки)
+            {'\n'} Проблема: отсутствие на маркетплейсах (Ozon, Wildberries) — упускается +20–30% выручки
             {'\n'} Потенциальный ROI: +20–30% дополнительной выручки
             {'\n'}
             {'\n'}4. ПОРТАЛ / МОБИЛЬНОЕ ПРИЛОЖЕНИЕ
@@ -650,7 +747,7 @@ export const rosomakhatulSlides: SlideData[] = [
                 dataSource={[
                   'Маленькая компания (7 чел) → сомнения в масштабируемости',
                   'Молодой бренд (7 лет) → нет долгой истории',
-                  'Только Ozon из маркетплейсов → упускаются Wildberries',
+                  'Отсутствие на маркетплейсах (Ozon, Wildberries) → упускается потенциальная выручка',
                   'Низкая видимость в поиске',
                 ]}
                 renderItem={item => (
@@ -696,31 +793,25 @@ export const rosomakhatulSlides: SlideData[] = [
               },
               {
                 key: '2',
-                channel: 'Ozon',
-                status: '✅ Активно',
-                score: '7/10',
-              },
-              {
-                key: '3',
                 channel: 'LinkedIn',
                 status: '❌ НЕТ',
                 score: '0/10',
               },
-              { key: '4', channel: 'VK', status: '❌ НЕТ', score: '0/10' },
+              { key: '3', channel: 'VK', status: '❌ НЕТ', score: '0/10' },
               {
-                key: '5',
+                key: '4',
                 channel: 'Telegram',
                 status: '❌ НЕТ',
                 score: '0/10',
               },
               {
-                key: '6',
+                key: '5',
                 channel: 'Instagram',
                 status: '❌ НЕТ',
                 score: '0/10',
               },
               {
-                key: '7',
+                key: '6',
                 channel: 'Email‑маркетинг',
                 status: '❌ НЕТ',
                 score: '0/10',
@@ -1278,15 +1369,6 @@ export const rosomakhatulSlides: SlideData[] = [
             >
               https://xn--80aa7abjamjnkt.xn--p1ai
             </Link>
-            {'\n'}Ozon:{' '}
-            <Link
-              href="https://www.ozon.ru/seller/rosomaha-771793/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://www.ozon.ru/seller/rosomaha-771793/
-            </Link>
-            {'\n'}
             {'\n'}💡 ЛУЧШЕЕ ВРЕМЯ ДЛЯ ЗВОНКА
             {'\n'}Вторник–четверг, 10:00–12:00
             {'\n'}
