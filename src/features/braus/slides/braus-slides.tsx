@@ -21,10 +21,49 @@ import { brausCreatedAt } from './braus.meta';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { ContactsSlide } from '~shared/ui/contacts-slide';
+import { useTelegramNotification } from '~shared/lib/telegram/use-telegram-notification';
 import brausLogo from './braus-logo.png';
 import exampleImage from './example.png';
 
 const { Title, Paragraph, Text, Link } = Typography;
+
+/**
+ * Button component that sends Telegram notification when clicked
+ */
+function DemoButtonWithNotification() {
+  const { send } = useTelegramNotification({ silent: true });
+
+  const handleClick = async () => {
+    await send({
+      page: '/slides/braus - Кнопка "Открыть демо-версию" нажата',
+      fullUrl: typeof window !== 'undefined' ? window.location.href : undefined,
+      timestamp: new Date().toISOString(),
+      userAgent:
+        typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
+      referer: typeof document !== 'undefined' ? document.referrer : undefined,
+    });
+  };
+
+  return (
+    <Button
+      type="primary"
+      size="large"
+      icon={<GlobalOutlined />}
+      href="https://braus-poc.vercel.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={handleClick}
+      style={{
+        height: 48,
+        fontSize: 16,
+        fontWeight: 600,
+        padding: '0 32px',
+      }}
+    >
+      Открыть демо-версию
+    </Button>
+  );
+}
 
 export const brausSlides: SlideData[] = [
   {
@@ -601,22 +640,7 @@ export const brausSlides: SlideData[] = [
               <Text strong style={{ fontSize: 16, display: 'block' }}>
                 Посмотрите пример реализации
               </Text>
-              <Button
-                type="primary"
-                size="large"
-                icon={<GlobalOutlined />}
-                href="https://braus-poc.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  height: 48,
-                  fontSize: 16,
-                  fontWeight: 600,
-                  padding: '0 32px',
-                }}
-              >
-                Открыть демо-версию
-              </Button>
+              <DemoButtonWithNotification />
               <Text type="secondary" style={{ fontSize: 12, display: 'block' }}>
                 https://braus-poc.vercel.app/
               </Text>
