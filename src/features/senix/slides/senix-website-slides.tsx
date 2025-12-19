@@ -17,8 +17,6 @@ import {
   CheckCircleOutlined,
   WarningOutlined,
   LinkOutlined,
-  PhoneOutlined,
-  MailOutlined,
   ArrowRightOutlined,
   BuildOutlined,
   ThunderboltOutlined,
@@ -31,6 +29,7 @@ import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { useTelegramNotification } from '~shared/lib/telegram/use-telegram-notification';
 import { ImageWithLoader } from '~shared/ui/image-with-loader';
 import senixExampleImage from './senix-example.png';
+import { ContactsSlide } from '~shared/ui/contacts-slide.tsx';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
@@ -654,57 +653,26 @@ export const senixWebsiteSlides: SlideData[] = [
     id: 'contacts',
     header: 'Контакты',
     content: (
-      <Space
-        orientation="vertical"
-        size="large"
-        style={{
-          width: '100%',
-          height: '100%',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Card style={{ maxWidth: '500px', width: '100%' }}>
-          <Space
-            direction="vertical"
-            size="large"
-            style={{ width: '100%', textAlign: 'center' }}
-          >
-            <Title level={3} style={{ marginTop: 0 }}>
-              Проксима
-            </Title>
-            <Divider />
-            <Space direction="vertical" size="middle" style={{ width: '100%' }}>
-              <div>
-                <PhoneOutlined style={{ marginRight: 8, fontSize: '18px' }} />
-                <Text strong>Телефон:</Text>
-                <br />
-                <Link href="tel:+79271108488">+7 927 110 84 88</Link>
-              </div>
-              <div>
-                <MailOutlined style={{ marginRight: 8, fontSize: '18px' }} />
-                <Text strong>Email:</Text>
-                <br />
-                <Link href="mailto:a.sityakov@proxima.ooo">
-                  a.sityakov@proxima.ooo
-                </Link>
-              </div>
-              <div>
-                <GlobalOutlined style={{ marginRight: 8, fontSize: '18px' }} />
-                <Text strong>Сайт:</Text>
-                <br />
-                <Link href="https://proxima24.ru/" target="_blank">
-                  proxima24.ru
-                </Link>
-              </div>
-            </Space>
-            <Divider />
-            <Paragraph type="secondary" style={{ marginBottom: 0 }}>
-              Мы готовы обсудить ваш проект и предложить оптимальное решение
-            </Paragraph>
-          </Space>
-        </Card>
-      </Space>
+      <ContactsSlide
+        contacts={[
+          {
+            name: 'Новиков Павел',
+            role: 'Технический директор',
+            phone: '+7 908 555 0606',
+            email: 'p.novikov@proxima.ooo',
+            websiteLabel: 'proxima24.ru',
+            variant: 'green',
+          },
+          {
+            name: 'Ситяков Артём',
+            role: 'Руководитель отдела маркетинга',
+            phone: '+7 927 110 84 88',
+            email: 'a.sityakov@proxima.ooo',
+            websiteLabel: 'proxima24.ru',
+            variant: 'blue',
+          },
+        ]}
+      />
     ),
   },
 ];
