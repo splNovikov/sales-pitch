@@ -8,22 +8,21 @@ import {
   Col,
   Tag,
   Table,
+  Button,
 } from 'antd';
 import {
   RocketOutlined,
   CheckCircleOutlined,
   WarningOutlined,
-  DollarOutlined,
-  PhoneOutlined,
-  MailOutlined,
   GlobalOutlined,
-  UserOutlined,
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 import { brausCreatedAt } from './braus.meta';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
+import { ContactsSlide } from '~shared/ui/contacts-slide';
 import brausLogo from './braus-logo.png';
+import exampleImage from './example.png';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
@@ -33,9 +32,8 @@ export const brausSlides: SlideData[] = [
     header: undefined,
     content: (
       <MainTitleSlide
-        title="BRAUS"
-        subtitle="Новое видение сайта"
-        description="Три варианта обновления сайта BRAUS."
+        title=""
+        description=""
         logo={brausLogo}
         logoAlt="BRAUS"
         logoMaxWidth={320}
@@ -50,7 +48,7 @@ export const brausSlides: SlideData[] = [
       <SectionTitleSlide
         title="О Proxima"
         subtitle="Кто мы и почему можем быть полезны BRAUS"
-        imageIndex={1}
+        imageIndex={3}
         imageAlt="Proxima"
       />
     ),
@@ -90,64 +88,41 @@ export const brausSlides: SlideData[] = [
     ),
   },
   {
-    id: 'about-braus',
-    header: 'О BRAUS — что мы знаем',
+    id: 'about-braus-title',
+    header: undefined,
     content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={3} style={{ marginTop: 0 }}>
-            Исходная информация о BRAUS
-          </Title>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} md={12}>
-              <List
-                header={<Text strong>Ключевые факты</Text>}
-                dataSource={[
-                  'Сегмент: Обувная косметика, стельки и аксессуары',
-                  'Текущий статус: Работающий сайт zakaz-braus.ru',
-                  'Бизнес‑модель: E‑commerce, прямая продажа потребителям',
-                ]}
-                renderItem={item => (
-                  <List.Item style={{ padding: '4px 0' }}>
-                    <CheckCircleOutlined
-                      style={{ color: '#52c41a', marginRight: 8 }}
-                    />
-                    <Text>{item}</Text>
-                  </List.Item>
-                )}
-              />
-            </Col>
-            <Col xs={24} md={12}>
-              <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
-                <Text strong>Основная проблема</Text>
-                <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
-                  Есть функционирующий сайт, но BRAUS хочет обновления и «новое
-                  видение» — по UX, скорости, мобильности и возможностям
-                  маркетинга.
-                </Paragraph>
-              </Card>
-            </Col>
-          </Row>
-        </Card>
-      </Space>
+      <SectionTitleSlide title="О BRAUS" imageIndex={0} imageAlt="BRAUS" />
     ),
   },
   {
-    id: 'current-site-analysis',
-    header: 'Анализ текущего сайта BRAUS',
+    id: 'about-braus',
+    header: 'О BRAUS',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card style={{ backgroundColor: '#e6f7ff' }}>
+          <Paragraph style={{ fontSize: 16, lineHeight: 1.7, marginBottom: 0 }}>
+            Перед подготовкой предложения мы изучили ваш бизнес и текущий сайт{' '}
+            <Link
+              href="https://zakaz-braus.ru"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Text strong>zakaz-braus.ru</Text>
+            </Link>
+            . Мы понимаем вашу специфику и видим возможности для развития.
+          </Paragraph>
+        </Card>
         <Row gutter={[16, 16]}>
           <Col xs={24} md={12}>
-            <Card style={{ backgroundColor: '#f6ffed' }}>
+            <Card>
               <Title level={4} style={{ marginTop: 0 }}>
-                Сильные стороны
+                Ваш бизнес
               </Title>
               <List
                 dataSource={[
-                  'Функционирующая платформа',
-                  'Установленная клиентская база',
-                  'Каталог товаров и система распродаж',
+                  'Сегмент: Обувная косметика, стельки и аксессуары',
+                  'Работающий сайт с установленной клиентской базой',
+                  'E‑commerce модель: прямая продажа потребителям',
                 ]}
                 renderItem={item => (
                   <List.Item style={{ padding: '4px 0' }}>
@@ -160,6 +135,20 @@ export const brausSlides: SlideData[] = [
               />
             </Card>
           </Col>
+          <Col xs={24} md={12}>
+            <Card style={{ backgroundColor: '#f6ffed' }}>
+              <Title level={4} style={{ marginTop: 0 }}>
+                Ваша цель
+              </Title>
+              <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
+                Вы хотите обновить сайт и получить «новое видение» — улучшить
+                пользовательский опыт, скорость работы, мобильную версию и
+                возможности для маркетинга.
+              </Paragraph>
+            </Card>
+          </Col>
+        </Row>
+        <Row gutter={[16, 16]}>
           <Col xs={24} md={12}>
             <Card style={{ backgroundColor: '#fff7e6' }}>
               <Title level={4} style={{ marginTop: 0 }}>
@@ -189,424 +178,225 @@ export const brausSlides: SlideData[] = [
     ),
   },
   {
-    id: 'variant-1-intro',
-    header: 'Вариант 1: Clean Code Solution',
+    id: 'solutions-title',
+    header: undefined,
     content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={3} style={{ marginTop: 0 }}>
-            Вариант 1: Clean Code Solution
-          </Title>
-          <Paragraph style={{ fontSize: 16 }}>
-            Полная переразработка сайта с нуля на современном стеке с упором на
-            чистую архитектуру, производительность и масштабируемость.
-          </Paragraph>
-          <List
-            dataSource={[
-              'Полная переразработка с нуля на современном стеке',
-              'Чистая архитектура и лучшие практики разработки',
-              'Максимальная производительность и масштабируемость',
-              'Полная гибкость в функциональности и интеграциях',
-            ]}
-            renderItem={item => (
-              <List.Item style={{ padding: '4px 0' }}>
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-      </Space>
+      <SectionTitleSlide
+        title="Варианты решений"
+        subtitle="Три подхода к обновлению сайта BRAUS с разным уровнем гибкости, сроками и инвестициями"
+        imageIndex={4}
+        imageAlt="Варианты решений"
+      />
     ),
   },
   {
-    id: 'variant-1-tech-result',
-    header: 'Вариант 1: Технологии и результат',
+    id: 'all-variants',
+    header: 'Три варианта решений',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Row gutter={[16, 16]}>
-          <Col xs={24} md={12}>
-            <Card>
-              <Title level={4} style={{ marginTop: 0 }}>
-                Технологический стек
-              </Title>
-              <Paragraph style={{ marginBottom: 4 }}>
-                <Text strong>Frontend:</Text> React + TypeScript + Next.js
+          {/* Вариант 1 */}
+          <Col xs={24} md={8}>
+            <Card
+              style={{
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              <Space style={{ marginBottom: 8 }}>
+                <Title level={4} style={{ marginTop: 0, marginBottom: 0 }}>
+                  Вариант 1: С нуля
+                </Title>
+                <Tag color="green" style={{ fontSize: 12 }}>
+                  Рекомендуем
+                </Tag>
+              </Space>
+              <Paragraph style={{ fontSize: 14, marginBottom: 12 }}>
+                Полная переразработка с нуля на современном стеке
               </Paragraph>
-              <Paragraph style={{ marginBottom: 4 }}>
-                <Text strong>Backend:</Text> Node.js + NestJS
-              </Paragraph>
-              <Paragraph style={{ marginBottom: 4 }}>
-                <Text strong>Database:</Text> PostgreSQL
-              </Paragraph>
-              <Paragraph style={{ marginBottom: 0 }}>
-                <Text strong>Hosting:</Text> Google Cloud / AWS
-              </Paragraph>
-            </Card>
-          </Col>
-          <Col xs={24} md={12}>
-            <Card style={{ backgroundColor: '#f6ffed' }}>
-              <Title level={4} style={{ marginTop: 0 }}>
-                Что получает BRAUS
+              <Divider style={{ margin: '8px 0' }} />
+              <Title level={5} style={{ marginTop: 0, fontSize: 13 }}>
+                Технологии
               </Title>
               <List
+                size="small"
                 dataSource={[
-                  'Скорость загрузки &lt; 1.5 секунды',
-                  'Идеальный мобильный UX',
-                  'Готовность к масштабированию и высоким нагрузкам',
-                  '100% кастомизация под бизнес BRAUS',
-                  'Интеграции с CRM, аналитикой и маркетинг‑инструментами',
+                  'Фронтенд: React, Next.js',
+                  'Бэкенд: Node.js, NestJS',
+                  'База данных: PostgreSQL',
+                  'Облачные сервисы',
                 ]}
                 renderItem={item => (
-                  <List.Item style={{ padding: '4px 0' }}>
+                  <List.Item style={{ padding: '2px 0' }}>
+                    <Text style={{ fontSize: 12 }}>• {item}</Text>
+                  </List.Item>
+                )}
+              />
+              <Divider style={{ margin: '8px 0' }} />
+              <Title level={5} style={{ marginTop: 0, fontSize: 13 }}>
+                Результат
+              </Title>
+              <List
+                size="small"
+                dataSource={[
+                  'Скорость < 1.5 сек',
+                  'Идеальный мобильный интерфейс',
+                  '100% настройка под задачи',
+                ]}
+                renderItem={item => (
+                  <List.Item style={{ padding: '2px 0' }}>
                     <RocketOutlined
-                      style={{ color: '#52c41a', marginRight: 8 }}
+                      style={{ color: '#52c41a', marginRight: 4, fontSize: 12 }}
                     />
-                    <Text>{item}</Text>
-                  </List.Item>
-                )}
-              />
-            </Card>
-          </Col>
-        </Row>
-      </Space>
-    ),
-  },
-  {
-    id: 'variant-1-timeline-cost',
-    header: 'Вариант 1: Сроки и инвестиции',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Row gutter={[16, 16]}>
-          <Col xs={24} md={12}>
-            <Card>
-              <Title level={4} style={{ marginTop: 0 }}>
-                Таймлайн
-              </Title>
-              <List
-                dataSource={[
-                  'Проектирование & UX/UI: 3–4 недели',
-                  'Разработка: 8–10 недель',
-                  'Тестирование & Launch: 2 недели',
-                ]}
-                renderItem={item => (
-                  <List.Item style={{ padding: '4px 0' }}>
-                    <Text>{item}</Text>
+                    <Text style={{ fontSize: 12 }}>{item}</Text>
                   </List.Item>
                 )}
               />
               <Divider style={{ margin: '8px 0' }} />
-              <Text strong>Итого: 13–16 недель</Text>
+              <Space direction="vertical" size={4} style={{ width: '100%' }}>
+                <Text style={{ fontSize: 12 }}>
+                  <Text strong>Срок:</Text> 3–4 недели
+                </Text>
+                <Text style={{ fontSize: 12 }}>
+                  <Text strong>Стоимость:</Text> от 150 000 ₽
+                </Text>
+                <Text style={{ fontSize: 11, color: '#8c8c8c' }}>
+                  после согласования требований
+                </Text>
+              </Space>
             </Card>
           </Col>
-          <Col xs={24} md={12}>
-            <Card style={{ backgroundColor: '#fff7e6' }}>
+          {/* Вариант 2 */}
+          <Col xs={24} md={8}>
+            <Card
+              style={{
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
               <Title level={4} style={{ marginTop: 0 }}>
-                Инвестиции
+                Вариант 2: Шаблон
               </Title>
-              <List
-                dataSource={[
-                  'Разработка: 800 000 – 1 200 000 ₽',
-                  'Дизайн: 150 000 – 250 000 ₽',
-                  'Deployment & поддержка (3 месяца): 100 000 ₽',
-                ]}
-                renderItem={item => (
-                  <List.Item style={{ padding: '4px 0' }}>
-                    <DollarOutlined
-                      style={{ color: '#faad14', marginRight: 8 }}
-                    />
-                    <Text>{item}</Text>
-                  </List.Item>
-                )}
-              />
+              <Paragraph style={{ fontSize: 14, marginBottom: 12 }}>
+                Шаблонное решение на готовой платформе
+              </Paragraph>
               <Divider style={{ margin: '8px 0' }} />
-              <Text strong>Итого: ~1 100 000 – 1 550 000 ₽</Text>
-            </Card>
-          </Col>
-        </Row>
-      </Space>
-    ),
-  },
-  {
-    id: 'variant-2-intro',
-    header: 'Вариант 2: Template‑Based Solution',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={3} style={{ marginTop: 0 }}>
-            Вариант 2: Template‑Based Solution
-          </Title>
-          <Paragraph style={{ fontSize: 16 }}>
-            Шаблонное решение на основе готовой платформы (например,
-            1C‑Битрикс), с быстрым запуском и оптимальным соотношением
-            цена/качество.
-          </Paragraph>
-          <List
-            dataSource={[
-              'Использование готового шаблона (1С‑Битрикс, Opencart или аналог)',
-              'Проверенная временем функциональность',
-              'Быстрое внедрение и понятный стек поддержки',
-              'Хороший баланс между ценой и качеством',
-            ]}
-            renderItem={item => (
-              <List.Item style={{ padding: '4px 0' }}>
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'variant-2-tech-result',
-    header: 'Вариант 2: Платформа и результат',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Row gutter={[16, 16]}>
-          <Col xs={24} md={12}>
-            <Card>
-              <Title level={4} style={{ marginTop: 0 }}>
+              <Title level={5} style={{ marginTop: 0, fontSize: 13 }}>
                 Платформа
               </Title>
-              <Paragraph style={{ marginBottom: 4 }}>
-                <Text strong>Платформа:</Text> 1С‑Битрикс (рекомендуем) или
-                Opencart
-              </Paragraph>
-              <Paragraph style={{ marginBottom: 4 }}>
-                <Text strong>Дизайн:</Text> Кастомизация готового шаблона
-              </Paragraph>
-              <Paragraph style={{ marginBottom: 0 }}>
-                <Text strong>Интеграции:</Text> Подключаемые модули и плагины
-              </Paragraph>
-            </Card>
-          </Col>
-          <Col xs={24} md={12}>
-            <Card style={{ backgroundColor: '#f6ffed' }}>
-              <Title level={4} style={{ marginTop: 0 }}>
-                Что получает BRAUS
-              </Title>
               <List
+                size="small"
                 dataSource={[
-                  'Скорость загрузки ~2–2.5 секунды',
-                  'Хорошая мобильная адаптация',
-                  'Лёгкое расширение функциональности за счёт модулей',
-                  'Экономия в 3–4 раза относительно полностью кастомной разработки',
-                  'Поддержка платформы + возможность поддержки с нашей стороны',
+                  '1С‑Битрикс',
+                  'Готовый шаблон',
+                  'Модули и плагины',
                 ]}
                 renderItem={item => (
-                  <List.Item style={{ padding: '4px 0' }}>
+                  <List.Item style={{ padding: '2px 0' }}>
+                    <Text style={{ fontSize: 12 }}>• {item}</Text>
+                  </List.Item>
+                )}
+              />
+              <Divider style={{ margin: '8px 0' }} />
+              <Title level={5} style={{ marginTop: 0, fontSize: 13 }}>
+                Результат
+              </Title>
+              <List
+                size="small"
+                dataSource={[
+                  'Скорость ~2–2.5 сек',
+                  'Хорошая мобильная версия',
+                  'Экономия в 3–4 раза',
+                ]}
+                renderItem={item => (
+                  <List.Item style={{ padding: '2px 0' }}>
                     <RocketOutlined
-                      style={{ color: '#52c41a', marginRight: 8 }}
+                      style={{ color: '#52c41a', marginRight: 4, fontSize: 12 }}
                     />
-                    <Text>{item}</Text>
-                  </List.Item>
-                )}
-              />
-            </Card>
-          </Col>
-        </Row>
-      </Space>
-    ),
-  },
-  {
-    id: 'variant-2-timeline-cost',
-    header: 'Вариант 2: Сроки и инвестиции',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Row gutter={[16, 16]}>
-          <Col xs={24} md={12}>
-            <Card>
-              <Title level={4} style={{ marginTop: 0 }}>
-                Таймлайн
-              </Title>
-              <List
-                dataSource={[
-                  'Выбор платформы и базовая настройка: 1–2 недели',
-                  'Дизайн и адаптация шаблона: 2–3 недели',
-                  'Наполнение контентом: 1–2 недели',
-                ]}
-                renderItem={item => (
-                  <List.Item style={{ padding: '4px 0' }}>
-                    <Text>{item}</Text>
+                    <Text style={{ fontSize: 12 }}>{item}</Text>
                   </List.Item>
                 )}
               />
               <Divider style={{ margin: '8px 0' }} />
-              <Text strong>Итого: 4–7 недель</Text>
+              <Space direction="vertical" size={4} style={{ width: '100%' }}>
+                <Text style={{ fontSize: 12 }}>
+                  <Text strong>Срок:</Text> 2–3 недели
+                </Text>
+                <Text style={{ fontSize: 12 }}>
+                  <Text strong>Стоимость:</Text> от 200 000 ₽
+                </Text>
+                <Text style={{ fontSize: 11, color: '#8c8c8c' }}>
+                  без учета лицензий, после согласования требований
+                </Text>
+              </Space>
             </Card>
           </Col>
-          <Col xs={24} md={12}>
-            <Card style={{ backgroundColor: '#fff7e6' }}>
+          {/* Вариант 3 */}
+          <Col xs={24} md={8}>
+            <Card
+              style={{
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
               <Title level={4} style={{ marginTop: 0 }}>
-                Инвестиции
+                Вариант 3: Уникальный шаблон
+              </Title>
+              <Paragraph style={{ fontSize: 14, marginBottom: 12 }}>
+                Гибрид: платформа + уникальный шаблон
+              </Paragraph>
+              <Divider style={{ margin: '8px 0' }} />
+              <Title level={5} style={{ marginTop: 0, fontSize: 13 }}>
+                Технологии
               </Title>
               <List
+                size="small"
                 dataSource={[
-                  'Лицензия шаблона: 60 000 – 150 000 ₽',
-                  'Настройка и адаптация: 50 000 – 100 000 ₽',
-                  'Миграция данных: 30 000 – 50 000 ₽',
-                  'Наполнение контентом: 50 000 – 80 000 ₽',
+                  '1С‑Битрикс + дополнительная разработка',
+                  'Уникальный шаблон',
+                  'Индивидуальная архитектура',
                 ]}
                 renderItem={item => (
-                  <List.Item style={{ padding: '4px 0' }}>
-                    <DollarOutlined
-                      style={{ color: '#faad14', marginRight: 8 }}
-                    />
-                    <Text>{item}</Text>
+                  <List.Item style={{ padding: '2px 0' }}>
+                    <Text style={{ fontSize: 12 }}>• {item}</Text>
                   </List.Item>
                 )}
               />
               <Divider style={{ margin: '8px 0' }} />
-              <Text strong>Итого: ~200 000 – 380 000 ₽</Text>
-            </Card>
-          </Col>
-        </Row>
-      </Space>
-    ),
-  },
-  {
-    id: 'variant-3-intro',
-    header: 'Вариант 3: Custom Template Solution',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={3} style={{ marginTop: 0 }}>
-            Вариант 3: Custom Template Solution
-          </Title>
-          <Paragraph style={{ fontSize: 16 }}>
-            Гибридный подход: используем надёжную платформу, но создаём
-            уникальный шаблон и архитектуру под задачи BRAUS.
-          </Paragraph>
-          <List
-            dataSource={[
-              'Гибрид: опора на платформу, но с собственным шаблоном',
-              'Уникальный дизайн с сохранением проверенной функциональности',
-              'Средний баланс между сложностью и инвестициями',
-              'Возможность дальнейшей переразработки и масштабирования',
-            ]}
-            renderItem={item => (
-              <List.Item style={{ padding: '4px 0' }}>
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'variant-3-tech-result',
-    header: 'Вариант 3: Технологии и результат',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Row gutter={[16, 16]}>
-          <Col xs={24} md={12}>
-            <Card>
-              <Title level={4} style={{ marginTop: 0 }}>
-                Технологический подход
+              <Title level={5} style={{ marginTop: 0, fontSize: 13 }}>
+                Результат
               </Title>
               <List
+                size="small"
                 dataSource={[
-                  'Основа: 1С‑Битрикс + кастомные модули',
-                  'Альтернатива: React‑based e‑commerce (по типу Shopify)',
-                  'Дизайн: собственный уникальный шаблон',
-                  'Интеграции: кастомная архитектура под задачи BRAUS',
+                  'Скорость ~1.5–2 сек',
+                  'Высококачественный мобильный интерфейс',
+                  'Уникальный дизайн',
                 ]}
                 renderItem={item => (
-                  <List.Item style={{ padding: '4px 0' }}>
-                    <Text>• {item}</Text>
-                  </List.Item>
-                )}
-              />
-            </Card>
-          </Col>
-          <Col xs={24} md={12}>
-            <Card style={{ backgroundColor: '#f6ffed' }}>
-              <Title level={4} style={{ marginTop: 0 }}>
-                Что получает BRAUS
-              </Title>
-              <List
-                dataSource={[
-                  'Скорость загрузки ~1.5–2 секунды',
-                  'Premium Mobile UX',
-                  'Уникальный дизайн и визуальное отличие от конкурентов',
-                  'Хорошая масштабируемость на базе надёжной платформы',
-                  'Сочетание надёжности платформы и гибкости кастомной разработки',
-                ]}
-                renderItem={item => (
-                  <List.Item style={{ padding: '4px 0' }}>
+                  <List.Item style={{ padding: '2px 0' }}>
                     <RocketOutlined
-                      style={{ color: '#52c41a', marginRight: 8 }}
+                      style={{ color: '#52c41a', marginRight: 4, fontSize: 12 }}
                     />
-                    <Text>{item}</Text>
-                  </List.Item>
-                )}
-              />
-            </Card>
-          </Col>
-        </Row>
-      </Space>
-    ),
-  },
-  {
-    id: 'variant-3-timeline-cost',
-    header: 'Вариант 3: Сроки и инвестиции',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Row gutter={[16, 16]}>
-          <Col xs={24} md={12}>
-            <Card>
-              <Title level={4} style={{ marginTop: 0 }}>
-                Таймлайн
-              </Title>
-              <List
-                dataSource={[
-                  'UX/UI дизайн: 2–3 недели',
-                  'Разработка кастомного модуля / шаблона: 4–6 недель',
-                  'Интеграция и адаптация: 2–3 недели',
-                ]}
-                renderItem={item => (
-                  <List.Item style={{ padding: '4px 0' }}>
-                    <Text>{item}</Text>
+                    <Text style={{ fontSize: 12 }}>{item}</Text>
                   </List.Item>
                 )}
               />
               <Divider style={{ margin: '8px 0' }} />
-              <Text strong>Итого: 8–12 недель</Text>
-            </Card>
-          </Col>
-          <Col xs={24} md={12}>
-            <Card style={{ backgroundColor: '#fff7e6' }}>
-              <Title level={4} style={{ marginTop: 0 }}>
-                Инвестиции
-              </Title>
-              <List
-                dataSource={[
-                  'Дизайн & UX/UI: 100 000 – 200 000 ₽',
-                  'Кастомная разработка: 300 000 – 500 000 ₽',
-                  'Интеграции и оптимизация: 80 000 – 150 000 ₽',
-                  'Наполнение контентом: 50 000 – 80 000 ₽',
-                ]}
-                renderItem={item => (
-                  <List.Item style={{ padding: '4px 0' }}>
-                    <DollarOutlined
-                      style={{ color: '#faad14', marginRight: 8 }}
-                    />
-                    <Text>{item}</Text>
-                  </List.Item>
-                )}
-              />
-              <Divider style={{ margin: '8px 0' }} />
-              <Text strong>Итого: ~530 000 – 930 000 ₽</Text>
+              <Space direction="vertical" size={4} style={{ width: '100%' }}>
+                <Text style={{ fontSize: 12 }}>
+                  <Text strong>Срок:</Text> 4–5 недель
+                </Text>
+                <Text style={{ fontSize: 12 }}>
+                  <Text strong>Стоимость:</Text> от 350 000 ₽
+                </Text>
+                <Text style={{ fontSize: 11, color: '#8c8c8c' }}>
+                  без учета лицензий, после согласования требований
+                </Text>
+              </Space>
             </Card>
           </Col>
         </Row>
@@ -629,16 +419,16 @@ export const brausSlides: SlideData[] = [
               {
                 key: '1',
                 parameter: 'Срок',
-                v1: '13–16 недель',
-                v2: '4–7 недель',
-                v3: '8–12 недель',
+                v1: '3–4 недели',
+                v2: '2–3 недели',
+                v3: '4–5 недель',
               },
               {
                 key: '2',
                 parameter: 'Стоимость',
-                v1: '1.1–1.5M ₽',
-                v2: '200–380K ₽',
-                v3: '530–930K ₽',
+                v1: 'от 150K ₽',
+                v2: 'от 200K ₽ (без лицензий)',
+                v3: 'от 350K ₽ (без лицензий)',
               },
               {
                 key: '3',
@@ -675,13 +465,6 @@ export const brausSlides: SlideData[] = [
                 v2: 'Минимальный',
                 v3: 'Низкий',
               },
-              {
-                key: '8',
-                parameter: 'ROI',
-                v1: 'Долгосрочный',
-                v2: 'Быстрый',
-                v3: 'Средний',
-              },
             ]}
             columns={[
               {
@@ -691,7 +474,7 @@ export const brausSlides: SlideData[] = [
                 width: '28%',
               },
               {
-                title: 'Вариант 1 (Clean Code)',
+                title: 'Вариант 1 (С нуля)',
                 dataIndex: 'v1',
                 key: 'v1',
                 width: '24%',
@@ -779,64 +562,115 @@ export const brausSlides: SlideData[] = [
     ),
   },
   {
+    id: 'recommendation-title',
+    header: undefined,
+    content: (
+      <SectionTitleSlide
+        title="Рекомендация"
+        subtitle="Наше предложение для BRAUS"
+        imageIndex={5}
+        imageAlt="Рекомендация"
+      />
+    ),
+  },
+  {
     id: 'recommendation',
-    header: 'Рекомендация: Вариант 3 (Custom Template)',
+    header: 'Рекомендация: Вариант 1 (С нуля)',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card
-          style={{
-            background:
-              'linear-gradient(135deg, #237804 0%, #52c41a 40%, #95de64 100%)',
-            color: 'white',
-          }}
-        >
-          <Space
-            direction="vertical"
-            size="middle"
-            style={{ width: '100%', textAlign: 'center' }}
-          >
-            <Title
-              level={3}
-              style={{ marginTop: 0, marginBottom: 8, color: 'white' }}
-            >
-              Рекомендуем Вариант 3 (Custom Template Solution)
-            </Title>
-            <Tag
-              color="gold"
-              style={{
-                alignSelf: 'center',
-                fontSize: 14,
-                padding: '4px 14px',
-                fontWeight: 600,
-              }}
-            >
-              Оптимальное соотношение цена / результат
-            </Tag>
-          </Space>
-        </Card>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
-            Почему именно Вариант 3
+            Мы уже подготовили видение реализации
           </Title>
-          <List
-            dataSource={[
-              'У BRAUS уже есть работающий сайт — можно опираться на существующую базу и не «ломать всё до основания».',
-              'Нужно «новое видение», но без экстремального бюджета уровня полного переписывания.',
-              'Срок 8–12 недель комфортнее, чем 13–16 недель для полного кастома.',
-              'Стоимость 530–930K ₽ ощутимо ниже, чем 1M+ ₽ для полноценного Clean Code, при этом сохраняется уникальный дизайн.',
-              'Под капотом — надёжная платформа, которую можно развивать и масштабировать в будущем.',
-            ]}
-            renderItem={item => (
-              <List.Item style={{ padding: '6px 0' }}>
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
+          <Paragraph style={{ fontSize: 16, marginBottom: 16 }}>
+            Мы проработали концепцию нового сайта BRAUS и готовы показать вам
+            наше видение того, как может выглядеть обновленный сайт.
+          </Paragraph>
+          <Card
+            style={{
+              backgroundColor: '#e6f7ff',
+              border: '2px solid #1890ff',
+              marginBottom: 16,
+            }}
+          >
+            <Space
+              direction="vertical"
+              size="middle"
+              style={{ width: '100%', textAlign: 'center' }}
+            >
+              <Text strong style={{ fontSize: 16, display: 'block' }}>
+                Посмотрите пример реализации
+              </Text>
+              <Button
+                type="primary"
+                size="large"
+                icon={<GlobalOutlined />}
+                href="https://braus-poc.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  height: 48,
+                  fontSize: 16,
+                  fontWeight: 600,
+                  padding: '0 32px',
+                }}
+              >
+                Открыть демо-версию
+              </Button>
+              <Text type="secondary" style={{ fontSize: 12, display: 'block' }}>
+                https://braus-poc.vercel.app/
+              </Text>
+            </Space>
+          </Card>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} md={12}>
+              <img
+                src={exampleImage}
+                alt="Пример реализации сайта BRAUS"
+                style={{
+                  width: '100%',
+                  borderRadius: 8,
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                }}
+              />
+            </Col>
+            <Col xs={24} md={12}>
+              <Title level={4} style={{ marginTop: 0 }}>
+                Почему именно Вариант 1
+              </Title>
+              <List
+                dataSource={[
+                  'Современный стек технологий обеспечивает высокую производительность и скорость загрузки.',
+                  'Срок 3–4 недели позволяет быстро получить результат без долгого ожидания.',
+                  'Стоимость от 150K ₽ после согласования требований — оптимальное соотношение цена/качество.',
+                  'Полная кастомизация под задачи BRAUS с возможностью дальнейшего развития.',
+                  'Мы уже показали наше видение — можно сразу приступать к реализации.',
+                ]}
+                renderItem={item => (
+                  <List.Item style={{ padding: '6px 0' }}>
+                    <CheckCircleOutlined
+                      style={{ color: '#52c41a', marginRight: 8 }}
+                    />
+                    <Text>{item}</Text>
+                  </List.Item>
+                )}
+              />
+            </Col>
+          </Row>
         </Card>
       </Space>
+    ),
+  },
+  {
+    id: 'next-steps-title',
+    header: undefined,
+    content: (
+      <SectionTitleSlide
+        title="Следующие шаги"
+        subtitle="Как мы двигаемся дальше"
+        imageIndex={6}
+        imageAlt="Следующие шаги"
+      />
     ),
   },
   {
@@ -846,14 +680,15 @@ export const brausSlides: SlideData[] = [
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card>
           <Title level={3} style={{ marginTop: 0 }}>
-            Как мы можем двигаться дальше
+            Как мы двигаемся дальше
           </Title>
           <List
             dataSource={[
-              'Детальный аудит текущего сайта (1–2 недели)',
-              'Подготовка UX/UI‑концепции нового дизайна (1–2 недели) с презентацией',
-              'Согласование объёма работ и окончательного таймлайна',
-              'Старт разработки выбранного варианта',
+              'Согласуем подход к реализации и выбранный вариант решения',
+              'Выясняем все требования и анализируем текущую инфраструктуру (что уже есть и что нужно учесть)',
+              'Подготавливаем точное коммерческое предложение с финальными сроками и стоимостью',
+              'Заключаем договор и согласовываем детали сотрудничества',
+              'Приступаем к разработке и реализации проекта',
             ]}
             renderItem={(item, index) => (
               <List.Item style={{ padding: '6px 0' }}>
@@ -872,89 +707,26 @@ export const brausSlides: SlideData[] = [
     id: 'contacts',
     header: 'Контакты Proxima',
     content: (
-      <Space
-        orientation="vertical"
-        size="large"
-        style={{
-          width: '100%',
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-          height: '100%',
-          padding: '8px 0',
-        }}
-      >
-        <Card style={{ maxWidth: 800, width: '100%' }}>
-          <Space orientation="vertical" size="small" style={{ width: '100%' }}>
-            <Title
-              level={3}
-              style={{ textAlign: 'center', marginTop: 0, marginBottom: 8 }}
-            >
-              Свяжитесь с нами, чтобы обсудить проект BRAUS
-            </Title>
-            <Divider style={{ margin: '8px 0' }} />
-            <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
-              <Space
-                orientation="vertical"
-                size="small"
-                style={{ width: '100%' }}
-              >
-                <Title level={5} style={{ marginTop: 0, marginBottom: 4 }}>
-                  <UserOutlined style={{ marginRight: 8 }} />
-                  Proxima
-                </Title>
-                <Text type="secondary" style={{ fontSize: 13 }}>
-                  Команда по разработке e‑commerce решений
-                </Text>
-                <Divider style={{ margin: '8px 0' }} />
-                <Space
-                  direction="vertical"
-                  size="small"
-                  style={{ width: '100%' }}
-                >
-                  <Space size="small">
-                    <MailOutlined
-                      style={{
-                        fontSize: 16,
-                        color: 'var(--app-color-primary)',
-                      }}
-                    />
-                    <Link
-                      href="mailto:hello@proxima.ru"
-                      style={{ fontSize: 15 }}
-                    >
-                      hello@proxima.ru
-                    </Link>
-                  </Space>
-                  <Space size="small">
-                    <PhoneOutlined
-                      style={{
-                        fontSize: 16,
-                        color: 'var(--app-color-primary)',
-                      }}
-                    />
-                    <Text style={{ fontSize: 15 }}>+7 (XXX) XXX‑XX‑XX</Text>
-                  </Space>
-                  <Space size="small">
-                    <GlobalOutlined
-                      style={{
-                        fontSize: 16,
-                        color: 'var(--app-color-primary)',
-                      }}
-                    />
-                    <Link
-                      href="https://proxima.ru"
-                      target="_blank"
-                      style={{ fontSize: 15 }}
-                    >
-                      proxima.ru
-                    </Link>
-                  </Space>
-                </Space>
-              </Space>
-            </Card>
-          </Space>
-        </Card>
-      </Space>
+      <ContactsSlide
+        contacts={[
+          {
+            name: 'Новиков Павел',
+            role: 'Технический директор',
+            phone: '+7 908 555 0606',
+            email: 'p.novikov@proxima.ooo',
+            websiteLabel: 'proxima24.ru',
+            variant: 'green',
+          },
+          {
+            name: 'Ситяков Артём',
+            role: 'Руководитель отдела маркетинга',
+            phone: '+7 927 110 84 88',
+            email: 'a.sityakov@proxima.ooo',
+            websiteLabel: 'proxima24.ru',
+            variant: 'blue',
+          },
+        ]}
+      />
     ),
   },
 ];
