@@ -99,6 +99,10 @@ import {
 import { atisCreatedAt, atisTitle } from '~features/a-tis/slides/atis.meta';
 import { senixCreatedAt, senixTitle } from '~features/senix/slides/senix.meta';
 import {
+  senixWebsiteCreatedAt,
+  senixWebsiteTitle,
+} from '~features/senix/slides/senix-website.meta';
+import {
   rosomakhatulCreatedAt,
   rosomakhatulTitle,
 } from '~features/rosomaha/slides/rosomakhatul.meta';
@@ -317,6 +321,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'senix',
     title: senixTitle,
     createdAt: senixCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'senix-website',
+    title: senixWebsiteTitle,
+    createdAt: senixWebsiteCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
