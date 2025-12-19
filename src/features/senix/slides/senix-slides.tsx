@@ -37,9 +37,9 @@ import {
   AlertOutlined,
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
-import { formatDateForSlide } from '~shared/lib/date.utils';
 import { senixCreatedAt } from './senix.meta';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
+import { MainTitleSlide } from '~shared/ui/main-title-slide';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
@@ -52,59 +52,13 @@ export const senixSlides: SlideData[] = [
     id: 'title',
     header: undefined,
     content: (
-      <Space
-        orientation="vertical"
-        size="large"
-        style={{
-          width: '100%',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100%',
-        }}
-      >
-        <Space
-          orientation="vertical"
-          size="large"
-          style={{ textAlign: 'center', maxWidth: '900px' }}
-        >
-          <Title
-            level={1}
-            style={{
-              fontSize: '48px',
-              fontWeight: 700,
-              background: `linear-gradient(135deg, var(--app-gradient-start) 0%, var(--app-gradient-end) 100%)`,
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              marginBottom: 'var(--app-spacing-md)',
-            }}
-          >
-            SENIX
-          </Title>
-          <Title level={2} style={{ marginTop: 'var(--app-spacing-lg)' }}>
-            Анализ компании (ООО "Ят-Рус")
-          </Title>
-          <Paragraph
-            style={{
-              fontSize: 'var(--app-font-size-lg)',
-              marginBottom: 0,
-              color: '#595959',
-            }}
-          >
-            Портрет компании и возможности IT сотрудничества
-          </Paragraph>
-        </Space>
-        <Text
-          type="secondary"
-          style={{
-            fontSize: '11px',
-            opacity: 0.6,
-            marginTop: 'auto',
-          }}
-        >
-          {formatDateForSlide(senixCreatedAt)} • Москва
-        </Text>
-      </Space>
+      <MainTitleSlide
+        title="SENIX"
+        subtitle='Анализ компании (ООО "Ят-Рус")'
+        description="Портрет компании и возможности IT сотрудничества"
+        createdAt={senixCreatedAt}
+        location="Москва"
+      />
     ),
   },
   {

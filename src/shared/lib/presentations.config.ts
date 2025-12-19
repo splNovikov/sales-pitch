@@ -102,6 +102,7 @@ import {
   rosomakhatulCreatedAt,
   rosomakhatulTitle,
 } from '~features/rosomaha/slides/rosomakhatul.meta';
+import { brausCreatedAt, brausTitle } from '~features/braus/slides/braus.meta';
 
 /**
  * Presentation metadata
@@ -323,6 +324,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'rosomakhatul',
     title: rosomakhatulTitle,
     createdAt: rosomakhatulCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'braus',
+    title: brausTitle,
+    createdAt: brausCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },

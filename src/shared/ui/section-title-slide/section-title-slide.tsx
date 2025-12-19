@@ -76,7 +76,7 @@ export function SectionTitleSlide({
 }: SectionTitleSlideProps) {
   // Determine which image to use
   let finalImageSrc: string | undefined = imageSrc;
-  
+
   if (imageIndex !== undefined) {
     // Use image from pool (custom or default) if imageIndex is provided
     const pool = imagePool || DEFAULT_SECTION_IMAGES;
