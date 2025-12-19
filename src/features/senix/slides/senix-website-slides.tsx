@@ -547,17 +547,37 @@ export const senixWebsiteSlides: SlideData[] = [
                 style={{ width: '100%', textAlign: 'center' }}
               >
                 <Title level={2} style={{ marginTop: 0, marginBottom: 0 }}>
-                  Посмотрите пример сайта, который мы создали
+                  Объединили лучшее из ваших сайтов
                 </Title>
                 <Paragraph
                   style={{
-                    fontSize: 'var(--app-font-size-lg)',
+                    fontSize: 'var(--app-font-size-base)',
+                    marginBottom: '16px',
+                  }}
+                >
+                  Мы проанализировали все ваши веб-ресурсы, выявили сильные
+                  стороны каждого и объединили их в единое решение.
+                </Paragraph>
+                <Paragraph
+                  style={{
+                    fontSize: 'var(--app-font-size-base)',
+                    marginBottom: '16px',
+                  }}
+                >
+                  Разработка выполнена на чистом коде, без использования
+                  шаблонов и конструкторов — именно так мы создаём
+                  профессиональные решения.
+                </Paragraph>
+                <Paragraph
+                  style={{
+                    fontSize: 'var(--app-font-size-base)',
                     marginBottom: 0,
                   }}
                 >
-                  Это реальный проект для B2B компании, демонстрирующий наш
-                  подход к разработке: профессионально, быстро и с фокусом на
-                  результат.
+                  <Text strong>Важно:</Text> Мы реализовали только стартовую
+                  страницу в качестве демонстрации. Полная разработка сайта
+                  будет выполнена только после вашего согласования концепции и
+                  утверждения технического задания.
                 </Paragraph>
                 <Divider style={{ margin: '24px 0' }} />
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
