@@ -8,7 +8,6 @@ import {
   Tag,
   Divider,
   Alert,
-  Segmented,
 } from 'antd';
 import {
   ShopOutlined,
@@ -20,7 +19,6 @@ import {
   EyeInvisibleOutlined,
   ShareAltOutlined,
   LockOutlined,
-  ApiOutlined,
   SettingOutlined,
   AppstoreOutlined,
   TeamOutlined,
@@ -31,11 +29,34 @@ import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
 import { ContactsSlide } from '~shared/ui/contacts-slide';
+import { Roadmap, type RoadmapItem } from '~shared/ui/roadmap';
 import { eksimaPricingToolCreatedAt } from './eksima-pricing-tool.meta';
 import { PricingModeToggle } from './pricing-mode-toggle';
+import { PricingSegmentedToggle } from './pricing-segmented-toggle';
 import eksimaLogo from './img.png';
 
 const { Title, Paragraph, Text } = Typography;
+
+const loginRoadmapItems: RoadmapItem[] = [
+  {
+    title: 'EKSIMA формирует персональные цены',
+    description:
+      'Настройка оптовых цен для конкретного юр. лица с учётом условий партнёрства',
+    duration: 'Шаг 1',
+  },
+  {
+    title: 'Юр. лицо авторизуется в системе',
+    description:
+      'Вход в личный кабинет по логину и паролю, проверка прав доступа',
+    duration: 'Шаг 2',
+  },
+  {
+    title: 'Доступ к каталогу с идентикой партнёра',
+    description:
+      'Партнёр видит свой бренд, свои оптовые цены и может управлять наценками',
+    duration: 'Шаг 3',
+  },
+];
 
 /**
  * Slides data for EKSIMA Pricing Tool presentation
@@ -160,32 +181,6 @@ export const eksimaPricingToolSlides: SlideData[] = [
     header: 'Система авторизации',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <UserOutlined style={{ marginRight: 8 }} />
-            Вход в систему
-          </Title>
-          <Card
-            size="small"
-            style={{
-              backgroundColor: '#f0f0f0',
-              fontFamily: 'monospace',
-              marginTop: 16,
-            }}
-          >
-            <Space direction="vertical" size="small">
-              <Text strong>EKSIMA</Text>
-              <Text> ↓ Формирует персональные цены для каждого юр. лица</Text>
-              <Text> ↓</Text>
-              <Text>Юр. лицо авторизуется в системе</Text>
-              <Text> ↓</Text>
-              <Text>
-                Получает доступ к каталогу с оптовыми ценами и собственной
-                идентикой
-              </Text>
-            </Space>
-          </Card>
-        </Card>
         <Card style={{ backgroundColor: '#e6f7ff' }}>
           <Title level={4} style={{ marginTop: 0 }}>
             <ShopOutlined style={{ marginRight: 8 }} />
@@ -196,6 +191,7 @@ export const eksimaPricingToolSlides: SlideData[] = [
               'Каждому партнёру установлена собственная оптовая цена (может отличаться от других)',
               'Партнёр видит эту цену только в режиме работы ("МОИ ЦЕНЫ")',
               'Партнёр платит EKSIMA по установленной цене, продаёт покупателю по своей цене',
+              'Наценка и условия могут быть автоматизированы в зависимости от объёма заказов',
             ]}
             renderItem={item => (
               <List.Item style={{ padding: '4px 0' }}>
@@ -206,6 +202,28 @@ export const eksimaPricingToolSlides: SlideData[] = [
               </List.Item>
             )}
           />
+        </Card>
+      </Space>
+    ),
+  },
+  {
+    id: 'login-process-roadmap',
+    header: 'Вход в систему как процесс',
+    content: (
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <Card>
+          <Title level={4} style={{ marginTop: 0 }}>
+            <UserOutlined style={{ marginRight: 8 }} />
+            Вход в систему — по шагам
+          </Title>
+          <Paragraph
+            style={{ fontSize: 'var(--app-font-size-md)', marginBottom: 0 }}
+          >
+            Покажем, как партнёр попадает в каталог с персональными ценами:
+          </Paragraph>
+        </Card>
+        <Card>
+          <Roadmap items={loginRoadmapItems} mode="alternate" />
         </Card>
       </Space>
     ),
@@ -367,134 +385,7 @@ export const eksimaPricingToolSlides: SlideData[] = [
             <AppstoreOutlined style={{ marginRight: 8 }} />
             Переключение сегментами
           </Title>
-          <Card
-            size="small"
-            style={{
-              backgroundColor: '#fff',
-              border: '2px solid #e8e8e8',
-              marginTop: 16,
-            }}
-          >
-            <Space
-              direction="vertical"
-              size="large"
-              style={{ width: '100%', padding: '8px' }}
-            >
-              {/* Segmented переключатель */}
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <Segmented
-                  options={['МОИ ЦЕНЫ', 'ДЕМОНСТРАЦИЯ ПОКУПАТЕЛЮ']}
-                  defaultValue="МОИ ЦЕНЫ"
-                  size="large"
-                  style={{
-                    fontSize: '16px',
-                    fontWeight: 600,
-                  }}
-                />
-              </div>
-
-              <Divider style={{ margin: '8px 0' }} />
-
-              {/* Пример: карточка товара с переключением */}
-              <Card
-                size="small"
-                style={{
-                  backgroundColor: '#fafafa',
-                  border: '1px solid #d9d9d9',
-                }}
-              >
-                <Space
-                  direction="vertical"
-                  size="middle"
-                  style={{ width: '100%' }}
-                >
-                  <Text strong style={{ fontSize: '16px' }}>
-                    Керамогранит Coliseum Brenta Grey 22,5х90
-                  </Text>
-                  <Text type="secondary" style={{ fontSize: '13px' }}>
-                    Артикул: CB-22590-BRENTA-GR
-                  </Text>
-
-                  <Divider style={{ margin: '12px 0' }} />
-
-                  {/* Контент в зависимости от выбранного сегмента */}
-                  <Row gutter={[16, 16]}>
-                    <Col xs={24} md={12}>
-                      <Card
-                        size="small"
-                        style={{
-                          backgroundColor: '#f6ffed',
-                          border: '2px solid #b7eb8f',
-                        }}
-                      >
-                        <Space
-                          direction="vertical"
-                          size="small"
-                          style={{ width: '100%' }}
-                        >
-                          <Text
-                            strong
-                            style={{ fontSize: '14px', color: '#52c41a' }}
-                          >
-                            Режим "МОИ ЦЕНЫ"
-                          </Text>
-                          <Divider style={{ margin: '8px 0' }} />
-                          <Text style={{ fontSize: '13px' }}>
-                            Себестоимость: <Text strong>580 ₽</Text>
-                          </Text>
-                          <Text style={{ fontSize: '13px' }}>
-                            Коэффициент наценки: <Text strong>[1.80 ▼]</Text>
-                          </Text>
-                          <Text style={{ fontSize: '13px' }}>
-                            Розничная цена: <Text strong>1 044 ₽</Text>
-                          </Text>
-                          <Text style={{ fontSize: '13px' }}>
-                            Маржа: <Text strong>464 ₽ (80%)</Text>
-                          </Text>
-                        </Space>
-                      </Card>
-                    </Col>
-                    <Col xs={24} md={12}>
-                      <Card
-                        size="small"
-                        style={{
-                          backgroundColor: '#e6f7ff',
-                          border: '2px solid #91d5ff',
-                        }}
-                      >
-                        <Space
-                          direction="vertical"
-                          size="small"
-                          style={{ width: '100%' }}
-                        >
-                          <Text
-                            strong
-                            style={{ fontSize: '14px', color: '#1890ff' }}
-                          >
-                            Режим "ДЕМОНСТРАЦИЯ ПОКУПАТЕЛЮ"
-                          </Text>
-                          <Divider style={{ margin: '8px 0' }} />
-                          <Text style={{ fontSize: '13px' }}>
-                            Цена: <Text strong>1 044 ₽</Text>
-                          </Text>
-                          <Text style={{ fontSize: '13px' }}>
-                            <Text strong>[Добавить в корзину]</Text>
-                          </Text>
-                        </Space>
-                      </Card>
-                    </Col>
-                  </Row>
-
-                  <Alert
-                    message="При переключении сегмента контент обновляется мгновенно"
-                    type="info"
-                    showIcon
-                    style={{ marginTop: 8 }}
-                  />
-                </Space>
-              </Card>
-            </Space>
-          </Card>
+          <PricingSegmentedToggle />
         </Card>
         <Row gutter={[16, 16]}>
           <Col xs={24} md={12}>
@@ -542,60 +433,52 @@ export const eksimaPricingToolSlides: SlideData[] = [
       </Space>
     ),
   },
+
   {
-    id: 'customer-mode-variant-3',
-    header: 'Вариант 3: Modal/Overlay',
+    id: 'user-settings-customer-mode',
+    header: 'Переключение режима в настройках пользователя',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
-            <EyeOutlined style={{ marginRight: 8 }} />
-            Модальное окно
+            <UserOutlined style={{ marginRight: 8 }} />
+            Настройки авторизованного пользователя
           </Title>
-          <Card
-            size="small"
-            style={{
-              backgroundColor: '#f0f0f0',
-              fontFamily: 'monospace',
-              marginTop: 16,
-            }}
-          >
-            <Space direction="vertical" size="small" style={{ width: '100%' }}>
-              <Text strong>ОСНОВНОЙ ЭКРАН (МОИ ЦЕНЫ)</Text>
-              <Divider style={{ margin: '4px 0' }} />
-              <Space direction="vertical" size="small">
-                <Text>Керамогранит Coliseum Brenta Grey 22,5х90</Text>
-                <Text>Себестоимость: 580 ₽</Text>
-                <Text>Коэффициент: [1.80 ▼]</Text>
-                <Text>Розничная: 1 044 ₽</Text>
-                <Text>Маржа: 464 ₽ (80%)</Text>
-                <Text>[ПРЕДПРОСМОТР ПОКУПАТЕЛЮ ⤴]</Text>
-              </Space>
-              <Divider style={{ margin: '8px 0' }} />
-              <Text strong>ДЕМОНСТРАЦИЯ ПОКУПАТЕЛЮ</Text>
-              <Card
-                size="small"
-                style={{
-                  backgroundColor: '#fff',
-                  border: '2px solid #1890ff',
-                }}
-              >
-                <Space direction="vertical" size="small">
-                  <Text>[✕]</Text>
-                  <Text>Керамогранит Coliseum</Text>
-                  <Text>Brenta Grey 22,5х90</Text>
-                  <Text>Цена: 1 044 ₽</Text>
-                  <Text>[Добавить в корзину]</Text>
-                  <Text>[📋 Копировать ссылку]</Text>
-                  <Text>[Закрыть]</Text>
-                </Space>
-              </Card>
+          <Paragraph style={{ fontSize: 'var(--app-font-size-md)' }}>
+            В личном кабинете партнёр управляет визуализацией каталога через
+            роли и права доступа:
+          </Paragraph>
+        </Card>
+        <Card style={{ backgroundColor: '#fafafa' }}>
+          <Space direction="vertical" size="small" style={{ width: '100%' }}>
+            <Text strong style={{ fontSize: '14px' }}>
+              Роли и доступ к режимам показа
+            </Text>
+            <Text type="secondary" style={{ fontSize: '12px' }}>
+              Кто может переключать тумблер и кто всегда видит только цены для
+              покупателей:
+            </Text>
+            <Space direction="vertical" size="small" style={{ marginTop: 8 }}>
+              <Text>
+                • Роль с доступом к исходным (оптовым) ценам — видит тумблер
+                «МОИ ЦЕНЫ / ДЕМОНСТРАЦИЯ ПОКУПАТЕЛЮ» и может переключать режим
+              </Text>
+              <Text>
+                • Роль «сотрудник компании без доступа к исходным ценам» — видит
+                то же представление, что и покупатель по ссылке (только
+                розничные цены)
+              </Text>
+              <Text>
+                • В шоуруме личный кабинет всегда открыт в режиме «Покупатель» —
+                тумблер недоступен, оптовые цены в принципе никогда не
+                показываются
+              </Text>
             </Space>
-          </Card>
+          </Space>
         </Card>
         <Row gutter={[16, 16]}>
           <Col xs={24} md={12}>
-            <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
+            <Card size="small" style={{ backgroundColor: '#f6ffед' }}>
               <Text strong>
                 <CheckCircleOutlined
                   style={{ color: '#52c41a', marginRight: 8 }}
@@ -604,7 +487,11 @@ export const eksimaPricingToolSlides: SlideData[] = [
               </Text>
               <List
                 size="small"
-                dataSource={['Работает на мобильных', 'Не занимает весь экран']}
+                dataSource={[
+                  'Гибкая политика показа цен для разных ролей и сценариев',
+                  'Безопасность — оптовые цены видны только тем, у кого есть права',
+                  'Единая модель визуализации для кабинета и шаринга по ссылке',
+                ]}
                 renderItem={item => (
                   <List.Item style={{ padding: '2px 0' }}>
                     <Text style={{ fontSize: '12px' }}>• {item}</Text>
@@ -617,11 +504,13 @@ export const eksimaPricingToolSlides: SlideData[] = [
             <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
               <Text strong>
                 <EyeOutlined style={{ color: '#faad14', marginRight: 8 }} />
-                Недостатки:
+                Ограничения:
               </Text>
               <List
                 size="small"
-                dataSource={['Нельзя одновременно редактировать и смотреть']}
+                dataSource={[
+                  'Нужно согласовать сценарии использования с отделом продаж',
+                ]}
                 renderItem={item => (
                   <List.Item style={{ padding: '2px 0' }}>
                     <Text style={{ fontSize: '12px' }}>• {item}</Text>
@@ -1006,117 +895,7 @@ export const eksimaPricingToolSlides: SlideData[] = [
       </Space>
     ),
   },
-  {
-    id: 'architecture-title',
-    header: undefined,
-    content: (
-      <SectionTitleSlide
-        title="Архитектура решения"
-        subtitle="Как всё работает под капотом"
-        imageIndex={6}
-        imageAlt="Архитектура"
-      />
-    ),
-  },
-  {
-    id: 'architecture',
-    header: 'Архитектура решения',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <ApiOutlined style={{ marginRight: 8 }} />
-            Как всё работает под капотом
-          </Title>
-          <Card
-            size="small"
-            style={{
-              backgroundColor: '#f0f0f0',
-              fontFamily: 'monospace',
-              marginTop: 16,
-            }}
-          >
-            <Space direction="vertical" size="small" style={{ width: '100%' }}>
-              <Text strong>
-                ┌─────────────────────────────────────────────────────────┐
-              </Text>
-              <Text>│ EKSIMA Backend │</Text>
-              <Text>│ │</Text>
-              <Text>│ ├─ Хранит базовые товары │</Text>
-              <Text>
-                │ ├─ Устанавливает оптовую цену для каждого партнера │
-              </Text>
-              <Text>│ ├─ Выдаёт токены доступа при шаринге │</Text>
-              <Text>│ └─ Валидирует токены при открытии ссылок │</Text>
-              <Text>
-                └─────────────────────────────────────────────────────────┘
-              </Text>
-              <Text> ↓</Text>
-              <Text> ┌──────────────────┴──────────────────┐</Text>
-              <Text> ↓ ↓</Text>
-              <Text>┌──────────────────────┐ ┌──────────────────────┐</Text>
-              <Text>│ Партнёр работает │ │ Покупатель открывает │</Text>
-              <Text>│ (авторизован) │ │ ссылку │</Text>
-              <Text>│ │ │ (БЕЗ авторизации) │</Text>
-              <Text>│ - Видит оптовые цены │ │ │</Text>
-              <Text>│ - Управляет наценки │ │ - Видит розничные │</Text>
-              <Text>│ - Шарит каталог │ │ цены партнера │</Text>
-              <Text>│ │ │ - Добавляет в │</Text>
-              <Text>│ │ │ корзину │</Text>
-              <Text>└──────────────────────┘ └──────────────────────┘</Text>
-            </Space>
-          </Card>
-        </Card>
-        <Card style={{ backgroundColor: '#e6f7ff' }}>
-          <Title level={5} style={{ marginTop: 0 }}>
-            Два разных способа показа одного товара
-          </Title>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} md={12}>
-              <Card size="small" style={{ backgroundColor: '#fff' }}>
-                <Text strong>Для партнера:</Text>
-                <Card
-                  size="small"
-                  style={{
-                    backgroundColor: '#f0f0f0',
-                    fontFamily: 'monospace',
-                    marginTop: 8,
-                  }}
-                >
-                  <Space direction="vertical" size="small">
-                    <Text>name: "Керамогранит..."</Text>
-                    <Text>supplierPrice: 580</Text>
-                    <Text>markupCoeff: 1.80</Text>
-                    <Text>retailPrice: 1044</Text>
-                    <Text>margin: 464</Text>
-                  </Space>
-                </Card>
-              </Card>
-            </Col>
-            <Col xs={24} md={12}>
-              <Card size="small" style={{ backgroundColor: '#fff' }}>
-                <Text strong>Для покупателя (по ссылке):</Text>
-                <Card
-                  size="small"
-                  style={{
-                    backgroundColor: '#f0f0f0',
-                    fontFamily: 'monospace',
-                    marginTop: 8,
-                  }}
-                >
-                  <Space direction="vertical" size="small">
-                    <Text>name: "Керамогранит..."</Text>
-                    <Text>retailPrice: 1044</Text>
-                    <Text>// Всё остальное скрыто!</Text>
-                  </Space>
-                </Card>
-              </Card>
-            </Col>
-          </Row>
-        </Card>
-      </Space>
-    ),
-  },
+
   {
     id: 'benefits-title',
     header: undefined,
