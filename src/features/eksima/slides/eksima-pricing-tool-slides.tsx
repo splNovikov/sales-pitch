@@ -8,6 +8,7 @@ import {
   Tag,
   Divider,
   Alert,
+  Segmented,
 } from 'antd';
 import {
   ShopOutlined,
@@ -31,6 +32,7 @@ import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
 import { ContactsSlide } from '~shared/ui/contacts-slide';
 import { eksimaPricingToolCreatedAt } from './eksima-pricing-tool.meta';
+import { PricingModeToggle } from './pricing-mode-toggle';
 import eksimaLogo from './img.png';
 
 const { Title, Paragraph, Text } = Typography;
@@ -46,7 +48,6 @@ export const eksimaPricingToolSlides: SlideData[] = [
     content: (
       <MainTitleSlide
         title="Инструмент предоставления цен"
-        subtitle="by EKSIMA"
         description="Персональная система ценообразования для розничных партнеров с возможностью управления наценками и прямого шаринга каталогов с покупателями."
         logo={eksimaLogo}
         logoAlt="EKSIMA"
@@ -313,29 +314,7 @@ export const eksimaPricingToolSlides: SlideData[] = [
             <SettingOutlined style={{ marginRight: 8 }} />
             Простое переключение
           </Title>
-          <Card
-            size="small"
-            style={{
-              backgroundColor: '#f0f0f0',
-              fontFamily: 'monospace',
-              marginTop: 16,
-            }}
-          >
-            <Space direction="vertical" size="small">
-              <Text>[● МОИ ЦЕНЫ] [○ ДЕМОНСТРАЦИЯ ПОКУПАТЕЛЮ]</Text>
-              <Divider style={{ margin: '8px 0' }} />
-              <Text strong>Режим "МОИ ЦЕНЫ":</Text>
-              <Text> • Себестоимость: 580 ₽ (цена от EKSIMA)</Text>
-              <Text> • Коэффициент наценки: [1.80 ▼]</Text>
-              <Text> • Розничная цена: 1 044 ₽</Text>
-              <Text> • Маржа: 464 ₽ (80%)</Text>
-              <Divider style={{ margin: '8px 0' }} />
-              <Text strong>Режим "ДЕМОНСТРАЦИЯ ПОКУПАТЕЛЮ":</Text>
-              <Text> • Керамогранит Coliseum Brenta Grey 22,5х90</Text>
-              <Text> • Цена: 1 044 ₽</Text>
-              <Text> • [Добавить в корзину]</Text>
-            </Space>
-          </Card>
+          <PricingModeToggle />
         </Card>
         <Row gutter={[16, 16]}>
           <Col xs={24} md={12}>
@@ -380,51 +359,140 @@ export const eksimaPricingToolSlides: SlideData[] = [
   },
   {
     id: 'customer-mode-variant-2',
-    header: 'Вариант 2: Split View',
+    header: 'Вариант 2: Segmented',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card>
           <Title level={4} style={{ marginTop: 0 }}>
             <AppstoreOutlined style={{ marginRight: 8 }} />
-            Разделённый экран
+            Переключение сегментами
           </Title>
           <Card
             size="small"
             style={{
-              backgroundColor: '#f0f0f0',
-              fontFamily: 'monospace',
+              backgroundColor: '#fff',
+              border: '2px solid #e8e8e8',
               marginTop: 16,
             }}
           >
-            <Space direction="vertical" size="small" style={{ width: '100%' }}>
-              <Row gutter={16}>
-                <Col span={12}>
-                  <Text strong>ЛЕВАЯ ПОЛОВИНА (МОИ ЦЕНЫ)</Text>
-                  <Divider style={{ margin: '4px 0' }} />
-                  <Space direction="vertical" size="small">
-                    <Text>Керамогранит Coliseum</Text>
-                    <Text>Brenta Grey 22,5х90</Text>
-                    <Text>Себестоимость: 580 ₽</Text>
-                    <Text>Коэффициент: [1.80 ▼]</Text>
-                    <Text>Розничная: 1 044 ₽</Text>
-                    <Text>Маржа: 464 ₽ (80%)</Text>
-                  </Space>
-                </Col>
-                <Col span={12}>
-                  <Text strong>ПРАВАЯ ПОЛОВИНА (ДЕМОНСТРАЦИЯ)</Text>
-                  <Divider style={{ margin: '4px 0' }} />
-                  <Space direction="vertical" size="small">
-                    <Text>Керамогранит Coliseum</Text>
-                    <Text>Brenta Grey 22,5х90</Text>
-                    <Text>Цена: 1 044 ₽</Text>
-                    <Text>[Добавить в корзину]</Text>
-                  </Space>
-                </Col>
-              </Row>
+            <Space
+              direction="vertical"
+              size="large"
+              style={{ width: '100%', padding: '8px' }}
+            >
+              {/* Segmented переключатель */}
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <Segmented
+                  options={['МОИ ЦЕНЫ', 'ДЕМОНСТРАЦИЯ ПОКУПАТЕЛЮ']}
+                  defaultValue="МОИ ЦЕНЫ"
+                  size="large"
+                  style={{
+                    fontSize: '16px',
+                    fontWeight: 600,
+                  }}
+                />
+              </div>
+
               <Divider style={{ margin: '8px 0' }} />
-              <Text type="secondary" style={{ fontSize: '11px' }}>
-                (При изменении слева справа сразу обновляется)
-              </Text>
+
+              {/* Пример: карточка товара с переключением */}
+              <Card
+                size="small"
+                style={{
+                  backgroundColor: '#fafafa',
+                  border: '1px solid #d9d9d9',
+                }}
+              >
+                <Space
+                  direction="vertical"
+                  size="middle"
+                  style={{ width: '100%' }}
+                >
+                  <Text strong style={{ fontSize: '16px' }}>
+                    Керамогранит Coliseum Brenta Grey 22,5х90
+                  </Text>
+                  <Text type="secondary" style={{ fontSize: '13px' }}>
+                    Артикул: CB-22590-BRENTA-GR
+                  </Text>
+
+                  <Divider style={{ margin: '12px 0' }} />
+
+                  {/* Контент в зависимости от выбранного сегмента */}
+                  <Row gutter={[16, 16]}>
+                    <Col xs={24} md={12}>
+                      <Card
+                        size="small"
+                        style={{
+                          backgroundColor: '#f6ffed',
+                          border: '2px solid #b7eb8f',
+                        }}
+                      >
+                        <Space
+                          direction="vertical"
+                          size="small"
+                          style={{ width: '100%' }}
+                        >
+                          <Text
+                            strong
+                            style={{ fontSize: '14px', color: '#52c41a' }}
+                          >
+                            Режим "МОИ ЦЕНЫ"
+                          </Text>
+                          <Divider style={{ margin: '8px 0' }} />
+                          <Text style={{ fontSize: '13px' }}>
+                            Себестоимость: <Text strong>580 ₽</Text>
+                          </Text>
+                          <Text style={{ fontSize: '13px' }}>
+                            Коэффициент наценки: <Text strong>[1.80 ▼]</Text>
+                          </Text>
+                          <Text style={{ fontSize: '13px' }}>
+                            Розничная цена: <Text strong>1 044 ₽</Text>
+                          </Text>
+                          <Text style={{ fontSize: '13px' }}>
+                            Маржа: <Text strong>464 ₽ (80%)</Text>
+                          </Text>
+                        </Space>
+                      </Card>
+                    </Col>
+                    <Col xs={24} md={12}>
+                      <Card
+                        size="small"
+                        style={{
+                          backgroundColor: '#e6f7ff',
+                          border: '2px solid #91d5ff',
+                        }}
+                      >
+                        <Space
+                          direction="vertical"
+                          size="small"
+                          style={{ width: '100%' }}
+                        >
+                          <Text
+                            strong
+                            style={{ fontSize: '14px', color: '#1890ff' }}
+                          >
+                            Режим "ДЕМОНСТРАЦИЯ ПОКУПАТЕЛЮ"
+                          </Text>
+                          <Divider style={{ margin: '8px 0' }} />
+                          <Text style={{ fontSize: '13px' }}>
+                            Цена: <Text strong>1 044 ₽</Text>
+                          </Text>
+                          <Text style={{ fontSize: '13px' }}>
+                            <Text strong>[Добавить в корзину]</Text>
+                          </Text>
+                        </Space>
+                      </Card>
+                    </Col>
+                  </Row>
+
+                  <Alert
+                    message="При переключении сегмента контент обновляется мгновенно"
+                    type="info"
+                    showIcon
+                    style={{ marginTop: 8 }}
+                  />
+                </Space>
+              </Card>
             </Space>
           </Card>
         </Card>
@@ -442,6 +510,8 @@ export const eksimaPricingToolSlides: SlideData[] = [
                 dataSource={[
                   'WYSIWYG (что видишь, то получишь)',
                   'Live preview',
+                  'Работает на всех устройствах',
+                  'Интуитивно понятный интерфейс',
                 ]}
                 renderItem={item => (
                   <List.Item style={{ padding: '2px 0' }}>
@@ -459,10 +529,7 @@ export const eksimaPricingToolSlides: SlideData[] = [
               </Text>
               <List
                 size="small"
-                dataSource={[
-                  'Нужен большой экран (1200px+)',
-                  'Не работает на мобильных',
-                ]}
+                dataSource={['Нужно переключаться между режимами']}
                 renderItem={item => (
                   <List.Item style={{ padding: '2px 0' }}>
                     <Text style={{ fontSize: '12px' }}>• {item}</Text>
