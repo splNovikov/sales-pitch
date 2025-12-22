@@ -111,6 +111,10 @@ import {
   rosomakhatulTitle,
 } from '~features/rosomaha/slides/rosomakhatul.meta';
 import { brausCreatedAt, brausTitle } from '~features/braus/slides/braus.meta';
+import {
+  cameohotelCreatedAt,
+  cameohotelTitle,
+} from '~features/cameohotel/slides/cameohotel.meta';
 
 /**
  * Presentation metadata
@@ -353,6 +357,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'braus',
     title: brausTitle,
     createdAt: brausCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'cameohotel',
+    title: cameohotelTitle,
+    createdAt: cameohotelCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
