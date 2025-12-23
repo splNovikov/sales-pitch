@@ -520,7 +520,7 @@ export const cameohotelSlides: SlideData[] = [
     content: (
       <SectionTitleSlide
         title="Выявленные требования"
-        subtitle="Детальные требования с созвона"
+        subtitle=""
         imageIndex={2}
       />
     ),
