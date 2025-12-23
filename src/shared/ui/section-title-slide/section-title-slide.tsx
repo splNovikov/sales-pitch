@@ -1,5 +1,6 @@
 import { Space, Typography, Divider } from 'antd';
 import { ImageWithLoader } from '~shared/ui/image-with-loader';
+import styles from './section-title-slide.module.css';
 
 // Import section title images
 import sectionImage1 from './images/section-title/section-01.jpg';
@@ -89,20 +90,8 @@ export function SectionTitleSlide({
   if (finalImageSrc) {
     // Split layout: image on the left, title block on the right
     return (
-      <div
-        style={{
-          display: 'flex',
-          width: '100%',
-          height: '100%',
-        }}
-      >
-        <div
-          style={{
-            flexBasis: '33%',
-            maxWidth: '33%',
-            overflow: 'hidden',
-          }}
-        >
+      <div className={styles.container}>
+        <div className={styles.imageContainer}>
           <ImageWithLoader
             src={finalImageSrc}
             alt={imageAlt ?? title}
@@ -117,37 +106,19 @@ export function SectionTitleSlide({
             }}
           />
         </div>
-        <div
-          style={{
-            flex: 1,
-            padding: '40px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
+        <div className={styles.contentContainer}>
           <Space
             direction="vertical"
             size="large"
             style={{ width: '100%', textAlign: 'center' }}
           >
-            <Title level={1} style={{ marginBottom: 0 }}>
+            <Title level={1} className={styles.title}>
               {title}
             </Title>
             {subtitle && (
               <>
-                <Divider
-                  style={{ margin: 'var(--app-spacing-lg) auto', width: 200 }}
-                />
-                <Paragraph
-                  style={{
-                    fontSize: 'var(--app-font-size-lg)',
-                    margin: 0,
-                    fontStyle: 'italic',
-                  }}
-                >
-                  {subtitle}
-                </Paragraph>
+                <Divider className={styles.divider} />
+                <Paragraph className={styles.subtitle}>{subtitle}</Paragraph>
               </>
             )}
           </Space>
@@ -168,25 +139,13 @@ export function SectionTitleSlide({
         height: '100%',
       }}
     >
-      <Title level={1} style={{ textAlign: 'center', marginBottom: 0 }}>
+      <Title level={1} className={styles.centeredTitle}>
         {title}
       </Title>
       {subtitle && (
         <>
-          <Divider
-            style={{ margin: 'var(--app-spacing-lg) 0', width: '200px' }}
-          />
-          <Paragraph
-            style={{
-              fontSize: 'var(--app-font-size-xl)',
-              textAlign: 'center',
-              maxWidth: '800px',
-              margin: 0,
-              fontStyle: 'italic',
-            }}
-          >
-            {subtitle}
-          </Paragraph>
+          <Divider className={styles.centeredDivider} />
+          <Paragraph className={styles.centeredSubtitle}>{subtitle}</Paragraph>
         </>
       )}
     </Space>
