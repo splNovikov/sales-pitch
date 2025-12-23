@@ -115,6 +115,10 @@ import {
   cameohotelCreatedAt,
   cameohotelTitle,
 } from '~features/cameohotel/slides/cameohotel.meta';
+import {
+  networkdevicesCreatedAt,
+  networkdevicesTitle,
+} from '~features/networkdevices/slides/networkdevices.meta';
 
 /**
  * Presentation metadata
@@ -364,6 +368,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'cameohotel',
     title: cameohotelTitle,
     createdAt: cameohotelCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'networkdevices',
+    title: networkdevicesTitle,
+    createdAt: networkdevicesCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
