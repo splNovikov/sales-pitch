@@ -114,7 +114,9 @@ import { brausCreatedAt, brausTitle } from '~features/braus/slides/braus.meta';
 import {
   cameohotelCreatedAt,
   cameohotelTitle,
-} from '~features/cameohotel/slides/cameohotel.meta';
+  cameohotelVariantsCreatedAt,
+  cameohotelVariantsTitle,
+} from '~features/cameohotel/slides';
 import {
   networkdevicesCreatedAt,
   networkdevicesTitle,
@@ -368,6 +370,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'cameohotel',
     title: cameohotelTitle,
     createdAt: cameohotelCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'cameohotel-variants',
+    title: cameohotelVariantsTitle,
+    createdAt: cameohotelVariantsCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },

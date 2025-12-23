@@ -35,7 +35,10 @@ import { senixSlides } from '~features/senix/slides/senix-slides';
 import { senixWebsiteSlides } from '~features/senix/slides/senix-website-slides';
 import { rosomakhatulSlides } from '~features/rosomaha/slides/rosomakhatul-slides';
 import { brausSlides } from '~features/braus/slides';
-import { cameohotelSlides } from '~features/cameohotel/slides';
+import {
+  cameohotelSlides,
+  cameohotelVariantsSlides,
+} from '~features/cameohotel/slides';
 import { networkdevicesSlides } from '~features/networkdevices/slides';
 import { presentationSlugs } from '~shared/lib/presentations.config';
 import { Slides, type SlideData } from '~widgets/slides';
@@ -73,6 +76,7 @@ const slidesMap: Record<string, SlideData[]> = {
   rosomakhatul: rosomakhatulSlides,
   braus: brausSlides,
   cameohotel: cameohotelSlides,
+  'cameohotel-variants': cameohotelVariantsSlides,
   networkdevices: networkdevicesSlides,
 };
 
