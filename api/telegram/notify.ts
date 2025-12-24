@@ -85,6 +85,21 @@ function isPrivateIp(ip: string): boolean {
   );
 }
 
+/**
+ * Extracts event information from page string
+ * Format: "/slides/slug - Event description" or just "Event description"
+ * @param page - Page string that may contain event information
+ * @returns Event description if found, null otherwise
+ */
+function extractEventFromPage(page: string): string | null {
+  // Look for event pattern: " - Event description"
+  const eventMatch = page.match(/\s-\s(.+)$/);
+  if (eventMatch && eventMatch[1]) {
+    return eventMatch[1].trim();
+  }
+  return null;
+}
+
 function formatNotificationMessage(
   payload: EnrichedTelegramNotificationPayload
 ): string {
@@ -103,7 +118,15 @@ function formatNotificationMessage(
 
   // Use custom format if IP is mapped
   if (mappedName) {
+    const event = extractEventFromPage(page);
     const url = fullUrl || page;
+    
+    // If event information exists, include it in the message
+    if (event) {
+      return `👤 <b>${escapeHtml(mappedName)}</b> - ${escapeHtml(event)}\n🌍 URL: ${escapeHtml(url)}`;
+    }
+    
+    // Fallback to simple format if no event detected
     return `👤 <b>${escapeHtml(mappedName)}</b> opened URL: ${escapeHtml(url)}`;
   }
 
