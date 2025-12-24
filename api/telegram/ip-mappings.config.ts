@@ -1,0 +1,50 @@
+/**
+ * IP address mappings for personalized notifications
+ * When someone accesses with an IP from the iplist, the notification will use the name
+ */
+
+/**
+ * IP mapping configuration
+ */
+export interface IpMapping {
+  /**
+   * Name/identifier for the person or organization
+   */
+  name: string;
+  /**
+   * List of IP addresses associated with this name
+   */
+  iplist: string[];
+}
+
+/**
+ * IP address mappings
+ * Add IP addresses here to personalize notifications
+ */
+export const ipMappings: IpMapping[] = [
+  {
+    name: 'Pavel Novikov',
+    iplist: ['95.161.61.95'],
+  },
+];
+
+/**
+ * Optimized IP to name lookup map
+ * Built once at module load for O(1) lookup performance
+ */
+const ipToNameMap = new Map<string, string>(
+  ipMappings.flatMap(mapping =>
+    mapping.iplist.map(ip => [ip, mapping.name] as [string, string])
+  )
+);
+
+/**
+ * Get name for IP address
+ * Uses optimized Map lookup for O(1) performance
+ * @param ip - IP address to look up
+ * @returns Name if IP is mapped, undefined otherwise
+ */
+export function getNameForIp(ip: string): string | undefined {
+  return ipToNameMap.get(ip);
+}
+

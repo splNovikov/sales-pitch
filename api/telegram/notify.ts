@@ -4,6 +4,8 @@
  * Documentation: https://core.telegram.org/bots/api#sendmessage
  */
 
+import { getNameForIp } from './ip-mappings.config';
+
 // Types
 interface LocationData {
   city?: string;
@@ -86,9 +88,19 @@ function isPrivateIp(ip: string): boolean {
 function formatNotificationMessage(
   payload: EnrichedTelegramNotificationPayload
 ): string {
-  const { page, fullUrl, timestamp, userAgent, referer, ip, location } =
-    payload;
+  const { page, fullUrl, timestamp, ip } = payload;
 
+  // Check if IP is mapped to a name
+  const mappedName = ip && ip !== 'unknown' ? getNameForIp(ip) : undefined;
+
+  // Use custom format if IP is mapped
+  if (mappedName) {
+    const url = fullUrl || page;
+    return `👤 <b>${escapeHtml(mappedName)}</b> opened URL: ${escapeHtml(url)}`;
+  }
+
+  // Default format for unmapped IPs
+  const { userAgent, referer, location } = payload;
   const parts: string[] = ['🔔 <b>New Page Visit</b>\n\n'];
   parts.push(`📄 <b>Page:</b> ${escapeHtml(page)}\n`);
 
