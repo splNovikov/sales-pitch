@@ -1,4 +1,4 @@
-import { Typography, Card, Space, List, Tag, Divider } from 'antd';
+import { Typography, Card, Tag, Divider } from 'antd';
 import {
   CheckCircleOutlined,
   RocketOutlined,
@@ -17,6 +17,7 @@ import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { ContactsSlide } from '~shared/ui/contacts-slide';
 import { FeaturesSlide } from '~shared/ui/features-slide';
 import { ContentWithSectionsSlide } from '~shared/ui/content-with-sections-slide';
+import { AnimatedSteps } from '~shared/ui/animated-steps';
 import cameoLogo from '~features/cameohotel/slides/cameo-logo.png';
 import { cameohotelVariantsCreatedAt } from '~features/cameohotel/slides/cameohotel-variants.meta.ts';
 
@@ -53,27 +54,45 @@ export const cameohotelVariantsSlides: SlideData[] = [
     header: 'Основные цели редизайна',
     content: (
       <Card>
-        <List
-          size="large"
-          dataSource={[
-            'Осовременить сайт, сохранив узнаваемость бренда (цвета, логотип, шрифты)',
-            'Сделать удобную мобильную версию (адаптивный дизайн, mobile-first)',
-            'Усилить конверсию в бронирование через главную страницу и удобную структуру',
-            'Интегрировать отзывы (в том числе из Яндекса) в общем стиле сайта',
-            'Сохранить и развить связку с Travelline, не создавая свою CRM/систему бронирования',
-            'Повысить привлекательность сайта визуально (галереи, возможно видео, современный UI)',
+        <AnimatedSteps
+          direction="vertical"
+          stepInterval={2500}
+          items={[
+            {
+              title: 'Осовременить сайт, сохранив узнаваемость бренда',
+              description: 'Цвета, логотип, шрифты',
+              icon: <CheckCircleOutlined />,
+            },
+            {
+              title: 'Сделать удобную мобильную версию',
+              description: 'Адаптивный дизайн, mobile-first',
+              icon: <CheckCircleOutlined />,
+            },
+            {
+              title: 'Усилить конверсию в бронирование',
+              description:
+                'Через главную страницу и удобную структуру',
+              icon: <CheckCircleOutlined />,
+            },
+            {
+              title: 'Интегрировать отзывы',
+              description:
+                'В том числе из Яндекса в общем стиле сайта',
+              icon: <CheckCircleOutlined />,
+            },
+            {
+              title: 'Сохранить и развить связку с Travelline',
+              description:
+                'Не создавая свою CRM/систему бронирования',
+              icon: <CheckCircleOutlined />,
+            },
+            {
+              title: 'Повысить привлекательность сайта визуально',
+              description:
+                'Галереи, возможно видео, современный UI',
+              icon: <CheckCircleOutlined />,
+            },
           ]}
-          renderItem={(item, index) => (
-            <List.Item>
-              <Space>
-                <Tag color="blue">{index + 1}</Tag>
-                <CheckCircleOutlined
-                  style={{ color: 'var(--app-color-primary)' }}
-                />
-                <Text>{item}</Text>
-              </Space>
-            </List.Item>
-          )}
         />
       </Card>
     ),
