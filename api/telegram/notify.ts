@@ -4,7 +4,7 @@
  * Documentation: https://core.telegram.org/bots/api#sendmessage
  */
 
-import { getNameForIp } from './ip-mappings.config';
+import { getNameForIp } from './ip-mappings.config.js';
 
 // Types
 interface LocationData {
