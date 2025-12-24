@@ -307,210 +307,104 @@ export const cameohotelVariantsSlides: SlideData[] = [
   },
 
   {
-    id: 'solution-variant-1-basic',
-    header: 'Вариант 1: Базовый',
+    id: 'solution-variants-all',
+    header: 'Варианты решения',
     content: (
-      <Card>
-        <Space direction="vertical" size="large" style={{ width: '100%' }}>
-          <Card size="small" type="inner">
-            <Title level={4}>
-              <RocketOutlined
-                style={{ color: 'var(--app-color-primary)', marginRight: 8 }}
-              />
-              Суть варианта
-            </Title>
-            <Paragraph>
-              Копирование текущей структуры сайта в новом современном дизайне.
-              Структура страниц остаётся такой же, как сейчас, но визуально сайт
-              полностью обновляется.
-            </Paragraph>
-          </Card>
-          <Row gutter={16}>
-            <Col xs={24} md={12}>
-              <Card size="small" type="inner">
-                <Title level={4}>
-                  <CheckCircleOutlined
-                    style={{ color: 'green', marginRight: 8 }}
-                  />
-                  Что входит:
-                </Title>
-                <List
-                  size="small"
-                  dataSource={[
-                    'Современный дизайн всех страниц',
-                    'Адаптивная вёрстка (мобильная версия)',
-                    'Интеграция с Travelline',
-                    'Сохранение текущей структуры сайта',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0' }}>
-                      <Text>{item}</Text>
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </Col>
-            <Col xs={24} md={12}>
-              <Card size="small" type="inner">
-                <Title level={4}>
-                  <BulbOutlined
-                    style={{
-                      color: 'var(--app-color-primary)',
-                      marginRight: 8,
-                    }}
-                  />
-                  Подход к дизайну
-                </Title>
-                <Paragraph>
+      <FeaturesSlide
+        cards={[
+          {
+            title: 'Вариант 1: Базовый',
+            subtitle:
+              'Копирование текущей структуры сайта в новом современном дизайне. Структура страниц остаётся такой же, как сейчас, но визуально сайт полностью обновляется.',
+            icon: <RocketOutlined />,
+            iconColor: 'primary',
+            emoji: 'rocket',
+            items: [
+              'Современный дизайн всех страниц',
+              'Адаптивная вёрстка (мобильная версия)',
+              'Интеграция с Travelline',
+              'Сохранение текущей структуры сайта',
+            ],
+            footer: (
+              <Paragraph
+                style={{ margin: 0, fontSize: 'var(--app-font-size-sm)' }}
+              >
+                <Text type="secondary">
                   Дизайн разрабатывает команда разработчиков. Пожелания Татьяны
                   учитываются, но реализуется по принципу{' '}
                   <Text strong>рационального, ненагруженного интерфейса</Text> —
                   простота поддержки и скорость реализации в приоритете.
-                </Paragraph>
-              </Card>
-            </Col>
-          </Row>
-        </Space>
-      </Card>
-    ),
-  },
-  {
-    id: 'solution-variant-2-advanced',
-    header: 'Вариант 2: Продвинутый ⭐ РЕКОМЕНДУЕМЫЙ',
-    content: (
-      <Card>
-        <Space direction="vertical" size="large" style={{ width: '100%' }}>
-          <Card size="small" type="inner" style={{ borderColor: '#52c41a' }}>
-            <Space>
-              <Tag
-                color="green"
-                style={{ fontSize: '16px', padding: '4px 12px' }}
+                </Text>
+              </Paragraph>
+            ),
+          },
+          {
+            title: (
+              <>
+                Вариант 2: Продвинутый{' '}
+                <Tag color="green" style={{ marginLeft: 8 }}>
+                  ⭐ РЕКОМЕНДУЕМЫЙ
+                </Tag>
+              </>
+            ),
+            subtitle: 'Оптимальный баланс качества и инвестиций',
+            icon: <ThunderboltOutlined />,
+            iconColor: 'primary',
+            emoji: 'star',
+            items: [
+              'Всё из Базового варианта',
+              'Совместная проработка структуры сайта с Татьяной',
+              'Оптимизированная структура = лучшее SEO (логичная навигация, правильные посадочные страницы под запросы)',
+              'Интеграция с отзывами Яндекса: блоки отзывов в ключевых местах сайта',
+            ],
+            footer: (
+              <Paragraph
+                style={{ margin: 0, fontSize: 'var(--app-font-size-sm)' }}
               >
-                ⭐ РЕКОМЕНДУЕМЫЙ
-              </Tag>
-              <Text strong style={{ fontSize: 'var(--app-font-size-lg)' }}>
-                Оптимальный баланс качества и инвестиций
-              </Text>
-            </Space>
-          </Card>
-          <Card size="small" type="inner">
-            <Title level={4}>
-              <ThunderboltOutlined
-                style={{ color: 'var(--app-color-primary)', marginRight: 8 }}
-              />
-              Что включает (Вариант 1 +):
-            </Title>
-            <List
-              size="large"
-              dataSource={[
-                'Всё из Базового варианта',
-                'Совместная проработка структуры сайта с Татьяной',
-                'Оптимизированная структура = лучшее SEO (логичная навигация, правильные посадочные страницы под запросы)',
-                'Интеграция с отзывами Яндекса: блоки отзывов в ключевых местах сайта',
-              ]}
-              renderItem={item => (
-                <List.Item>
-                  <Space>
-                    <CheckCircleOutlined
-                      style={{ color: 'var(--app-color-primary)' }}
-                    />
-                    <Text>{item}</Text>
-                  </Space>
-                </List.Item>
-              )}
-            />
-          </Card>
-          <Card size="small" type="inner">
-            <Title level={4}>
-              <StarOutlined style={{ color: 'gold', marginRight: 8 }} />
-              Почему рекомендуем:
-            </Title>
-            <List
-              size="small"
-              dataSource={[
-                'Реструктуризация даёт реальный SEO-эффект (больше органического трафика)',
-                'Отзывы Яндекса повышают доверие и конверсию',
-                'Совместная проработка структуры = сайт точно под задачи бизнеса',
-                'Оптимальное соотношение инвестиций и результата',
-              ]}
-              renderItem={item => (
-                <List.Item style={{ padding: '4px 0' }}>
-                  <Text>{item}</Text>
-                </List.Item>
-              )}
-            />
-          </Card>
-        </Space>
-      </Card>
-    ),
-  },
-  {
-    id: 'solution-variant-3-premium',
-    header: 'Вариант 3: Премиум',
-    content: (
-      <Card>
-        <Space direction="vertical" size="large" style={{ width: '100%' }}>
-          <Card size="small" type="inner">
-            <Title level={4}>
-              <StarOutlined style={{ color: 'gold', marginRight: 8 }} />
-              Что включает (Вариант 2 +):
-            </Title>
-            <List
-              size="large"
-              dataSource={[
-                'Всё из Продвинутого варианта',
-                'Выделенная команда дизайнеров',
-                'Полноценный дизайн-процесс: бриф, макеты в Figma, согласование',
-                'Pixel-perfect реализация по утверждённым макетам',
-                'Глубокая проработка визуала и фирменного стиля',
-              ]}
-              renderItem={item => (
-                <List.Item>
-                  <Space>
-                    <CheckCircleOutlined
-                      style={{ color: 'var(--app-color-primary)' }}
-                    />
-                    <Text>{item}</Text>
-                  </Space>
-                </List.Item>
-              )}
-            />
-          </Card>
-          <Card size="small" type="inner">
-            <Title level={4}>
-              <RocketOutlined
-                style={{ color: 'var(--app-color-primary)', marginRight: 8 }}
-              />
-              Процесс работы:
-            </Title>
-            <List
-              size="small"
-              dataSource={[
-                'Этап 1: Команда дизайнеров создаёт дизайн-макеты (бриф, исследование, макеты в Figma)',
-                'Этап 2: Согласование дизайна с Татьяной (итерации по пожеланиям)',
-                'Этап 3: Разработка сайта по утверждённым макетам (pixel-perfect)',
-                'Этап 4: Интеграции (Travelline, отзывы Яндекса) в стиле дизайна',
-              ]}
-              renderItem={(item, index) => (
-                <List.Item style={{ padding: '4px 0' }}>
-                  <Space>
-                    <Tag color="blue">{index + 1}</Tag>
-                    <Text>{item}</Text>
-                  </Space>
-                </List.Item>
-              )}
-            />
-          </Card>
-          <Card size="small" type="inner">
-            <Paragraph>
-              <BulbOutlined style={{ marginRight: 8 }} />
-              <Text strong>Результат:</Text> Сайт с профессиональным дизайном,
-              который конкурирует по визуалу с лучшими отельными сайтами.
-              Максимальный визуальный эффект и UX-качество.
-            </Paragraph>
-          </Card>
-        </Space>
-      </Card>
+                <Text type="secondary">
+                  <Text strong>Почему рекомендуем:</Text> Реструктуризация даёт
+                  реальный SEO-эффект, отзывы Яндекса повышают доверие и
+                  конверсию, совместная проработка структуры = сайт точно под
+                  задачи бизнеса. Оптимальное соотношение инвестиций и
+                  результата.
+                </Text>
+              </Paragraph>
+            ),
+          },
+          {
+            title: 'Вариант 3: Премиум',
+            subtitle:
+              'Всё из Продвинутого варианта + выделенная команда дизайнеров и полноценный дизайн-процесс',
+            icon: <StarOutlined />,
+            iconColor: 'gold',
+            emoji: 'palette',
+            items: [
+              'Всё из Продвинутого варианта',
+              'Выделенная команда дизайнеров',
+              'Полноценный дизайн-процесс: бриф, макеты в Figma, согласование',
+              'Pixel-perfect реализация по утверждённым макетам',
+              'Глубокая проработка визуала и фирменного стиля',
+            ],
+            footer: (
+              <Paragraph
+                style={{ margin: 0, fontSize: 'var(--app-font-size-sm)' }}
+              >
+                <Text type="secondary">
+                  <Text strong>Результат:</Text> Сайт с профессиональным
+                  дизайном, который конкурирует по визуалу с лучшими отельными
+                  сайтами. Максимальный визуальный эффект и UX-качество.
+                </Text>
+              </Paragraph>
+            ),
+          },
+        ]}
+        columns={3}
+        animated
+        baseAnimationDelay={100}
+        gutter={16}
+        verticalGap={16}
+        wrapInCard={false}
+      />
     ),
   },
 
