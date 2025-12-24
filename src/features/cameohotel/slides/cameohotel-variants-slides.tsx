@@ -153,65 +153,46 @@ export const cameohotelVariantsSlides: SlideData[] = [
     id: 'requirements-integrations',
     header: 'Интеграции и системы',
     content: (
-      <Card>
-        <Space direction="vertical" size="large" style={{ width: '100%' }}>
-          <Card size="small" type="inner">
-            <Title level={4}>
-              <ApiOutlined
-                style={{ color: 'var(--app-color-primary)', marginRight: 8 }}
-              />
-              Интеграция с отзывами
-            </Title>
-            <List
-              size="small"
-              dataSource={[
-                'Интеграция с Яндекс Отзывами',
-                'Вывод отзывов в стиле сайта (не стандартный виджет)',
-                'Блоки отзывов на ключевых страницах',
-                'Визуально аккуратная интеграция (карточки, слайдер, рейтинг)',
-              ]}
-              renderItem={item => (
-                <List.Item style={{ padding: '4px 0' }}>
-                  <StarOutlined style={{ color: 'gold', marginRight: 8 }} />
-                  <Text>{item}</Text>
-                </List.Item>
-              )}
-            />
-          </Card>
-          <Card size="small" type="inner">
-            <Title level={4}>
-              <DatabaseOutlined
-                style={{ color: 'var(--app-color-primary)', marginRight: 8 }}
-              />
-              Travelline
-            </Title>
-            <Paragraph>
-              Собственной CRM нет, всё обработка идет через{' '}
-              <Text strong>Travelline</Text>
-            </Paragraph>
-            <List
-              size="small"
-              dataSource={[
-                'Бронирование',
-                'Управление номерами и ценами',
-                'Администрирование загрузки',
-              ]}
-              renderItem={item => (
-                <List.Item style={{ padding: '4px 0' }}>
-                  <CheckCircleOutlined
-                    style={{ color: 'green', marginRight: 8 }}
-                  />
-                  <Text>{item}</Text>
-                </List.Item>
-              )}
-            />
-            <Paragraph style={{ marginTop: 'var(--app-spacing-md)' }}>
-              <Text strong>Важно:</Text> Сайт должен поддерживать и усиливать
-              связку с Travelline, а не заменять её.
-            </Paragraph>
-          </Card>
-        </Space>
-      </Card>
+      <FeaturesSlide
+        cards={[
+          {
+            title: 'Интеграция с отзывами',
+            icon: <ApiOutlined />,
+            iconColor: 'primary',
+            emoji: 'star',
+            items: [
+              'Интеграция с Яндекс Отзывами',
+              'Вывод отзывов в стиле сайта (не стандартный виджет)',
+              'Блоки отзывов на ключевых страницах',
+              'Визуально аккуратная интеграция (карточки, слайдер, рейтинг)',
+            ],
+          },
+          {
+            title: 'Travelline',
+            subtitle: 'Собственной CRM нет, всё обработка идет черезTravelline',
+            icon: <DatabaseOutlined />,
+            iconColor: 'primary',
+            emoji: 'rocket',
+            items: [
+              'Бронирование',
+              'Управление номерами и ценами',
+              'Администрирование загрузки',
+            ],
+            footer: (
+              <Paragraph style={{ margin: 0 }}>
+                <Text strong>Важно:</Text> Сайт должен поддерживать и усиливать
+                связку с Travelline, а не заменять её.
+              </Paragraph>
+            ),
+          },
+        ]}
+        columns={1}
+        animated
+        baseAnimationDelay={200}
+        gutter={16}
+        verticalGap={16}
+        wrapInCard
+      />
     ),
   },
 

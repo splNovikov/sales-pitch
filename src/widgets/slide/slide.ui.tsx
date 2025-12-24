@@ -25,7 +25,9 @@ export function Slide({ slide }: SlideProps) {
       )}
 
       {/* Content */}
-      <Content className={styles.content}>{slide.content}</Content>
+      <Content className={styles.content} key={slide.id}>
+        {slide.content}
+      </Content>
     </Layout>
   );
 }

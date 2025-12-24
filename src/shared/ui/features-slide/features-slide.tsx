@@ -55,7 +55,12 @@ export function FeaturesSlide({
   const content = (
     <Row gutter={[gutter, verticalGap]} align="stretch">
       {cards.map((cardProps, index) => (
-        <Col key={index} xs={24} md={colSpan} className={styles.col}>
+        <Col
+          key={`${cardProps.title}-${index}`}
+          xs={24}
+          md={colSpan}
+          className={styles.col}
+        >
           <FeatureCard
             {...cardProps}
             animated={animated}
