@@ -30,7 +30,6 @@ export const cameohotelVariantsSlides: SlideData[] = [
       <MainTitleSlide
         title=""
         subtitle="Варианты реализации осовременивания сайта"
-        description="Разбор возможных подходов к осовремениванию сайта Cameo Hotel: от Bitrix до Next.js с профессиональным дизайном"
         logo={cameoLogo}
         logoAlt="Cameo Hotel"
         logoMaxWidth={320}
