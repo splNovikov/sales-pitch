@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.topSection {
+  margin-bottom: var(--app-spacing-lg);
+}
+
+.mainContent {
+  flex: 1;
+}
+
+.bottomSection {
+  margin-top: var(--app-spacing-lg);
+}
+
+/* Mobile-first: adjust spacing on small screens */
+@media (max-width: 768px) {
+  .topSection {
+    margin-bottom: var(--app-spacing-md);
+  }
+
+  .bottomSection {
+    margin-top: var(--app-spacing-md);
+  }
+}
+

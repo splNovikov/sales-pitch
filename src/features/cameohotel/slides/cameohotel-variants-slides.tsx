@@ -16,6 +16,7 @@ import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { ContactsSlide } from '~shared/ui/contacts-slide';
 import { FeaturesSlide } from '~shared/ui/features-slide';
+import { ContentWithSectionsSlide } from '~shared/ui/content-with-sections-slide';
 import cameoLogo from '~features/cameohotel/slides/cameo-logo.png';
 import { cameohotelVariantsCreatedAt } from '~features/cameohotel/slides/cameohotel-variants.meta.ts';
 
@@ -191,7 +192,7 @@ export const cameohotelVariantsSlides: SlideData[] = [
         baseAnimationDelay={200}
         gutter={16}
         verticalGap={16}
-        wrapInCard
+        wrapInCard={false}
       />
     ),
   },
@@ -212,87 +213,82 @@ export const cameohotelVariantsSlides: SlideData[] = [
     id: 'references-list',
     header: 'Референсы для вдохновения',
     content: (
-      <Card>
-        <Space direction="vertical" size="large" style={{ width: '100%' }}>
-          <Card size="small" type="inner">
-            <Title level={4}>
-              <Link href="https://kristoff.ru/" target="_blank">
-                Kristoff — kristoff.ru
-              </Link>
-            </Title>
-            <Text type="secondary">
-              «вот по-моему неплохой сайт, у них тоже отель и апарты»
-            </Text>
-            <List
-              size="small"
-              dataSource={[
+      <ContentWithSectionsSlide
+        bottomSection={
+          <>
+            <Divider />
+            <Paragraph>
+              <Text strong>Дополнительные референсы:</Text> apartpage.ru,{' '}
+              arbat-house.com, gornyi-dom.ru, unoapart.ru
+            </Paragraph>
+            <Paragraph>
+              <Text strong>Общие черты:</Text> современный, чистый дизайн; много
+              визуала (фото, иногда видео); акцент на бронирование и удобство
+              пользователя
+            </Paragraph>
+          </>
+        }
+        wrapInCard={false}
+      >
+        <FeaturesSlide
+          cards={[
+            {
+              title: (
+                <Link href="https://kristoff.ru/" target="_blank">
+                  Kristoff — kristoff.ru
+                </Link>
+              ),
+              subtitle: '«вот по-моему неплохой сайт, у них тоже отель и апарты»',
+              icon: <GlobalOutlined />,
+              iconColor: 'primary',
+              emoji: 'star',
+              items: [
                 'Общий бренд + несколько объектов (отель / апарты) под одним именем',
                 'На главной — понятная структура, сразу виден формат размещения',
                 'Есть акцент на контакты, адреса и бронирование',
-              ]}
-              renderItem={item => (
-                <List.Item style={{ padding: '4px 0' }}>
-                  <Text>{item}</Text>
-                </List.Item>
-              )}
-            />
-          </Card>
-          <Card size="small" type="inner">
-            <Title level={4}>
-              <Link href="https://sonata-spb.com/ru-ru/" target="_blank">
-                Sonata — sonata-spb.com
-              </Link>
-            </Title>
-            <Text type="secondary">«визуально приятный сайт»</Text>
-            <List
-              size="small"
-              dataSource={[
+              ],
+            },
+            {
+              title: (
+                <Link href="https://sonata-spb.com/ru-ru/" target="_blank">
+                  Sonata — sonata-spb.com
+                </Link>
+              ),
+              subtitle: '«визуально приятный сайт»',
+              icon: <GlobalOutlined />,
+              iconColor: 'primary',
+              emoji: 'palette',
+              items: [
                 'Чистый, аккуратный визуал',
                 'Понятное описание отеля, блоки с номерами',
                 'Спецпредложения/тарифы оформлены как отдельные информационные блоки',
-              ]}
-              renderItem={item => (
-                <List.Item style={{ padding: '4px 0' }}>
-                  <Text>{item}</Text>
-                </List.Item>
-              )}
-            />
-          </Card>
-          <Card size="small" type="inner">
-            <Title level={4}>
-              <Link href="https://statskijsovetnik.ru/" target="_blank">
-                Статский Советник — statskijsovetnik.ru
-              </Link>
-            </Title>
-            <Text type="secondary">
-              «конкурент близкий наш, тоже с разными адресами»
-            </Text>
-            <List
-              size="small"
-              dataSource={[
+              ],
+            },
+            {
+              title: (
+                <Link href="https://statskijsovetnik.ru/" target="_blank">
+                  Статский Советник — statskijsovetnik.ru
+                </Link>
+              ),
+              subtitle: '«конкурент близкий наш, тоже с разными адресами»',
+              icon: <GlobalOutlined />,
+              iconColor: 'primary',
+              emoji: 'target',
+              items: [
                 'Несколько отелей/апартаментов под единым брендом',
                 'Удобный выбор локации/объекта',
                 'Структура подходит под модель «несколько адресов внутри одной сети»',
-              ]}
-              renderItem={item => (
-                <List.Item style={{ padding: '4px 0' }}>
-                  <Text>{item}</Text>
-                </List.Item>
-              )}
-            />
-          </Card>
-          <Divider />
-          <Paragraph>
-            <Text strong>Дополнительные референсы:</Text> apartpage.ru,{' '}
-            arbat-house.com, gornyi-dom.ru, unoapart.ru
-          </Paragraph>
-          <Paragraph>
-            <Text strong>Общие черты:</Text> современный, чистый дизайн; много
-            визуала (фото, иногда видео); акцент на бронирование и удобство
-            пользователя
-          </Paragraph>
-        </Space>
-      </Card>
+              ],
+            },
+          ]}
+          columns={3}
+          animated
+          baseAnimationDelay={100}
+          gutter={16}
+          verticalGap={16}
+          wrapInCard={false}
+        />
+      </ContentWithSectionsSlide>
     ),
   },
 

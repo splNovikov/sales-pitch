@@ -58,9 +58,9 @@ export type FeatureCardIconColor =
 export interface FeatureCardProps
   extends Omit<CardProps, 'title' | 'children' | 'size'> {
   /**
-   * Card title text
+   * Card title text or ReactNode (e.g., Link component)
    */
-  title?: string;
+  title?: string | ReactNode;
   /**
    * Optional subtitle text displayed below title
    */
