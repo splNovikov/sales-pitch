@@ -18,7 +18,12 @@ import { ContactsSlide } from '~shared/ui/contacts-slide';
 import { FeaturesSlide } from '~shared/ui/features-slide';
 import { ContentWithSectionsSlide } from '~shared/ui/content-with-sections-slide';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
+import { DemoSlide } from '~shared/ui/demo-slide';
 import cameoLogo from '~features/cameohotel/slides/cameo-logo.png';
+import variant1Image from '~features/cameohotel/slides/variant1.png';
+import variant2Image from '~features/cameohotel/slides/variant2.png';
+import variant3Image from '~features/cameohotel/slides/variant3.png';
+import variant4Image from '~features/cameohotel/slides/variant4.png';
 import { cameohotelVariantsCreatedAt } from '~features/cameohotel/slides/cameohotel-variants.meta.ts';
 
 const { Paragraph, Text, Link } = Typography;
@@ -70,26 +75,22 @@ export const cameohotelVariantsSlides: SlideData[] = [
             },
             {
               title: 'Усилить конверсию в бронирование',
-              description:
-                'Через главную страницу и удобную структуру',
+              description: 'Через главную страницу и удобную структуру',
               icon: <CheckCircleOutlined />,
             },
             {
               title: 'Интегрировать отзывы',
-              description:
-                'В том числе из Яндекса в общем стиле сайта',
+              description: 'В том числе из Яндекса в общем стиле сайта',
               icon: <CheckCircleOutlined />,
             },
             {
               title: 'Сохранить и развить связку с Travelline',
-              description:
-                'Не создавая свою CRM/систему бронирования',
+              description: 'Не создавая свою CRM/систему бронирования',
               icon: <CheckCircleOutlined />,
             },
             {
               title: 'Повысить привлекательность сайта визуально',
-              description:
-                'Галереи, возможно видео, современный UI',
+              description: 'Галереи, возможно видео, современный UI',
               icon: <CheckCircleOutlined />,
             },
           ]}
@@ -546,6 +547,62 @@ export const cameohotelVariantsSlides: SlideData[] = [
     ),
   },
 
+  // Примеры реализации
+  {
+    id: 'implementation-examples-title',
+    header: undefined,
+    content: (
+      <SectionTitleSlide
+        title="Примеры реализации"
+        subtitle="Шаблоны, демонстрирующие наши возможности"
+        imageIndex={6}
+      />
+    ),
+  },
+  {
+    id: 'implementation-example-1',
+    header: 'Пример реализации 1',
+    content: (
+      <DemoSlide
+        image={<img src={variant1Image} alt="Вариант 1 - Реализованный сайт" />}
+        demoUrl="https://cameo-poc.vercel.app/"
+        buttonText="Посмотреть демо"
+        presentationSlug="cameohotel-variants"
+        wrapInCard
+      />
+    ),
+  },
+  {
+    id: 'implementation-example-2',
+    header: 'Пример реализации 2',
+    content: (
+      <DemoSlide
+        image={<img src={variant2Image} alt="Вариант 2" />}
+        wrapInCard
+      />
+    ),
+  },
+  {
+    id: 'implementation-example-3',
+    header: 'Пример реализации 3',
+    content: (
+      <DemoSlide
+        image={<img src={variant3Image} alt="Вариант 3" />}
+        wrapInCard
+      />
+    ),
+  },
+  {
+    id: 'implementation-example-4',
+    header: 'Пример реализации 4',
+    content: (
+      <DemoSlide
+        image={<img src={variant4Image} alt="Вариант 4" />}
+        wrapInCard
+      />
+    ),
+  },
+
   // Контакты
   {
     id: 'contacts',
@@ -564,7 +621,7 @@ export const cameohotelVariantsSlides: SlideData[] = [
             phone: '+7 908 555 0606',
             email: 'p.novikov@proxima.ooo',
             websiteLabel: 'proxima24.ru',
-            variant: 'green',
+            variant: 'white',
           },
           {
             name: 'Ситяков Артём',
@@ -572,7 +629,7 @@ export const cameohotelVariantsSlides: SlideData[] = [
             phone: '+7 927 110 84 88',
             email: 'a.sityakov@proxima.ooo',
             websiteLabel: 'proxima24.ru',
-            variant: 'blue',
+            variant: 'white',
           },
         ]}
       />
