@@ -62,6 +62,14 @@ export interface FeatureCardProps
    */
   title?: string;
   /**
+   * Optional subtitle text displayed below title
+   */
+  subtitle?: string;
+  /**
+   * Optional footer content displayed at the bottom of the card
+   */
+  footer?: ReactNode;
+  /**
    * Optional icon to display before title
    */
   icon?: ReactNode;
@@ -104,6 +112,8 @@ const TITLE_LEVEL_MAP = {
 
 export function FeatureCard({
   title,
+  subtitle,
+  footer,
   icon,
   iconColor,
   items,
@@ -162,28 +172,34 @@ export function FeatureCard({
         className={className}
         style={cardProps.style}
       >
-        {title && (
-          <Title level={titleLevel} className={titleClassName}>
-            {icon && <span className={iconClassName}>{icon}</span>}
-            {title}
-          </Title>
+      {title && (
+        <Title level={titleLevel} className={titleClassName}>
+          {icon && <span className={iconClassName}>{icon}</span>}
+          {title}
+        </Title>
+      )}
+      {subtitle && (
+        <Typography.Text type="secondary" className={styles.subtitle}>
+          {subtitle}
+        </Typography.Text>
+      )}
+      <List
+        size="small"
+        dataSource={items}
+        renderItem={item => (
+          <List.Item className={styles.listItem}>
+            <Typography.Text>
+              {emoji && (
+                <span className={styles.emoji}>
+                  {FEATURE_CARD_EMOJI_MAP[emoji]}
+                </span>
+              )}
+              {item}
+            </Typography.Text>
+          </List.Item>
         )}
-        <List
-          size="small"
-          dataSource={items}
-          renderItem={item => (
-            <List.Item className={styles.listItem}>
-              <Typography.Text>
-                {emoji && (
-                  <span className={styles.emoji}>
-                    {FEATURE_CARD_EMOJI_MAP[emoji]}
-                  </span>
-                )}
-                {item}
-              </Typography.Text>
-            </List.Item>
-          )}
-        />
+      />
+      {footer && <div className={styles.footer}>{footer}</div>}
       </Card>
     </div>
   );
