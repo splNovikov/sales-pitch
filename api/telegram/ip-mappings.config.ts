@@ -26,6 +26,10 @@ export const ipMappings: IpMapping[] = [
     name: 'Pavel Novikov',
     iplist: ['95.161.61.95'],
   },
+  {
+    name: 'Татьяна (Камея)',
+    iplist: ['195.144.229.3'],
+  },
 ];
 
 /**
