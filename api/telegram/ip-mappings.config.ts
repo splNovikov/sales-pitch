@@ -32,11 +32,21 @@ export const ipMappings: IpMapping[] = [
  * Optimized IP to name lookup map
  * Built once at module load for O(1) lookup performance
  */
-const ipToNameMap = new Map<string, string>(
-  ipMappings.flatMap(mapping =>
-    mapping.iplist.map(ip => [ip, mapping.name] as [string, string])
-  )
-);
+const ipToNameMap = new Map<string, string>();
+
+// Initialize the map from ipMappings array
+// Defensive check to ensure ipMappings is an array
+if (Array.isArray(ipMappings)) {
+  for (const mapping of ipMappings) {
+    if (mapping && mapping.name && Array.isArray(mapping.iplist)) {
+      for (const ip of mapping.iplist) {
+        if (ip.trim()) {
+          ipToNameMap.set(ip.trim(), mapping.name);
+        }
+      }
+    }
+  }
+}
 
 /**
  * Get name for IP address

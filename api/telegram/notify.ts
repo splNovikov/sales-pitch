@@ -91,7 +91,15 @@ function formatNotificationMessage(
   const { page, fullUrl, timestamp, ip } = payload;
 
   // Check if IP is mapped to a name
-  const mappedName = ip && ip !== 'unknown' ? getNameForIp(ip) : undefined;
+  let mappedName: string | undefined;
+  if (ip && ip !== 'unknown') {
+    try {
+      mappedName = getNameForIp(ip);
+    } catch (error) {
+      // Silently fail if IP lookup fails - fall back to default format
+      console.error('Failed to get name for IP:', error);
+    }
+  }
 
   // Use custom format if IP is mapped
   if (mappedName) {
