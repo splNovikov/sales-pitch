@@ -625,6 +625,6 @@ export const cameohotelVariantsSlides: SlideData[] = [
   {
     id: 'contacts-list',
     header: 'Контакты',
-    content: <ContactsSlide contacts={['Pasha', 'Artem']} />,
+    content: <ContactsSlide contacts={['Pasha', 'Artem']} animated />,
   },
 ];

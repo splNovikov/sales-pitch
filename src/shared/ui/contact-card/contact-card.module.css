@@ -1,0 +1,130 @@
+.card {
+  height: 100%;
+}
+
+.content {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.photo {
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.photoSmall {
+  width: 40px;
+  height: 40px;
+}
+
+.photoMedium {
+  width: 48px;
+  height: 48px;
+}
+
+.photoLarge {
+  width: 56px;
+  height: 56px;
+}
+
+.icon {
+  flex-shrink: 0;
+  color: var(--app-color-primary);
+}
+
+.iconSmall {
+  font-size: 24px;
+}
+
+.iconMedium {
+  font-size: 28px;
+}
+
+.iconLarge {
+  font-size: 32px;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 4px;
+  flex: 1;
+}
+
+.role {
+  /* Font size handled inline due to dynamic size prop */
+}
+
+.divider {
+  margin: 8px 0;
+}
+
+.contactsList {
+  width: 100%;
+}
+
+.contactItem {
+  /* Space component handles spacing */
+}
+
+.iconItem {
+  color: var(--app-color-primary);
+}
+
+.iconItemSmall {
+  font-size: 16px;
+}
+
+.iconItemMedium {
+  font-size: 16px;
+}
+
+.iconItemLarge {
+  font-size: 18px;
+}
+
+.link {
+  display: inline-block;
+}
+
+.linkSmall {
+  font-size: 14px;
+}
+
+.linkMedium {
+  font-size: 15px;
+}
+
+.linkLarge {
+  font-size: 16px;
+}
+
+.websiteLink {
+  font-size: 15px;
+}
+
+/* Variant backgrounds */
+.variantGreen {
+  background-color: #f6ffed;
+}
+
+.variantBlue {
+  background-color: #e6f7ff;
+}
+
+.variantOrange {
+  background-color: #fff7e6;
+}
+
+.variantGray {
+  background-color: #f5f5f5;
+}
+
+.variantNeutral {
+  background-color: #ffffff;
+}

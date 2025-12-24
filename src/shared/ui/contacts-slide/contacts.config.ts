@@ -1,4 +1,5 @@
 import type { ContactCardProps } from '../contact-card';
+import pavelPhoto from './pavel_official.png';
 
 /**
  * Contact information configuration
@@ -19,6 +20,7 @@ export const CONTACTS_CONFIG: Record<string, ContactCardProps> = {
     phone: '+7 908 555 0606',
     email: 'p.novikov@proxima.ooo',
     websiteLabel: 'proxima24.ru',
+    photo: pavelPhoto,
     variant: 'neutral',
   },
 };
