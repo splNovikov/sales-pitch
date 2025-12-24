@@ -1,0 +1,14 @@
+.col {
+  display: flex;
+}
+
+.cardWrapper {
+  width: 100%;
+}
+
+/* Mobile-first: ensure full width on small screens */
+@media (max-width: 768px) {
+  .col {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,79 @@
+/* Base card styles handled by Ant Design Card component */
+
+.cardWrapper {
+  transition:
+    opacity 0.5s ease-out,
+    transform 0.5s ease-out;
+}
+
+.cardWrapperAnimated {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+}
+
+.cardWrapperVisible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.title {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+}
+
+.titleLarge {
+  margin-bottom: 20px;
+}
+
+.titleMedium {
+  margin-bottom: 16px;
+}
+
+.titleSmall {
+  margin-bottom: 12px;
+}
+
+.iconWrapper {
+  margin-right: 8px;
+}
+
+.iconPrimary {
+  color: var(--app-color-primary);
+}
+
+.iconGreen {
+  color: green;
+}
+
+.iconBlue {
+  color: blue;
+}
+
+.iconOrange {
+  color: orange;
+}
+
+.iconPurple {
+  color: purple;
+}
+
+.iconRed {
+  color: red;
+}
+
+.iconGold {
+  color: gold;
+}
+
+.iconCyan {
+  color: cyan;
+}
+
+.listItem {
+  padding: 4px 0;
+}
+
+.emoji {
+  margin-right: 8px;
+}
