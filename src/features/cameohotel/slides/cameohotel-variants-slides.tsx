@@ -238,7 +238,8 @@ export const cameohotelVariantsSlides: SlideData[] = [
                   Kristoff — kristoff.ru
                 </Link>
               ),
-              subtitle: '«вот по-моему неплохой сайт, у них тоже отель и апарты»',
+              subtitle:
+                '«вот по-моему неплохой сайт, у них тоже отель и апарты»',
               icon: <GlobalOutlined />,
               iconColor: 'primary',
               emoji: 'star',
@@ -304,90 +305,7 @@ export const cameohotelVariantsSlides: SlideData[] = [
       />
     ),
   },
-  {
-    id: 'solution-variants-tech',
-    header: 'Технологический стек',
-    content: (
-      <Card>
-        <Space direction="vertical" size="large" style={{ width: '100%' }}>
-          <Paragraph style={{ fontSize: 'var(--app-font-size-lg)' }}>
-            Все варианты реализуются на едином технологическом стеке:
-          </Paragraph>
-          <Row gutter={16}>
-            <Col xs={24} md={12}>
-              <Card size="small" type="inner">
-                <Title level={4}>
-                  <CodeOutlined
-                    style={{
-                      color: 'var(--app-color-primary)',
-                      marginRight: 8,
-                    }}
-                  />
-                  Фронтенд
-                </Title>
-                <List
-                  size="small"
-                  dataSource={[
-                    'Next.js + React + TypeScript',
-                    'Современный стек для высокой производительности',
-                    'Отличная SEO-оптимизация из коробки',
-                    'Быстрая загрузка и отличный UX',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0' }}>
-                      <CheckCircleOutlined
-                        style={{ color: 'green', marginRight: 8 }}
-                      />
-                      <Text>{item}</Text>
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </Col>
-            <Col xs={24} md={12}>
-              <Card size="small" type="inner">
-                <Title level={4}>
-                  <DatabaseOutlined
-                    style={{
-                      color: 'var(--app-color-primary)',
-                      marginRight: 8,
-                    }}
-                  />
-                  Бэкенд и система бронирования
-                </Title>
-                <List
-                  size="small"
-                  dataSource={[
-                    'Travelline остаётся основной системой',
-                    'Без миграции данных и рисков',
-                    'Интеграция через API',
-                    'Все бронирования обрабатываются как сейчас',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0' }}>
-                      <CheckCircleOutlined
-                        style={{ color: 'green', marginRight: 8 }}
-                      />
-                      <Text>{item}</Text>
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </Col>
-          </Row>
-          <Card size="small" type="inner">
-            <Paragraph>
-              <BulbOutlined style={{ marginRight: 8 }} />
-              <Text strong>Почему этот стек:</Text> Сочетание современного
-              фронтенда (Next.js) с проверенной системой бронирования
-              (Travelline) даёт оптимальный баланс между производительностью,
-              SEO и надёжностью бизнес-процессов.
-            </Paragraph>
-          </Card>
-        </Space>
-      </Card>
-    ),
-  },
+
   {
     id: 'solution-variant-1-basic',
     header: 'Вариант 1: Базовый',
@@ -595,6 +513,68 @@ export const cameohotelVariantsSlides: SlideData[] = [
       </Card>
     ),
   },
+
+  {
+    id: 'solution-variants-tech',
+    header: 'Технологический стек',
+    content: (
+      <ContentWithSectionsSlide
+        topSection={
+          <Paragraph style={{ fontSize: 'var(--app-font-size-base)' }}>
+            Все варианты реализуются на едином технологическом стеке:
+          </Paragraph>
+        }
+        bottomSection={
+          <Card size="small" type="inner">
+            <Paragraph>
+              <BulbOutlined style={{ marginRight: 8 }} />
+              <Text strong>Почему этот стек:</Text> Сочетание современного
+              фронтенда (Next.js) с проверенной системой бронирования
+              (Travelline) даёт оптимальный баланс между производительностью,
+              SEO и надёжностью бизнес-процессов.
+            </Paragraph>
+          </Card>
+        }
+        wrapInCard={false}
+      >
+        <FeaturesSlide
+          cards={[
+            {
+              title: 'Фронтенд',
+              icon: <CodeOutlined />,
+              iconColor: 'primary',
+              emoji: 'rocket',
+              items: [
+                'Next.js + React + TypeScript',
+                'Современный стек для высокой производительности',
+                'Отличная SEO-оптимизация из коробки',
+                'Быстрая загрузка и отличный UX',
+              ],
+            },
+            {
+              title: 'Бэкенд и система бронирования',
+              icon: <DatabaseOutlined />,
+              iconColor: 'primary',
+              emoji: 'wrench',
+              items: [
+                'Travelline остаётся основной системой',
+                'Без миграции данных и рисков',
+                'Интеграция через API',
+                'Все бронирования обрабатываются как сейчас',
+              ],
+            },
+          ]}
+          columns={2}
+          animated
+          baseAnimationDelay={100}
+          gutter={16}
+          verticalGap={16}
+          wrapInCard={false}
+        />
+      </ContentWithSectionsSlide>
+    ),
+  },
+
   {
     id: 'solution-variants-summary',
     header: 'Что общее во всех вариантах',
