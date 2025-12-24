@@ -428,8 +428,6 @@ export const cameohotelVariantsSlides: SlideData[] = [
     ),
   },
 
-
-
   // Примеры реализации
   {
     id: 'implementation-examples-title',
@@ -491,11 +489,11 @@ export const cameohotelVariantsSlides: SlideData[] = [
     id: 'technical-details-title',
     header: undefined,
     content: (
-        <SectionTitleSlide
-            title="Технические детали"
-            subtitle="Технологический стек и общие характеристики всех вариантов"
-            imageIndex={7}
-        />
+      <SectionTitleSlide
+        title="Технические детали"
+        subtitle="Технологический стек и общие характеристики всех вариантов"
+        imageIndex={7}
+      />
     ),
   },
 
@@ -503,60 +501,60 @@ export const cameohotelVariantsSlides: SlideData[] = [
     id: 'solution-variants-tech',
     header: 'Технологический стек',
     content: (
-        <ContentWithSectionsSlide
-            topSection={
-              <Paragraph style={{ fontSize: 'var(--app-font-size-base)' }}>
-                Все варианты реализуются на едином технологическом стеке:
-              </Paragraph>
-            }
-            bottomSection={
-              <Card size="small" type="inner">
-                <Paragraph>
-                  <BulbOutlined style={{ marginRight: 8 }} />
-                  <Text strong>Почему этот стек:</Text> Сочетание современного
-                  фронтенда (Next.js) с проверенной системой бронирования
-                  (Travelline) даёт оптимальный баланс между производительностью,
-                  SEO и надёжностью бизнес-процессов.
-                </Paragraph>
-              </Card>
-            }
-            wrapInCard={false}
-        >
-          <FeaturesSlide
-              cards={[
-                {
-                  title: 'Фронтенд',
-                  icon: <CodeOutlined />,
-                  iconColor: 'primary',
-                  emoji: 'rocket',
-                  items: [
-                    'Next.js + React + TypeScript',
-                    'Современный стек для высокой производительности',
-                    'Отличная SEO-оптимизация из коробки',
-                    'Быстрая загрузка и отличный UX',
-                  ],
-                },
-                {
-                  title: 'Бэкенд и система бронирования',
-                  icon: <DatabaseOutlined />,
-                  iconColor: 'primary',
-                  emoji: 'wrench',
-                  items: [
-                    'Travelline остаётся основной системой',
-                    'Без миграции данных и рисков',
-                    'Интеграция через API',
-                    'Все бронирования обрабатываются как сейчас',
-                  ],
-                },
-              ]}
-              columns={2}
-              animated
-              baseAnimationDelay={100}
-              gutter={16}
-              verticalGap={16}
-              wrapInCard={false}
-          />
-        </ContentWithSectionsSlide>
+      <ContentWithSectionsSlide
+        topSection={
+          <Paragraph style={{ fontSize: 'var(--app-font-size-base)' }}>
+            Все варианты реализуются на едином технологическом стеке:
+          </Paragraph>
+        }
+        bottomSection={
+          <Card size="small" type="inner">
+            <Paragraph>
+              <BulbOutlined style={{ marginRight: 8 }} />
+              <Text strong>Почему этот стек:</Text> Сочетание современного
+              фронтенда (Next.js) с проверенной системой бронирования
+              (Travelline) даёт оптимальный баланс между производительностью,
+              SEO и надёжностью бизнес-процессов.
+            </Paragraph>
+          </Card>
+        }
+        wrapInCard={false}
+      >
+        <FeaturesSlide
+          cards={[
+            {
+              title: 'Фронтенд',
+              icon: <CodeOutlined />,
+              iconColor: 'primary',
+              emoji: 'rocket',
+              items: [
+                'Next.js + React + TypeScript',
+                'Современный стек для высокой производительности',
+                'Отличная SEO-оптимизация из коробки',
+                'Быстрая загрузка и отличный UX',
+              ],
+            },
+            {
+              title: 'Бэкенд и система бронирования',
+              icon: <DatabaseOutlined />,
+              iconColor: 'primary',
+              emoji: 'wrench',
+              items: [
+                'Travelline остаётся основной системой',
+                'Без миграции данных и рисков',
+                'Интеграция через API',
+                'Все бронирования обрабатываются как сейчас',
+              ],
+            },
+          ]}
+          columns={2}
+          animated
+          baseAnimationDelay={100}
+          gutter={16}
+          verticalGap={16}
+          wrapInCard={false}
+        />
+      </ContentWithSectionsSlide>
     ),
   },
 
@@ -564,57 +562,57 @@ export const cameohotelVariantsSlides: SlideData[] = [
     id: 'solution-variants-summary',
     header: 'Что общее во всех вариантах',
     content: (
-        <ContentWithSectionsSlide
-            topSection={
-              <Paragraph style={{ fontSize: 'var(--app-font-size-base)' }}>
-                Независимо от выбранного варианта, все решения включают:
-              </Paragraph>
-            }
-            wrapInCard={false}
-        >
-          <FeaturesSlide
-              cards={[
-                {
-                  title: 'Интеграция Travelline',
-                  icon: <ApiOutlined />,
-                  iconColor: 'primary',
-                  emoji: 'wrench',
-                  items: [
-                    'Полная интеграция с системой бронирования',
-                    'Поиск номеров, отображение цен, кнопки бронирования',
-                    'Всё работает через Travelline API',
-                  ],
-                },
-                {
-                  title: 'Адаптивный дизайн',
-                  icon: <MobileOutlined />,
-                  iconColor: 'primary',
-                  emoji: 'target',
-                  items: [
-                    'Полноценная мобильная версия для смартфонов и планшетов',
-                    'Удобное бронирование с любого устройства',
-                  ],
-                },
-                {
-                  title: 'Современный стек',
-                  icon: <GlobalOutlined />,
-                  iconColor: 'primary',
-                  emoji: 'rocket',
-                  items: [
-                    'Next.js + React + TypeScript',
-                    'Высокая производительность',
-                    'SEO-оптимизация и удобство поддержки',
-                  ],
-                },
-              ]}
-              columns={3}
-              animated
-              baseAnimationDelay={100}
-              gutter={16}
-              verticalGap={16}
-              wrapInCard={false}
-          />
-        </ContentWithSectionsSlide>
+      <ContentWithSectionsSlide
+        topSection={
+          <Paragraph style={{ fontSize: 'var(--app-font-size-base)' }}>
+            Независимо от выбранного варианта, все решения включают:
+          </Paragraph>
+        }
+        wrapInCard={false}
+      >
+        <FeaturesSlide
+          cards={[
+            {
+              title: 'Интеграция Travelline',
+              icon: <ApiOutlined />,
+              iconColor: 'primary',
+              emoji: 'wrench',
+              items: [
+                'Полная интеграция с системой бронирования',
+                'Поиск номеров, отображение цен, кнопки бронирования',
+                'Всё работает через Travelline API',
+              ],
+            },
+            {
+              title: 'Адаптивный дизайн',
+              icon: <MobileOutlined />,
+              iconColor: 'primary',
+              emoji: 'target',
+              items: [
+                'Полноценная мобильная версия для смартфонов и планшетов',
+                'Удобное бронирование с любого устройства',
+              ],
+            },
+            {
+              title: 'Современный стек',
+              icon: <GlobalOutlined />,
+              iconColor: 'primary',
+              emoji: 'rocket',
+              items: [
+                'Next.js + React + TypeScript',
+                'Высокая производительность',
+                'SEO-оптимизация и удобство поддержки',
+              ],
+            },
+          ]}
+          columns={3}
+          animated
+          baseAnimationDelay={100}
+          gutter={16}
+          verticalGap={16}
+          wrapInCard={false}
+        />
+      </ContentWithSectionsSlide>
     ),
   },
 
@@ -627,27 +625,6 @@ export const cameohotelVariantsSlides: SlideData[] = [
   {
     id: 'contacts-list',
     header: 'Контакты',
-    content: (
-      <ContactsSlide
-        contacts={[
-          {
-            name: 'Новиков Павел',
-            role: 'Технический директор',
-            phone: '+7 908 555 0606',
-            email: 'p.novikov@proxima.ooo',
-            websiteLabel: 'proxima24.ru',
-            variant: 'neutral',
-          },
-          {
-            name: 'Ситяков Артём',
-            role: 'Руководитель отдела маркетинга',
-            phone: '+7 927 110 84 88',
-            email: 'a.sityakov@proxima.ooo',
-            websiteLabel: 'proxima24.ru',
-            variant: 'neutral',
-          },
-        ]}
-      />
-    ),
+    content: <ContactsSlide contacts={['Pasha', 'Artem']} />,
   },
 ];

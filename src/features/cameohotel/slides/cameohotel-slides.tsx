@@ -2352,20 +2352,6 @@ export const cameohotelSlides: SlideData[] = [
   {
     id: 'contacts-list',
     header: undefined,
-    content: (
-      <ContactsSlide
-        contacts={[
-          {
-            name: 'Татьяна',
-            role: 'Клиент (Cameo Hotel)',
-            phone: '+7 (XXX) XXX-XX-XX',
-            email: 'info@cameohotel.ru',
-            websiteLabel: 'www.cameohotel.ru',
-            variant: 'green',
-            size: 'lg',
-          },
-        ]}
-      />
-    ),
+    content: <ContactsSlide contacts={['Pasha', 'Artem']} />,
   },
 ];

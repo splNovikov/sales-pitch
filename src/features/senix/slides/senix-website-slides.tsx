@@ -29,7 +29,7 @@ import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { useTelegramNotification } from '~shared/lib/telegram/use-telegram-notification';
 import { ImageWithLoader } from '~shared/ui/image-with-loader';
 import senixExampleImage from './senix-example.png';
-import { ContactsSlide } from '~shared/ui/contacts-slide.tsx';
+import { ContactsSlide } from '~shared/ui/contacts-slide';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
@@ -672,27 +672,6 @@ export const senixWebsiteSlides: SlideData[] = [
   {
     id: 'contacts',
     header: 'Контакты',
-    content: (
-      <ContactsSlide
-        contacts={[
-          {
-            name: 'Новиков Павел',
-            role: 'Технический директор',
-            phone: '+7 908 555 0606',
-            email: 'p.novikov@proxima.ooo',
-            websiteLabel: 'proxima24.ru',
-            variant: 'green',
-          },
-          {
-            name: 'Ситяков Артём',
-            role: 'Руководитель отдела маркетинга',
-            phone: '+7 927 110 84 88',
-            email: 'a.sityakov@proxima.ooo',
-            websiteLabel: 'proxima24.ru',
-            variant: 'blue',
-          },
-        ]}
-      />
-    ),
+    content: <ContactsSlide contacts={['Pasha', 'Artem']} />,
   },
 ];

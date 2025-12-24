@@ -1,18 +1,35 @@
 import { Card, Row, Col, Space } from 'antd';
-import { ContactCard, type ContactCardProps } from './contact-card';
-
-export type ContactsSlideContact = ContactCardProps;
+import { ContactCard, type ContactCardProps } from '../contact-card';
+import { CONTACTS_CONFIG, type ContactName } from './contacts.config';
 
 export interface ContactsSlideProps {
-  contacts: ContactsSlideContact[];
+  /**
+   * Array of contact names to display
+   * Contacts will be fetched from CONTACTS_CONFIG
+   *
+   * @example
+   * ```tsx
+   * <ContactsSlide contacts={['Pasha', 'Artem']} />
+   * ```
+   */
+  contacts: ContactName[];
 }
 
 /**
  * Generic slide section for displaying team / project contacts.
  * Wraps a set of ContactCard components into a responsive layout.
+ *
+ * @example
+ * ```tsx
+ * <ContactsSlide contacts={['Pasha', 'Artem']} />
+ * ```
  */
 export function ContactsSlide({ contacts }: ContactsSlideProps) {
-  const count = contacts.length;
+  const contactData = contacts
+    .map(name => CONTACTS_CONFIG[name])
+    .filter((contact): contact is ContactCardProps => contact !== undefined);
+
+  const count = contactData.length;
 
   const getColSpans = () => {
     if (count === 1) {
@@ -41,7 +58,7 @@ export function ContactsSlide({ contacts }: ContactsSlideProps) {
     >
       <Card style={{ width: '100%' }}>
         <Row gutter={[24, 24]} style={{ width: '100%', marginInline: 0 }}>
-          {contacts.map(contact => (
+          {contactData.map(contact => (
             <Col
               key={contact.email}
               xs={colSpans.xs}
