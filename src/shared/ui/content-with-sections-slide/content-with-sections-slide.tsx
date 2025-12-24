@@ -39,9 +39,7 @@ export function ContentWithSectionsSlide({
 }: ContentWithSectionsSlideProps) {
   const content = (
     <div className={clsx(styles.container, className)}>
-      {topSection && (
-        <div className={styles.topSection}>{topSection}</div>
-      )}
+      {topSection && <div className={styles.topSection}>{topSection}</div>}
       <div className={styles.mainContent}>{children}</div>
       {bottomSection && (
         <div className={styles.bottomSection}>{bottomSection}</div>

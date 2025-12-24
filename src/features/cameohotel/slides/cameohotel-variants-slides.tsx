@@ -1,4 +1,4 @@
-import { Typography, Card, Space, List, Row, Col, Tag, Divider } from 'antd';
+import { Typography, Card, Space, List, Tag, Divider } from 'antd';
 import {
   CheckCircleOutlined,
   RocketOutlined,
@@ -20,7 +20,7 @@ import { ContentWithSectionsSlide } from '~shared/ui/content-with-sections-slide
 import cameoLogo from '~features/cameohotel/slides/cameo-logo.png';
 import { cameohotelVariantsCreatedAt } from '~features/cameohotel/slides/cameohotel-variants.meta.ts';
 
-const { Title, Paragraph, Text, Link } = Typography;
+const { Paragraph, Text, Link } = Typography;
 
 export const cameohotelVariantsSlides: SlideData[] = [
   // Главный слайд
@@ -473,67 +473,57 @@ export const cameohotelVariantsSlides: SlideData[] = [
     id: 'solution-variants-summary',
     header: 'Что общее во всех вариантах',
     content: (
-      <Card>
-        <Space direction="vertical" size="large" style={{ width: '100%' }}>
-          <Paragraph style={{ fontSize: 'var(--app-font-size-lg)' }}>
+      <ContentWithSectionsSlide
+        topSection={
+          <Paragraph style={{ fontSize: 'var(--app-font-size-base)' }}>
             Независимо от выбранного варианта, все решения включают:
           </Paragraph>
-          <Row gutter={16}>
-            <Col xs={24} md={8}>
-              <Card size="small" type="inner">
-                <Title level={4}>
-                  <ApiOutlined
-                    style={{
-                      color: 'var(--app-color-primary)',
-                      marginRight: 8,
-                    }}
-                  />
-                  Интеграция Travelline
-                </Title>
-                <Text>
-                  Полная интеграция с системой бронирования. Поиск номеров,
-                  отображение цен, кнопки бронирования — всё работает через
-                  Travelline API.
-                </Text>
-              </Card>
-            </Col>
-            <Col xs={24} md={8}>
-              <Card size="small" type="inner">
-                <Title level={4}>
-                  <MobileOutlined
-                    style={{
-                      color: 'var(--app-color-primary)',
-                      marginRight: 8,
-                    }}
-                  />
-                  Адаптивный дизайн
-                </Title>
-                <Text>
-                  Полноценная мобильная версия для смартфонов и планшетов.
-                  Удобное бронирование с любого устройства.
-                </Text>
-              </Card>
-            </Col>
-            <Col xs={24} md={8}>
-              <Card size="small" type="inner">
-                <Title level={4}>
-                  <GlobalOutlined
-                    style={{
-                      color: 'var(--app-color-primary)',
-                      marginRight: 8,
-                    }}
-                  />
-                  Современный стек
-                </Title>
-                <Text>
-                  Next.js + React + TypeScript обеспечивают высокую
-                  производительность, SEO-оптимизацию и удобство поддержки.
-                </Text>
-              </Card>
-            </Col>
-          </Row>
-        </Space>
-      </Card>
+        }
+        wrapInCard={false}
+      >
+        <FeaturesSlide
+          cards={[
+            {
+              title: 'Интеграция Travelline',
+              icon: <ApiOutlined />,
+              iconColor: 'primary',
+              emoji: 'wrench',
+              items: [
+                'Полная интеграция с системой бронирования',
+                'Поиск номеров, отображение цен, кнопки бронирования',
+                'Всё работает через Travelline API',
+              ],
+            },
+            {
+              title: 'Адаптивный дизайн',
+              icon: <MobileOutlined />,
+              iconColor: 'primary',
+              emoji: 'target',
+              items: [
+                'Полноценная мобильная версия для смартфонов и планшетов',
+                'Удобное бронирование с любого устройства',
+              ],
+            },
+            {
+              title: 'Современный стек',
+              icon: <GlobalOutlined />,
+              iconColor: 'primary',
+              emoji: 'rocket',
+              items: [
+                'Next.js + React + TypeScript',
+                'Высокая производительность',
+                'SEO-оптимизация и удобство поддержки',
+              ],
+            },
+          ]}
+          columns={3}
+          animated
+          baseAnimationDelay={100}
+          gutter={16}
+          verticalGap={16}
+          wrapInCard={false}
+        />
+      </ContentWithSectionsSlide>
     ),
   },
 

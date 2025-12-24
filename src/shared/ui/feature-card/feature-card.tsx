@@ -172,34 +172,34 @@ export function FeatureCard({
         className={className}
         style={cardProps.style}
       >
-      {title && (
-        <Title level={titleLevel} className={titleClassName}>
-          {icon && <span className={iconClassName}>{icon}</span>}
-          {title}
-        </Title>
-      )}
-      {subtitle && (
-        <Typography.Text type="secondary" className={styles.subtitle}>
-          {subtitle}
-        </Typography.Text>
-      )}
-      <List
-        size="small"
-        dataSource={items}
-        renderItem={item => (
-          <List.Item className={styles.listItem}>
-            <Typography.Text>
-              {emoji && (
-                <span className={styles.emoji}>
-                  {FEATURE_CARD_EMOJI_MAP[emoji]}
-                </span>
-              )}
-              {item}
-            </Typography.Text>
-          </List.Item>
+        {title && (
+          <Title level={titleLevel} className={titleClassName}>
+            {icon && <span className={iconClassName}>{icon}</span>}
+            {title}
+          </Title>
         )}
-      />
-      {footer && <div className={styles.footer}>{footer}</div>}
+        {subtitle && (
+          <Typography.Text type="secondary" className={styles.subtitle}>
+            {subtitle}
+          </Typography.Text>
+        )}
+        <List
+          size="small"
+          dataSource={items}
+          renderItem={item => (
+            <List.Item className={styles.listItem}>
+              <Typography.Text>
+                {emoji && (
+                  <span className={styles.emoji}>
+                    {FEATURE_CARD_EMOJI_MAP[emoji]}
+                  </span>
+                )}
+                {item}
+              </Typography.Text>
+            </List.Item>
+          )}
+        />
+        {footer && <div className={styles.footer}>{footer}</div>}
       </Card>
     </div>
   );
