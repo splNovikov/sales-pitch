@@ -24,7 +24,7 @@ export interface IpMapping {
 export const ipMappings: IpMapping[] = [
   {
     name: 'Pavel Novikov',
-    iplist: ['95.161.61.95', '188.243.45.163'],
+    iplist: ['95.161.61.95', '95.161.60.109', '188.243.45.163'],
   },
   {
     name: 'Татьяна (Камея)',
