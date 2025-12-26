@@ -1,12 +1,11 @@
-import { Typography, List, Space, Card, Row, Col, Tag, Statistic } from 'antd';
+import { Typography, List, Space, Card, Row, Col, Tag } from 'antd';
 import {
   ShopOutlined,
   CheckCircleOutlined,
   RocketOutlined,
-  BuildOutlined,
   ThunderboltOutlined,
   FileTextOutlined,
-  ClockCircleOutlined,
+  BarChartOutlined,
   ApiOutlined,
   UserOutlined,
 } from '@ant-design/icons';
@@ -14,7 +13,6 @@ import { type SlideData } from '~widgets/slides';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { FeaturesSlide } from '~shared/ui/features-slide';
-import { DemoSlide } from '~shared/ui/demo-slide';
 import { ContentWithSectionsSlide } from '~shared/ui/content-with-sections-slide';
 import { ImageWithLoader } from '~shared/ui/image-with-loader';
 import { rosomahaB2BPortfolioCreatedAt } from './rosomaha-b2b-portfolio.meta';
@@ -25,7 +23,7 @@ import ruskonOrderSetup from './03_order_setup.png';
 import ruskonOrders from './04_orders.png';
 import ruskonHelp from './05_help.png';
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Text } = Typography;
 
 /**
  * Slides data for ROSOMAKHATUL B2B portfolio presentation
@@ -130,36 +128,94 @@ export const rosomahaB2BPortfolioSlides: SlideData[] = [
     id: 'ruskon-profile-example',
     header: 'Профиль оптового клиента',
     content: (
-      <DemoSlide
-        image={
-          <ImageWithLoader
-            src={ruskonProfileExample}
-            alt="Пример профиля оптового клиента"
-            style={{
-              maxHeight: 'calc(100vh - 300px)',
-              width: 'auto',
-              height: 'auto',
-              borderRadius: 8,
-              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
-            }}
-          />
-        }
-        wrapInCard={false}
-        presentationSlug="rosomakhatul-b2b-portfolio"
-      />
-    ),
-  },
-  {
-    id: 'ruskon-profile-description',
-    header: undefined,
-    content: (
-      <Card style={{ backgroundColor: '#f6ffed' }}>
-        <Paragraph style={{ marginBottom: 0, textAlign: 'center' }}>
-          <Text strong>
-            Детальный профиль клиента: контакты, реквизиты компании, история
-            заказов, статусы платежей и персональные настройки.
-          </Text>
-        </Paragraph>
+      <Card>
+        <Row gutter={[24, 24]} align="stretch">
+          <Col xs={24} md={14}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '100%',
+                height: '100%',
+                minHeight: '400px',
+              }}
+            >
+              <ImageWithLoader
+                src={ruskonProfileExample}
+                alt="Пример профиля оптового клиента"
+                style={{
+                  maxHeight: 'calc(100vh - 300px)',
+                  width: 'auto',
+                  height: 'auto',
+                  borderRadius: 8,
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
+                }}
+              />
+            </div>
+          </Col>
+          <Col xs={24} md={10}>
+            <Space
+              direction="vertical"
+              size="middle"
+              style={{ width: '100%', height: '100%' }}
+            >
+              <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <UserOutlined style={{ marginRight: 8, color: '#1890ff' }} />
+                  Контактная информация
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Телефон, email, адрес доставки и контактные лица компании
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <FileTextOutlined
+                    style={{ marginRight: 8, color: '#52c41a' }}
+                  />
+                  Реквизиты компании
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  ИНН, КПП, ОГРН, банковские реквизиты для выставления счетов
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <ShopOutlined style={{ marginRight: 8, color: '#faad14' }} />
+                  История заказов
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Полный список заказов с датами, суммами и текущими статусами
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#f0f0f0' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <BarChartOutlined
+                    style={{ marginRight: 8, color: '#595959' }}
+                  />
+                  Статусы платежей
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Отслеживание оплаченных и неоплаченных счетов, история
+                  платежей
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <RocketOutlined
+                    style={{ marginRight: 8, color: '#ff4d4f' }}
+                  />
+                  Персональные настройки
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Скидки, брейки цен, лимиты кредита и другие индивидуальные
+                  условия
+                </Text>
+              </Card>
+            </Space>
+          </Col>
+        </Row>
       </Card>
     ),
   },
@@ -167,36 +223,101 @@ export const rosomahaB2BPortfolioSlides: SlideData[] = [
     id: 'ruskon-catalog',
     header: 'Каталог товаров',
     content: (
-      <DemoSlide
-        image={
-          <ImageWithLoader
-            src={ruskonCatalog}
-            alt="Каталог товаров"
-            style={{
-              maxHeight: 'calc(100vh - 300px)',
-              width: 'auto',
-              height: 'auto',
-              borderRadius: 8,
-              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
-            }}
-          />
-        }
-        wrapInCard={false}
-        presentationSlug="rosomakhatul-b2b-portfolio"
-      />
-    ),
-  },
-  {
-    id: 'ruskon-catalog-description',
-    header: undefined,
-    content: (
-      <Card style={{ backgroundColor: '#e6f7ff' }}>
-        <Paragraph style={{ marginBottom: 0, textAlign: 'center' }}>
-          <Text strong>
-            Каталог с актуальными остатками, оптовыми ценами, фото продукции и
-            возможностью быстрого поиска и фильтрации.
-          </Text>
-        </Paragraph>
+      <Card>
+        <Row gutter={[24, 24]} align="stretch">
+          <Col xs={24} md={14}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '100%',
+                height: '100%',
+                minHeight: '400px',
+              }}
+            >
+              <ImageWithLoader
+                src={ruskonCatalog}
+                alt="Каталог товаров"
+                style={{
+                  maxHeight: 'calc(100vh - 300px)',
+                  width: 'auto',
+                  height: 'auto',
+                  borderRadius: 8,
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
+                }}
+              />
+            </div>
+          </Col>
+          <Col xs={24} md={10}>
+            <Space
+              direction="vertical"
+              size="middle"
+              style={{ width: '100%', height: '100%' }}
+            >
+              <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <ShopOutlined style={{ marginRight: 8, color: '#1890ff' }} />
+                  Актуальные остатки
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Отображение реального количества товара на складе в режиме
+                  реального времени
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <BarChartOutlined
+                    style={{ marginRight: 8, color: '#52c41a' }}
+                  />
+                  Персональные цены
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Для авторизованных оптовиков отображаются индивидуальные цены,
+                  настроенные в административной панели
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <ThunderboltOutlined
+                    style={{ marginRight: 8, color: '#faad14' }}
+                  />
+                  Поиск и фильтрация
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Быстрый поиск по артикулу, названию и фильтрация по
+                  категориям, производителям и характеристикам
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#f0f0f0' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <FileTextOutlined
+                    style={{ marginRight: 8, color: '#595959' }}
+                  />
+                  Фото и документация
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Фотографии продукции, сертификаты качества и техническая
+                  документация для каждого товара
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <CheckCircleOutlined
+                    style={{ marginRight: 8, color: '#ff4d4f' }}
+                  />
+                  Примечание
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  На скриншоте показан вид каталога для неавторизованного
+                  пользователя. После входа оптовик видит свои персональные
+                  цены, которые настраиваются администратором в панели
+                  управления
+                </Text>
+              </Card>
+            </Space>
+          </Col>
+        </Row>
       </Card>
     ),
   },
@@ -204,36 +325,100 @@ export const rosomahaB2BPortfolioSlides: SlideData[] = [
     id: 'ruskon-order-setup',
     header: 'Оформление заказа',
     content: (
-      <DemoSlide
-        image={
-          <ImageWithLoader
-            src={ruskonOrderSetup}
-            alt="Оформление заказа"
-            style={{
-              maxWidth: '100%',
-              width: 'auto',
-              height: 'auto',
-              borderRadius: 8,
-              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
-            }}
-          />
-        }
-        wrapInCard={false}
-        presentationSlug="rosomakhatul-b2b-portfolio"
-      />
-    ),
-  },
-  {
-    id: 'ruskon-order-setup-description',
-    header: undefined,
-    content: (
-      <Card style={{ backgroundColor: '#fff7e6' }}>
-        <Paragraph style={{ marginBottom: 0, textAlign: 'center' }}>
-          <Text strong>
-            Удобное оформление заказа с расчетом стоимости, выбором способа
-            доставки и возможностью сохранения черновиков.
-          </Text>
-        </Paragraph>
+      <Card>
+        <Row gutter={[24, 24]} align="stretch">
+          <Col xs={24} md={14}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                width: '100%',
+                height: '100%',
+                minHeight: '400px',
+                overflow: 'auto',
+              }}
+            >
+              <ImageWithLoader
+                src={ruskonOrderSetup}
+                alt="Оформление заказа"
+                style={{
+                  maxWidth: '100%',
+                  width: 'auto',
+                  height: 'auto',
+                  borderRadius: 8,
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
+                }}
+              />
+            </div>
+          </Col>
+          <Col xs={24} md={10}>
+            <Space
+              direction="vertical"
+              size="middle"
+              style={{ width: '100%', height: '100%' }}
+            >
+              <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <ShopOutlined style={{ marginRight: 8, color: '#1890ff' }} />
+                  Корзина товаров
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Добавление товаров в корзину с указанием количества и
+                  автоматическим расчетом стоимости
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <BarChartOutlined
+                    style={{ marginRight: 8, color: '#52c41a' }}
+                  />
+                  Расчет стоимости
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Автоматический расчет итоговой суммы с учетом персональных
+                  скидок, брейков цен и количества товара
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <RocketOutlined
+                    style={{ marginRight: 8, color: '#faad14' }}
+                  />
+                  Способ доставки
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Выбор способа доставки: самовывоз, доставка транспортом
+                  компании или сторонней службой доставки
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#f0f0f0' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <FileTextOutlined
+                    style={{ marginRight: 8, color: '#595959' }}
+                  />
+                  Сохранение черновиков
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Возможность сохранить заказ как черновик для последующего
+                  редактирования и оформления
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <CheckCircleOutlined
+                    style={{ marginRight: 8, color: '#ff4d4f' }}
+                  />
+                  Подтверждение заказа
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Отправка заказа на обработку с автоматическим уведомлением
+                  менеджера и формированием документов
+                </Text>
+              </Card>
+            </Space>
+          </Col>
+        </Row>
       </Card>
     ),
   },
@@ -241,36 +426,100 @@ export const rosomahaB2BPortfolioSlides: SlideData[] = [
     id: 'ruskon-orders',
     header: 'Управление заказами',
     content: (
-      <DemoSlide
-        image={
-          <ImageWithLoader
-            src={ruskonOrders}
-            alt="Список заказов"
-            style={{
-              maxWidth: '100%',
-              width: 'auto',
-              height: 'auto',
-              borderRadius: 8,
-              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
-            }}
-          />
-        }
-        wrapInCard={false}
-        presentationSlug="rosomakhatul-b2b-portfolio"
-      />
-    ),
-  },
-  {
-    id: 'ruskon-orders-description',
-    header: undefined,
-    content: (
-      <Card style={{ backgroundColor: '#f0f0f0' }}>
-        <Paragraph style={{ marginBottom: 0, textAlign: 'center' }}>
-          <Text strong>
-            Полная история заказов с отслеживанием статусов, историей платежей и
-            возможностью повторного заказа.
-          </Text>
-        </Paragraph>
+      <Card>
+        <Row gutter={[24, 24]} align="stretch">
+          <Col xs={24} md={14}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                width: '100%',
+                height: '100%',
+                minHeight: '400px',
+                overflow: 'auto',
+              }}
+            >
+              <ImageWithLoader
+                src={ruskonOrders}
+                alt="Список заказов"
+                style={{
+                  maxWidth: '100%',
+                  width: 'auto',
+                  height: 'auto',
+                  borderRadius: 8,
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
+                }}
+              />
+            </div>
+          </Col>
+          <Col xs={24} md={10}>
+            <Space
+              direction="vertical"
+              size="middle"
+              style={{ width: '100%', height: '100%' }}
+            >
+              <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <FileTextOutlined
+                    style={{ marginRight: 8, color: '#1890ff' }}
+                  />
+                  История заказов
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Полный список всех заказов с датами, номерами, суммами и
+                  детальной информацией по каждому заказу
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <CheckCircleOutlined
+                    style={{ marginRight: 8, color: '#52c41a' }}
+                  />
+                  Отслеживание статусов
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Реальное время отслеживания статуса заказа: новый, в
+                  обработке, собран, в доставке, выполнен
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <BarChartOutlined
+                    style={{ marginRight: 8, color: '#faad14' }}
+                  />
+                  История платежей
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Просмотр всех платежей по заказам, статусов оплаты счетов и
+                  остатков задолженности
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#f0f0f0' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <ShopOutlined style={{ marginRight: 8, color: '#595959' }} />
+                  Повторный заказ
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Возможность быстро повторить предыдущий заказ одним кликом,
+                  скопировав состав и количество товаров
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <RocketOutlined
+                    style={{ marginRight: 8, color: '#ff4d4f' }}
+                  />
+                  Печать документов
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Скачивание и печать счетов, накладных, актов и других
+                  документов по заказам в различных форматах
+                </Text>
+              </Card>
+            </Space>
+          </Col>
+        </Row>
       </Card>
     ),
   },
@@ -278,224 +527,103 @@ export const rosomahaB2BPortfolioSlides: SlideData[] = [
     id: 'ruskon-help',
     header: 'Справочная информация',
     content: (
-      <DemoSlide
-        image={
-          <ImageWithLoader
-            src={ruskonHelp}
-            alt="Раздел помощи"
-            style={{
-              maxHeight: 'calc(100vh - 300px)',
-              width: 'auto',
-              height: 'auto',
-              borderRadius: 8,
-              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
-            }}
-          />
-        }
-        wrapInCard={false}
-        presentationSlug="rosomakhatul-b2b-portfolio"
-      />
-    ),
-  },
-  {
-    id: 'ruskon-help-description',
-    header: undefined,
-    content: (
-      <Card style={{ backgroundColor: '#f6ffed' }}>
-        <Paragraph style={{ marginBottom: 0, textAlign: 'center' }}>
-          <Text strong>
-            Встроенная справочная система для помощи клиентам в работе с
-            порталом.
-          </Text>
-        </Paragraph>
+      <Card>
+        <Row gutter={[24, 24]} align="stretch">
+          <Col xs={24} md={14}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '100%',
+                height: '100%',
+                minHeight: '400px',
+              }}
+            >
+              <ImageWithLoader
+                src={ruskonHelp}
+                alt="Раздел помощи"
+                style={{
+                  maxHeight: 'calc(100vh - 300px)',
+                  width: 'auto',
+                  height: 'auto',
+                  borderRadius: 8,
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.35)',
+                }}
+              />
+            </div>
+          </Col>
+          <Col xs={24} md={10}>
+            <Space
+              direction="vertical"
+              size="middle"
+              style={{ width: '100%', height: '100%' }}
+            >
+              <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <FileTextOutlined
+                    style={{ marginRight: 8, color: '#1890ff' }}
+                  />
+                  Инструкции по работе
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Пошаговые инструкции по использованию портала: как оформить
+                  заказ, проверить статус, скачать документы
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <CheckCircleOutlined
+                    style={{ marginRight: 8, color: '#52c41a' }}
+                  />
+                  Часто задаваемые вопросы
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  База знаний с ответами на популярные вопросы клиентов о работе
+                  портала, оплате и доставке
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <UserOutlined style={{ marginRight: 8, color: '#faad14' }} />
+                  Контакты поддержки
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Прямые контакты менеджеров, службы поддержки и технической
+                  помощи для решения вопросов
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#f0f0f0' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <ThunderboltOutlined
+                    style={{ marginRight: 8, color: '#595959' }}
+                  />
+                  Полезные материалы
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Документация, каталоги, прайс-листы, сертификаты и другие
+                  полезные материалы для клиентов
+                </Text>
+              </Card>
+              <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
+                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+                  <RocketOutlined
+                    style={{ marginRight: 8, color: '#ff4d4f' }}
+                  />
+                  Видео-руководства
+                </Title>
+                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
+                  Обучающие видео по работе с порталом для быстрого освоения
+                  всех функций системы
+                </Text>
+              </Card>
+            </Space>
+          </Col>
+        </Row>
       </Card>
     ),
   },
-  {
-    id: 'benefits-title',
-    header: undefined,
-    content: (
-      <SectionTitleSlide
-        title="Преимущества для вашего бизнеса"
-        subtitle="Что получит РОСОМАХАТУЛ от B2B портала"
-        imageIndex={2}
-        imageAlt="Преимущества"
-      />
-    ),
-  },
-  {
-    id: 'benefits',
-    header: 'Преимущества B2B портала',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Row gutter={[16, 16]}>
-          <Col xs={24} md={12}>
-            <Card style={{ backgroundColor: '#f6ffed' }}>
-              <Statistic
-                title="Снижение нагрузки на менеджеров"
-                value={25}
-                suffix="%"
-                prefix={<UserOutlined />}
-                valueStyle={{ color: '#52c41a' }}
-              />
-              <Paragraph style={{ marginTop: 16, marginBottom: 0 }}>
-                <Text>
-                  Клиенты самостоятельно оформляют заказы, проверяют остатки и
-                  статусы
-                </Text>
-              </Paragraph>
-            </Card>
-          </Col>
-          <Col xs={24} md={12}>
-            <Card style={{ backgroundColor: '#e6f7ff' }}>
-              <Statistic
-                title="Рост продаж"
-                value={15}
-                suffix="%"
-                prefix={<RocketOutlined />}
-                valueStyle={{ color: '#1890ff' }}
-              />
-              <Paragraph style={{ marginTop: 16, marginBottom: 0 }}>
-                <Text>
-                  Удобный доступ к каталогу 24/7 увеличивает частоту заказов
-                </Text>
-              </Paragraph>
-            </Card>
-          </Col>
-        </Row>
-        <Row gutter={[16, 16]}>
-          <Col xs={24} md={12}>
-            <Card style={{ backgroundColor: '#fff7e6' }}>
-              <Statistic
-                title="Сокращение ошибок"
-                value={90}
-                suffix="%"
-                prefix={<CheckCircleOutlined />}
-                valueStyle={{ color: '#faad14' }}
-              />
-              <Paragraph style={{ marginTop: 16, marginBottom: 0 }}>
-                <Text>Автоматизация исключает ручной ввод и пересортицу</Text>
-              </Paragraph>
-            </Card>
-          </Col>
-          <Col xs={24} md={12}>
-            <Card style={{ backgroundColor: '#f0f0f0' }}>
-              <Statistic
-                title="Экономия времени"
-                value={40}
-                suffix="%"
-                prefix={<ClockCircleOutlined />}
-                valueStyle={{ color: '#595959' }}
-              />
-              <Paragraph style={{ marginTop: 16, marginBottom: 0 }}>
-                <Text>
-                  Меньше звонков и уточнений, больше автоматизации процессов
-                </Text>
-              </Paragraph>
-            </Card>
-          </Col>
-        </Row>
-      </Space>
-    ),
-  },
-  {
-    id: 'implementation-title',
-    header: undefined,
-    content: (
-      <SectionTitleSlide
-        title="Этапы реализации"
-        subtitle="Как мы создаем B2B портал для вашей компании"
-        imageIndex={3}
-        imageAlt="Этапы реализации"
-      />
-    ),
-  },
-  {
-    id: 'implementation-phases',
-    header: 'Этапы реализации',
-    content: (
-      <ContentWithSectionsSlide>
-        <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-          <Card>
-            <Title level={4} style={{ marginTop: 0 }}>
-              <ClockCircleOutlined style={{ marginRight: 8 }} />
-              Фаза 1: Подготовка (1-2 недели)
-            </Title>
-            <List
-              dataSource={[
-                'Встреча с ключевыми лицами и сбор требований',
-                'Анализ текущих систем (1С, CRM, ERP)',
-                'Дизайн и прототипирование интерфейса',
-                'Техническое задание и план реализации',
-              ]}
-              renderItem={item => (
-                <List.Item style={{ padding: '8px 0' }}>
-                  <CheckCircleOutlined
-                    style={{ color: '#1890ff', marginRight: 12, fontSize: 16 }}
-                  />
-                  <Text style={{ fontSize: 'var(--app-font-size-md)' }}>
-                    {item}
-                  </Text>
-                </List.Item>
-              )}
-            />
-          </Card>
-          <Card>
-            <Title level={4} style={{ marginTop: 0 }}>
-              <BuildOutlined style={{ marginRight: 8 }} />
-              Фаза 2: Разработка MVP (3-4 недели)
-            </Title>
-            <FeaturesSlide
-              cards={[
-                {
-                  title: 'Минимальный функционал',
-                  icon: <RocketOutlined />,
-                  iconColor: 'green',
-                  items: [
-                    'Каталог товаров с остатками',
-                    'Личный кабинет клиента',
-                    'Корзина и оформление заказа',
-                    'История заказов',
-                    'Базовые уведомления',
-                  ],
-                  emoji: 'rocket',
-                  style: { backgroundColor: '#f6ffed' },
-                },
-              ]}
-              columns={1}
-              wrapInCard={false}
-            />
-          </Card>
-          <Card>
-            <Title level={4} style={{ marginTop: 0 }}>
-              <RocketOutlined style={{ marginRight: 8 }} />
-              Фаза 3: Разработка и внедрение (1-3 месяца)
-            </Title>
-            <List
-              dataSource={[
-                'Разработка backend (3-4 недели)',
-                'Разработка frontend (3-4 недели)',
-                'Интеграция с 1С и другими системами',
-                'Тестирование и QA (2 недели)',
-                'Обучение пользователей (1 неделя)',
-                'Запуск в production',
-              ]}
-              renderItem={item => (
-                <List.Item style={{ padding: '8px 0' }}>
-                  <ClockCircleOutlined
-                    style={{ color: '#52c41a', marginRight: 12, fontSize: 16 }}
-                  />
-                  <Text style={{ fontSize: 'var(--app-font-size-md)' }}>
-                    {item}
-                  </Text>
-                </List.Item>
-              )}
-            />
-          </Card>
-        </Space>
-      </ContentWithSectionsSlide>
-    ),
-  },
+
   {
     id: 'next-steps-title',
     header: undefined,
@@ -541,14 +669,6 @@ export const rosomahaB2BPortfolioSlides: SlideData[] = [
               </List.Item>
             )}
           />
-        </Card>
-        <Card style={{ backgroundColor: '#e6f7ff' }}>
-          <Paragraph style={{ textAlign: 'center' }}>
-            <Text strong>
-              Готовы обсудить детали? Свяжитесь с нами для консультации и
-              подготовки индивидуального предложения.
-            </Text>
-          </Paragraph>
         </Card>
       </Space>
     ),
