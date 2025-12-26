@@ -14,6 +14,7 @@ import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { FeaturesSlide } from '~shared/ui/features-slide';
 import { ContentWithSectionsSlide } from '~shared/ui/content-with-sections-slide';
+import { ContactsSlide } from '~shared/ui/contacts-slide';
 import { ImageWithLoader } from '~shared/ui/image-with-loader';
 import { rosomahaB2BPortfolioCreatedAt } from './rosomaha-b2b-portfolio.meta';
 import rosomahaLogo from './rosomaha-logo.png';
@@ -23,7 +24,7 @@ import ruskonOrderSetup from './03_order_setup.png';
 import ruskonOrders from './04_orders.png';
 import ruskonHelp from './05_help.png';
 
-const { Title, Text } = Typography;
+const { Title, Text, Link } = Typography;
 
 /**
  * Slides data for ROSOMAKHATUL B2B portfolio presentation
@@ -118,7 +119,20 @@ export const rosomahaB2BPortfolioSlides: SlideData[] = [
     content: (
       <SectionTitleSlide
         title="Пример из портфолио"
-        subtitle="Реализованный нами B2B портал для оптовых клиентов (кейс Рускон)"
+        subtitle={
+          <>
+            Реализованный нами B2B портал для оптовых клиентов (кейс{' '}
+            <Link
+              href="https://ruskon-s.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontSize: 'inherit' }}
+            >
+              Рускон
+            </Link>
+            )
+          </>
+        }
         imageIndex={1}
         imageAlt="B2B портал Рускон"
       />
@@ -672,5 +686,21 @@ export const rosomahaB2BPortfolioSlides: SlideData[] = [
         </Card>
       </Space>
     ),
+  },
+  {
+    id: 'contacts-title',
+    header: undefined,
+    content: (
+      <SectionTitleSlide
+        title="Контакты"
+        imageIndex={5}
+        imageAlt="Контакты"
+      />
+    ),
+  },
+  {
+    id: 'contacts',
+    header: 'Контактная информация',
+    content: <ContactsSlide contacts={['Pasha', 'Artem']} animated />,
   },
 ];

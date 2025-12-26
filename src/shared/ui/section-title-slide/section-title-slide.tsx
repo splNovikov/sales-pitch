@@ -1,4 +1,5 @@
 import { Space, Typography, Divider } from 'antd';
+import type { ReactNode } from 'react';
 import { ImageWithLoader } from '~shared/ui/image-with-loader';
 import styles from './section-title-slide.module.css';
 
@@ -40,8 +41,9 @@ export interface SectionTitleSlideProps {
   title: string;
   /**
    * Optional subtitle text (displayed in italic below divider)
+   * Can be a string or ReactNode for custom formatting (e.g., links)
    */
-  subtitle?: string;
+  subtitle?: string | ReactNode;
   /**
    * Optional image on the left side (for split layout)
    * Can be either a direct image source URL or use imageIndex with imagePool
