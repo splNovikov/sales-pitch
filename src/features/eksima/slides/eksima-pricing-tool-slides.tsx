@@ -1,14 +1,5 @@
-import {
-  Typography,
-  List,
-  Space,
-  Card,
-  Row,
-  Col,
-  Tag,
-  Divider,
-  Alert,
-} from 'antd';
+import { useState } from 'react';
+import { Typography, List, Space, Card, Tag, Alert, Row, Col, Button } from 'antd';
 import {
   ShopOutlined,
   CheckCircleOutlined,
@@ -18,11 +9,11 @@ import {
   EyeOutlined,
   EyeInvisibleOutlined,
   ShareAltOutlined,
-  LockOutlined,
   SettingOutlined,
-  AppstoreOutlined,
   TeamOutlined,
   ThunderboltOutlined,
+  GlobalOutlined,
+  ArrowRightOutlined,
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
@@ -30,24 +21,68 @@ import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { AnimatedSteps } from '~shared/ui/animated-steps';
 import { ContactsSlide } from '~shared/ui/contacts-slide';
 import { Roadmap, type RoadmapItem } from '~shared/ui/roadmap';
+import { FeaturesSlide } from '~shared/ui/features-slide';
 import { eksimaPricingToolCreatedAt } from './eksima-pricing-tool.meta';
 import { PricingModeToggle } from './pricing-mode-toggle';
-import { PricingSegmentedToggle } from './pricing-segmented-toggle';
 import eksimaLogo from './img.png';
+import eksimaShowroom from './eksima_showroom.png';
+import eksimaPersonal from './eksima-personal.png';
+import eksimaExample from './eksima_example.png';
+import { ImageWithLoader } from '~shared/ui/image-with-loader';
 
 const { Title, Paragraph, Text } = Typography;
+
+/**
+ * Wrapper component for PricingModeToggle with image display
+ * Shows different image based on toggle state:
+ * - false (МОИ ЦЕНЫ) -> eksimaPersonal (личный кабинет партнёра)
+ * - true (ДЕМОНСТРАЦИЯ ПОКУПАТЕЛЮ) -> eksimaShowroom (режим для покупателя)
+ */
+function PricingModeToggleWithImage() {
+  const [isCustomerMode, setIsCustomerMode] = useState(false);
+
+  return (
+    <Space
+      orientation="vertical"
+      size="large"
+      align="center"
+      style={{ width: '100%' }}
+    >
+      <PricingModeToggle value={isCustomerMode} onChange={setIsCustomerMode} />
+      <Card>
+        <div
+          style={{ display: 'flex', justifyContent: 'center', maxWidth: 700 }}
+        >
+          <ImageWithLoader
+            src={isCustomerMode ? eksimaShowroom : eksimaPersonal}
+            alt={
+              isCustomerMode
+                ? 'Демонстрация покупателю'
+                : 'Мои цены (личный кабинет)'
+            }
+            style={{
+              margin: '0 auto',
+              height: 'auto',
+              objectFit: 'contain',
+            }}
+          />
+        </div>
+      </Card>
+    </Space>
+  );
+}
 
 const loginRoadmapItems: RoadmapItem[] = [
   {
     title: 'EKSIMA формирует персональные цены',
     description:
-      'Настройка оптовых цен для конкретного юр. лица с учётом условий партнёрства',
+      'Каждому партнёру установлена собственная оптовая цена (может отличаться от других). Настройка оптовых цен для конкретного юр. лица с учётом условий партнёрства. Партнёр платит EKSIMA по установленной цене, продаёт покупателю по своей цене. Наценка и условия могут быть автоматизированы в зависимости от объёма заказов',
     duration: 'Шаг 1',
   },
   {
     title: 'Юр. лицо авторизуется в системе',
     description:
-      'Вход в личный кабинет по логину и паролю, проверка прав доступа',
+      'Партнёр видит эту цену только в режиме работы ("МОИ ЦЕНЫ"). Вход в личный кабинет по логину и паролю, проверка прав доступа',
     duration: 'Шаг 2',
   },
   {
@@ -94,134 +129,46 @@ export const eksimaPricingToolSlides: SlideData[] = [
     id: 'problem-solution',
     header: 'Проблема и решение',
     content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card style={{ backgroundColor: '#fff7e6' }}>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <RocketOutlined style={{ marginRight: 8, color: '#faad14' }} />
-            Задача
-          </Title>
-          <Paragraph style={{ fontSize: 'var(--app-font-size-md)' }}>
-            Как дать розничным партнёрам (юр. лицам) инструмент для:
-          </Paragraph>
-          <List
-            dataSource={[
+      <FeaturesSlide
+        animated
+        cards={[
+          {
+            title: 'Задача',
+            subtitle:
+              'Как дать розничным партнёрам (юр. лицам) инструмент для:',
+            icon: <RocketOutlined />,
+            iconColor: 'orange',
+            items: [
               'Управления собственными наценками',
               'Демонстрации цен конечным покупателям',
               'Быстрого шаринга каталога без лишних усложнений',
-            ]}
-            renderItem={item => (
-              <List.Item style={{ padding: '4px 0' }}>
-                <CheckCircleOutlined
-                  style={{ color: '#faad14', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-        <Card style={{ backgroundColor: '#f6ffed' }}>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <ThunderboltOutlined style={{ marginRight: 8, color: '#52c41a' }} />
-            Решение
-          </Title>
-          <Paragraph style={{ fontSize: 'var(--app-font-size-md)' }}>
-            Единая система авторизации с двухуровневым ценообразованием:
-          </Paragraph>
-          <List
-            dataSource={[
-              {
-                step: 'Вход в систему',
-                description:
-                  'Партнёр получает свои персональные цены от EKSIMA',
-              },
-              {
-                step: 'Управление наценками',
-                description: 'Партнёр регулирует свою маржу',
-              },
-              {
-                step: 'Шаринг каталога',
-                description: 'Прямая ссылка для покупателей',
-              },
-            ]}
-            renderItem={(item, index) => (
-              <List.Item style={{ padding: '8px 0' }}>
-                <Space>
-                  <Tag
-                    color="green"
-                    style={{ minWidth: '30px', textAlign: 'center' }}
-                  >
-                    {index + 1}
-                  </Tag>
-                  <Space direction="vertical" size="small">
-                    <Text strong>{item.step}</Text>
-                    <Text type="secondary">{item.description}</Text>
-                  </Space>
-                </Space>
-              </List.Item>
-            )}
-          />
-        </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'authorization-title',
-    header: undefined,
-    content: (
-      <SectionTitleSlide
-        title="Система авторизации"
-        subtitle="Двухуровневое ценообразование"
-        imageIndex={1}
-        imageAlt="Система авторизации"
+            ],
+            emoji: 'target',
+          },
+          {
+            title: 'Решение',
+            subtitle:
+              'Единая система авторизации с двухуровневым ценообразованием:',
+            icon: <ThunderboltOutlined />,
+            iconColor: 'green',
+            items: [
+              '1. Вход в систему — Партнёр получает свои персональные цены от EKSIMA',
+              '2. Управление наценками — Партнёр регулирует свою маржу',
+              '3. Шаринг каталога — Прямая ссылка для покупателей',
+            ],
+            emoji: 'rocket',
+          },
+        ]}
+        columns={2}
+        wrapInCard={false}
       />
     ),
   },
   {
-    id: 'authorization',
-    header: 'Система авторизации',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card style={{ backgroundColor: '#e6f7ff' }}>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <ShopOutlined style={{ marginRight: 8 }} />
-            Модель партнёрства
-          </Title>
-          <List
-            dataSource={[
-              'Каждому партнёру установлена собственная оптовая цена (может отличаться от других)',
-              'Партнёр видит эту цену только в режиме работы ("МОИ ЦЕНЫ")',
-              'Партнёр платит EKSIMA по установленной цене, продаёт покупателю по своей цене',
-              'Наценка и условия могут быть автоматизированы в зависимости от объёма заказов',
-            ]}
-            renderItem={item => (
-              <List.Item style={{ padding: '4px 0' }}>
-                <CheckCircleOutlined
-                  style={{ color: '#1890ff', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-      </Space>
-    ),
-  },
-  {
     id: 'login-process-roadmap',
-    header: 'Вход в систему как процесс',
+    header: 'Как работает партнёрство и доступ к системе',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <UserOutlined style={{ marginRight: 8 }} />
-            Вход в систему — по шагам
-          </Title>
-          <Paragraph
-            style={{ fontSize: 'var(--app-font-size-md)', marginBottom: 0 }}
-          >
-            Покажем, как партнёр попадает в каталог с персональными ценами:
-          </Paragraph>
-        </Card>
         <Card>
           <Roadmap items={loginRoadmapItems} mode="alternate" />
         </Card>
@@ -232,82 +179,36 @@ export const eksimaPricingToolSlides: SlideData[] = [
     id: 'catalog-after-login',
     header: 'Каталог после входа',
     content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <AppstoreOutlined style={{ marginRight: 8 }} />
-            Вид после авторизации
-          </Title>
-          <Paragraph style={{ fontSize: 'var(--app-font-size-md)' }}>
-            Партнёр видит каталог товаров с:
-          </Paragraph>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} md={8}>
-              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
-                <Space direction="vertical" size="small">
-                  <Text strong>
-                    <EyeOutlined style={{ marginRight: 8 }} />
-                    Собственной идентикой
-                  </Text>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Логотип, цветовая схема
-                  </Text>
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} md={8}>
-              <Card size="small" style={{ backgroundColor: '#e6f7ff' }}>
-                <Space direction="vertical" size="small">
-                  <Text strong>
-                    <DollarOutlined style={{ marginRight: 8 }} />
-                    Базовыми ценами
-                  </Text>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Оптовые цены от EKSIMA
-                  </Text>
-                </Space>
-              </Card>
-            </Col>
-            <Col xs={24} md={8}>
-              <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
-                <Space direction="vertical" size="small">
-                  <Text strong>
-                    <SettingOutlined style={{ marginRight: 8 }} />
-                    Возможностью управления
-                  </Text>
-                  <Text type="secondary" style={{ fontSize: '12px' }}>
-                    Наценками на каждый товар
-                  </Text>
-                </Space>
-              </Card>
-            </Col>
-          </Row>
-        </Card>
-        <Card style={{ backgroundColor: '#f0f0f0' }}>
-          <Title level={5} style={{ marginTop: 0 }}>
-            Пример: Керамогранит Coliseum Brenta Grey 22,5х90
-          </Title>
-          <Space direction="vertical" size="small" style={{ width: '100%' }}>
-            <Text>
-              <Text strong>Товар:</Text> Керамогранит Coliseum Brenta Grey
-              22,5х90
-            </Text>
-            <Text>
-              <Text strong>Артикул:</Text> CB-22590-BRENTA-GR
-            </Text>
-            <Text>
-              <Text strong>Описание:</Text> Керамогранит, размер 22,5х90 см,
-              серый цвет
-            </Text>
-            <Paragraph style={{ marginTop: 8, marginBottom: 0 }}>
-              <Text type="secondary" style={{ fontSize: '12px' }}>
-                На этом экране партнёр видит базовую информацию и может начать
-                управление ценообразованием
-              </Text>
-            </Paragraph>
-          </Space>
-        </Card>
-      </Space>
+      <FeaturesSlide
+        cards={[
+          {
+            title: 'Собственной идентикой',
+            subtitle: 'Логотип, цветовая схема',
+            icon: <EyeOutlined />,
+            iconColor: 'green',
+            items: ['Логотип компании партнёра', 'Цветовая схема бренда'],
+            emoji: 'palette',
+          },
+          {
+            title: 'Базовыми ценами',
+            subtitle: 'Оптовые цены от EKSIMA',
+            icon: <DollarOutlined />,
+            iconColor: 'blue',
+            items: ['Персональные оптовые цены', 'Условия партнёрства'],
+            emoji: 'target',
+          },
+          {
+            title: 'Возможностью управления',
+            subtitle: 'Наценками на каждый товар',
+            icon: <SettingOutlined />,
+            iconColor: 'orange',
+            items: ['Регулирование маржи', 'Управление наценками'],
+            emoji: 'wrench',
+          },
+        ]}
+        columns={3}
+        wrapInCard={false}
+      />
     ),
   },
   {
@@ -315,7 +216,7 @@ export const eksimaPricingToolSlides: SlideData[] = [
     header: undefined,
     content: (
       <SectionTitleSlide
-        title="Три варианта реализации режима «Покупатель»"
+        title="Варианты реализации режима «Покупатель»"
         subtitle="Выбор оптимального UX для демонстрации цен"
         imageIndex={2}
         imageAlt="Варианты реализации"
@@ -324,116 +225,9 @@ export const eksimaPricingToolSlides: SlideData[] = [
   },
   {
     id: 'customer-mode-variant-1',
-    header: 'Вариант 1: Toggle Switch',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <SettingOutlined style={{ marginRight: 8 }} />
-            Простое переключение
-          </Title>
-          <PricingModeToggle />
-        </Card>
-        <Row gutter={[16, 16]}>
-          <Col xs={24} md={12}>
-            <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
-              <Text strong>
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                Преимущества:
-              </Text>
-              <List
-                size="small"
-                dataSource={['Простота', 'Работает на всех устройствах']}
-                renderItem={item => (
-                  <List.Item style={{ padding: '2px 0' }}>
-                    <Text style={{ fontSize: '12px' }}>• {item}</Text>
-                  </List.Item>
-                )}
-              />
-            </Card>
-          </Col>
-          <Col xs={24} md={12}>
-            <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
-              <Text strong>
-                <EyeOutlined style={{ color: '#faad14', marginRight: 8 }} />
-                Недостатки:
-              </Text>
-              <List
-                size="small"
-                dataSource={['Нужно переключаться туда-сюда']}
-                renderItem={item => (
-                  <List.Item style={{ padding: '2px 0' }}>
-                    <Text style={{ fontSize: '12px' }}>• {item}</Text>
-                  </List.Item>
-                )}
-              />
-            </Card>
-          </Col>
-        </Row>
-      </Space>
-    ),
+    header: 'Простое переключение',
+    content: <PricingModeToggleWithImage />,
   },
-  {
-    id: 'customer-mode-variant-2',
-    header: 'Вариант 2: Segmented',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <AppstoreOutlined style={{ marginRight: 8 }} />
-            Переключение сегментами
-          </Title>
-          <PricingSegmentedToggle />
-        </Card>
-        <Row gutter={[16, 16]}>
-          <Col xs={24} md={12}>
-            <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
-              <Text strong>
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                Преимущества:
-              </Text>
-              <List
-                size="small"
-                dataSource={[
-                  'WYSIWYG (что видишь, то получишь)',
-                  'Live preview',
-                  'Работает на всех устройствах',
-                  'Интуитивно понятный интерфейс',
-                ]}
-                renderItem={item => (
-                  <List.Item style={{ padding: '2px 0' }}>
-                    <Text style={{ fontSize: '12px' }}>• {item}</Text>
-                  </List.Item>
-                )}
-              />
-            </Card>
-          </Col>
-          <Col xs={24} md={12}>
-            <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
-              <Text strong>
-                <EyeOutlined style={{ color: '#faad14', marginRight: 8 }} />
-                Недостатки:
-              </Text>
-              <List
-                size="small"
-                dataSource={['Нужно переключаться между режимами']}
-                renderItem={item => (
-                  <List.Item style={{ padding: '2px 0' }}>
-                    <Text style={{ fontSize: '12px' }}>• {item}</Text>
-                  </List.Item>
-                )}
-              />
-            </Card>
-          </Col>
-        </Row>
-      </Space>
-    ),
-  },
-
   {
     id: 'user-settings-customer-mode',
     header: 'Переключение режима в настройках пользователя',
@@ -476,51 +270,121 @@ export const eksimaPricingToolSlides: SlideData[] = [
             </Space>
           </Space>
         </Card>
-        <Row gutter={[16, 16]}>
-          <Col xs={24} md={12}>
-            <Card size="small" style={{ backgroundColor: '#f6ffед' }}>
-              <Text strong>
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                Преимущества:
-              </Text>
-              <List
-                size="small"
-                dataSource={[
+        <FeaturesSlide
+          cards={[
+            {
+              title: 'Преимущества',
+              icon: <CheckCircleOutlined />,
+              iconColor: 'green',
+              items: [
                   'Гибкая политика показа цен для разных ролей и сценариев',
                   'Безопасность — оптовые цены видны только тем, у кого есть права',
                   'Единая модель визуализации для кабинета и шаринга по ссылке',
-                ]}
-                renderItem={item => (
-                  <List.Item style={{ padding: '2px 0' }}>
-                    <Text style={{ fontSize: '12px' }}>• {item}</Text>
-                  </List.Item>
-                )}
-              />
-            </Card>
-          </Col>
-          <Col xs={24} md={12}>
-            <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
-              <Text strong>
-                <EyeOutlined style={{ color: '#faad14', marginRight: 8 }} />
-                Ограничения:
-              </Text>
-              <List
-                size="small"
-                dataSource={[
+              ],
+              emoji: 'star',
+            },
+            {
+              title: 'Ограничения',
+              icon: <EyeOutlined />,
+              iconColor: 'orange',
+              items: [
                   'Нужно согласовать сценарии использования с отделом продаж',
-                ]}
-                renderItem={item => (
-                  <List.Item style={{ padding: '2px 0' }}>
-                    <Text style={{ fontSize: '12px' }}>• {item}</Text>
-                  </List.Item>
-                )}
+              ],
+              emoji: 'wrench',
+            },
+          ]}
+          columns={2}
+          wrapInCard={false}
+        />
+      </Space>
+    ),
+  },
+  {
+    id: 'eksima-template-demo',
+    header: 'Шаблон для EKSIMA',
+    content: (
+      <Card>
+        <Row gutter={[32, 32]} align="middle">
+          <Col xs={24} lg={14}>
+            <div
+              style={{
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: '12px',
+                overflow: 'hidden',
+                boxShadow: '0 8px 24px rgba(0, 0, 0, 0.1)',
+                backgroundColor: '#f5f5f5',
+              }}
+            >
+              <ImageWithLoader
+                src={eksimaExample}
+                alt="Пример шаблона EKSIMA"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  maxHeight: '600px',
+                  objectFit: 'contain',
+                }}
+                containerStyle={{
+                  width: '100%',
+                  padding: '20px',
+                }}
               />
-            </Card>
+            </div>
+          </Col>
+          <Col xs={24} lg={10}>
+            <Space
+              direction="vertical"
+              size="large"
+              style={{ width: '100%', padding: '20px' }}
+            >
+              <Title level={3} style={{ marginTop: 0 }}>
+                Шаблон реализован специально для EKSIMA
+              </Title>
+              <Paragraph style={{ fontSize: 'var(--app-font-size-lg)' }}>
+                Современный дизайн, адаптивная верстка и все необходимые функции
+                для работы с каталогом товаров
+              </Paragraph>
+              <Button
+                type="primary"
+                size="large"
+                icon={<GlobalOutlined />}
+                href="https://eksima-poc.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                block
+                style={{
+                  height: 64,
+                  fontSize: 20,
+                  fontWeight: 700,
+                  borderRadius: 12,
+                  background:
+                    'linear-gradient(135deg, var(--app-color-primary) 0%, var(--app-gradient-end) 100%)',
+                  border: 'none',
+                  boxShadow: '0 8px 24px rgba(24, 144, 255, 0.4)',
+                  transition: 'all 0.3s ease',
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)';
+                  e.currentTarget.style.boxShadow =
+                    '0 12px 32px rgba(24, 144, 255, 0.5)';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.boxShadow =
+                    '0 8px 24px rgba(24, 144, 255, 0.4)';
+                }}
+              >
+                Посмотреть шаблон
+                <ArrowRightOutlined style={{ marginLeft: 12 }} />
+              </Button>
+      </Space>
           </Col>
         </Row>
-      </Space>
+      </Card>
     ),
   },
   {
@@ -669,98 +533,7 @@ export const eksimaPricingToolSlides: SlideData[] = [
       </Space>
     ),
   },
-  {
-    id: 'token-explanation',
-    header: 'Объяснение персонального токена в URL',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <LockOutlined style={{ marginRight: 8 }} />
-            Что такое эта "непонятная ссылка"?
-          </Title>
-          <Card
-            size="small"
-            style={{
-              backgroundColor: '#f0f0f0',
-              fontFamily: 'monospace',
-              marginTop: 16,
-            }}
-          >
-            <Space direction="vertical" size="small">
-              <Text>
-                <Text strong>Нормальная ссылка:</Text>
-              </Text>
-              <Text>https://eksima.ru/catalog</Text>
-              <Divider style={{ margin: '8px 0' }} />
-              <Text>
-                <Text strong>
-                  Но если поделиться ей просто — никто не узнает, чей это
-                  каталог.
-                </Text>
-              </Text>
-              <Divider style={{ margin: '8px 0' }} />
-              <Text>
-                <Text strong>
-                  Поэтому система добавляет "личный билет" (токен):
-                </Text>
-              </Text>
-              <Text>
-                https://eksima.ru/catalog?view=customer&partner=partner_123&token=abc7k9F2mL
-              </Text>
-            </Space>
-          </Card>
-        </Card>
-        <Card style={{ backgroundColor: '#e6f7ff' }}>
-          <Title level={5} style={{ marginTop: 0 }}>
-            Это означает:
-          </Title>
-          <List
-            dataSource={[
-              'view=customer — "показать режим для покупателя" (без себестоимости)',
-              'partner=partner_123 — "это каталог партнёра с ID partner_123"',
-              'token=abc7k9F2mL — "это персональный ключ доступа" (уникален для каждого шара)',
-            ]}
-            renderItem={item => (
-              <List.Item style={{ padding: '4px 0' }}>
-                <CheckCircleOutlined
-                  style={{ color: '#1890ff', marginRight: 8 }}
-                />
-                <Text style={{ fontSize: '13px' }}>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-        <Alert
-          message="Аналогия"
-          description="Как если вы даёте другу вашу записную книжку — никто другой не будет знать, что это ваши контакты."
-          type="info"
-          showIcon
-        />
-        <Card style={{ backgroundColor: '#f6ffed' }}>
-          <Title level={5} style={{ marginTop: 0 }}>
-            Преимущества такого подхода:
-          </Title>
-          <List
-            dataSource={[
-              'Покупатель видит ЕГО цены (партнёра), не EKSIMA цены',
-              'Невозможно "подглядеть" цены других партнёров',
-              'Каждый токен уникален — можно отследить кто открыл',
-              'Токен можно отозвать в любой момент',
-            ]}
-            renderItem={item => (
-              <List.Item style={{ padding: '4px 0' }}>
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-      </Space>
-    ),
-  },
+  
   {
     id: 'customer-mode-title',
     header: undefined,
@@ -824,68 +597,37 @@ export const eksimaPricingToolSlides: SlideData[] = [
             )}
           />
         </Card>
-        <Row gutter={[16, 16]}>
-          <Col xs={24} md={12}>
-            <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
-              <Title level={5} style={{ marginTop: 0 }}>
-                <EyeOutlined style={{ marginRight: 8 }} />
-                Что видит покупатель:
-              </Title>
-              <List
-                size="small"
-                dataSource={[
+        <FeaturesSlide
+          cards={[
+            {
+              title: 'Что видит покупатель',
+              icon: <EyeOutlined />,
+              iconColor: 'green',
+              items: [
                   'Логотип компании партнёра',
                   'Керамогранит Coliseum Brenta Grey 22,5х90',
                   'Цена: 1 044 ₽',
                   '[Добавить в корзину]',
                   'Далее в каталоге 200+ товаров',
-                ]}
-                renderItem={item => (
-                  <List.Item style={{ padding: '2px 0' }}>
-                    <CheckCircleOutlined
-                      style={{
-                        color: '#52c41a',
-                        marginRight: 4,
-                        fontSize: '12px',
-                      }}
-                    />
-                    <Text style={{ fontSize: '12px' }}>{item}</Text>
-                  </List.Item>
-                )}
-              />
-            </Card>
-          </Col>
-          <Col xs={24} md={12}>
-            <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
-              <Title level={5} style={{ marginTop: 0 }}>
-                <EyeInvisibleOutlined style={{ marginRight: 8 }} />
-                Что НЕ видит:
-              </Title>
-              <List
-                size="small"
-                dataSource={[
+              ],
+              emoji: 'star',
+            },
+            {
+              title: 'Что НЕ видит',
+              icon: <EyeInvisibleOutlined />,
+              iconColor: 'orange',
+              items: [
                   'Себестоимость (580 ₽)',
                   'Коэффициент наценки (1.80x)',
                   'Маржу партнёра (464 ₽)',
                   'Никаких кнопок управления или админ-панели',
-                ]}
-                renderItem={item => (
-                  <List.Item style={{ padding: '2px 0' }}>
-                    <Text
-                      type="secondary"
-                      style={{
-                        fontSize: '12px',
-                        textDecoration: 'line-through',
-                      }}
-                    >
-                      {item}
-                    </Text>
-                  </List.Item>
-                )}
-              />
-            </Card>
-          </Col>
-        </Row>
+              ],
+              emoji: 'wrench',
+            },
+          ]}
+          columns={2}
+          wrapInCard={false}
+        />
         <Alert
           message="Полностью «чистый» каталог"
           description="Как обычный интернет-магазин — покупатель видит только товары и цены партнёра."
@@ -912,167 +654,62 @@ export const eksimaPricingToolSlides: SlideData[] = [
     id: 'benefits',
     header: 'Ключевые преимущества',
     content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <ShopOutlined style={{ marginRight: 8 }} />
-            Для партнёра (розничника)
-          </Title>
-          <List
-            dataSource={[
+      <FeaturesSlide
+        cards={[
+          {
+            title: 'Для партнёра (розничника)',
+            icon: <ShopOutlined />,
+            iconColor: 'green',
+            items: [
               'Полный контроль над ценообразованием — сами решают наценку на каждый товар',
               'Собственная идентика в каталоге — логотип, цвета, название',
               'Неограниченное количество точек — можно создать 10 каталогов с разными ценами',
               'Простой шаринг — одна кнопка → ссылка готова',
               'Live демонстрация — сидят за компом, показываются цены покупателю',
               'Безопасность — покупатель видит ТОЛЬКО розничные цены',
-            ]}
-            renderItem={item => (
-              <List.Item style={{ padding: '4px 0' }}>
-                <CheckCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-        <Card style={{ backgroundColor: '#e6f7ff' }}>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <RocketOutlined style={{ marginRight: 8 }} />
-            Для EKSIMA
-          </Title>
-          <List
-            dataSource={[
+            ],
+            emoji: 'star',
+          },
+          {
+            title: 'Для EKSIMA',
+            icon: <RocketOutlined />,
+            iconColor: 'blue',
+            items: [
               'Масштабируемость — один инструмент для 1000+ партнёров',
               'Контроль ценовой политики — видим кто как продаёт',
               'Снижение нагрузки на клиент-сервис — партнёры сами управляют ценами',
               'Данные о партнёрах — видим как популярны разные товары',
-            ]}
-            renderItem={item => (
-              <List.Item style={{ padding: '4px 0' }}>
-                <CheckCircleOutlined
-                  style={{ color: '#1890ff', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-        <Card style={{ backgroundColor: '#fff7e6' }}>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <UserOutlined style={{ marginRight: 8 }} />
-            Для покупателя
-          </Title>
-          <List
-            dataSource={[
+            ],
+            emoji: 'rocket',
+          },
+          {
+            title: 'Для покупателя',
+            icon: <UserOutlined />,
+            iconColor: 'orange',
+            items: [
               'Простота — открыл ссылку, видит товары и цены',
               'Быстро — не нужно авторизовываться',
               'Удобно — может добавлять в корзину с мобильного',
-            ]}
-            renderItem={item => (
-              <List.Item style={{ padding: '4px 0' }}>
-                <CheckCircleOutlined
-                  style={{ color: '#faad14', marginRight: 8 }}
-                />
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-      </Space>
+            ],
+            emoji: 'lightbulb',
+          },
+        ]}
+        columns={3}
+        animated
+        baseAnimationDelay={150}
+      />
     ),
   },
+
   {
-    id: 'summary',
-    header: 'Резюме',
+    id: 'contacts-title',
+    header: undefined,
     content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={3} style={{ marginTop: 0, textAlign: 'center' }}>
-            EKSIMA Pricing Tool
-          </Title>
-          <Paragraph
-            style={{
-              fontSize: 'var(--app-font-size-lg)',
-              textAlign: 'center',
-            }}
-          >
-            Это инструмент, который позволяет:
-          </Paragraph>
-        </Card>
-        <Row gutter={[16, 16]}>
-          <Col xs={24} md={8}>
-            <Card style={{ height: '100%', backgroundColor: '#f6ffed' }}>
-              <Space
-                direction="vertical"
-                size="middle"
-                style={{ width: '100%', textAlign: 'center' }}
-              >
-                <ShopOutlined style={{ fontSize: '40px', color: '#52c41a' }} />
-                <Title level={4} style={{ margin: 0 }}>
-                  Партнёрам
-                </Title>
-                <Text>
-                  Управлять своими ценами и демонстрировать их покупателям
-                </Text>
-              </Space>
-            </Card>
-          </Col>
-          <Col xs={24} md={8}>
-            <Card style={{ height: '100%', backgroundColor: '#e6f7ff' }}>
-              <Space
-                direction="vertical"
-                size="middle"
-                style={{ width: '100%', textAlign: 'center' }}
-              >
-                <UserOutlined style={{ fontSize: '40px', color: '#1890ff' }} />
-                <Title level={4} style={{ margin: 0 }}>
-                  Покупателям
-                </Title>
-                <Text>Видеть актуальные цены без лишних сложностей</Text>
-              </Space>
-            </Card>
-          </Col>
-          <Col xs={24} md={8}>
-            <Card style={{ height: '100%', backgroundColor: '#fff7e6' }}>
-              <Space
-                direction="vertical"
-                size="middle"
-                style={{ width: '100%', textAlign: 'center' }}
-              >
-                <RocketOutlined
-                  style={{ fontSize: '40px', color: '#faad14' }}
-                />
-                <Title level={4} style={{ margin: 0 }}>
-                  EKSIMA
-                </Title>
-                <Text>
-                  Масштабировать продажи без увеличения нагрузки на поддержку
-                </Text>
-              </Space>
-            </Card>
-          </Col>
-        </Row>
-        <Card style={{ backgroundColor: '#f0f0f0' }}>
-          <Paragraph
-            style={{
-              fontSize: 'var(--app-font-size-md)',
-              textAlign: 'center',
-              marginBottom: 0,
-              fontStyle: 'italic',
-            }}
-          >
-            <Text strong>Как это работает в одной фразе:</Text>
-            <br />
-            <Text type="secondary">
-              «Партнёр авторизуется → видит свои оптовые цены → устанавливает
-              наценку → шарит ссылку с покупателем → покупатель видит готовый
-              каталог с ценами партнера»
-            </Text>
-          </Paragraph>
-        </Card>
-      </Space>
+      <SectionTitleSlide
+        title="Контакты"
+        imageIndex={8}
+        imageAlt="Контакты"
+      />
     ),
   },
   {

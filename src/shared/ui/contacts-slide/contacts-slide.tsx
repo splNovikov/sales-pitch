@@ -39,7 +39,7 @@ export interface ContactsSlideProps {
  */
 export function ContactsSlide({
   contacts,
-  animated = false,
+  animated = true,
   baseAnimationDelay = 150,
 }: ContactsSlideProps) {
   const contactData = useMemo(

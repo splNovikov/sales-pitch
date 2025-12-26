@@ -43,7 +43,7 @@ export interface FeaturesSlideProps {
 export function FeaturesSlide({
   cards,
   columns = 2,
-  animated = false,
+  animated = true,
   baseAnimationDelay = 100,
   gutter = 16,
   verticalGap = 16,

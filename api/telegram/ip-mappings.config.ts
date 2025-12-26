@@ -34,6 +34,10 @@ export const ipMappings: IpMapping[] = [
     name: 'Стасян (А-тис)',
     iplist: ['5.3.214.26'],
   },
+  {
+    name: 'Сева',
+    iplist: ['89.23.120.48'],
+  },
 ];
 
 /**
