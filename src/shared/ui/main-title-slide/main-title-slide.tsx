@@ -7,7 +7,7 @@ export interface MainTitleSlideProps {
   /**
    * Main title text (displayed with gradient)
    */
-  title: string;
+  title?: string;
   /**
    * Optional subtitle (displayed as Title level 2)
    */
