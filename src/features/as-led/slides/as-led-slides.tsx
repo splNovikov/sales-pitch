@@ -666,52 +666,8 @@ export const asLedSlides: SlideData[] = [
     ),
   },
 
-  // 12. Landing Page Evolution
-  {
-    id: 'evolution',
-    header: 'Развитие лендинга',
-    content: (
-      <Space direction="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Space direction="vertical" size="middle" style={{ width: '100%' }}>
-            <Title level={3}>Мы постоянно улучшаем наш лендинг на основе данных и отзывов.</Title>
+  // 12. DELETED
 
-            <Row gutter={[16, 16]}>
-              <Col span={12}>
-                <Card size="small" title="✅ A/B тестирование" hoverable>
-                  <Paragraph>
-                    Тестируем разные варианты дизайна и контента, чтобы найти наиболее эффективные решения для
-                    конверсии.
-                  </Paragraph>
-                </Card>
-              </Col>
-              <Col span={12}>
-                <Card size="small" title="✅ Аналитика поведения" hoverable>
-                  <Paragraph>
-                    Анализируем, как пользователи взаимодействуют с сайтом, и улучшаем проблемные места.
-                  </Paragraph>
-                </Card>
-              </Col>
-              <Col span={12}>
-                <Card size="small" title="✅ Новый контент" hoverable>
-                  <Paragraph>
-                    Регулярно добавляем кейсы, статьи, видео и другие материалы, которые помогают клиентам в выборе.
-                  </Paragraph>
-                </Card>
-              </Col>
-              <Col span={12}>
-                <Card size="small" title="✅ Технологические обновления" hoverable>
-                  <Paragraph>
-                    Внедряем новые веб-технологии для ускорения загрузки и улучшения пользовательского опыта.
-                  </Paragraph>
-                </Card>
-              </Col>
-            </Row>
-          </Space>
-        </Card>
-      </Space>
-    ),
-  },
 
   // 13. Demo Slide
   {
@@ -745,7 +701,103 @@ export const asLedSlides: SlideData[] = [
     ),
   },
 
-  // 14. Contacts
+  // 14. Pricing Section
+  {
+    id: 'pricing-section',
+    header: undefined,
+    content: (
+      <SectionTitleSlide
+        title="Стоимость лендинга"
+        subtitle="Три варианта на выбор в зависимости от ваших потребностей"
+        imageIndex={3}
+      />
+    ),
+  },
+
+  // 15. Pricing Options
+  {
+    id: 'pricing',
+    header: 'Тарифные планы',
+    content: (
+      <FeaturesSlide
+        columns={3}
+        animated
+        cards={[
+          {
+            title: 'Basic',
+            subtitle: '100 000 ₽',
+            emoji: 'lightbulb',
+            iconColor: 'blue',
+            items: [
+              '✅ Современный дизайн',
+              '✅ Адаптивная верстка',
+              '✅ Базовые разделы (о компании, продукция, контакты)',
+              '✅ Форма обратной связи',
+              '✅ Интеграция с соцсетями',
+              '✅ SEO-оптимизация (базовая)',
+              '✅ Хостинг на 1 год',
+            ],
+            footer: (
+              <div style={{ marginTop: 16, paddingTop: 16, borderTop: '1px solid #f0f0f0', textAlign: 'center' }}>
+                <Text strong style={{ fontSize: 16, color: '#1890ff' }}>
+                  Подходит для старта
+                </Text>
+              </div>
+            ),
+          },
+          {
+            title: 'Advanced',
+            subtitle: '150 000 - 200 000 ₽',
+            emoji: 'rocket',
+            iconColor: 'purple',
+            items: [
+              '✅ Всё из Basic +',
+              '✅ Расширенные разделы (портфолио, кейсы, блог)',
+              '✅ Калькулятор стоимости',
+              '✅ Онлайн-чат',
+              '✅ Интеграция с CRM',
+              '✅ Расширенная аналитика',
+              '✅ SEO-оптимизация (продвинутая)',
+              '✅ Email-рассылка',
+            ],
+            footer: (
+              <div style={{ marginTop: 16, paddingTop: 16, borderTop: '1px solid #f0f0f0', textAlign: 'center' }}>
+                <Text strong style={{ fontSize: 16, color: '#722ed1' }}>
+                  Рекомендуем
+                </Text>
+              </div>
+            ),
+          },
+          {
+            title: 'Pro',
+            subtitle: 'от 200 000 ₽',
+            emoji: 'star',
+            iconColor: 'gold',
+            items: [
+              '✅ Всё из Advanced +',
+              '✅ Индивидуальный дизайн',
+              '✅ Сложные интеграции (API)',
+              '✅ Личный кабинет клиента',
+              '✅ Многоязычность',
+              '✅ A/B тестирование',
+              '✅ Приоритетная поддержка',
+              '✅ Обучение команды',
+              '✅ Дополнительные функции под заказ',
+            ],
+            footer: (
+              <div style={{ marginTop: 16, paddingTop: 16, borderTop: '1px solid #f0f0f0', textAlign: 'center' }}>
+                <Text strong style={{ fontSize: 16, color: '#faad14' }}>
+                  Максимум возможностей
+                </Text>
+              </div>
+            ),
+          },
+        ]}
+      />
+    ),
+  },
+
+  // 16. Contacts
   {
     id: 'contacts',
     header: 'Контакты',
