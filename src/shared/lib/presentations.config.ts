@@ -125,6 +125,10 @@ import {
   networkdevicesCreatedAt,
   networkdevicesTitle,
 } from '~features/networkdevices/slides/networkdevices.meta';
+import {
+  asLedCreatedAt,
+  asLedTitle,
+} from '~features/as-led/slides/as-led.meta';
 
 /**
  * Presentation metadata
@@ -395,6 +399,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'networkdevices',
     title: networkdevicesTitle,
     createdAt: networkdevicesCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'as-led',
+    title: asLedTitle,
+    createdAt: asLedCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
