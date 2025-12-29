@@ -6,7 +6,9 @@ import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { FeaturesSlide } from '~shared/ui/features-slide';
 import { ContactsSlide } from '~shared/ui/contacts-slide';
 import { DemoSlide } from '~shared/ui/demo-slide';
+import { PricingSlide } from '~shared/ui/pricing-slide';
 import { asLedCreatedAt } from './as-led.meta';
+import asLedLogo from './favicon.svg';
 
 const { Title, Paragraph, Text, Link } = Typography;
 
@@ -18,8 +20,9 @@ export const asLedSlides: SlideData[] = [
     content: (
       <MainTitleSlide
         title="AS-LED"
-        description="Конкурентный анализ: Веб-ресурсы LED-экранов"
-        subtitle="Современная платформа управления LED-экранами"
+        logo={asLedLogo}
+        logoAlt="AS-LED Logo"
+        logoMaxWidth={120}
         createdAt={asLedCreatedAt}
         location="Санкт-Петербург"
       />
@@ -719,78 +722,63 @@ export const asLedSlides: SlideData[] = [
     id: 'pricing',
     header: 'Тарифные планы',
     content: (
-      <FeaturesSlide
+      <PricingSlide
         columns={3}
         animated
-        cards={[
+        tiers={[
           {
-            title: 'Basic',
-            subtitle: '100 000 ₽',
+            name: 'Базовый',
+            price: '75 000 ₽',
+            label: 'Запуск готового решения',
+            labelBg: '#e6f4ff',
+            labelColor: '#1890ff',
             emoji: 'lightbulb',
             iconColor: 'blue',
-            items: [
-              '✅ Современный дизайн',
-              '✅ Адаптивная верстка',
-              '✅ Базовые разделы (о компании, продукция, контакты)',
-              '✅ Форма обратной связи',
-              '✅ Интеграция с соцсетями',
-              '✅ SEO-оптимизация (базовая)',
-              '✅ Хостинг на 1 год',
+            features: [
+              '✅ Доработка текущей версии',
+              '✅ Корректировка данных',
+              '✅ Финализация дизайна',
+              '✅ Публикация на хостинг',
+              '✅ Настройка базового SEO',
+              '✅ Тестирование на всех устройствах',
+              '✅ Инструкция по использованию',
             ],
-            footer: (
-              <div style={{ marginTop: 16, paddingTop: 16, borderTop: '1px solid #f0f0f0', textAlign: 'center' }}>
-                <Text strong style={{ fontSize: 16, color: '#1890ff' }}>
-                  Подходит для старта
-                </Text>
-              </div>
-            ),
           },
           {
-            title: 'Advanced',
-            subtitle: '150 000 - 200 000 ₽',
+            name: 'Стандарт',
+            price: '75 000 - 125 000 ₽',
+            label: 'С учетом Ваших пожеланий',
+            labelBg: '#f9f0ff',
+            labelColor: '#722ed1',
             emoji: 'rocket',
             iconColor: 'purple',
-            items: [
-              '✅ Всё из Basic +',
-              '✅ Расширенные разделы (портфолио, кейсы, блог)',
-              '✅ Калькулятор стоимости',
-              '✅ Онлайн-чат',
-              '✅ Интеграция с CRM',
-              '✅ Расширенная аналитика',
-              '✅ SEO-оптимизация (продвинутая)',
-              '✅ Email-рассылка',
+            features: [
+              '✅ Всё из Базового +',
+              '✅ Доработки по вашим пожеланиям',
+              '✅ Несколько итераций правок',
+              '✅ Настройка дополнительных разделов',
+              '✅ Улучшение UX на основе ваших требований',
+              '✅ Дополнительная оптимизация',
+              '⚠️ Только выполнимые доработки',
             ],
-            footer: (
-              <div style={{ marginTop: 16, paddingTop: 16, borderTop: '1px solid #f0f0f0', textAlign: 'center' }}>
-                <Text strong style={{ fontSize: 16, color: '#722ed1' }}>
-                  Рекомендуем
-                </Text>
-              </div>
-            ),
           },
           {
-            title: 'Pro',
-            subtitle: 'от 200 000 ₽',
+            name: 'Премиум',
+            price: '150 000 ₽',
+            label: 'Полная автономность',
+            labelBg: '#fffbe6',
+            labelColor: '#faad14',
             emoji: 'star',
             iconColor: 'gold',
-            items: [
-              '✅ Всё из Advanced +',
-              '✅ Индивидуальный дизайн',
-              '✅ Сложные интеграции (API)',
-              '✅ Личный кабинет клиента',
-              '✅ Многоязычность',
-              '✅ A/B тестирование',
-              '✅ Приоритетная поддержка',
-              '✅ Обучение команды',
-              '✅ Дополнительные функции под заказ',
+            features: [
+              '✅ Всё из Стандарт +',
+              '✅ Интеграция с CMS',
+              '✅ Возможность самостоятельного управления контентом',
+              '✅ Административная панель',
+              '✅ Обучение работе с CMS',
+              '✅ Документация по управлению',
+              '✅ Расширенная поддержка',
             ],
-            footer: (
-              <div style={{ marginTop: 16, paddingTop: 16, borderTop: '1px solid #f0f0f0', textAlign: 'center' }}>
-                <Text strong style={{ fontSize: 16, color: '#faad14' }}>
-                  Максимум возможностей
-                </Text>
-              </div>
-            ),
           },
         ]}
       />
