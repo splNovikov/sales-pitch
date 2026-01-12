@@ -5,7 +5,6 @@ import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { FeaturesSlide } from '~shared/ui/features-slide';
 import { ContactsSlide } from '~shared/ui/contacts-slide';
-import { DemoSlide } from '~shared/ui/demo-slide';
 import { huchEntecCreatedAt } from './huch-entec.meta';
 
 const { Title, Paragraph, Link } = Typography;
@@ -116,7 +115,7 @@ export const huchEntecSlides: SlideData[] = [
   // 5. AS-LED Project
   {
     id: 'project-as-led',
-    header: 'Проект: AS-LED',
+    header: 'Проект: AS-LED — 80 000 ₽',
     content: (
       <Space direction="vertical" size="large" style={{ width: '100%' }}>
         <Card>
@@ -137,88 +136,67 @@ export const huchEntecSlides: SlideData[] = [
           </Space>
         </Card>
 
-        <FeaturesSlide
-          columns={3}
-          animated
-          cards={[
-            {
-              title: 'Что сделали',
-              items: [
-                '✅ Анализ конкурентов',
-                '✅ Современный лендинг',
-                '✅ Калькулятор стоимости',
-                '✅ Демо-версия платформы',
-                '✅ Адаптивный дизайн',
-              ],
-              emoji: 'target',
-              iconColor: 'blue',
-            },
-            {
-              title: 'Технологии',
-              items: [
-                'React + TypeScript',
-                'Ant Design',
-                'Vite',
-                'Vercel',
-                'Responsive design',
-              ],
-              emoji: 'wrench',
-              iconColor: 'purple',
-            },
-            {
-              title: 'Результат',
-              items: [
-                '⭐ Современный UX/UI',
-                '⭐ Быстрая загрузка',
-                '⭐ Полная информация',
-                '⭐ Интерактивность',
-                '⭐ Превосходство над конкурентами',
-              ],
-              emoji: 'chart',
-              iconColor: 'green',
-            },
-          ]}
-        />
+        <Card
+          style={{
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            border: 'none',
+            marginTop: 16,
+          }}
+        >
+          <Row gutter={[32, 32]} align="middle">
+            <Col span={16}>
+              <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Title level={4} style={{ color: 'white', margin: 0 }}>
+                  Что сделали
+                </Title>
+                <ul style={{ color: 'white', fontSize: 16, margin: 0, paddingLeft: 20 }}>
+                  <li>Анализ конкурентов</li>
+                  <li>Современный лендинг</li>
+                  <li>Калькулятор стоимости</li>
+                  <li>Демо-версия платформы</li>
+                  <li>Адаптивный дизайн</li>
+                </ul>
+              </Space>
+            </Col>
+            <Col span={8} style={{ textAlign: 'center' }}>
+              <a
+                href="https://as-led-poc-qc2d.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-block',
+                  padding: '16px 32px',
+                  background: 'white',
+                  color: '#667eea',
+                  borderRadius: '8px',
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                  textDecoration: 'none',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                  transition: 'all 0.3s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.25)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                }}
+              >
+                Открыть демо →
+              </a>
+            </Col>
+          </Row>
+        </Card>
       </Space>
     ),
   },
 
-  // 6. AS-LED Demo
-  {
-    id: 'as-led-demo',
-    header: 'AS-LED — Демонстрация',
-    content: (
-      <DemoSlide
-        image={
-          <div
-            style={{
-              width: '100%',
-              height: '400px',
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'white',
-              fontSize: '24px',
-              fontWeight: 'bold',
-            }}
-          >
-            AS-LED Platform Preview
-          </div>
-        }
-        demoUrl="https://as-led-poc-qc2d.vercel.app/"
-        buttonText="Открыть демо"
-        presentationSlug="as-led"
-        wrapInCard
-      />
-    ),
-  },
-
-  // 7. Hanskonner Project
+  // 6. Hanskonner Project
   {
     id: 'project-hanskonner',
-    header: 'Проект: Hanskonner',
+    header: 'Проект: Hanskonner — 65 000 ₽',
     content: (
       <Space direction="vertical" size="large" style={{ width: '100%' }}>
         <Card>
@@ -239,88 +217,67 @@ export const huchEntecSlides: SlideData[] = [
           </Space>
         </Card>
 
-        <FeaturesSlide
-          columns={3}
-          animated
-          cards={[
-            {
-              title: 'Что сделали',
-              items: [
-                '✅ Анализ бизнеса',
-                '✅ Стратегия развития',
-                '✅ Корпоративный сайт',
-                '✅ Каталог продукции',
-                '✅ Портфолио проектов',
-              ],
-              emoji: 'target',
-              iconColor: 'blue',
-            },
-            {
-              title: 'Технологии',
-              items: [
-                'React + TypeScript',
-                'Next.js',
-                'Headless CMS',
-                'Адаптивная верстка',
-                'SEO оптимизация',
-              ],
-              emoji: 'wrench',
-              iconColor: 'purple',
-            },
-            {
-              title: 'Результат',
-              items: [
-                '⭐ Профессиональный дизайн',
-                '⭐ Удобное управление контентом',
-                '⭐ Быстрая навигация',
-                '⭐ Отличная производительность',
-                '⭐ Высокая конверсия',
-              ],
-              emoji: 'chart',
-              iconColor: 'green',
-            },
-          ]}
-        />
+        <Card
+          style={{
+            background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+            border: 'none',
+            marginTop: 16,
+          }}
+        >
+          <Row gutter={[32, 32]} align="middle">
+            <Col span={16}>
+              <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Title level={4} style={{ color: 'white', margin: 0 }}>
+                  Что сделали
+                </Title>
+                <ul style={{ color: 'white', fontSize: 16, margin: 0, paddingLeft: 20 }}>
+                  <li>Анализ бизнеса и стратегия</li>
+                  <li>Корпоративный сайт</li>
+                  <li>Каталог продукции</li>
+                  <li>Портфолио проектов</li>
+                  <li>Интеграция с CMS</li>
+                </ul>
+              </Space>
+            </Col>
+            <Col span={8} style={{ textAlign: 'center' }}>
+              <a
+                href="https://hanskonner-reborn.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-block',
+                  padding: '16px 32px',
+                  background: 'white',
+                  color: '#f5576c',
+                  borderRadius: '8px',
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                  textDecoration: 'none',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                  transition: 'all 0.3s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.25)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                }}
+              >
+                Открыть демо →
+              </a>
+            </Col>
+          </Row>
+        </Card>
       </Space>
     ),
   },
 
-  // 8. Hanskonner Demo
-  {
-    id: 'hanskonner-demo',
-    header: 'Hanskonner — Демонстрация',
-    content: (
-      <DemoSlide
-        image={
-          <div
-            style={{
-              width: '100%',
-              height: '400px',
-              background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'white',
-              fontSize: '24px',
-              fontWeight: 'bold',
-            }}
-          >
-            Hanskonner Website Preview
-          </div>
-        }
-        demoUrl="https://hanskonner-reborn.vercel.app/"
-        buttonText="Открыть демо"
-        presentationSlug="hanskonner-reborn"
-        wrapInCard
-      />
-    ),
-  },
-
-  // 9. Rosomaha Project
+  // 7. Rosomaha Project
   {
     id: 'project-rosomaha',
-    header: 'Проект: РОСОМАХАТУЛ',
+    header: 'Проект: РОСОМАХАТУЛ — 20 000 ₽',
     content: (
       <Space direction="vertical" size="large" style={{ width: '100%' }}>
         <Card>
@@ -341,88 +298,67 @@ export const huchEntecSlides: SlideData[] = [
           </Space>
         </Card>
 
-        <FeaturesSlide
-          columns={3}
-          animated
-          cards={[
-            {
-              title: 'Что сделали',
-              items: [
-                '✅ Личный кабинет клиента',
-                '✅ Каталог с остатками',
-                '✅ Система заказов',
-                '✅ Интеграция с 1С',
-                '✅ История операций',
-              ],
-              emoji: 'target',
-              iconColor: 'blue',
-            },
-            {
-              title: 'Технологии',
-              items: [
-                'React + TypeScript',
-                'Node.js backend',
-                'PostgreSQL',
-                'Интеграция с 1С',
-                'RESTful API',
-              ],
-              emoji: 'wrench',
-              iconColor: 'purple',
-            },
-            {
-              title: 'Результат',
-              items: [
-                '⭐ Автоматизация заказов',
-                '⭐ Снижение нагрузки на менеджеров',
-                '⭐ Прозрачность для клиентов',
-                '⭐ Увеличение продаж',
-                '⭐ Лояльность клиентов',
-              ],
-              emoji: 'chart',
-              iconColor: 'green',
-            },
-          ]}
-        />
+        <Card
+          style={{
+            background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+            border: 'none',
+            marginTop: 16,
+          }}
+        >
+          <Row gutter={[32, 32]} align="middle">
+            <Col span={16}>
+              <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Title level={4} style={{ color: 'white', margin: 0 }}>
+                  Что сделали
+                </Title>
+                <ul style={{ color: 'white', fontSize: 16, margin: 0, paddingLeft: 20 }}>
+                  <li>Личный кабинет клиента</li>
+                  <li>Каталог с остатками</li>
+                  <li>Система заказов</li>
+                  <li>Интеграция с 1С</li>
+                  <li>История операций</li>
+                </ul>
+              </Space>
+            </Col>
+            <Col span={8} style={{ textAlign: 'center' }}>
+              <a
+                href="https://fresh-producer-face.lovable.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-block',
+                  padding: '16px 32px',
+                  background: 'white',
+                  color: '#4facfe',
+                  borderRadius: '8px',
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                  textDecoration: 'none',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                  transition: 'all 0.3s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.25)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                }}
+              >
+                Открыть демо →
+              </a>
+            </Col>
+          </Row>
+        </Card>
       </Space>
     ),
   },
 
-  // 10. Rosomaha Demo
-  {
-    id: 'rosomaha-demo',
-    header: 'РОСОМАХАТУЛ — Демонстрация',
-    content: (
-      <DemoSlide
-        image={
-          <div
-            style={{
-              width: '100%',
-              height: '400px',
-              background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'white',
-              fontSize: '24px',
-              fontWeight: 'bold',
-            }}
-          >
-            РОСОМАХАТУЛ B2B Portal Preview
-          </div>
-        }
-        demoUrl="https://fresh-producer-face.lovable.app"
-        buttonText="Открыть демо"
-        presentationSlug="rosomakhatul-b2b-portfolio"
-        wrapInCard
-      />
-    ),
-  },
-
-  // 11. Flix Project
+  // 8. Flix Project
   {
     id: 'project-flix',
-    header: 'Проект: НПП ФЛИКС',
+    header: 'Проект: НПП ФЛИКС — 150 000 ₽',
     content: (
       <Space direction="vertical" size="large" style={{ width: '100%' }}>
         <Card>
@@ -444,85 +380,64 @@ export const huchEntecSlides: SlideData[] = [
           </Space>
         </Card>
 
-        <FeaturesSlide
-          columns={3}
-          animated
-          cards={[
-            {
-              title: 'Что сделали',
-              items: [
-                '✅ Современный корпоративный сайт',
-                '✅ Каталог продукции (фильтры, мультиплексоры)',
-                '✅ Описание услуг и производства',
-                '✅ Презентация технических возможностей',
-                '✅ Раздел "О компании"',
-              ],
-              emoji: 'target',
-              iconColor: 'blue',
-            },
-            {
-              title: 'Технологии',
-              items: [
-                'React + TypeScript',
-                'Next.js',
-                'Vercel deployment',
-                'SEO оптимизация',
-                'Responsive design',
-              ],
-              emoji: 'wrench',
-              iconColor: 'purple',
-            },
-            {
-              title: 'Результат',
-              items: [
-                '⭐ Профессиональный имидж компании',
-                '⭐ Четкая презентация продукции',
-                '⭐ Техническая информация для B2B клиентов',
-                '⭐ Быстрая загрузка и навигация',
-                '⭐ Современный технологичный дизайн',
-              ],
-              emoji: 'chart',
-              iconColor: 'green',
-            },
-          ]}
-        />
+        <Card
+          style={{
+            background: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+            border: 'none',
+            marginTop: 16,
+          }}
+        >
+          <Row gutter={[32, 32]} align="middle">
+            <Col span={16}>
+              <Space direction="vertical" size="small" style={{ width: '100%' }}>
+                <Title level={4} style={{ color: 'white', margin: 0 }}>
+                  Что сделали
+                </Title>
+                <ul style={{ color: 'white', fontSize: 16, margin: 0, paddingLeft: 20 }}>
+                  <li>Современный корпоративный сайт</li>
+                  <li>Каталог продукции (фильтры, мультиплексоры)</li>
+                  <li>Описание услуг и производства</li>
+                  <li>Презентация технических возможностей</li>
+                  <li>Раздел "О компании"</li>
+                </ul>
+              </Space>
+            </Col>
+            <Col span={8} style={{ textAlign: 'center' }}>
+              <a
+                href="https://flix-02-mvp.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-block',
+                  padding: '16px 32px',
+                  background: 'white',
+                  color: '#fa709a',
+                  borderRadius: '8px',
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                  textDecoration: 'none',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                  transition: 'all 0.3s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.25)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                }}
+              >
+                Открыть демо →
+              </a>
+            </Col>
+          </Row>
+        </Card>
       </Space>
     ),
   },
 
-  // 12. Flix Demo
-  {
-    id: 'flix-demo',
-    header: 'НПП ФЛИКС — Демонстрация',
-    content: (
-      <DemoSlide
-        image={
-          <div
-            style={{
-              width: '100%',
-              height: '400px',
-              background: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'white',
-              fontSize: '24px',
-              fontWeight: 'bold',
-            }}
-          >
-            НПП ФЛИКС Website Preview
-          </div>
-        }
-        demoUrl="https://flix-02-mvp.vercel.app/"
-        buttonText="Открыть демо"
-        presentationSlug="flix"
-        wrapInCard
-      />
-    ),
-  },
-
-  // 13. Benefits Section
+  // 9. Benefits Section
   {
     id: 'benefits-section',
     header: undefined,
@@ -535,7 +450,7 @@ export const huchEntecSlides: SlideData[] = [
     ),
   },
 
-  // 14. Our Advantages
+  // 10. Our Advantages
   {
     id: 'our-advantages',
     header: 'Наши преимущества',
@@ -598,7 +513,7 @@ export const huchEntecSlides: SlideData[] = [
     ),
   },
 
-  // 15. What We Can Do for Huch EnTEC
+  // 11. What We Can Do for Huch EnTEC
   {
     id: 'for-huch-entec',
     header: 'Что мы можем сделать для Huch EnTEC',
@@ -721,7 +636,7 @@ export const huchEntecSlides: SlideData[] = [
     ),
   },
 
-  // 16. Next Steps
+  // 12. Next Steps
   {
     id: 'next-steps',
     header: 'Следующие шаги',
@@ -768,7 +683,7 @@ export const huchEntecSlides: SlideData[] = [
     ),
   },
 
-  // 17. Contacts
+  // 13. Contacts
   {
     id: 'contacts',
     header: 'Контакты',
