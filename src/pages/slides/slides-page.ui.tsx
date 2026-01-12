@@ -42,6 +42,7 @@ import {
 } from '~features/cameohotel/slides';
 import { networkdevicesSlides } from '~features/networkdevices/slides';
 import { asLedSlides } from '~features/as-led/slides';
+import { huchEntecSlides } from '~features/huch-entec/slides';
 import { presentationSlugs } from '~shared/lib/presentations.config';
 import { Slides, type SlideData } from '~widgets/slides';
 
@@ -82,6 +83,7 @@ const slidesMap: Record<string, SlideData[]> = {
   'cameohotel-variants': cameohotelVariantsSlides,
   networkdevices: networkdevicesSlides,
   'as-led': asLedSlides,
+  'huch-entec': huchEntecSlides,
 };
 
 /**

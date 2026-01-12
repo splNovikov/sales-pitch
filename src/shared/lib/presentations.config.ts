@@ -129,6 +129,10 @@ import {
   asLedCreatedAt,
   asLedTitle,
 } from '~features/as-led/slides/as-led.meta';
+import {
+  huchEntecCreatedAt,
+  huchEntecTitle,
+} from '~features/huch-entec/slides/huch-entec.meta';
 
 /**
  * Presentation metadata
@@ -406,6 +410,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'as-led',
     title: asLedTitle,
     createdAt: asLedCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'huch-entec',
+    title: huchEntecTitle,
+    createdAt: huchEntecCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
