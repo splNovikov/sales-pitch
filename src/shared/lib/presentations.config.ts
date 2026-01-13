@@ -81,6 +81,14 @@ import {
   eksimaPricingToolTitle,
 } from '~features/eksima/slides/eksima-pricing-tool.meta';
 import {
+  eksimaKpCreatedAt,
+  eksimaKpTitle,
+} from '~features/eksima/slides/eksima-kp.meta';
+import {
+  eksimaDorabotkiCreatedAt,
+  eksimaDorabotkiTitle,
+} from '~features/eksima/slides/eksima-dorabotki.meta';
+import {
   proposalAiCreatedAt,
   proposalAiTitle,
 } from '~features/proposal-ai/slides/proposal-ai.meta';
@@ -305,6 +313,20 @@ export const presentations: PresentationMeta[] = [
     slug: 'eksima-pricing-tool',
     title: eksimaPricingToolTitle,
     createdAt: eksimaPricingToolCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'eksima-kp',
+    title: eksimaKpTitle,
+    createdAt: eksimaKpCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'eksima-dorabotki',
+    title: eksimaDorabotkiTitle,
+    createdAt: eksimaDorabotkiCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },

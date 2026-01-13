@@ -23,6 +23,8 @@ import { eksimaAnalysisSlides } from '~features/eksima/slides/eksima-analysis-sl
 import { eksimaWebsiteAnalysisSlides } from '~features/eksima/slides/eksima-website-analysis-slides';
 import { eksimaB2BCabinetSlides } from '~features/eksima/slides/eksima-b2b-cabinet-slides';
 import { eksimaPricingToolSlides } from '~features/eksima/slides/eksima-pricing-tool-slides';
+import { eksimaKpSlides } from '~features/eksima/slides/eksima-kp-slides';
+import { eksimaDorabotkiSlides } from '~features/eksima/slides/eksima-dorabotki-slides';
 import { proposalAiSlides } from '~features/proposal-ai/slides';
 import { saratovupakovkaSlides } from '~features/saratovupakovka/slides';
 import { ppuPipesSolutionSlides } from '~features/ppu-pipes/slides';
@@ -68,6 +70,8 @@ const slidesMap: Record<string, SlideData[]> = {
   'eksima-website-analysis': eksimaWebsiteAnalysisSlides,
   'eksima-b2b-cabinet': eksimaB2BCabinetSlides,
   'eksima-pricing-tool': eksimaPricingToolSlides,
+  'eksima-kp': eksimaKpSlides,
+  'eksima-dorabotki': eksimaDorabotkiSlides,
   'proposal-ai': proposalAiSlides,
   saratovupakovka: saratovupakovkaSlides,
   'ppu-pipes-solution': ppuPipesSolutionSlides,
