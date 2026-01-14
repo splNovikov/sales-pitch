@@ -112,328 +112,220 @@ export const huchEntecSlides: SlideData[] = [
     ),
   },
 
-  // 5. AS-LED Project
+  // 5. Projects Overview (Combined)
   {
-    id: 'project-as-led',
-    header: 'Проект: AS-LED — 80 000 ₽',
+    id: 'projects-overview',
+    header: 'Наши проекты',
     content: (
-      <Space direction="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Space direction="vertical" size="middle" style={{ width: '100%' }}>
-            <Title level={3} style={{ margin: 0 }}>
-              AS-LED — Платформа управления LED-экранами
-            </Title>
-            <Link
-              href="https://as-led-poc-qc2d.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkOutlined /> https://as-led-poc-qc2d.vercel.app/
-            </Link>
-            <Paragraph style={{ fontSize: 16, margin: 0 }}>
-              Современный корпоративный сайт с конкурентным анализом и демонстрацией преимуществ платформы
-            </Paragraph>
-          </Space>
-        </Card>
-
-        <Card
-          style={{
-            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            border: 'none',
-            marginTop: 16,
-          }}
-        >
-          <Row gutter={[32, 32]} align="middle">
-            <Col span={16}>
-              <Space direction="vertical" size="small" style={{ width: '100%' }}>
-                <Title level={4} style={{ color: 'white', margin: 0 }}>
-                  Что сделали
-                </Title>
-                <ul style={{ color: 'white', fontSize: 16, margin: 0, paddingLeft: 20 }}>
-                  <li>Анализ конкурентов</li>
-                  <li>Современный лендинг</li>
-                  <li>Калькулятор стоимости</li>
-                  <li>Демо-версия платформы</li>
-                  <li>Адаптивный дизайн</li>
-                </ul>
-              </Space>
-            </Col>
-            <Col span={8} style={{ textAlign: 'center' }}>
-              <a
+      <Row gutter={[16, 16]}>
+        {/* AS-LED Project */}
+        <Col span={12}>
+          <Card
+            hoverable
+            style={{
+              height: '100%',
+              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              border: 'none',
+            }}
+          >
+            <Space direction="vertical" size="small" style={{ width: '100%' }}>
+              {/* Placeholder for preview */}
+              <div
+                style={{
+                  width: '100%',
+                  height: 120,
+                  background: 'rgba(255,255,255,0.2)',
+                  borderRadius: 8,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: 14,
+                  marginBottom: 8,
+                }}
+              >
+                [Preview placeholder]
+              </div>
+              <Title level={4} style={{ color: 'white', margin: 0, fontSize: 18 }}>
+                AS-LED — 80 000 ₽
+              </Title>
+              <Paragraph style={{ color: 'white', margin: 0, fontSize: 13 }}>
+                Платформа управления LED-экранами
+              </Paragraph>
+              <ul style={{ color: 'white', fontSize: 12, margin: 0, paddingLeft: 16 }}>
+                <li>Анализ конкурентов</li>
+                <li>Современный лендинг</li>
+                <li>Калькулятор стоимости</li>
+                <li>Демо-версия платформы</li>
+              </ul>
+              <Link
                 href="https://as-led-poc-qc2d.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ color: 'white', fontSize: 12 }}
+              >
+                <LinkOutlined /> Открыть демо
+              </Link>
+            </Space>
+          </Card>
+        </Col>
+
+        {/* Hanskonner Project */}
+        <Col span={12}>
+          <Card
+            hoverable
+            style={{
+              height: '100%',
+              background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+              border: 'none',
+            }}
+          >
+            <Space direction="vertical" size="small" style={{ width: '100%' }}>
+              {/* Placeholder for preview */}
+              <div
                 style={{
-                  display: 'inline-block',
-                  padding: '16px 32px',
-                  background: 'white',
-                  color: '#667eea',
-                  borderRadius: '8px',
-                  fontSize: '18px',
-                  fontWeight: 'bold',
-                  textDecoration: 'none',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                  transition: 'all 0.3s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.25)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                  width: '100%',
+                  height: 120,
+                  background: 'rgba(255,255,255,0.2)',
+                  borderRadius: 8,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: 14,
+                  marginBottom: 8,
                 }}
               >
-                Открыть демо →
-              </a>
-            </Col>
-          </Row>
-        </Card>
-      </Space>
-    ),
-  },
-
-  // 6. Hanskonner Project
-  {
-    id: 'project-hanskonner',
-    header: 'Проект: Hanskonner — 65 000 ₽',
-    content: (
-      <Space direction="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Space direction="vertical" size="middle" style={{ width: '100%' }}>
-            <Title level={3} style={{ margin: 0 }}>
-              Hanskonner — Корпоративный сайт и стратегия
-            </Title>
-            <Link
-              href="https://hanskonner-reborn.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkOutlined /> https://hanskonner-reborn.vercel.app/
-            </Link>
-            <Paragraph style={{ fontSize: 16, margin: 0 }}>
-              Полноценный корпоративный сайт с каталогом продукции, галереей проектов и интеграцией с CMS
-            </Paragraph>
-          </Space>
-        </Card>
-
-        <Card
-          style={{
-            background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-            border: 'none',
-            marginTop: 16,
-          }}
-        >
-          <Row gutter={[32, 32]} align="middle">
-            <Col span={16}>
-              <Space direction="vertical" size="small" style={{ width: '100%' }}>
-                <Title level={4} style={{ color: 'white', margin: 0 }}>
-                  Что сделали
-                </Title>
-                <ul style={{ color: 'white', fontSize: 16, margin: 0, paddingLeft: 20 }}>
-                  <li>Анализ бизнеса и стратегия</li>
-                  <li>Корпоративный сайт</li>
-                  <li>Каталог продукции</li>
-                  <li>Портфолио проектов</li>
-                  <li>Интеграция с CMS</li>
-                </ul>
-              </Space>
-            </Col>
-            <Col span={8} style={{ textAlign: 'center' }}>
-              <a
+                [Preview placeholder]
+              </div>
+              <Title level={4} style={{ color: 'white', margin: 0, fontSize: 18 }}>
+                Hanskonner — 65 000 ₽
+              </Title>
+              <Paragraph style={{ color: 'white', margin: 0, fontSize: 13 }}>
+                Корпоративный сайт и стратегия
+              </Paragraph>
+              <ul style={{ color: 'white', fontSize: 12, margin: 0, paddingLeft: 16 }}>
+                <li>Анализ бизнеса и стратегия</li>
+                <li>Корпоративный сайт</li>
+                <li>Каталог продукции</li>
+                <li>Интеграция с CMS</li>
+              </ul>
+              <Link
                 href="https://hanskonner-reborn.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ color: 'white', fontSize: 12 }}
+              >
+                <LinkOutlined /> Открыть демо
+              </Link>
+            </Space>
+          </Card>
+        </Col>
+
+        {/* Rosomaha Project */}
+        <Col span={12}>
+          <Card
+            hoverable
+            style={{
+              height: '100%',
+              background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+              border: 'none',
+            }}
+          >
+            <Space direction="vertical" size="small" style={{ width: '100%' }}>
+              {/* Placeholder for preview */}
+              <div
                 style={{
-                  display: 'inline-block',
-                  padding: '16px 32px',
-                  background: 'white',
-                  color: '#f5576c',
-                  borderRadius: '8px',
-                  fontSize: '18px',
-                  fontWeight: 'bold',
-                  textDecoration: 'none',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                  transition: 'all 0.3s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.25)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                  width: '100%',
+                  height: 120,
+                  background: 'rgba(255,255,255,0.2)',
+                  borderRadius: 8,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: 14,
+                  marginBottom: 8,
                 }}
               >
-                Открыть демо →
-              </a>
-            </Col>
-          </Row>
-        </Card>
-      </Space>
-    ),
-  },
-
-  // 7. Rosomaha Project
-  {
-    id: 'project-rosomaha',
-    header: 'Проект: РОСОМАХАТУЛ — 20 000 ₽',
-    content: (
-      <Space direction="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Space direction="vertical" size="middle" style={{ width: '100%' }}>
-            <Title level={3} style={{ margin: 0 }}>
-              РОСОМАХАТУЛ — B2B портал для оптовиков
-            </Title>
-            <Link
-              href="https://fresh-producer-face.lovable.app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkOutlined /> https://fresh-producer-face.lovable.app
-            </Link>
-            <Paragraph style={{ fontSize: 16, margin: 0 }}>
-              Портал для оптовых клиентов с личным кабинетом, каталогом и системой заказов
-            </Paragraph>
-          </Space>
-        </Card>
-
-        <Card
-          style={{
-            background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
-            border: 'none',
-            marginTop: 16,
-          }}
-        >
-          <Row gutter={[32, 32]} align="middle">
-            <Col span={16}>
-              <Space direction="vertical" size="small" style={{ width: '100%' }}>
-                <Title level={4} style={{ color: 'white', margin: 0 }}>
-                  Что сделали
-                </Title>
-                <ul style={{ color: 'white', fontSize: 16, margin: 0, paddingLeft: 20 }}>
-                  <li>Личный кабинет клиента</li>
-                  <li>Каталог с остатками</li>
-                  <li>Система заказов</li>
-                  <li>Интеграция с 1С</li>
-                  <li>История операций</li>
-                </ul>
-              </Space>
-            </Col>
-            <Col span={8} style={{ textAlign: 'center' }}>
-              <a
+                [Preview placeholder]
+              </div>
+              <Title level={4} style={{ color: 'white', margin: 0, fontSize: 18 }}>
+                РОСОМАХАТУЛ — 20 000 ₽
+              </Title>
+              <Paragraph style={{ color: 'white', margin: 0, fontSize: 13 }}>
+                B2B портал для оптовиков
+              </Paragraph>
+              <ul style={{ color: 'white', fontSize: 12, margin: 0, paddingLeft: 16 }}>
+                <li>Личный кабинет клиента</li>
+                <li>Каталог с остатками</li>
+                <li>Система заказов</li>
+                <li>Интеграция с 1С</li>
+              </ul>
+              <Link
                 href="https://fresh-producer-face.lovable.app"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ color: 'white', fontSize: 12 }}
+              >
+                <LinkOutlined /> Открыть демо
+              </Link>
+            </Space>
+          </Card>
+        </Col>
+
+        {/* Flix Project */}
+        <Col span={12}>
+          <Card
+            hoverable
+            style={{
+              height: '100%',
+              background: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+              border: 'none',
+            }}
+          >
+            <Space direction="vertical" size="small" style={{ width: '100%' }}>
+              {/* Placeholder for preview */}
+              <div
                 style={{
-                  display: 'inline-block',
-                  padding: '16px 32px',
-                  background: 'white',
-                  color: '#4facfe',
-                  borderRadius: '8px',
-                  fontSize: '18px',
-                  fontWeight: 'bold',
-                  textDecoration: 'none',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                  transition: 'all 0.3s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.25)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                  width: '100%',
+                  height: 120,
+                  background: 'rgba(255,255,255,0.2)',
+                  borderRadius: 8,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white',
+                  fontSize: 14,
+                  marginBottom: 8,
                 }}
               >
-                Открыть демо →
-              </a>
-            </Col>
-          </Row>
-        </Card>
-      </Space>
-    ),
-  },
-
-  // 8. Flix Project
-  {
-    id: 'project-flix',
-    header: 'Проект: НПП ФЛИКС — 150 000 ₽',
-    content: (
-      <Space direction="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Space direction="vertical" size="middle" style={{ width: '100%' }}>
-            <Title level={3} style={{ margin: 0 }}>
-              НПП ФЛИКС — Корпоративный сайт производителя RF-компонентов
-            </Title>
-            <Link
-              href="https://flix-02-mvp.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <LinkOutlined /> https://flix-02-mvp.vercel.app/
-            </Link>
-            <Paragraph style={{ fontSize: 16, margin: 0 }}>
-              Корпоративный сайт для научно-производственного предприятия, специализирующегося на
-              разработке и производстве пассивных RF/СВЧ компонентов для телекоммуникаций и спутниковой связи
-            </Paragraph>
-          </Space>
-        </Card>
-
-        <Card
-          style={{
-            background: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
-            border: 'none',
-            marginTop: 16,
-          }}
-        >
-          <Row gutter={[32, 32]} align="middle">
-            <Col span={16}>
-              <Space direction="vertical" size="small" style={{ width: '100%' }}>
-                <Title level={4} style={{ color: 'white', margin: 0 }}>
-                  Что сделали
-                </Title>
-                <ul style={{ color: 'white', fontSize: 16, margin: 0, paddingLeft: 20 }}>
-                  <li>Современный корпоративный сайт</li>
-                  <li>Каталог продукции (фильтры, мультиплексоры)</li>
-                  <li>Описание услуг и производства</li>
-                  <li>Презентация технических возможностей</li>
-                  <li>Раздел "О компании"</li>
-                </ul>
-              </Space>
-            </Col>
-            <Col span={8} style={{ textAlign: 'center' }}>
-              <a
+                [Preview placeholder]
+              </div>
+              <Title level={4} style={{ color: 'white', margin: 0, fontSize: 18 }}>
+                НПП ФЛИКС — 150 000 ₽
+              </Title>
+              <Paragraph style={{ color: 'white', margin: 0, fontSize: 13 }}>
+                Корпоративный сайт производителя RF-компонентов
+              </Paragraph>
+              <ul style={{ color: 'white', fontSize: 12, margin: 0, paddingLeft: 16 }}>
+                <li>Корпоративный сайт</li>
+                <li>Каталог продукции</li>
+                <li>Описание услуг</li>
+                <li>Технические возможности</li>
+              </ul>
+              <Link
                 href="https://flix-02-mvp.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  display: 'inline-block',
-                  padding: '16px 32px',
-                  background: 'white',
-                  color: '#fa709a',
-                  borderRadius: '8px',
-                  fontSize: '18px',
-                  fontWeight: 'bold',
-                  textDecoration: 'none',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                  transition: 'all 0.3s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.25)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
-                }}
+                style={{ color: 'white', fontSize: 12 }}
               >
-                Открыть демо →
-              </a>
-            </Col>
-          </Row>
-        </Card>
-      </Space>
+                <LinkOutlined /> Открыть демо
+              </Link>
+            </Space>
+          </Card>
+        </Col>
+      </Row>
     ),
   },
 
