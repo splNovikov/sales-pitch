@@ -1,10 +1,5 @@
 import { Button, Card, Col, Row, Space, Typography } from 'antd';
-import {
-  LinkOutlined,
-  RocketOutlined,
-  ShopOutlined,
-  ThunderboltOutlined,
-} from '@ant-design/icons';
+import { LinkOutlined } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
