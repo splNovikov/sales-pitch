@@ -42,8 +42,7 @@ export const eksimaKpSlides: SlideData[] = [
         logo={eksimaLogo}
         logoAlt="EKSIMA"
         logoMaxWidth={400}
-        title="Удобный инструмент для розничных точек"
-        description="С возможностью переключения режимов ценообразования и оформления заказов"
+        title="Инструмент для розничных точек"
         createdAt={eksimaKpCreatedAt}
         location="Санкт-Петербург"
       />
@@ -87,7 +86,7 @@ export const eksimaKpSlides: SlideData[] = [
           </Col>
         </Row>
         <Card style={{ backgroundColor: '#f6ffed' }}>
-          <Title level={4}><TrophyOutlined /> Наше решение</Title>
+          <Title level={4}><TrophyOutlined /> Решение Эксима</Title>
           <Paragraph style={{ fontSize: 'var(--app-font-size-md)', marginBottom: 0 }}>
             Объединяем <Text strong>проверенную функциональность</Text> первого инструмента
             с <Text strong>современным интерфейсом</Text> второго. Результат — удобный инструмент
@@ -109,13 +108,11 @@ export const eksimaKpSlides: SlideData[] = [
             <Title level={4}>Совместный подбор в шоуруме (80%)</Title>
             <List size="small">
               <List.Item>Специалист подбирает плитку вместе с клиентом</List.Item>
+              <List.Item>Специалист набивает заказ в инструменте Эксима</List.Item>
               <List.Item>Калькулятор пересчитывает штуки/м²/коробки</List.Item>
               <List.Item>Клиент видит рекомендованные розничные цены</List.Item>
               <List.Item>Заказ отправляется письмом в Eksima</List.Item>
             </List>
-            <Text type="secondary" style={{ display: 'block', marginTop: 8 }}>
-              Eksima управляет своей стоимостью через настройки
-            </Text>
           </Card>
         </Col>
         <Col span={10}>
@@ -480,8 +477,7 @@ export const eksimaKpSlides: SlideData[] = [
             <List.Item>Дизайн UI/UX — совместно с заказчиком «на лету»</List.Item>
             <List.Item>Лицензия Bitrix24</List.Item>
             <List.Item>Система уведомлений</List.Item>
-            <List.Item>Обучение вашей команды</List.Item>
-            <List.Item>2 месяца гарантийной поддержки</List.Item>
+            <List.Item>Создание документации, обучение вашей команды</List.Item>
           </List>
         </Card>
       </Space>
