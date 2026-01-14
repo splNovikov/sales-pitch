@@ -27,6 +27,15 @@ import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { FeaturesSlide } from '~shared/ui/features-slide';
 import { eksimaDorabotkiCreatedAt } from './eksima-dorabotki.meta';
 import eksimaLogo from './img.png';
+import keramatika1 from './keramatika_1.jpg';
+import keramatika2 from './keramatika_2.jpg';
+import keramatika3 from './keramatika_3.jpg';
+import keramatika4 from './keramatika_4.jpg';
+import keramatika5 from './keramatika_5.jpg';
+import keramatika6 from './keramatika_6.jpg';
+import keramatika7 from './keramatika_7.jpg';
+import keramatika8 from './keramatika_8.jpg';
+import keramatika9 from './keramatika_9.jpg';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -957,7 +966,370 @@ export const eksimaDorabotkiSlides: SlideData[] = [
     ),
   },
 
-  // Slide 18: Section Divider - Prioritization
+  // Slide 18: Section Divider - Competitor Analysis
+  {
+    id: 'competitor-analysis-title',
+    header: undefined,
+    content: (
+      <SectionTitleSlide
+        title="Анализ Конкурентов"
+        subtitle="Keramatika: что не так и почему наше решение лучше"
+      />
+    ),
+  },
+
+  // Slide 19: Competitor - Home Page
+  {
+    id: 'competitor-home',
+    header: '❌ Keramatika: Главная страница',
+    content: (
+      <Row gutter={[24, 24]} style={{ width: '100%' }}>
+        <Col span={14}>
+          <img
+            src={keramatika1}
+            alt="Keramatika Home"
+            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+          />
+        </Col>
+        <Col span={10}>
+          <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+            <Card style={{ backgroundColor: '#fff1f0' }}>
+              <Title level={5}>❌ Проблемы:</Title>
+              <List size="small">
+                <List.Item>Устаревший дизайн с большими блоками</List.Item>
+                <List.Item>Неэффективное использование пространства</List.Item>
+                <List.Item>Отсутствие визуальной иерархии</List.Item>
+                <List.Item>Нет быстрого доступа к корзине/статусу</List.Item>
+              </List>
+            </Card>
+            <Card style={{ backgroundColor: '#f6ffed' }}>
+              <Title level={5}>✅ Наше решение:</Title>
+              <List size="small">
+                <List.Item>Современный card-based интерфейс</List.Item>
+                <List.Item>Быстрая навигация с превью</List.Item>
+                <List.Item>Статус корзины всегда виден</List.Item>
+                <List.Item>Визуальные подсказки и иконки</List.Item>
+              </List>
+            </Card>
+          </Space>
+        </Col>
+      </Row>
+    ),
+  },
+
+  // Slide 20: Competitor - Order History
+  {
+    id: 'competitor-orders',
+    header: '❌ Keramatika: История заказов',
+    content: (
+      <Row gutter={[24, 24]} style={{ width: '100%' }}>
+        <Col span={14}>
+          <img
+            src={keramatika2}
+            alt="Keramatika Orders"
+            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+          />
+        </Col>
+        <Col span={10}>
+          <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+            <Card style={{ backgroundColor: '#fff1f0' }}>
+              <Title level={5}>❌ Проблемы:</Title>
+              <List size="small">
+                <List.Item>Перегруженная таблица с мелким текстом</List.Item>
+                <List.Item>Нет визуальной индикации статусов</List.Item>
+                <List.Item>Сложные фильтры не интуитивны</List.Item>
+                <List.Item>Нет быстрого "повторить заказ"</List.Item>
+              </List>
+            </Card>
+            <Card style={{ backgroundColor: '#f6ffed' }}>
+              <Title level={5}>✅ Наше решение:</Title>
+              <List size="small">
+                <List.Item>Цветные статусные бейджи (Tag components)</List.Item>
+                <List.Item>Фильтры в sidebar, всегда доступны</List.Item>
+                <List.Item>Кнопка "Повторить" в каждой строке</List.Item>
+                <List.Item>Детальный просмотр по клику</List.Item>
+              </List>
+            </Card>
+          </Space>
+        </Col>
+      </Row>
+    ),
+  },
+
+  // Slide 21: Competitor - Catalog
+  {
+    id: 'competitor-catalog',
+    header: '❌ Keramatika: Каталог',
+    content: (
+      <Row gutter={[24, 24]} style={{ width: '100%' }}>
+        <Col span={14}>
+          <img
+            src={keramatika3}
+            alt="Keramatika Catalog"
+            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+          />
+        </Col>
+        <Col span={10}>
+          <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+            <Card style={{ backgroundColor: '#fff1f0' }}>
+              <Title level={5}>❌ Проблемы:</Title>
+              <List size="small">
+                <List.Item>Статичные карточки брендов без превью</List.Item>
+                <List.Item>Отсутствует визуальный поиск</List.Item>
+                <List.Item>Нет фильтров по цвету/текстуре</List.Item>
+                <List.Item>Плохо подходит для работы в шоуруме</List.Item>
+              </List>
+            </Card>
+            <Card style={{ backgroundColor: '#f6ffed' }}>
+              <Title level={5}>✅ Наше решение:</Title>
+              <List size="small">
+                <List.Item>AI-ассистент: "зелёненькая в точечку"</List.Item>
+                <List.Item>Группировка по странам (80% сценариев)</List.Item>
+                <List.Item>Превью плитки прямо в каталоге</List.Item>
+                <List.Item>Оптимизировано для быстрого поиска</List.Item>
+              </List>
+            </Card>
+          </Space>
+        </Col>
+      </Row>
+    ),
+  },
+
+  // Slide 22: Competitor - Brand Collections
+  {
+    id: 'competitor-brand',
+    header: '❌ Keramatika: Страница бренда',
+    content: (
+      <Row gutter={[24, 24]} style={{ width: '100%' }}>
+        <Col span={14}>
+          <img
+            src={keramatika4}
+            alt="Keramatika Brand"
+            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+          />
+        </Col>
+        <Col span={10}>
+          <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+            <Card style={{ backgroundColor: '#fff1f0' }}>
+              <Title level={5}>❌ Проблемы:</Title>
+              <List size="small">
+                <List.Item>Простой алфавитный список коллекций</List.Item>
+                <List.Item>Нет информации о бренде</List.Item>
+                <List.Item>Отсутствуют превью коллекций</List.Item>
+                <List.Item>Нет данных о ценовом диапазоне</List.Item>
+              </List>
+            </Card>
+            <Card style={{ backgroundColor: '#f6ffed' }}>
+              <Title level={5}>✅ Наше решение:</Title>
+              <List size="small">
+                <List.Item>Header с логотипом и описанием бренда</List.Item>
+                <List.Item>Статистика: количество коллекций, заказы</List.Item>
+                <List.Item>Ценовой диапазон: от-до (₽/м²)</List.Item>
+                <List.Item>Сетка коллекций с preview изображениями</List.Item>
+              </List>
+            </Card>
+          </Space>
+        </Col>
+      </Row>
+    ),
+  },
+
+  // Slide 23: Competitor - Collection Page
+  {
+    id: 'competitor-collection',
+    header: '❌ Keramatika: Страница коллекции',
+    content: (
+      <Row gutter={[24, 24]} style={{ width: '100%' }}>
+        <Col span={14}>
+          <img
+            src={keramatika5}
+            alt="Keramatika Collection"
+            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+          />
+        </Col>
+        <Col span={10}>
+          <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+            <Card style={{ backgroundColor: '#fff1f0' }}>
+              <Title level={5}>❌ Проблемы:</Title>
+              <List size="small">
+                <List.Item>Табличный формат плохо показывает товар</List.Item>
+                <List.Item>Маленькие превью, сложно оценить плитку</List.Item>
+                <List.Item>Фильтры не выделены визуально</List.Item>
+                <List.Item>Единицы измерения запутаны (шт/м²)</List.Item>
+              </List>
+            </Card>
+            <Card style={{ backgroundColor: '#f6ffed' }}>
+              <Title level={5}>✅ Наше решение:</Title>
+              <List size="small">
+                <List.Item>Сетка товаров с крупными превью</List.Item>
+                <List.Item>Встроенный калькулятор (шт ↔ м² ↔ коробки)</List.Item>
+                <List.Item>Фильтры в sidebar с быстрым доступом</List.Item>
+                <List.Item>Детальная карточка по клику</List.Item>
+              </List>
+            </Card>
+          </Space>
+        </Col>
+      </Row>
+    ),
+  },
+
+  // Slide 24: Competitor - Product Detail
+  {
+    id: 'competitor-product',
+    header: '❌ Keramatika: Карточка товара',
+    content: (
+      <Row gutter={[24, 24]} style={{ width: '100%' }}>
+        <Col span={14}>
+          <img
+            src={keramatika6}
+            alt="Keramatika Product"
+            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+          />
+        </Col>
+        <Col span={10}>
+          <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+            <Card style={{ backgroundColor: '#fff1f0' }}>
+              <Title level={5}>❌ Проблемы:</Title>
+              <List size="small">
+                <List.Item>Развёрнутая таблица загромождает страницу</List.Item>
+                <List.Item>Характеристики трудно читать</List.Item>
+                <List.Item>Нет quick-add в корзину</List.Item>
+                <List.Item>Плохо видна разница в тонах/калибрах</List.Item>
+              </List>
+            </Card>
+            <Card style={{ backgroundColor: '#f6ffed' }}>
+              <Title level={5}>✅ Наше решение:</Title>
+              <List size="small">
+                <List.Item>Отдельная карточка товара с галереей</List.Item>
+                <List.Item>Характеристики в grid layout</List.Item>
+                <List.Item>Калькулятор единиц встроен</List.Item>
+                <List.Item>Кнопка "Добавить в заказ" всегда видна</List.Item>
+              </List>
+            </Card>
+          </Space>
+        </Col>
+      </Row>
+    ),
+  },
+
+  // Slide 25: Competitor - Checkout
+  {
+    id: 'competitor-checkout',
+    header: '❌ Keramatika: Оформление заказа',
+    content: (
+      <Row gutter={[24, 24]} style={{ width: '100%' }}>
+        <Col span={14}>
+          <img
+            src={keramatika7}
+            alt="Keramatika Checkout"
+            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+          />
+        </Col>
+        <Col span={10}>
+          <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+            <Card style={{ backgroundColor: '#fff1f0' }}>
+              <Title level={5}>❌ Проблемы:</Title>
+              <List size="small">
+                <List.Item>Всё на одной странице — перегружено</List.Item>
+                <List.Item>Непонятная последовательность действий</List.Item>
+                <List.Item>Выбор юр. лица спрятан в чекбоксах</List.Item>
+                <List.Item>Нет визуальной обратной связи</List.Item>
+              </List>
+            </Card>
+            <Card style={{ backgroundColor: '#f6ffed' }}>
+              <Title level={5}>✅ Наше решение:</Title>
+              <List size="small">
+                <List.Item>Multi-step форма (Steps component)</List.Item>
+                <List.Item>Шаг 1: Корзина → Шаг 2: Юр.лицо → Шаг 3: Подтверждение</List.Item>
+                <List.Item>Визуальный прогресс-бар</List.Item>
+                <List.Item>Валидация на каждом шаге</List.Item>
+              </List>
+            </Card>
+          </Space>
+        </Col>
+      </Row>
+    ),
+  },
+
+  // Slide 26: Competitor - Settings
+  {
+    id: 'competitor-settings',
+    header: '❌ Keramatika: Настройки',
+    content: (
+      <Row gutter={[24, 24]} style={{ width: '100%' }}>
+        <Col span={14}>
+          <img
+            src={keramatika8}
+            alt="Keramatika Settings"
+            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+          />
+        </Col>
+        <Col span={10}>
+          <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+            <Card style={{ backgroundColor: '#fff1f0' }}>
+              <Title level={5}>❌ Проблемы:</Title>
+              <List size="small">
+                <List.Item>Только базовые настройки профиля</List.Item>
+                <List.Item>Нет управления ценообразованием</List.Item>
+                <List.Item>Отсутствует секция интеграций</List.Item>
+                <List.Item>Нет настроек уведомлений</List.Item>
+              </List>
+            </Card>
+            <Card style={{ backgroundColor: '#f6ffed' }}>
+              <Title level={5}>✅ Наше решение:</Title>
+              <List size="small">
+                <List.Item>Tabs: Основные / Ценообразование / Интеграция</List.Item>
+                <List.Item>Управление маржой для каждого предприятия</List.Item>
+                <List.Item>Настройки синхронизации с 1С</List.Item>
+                <List.Item>Управление пользователями и правами</List.Item>
+              </List>
+            </Card>
+          </Space>
+        </Col>
+      </Row>
+    ),
+  },
+
+  // Slide 27: Competitor - Notifications
+  {
+    id: 'competitor-notifications',
+    header: '❌ Keramatika: Уведомления',
+    content: (
+      <Row gutter={[24, 24]} style={{ width: '100%' }}>
+        <Col span={14}>
+          <img
+            src={keramatika9}
+            alt="Keramatika Notifications"
+            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+          />
+        </Col>
+        <Col span={10}>
+          <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+            <Card style={{ backgroundColor: '#fff1f0' }}>
+              <Title level={5}>❌ Проблемы:</Title>
+              <List size="small">
+                <List.Item>Только список заказов, не уведомления</List.Item>
+                <List.Item>Нет визуальной индикации "новое"</List.Item>
+                <List.Item>Отсутствуют push-уведомления</List.Item>
+                <List.Item>Нет детальной истории изменений</List.Item>
+              </List>
+            </Card>
+            <Card style={{ backgroundColor: '#f6ffed' }}>
+              <Title level={5}>✅ Наше решение:</Title>
+              <List size="small">
+                <List.Item>Отдельная система уведомлений</List.Item>
+                <List.Item>Email + In-app уведомления</List.Item>
+                <List.Item>WebSocket для real-time обновлений</List.Item>
+                <List.Item>Timeline с историей всех изменений статуса</List.Item>
+              </List>
+            </Card>
+          </Space>
+        </Col>
+      </Row>
+    ),
+  },
+
+  // Slide 28: Section Divider - Prioritization
   {
     id: 'prioritization-title',
     header: undefined,
@@ -969,7 +1341,7 @@ export const eksimaDorabotkiSlides: SlideData[] = [
     ),
   },
 
-  // Slide 19: Development Priorities
+  // Slide 29: Development Priorities
   {
     id: 'priorities',
     header: 'Приоритизация Разработки',
@@ -1059,7 +1431,7 @@ export const eksimaDorabotkiSlides: SlideData[] = [
     ),
   },
 
-  // Slide 20: Final Note
+  // Slide 30: Final Note
   {
     id: 'final-note',
     header: 'Заключение',
