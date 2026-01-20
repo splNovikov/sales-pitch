@@ -36,6 +36,7 @@ import { atisSlides } from '~features/a-tis/slides';
 import { senixSlides } from '~features/senix/slides/senix-slides';
 import { senixWebsiteSlides } from '~features/senix/slides/senix-website-slides';
 import { rosomakhatulSlides } from '~features/rosomaha/slides/rosomakhatul-slides';
+import { rosomakhatulKpSlides } from '~features/rosomaha/slides/rosomakhatul-kp-slides';
 import { rosomahaB2BPortfolioSlides } from '~features/rosomaha/slides/rosomaha-b2b-portfolio-slides';
 import { brausSlides } from '~features/braus/slides';
 import {
@@ -81,6 +82,7 @@ const slidesMap: Record<string, SlideData[]> = {
   senix: senixSlides,
   'senix-website': senixWebsiteSlides,
   rosomakhatul: rosomakhatulSlides,
+  'rosomakhatul-kp': rosomakhatulKpSlides,
   'rosomakhatul-b2b-portfolio': rosomahaB2BPortfolioSlides,
   braus: brausSlides,
   cameohotel: cameohotelSlides,

@@ -122,6 +122,10 @@ import {
   rosomahaB2BPortfolioCreatedAt,
   rosomahaB2BPortfolioTitle,
 } from '~features/rosomaha/slides/rosomaha-b2b-portfolio.meta';
+import {
+  rosomakhatulKpCreatedAt,
+  rosomakhatulKpTitle,
+} from '~features/rosomaha/slides/rosomakhatul-kp.meta';
 import { brausCreatedAt, brausTitle } from '~features/braus/slides/braus.meta';
 import {
   cameohotelCreatedAt,
@@ -397,6 +401,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'rosomakhatul-b2b-portfolio',
     title: rosomahaB2BPortfolioTitle,
     createdAt: rosomahaB2BPortfolioCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'rosomakhatul-kp',
+    title: rosomakhatulKpTitle,
+    createdAt: rosomakhatulKpCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
