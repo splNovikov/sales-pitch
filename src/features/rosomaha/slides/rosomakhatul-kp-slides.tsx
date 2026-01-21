@@ -170,18 +170,12 @@ export const rosomakhatulKpSlides: SlideData[] = [
                 <CheckCircleOutlined style={{ color: '#52c41a' }} /> Полный
                 список всех заказов с датами и суммами
               </List.Item>
-              <List.Item>
-                <CheckCircleOutlined style={{ color: '#52c41a' }} /> Статусы
-                синхронизируются из 1С в реальном времени
-              </List.Item>
+
               <List.Item>
                 <CheckCircleOutlined style={{ color: '#52c41a' }} /> Быстрый
                 повторный заказ одним кликом
               </List.Item>
-              <List.Item>
-                <CheckCircleOutlined style={{ color: '#52c41a' }} /> Скачивание
-                документов (счета, накладные)
-              </List.Item>
+
             </List>
           </Card>
         </Col>
@@ -189,8 +183,7 @@ export const rosomakhatulKpSlides: SlideData[] = [
           <Card style={{ backgroundColor: '#fff7e6' }}>
             <Title level={5}>Оформление заказа</Title>
             <Paragraph style={{ marginBottom: 0 }}>
-              📧 Заказ автоматически попадает в 1С, менеджер получает
-              уведомление. Клиент видит статус обработки в личном кабинете.
+              📧 Заказ попадает на почту. Клиент видит статус обработки в личном кабинете.
             </Paragraph>
           </Card>
         </Col>
@@ -210,10 +203,6 @@ export const rosomakhatulKpSlides: SlideData[] = [
             <List.Item>
               <CheckCircleOutlined style={{ color: '#52c41a' }} /> Настройка
               персональных цен для каждого клиента
-            </List.Item>
-            <List.Item>
-              <CheckCircleOutlined style={{ color: '#52c41a' }} /> Групповые
-              скидки и брейки цен (зависимость от объёма)
             </List.Item>
             <List.Item>
               <CheckCircleOutlined style={{ color: '#52c41a' }} /> Управление
@@ -238,7 +227,6 @@ export const rosomakhatulKpSlides: SlideData[] = [
               items: [
                 'Синхронизация каталога и остатков',
                 'Автоматическая передача заказов',
-                'Обновление статусов в реальном времени',
               ],
             },
             {
@@ -333,8 +321,7 @@ export const rosomakhatulKpSlides: SlideData[] = [
                   Персональный менеджер
                 </Title>
                 <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
-                  Прямая связь с назначенным менеджером через чат для решения
-                  вопросов и консультаций
+                  К каждому зарегистрированному пользователю закреплён персональный менеджер
                 </Text>
               </Card>
             </Space>
@@ -575,19 +562,7 @@ export const rosomakhatulKpSlides: SlideData[] = [
                   детальной информацией по каждому заказу
                 </Text>
               </Card>
-              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
-                <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
-                  <CheckCircleOutlined
-                    style={{ marginRight: 8, color: '#52c41a' }}
-                  />
-                  Отслеживание статусов
-                </Title>
-                <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
-                  Отслеживание статуса заказа в реальном времени: новый, в
-                  обработке, собран, в доставке, выполнен. Статусы
-                  синхронизируются из 1С
-                </Text>
-              </Card>
+
               <Card size="small" style={{ backgroundColor: '#fff7e6' }}>
                 <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
                   <ShoppingCartOutlined
@@ -605,10 +580,10 @@ export const rosomakhatulKpSlides: SlideData[] = [
                   <FileTextOutlined
                     style={{ marginRight: 8, color: '#595959' }}
                   />
-                  Печать документов
+                  Скачивание счетов
                 </Title>
                 <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
-                  Скачивание и печать счетов, накладных, актов и других
+                  Скачивание счетов, накладных, актов и других
                   документов по заказам в различных форматах
                 </Text>
               </Card>
@@ -716,6 +691,12 @@ export const rosomakhatulKpSlides: SlideData[] = [
               volume: '1 неделя',
               cost: '15 000 ₽',
             },
+            {
+              key: '6',
+              component: 'Лицензия Bitrix24',
+              volume: '1 год',
+              cost: '7 100 ₽',
+            },
           ]}
           columns={[
             {
@@ -754,27 +735,13 @@ export const rosomakhatulKpSlides: SlideData[] = [
                 </Table.Summary.Cell>
                 <Table.Summary.Cell index={1}>
                   <Text strong style={{ fontSize: '20px', color: '#52c41a' }}>
-                    300 000 ₽
+                    307 100 ₽
                   </Text>
                 </Table.Summary.Cell>
               </Table.Summary.Row>
             </Table.Summary>
           )}
         />
-        <Card style={{ backgroundColor: '#f6ffed' }}>
-          <Title level={5}>✅ Что включено</Title>
-          <List size="small">
-            <List.Item>Полный B2B портал с персональными ценами</List.Item>
-            <List.Item>
-              Интеграция с вашей 1С (синхронизация каталога, остатков, заказов)
-            </List.Item>
-            <List.Item>
-              Панель администратора для управления ценами и клиентами
-            </List.Item>
-            <List.Item>Дизайн UI/UX — совместно с заказчиком</List.Item>
-            <List.Item>Создание документации, обучение вашей команды</List.Item>
-          </List>
-        </Card>
       </Space>
     ),
   },

@@ -144,7 +144,7 @@ export const eksimaKpSlides: SlideData[] = [
   // Slide 5: Catalog & Search Features
   {
     id: 'catalog-search',
-    header: 'Каталог с Интеллектуальным Поиском',
+    header: 'Каталог',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card>
