@@ -3,7 +3,7 @@ import Logo from '~shared/ui/logo';
 import { type SlideData } from '~widgets/slides';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
-import { tatneftKpCreatedAt } from './tatneft.meta';
+import { tatneftKpCreatedAt } from './tatneft-kp.meta';
 
 const { Title, Text } = Typography;
 
