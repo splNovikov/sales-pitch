@@ -1,9 +1,9 @@
 import { Typography, Space, Card, Row, Col, List } from 'antd';
-import Logo from '~shared/ui/logo';
 import { type SlideData } from '~widgets/slides';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { tatneftKpCreatedAt } from './tatneft-kp.meta';
+import tatneftLogo from './Tatneft-Logo.png';
 
 const { Title, Text } = Typography;
 
@@ -18,7 +18,7 @@ export const tatneftKpSlides: SlideData[] = [
     header: undefined,
     content: (
       <Space
-        direction="vertical"
+        orientation="vertical"
         size="large"
         style={{
           width: '100%',
@@ -27,13 +27,15 @@ export const tatneftKpSlides: SlideData[] = [
           alignItems: 'center',
         }}
       >
-        <Logo size="xl" fillColor="var(--app-color-primary)" />
+        <img
+          src={tatneftLogo}
+          alt="Татнефть"
+          style={{ maxWidth: 460, width: '100%', objectFit: 'contain' }}
+        />
         <MainTitleSlide
           title="Автоматизация анализа поступающих аварийных сигналов с объектов"
           subtitle="Коммерческое предложение для ПАО «Татнефть»"
-          description="Сокращение времени реакции на аварийные события и снижение операционных рисков за счёт автоматического анализа сигналов."
           createdAt={tatneftKpCreatedAt}
-          location="Казань"
         />
       </Space>
     ),
