@@ -17,6 +17,7 @@ import {
 } from '~features/smz/slides';
 import { proximaSlides } from '~features/proxima/slides';
 import { tatneftSlides } from '~features/jaxel/slides';
+import { tatneftKpSlides } from '~features/jaxel/slides/tatneft-kp-slides';
 import { solarisUnionSlides } from '~features/solaris-union/slides';
 import { targetPitchSlides } from '~features/target-pitch/slides';
 import { eksimaAnalysisSlides } from '~features/eksima/slides/eksima-analysis-slides';
@@ -65,6 +66,7 @@ const slidesMap: Record<string, SlideData[]> = {
   'smz-roadmap': smzRoadmapSlides,
   proxima: proximaSlides,
   tatneft: tatneftSlides,
+  'tatneft-kp': tatneftKpSlides,
   'solaris-union': solarisUnionSlides,
   'target-pitch': targetPitchSlides,
   'eksima-analysis': eksimaAnalysisSlides,
