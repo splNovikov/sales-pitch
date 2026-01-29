@@ -6,6 +6,7 @@ import { ConstrainedContent } from '~shared/ui/constrained-content';
 import { Roadmap, type RoadmapItem } from '~shared/ui/roadmap';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { tatneftKpCreatedAt } from './tatneft-kp.meta';
+import ganttImage from './gantt.png';
 import tatneftLogo from './Tatneft-Logo.png';
 
 const { Title, Paragraph, Text } = Typography;
@@ -290,13 +291,17 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
-            <Title level={4} style={{ marginTop: 0 }}>Масштаб</Title>
+            <Title level={4} style={{ marginTop: 0 }}>
+              Масштаб
+            </Title>
             <Paragraph style={{ marginBottom: 0 }}>
               <Text strong>~60 000 аварийных сигналов в неделю</Text>
             </Paragraph>
           </Card>
           <Card>
-            <Title level={4} style={{ marginTop: 0 }}>Ложные тревоги и процесс</Title>
+            <Title level={4} style={{ marginTop: 0 }}>
+              Ложные тревоги и процесс
+            </Title>
             <List size="small">
               <List.Item>Неверные уставки — 40%</List.Item>
               <List.Item>Изменение режимов работы — 25%</List.Item>
@@ -321,7 +326,9 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="large" style={{ width: '100%' }}>
           <Card>
-            <Title level={4} style={{ marginTop: 0 }}>Опережающее реагирование</Title>
+            <Title level={4} style={{ marginTop: 0 }}>
+              Опережающее реагирование
+            </Title>
             <Paragraph style={{ fontSize: 'var(--app-font-size-md)' }}>
               Требуется система{' '}
               <Text strong>
@@ -331,7 +338,9 @@ export const tatneftKpSlides: SlideData[] = [
             </Paragraph>
           </Card>
           <Card>
-            <Title level={4} style={{ marginTop: 0 }}>До инцидента, не после</Title>
+            <Title level={4} style={{ marginTop: 0 }}>
+              До инцидента, не после
+            </Title>
             <Paragraph style={{ marginBottom: 12 }}>
               Выявлять совокупность факторов, способных привести к срабатыванию
               сигналов, и своевременно рекомендовать корректирующие действия
@@ -371,7 +380,9 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="large" style={{ width: '100%' }}>
           <Card>
-            <Title level={4} style={{ marginTop: 0 }}>Пользовательский интерфейс</Title>
+            <Title level={4} style={{ marginTop: 0 }}>
+              Пользовательский интерфейс
+            </Title>
             <List size="small">
               <List.Item>
                 Рабочие дашборды и оповещения для операторов и инженеров.
@@ -386,7 +397,9 @@ export const tatneftKpSlides: SlideData[] = [
             </List>
           </Card>
           <Card>
-            <Title level={4} style={{ marginTop: 0 }}>Раннее предупреждение о рисках</Title>
+            <Title level={4} style={{ marginTop: 0 }}>
+              Раннее предупреждение о рисках
+            </Title>
             <List size="small">
               <List.Item>
                 Алгоритмы заранее находят отклонения в поведении оборудования.
@@ -398,7 +411,9 @@ export const tatneftKpSlides: SlideData[] = [
             </List>
           </Card>
           <Card>
-            <Title level={4} style={{ marginTop: 0 }}>Хранилище данных</Title>
+            <Title level={4} style={{ marginTop: 0 }}>
+              Хранилище данных
+            </Title>
             <List size="small">
               <List.Item>
                 Единое хранилище телеметрии и информации об инцидентах.
@@ -452,7 +467,9 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
-            <Title level={5} style={{ marginTop: 0 }}>Почему этот этап необходим</Title>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Почему этот этап необходим
+            </Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Подготовительная фаза обязательна для старта проекта: без
               согласованных требований, перечня объектов мониторинга (ДНС) и
@@ -461,7 +478,9 @@ export const tatneftKpSlides: SlideData[] = [
             </Paragraph>
           </Card>
           <Card>
-            <Title level={5} style={{ marginTop: 0 }}>Назначение</Title>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Назначение
+            </Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Сбор и формализация бизнес-требований, анализ предметной области и
               определение списка объектов мониторинга (ДНС), проектирование
@@ -590,7 +609,9 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
-            <Title level={5} style={{ marginTop: 0 }}>Почему этот компонент необходим</Title>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Почему этот компонент необходим
+            </Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Data Lake является необходимым фундаментом решения: без единого
               хранилища телеметрии и сведений об инцидентах невозможна работа
@@ -598,7 +619,9 @@ export const tatneftKpSlides: SlideData[] = [
             </Paragraph>
           </Card>
           <Card>
-            <Title level={5} style={{ marginTop: 0 }}>Назначение</Title>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Назначение
+            </Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Единое хранилище телеметрии с датчиков оборудования и информации
               об инцидентах. Данные выгружаются, очищаются и приводятся к
@@ -654,7 +677,9 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
-            <Title level={5} style={{ marginTop: 0 }}>Построение и наполнение единой БД</Title>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Построение и наполнение единой БД
+            </Title>
             <Table
               size="small"
               pagination={false}
@@ -732,7 +757,9 @@ export const tatneftKpSlides: SlideData[] = [
             />
           </Card>
           <Card>
-            <Title level={5} style={{ marginTop: 0 }}>Накопление и анализ данных</Title>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Накопление и анализ данных
+            </Title>
             <Table
               size="small"
               pagination={false}
@@ -841,7 +868,9 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
-            <Title level={5} style={{ marginTop: 0 }}>Почему этот компонент необходим</Title>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Почему этот компонент необходим
+            </Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Подсистема функционирует поверх Data Lake и реализует основную
               цель проекта — заблаговременное выявление отклонений в работе
@@ -850,7 +879,9 @@ export const tatneftKpSlides: SlideData[] = [
             </Paragraph>
           </Card>
           <Card>
-            <Title level={5} style={{ marginTop: 0 }}>Назначение</Title>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Назначение
+            </Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Набор алгоритмов, которые анализируют данные из хранилища, находят
               отклонения в поведении оборудования и формируют оповещения о
@@ -1223,7 +1254,9 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
-            <Title level={5} style={{ marginTop: 0 }}>Почему этот компонент необходим</Title>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Почему этот компонент необходим
+            </Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Интерфейс обеспечивает доведение результатов работы подсистемы
               предупреждений до операторов и уполномоченных сотрудников. Без
@@ -1232,7 +1265,9 @@ export const tatneftKpSlides: SlideData[] = [
             </Paragraph>
           </Card>
           <Card>
-            <Title level={5} style={{ marginTop: 0 }}>Назначение</Title>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Назначение
+            </Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Веб-интерфейс, с которым работают диспетчеры и инженеры: дашборды,
               оповещения о рисках, пояснение причин предупреждений, фильтрация
@@ -1603,25 +1638,13 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'summary-gantt',
     header: 'План-график',
     content: (
-      <ConstrainedContent>
-        <Card>
-          <div
-            style={{
-              minHeight: 360,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: 'var(--app-color-bg-secondary, rgba(0, 0, 0, 0.02))',
-              borderRadius: 8,
-              border: '1px dashed var(--app-color-border)',
-            }}
-          >
-            <Paragraph type="secondary" style={{ marginBottom: 0 }}>
-              Здесь можно разместить диаграмму Ганта (календарный план проекта)
-            </Paragraph>
-          </div>
-        </Card>
-      </ConstrainedContent>
+      <Card style={{ width: '100%' }}>
+        <img
+          src={ganttImage}
+          alt="План-график проекта"
+          style={{ width: '100%', height: 'auto', display: 'block' }}
+        />
+      </Card>
     ),
   },
   {
@@ -1694,28 +1717,10 @@ export const tatneftKpSlides: SlideData[] = [
       </ConstrainedContent>
     ),
   },
+
   {
     id: 'thank-you',
     header: undefined,
-    content: (
-      <ConstrainedContent>
-        <Space
-          orientation="vertical"
-          size="large"
-          style={{
-            width: '100%',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100%',
-          }}
-        >
-          <Card style={{ maxWidth: 560, width: '100%', textAlign: 'center' }}>
-            <Title level={1} style={{ marginTop: 0, marginBottom: 0 }}>
-              Благодарю за внимание
-            </Title>
-          </Card>
-        </Space>
-      </ConstrainedContent>
-    ),
+    content: <MainTitleSlide title="Благодарю за внимание" />,
   },
 ];
