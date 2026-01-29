@@ -8,11 +8,27 @@ import styles from './presentation-login-form.module.css';
 
 const PRESENTATION_AUTH_KEY_PREFIX = 'presentation-auth-';
 
-/** Hardcoded credentials for protected presentations (demo only) */
-const HARDCODED_CREDENTIALS = {
-  username: 'admin',
-  password: 'tatneft2025',
-} as const;
+/** Secret used to sign tokens (not exported, client-side obscurity only) */
+const SECRET = 'xK9#pL2$vN7@mQ4';
+/** Token validity: 24 hours */
+const TTL_MS = 24 * 60 * 60 * 1000;
+
+/** Credentials: base64 of "login:password" (decoded at runtime for comparison) */
+const CREDENTIALS_B64 = 'YWRtaW46dGF0bmVmdDIwMjU=';
+
+function simpleHash(str: string): string {
+  let h = 5381;
+  for (let i = 0; i < str.length; i++) {
+    h = ((h << 5) + h) + str.charCodeAt(i);
+  }
+  return (h >>> 0).toString(36);
+}
+
+function getCredentials(): { username: string; password: string } {
+  const decoded = typeof atob !== 'undefined' ? atob(CREDENTIALS_B64) : '';
+  const [username = '', password = ''] = decoded.split(':');
+  return { username, password };
+}
 
 export function getPresentationAuthKey(slug: string): string {
   return `${PRESENTATION_AUTH_KEY_PREFIX}${slug}`;
@@ -20,11 +36,33 @@ export function getPresentationAuthKey(slug: string): string {
 
 export function isPresentationAuthenticated(slug: string): boolean {
   if (typeof window === 'undefined') return false;
-  return sessionStorage.getItem(getPresentationAuthKey(slug)) === 'true';
+  const key = getPresentationAuthKey(slug);
+  const raw = sessionStorage.getItem(key);
+  if (!raw) return false;
+  const colonIndex = raw.indexOf(':');
+  if (colonIndex === -1) {
+    sessionStorage.removeItem(key);
+    return false;
+  }
+  const until = Number(raw.slice(0, colonIndex));
+  const signature = raw.slice(colonIndex + 1);
+  const now = Date.now();
+  if (!Number.isFinite(until) || now >= until) {
+    sessionStorage.removeItem(key);
+    return false;
+  }
+  const expectedSig = simpleHash(slug + SECRET + String(until));
+  if (signature !== expectedSig) {
+    sessionStorage.removeItem(key);
+    return false;
+  }
+  return true;
 }
 
 export function setPresentationAuthenticated(slug: string): void {
-  sessionStorage.setItem(getPresentationAuthKey(slug), 'true');
+  const until = Date.now() + TTL_MS;
+  const signature = simpleHash(slug + SECRET + String(until));
+  sessionStorage.setItem(getPresentationAuthKey(slug), `${until}:${signature}`);
 }
 
 export interface PresentationLoginFormProps {
@@ -45,9 +83,10 @@ export function PresentationLoginForm({
 
   const handleFinish = (values: { username: string; password: string }) => {
     setError(null);
+    const { username: expectedUser, password: expectedPass } = getCredentials();
     if (
-      values.username === HARDCODED_CREDENTIALS.username &&
-      values.password === HARDCODED_CREDENTIALS.password
+      values.username === expectedUser &&
+      values.password === expectedPass
     ) {
       setPresentationAuthenticated(slug);
       onSuccess();
