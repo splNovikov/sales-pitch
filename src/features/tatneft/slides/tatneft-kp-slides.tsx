@@ -2,6 +2,7 @@ import { Space, Typography, List, Card, Table } from 'antd';
 import { CalendarOutlined } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
+import { ConstrainedContent } from '~shared/ui/constrained-content';
 import { Roadmap, type RoadmapItem } from '~shared/ui/roadmap';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { tatneftKpCreatedAt } from './tatneft-kp.meta';
@@ -286,27 +287,29 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'problem-scale-and-process',
     header: 'Масштаб и текущий процесс',
     content: (
-      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4}>Масштаб</Title>
-          <Paragraph style={{ marginBottom: 0 }}>
-            <Text strong>~60 000 аварийных сигналов в неделю</Text>
-          </Paragraph>
-        </Card>
-        <Card>
-          <Title level={4}>Ложные тревоги и процесс</Title>
-          <List size="small">
-            <List.Item>Неверные уставки — 40%</List.Item>
-            <List.Item>Изменение режимов работы — 25%</List.Item>
-            <List.Item>Износ оборудования — 20%</List.Item>
-            <List.Item>Выведенное оборудование — 15%</List.Item>
-            <List.Item>
-              Ручной анализ сигналов и трендов,{' '}
-              <Text strong>несколько часов на один объект</Text>
-            </List.Item>
-          </List>
-        </Card>
-      </Space>
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <Title level={4}>Масштаб</Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              <Text strong>~60 000 аварийных сигналов в неделю</Text>
+            </Paragraph>
+          </Card>
+          <Card>
+            <Title level={4}>Ложные тревоги и процесс</Title>
+            <List size="small">
+              <List.Item>Неверные уставки — 40%</List.Item>
+              <List.Item>Изменение режимов работы — 25%</List.Item>
+              <List.Item>Износ оборудования — 20%</List.Item>
+              <List.Item>Выведенное оборудование — 15%</List.Item>
+              <List.Item>
+                Ручной анализ сигналов и трендов,{' '}
+                <Text strong>несколько часов на один объект</Text>
+              </List.Item>
+            </List>
+          </Card>
+        </Space>
+      </ConstrainedContent>
     ),
   },
 
@@ -315,38 +318,41 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'tatneft-needs',
     header: 'Потребность',
     content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4}>Опережающее реагирование</Title>
-          <Paragraph style={{ fontSize: 'var(--app-font-size-md)' }}>
-            Требуется система{' '}
-            <Text strong>
-              предупредительного обнаружения аномалий (Anomaly Detection)
-            </Text>
-            , которая функционирует в режиме опережающего реагирования.
-          </Paragraph>
-        </Card>
-        <Card>
-          <Title level={4}>До инцидента, не после</Title>
-          <Paragraph style={{ marginBottom: 12 }}>
-            Выявлять совокупность факторов, способных привести к срабатыванию
-            сигналов, и своевременно рекомендовать корректирующие действия
-            операторам, предотвращая инциденты до их возникновения.
-          </Paragraph>
-          <List size="small">
-            <List.Item>
-              Раннее выявление факторов риска до срабатывания аварийных сигналов
-            </List.Item>
-            <List.Item>
-              Рекомендации по корректирующим действиям для операторов
-            </List.Item>
-            <List.Item>
-              Режим опережающего реагирования вместо реактивного разбора после
-              инцидента
-            </List.Item>
-          </List>
-        </Card>
-      </Space>
+      <ConstrainedContent>
+        <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+          <Card>
+            <Title level={4}>Опережающее реагирование</Title>
+            <Paragraph style={{ fontSize: 'var(--app-font-size-md)' }}>
+              Требуется система{' '}
+              <Text strong>
+                предупредительного обнаружения аномалий (Anomaly Detection)
+              </Text>
+              , которая функционирует в режиме опережающего реагирования.
+            </Paragraph>
+          </Card>
+          <Card>
+            <Title level={4}>До инцидента, не после</Title>
+            <Paragraph style={{ marginBottom: 12 }}>
+              Выявлять совокупность факторов, способных привести к срабатыванию
+              сигналов, и своевременно рекомендовать корректирующие действия
+              операторам, предотвращая инциденты до их возникновения.
+            </Paragraph>
+            <List size="small">
+              <List.Item>
+                Раннее выявление факторов риска до срабатывания аварийных
+                сигналов
+              </List.Item>
+              <List.Item>
+                Рекомендации по корректирующим действиям для операторов
+              </List.Item>
+              <List.Item>
+                Режим опережающего реагирования вместо реактивного разбора после
+                инцидента
+              </List.Item>
+            </List>
+          </Card>
+        </Space>
+      </ConstrainedContent>
     ),
   },
 
@@ -362,47 +368,49 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'solution-values',
     header: 'Три ключевые ценности решения',
     content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4}>Пользовательский интерфейс</Title>
-          <List size="small">
-            <List.Item>
-              Рабочие дашборды и оповещения для операторов и инженеров.
-            </List.Item>
-            <List.Item>
-              Интерфейс, который показывает причину каждого предупреждения.
-            </List.Item>
-            <List.Item>Фильтрация, в том числе по объекту.</List.Item>
-            <List.Item>
-              Отдельный экран со сводной статистикой и простыми отчётами.
-            </List.Item>
-          </List>
-        </Card>
-        <Card>
-          <Title level={4}>Раннее предупреждение о рисках</Title>
-          <List size="small">
-            <List.Item>
-              Алгоритмы заранее находят отклонения в поведении оборудования.
-            </List.Item>
-            <List.Item>
-              Система предупреждает о рисках до инцидента, снижая простои и
-              потери.
-            </List.Item>
-          </List>
-        </Card>
-        <Card>
-          <Title level={4}>Хранилище данных</Title>
-          <List size="small">
-            <List.Item>
-              Единое хранилище телеметрии и информации об инцидентах.
-            </List.Item>
-            <List.Item>
-              Данные могут переиспользоваться в других системах и аналитических
-              витринах.
-            </List.Item>
-          </List>
-        </Card>
-      </Space>
+      <ConstrainedContent>
+        <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+          <Card>
+            <Title level={4}>Пользовательский интерфейс</Title>
+            <List size="small">
+              <List.Item>
+                Рабочие дашборды и оповещения для операторов и инженеров.
+              </List.Item>
+              <List.Item>
+                Интерфейс, который показывает причину каждого предупреждения.
+              </List.Item>
+              <List.Item>Фильтрация, в том числе по объекту.</List.Item>
+              <List.Item>
+                Отдельный экран со сводной статистикой и простыми отчётами.
+              </List.Item>
+            </List>
+          </Card>
+          <Card>
+            <Title level={4}>Раннее предупреждение о рисках</Title>
+            <List size="small">
+              <List.Item>
+                Алгоритмы заранее находят отклонения в поведении оборудования.
+              </List.Item>
+              <List.Item>
+                Система предупреждает о рисках до инцидента, снижая простои и
+                потери.
+              </List.Item>
+            </List>
+          </Card>
+          <Card>
+            <Title level={4}>Хранилище данных</Title>
+            <List size="small">
+              <List.Item>
+                Единое хранилище телеметрии и информации об инцидентах.
+              </List.Item>
+              <List.Item>
+                Данные могут переиспользоваться в других системах и
+                аналитических витринах.
+              </List.Item>
+            </List>
+          </Card>
+        </Space>
+      </ConstrainedContent>
     ),
   },
 
@@ -410,15 +418,17 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'architecture-overview',
     header: 'Общая схема взаимодействия компонентов',
     content: (
-      <Card>
-        <Paragraph style={{ marginBottom: 8 }}>
-          Схема взаимодействия трёх компонентов: хранилище данных, подсистема
-          раннего предупреждения, интерфейс оператора.
-        </Paragraph>
-        <Paragraph type="secondary">
-          TODO: добавить иллюстрацию схемы.
-        </Paragraph>
-      </Card>
+      <ConstrainedContent>
+        <Card>
+          <Paragraph style={{ marginBottom: 8 }}>
+            Схема взаимодействия трёх компонентов: хранилище данных, подсистема
+            раннего предупреждения, интерфейс оператора.
+          </Paragraph>
+          <Paragraph type="secondary">
+            TODO: добавить иллюстрацию схемы.
+          </Paragraph>
+        </Card>
+      </ConstrainedContent>
     ),
   },
 
@@ -439,37 +449,39 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'impl-preparatory-explainer',
     header: 'Подготовительная фаза',
     content: (
-      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-        <Card>
-          <Title level={5}>Почему этот этап необходим</Title>
-          <Paragraph style={{ marginBottom: 0 }}>
-            Подготовительная фаза обязательна для старта проекта: без
-            согласованных требований, перечня объектов мониторинга (ДНС) и
-            спроектированной архитектуры невозможны последующие этапы —
-            построение хранилища данных и подсистемы предупреждений.
-          </Paragraph>
-        </Card>
-        <Card>
-          <Title level={5}>Назначение</Title>
-          <Paragraph style={{ marginBottom: 0 }}>
-            Сбор и формализация бизнес-требований, анализ предметной области и
-            определение списка объектов мониторинга (ДНС), проектирование
-            технической архитектуры решения для обеспечения масштабируемости.
-          </Paragraph>
-        </Card>
-        <Card>
-          <Title level={5}>
-            Ценность для организации и доставляемый результат
-          </Title>
-          <List size="small">
-            <List.Item>Документ с описанием архитектуры системы.</List.Item>
-            <List.Item>
-              Утверждённый реестр (список) ДНС для включения в систему.
-            </List.Item>
-            <List.Item>План-график реализации проекта.</List.Item>
-          </List>
-        </Card>
-      </Space>
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <Title level={5}>Почему этот этап необходим</Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Подготовительная фаза обязательна для старта проекта: без
+              согласованных требований, перечня объектов мониторинга (ДНС) и
+              спроектированной архитектуры невозможны последующие этапы —
+              построение хранилища данных и подсистемы предупреждений.
+            </Paragraph>
+          </Card>
+          <Card>
+            <Title level={5}>Назначение</Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Сбор и формализация бизнес-требований, анализ предметной области и
+              определение списка объектов мониторинга (ДНС), проектирование
+              технической архитектуры решения для обеспечения масштабируемости.
+            </Paragraph>
+          </Card>
+          <Card>
+            <Title level={5}>
+              Ценность для организации и доставляемый результат
+            </Title>
+            <List size="small">
+              <List.Item>Документ с описанием архитектуры системы.</List.Item>
+              <List.Item>
+                Утверждённый реестр (список) ДНС для включения в систему.
+              </List.Item>
+              <List.Item>План-график реализации проекта.</List.Item>
+            </List>
+          </Card>
+        </Space>
+      </ConstrainedContent>
     ),
   },
   {
@@ -481,85 +493,85 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'impl-preparatory-roles-cost',
     header: 'Подготовительная фаза: роли, часы, стоимость',
     content: (
-      <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
-      <Card>
-        <Table
-          size="small"
-          pagination={false}
-          dataSource={[
-            {
-              key: '1',
-              role: 'Бизнес-аналитик',
-              hours: 492,
-              cost: '2 388 696 ₽',
-            },
-            {
-              key: '2',
-              role: 'Архитектор решений',
-              hours: 492,
-              cost: '5 573 624 ₽',
-            },
-            {
-              key: '3',
-              role: 'Руководитель проектов',
-              hours: 492,
-              cost: '3 184 928 ₽',
-            },
-            {
-              key: '4',
-              role: 'Старший DevOps-инженер',
-              hours: 492,
-              cost: '3 981 160 ₽',
-            },
-            {
-              key: '5',
-              role: 'Аналитик предметной области',
-              hours: 492,
-              cost: '0',
-            },
-            {
-              key: '6',
-              role: 'Старший инженер данных',
-              hours: 492,
-              cost: '3 981 160 ₽',
-            },
-          ]}
-          columns={[
-            { title: 'Роль', dataIndex: 'role', key: 'role' },
-            {
-              title: 'Часов',
-              dataIndex: 'hours',
-              key: 'hours',
-              width: 90,
-              align: 'right',
-            },
-            {
-              title: 'Стоимость (с НДС)',
-              dataIndex: 'cost',
-              key: 'cost',
-              width: 140,
-              align: 'right',
-              render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
-            },
-          ]}
-          summary={() => (
-            <Table.Summary>
-              <Table.Summary.Row>
-                <Table.Summary.Cell index={0}>
-                  <Text strong>Итого</Text>
-                </Table.Summary.Cell>
-                <Table.Summary.Cell index={1} align="right">
-                  <Text strong>2 952</Text>
-                </Table.Summary.Cell>
-                <Table.Summary.Cell index={2} align="right">
-                  <Text strong>19 109 568 ₽</Text>
-                </Table.Summary.Cell>
-              </Table.Summary.Row>
-            </Table.Summary>
-          )}
-        />
-      </Card>
-      </div>
+      <ConstrainedContent>
+        <Card>
+          <Table
+            size="small"
+            pagination={false}
+            dataSource={[
+              {
+                key: '1',
+                role: 'Бизнес-аналитик',
+                hours: 492,
+                cost: '2 388 696 ₽',
+              },
+              {
+                key: '2',
+                role: 'Архитектор решений',
+                hours: 492,
+                cost: '5 573 624 ₽',
+              },
+              {
+                key: '3',
+                role: 'Руководитель проектов',
+                hours: 492,
+                cost: '3 184 928 ₽',
+              },
+              {
+                key: '4',
+                role: 'Старший DevOps-инженер',
+                hours: 492,
+                cost: '3 981 160 ₽',
+              },
+              {
+                key: '5',
+                role: 'Аналитик предметной области',
+                hours: 492,
+                cost: '0',
+              },
+              {
+                key: '6',
+                role: 'Старший инженер данных',
+                hours: 492,
+                cost: '3 981 160 ₽',
+              },
+            ]}
+            columns={[
+              { title: 'Роль', dataIndex: 'role', key: 'role' },
+              {
+                title: 'Часов',
+                dataIndex: 'hours',
+                key: 'hours',
+                width: 90,
+                align: 'right',
+              },
+              {
+                title: 'Стоимость (с НДС)',
+                dataIndex: 'cost',
+                key: 'cost',
+                width: 140,
+                align: 'right',
+                render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
+              },
+            ]}
+            summary={() => (
+              <Table.Summary>
+                <Table.Summary.Row>
+                  <Table.Summary.Cell index={0}>
+                    <Text strong>Итого</Text>
+                  </Table.Summary.Cell>
+                  <Table.Summary.Cell index={1} align="right">
+                    <Text strong>2 952</Text>
+                  </Table.Summary.Cell>
+                  <Table.Summary.Cell index={2} align="right">
+                    <Text strong>19 109 568 ₽</Text>
+                  </Table.Summary.Cell>
+                </Table.Summary.Row>
+              </Table.Summary>
+            )}
+          />
+        </Card>
+      </ConstrainedContent>
     ),
   },
 
@@ -575,232 +587,239 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'impl-data-lake-explainer',
     header: 'Data Lake (слой данных)',
     content: (
-      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-        <Card>
-          <Title level={5}>Почему этот компонент необходим</Title>
-          <Paragraph style={{ marginBottom: 0 }}>
-            Data Lake является необходимым фундаментом решения: без единого
-            хранилища телеметрии и сведений об инцидентах невозможна работа
-            алгоритмов раннего предупреждения и своевременное реагирование
-          </Paragraph>
-        </Card>
-        <Card>
-          <Title level={5}>Назначение</Title>
-          <Paragraph style={{ marginBottom: 0 }}>
-            Единое хранилище телеметрии с датчиков оборудования и информации об
-            инцидентах. Данные выгружаются, очищаются и приводятся к единому
-            формату.
-          </Paragraph>
-        </Card>
-        <Card>
-          <Title level={5}>
-            Ценность для организации и доставляемый результат
-          </Title>
-          <List size="small">
-            <List.Item>
-              Один источник правды по данным для мониторинга и отчётности.
-            </List.Item>
-            <List.Item>
-              Возможность переиспользовать данные в других системах и витринах.
-            </List.Item>
-            <List.Item>
-              Надёжная основа для алгоритмов раннего предупреждения и для
-              интерфейса оператора.
-            </List.Item>
-          </List>
-        </Card>
-      </Space>
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <Title level={5}>Почему этот компонент необходим</Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Data Lake является необходимым фундаментом решения: без единого
+              хранилища телеметрии и сведений об инцидентах невозможна работа
+              алгоритмов раннего предупреждения и своевременное реагирование
+            </Paragraph>
+          </Card>
+          <Card>
+            <Title level={5}>Назначение</Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Единое хранилище телеметрии с датчиков оборудования и информации
+              об инцидентах. Данные выгружаются, очищаются и приводятся к
+              единому формату.
+            </Paragraph>
+          </Card>
+          <Card>
+            <Title level={5}>
+              Ценность для организации и доставляемый результат
+            </Title>
+            <List size="small">
+              <List.Item>
+                Один источник правды по данным для мониторинга и отчётности.
+              </List.Item>
+              <List.Item>
+                Возможность переиспользовать данные в других системах и
+                витринах.
+              </List.Item>
+              <List.Item>
+                Надёжная основа для алгоритмов раннего предупреждения и для
+                интерфейса оператора.
+              </List.Item>
+            </List>
+          </Card>
+        </Space>
+      </ConstrainedContent>
     ),
   },
   {
     id: 'impl-data-lake-scheme',
     header: 'Data Lake: схема',
     content: (
-      <Card>
-        <Paragraph type="secondary">
-          TODO: добавить картинку схемы Data Lake (источники, ETL, хранилище).
-        </Paragraph>
-      </Card>
+      <ConstrainedContent>
+        <Card>
+          <Paragraph type="secondary">
+            TODO: добавить картинку схемы Data Lake (источники, ETL, хранилище).
+          </Paragraph>
+        </Card>
+      </ConstrainedContent>
     ),
   },
   {
     id: 'impl-data-lake-phases',
     header: 'Data Lake: фазы реализации',
-    content: <Roadmap items={dataLakePhases} mode="alternate" maxWidth={1200} />,
+    content: (
+      <Roadmap items={dataLakePhases} mode="alternate" maxWidth={1200} />
+    ),
   },
   {
     id: 'impl-data-lake-roles-cost',
     header: 'Data Lake: роли, часы, стоимость',
     content: (
-      <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
-      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-        <Card>
-          <Title level={5}>Построение и наполнение единой БД</Title>
-          <Table
-            size="small"
-            pagination={false}
-            dataSource={[
-              {
-                key: '1',
-                role: 'Архитектор решений',
-                hours: 246,
-                cost: '2 832 875 ₽',
-              },
-              {
-                key: '2',
-                role: 'Ведущий разработчик алгоритмов',
-                hours: 492,
-                cost: '5 261 054 ₽',
-              },
-              {
-                key: '3',
-                role: 'Старший инженер данных',
-                hours: 984,
-                cost: '8 093 928 ₽',
-              },
-              {
-                key: '4',
-                role: 'Старший DevOps-инженер',
-                hours: 984,
-                cost: '8 093 928 ₽',
-              },
-              {
-                key: '5',
-                role: 'Руководитель проектов',
-                hours: 492,
-                cost: '3 237 572 ₽',
-              },
-              {
-                key: '6',
-                role: 'Аналитик предметной области',
-                hours: 492,
-                cost: '0',
-              },
-            ]}
-            columns={[
-              { title: 'Роль', dataIndex: 'role', key: 'role' },
-              {
-                title: 'Часов',
-                dataIndex: 'hours',
-                key: 'hours',
-                width: 90,
-                align: 'right',
-              },
-              {
-                title: 'Стоимость (с НДС)',
-                dataIndex: 'cost',
-                key: 'cost',
-                width: 140,
-                align: 'right',
-                render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
-              },
-            ]}
-            summary={() => (
-              <Table.Summary>
-                <Table.Summary.Row>
-                  <Table.Summary.Cell index={0}>
-                    <Text strong>Итого</Text>
-                  </Table.Summary.Cell>
-                  <Table.Summary.Cell index={1} align="right">
-                    <Text strong>3 690</Text>
-                  </Table.Summary.Cell>
-                  <Table.Summary.Cell index={2} align="right">
-                    <Text strong>27 519 358 ₽</Text>
-                  </Table.Summary.Cell>
-                </Table.Summary.Row>
-              </Table.Summary>
-            )}
-          />
-        </Card>
-        <Card>
-          <Title level={5}>Накопление и анализ данных</Title>
-          <Table
-            size="small"
-            pagination={false}
-            dataSource={[
-              {
-                key: '1',
-                role: 'Архитектор решений',
-                hours: 246,
-                cost: '2 072 836 ₽',
-              },
-              {
-                key: '2',
-                role: 'Ведущий разработчик алгоритмов',
-                hours: 492,
-                cost: '3 849 552 ₽',
-              },
-              {
-                key: '3',
-                role: 'Старший инженер данных',
-                hours: 984,
-                cost: '5 922 386 ₽',
-              },
-              {
-                key: '4',
-                role: 'Разработчик алгоритмов',
-                hours: 492,
-                cost: '2 961 194 ₽',
-              },
-              {
-                key: '5',
-                role: 'Руководитель проектов',
-                hours: 492,
-                cost: '2 368 955 ₽',
-              },
-              {
-                key: '6',
-                role: 'Старший DevOps-инженер',
-                hours: 492,
-                cost: '2 961 194 ₽',
-              },
-              {
-                key: '7',
-                role: 'Аналитик предметной области',
-                hours: 492,
-                cost: '0',
-              },
-            ]}
-            columns={[
-              { title: 'Роль', dataIndex: 'role', key: 'role' },
-              {
-                title: 'Часов',
-                dataIndex: 'hours',
-                key: 'hours',
-                width: 90,
-                align: 'right',
-              },
-              {
-                title: 'Стоимость (с НДС)',
-                dataIndex: 'cost',
-                key: 'cost',
-                width: 140,
-                align: 'right',
-                render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
-              },
-            ]}
-            summary={() => (
-              <Table.Summary>
-                <Table.Summary.Row>
-                  <Table.Summary.Cell index={0}>
-                    <Text strong>Итого</Text>
-                  </Table.Summary.Cell>
-                  <Table.Summary.Cell index={1} align="right">
-                    <Text strong>3 690</Text>
-                  </Table.Summary.Cell>
-                  <Table.Summary.Cell index={2} align="right">
-                    <Text strong>20 136 117 ₽</Text>
-                  </Table.Summary.Cell>
-                </Table.Summary.Row>
-              </Table.Summary>
-            )}
-          />
-        </Card>
-        <Paragraph style={{ marginBottom: 0 }}>
-          <Text strong>Итого по Data Lake:</Text> 7 380 ч, 47 655 475 ₽
-        </Paragraph>
-      </Space>
-      </div>
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <Title level={5}>Построение и наполнение единой БД</Title>
+            <Table
+              size="small"
+              pagination={false}
+              dataSource={[
+                {
+                  key: '1',
+                  role: 'Архитектор решений',
+                  hours: 246,
+                  cost: '2 832 875 ₽',
+                },
+                {
+                  key: '2',
+                  role: 'Ведущий разработчик алгоритмов',
+                  hours: 492,
+                  cost: '5 261 054 ₽',
+                },
+                {
+                  key: '3',
+                  role: 'Старший инженер данных',
+                  hours: 984,
+                  cost: '8 093 928 ₽',
+                },
+                {
+                  key: '4',
+                  role: 'Старший DevOps-инженер',
+                  hours: 984,
+                  cost: '8 093 928 ₽',
+                },
+                {
+                  key: '5',
+                  role: 'Руководитель проектов',
+                  hours: 492,
+                  cost: '3 237 572 ₽',
+                },
+                {
+                  key: '6',
+                  role: 'Аналитик предметной области',
+                  hours: 492,
+                  cost: '0',
+                },
+              ]}
+              columns={[
+                { title: 'Роль', dataIndex: 'role', key: 'role' },
+                {
+                  title: 'Часов',
+                  dataIndex: 'hours',
+                  key: 'hours',
+                  width: 90,
+                  align: 'right',
+                },
+                {
+                  title: 'Стоимость (с НДС)',
+                  dataIndex: 'cost',
+                  key: 'cost',
+                  width: 140,
+                  align: 'right',
+                  render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
+                },
+              ]}
+              summary={() => (
+                <Table.Summary>
+                  <Table.Summary.Row>
+                    <Table.Summary.Cell index={0}>
+                      <Text strong>Итого</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell index={1} align="right">
+                      <Text strong>3 690</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell index={2} align="right">
+                      <Text strong>27 519 358 ₽</Text>
+                    </Table.Summary.Cell>
+                  </Table.Summary.Row>
+                </Table.Summary>
+              )}
+            />
+          </Card>
+          <Card>
+            <Title level={5}>Накопление и анализ данных</Title>
+            <Table
+              size="small"
+              pagination={false}
+              dataSource={[
+                {
+                  key: '1',
+                  role: 'Архитектор решений',
+                  hours: 246,
+                  cost: '2 072 836 ₽',
+                },
+                {
+                  key: '2',
+                  role: 'Ведущий разработчик алгоритмов',
+                  hours: 492,
+                  cost: '3 849 552 ₽',
+                },
+                {
+                  key: '3',
+                  role: 'Старший инженер данных',
+                  hours: 984,
+                  cost: '5 922 386 ₽',
+                },
+                {
+                  key: '4',
+                  role: 'Разработчик алгоритмов',
+                  hours: 492,
+                  cost: '2 961 194 ₽',
+                },
+                {
+                  key: '5',
+                  role: 'Руководитель проектов',
+                  hours: 492,
+                  cost: '2 368 955 ₽',
+                },
+                {
+                  key: '6',
+                  role: 'Старший DevOps-инженер',
+                  hours: 492,
+                  cost: '2 961 194 ₽',
+                },
+                {
+                  key: '7',
+                  role: 'Аналитик предметной области',
+                  hours: 492,
+                  cost: '0',
+                },
+              ]}
+              columns={[
+                { title: 'Роль', dataIndex: 'role', key: 'role' },
+                {
+                  title: 'Часов',
+                  dataIndex: 'hours',
+                  key: 'hours',
+                  width: 90,
+                  align: 'right',
+                },
+                {
+                  title: 'Стоимость (с НДС)',
+                  dataIndex: 'cost',
+                  key: 'cost',
+                  width: 140,
+                  align: 'right',
+                  render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
+                },
+              ]}
+              summary={() => (
+                <Table.Summary>
+                  <Table.Summary.Row>
+                    <Table.Summary.Cell index={0}>
+                      <Text strong>Итого</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell index={1} align="right">
+                      <Text strong>3 690</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell index={2} align="right">
+                      <Text strong>20 136 117 ₽</Text>
+                    </Table.Summary.Cell>
+                  </Table.Summary.Row>
+                </Table.Summary>
+              )}
+            />
+          </Card>
+          <Paragraph style={{ marginBottom: 0 }}>
+            <Text strong>Итого по Data Lake:</Text> 7 380 ч, 47 655 475 ₽
+          </Paragraph>
+        </Space>
+      </ConstrainedContent>
     ),
   },
 
@@ -819,357 +838,370 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'impl-analytics-explainer',
     header: 'Подсистема предупреждений',
     content: (
-      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-        <Card>
-          <Title level={5}>Почему этот компонент необходим</Title>
-          <Paragraph style={{ marginBottom: 0 }}>
-            Подсистема функционирует поверх Data Lake и реализует основную цель
-            проекта — заблаговременное выявление отклонений в работе
-            оборудования до наступления аварии. Без неё решение ограничивается
-            хранением данных и не обеспечивает опережающее реагирование.
-          </Paragraph>
-        </Card>
-        <Card>
-          <Title level={5}>Назначение</Title>
-          <Paragraph style={{ marginBottom: 0 }}>
-            Набор алгоритмов, которые анализируют данные из хранилища, находят
-            отклонения в поведении оборудования и формируют оповещения о рисках
-            до наступления инцидента.
-          </Paragraph>
-        </Card>
-        <Card>
-          <Title level={5}>
-            Ценность для организации и доставляемый результат
-          </Title>
-          <List size="small">
-            <List.Item>
-              Ранние предупреждения вместо реакции на уже случившийся инцидент.
-            </List.Item>
-            <List.Item>
-              Снижение простоев и потерь за счёт своевременных действий.
-            </List.Item>
-            <List.Item>
-              Откалиброванная под объекты мониторинга подсистема, проверенная на
-              исторических данных и готовая к передаче в интерфейс оператора.
-            </List.Item>
-          </List>
-        </Card>
-      </Space>
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <Title level={5}>Почему этот компонент необходим</Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Подсистема функционирует поверх Data Lake и реализует основную
+              цель проекта — заблаговременное выявление отклонений в работе
+              оборудования до наступления аварии. Без неё решение ограничивается
+              хранением данных и не обеспечивает опережающее реагирование.
+            </Paragraph>
+          </Card>
+          <Card>
+            <Title level={5}>Назначение</Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Набор алгоритмов, которые анализируют данные из хранилища, находят
+              отклонения в поведении оборудования и формируют оповещения о
+              рисках до наступления инцидента.
+            </Paragraph>
+          </Card>
+          <Card>
+            <Title level={5}>
+              Ценность для организации и доставляемый результат
+            </Title>
+            <List size="small">
+              <List.Item>
+                Ранние предупреждения вместо реакции на уже случившийся
+                инцидент.
+              </List.Item>
+              <List.Item>
+                Снижение простоев и потерь за счёт своевременных действий.
+              </List.Item>
+              <List.Item>
+                Откалиброванная под объекты мониторинга подсистема, проверенная
+                на исторических данных и готовая к передаче в интерфейс
+                оператора.
+              </List.Item>
+            </List>
+          </Card>
+        </Space>
+      </ConstrainedContent>
     ),
   },
   {
     id: 'impl-analytics-scheme',
     header: 'Подсистема предупреждений: схема',
     content: (
-      <Card>
-        <Paragraph type="secondary">
-          TODO: добавить картинку схемы подсистемы (данные из Data Lake,
-          алгоритмы, выход в UI).
-        </Paragraph>
-      </Card>
+      <ConstrainedContent>
+        <Card>
+          <Paragraph type="secondary">
+            TODO: добавить картинку схемы подсистемы (данные из Data Lake,
+            алгоритмы, выход в UI).
+          </Paragraph>
+        </Card>
+      </ConstrainedContent>
     ),
   },
   {
     id: 'impl-analytics-phases',
     header: 'Подсистема предупреждений: фазы реализации',
-    content: <Roadmap items={analyticsPhases} mode="alternate" maxWidth={1200} />,
+    content: (
+      <Roadmap items={analyticsPhases} mode="alternate" maxWidth={1200} />
+    ),
   },
   {
     id: 'impl-analytics-roles-cost',
     header: 'Подсистема предупреждений: роли, часы, стоимость',
     content: (
-      <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
-      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-        <Card size="small">
-          <Title level={5} style={{ marginTop: 0 }}>
-            Фаза 4: Построение подсистемы поиска отклонений
-          </Title>
-          <Table
-            size="small"
-            pagination={false}
-            dataSource={[
-              {
-                key: '1',
-                role: 'Архитектор решений',
-                hours: 656,
-                cost: '8 291 845 ₽',
-              },
-              {
-                key: '2',
-                role: 'Ведущий разработчик алгоритмов',
-                hours: 656,
-                cost: '7 699 570 ₽',
-              },
-              {
-                key: '3',
-                role: 'Старший инженер данных',
-                hours: 1312,
-                cost: '11 845 493 ₽',
-              },
-              {
-                key: '4',
-                role: 'Разработчик алгоритмов',
-                hours: 656,
-                cost: '5 922 747 ₽',
-              },
-              {
-                key: '5',
-                role: 'Руководитель проектов',
-                hours: 656,
-                cost: '4 738 198 ₽',
-              },
-              {
-                key: '6',
-                role: 'Старший DevOps-инженер',
-                hours: 656,
-                cost: '5 922 747 ₽',
-              },
-              {
-                key: '7',
-                role: 'Аналитик предметной области',
-                hours: 656,
-                cost: '0',
-              },
-              {
-                key: '8',
-                role: 'Бэкенд-разработчик',
-                hours: 656,
-                cost: '5 922 747 ₽',
-              },
-              {
-                key: '9',
-                role: 'Фронтенд-разработчик',
-                hours: 656,
-                cost: '5 922 747 ₽',
-              },
-              {
-                key: '10',
-                role: 'UX-инженер',
-                hours: 656,
-                cost: '5 330 472 ₽',
-              },
-              {
-                key: '11',
-                role: 'QA-инженер',
-                hours: 656,
-                cost: '4 738 198 ₽',
-              },
-              {
-                key: '12',
-                role: 'Бизнес-аналитик',
-                hours: 328,
-                cost: '1 776 824 ₽',
-              },
-            ]}
-            columns={[
-              { title: 'Роль', dataIndex: 'role', key: 'role' },
-              {
-                title: 'Часов',
-                dataIndex: 'hours',
-                key: 'hours',
-                width: 90,
-                align: 'right',
-              },
-              {
-                title: 'Стоимость (с НДС)',
-                dataIndex: 'cost',
-                key: 'cost',
-                width: 140,
-                align: 'right',
-                render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
-              },
-            ]}
-            summary={() => (
-              <Table.Summary>
-                <Table.Summary.Row>
-                  <Table.Summary.Cell index={0}>
-                    <Text strong>Итого по фазе 4</Text>
-                  </Table.Summary.Cell>
-                  <Table.Summary.Cell index={1} align="right">
-                    <Text strong>8 200</Text>
-                  </Table.Summary.Cell>
-                  <Table.Summary.Cell index={2} align="right">
-                    <Text strong>68 111 586 ₽</Text>
-                  </Table.Summary.Cell>
-                </Table.Summary.Row>
-              </Table.Summary>
-            )}
-          />
-        </Card>
-        <Card size="small">
-          <Title level={5} style={{ marginTop: 0 }}>
-            Фаза 5: Проверка на исторических данных
-          </Title>
-          <Table
-            size="small"
-            pagination={false}
-            dataSource={[
-              {
-                key: '1',
-                role: 'Архитектор решений',
-                hours: 82,
-                cost: '791 772 ₽',
-              },
-              {
-                key: '2',
-                role: 'Ведущий разработчик алгоритмов',
-                hours: 164,
-                cost: '1 470 434 ₽',
-              },
-              {
-                key: '3',
-                role: 'Руководитель проектов',
-                hours: 164,
-                cost: '904 882 ₽',
-              },
-              {
-                key: '4',
-                role: 'Старший DevOps-инженер',
-                hours: 82,
-                cost: '565 552 ₽',
-              },
-              {
-                key: '5',
-                role: 'Аналитик предметной области',
-                hours: 164,
-                cost: '0',
-              },
-              { key: '6', role: 'QA-инженер', hours: 82, cost: '452 441 ₽' },
-              {
-                key: '7',
-                role: 'Бизнес-аналитик',
-                hours: 82,
-                cost: '339 331 ₽',
-              },
-            ]}
-            columns={[
-              { title: 'Роль', dataIndex: 'role', key: 'role' },
-              {
-                title: 'Часов',
-                dataIndex: 'hours',
-                key: 'hours',
-                width: 90,
-                align: 'right',
-              },
-              {
-                title: 'Стоимость (с НДС)',
-                dataIndex: 'cost',
-                key: 'cost',
-                width: 140,
-                align: 'right',
-                render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
-              },
-            ]}
-            summary={() => (
-              <Table.Summary>
-                <Table.Summary.Row>
-                  <Table.Summary.Cell index={0}>
-                    <Text strong>Итого по фазе 5</Text>
-                  </Table.Summary.Cell>
-                  <Table.Summary.Cell index={1} align="right">
-                    <Text strong>820</Text>
-                  </Table.Summary.Cell>
-                  <Table.Summary.Cell index={2} align="right">
-                    <Text strong>4 524 412 ₽</Text>
-                  </Table.Summary.Cell>
-                </Table.Summary.Row>
-              </Table.Summary>
-            )}
-          />
-        </Card>
-        <Card size="small">
-          <Title level={5} style={{ marginTop: 0 }}>
-            Фаза 6: Настройка по результатам проверки
-          </Title>
-          <Table
-            size="small"
-            pagination={false}
-            dataSource={[
-              {
-                key: '1',
-                role: 'Архитектор решений',
-                hours: 164,
-                cost: '1 830 872 ₽',
-              },
-              {
-                key: '2',
-                role: 'Ведущий разработчик алгоритмов',
-                hours: 328,
-                cost: '3 400 191 ₽',
-              },
-              {
-                key: '3',
-                role: 'Старший инженер данных',
-                hours: 328,
-                cost: '2 615 532 ₽',
-              },
-              {
-                key: '4',
-                role: 'Разработчик алгоритмов',
-                hours: 328,
-                cost: '2 615 532 ₽',
-              },
-              {
-                key: '5',
-                role: 'Руководитель проектов',
-                hours: 328,
-                cost: '2 092 425 ₽',
-              },
-              {
-                key: '6',
-                role: 'Старший DevOps-инженер',
-                hours: 164,
-                cost: '1 307 766 ₽',
-              },
-              {
-                key: '7',
-                role: 'Аналитик предметной области',
-                hours: 328,
-                cost: '0',
-              },
-              { key: '8', role: 'QA-инженер', hours: 164, cost: '1 046 213 ₽' },
-            ]}
-            columns={[
-              { title: 'Роль', dataIndex: 'role', key: 'role' },
-              {
-                title: 'Часов',
-                dataIndex: 'hours',
-                key: 'hours',
-                width: 90,
-                align: 'right',
-              },
-              {
-                title: 'Стоимость (с НДС)',
-                dataIndex: 'cost',
-                key: 'cost',
-                width: 140,
-                align: 'right',
-                render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
-              },
-            ]}
-            summary={() => (
-              <Table.Summary>
-                <Table.Summary.Row>
-                  <Table.Summary.Cell index={0}>
-                    <Text strong>Итого по фазе 6</Text>
-                  </Table.Summary.Cell>
-                  <Table.Summary.Cell index={1} align="right">
-                    <Text strong>2 132</Text>
-                  </Table.Summary.Cell>
-                  <Table.Summary.Cell index={2} align="right">
-                    <Text strong>14 908 531 ₽</Text>
-                  </Table.Summary.Cell>
-                </Table.Summary.Row>
-              </Table.Summary>
-            )}
-          />
-        </Card>
-        <Paragraph style={{ marginBottom: 0 }}>
-          <Text strong>Итого по подсистеме предупреждений:</Text> 11 152 ч, 87
-          544 529 ₽
-        </Paragraph>
-      </Space>
-      </div>
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card size="small">
+            <Title level={5} style={{ marginTop: 0 }}>
+              Фаза 4: Построение подсистемы поиска отклонений
+            </Title>
+            <Table
+              size="small"
+              pagination={false}
+              dataSource={[
+                {
+                  key: '1',
+                  role: 'Архитектор решений',
+                  hours: 656,
+                  cost: '8 291 845 ₽',
+                },
+                {
+                  key: '2',
+                  role: 'Ведущий разработчик алгоритмов',
+                  hours: 656,
+                  cost: '7 699 570 ₽',
+                },
+                {
+                  key: '3',
+                  role: 'Старший инженер данных',
+                  hours: 1312,
+                  cost: '11 845 493 ₽',
+                },
+                {
+                  key: '4',
+                  role: 'Разработчик алгоритмов',
+                  hours: 656,
+                  cost: '5 922 747 ₽',
+                },
+                {
+                  key: '5',
+                  role: 'Руководитель проектов',
+                  hours: 656,
+                  cost: '4 738 198 ₽',
+                },
+                {
+                  key: '6',
+                  role: 'Старший DevOps-инженер',
+                  hours: 656,
+                  cost: '5 922 747 ₽',
+                },
+                {
+                  key: '7',
+                  role: 'Аналитик предметной области',
+                  hours: 656,
+                  cost: '0',
+                },
+                {
+                  key: '8',
+                  role: 'Бэкенд-разработчик',
+                  hours: 656,
+                  cost: '5 922 747 ₽',
+                },
+                {
+                  key: '9',
+                  role: 'Фронтенд-разработчик',
+                  hours: 656,
+                  cost: '5 922 747 ₽',
+                },
+                {
+                  key: '10',
+                  role: 'UX-инженер',
+                  hours: 656,
+                  cost: '5 330 472 ₽',
+                },
+                {
+                  key: '11',
+                  role: 'QA-инженер',
+                  hours: 656,
+                  cost: '4 738 198 ₽',
+                },
+                {
+                  key: '12',
+                  role: 'Бизнес-аналитик',
+                  hours: 328,
+                  cost: '1 776 824 ₽',
+                },
+              ]}
+              columns={[
+                { title: 'Роль', dataIndex: 'role', key: 'role' },
+                {
+                  title: 'Часов',
+                  dataIndex: 'hours',
+                  key: 'hours',
+                  width: 90,
+                  align: 'right',
+                },
+                {
+                  title: 'Стоимость (с НДС)',
+                  dataIndex: 'cost',
+                  key: 'cost',
+                  width: 140,
+                  align: 'right',
+                  render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
+                },
+              ]}
+              summary={() => (
+                <Table.Summary>
+                  <Table.Summary.Row>
+                    <Table.Summary.Cell index={0}>
+                      <Text strong>Итого по фазе 4</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell index={1} align="right">
+                      <Text strong>8 200</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell index={2} align="right">
+                      <Text strong>68 111 586 ₽</Text>
+                    </Table.Summary.Cell>
+                  </Table.Summary.Row>
+                </Table.Summary>
+              )}
+            />
+          </Card>
+          <Card size="small">
+            <Title level={5} style={{ marginTop: 0 }}>
+              Фаза 5: Проверка на исторических данных
+            </Title>
+            <Table
+              size="small"
+              pagination={false}
+              dataSource={[
+                {
+                  key: '1',
+                  role: 'Архитектор решений',
+                  hours: 82,
+                  cost: '791 772 ₽',
+                },
+                {
+                  key: '2',
+                  role: 'Ведущий разработчик алгоритмов',
+                  hours: 164,
+                  cost: '1 470 434 ₽',
+                },
+                {
+                  key: '3',
+                  role: 'Руководитель проектов',
+                  hours: 164,
+                  cost: '904 882 ₽',
+                },
+                {
+                  key: '4',
+                  role: 'Старший DevOps-инженер',
+                  hours: 82,
+                  cost: '565 552 ₽',
+                },
+                {
+                  key: '5',
+                  role: 'Аналитик предметной области',
+                  hours: 164,
+                  cost: '0',
+                },
+                { key: '6', role: 'QA-инженер', hours: 82, cost: '452 441 ₽' },
+                {
+                  key: '7',
+                  role: 'Бизнес-аналитик',
+                  hours: 82,
+                  cost: '339 331 ₽',
+                },
+              ]}
+              columns={[
+                { title: 'Роль', dataIndex: 'role', key: 'role' },
+                {
+                  title: 'Часов',
+                  dataIndex: 'hours',
+                  key: 'hours',
+                  width: 90,
+                  align: 'right',
+                },
+                {
+                  title: 'Стоимость (с НДС)',
+                  dataIndex: 'cost',
+                  key: 'cost',
+                  width: 140,
+                  align: 'right',
+                  render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
+                },
+              ]}
+              summary={() => (
+                <Table.Summary>
+                  <Table.Summary.Row>
+                    <Table.Summary.Cell index={0}>
+                      <Text strong>Итого по фазе 5</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell index={1} align="right">
+                      <Text strong>820</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell index={2} align="right">
+                      <Text strong>4 524 412 ₽</Text>
+                    </Table.Summary.Cell>
+                  </Table.Summary.Row>
+                </Table.Summary>
+              )}
+            />
+          </Card>
+          <Card size="small">
+            <Title level={5} style={{ marginTop: 0 }}>
+              Фаза 6: Настройка по результатам проверки
+            </Title>
+            <Table
+              size="small"
+              pagination={false}
+              dataSource={[
+                {
+                  key: '1',
+                  role: 'Архитектор решений',
+                  hours: 164,
+                  cost: '1 830 872 ₽',
+                },
+                {
+                  key: '2',
+                  role: 'Ведущий разработчик алгоритмов',
+                  hours: 328,
+                  cost: '3 400 191 ₽',
+                },
+                {
+                  key: '3',
+                  role: 'Старший инженер данных',
+                  hours: 328,
+                  cost: '2 615 532 ₽',
+                },
+                {
+                  key: '4',
+                  role: 'Разработчик алгоритмов',
+                  hours: 328,
+                  cost: '2 615 532 ₽',
+                },
+                {
+                  key: '5',
+                  role: 'Руководитель проектов',
+                  hours: 328,
+                  cost: '2 092 425 ₽',
+                },
+                {
+                  key: '6',
+                  role: 'Старший DevOps-инженер',
+                  hours: 164,
+                  cost: '1 307 766 ₽',
+                },
+                {
+                  key: '7',
+                  role: 'Аналитик предметной области',
+                  hours: 328,
+                  cost: '0',
+                },
+                {
+                  key: '8',
+                  role: 'QA-инженер',
+                  hours: 164,
+                  cost: '1 046 213 ₽',
+                },
+              ]}
+              columns={[
+                { title: 'Роль', dataIndex: 'role', key: 'role' },
+                {
+                  title: 'Часов',
+                  dataIndex: 'hours',
+                  key: 'hours',
+                  width: 90,
+                  align: 'right',
+                },
+                {
+                  title: 'Стоимость (с НДС)',
+                  dataIndex: 'cost',
+                  key: 'cost',
+                  width: 140,
+                  align: 'right',
+                  render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
+                },
+              ]}
+              summary={() => (
+                <Table.Summary>
+                  <Table.Summary.Row>
+                    <Table.Summary.Cell index={0}>
+                      <Text strong>Итого по фазе 6</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell index={1} align="right">
+                      <Text strong>2 132</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell index={2} align="right">
+                      <Text strong>14 908 531 ₽</Text>
+                    </Table.Summary.Cell>
+                  </Table.Summary.Row>
+                </Table.Summary>
+              )}
+            />
+          </Card>
+          <Paragraph style={{ marginBottom: 0 }}>
+            <Text strong>Итого по подсистеме предупреждений:</Text> 11 152 ч, 87
+            544 529 ₽
+          </Paragraph>
+        </Space>
+      </ConstrainedContent>
     ),
   },
 
@@ -1188,56 +1220,61 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'impl-ui-explainer',
     header: 'Интерфейс оператора',
     content: (
-      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-        <Card>
-          <Title level={5}>Почему этот компонент необходим</Title>
-          <Paragraph style={{ marginBottom: 0 }}>
-            Интерфейс обеспечивает доведение результатов работы подсистемы
-            предупреждений до операторов и уполномоченных сотрудников. Без него
-            организация не может получать оповещения о рисках, видеть их
-            обоснование и действовать до наступления инцидента.
-          </Paragraph>
-        </Card>
-        <Card>
-          <Title level={5}>Назначение</Title>
-          <Paragraph style={{ marginBottom: 0 }}>
-            Веб-интерфейс, с которым работают диспетчеры и инженеры: дашборды,
-            оповещения о рисках, пояснение причин предупреждений, фильтрация по
-            объектам, сводная статистика и отчёты. Учёт ролей и разграничение
-            доступа.
-          </Paragraph>
-        </Card>
-        <Card>
-          <Title level={5}>
-            Ценность для организации и доставляемый результат
-          </Title>
-          <List size="small">
-            <List.Item>
-              Удобный рабочий инструмент для реагирования на риски до инцидента.
-            </List.Item>
-            <List.Item>
-              Прозрачность: видно, почему система выдала то или иное
-              предупреждение.
-            </List.Item>
-            <List.Item>
-              Готовый к приёмке интерфейс, интегрированный с подсистемой
-              предупреждений и хранилищем данных.
-            </List.Item>
-          </List>
-        </Card>
-      </Space>
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <Title level={5}>Почему этот компонент необходим</Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Интерфейс обеспечивает доведение результатов работы подсистемы
+              предупреждений до операторов и уполномоченных сотрудников. Без
+              него организация не может получать оповещения о рисках, видеть их
+              обоснование и действовать до наступления инцидента.
+            </Paragraph>
+          </Card>
+          <Card>
+            <Title level={5}>Назначение</Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Веб-интерфейс, с которым работают диспетчеры и инженеры: дашборды,
+              оповещения о рисках, пояснение причин предупреждений, фильтрация
+              по объектам, сводная статистика и отчёты. Учёт ролей и
+              разграничение доступа.
+            </Paragraph>
+          </Card>
+          <Card>
+            <Title level={5}>
+              Ценность для организации и доставляемый результат
+            </Title>
+            <List size="small">
+              <List.Item>
+                Удобный рабочий инструмент для реагирования на риски до
+                инцидента.
+              </List.Item>
+              <List.Item>
+                Прозрачность: видно, почему система выдала то или иное
+                предупреждение.
+              </List.Item>
+              <List.Item>
+                Готовый к приёмке интерфейс, интегрированный с подсистемой
+                предупреждений и хранилищем данных.
+              </List.Item>
+            </List>
+          </Card>
+        </Space>
+      </ConstrainedContent>
     ),
   },
   {
     id: 'impl-ui-scheme',
     header: 'Интерфейс оператора: схема',
     content: (
-      <Card>
-        <Paragraph type="secondary">
-          TODO: добавить картинку схемы интерфейса (экраны, роли, связь с
-          подсистемой).
-        </Paragraph>
-      </Card>
+      <ConstrainedContent>
+        <Card>
+          <Paragraph type="secondary">
+            TODO: добавить картинку схемы интерфейса (экраны, роли, связь с
+            подсистемой).
+          </Paragraph>
+        </Card>
+      </ConstrainedContent>
     ),
   },
   {
@@ -1249,99 +1286,104 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'impl-ui-roles-cost',
     header: 'Интерфейс оператора: роли, часы, стоимость',
     content: (
-      <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
-      <Card>
-        <Table
-          size="small"
-          pagination={false}
-          dataSource={[
-            {
-              key: '1',
-              role: 'Архитектор решений',
-              hours: 164,
-              cost: '1 493 607 ₽',
-            },
-            {
-              key: '2',
-              role: 'Ведущий разработчик алгоритмов',
-              hours: 164,
-              cost: '1 386 920 ₽',
-            },
-            {
-              key: '3',
-              role: 'Старший инженер данных',
-              hours: 164,
-              cost: '1 066 861 ₽',
-            },
-            {
-              key: '4',
-              role: 'Руководитель проектов',
-              hours: 328,
-              cost: '1 706 979 ₽',
-            },
-            {
-              key: '5',
-              role: 'Старший DevOps-инженер',
-              hours: 328,
-              cost: '2 133 724 ₽',
-            },
-            {
-              key: '6',
-              role: 'Аналитик предметной области',
-              hours: 328,
-              cost: '0',
-            },
-            {
-              key: '7',
-              role: 'Бэкенд-разработчик',
-              hours: 328,
-              cost: '2 133 724 ₽',
-            },
-            {
-              key: '8',
-              role: 'Фронтенд-разработчик',
-              hours: 328,
-              cost: '2 133 724 ₽',
-            },
-            { key: '9', role: 'UX-инженер', hours: 328, cost: '1 920 351 ₽' },
-            { key: '10', role: 'QA-инженер', hours: 328, cost: '1 706 979 ₽' },
-          ]}
-          columns={[
-            { title: 'Роль', dataIndex: 'role', key: 'role' },
-            {
-              title: 'Часов',
-              dataIndex: 'hours',
-              key: 'hours',
-              width: 90,
-              align: 'right',
-            },
-            {
-              title: 'Стоимость (с НДС)',
-              dataIndex: 'cost',
-              key: 'cost',
-              width: 140,
-              align: 'right',
-              render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
-            },
-          ]}
-          summary={() => (
-            <Table.Summary>
-              <Table.Summary.Row>
-                <Table.Summary.Cell index={0}>
-                  <Text strong>Итого</Text>
-                </Table.Summary.Cell>
-                <Table.Summary.Cell index={1} align="right">
-                  <Text strong>2 788</Text>
-                </Table.Summary.Cell>
-                <Table.Summary.Cell index={2} align="right">
-                  <Text strong>15 682 868 ₽</Text>
-                </Table.Summary.Cell>
-              </Table.Summary.Row>
-            </Table.Summary>
-          )}
-        />
-      </Card>
-      </div>
+      <ConstrainedContent>
+        <Card>
+          <Table
+            size="small"
+            pagination={false}
+            dataSource={[
+              {
+                key: '1',
+                role: 'Архитектор решений',
+                hours: 164,
+                cost: '1 493 607 ₽',
+              },
+              {
+                key: '2',
+                role: 'Ведущий разработчик алгоритмов',
+                hours: 164,
+                cost: '1 386 920 ₽',
+              },
+              {
+                key: '3',
+                role: 'Старший инженер данных',
+                hours: 164,
+                cost: '1 066 861 ₽',
+              },
+              {
+                key: '4',
+                role: 'Руководитель проектов',
+                hours: 328,
+                cost: '1 706 979 ₽',
+              },
+              {
+                key: '5',
+                role: 'Старший DevOps-инженер',
+                hours: 328,
+                cost: '2 133 724 ₽',
+              },
+              {
+                key: '6',
+                role: 'Аналитик предметной области',
+                hours: 328,
+                cost: '0',
+              },
+              {
+                key: '7',
+                role: 'Бэкенд-разработчик',
+                hours: 328,
+                cost: '2 133 724 ₽',
+              },
+              {
+                key: '8',
+                role: 'Фронтенд-разработчик',
+                hours: 328,
+                cost: '2 133 724 ₽',
+              },
+              { key: '9', role: 'UX-инженер', hours: 328, cost: '1 920 351 ₽' },
+              {
+                key: '10',
+                role: 'QA-инженер',
+                hours: 328,
+                cost: '1 706 979 ₽',
+              },
+            ]}
+            columns={[
+              { title: 'Роль', dataIndex: 'role', key: 'role' },
+              {
+                title: 'Часов',
+                dataIndex: 'hours',
+                key: 'hours',
+                width: 90,
+                align: 'right',
+              },
+              {
+                title: 'Стоимость (с НДС)',
+                dataIndex: 'cost',
+                key: 'cost',
+                width: 140,
+                align: 'right',
+                render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
+              },
+            ]}
+            summary={() => (
+              <Table.Summary>
+                <Table.Summary.Row>
+                  <Table.Summary.Cell index={0}>
+                    <Text strong>Итого</Text>
+                  </Table.Summary.Cell>
+                  <Table.Summary.Cell index={1} align="right">
+                    <Text strong>2 788</Text>
+                  </Table.Summary.Cell>
+                  <Table.Summary.Cell index={2} align="right">
+                    <Text strong>15 682 868 ₽</Text>
+                  </Table.Summary.Cell>
+                </Table.Summary.Row>
+              </Table.Summary>
+            )}
+          />
+        </Card>
+      </ConstrainedContent>
     ),
   },
 
@@ -1349,12 +1391,7 @@ export const tatneftKpSlides: SlideData[] = [
   {
     id: 'impl-cross-section',
     header: undefined,
-    content: (
-      <SectionTitleSlide
-        imageIndex={0}
-        title="Внедрение и приёмка"
-      />
-    ),
+    content: <SectionTitleSlide imageIndex={0} title="Внедрение и приёмка" />,
   },
 
   {
@@ -1366,73 +1403,193 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'impl-cross-roles-cost',
     header: 'Внедрение, приёмка: роли, часы, стоимость',
     content: (
-      <div style={{ maxWidth: 1200, margin: '0 auto', width: '100%' }}>
-      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-        <Card size="small">
-          <Title level={5} style={{ marginTop: 0 }}>Внедрение системы (Фаза 8)</Title>
-          <Table
-            size="small"
-            pagination={false}
-            dataSource={[
-              { key: '1', role: 'Архитектор решений', hours: 410, cost: '4 803 028 ₽' },
-              { key: '2', role: 'Ведущий разработчик алгоритмов', hours: 820, cost: '8 919 909 ₽' },
-              { key: '3', role: 'Старший инженер данных', hours: 1640, cost: '13 722 938 ₽' },
-              { key: '4', role: 'Разработчик алгоритмов', hours: 820, cost: '6 861 469 ₽' },
-              { key: '5', role: 'Руководитель проектов', hours: 820, cost: '5 489 176 ₽' },
-              { key: '6', role: 'Старший DevOps-инженер', hours: 820, cost: '6 861 469 ₽' },
-              { key: '7', role: 'Аналитик предметной области', hours: 820, cost: '0' },
-              { key: '8', role: 'QA-инженер', hours: 820, cost: '5 489 176 ₽' },
-            ]}
-            columns={[
-              { title: 'Роль', dataIndex: 'role', key: 'role' },
-              { title: 'Часов', dataIndex: 'hours', key: 'hours', width: 90, align: 'right' },
-              { title: 'Стоимость (с НДС)', dataIndex: 'cost', key: 'cost', width: 140, align: 'right', render: (v: string) => <Text strong={v !== '0'}>{v}</Text> },
-            ]}
-            summary={() => (
-              <Table.Summary>
-                <Table.Summary.Row>
-                  <Table.Summary.Cell index={0}><Text strong>Итого по фазе 8</Text></Table.Summary.Cell>
-                  <Table.Summary.Cell index={1} align="right"><Text strong>6 970</Text></Table.Summary.Cell>
-                  <Table.Summary.Cell index={2} align="right"><Text strong>52 147 165 ₽</Text></Table.Summary.Cell>
-                </Table.Summary.Row>
-              </Table.Summary>
-            )}
-          />
-        </Card>
-        <Card size="small">
-          <Title level={5} style={{ marginTop: 0 }}>Приёмка системы (Фаза 9)</Title>
-          <Table
-            size="small"
-            pagination={false}
-            dataSource={[
-              { key: '1', role: 'Архитектор решений', hours: 82, cost: '1 324 974 ₽' },
-              { key: '2', role: 'Ведущий разработчик алгоритмов', hours: 82, cost: '1 230 332 ₽' },
-              { key: '3', role: 'Старший инженер данных', hours: 82, cost: '946 409 ₽' },
-              { key: '4', role: 'Руководитель проектов', hours: 164, cost: '1 514 255 ₽' },
-              { key: '5', role: 'Старший DevOps-инженер', hours: 82, cost: '946 409 ₽' },
-              { key: '6', role: 'Аналитик предметной области', hours: 164, cost: '0' },
-              { key: '7', role: 'QA-инженер', hours: 82, cost: '757 128 ₽' },
-              { key: '8', role: 'Бизнес-аналитик', hours: 164, cost: '1 135 691 ₽' },
-            ]}
-            columns={[
-              { title: 'Роль', dataIndex: 'role', key: 'role' },
-              { title: 'Часов', dataIndex: 'hours', key: 'hours', width: 90, align: 'right' },
-              { title: 'Стоимость (с НДС)', dataIndex: 'cost', key: 'cost', width: 140, align: 'right', render: (v: string) => <Text strong={v !== '0'}>{v}</Text> },
-            ]}
-            summary={() => (
-              <Table.Summary>
-                <Table.Summary.Row>
-                  <Table.Summary.Cell index={0}><Text strong>Итого по фазе 9</Text></Table.Summary.Cell>
-                  <Table.Summary.Cell index={1} align="right"><Text strong>902</Text></Table.Summary.Cell>
-                  <Table.Summary.Cell index={2} align="right"><Text strong>7 855 199 ₽</Text></Table.Summary.Cell>
-                </Table.Summary.Row>
-              </Table.Summary>
-            )}
-          />
-        </Card>
-        <Paragraph style={{ marginBottom: 0 }}><Text strong>Итого по этапам внедрение и приёмка:</Text> 7 872 ч, 60 002 364 ₽</Paragraph>
-      </Space>
-      </div>
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card size="small">
+            <Title level={5} style={{ marginTop: 0 }}>
+              Внедрение системы (Фаза 8)
+            </Title>
+            <Table
+              size="small"
+              pagination={false}
+              dataSource={[
+                {
+                  key: '1',
+                  role: 'Архитектор решений',
+                  hours: 410,
+                  cost: '4 803 028 ₽',
+                },
+                {
+                  key: '2',
+                  role: 'Ведущий разработчик алгоритмов',
+                  hours: 820,
+                  cost: '8 919 909 ₽',
+                },
+                {
+                  key: '3',
+                  role: 'Старший инженер данных',
+                  hours: 1640,
+                  cost: '13 722 938 ₽',
+                },
+                {
+                  key: '4',
+                  role: 'Разработчик алгоритмов',
+                  hours: 820,
+                  cost: '6 861 469 ₽',
+                },
+                {
+                  key: '5',
+                  role: 'Руководитель проектов',
+                  hours: 820,
+                  cost: '5 489 176 ₽',
+                },
+                {
+                  key: '6',
+                  role: 'Старший DevOps-инженер',
+                  hours: 820,
+                  cost: '6 861 469 ₽',
+                },
+                {
+                  key: '7',
+                  role: 'Аналитик предметной области',
+                  hours: 820,
+                  cost: '0',
+                },
+                {
+                  key: '8',
+                  role: 'QA-инженер',
+                  hours: 820,
+                  cost: '5 489 176 ₽',
+                },
+              ]}
+              columns={[
+                { title: 'Роль', dataIndex: 'role', key: 'role' },
+                {
+                  title: 'Часов',
+                  dataIndex: 'hours',
+                  key: 'hours',
+                  width: 90,
+                  align: 'right',
+                },
+                {
+                  title: 'Стоимость (с НДС)',
+                  dataIndex: 'cost',
+                  key: 'cost',
+                  width: 140,
+                  align: 'right',
+                  render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
+                },
+              ]}
+              summary={() => (
+                <Table.Summary>
+                  <Table.Summary.Row>
+                    <Table.Summary.Cell index={0}>
+                      <Text strong>Итого по фазе 8</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell index={1} align="right">
+                      <Text strong>6 970</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell index={2} align="right">
+                      <Text strong>52 147 165 ₽</Text>
+                    </Table.Summary.Cell>
+                  </Table.Summary.Row>
+                </Table.Summary>
+              )}
+            />
+          </Card>
+          <Card size="small">
+            <Title level={5} style={{ marginTop: 0 }}>
+              Приёмка системы (Фаза 9)
+            </Title>
+            <Table
+              size="small"
+              pagination={false}
+              dataSource={[
+                {
+                  key: '1',
+                  role: 'Архитектор решений',
+                  hours: 82,
+                  cost: '1 324 974 ₽',
+                },
+                {
+                  key: '2',
+                  role: 'Ведущий разработчик алгоритмов',
+                  hours: 82,
+                  cost: '1 230 332 ₽',
+                },
+                {
+                  key: '3',
+                  role: 'Старший инженер данных',
+                  hours: 82,
+                  cost: '946 409 ₽',
+                },
+                {
+                  key: '4',
+                  role: 'Руководитель проектов',
+                  hours: 164,
+                  cost: '1 514 255 ₽',
+                },
+                {
+                  key: '5',
+                  role: 'Старший DevOps-инженер',
+                  hours: 82,
+                  cost: '946 409 ₽',
+                },
+                {
+                  key: '6',
+                  role: 'Аналитик предметной области',
+                  hours: 164,
+                  cost: '0',
+                },
+                { key: '7', role: 'QA-инженер', hours: 82, cost: '757 128 ₽' },
+                {
+                  key: '8',
+                  role: 'Бизнес-аналитик',
+                  hours: 164,
+                  cost: '1 135 691 ₽',
+                },
+              ]}
+              columns={[
+                { title: 'Роль', dataIndex: 'role', key: 'role' },
+                {
+                  title: 'Часов',
+                  dataIndex: 'hours',
+                  key: 'hours',
+                  width: 90,
+                  align: 'right',
+                },
+                {
+                  title: 'Стоимость (с НДС)',
+                  dataIndex: 'cost',
+                  key: 'cost',
+                  width: 140,
+                  align: 'right',
+                  render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
+                },
+              ]}
+              summary={() => (
+                <Table.Summary>
+                  <Table.Summary.Row>
+                    <Table.Summary.Cell index={0}>
+                      <Text strong>Итого по фазе 9</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell index={1} align="right">
+                      <Text strong>902</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell index={2} align="right">
+                      <Text strong>7 855 199 ₽</Text>
+                    </Table.Summary.Cell>
+                  </Table.Summary.Row>
+                </Table.Summary>
+              )}
+            />
+          </Card>
+          <Paragraph style={{ marginBottom: 0 }}>
+            <Text strong>Итого по этапам внедрение и приёмка:</Text> 7 872 ч, 60
+            002 364 ₽
+          </Paragraph>
+        </Space>
+      </ConstrainedContent>
     ),
   },
 
@@ -1446,81 +1603,119 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'summary-gantt',
     header: 'План-график',
     content: (
-      <Card>
-        <div
-          style={{
-            minHeight: 360,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: 'var(--app-color-bg-secondary, rgba(0, 0, 0, 0.02))',
-            borderRadius: 8,
-            border: '1px dashed var(--app-color-border)',
-          }}
-        >
-          <Paragraph type="secondary" style={{ marginBottom: 0 }}>
-            Здесь можно разместить диаграмму Ганта (календарный план проекта)
-          </Paragraph>
-        </div>
-      </Card>
+      <ConstrainedContent>
+        <Card>
+          <div
+            style={{
+              minHeight: 360,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: 'var(--app-color-bg-secondary, rgba(0, 0, 0, 0.02))',
+              borderRadius: 8,
+              border: '1px dashed var(--app-color-border)',
+            }}
+          >
+            <Paragraph type="secondary" style={{ marginBottom: 0 }}>
+              Здесь можно разместить диаграмму Ганта (календарный план проекта)
+            </Paragraph>
+          </div>
+        </Card>
+      </ConstrainedContent>
     ),
   },
   {
     id: 'summary-total-cost',
     header: 'Итоговая стоимость',
     content: (
-      <Card>
-        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <Paragraph style={{ marginBottom: 0 }}>
-            Сводная стоимость проекта по основным этапам (с НДС):
-          </Paragraph>
-          <Table
-            size="small"
-            pagination={false}
-            dataSource={[
-              { key: '1', block: 'Подготовительная фаза', cost: '19 109 568 ₽' },
-              { key: '2', block: 'Data Lake (построение и наполнение, накопление и анализ)', cost: '47 655 475 ₽' },
-              { key: '3', block: 'Подсистема предупреждений', cost: '87 544 529 ₽' },
-              { key: '4', block: 'Графический интерфейс оператора', cost: '15 682 868 ₽' },
-              { key: '5', block: 'Внедрение и приёмка системы', cost: '60 002 364 ₽' },
-            ]}
-            columns={[
-              { title: 'Этап / блок', dataIndex: 'block', key: 'block' },
-              { title: 'Стоимость (с НДС)', dataIndex: 'cost', key: 'cost', width: 160, align: 'right', render: (v: string) => <Text strong>{v}</Text> },
-            ]}
-            summary={() => (
-              <Table.Summary>
-                <Table.Summary.Row>
-                  <Table.Summary.Cell index={0}><Text strong>Итого</Text></Table.Summary.Cell>
-                  <Table.Summary.Cell index={1} align="right"><Text strong>229 994 804 ₽</Text></Table.Summary.Cell>
-                </Table.Summary.Row>
-              </Table.Summary>
-            )}
-          />
-        </Space>
-      </Card>
+      <ConstrainedContent>
+        <Card>
+          <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Сводная стоимость проекта по основным этапам (с НДС):
+            </Paragraph>
+            <Table
+              size="small"
+              pagination={false}
+              dataSource={[
+                {
+                  key: '1',
+                  block: 'Подготовительная фаза',
+                  cost: '19 109 568 ₽',
+                },
+                {
+                  key: '2',
+                  block:
+                    'Data Lake (построение и наполнение, накопление и анализ)',
+                  cost: '47 655 475 ₽',
+                },
+                {
+                  key: '3',
+                  block: 'Подсистема предупреждений',
+                  cost: '87 544 529 ₽',
+                },
+                {
+                  key: '4',
+                  block: 'Графический интерфейс оператора',
+                  cost: '15 682 868 ₽',
+                },
+                {
+                  key: '5',
+                  block: 'Внедрение и приёмка системы',
+                  cost: '60 002 364 ₽',
+                },
+              ]}
+              columns={[
+                { title: 'Этап / блок', dataIndex: 'block', key: 'block' },
+                {
+                  title: 'Стоимость (с НДС)',
+                  dataIndex: 'cost',
+                  key: 'cost',
+                  width: 160,
+                  align: 'right',
+                  render: (v: string) => <Text strong>{v}</Text>,
+                },
+              ]}
+              summary={() => (
+                <Table.Summary>
+                  <Table.Summary.Row>
+                    <Table.Summary.Cell index={0}>
+                      <Text strong>Итого</Text>
+                    </Table.Summary.Cell>
+                    <Table.Summary.Cell index={1} align="right">
+                      <Text strong>229 994 804 ₽</Text>
+                    </Table.Summary.Cell>
+                  </Table.Summary.Row>
+                </Table.Summary>
+              )}
+            />
+          </Space>
+        </Card>
+      </ConstrainedContent>
     ),
   },
   {
     id: 'thank-you',
     header: undefined,
     content: (
-      <Space
-        orientation="vertical"
-        size="large"
-        style={{
-          width: '100%',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100%',
-        }}
-      >
-        <Card style={{ maxWidth: 560, width: '100%', textAlign: 'center' }}>
-          <Title level={1} style={{ marginTop: 0, marginBottom: 0 }}>
-            Благодарю за внимание
-          </Title>
-        </Card>
-      </Space>
+      <ConstrainedContent>
+        <Space
+          orientation="vertical"
+          size="large"
+          style={{
+            width: '100%',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100%',
+          }}
+        >
+          <Card style={{ maxWidth: 560, width: '100%', textAlign: 'center' }}>
+            <Title level={1} style={{ marginTop: 0, marginBottom: 0 }}>
+              Благодарю за внимание
+            </Title>
+          </Card>
+        </Space>
+      </ConstrainedContent>
     ),
   },
 ];
