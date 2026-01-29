@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { kirovStekloSlides } from '~features/kirov-steklo/slides/kirov-steklo-slides';
 import { niteosSlides } from '~features/niteos/slides/niteos-slides';
@@ -47,7 +48,14 @@ import {
 import { networkdevicesSlides } from '~features/networkdevices/slides';
 import { asLedSlides } from '~features/as-led/slides';
 import { huchEntecSlides } from '~features/huch-entec/slides';
-import { presentationSlugs } from '~shared/lib/presentations.config';
+import {
+  getPresentationBySlug,
+  presentationSlugs,
+} from '~shared/lib/presentations.config';
+import {
+  PresentationLoginForm,
+  isPresentationAuthenticated,
+} from '~shared/ui/presentation-login-form';
 import { Slides, type SlideData } from '~widgets/slides';
 
 // Map company slugs to their slide sets
@@ -111,7 +119,22 @@ const getSlidesBySlug = (slug: string): SlideData[] => {
 
 export default function SlidesPage() {
   const { slug } = useLoaderData() as { slug: string };
+  const [, forceUpdate] = useState(0);
+  const presentation = getPresentationBySlug(slug);
   const slides = getSlidesBySlug(slug);
+
+  const requiresAuth = presentation?.requiresAuth === true;
+  const isAuthenticated = isPresentationAuthenticated(slug);
+
+  if (requiresAuth && !isAuthenticated) {
+    return (
+      <PresentationLoginForm
+        slug={slug}
+        title={presentation?.title ? `Доступ: ${presentation.title}` : undefined}
+        onSuccess={() => forceUpdate(n => n + 1)}
+      />
+    );
+  }
 
   return <Slides slides={slides} slug={slug} />;
 }

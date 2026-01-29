@@ -1,0 +1,24 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+}
+
+.card {
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.error {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.submit {
+  margin-bottom: 0;
+  margin-top: 8px;
+}

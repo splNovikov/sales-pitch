@@ -178,6 +178,10 @@ export interface PresentationMeta {
    * Whether to show this presentation on /visibility page (default: true)
    */
   showOnVisibility?: boolean;
+  /**
+   * Whether this presentation requires login (shows hardcoded login form)
+   */
+  requiresAuth?: boolean;
 }
 
 /**
@@ -288,6 +292,7 @@ export const presentations: PresentationMeta[] = [
     createdAt: tatneftKpCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
+    requiresAuth: true,
   },
   {
     slug: 'solaris-union',
