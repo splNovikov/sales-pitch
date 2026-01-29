@@ -13,7 +13,7 @@ const dataLakePhases: RoadmapItem[] = [
   {
     title: 'Подготовительная',
     description: 'Общепроектный этап (обязателен для старта проекта): сбор требований, выбор объектов мониторинга (ДНС), проектирование архитектуры, план-график.',
-    duration: '01.03.2026 – 30.06.2026',
+    duration: 'март 2026 – июнь 2026',
     icon: <CalendarOutlined />,
     color: 'default',
     status: 'Общепроектный этап',
@@ -66,6 +66,18 @@ const analyticsPhases: RoadmapItem[] = [
 
 const uiPhases: RoadmapItem[] = [
   {
+    title: 'Подготовительная и Data Lake',
+    duration: 'март – декабрь 2026',
+    icon: <CalendarOutlined />,
+    color: 'cyan',
+  },
+  {
+    title: 'Подсистема предупреждений',
+    duration: 'декабрь 2026 – сентябрь 2027',
+    icon: <CalendarOutlined />,
+    color: 'blue',
+  },
+  {
     title: 'Разработка графического интерфейса оператора системы',
     description: 'Дашборд, карточка события, объяснения, обратная связь (разметка диспетчера), доступы и инструкция пользователя.',
     duration: 'июнь – август 2027',
@@ -78,21 +90,27 @@ const crossPhases: RoadmapItem[] = [
   {
     title: 'Подготовительная (Фаза 1)',
     description: 'Сбор требований, выбор объектов мониторинга (ДНС), проектирование архитектуры, план-график.',
-    duration: '01.03.2026 – 30.06.2026',
+    duration: 'март 2026 – июнь 2026',
     icon: <CalendarOutlined />,
     color: 'blue',
   },
   {
+    title: 'Разработка трёх компонентов (Фазы 2–7)',
+    duration: 'июль 2026 – сентябрь 2027',
+    icon: <CalendarOutlined />,
+    color: 'purple',
+  },
+  {
     title: 'Внедрение системы (Фаза 8)',
     description: 'Развёртывание в промышленной среде, поэтапное подключение групп ДНС, проверка в реальном времени.',
-    duration: '06.09.2027 – 02.04.2028',
+    duration: 'сентябрь 2027 – апрель 2028',
     icon: <CalendarOutlined />,
     color: 'green',
   },
   {
     title: 'Приёмка системы (Фаза 9)',
     description: 'Пользовательское тестирование, демонстрация соответствия требованиям, передача документации и прав.',
-    duration: '03.04.2028 – 28.05.2028',
+    duration: 'апрель 2028 – май 2028',
     icon: <CalendarOutlined />,
     color: 'gold',
   },
