@@ -68,6 +68,10 @@ export interface RoadmapProps {
    * @default true
    */
   pending?: boolean | ReactNode;
+  /**
+   * Max width (px) of the roadmap container; when set, container is centered.
+   */
+  maxWidth?: number;
 }
 
 /**
@@ -80,8 +84,9 @@ export function Roadmap({
   items,
   mode = 'alternate',
   pending = false,
+  maxWidth,
 }: RoadmapProps) {
-  return (
+  const content = (
     <div className={styles.roadmap}>
       <Timeline mode={mode} pending={pending}>
         {items.map((item, index) => {
@@ -150,4 +155,13 @@ export function Roadmap({
       </Timeline>
     </div>
   );
+
+  if (maxWidth != null) {
+    return (
+      <div style={{ maxWidth, margin: '0 auto', width: '100%' }}>
+        {content}
+      </div>
+    );
+  }
+  return content;
 }

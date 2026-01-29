@@ -32,7 +32,7 @@ export interface MainTitleSlideProps {
    * Date when presentation was created (ISO string format)
    * Will be formatted and displayed at the bottom
    */
-  createdAt: string;
+  createdAt?: string;
   /**
    * Optional location text (displayed after date)
    */
@@ -114,17 +114,19 @@ export function MainTitleSlide({
           </Paragraph>
         )}
       </Space>
-      <Text
-        type="secondary"
-        style={{
-          fontSize: '11px',
-          opacity: 0.6,
-          marginTop: 'auto',
-        }}
-      >
-        {formatDateForSlide(createdAt)}
-        {location && ` • ${location}`}
-      </Text>
+      {createdAt && (
+        <Text
+          type="secondary"
+          style={{
+            fontSize: '11px',
+            opacity: 0.6,
+            marginTop: 'auto',
+          }}
+        >
+          {formatDateForSlide(createdAt)}
+          {location && ` • ${location}`}
+        </Text>
+      )}
     </Space>
   );
 }
