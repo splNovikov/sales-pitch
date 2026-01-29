@@ -15,9 +15,11 @@ import { type SlideData } from '~widgets/slides';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { DemoSlide } from '~shared/ui/demo-slide';
+import { ImageWithLoader } from '~shared/ui/image-with-loader';
 import { ContactsSlide } from '~shared/ui/contacts-slide';
 import { megawattCreatedAt, megawattTemplateUrl } from './megawatt.meta';
 import logoMegawatt from './logo-mega-watt.png';
+import megaIndexPreview from './mega-index.png';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -55,31 +57,20 @@ export const megawattSlides: SlideData[] = [
     content: (
       <DemoSlide
         image={
-          <div
+          <ImageWithLoader
+            src={megaIndexPreview}
+            alt="Шаблон сайта Мегаватт"
             style={{
               width: '100%',
-              height: '400px',
-              background: 'linear-gradient(135deg, #1890ff 0%, #096dd9 100%)',
+              height: 'auto',
+              maxHeight: '400px',
+              objectFit: 'contain',
               borderRadius: 8,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: 'white',
-              gap: 16,
+              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)',
             }}
-          >
-            <img
-              src={logoMegawatt}
-              alt="Мегаватт"
-              style={{ maxWidth: 200, height: 'auto', filter: 'brightness(0) invert(1)' }}
-            />
-            <span style={{ fontSize: 20, fontWeight: 600 }}>
-              Шаблон сайта Мегаватт
-            </span>
-          </div>
+          />
         }
-        demoUrl={megawattTemplateUrl || undefined}
+        demoUrl={megawattTemplateUrl}
         buttonText="Перейти на шаблон"
         presentationSlug="megawatt"
         wrapInCard

@@ -7,4 +7,4 @@ export const megawattCreatedAt = '2026-01-30T00:00:00Z';
 export const megawattTitle = '«Мегаватт» — презентация';
 
 /** URL шаблона сайта для кнопки «Перейти на шаблон» */
-export const megawattTemplateUrl = '';
+export const megawattTemplateUrl = 'https://megawatt-v8pv.vercel.app/';
