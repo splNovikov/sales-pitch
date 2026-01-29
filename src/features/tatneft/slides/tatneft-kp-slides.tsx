@@ -11,14 +11,6 @@ const { Title, Paragraph, Text } = Typography;
 
 const dataLakePhases: RoadmapItem[] = [
   {
-    title: 'Подготовительная',
-    description: 'Общепроектный этап (обязателен для старта проекта): сбор требований, выбор объектов мониторинга (ДНС), проектирование архитектуры, план-график.',
-    duration: 'март 2026 – июнь 2026',
-    icon: <CalendarOutlined />,
-    color: 'default',
-    status: 'Общепроектный этап',
-  },
-  {
     title: 'Построение и наполнение единой БД',
     description: 'Развёртывание хранилища, ETL из источников организации, описание структуры данных.',
     duration: 'июль – ноябрь 2026',
@@ -267,15 +259,6 @@ export const tatneftKpSlides: SlideData[] = [
     ),
   },
 
-  // === Секция: Реализация ===
-  {
-    id: 'implementation-section',
-    header: undefined,
-    content: (
-      <SectionTitleSlide imageIndex={3} title="Реализация проекта" />
-    ),
-  },
-
   {
     id: 'architecture-overview',
     header: 'Общая схема взаимодействия компонентов',
@@ -285,6 +268,87 @@ export const tatneftKpSlides: SlideData[] = [
           Схема взаимодействия трёх компонентов: хранилище данных, подсистема раннего предупреждения, интерфейс оператора.
         </Paragraph>
         <Paragraph type="secondary">TODO: добавить иллюстрацию схемы.</Paragraph>
+      </Card>
+    ),
+  },
+
+  // === Секция: Реализация ===
+  {
+    id: 'implementation-section',
+    header: undefined,
+    content: (
+      <SectionTitleSlide imageIndex={3} title="Реализация проекта" />
+    ),
+  },
+
+  // --- Блок: Подготовительная фаза ---
+  {
+    id: 'impl-preparatory-section',
+    header: undefined,
+    content: (
+      <SectionTitleSlide imageIndex={0} title="Подготовительная фаза" />
+    ),
+  },
+  {
+    id: 'impl-preparatory-explainer',
+    header: 'Подготовительная фаза',
+    content: (
+      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+        <Card>
+          <Title level={5}>Почему этот этап необходим</Title>
+          <Paragraph style={{ marginBottom: 0 }}>
+            Подготовительная фаза обязательна для старта проекта: без согласованных требований, перечня объектов мониторинга (ДНС) и спроектированной архитектуры невозможны последующие этапы — построение хранилища данных и подсистемы предупреждений.
+          </Paragraph>
+        </Card>
+        <Card>
+          <Title level={5}>Назначение</Title>
+          <Paragraph style={{ marginBottom: 0 }}>
+            Сбор и формализация бизнес-требований, анализ предметной области и определение списка объектов мониторинга (ДНС), проектирование технической архитектуры решения для обеспечения масштабируемости.
+          </Paragraph>
+        </Card>
+        <Card>
+          <Title level={5}>Ценность для организации и доставляемый результат</Title>
+          <List size="small">
+            <List.Item>Документ с описанием архитектуры системы.</List.Item>
+            <List.Item>Утверждённый реестр (список) ДНС для включения в систему.</List.Item>
+            <List.Item>План-график реализации проекта.</List.Item>
+          </List>
+        </Card>
+      </Space>
+    ),
+  },
+  
+  {
+    id: 'impl-preparatory-roles-cost',
+    header: 'Подготовительная фаза: роли, часы, стоимость',
+    content: (
+      <Card>
+        <Table
+          size="small"
+          pagination={false}
+          dataSource={[
+            { key: '1', role: 'Бизнес-аналитик', hours: 492, cost: '2 388 696 ₽' },
+            { key: '2', role: 'Архитектор решений', hours: 492, cost: '5 573 624 ₽' },
+            { key: '3', role: 'Руководитель проектов', hours: 492, cost: '3 184 928 ₽' },
+            { key: '4', role: 'Старший DevOps-инженер', hours: 492, cost: '3 981 160 ₽' },
+            { key: '5', role: 'Аналитик предметной области', hours: 492, cost: '0' },
+            { key: '6', role: 'Старший инженер данных', hours: 492, cost: '3 981 160 ₽' },
+          ]}
+          columns={[
+            { title: 'Роль', dataIndex: 'role', key: 'role' },
+            { title: 'Часов', dataIndex: 'hours', key: 'hours', width: 90, align: 'right' },
+            { title: 'Стоимость (с НДС)', dataIndex: 'cost', key: 'cost', width: 140, align: 'right', render: (v: string) => <Text strong={v !== '0'}>{v}</Text> },
+          ]}
+          summary={() => (
+            <Table.Summary>
+              <Table.Summary.Row>
+                <Table.Summary.Cell index={0}><Text strong>Итого</Text></Table.Summary.Cell>
+                <Table.Summary.Cell index={1} align="right"><Text strong>2 952</Text></Table.Summary.Cell>
+                <Table.Summary.Cell index={2} align="right"><Text strong>19 109 568 ₽</Text></Table.Summary.Cell>
+              </Table.Summary.Row>
+            </Table.Summary>
+          )}
+        />
       </Card>
     ),
   },
@@ -340,37 +404,71 @@ export const tatneftKpSlides: SlideData[] = [
     content: <Roadmap items={dataLakePhases} mode="alternate" />,
   },
   {
-    id: 'impl-data-lake-roles',
-    header: 'Data Lake: роли по этапам',
+    id: 'impl-data-lake-roles-cost',
+    header: 'Data Lake: роли, часы, стоимость',
     content: (
-      <Card>
-        <List size="small">
-          <List.Item>Архитектор, ведущий разработчик алгоритмов, старший инженер данных, DevOps, руководитель проекта, аналитик предметной области (со стороны организации).</List.Item>
-          <List.Item>Фаза наполнения БД: фокус на ETL и инфраструктуре; фаза накопления — на анализе данных и подготовке выборок для алгоритмов.</List.Item>
-        </List>
-      </Card>
-    ),
-  },
-  {
-    id: 'impl-data-lake-cost',
-    header: 'Data Lake: стоимость',
-    content: (
-      <Card>
-        <Table
-          size="small"
-          pagination={false}
-          dataSource={[
-            { key: '1', phase: 'Построение и наполнение единой БД', hours: '3 690', cost: '27 519 358 ₽' },
-            { key: '2', phase: 'Накопление и анализ данных', hours: '3 690', cost: '20 136 117 ₽' },
-          ]}
-          columns={[
-            { title: 'Фаза', dataIndex: 'phase', key: 'phase' },
-            { title: 'Часов', dataIndex: 'hours', key: 'hours', width: 90 },
-            { title: 'Стоимость (с НДС)', dataIndex: 'cost', key: 'cost', width: 140, render: (v: string) => <Text strong>{v}</Text> },
-          ]}
-        />
-        <Paragraph style={{ marginTop: 12, marginBottom: 0 }}><Text strong>Итого по Data Lake:</Text> 7 380 ч, 47 655 475 ₽</Paragraph>
-      </Card>
+      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+        <Card>
+          <Title level={5}>Построение и наполнение единой БД</Title>
+          <Table
+            size="small"
+            pagination={false}
+            dataSource={[
+              { key: '1', role: 'Архитектор решений', hours: 246, cost: '2 832 875 ₽' },
+              { key: '2', role: 'Ведущий разработчик алгоритмов', hours: 492, cost: '5 261 054 ₽' },
+              { key: '3', role: 'Старший инженер данных', hours: 984, cost: '8 093 928 ₽' },
+              { key: '4', role: 'Старший DevOps-инженер', hours: 984, cost: '8 093 928 ₽' },
+              { key: '5', role: 'Руководитель проектов', hours: 492, cost: '3 237 572 ₽' },
+              { key: '6', role: 'Аналитик предметной области', hours: 492, cost: '0' },
+            ]}
+            columns={[
+              { title: 'Роль', dataIndex: 'role', key: 'role' },
+              { title: 'Часов', dataIndex: 'hours', key: 'hours', width: 90, align: 'right' },
+              { title: 'Стоимость (с НДС)', dataIndex: 'cost', key: 'cost', width: 140, align: 'right', render: (v: string) => <Text strong={v !== '0'}>{v}</Text> },
+            ]}
+            summary={() => (
+              <Table.Summary>
+                <Table.Summary.Row>
+                  <Table.Summary.Cell index={0}><Text strong>Итого</Text></Table.Summary.Cell>
+                  <Table.Summary.Cell index={1} align="right"><Text strong>3 690</Text></Table.Summary.Cell>
+                  <Table.Summary.Cell index={2} align="right"><Text strong>27 519 358 ₽</Text></Table.Summary.Cell>
+                </Table.Summary.Row>
+              </Table.Summary>
+            )}
+          />
+        </Card>
+        <Card>
+          <Title level={5}>Накопление и анализ данных</Title>
+          <Table
+            size="small"
+            pagination={false}
+            dataSource={[
+              { key: '1', role: 'Архитектор решений', hours: 246, cost: '2 072 836 ₽' },
+              { key: '2', role: 'Ведущий разработчик алгоритмов', hours: 492, cost: '3 849 552 ₽' },
+              { key: '3', role: 'Старший инженер данных', hours: 984, cost: '5 922 386 ₽' },
+              { key: '4', role: 'Разработчик алгоритмов', hours: 492, cost: '2 961 194 ₽' },
+              { key: '5', role: 'Руководитель проектов', hours: 492, cost: '2 368 955 ₽' },
+              { key: '6', role: 'Старший DevOps-инженер', hours: 492, cost: '2 961 194 ₽' },
+              { key: '7', role: 'Аналитик предметной области', hours: 492, cost: '0' },
+            ]}
+            columns={[
+              { title: 'Роль', dataIndex: 'role', key: 'role' },
+              { title: 'Часов', dataIndex: 'hours', key: 'hours', width: 90, align: 'right' },
+              { title: 'Стоимость (с НДС)', dataIndex: 'cost', key: 'cost', width: 140, align: 'right', render: (v: string) => <Text strong={v !== '0'}>{v}</Text> },
+            ]}
+            summary={() => (
+              <Table.Summary>
+                <Table.Summary.Row>
+                  <Table.Summary.Cell index={0}><Text strong>Итого</Text></Table.Summary.Cell>
+                  <Table.Summary.Cell index={1} align="right"><Text strong>3 690</Text></Table.Summary.Cell>
+                  <Table.Summary.Cell index={2} align="right"><Text strong>20 136 117 ₽</Text></Table.Summary.Cell>
+                </Table.Summary.Row>
+              </Table.Summary>
+            )}
+          />
+        </Card>
+        <Paragraph style={{ marginBottom: 0 }}><Text strong>Итого по Data Lake:</Text> 7 380 ч, 47 655 475 ₽</Paragraph>
+      </Space>
     ),
   },
 
@@ -429,10 +527,19 @@ export const tatneftKpSlides: SlideData[] = [
     header: 'Подсистема предупреждений: роли по этапам',
     content: (
       <Card>
-        <List size="small">
-          <List.Item>Архитектор, ведущий разработчик алгоритмов, инженер данных, разработчик алгоритмов, DevOps, руководитель проекта, аналитик предметной области, бэкенд/фронтенд, UX, QA, бизнес-аналитик.</List.Item>
-          <List.Item>Фаза построения — основная разработка; фаза проверки — тестирование и метрики; фаза настройки — калибровка и регрессионные проверки.</List.Item>
-        </List>
+        <Table
+          size="small"
+          pagination={false}
+          dataSource={[
+            { key: '1', phase: 'Построение подсистемы поиска отклонений', roles: 'Архитектор решений, Ведущий разработчик алгоритмов, Старший инженер данных, Разработчик алгоритмов, Руководитель проектов, Старший DevOps-инженер, Аналитик предметной области, Бэкенд-разработчик, Фронтенд-разработчик, UX-инженер, QA-инженер, Бизнес-аналитик' },
+            { key: '2', phase: 'Проверка на исторических данных', roles: 'Архитектор решений, Ведущий разработчик алгоритмов, Руководитель проектов, Старший DevOps-инженер, Аналитик предметной области, QA-инженер, Бизнес-аналитик' },
+            { key: '3', phase: 'Настройка по результатам проверки', roles: 'Архитектор решений, Ведущий разработчик алгоритмов, Старший инженер данных, Разработчик алгоритмов, Руководитель проектов, Старший DevOps-инженер, Аналитик предметной области, QA-инженер' },
+          ]}
+          columns={[
+            { title: 'Этап', dataIndex: 'phase', key: 'phase', width: '35%' },
+            { title: 'Роли', dataIndex: 'roles', key: 'roles' },
+          ]}
+        />
       </Card>
     ),
   },
@@ -515,9 +622,17 @@ export const tatneftKpSlides: SlideData[] = [
     header: 'Интерфейс оператора: роли по этапам',
     content: (
       <Card>
-        <List size="small">
-          <List.Item>Архитектор, ведущий разработчик алгоритмов, инженер данных, руководитель проекта, DevOps, аналитик предметной области, бэкенд/фронтенд, UX, QA.</List.Item>
-        </List>
+        <Table
+          size="small"
+          pagination={false}
+          dataSource={[
+            { key: '1', phase: 'Разработка графического интерфейса оператора', roles: 'Архитектор решений, Ведущий разработчик алгоритмов, Старший инженер данных, Руководитель проектов, Старший DevOps-инженер, Аналитик предметной области, Бэкенд-разработчик, Фронтенд-разработчик, UX-инженер, QA-инженер' },
+          ]}
+          columns={[
+            { title: 'Этап', dataIndex: 'phase', key: 'phase', width: '35%' },
+            { title: 'Роли', dataIndex: 'roles', key: 'roles' },
+          ]}
+        />
       </Card>
     ),
   },
@@ -583,10 +698,20 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
         <Card>
-          <Title level={5}>Роли</Title>
-          <Paragraph style={{ marginBottom: 0 }}>
-            Подготовка: бизнес-аналитик, архитектор, руководитель проекта, DevOps, инженер данных, аналитик предметной области. Внедрение: архитектор, ведущий разработчик алгоритмов, инженер данных, разработчик алгоритмов, руководитель проекта, DevOps, аналитик, QA. Приёмка: архитектор, ведущий разработчик, инженер данных, руководитель проекта, DevOps, QA, бизнес-аналитик.
-          </Paragraph>
+          <Title level={5}>Роли по этапам</Title>
+          <Table
+            size="small"
+            pagination={false}
+            dataSource={[
+              { key: '1', phase: 'Подготовительная', roles: 'Бизнес-аналитик, Архитектор решений, Руководитель проектов, Старший DevOps-инженер, Аналитик предметной области, Старший инженер данных' },
+              { key: '2', phase: 'Внедрение системы', roles: 'Архитектор решений, Ведущий разработчик алгоритмов, Старший инженер данных, Разработчик алгоритмов, Руководитель проектов, Старший DevOps-инженер, Аналитик предметной области, QA-инженер' },
+              { key: '3', phase: 'Приёмка системы', roles: 'Архитектор решений, Ведущий разработчик алгоритмов, Старший инженер данных, Руководитель проектов, Старший DevOps-инженер, Аналитик предметной области, QA-инженер, Бизнес-аналитик' },
+            ]}
+            columns={[
+              { title: 'Этап', dataIndex: 'phase', key: 'phase', width: '30%' },
+              { title: 'Роли', dataIndex: 'roles', key: 'roles' },
+            ]}
+          />
         </Card>
         <Card>
           <Table
