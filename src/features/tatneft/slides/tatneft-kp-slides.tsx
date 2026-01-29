@@ -68,7 +68,7 @@ const preparatoryPhases: RoadmapItem[] = [
 
 const analyticsPhases: RoadmapItem[] = [
   {
-    title: 'Подготовительная фаза и Data Lake',
+    title: 'Подготовительная фаза; Data Lake',
     duration: 'март – декабрь 2026',
     icon: <CalendarOutlined />,
     color: 'cyan',
@@ -582,47 +582,108 @@ export const tatneftKpSlides: SlideData[] = [
     content: <Roadmap items={analyticsPhases} mode="alternate" />,
   },
   {
-    id: 'impl-analytics-roles',
-    header: 'Подсистема предупреждений: роли по этапам',
+    id: 'impl-analytics-roles-cost',
+    header: 'Подсистема предупреждений: роли, часы, стоимость',
     content: (
-      <Card>
-        <Table
-          size="small"
-          pagination={false}
-          dataSource={[
-            { key: '1', phase: 'Построение подсистемы поиска отклонений', roles: 'Архитектор решений, Ведущий разработчик алгоритмов, Старший инженер данных, Разработчик алгоритмов, Руководитель проектов, Старший DevOps-инженер, Аналитик предметной области, Бэкенд-разработчик, Фронтенд-разработчик, UX-инженер, QA-инженер, Бизнес-аналитик' },
-            { key: '2', phase: 'Проверка на исторических данных', roles: 'Архитектор решений, Ведущий разработчик алгоритмов, Руководитель проектов, Старший DevOps-инженер, Аналитик предметной области, QA-инженер, Бизнес-аналитик' },
-            { key: '3', phase: 'Настройка по результатам проверки', roles: 'Архитектор решений, Ведущий разработчик алгоритмов, Старший инженер данных, Разработчик алгоритмов, Руководитель проектов, Старший DevOps-инженер, Аналитик предметной области, QA-инженер' },
-          ]}
-          columns={[
-            { title: 'Этап', dataIndex: 'phase', key: 'phase', width: '35%' },
-            { title: 'Роли', dataIndex: 'roles', key: 'roles' },
-          ]}
-        />
-      </Card>
-    ),
-  },
-  {
-    id: 'impl-analytics-cost',
-    header: 'Подсистема предупреждений: стоимость',
-    content: (
-      <Card>
-        <Table
-          size="small"
-          pagination={false}
-          dataSource={[
-            { key: '1', phase: 'Построение подсистемы поиска отклонений', hours: '8 200', cost: '68 111 586 ₽' },
-            { key: '2', phase: 'Проверка на исторических данных', hours: '820', cost: '4 524 412 ₽' },
-            { key: '3', phase: 'Настройка по результатам проверки', hours: '2 132', cost: '14 908 531 ₽' },
-          ]}
-          columns={[
-            { title: 'Фаза', dataIndex: 'phase', key: 'phase' },
-            { title: 'Часов', dataIndex: 'hours', key: 'hours', width: 90 },
-            { title: 'Стоимость (с НДС)', dataIndex: 'cost', key: 'cost', width: 140, render: (v: string) => <Text strong>{v}</Text> },
-          ]}
-        />
-        <Paragraph style={{ marginTop: 12, marginBottom: 0 }}><Text strong>Итого по подсистеме:</Text> 11 152 ч, 87 544 529 ₽</Paragraph>
-      </Card>
+      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+        <Card size="small">
+          <Title level={5} style={{ marginTop: 0 }}>Фаза 4: Построение подсистемы поиска отклонений</Title>
+          <Table
+            size="small"
+            pagination={false}
+            dataSource={[
+              { key: '1', role: 'Архитектор решений', hours: 656, cost: '8 291 845 ₽' },
+              { key: '2', role: 'Ведущий разработчик алгоритмов', hours: 656, cost: '7 699 570 ₽' },
+              { key: '3', role: 'Старший инженер данных', hours: 1312, cost: '11 845 493 ₽' },
+              { key: '4', role: 'Разработчик алгоритмов', hours: 656, cost: '5 922 747 ₽' },
+              { key: '5', role: 'Руководитель проектов', hours: 656, cost: '4 738 198 ₽' },
+              { key: '6', role: 'Старший DevOps-инженер', hours: 656, cost: '5 922 747 ₽' },
+              { key: '7', role: 'Аналитик предметной области', hours: 656, cost: '0' },
+              { key: '8', role: 'Бэкенд-разработчик', hours: 656, cost: '5 922 747 ₽' },
+              { key: '9', role: 'Фронтенд-разработчик', hours: 656, cost: '5 922 747 ₽' },
+              { key: '10', role: 'UX-инженер', hours: 656, cost: '5 330 472 ₽' },
+              { key: '11', role: 'QA-инженер', hours: 656, cost: '4 738 198 ₽' },
+              { key: '12', role: 'Бизнес-аналитик', hours: 328, cost: '1 776 824 ₽' },
+            ]}
+            columns={[
+              { title: 'Роль', dataIndex: 'role', key: 'role' },
+              { title: 'Часов', dataIndex: 'hours', key: 'hours', width: 90, align: 'right' },
+              { title: 'Стоимость (с НДС)', dataIndex: 'cost', key: 'cost', width: 140, align: 'right', render: (v: string) => <Text strong={v !== '0'}>{v}</Text> },
+            ]}
+            summary={() => (
+              <Table.Summary>
+                <Table.Summary.Row>
+                  <Table.Summary.Cell index={0}><Text strong>Итого по фазе 4</Text></Table.Summary.Cell>
+                  <Table.Summary.Cell index={1} align="right"><Text strong>8 200</Text></Table.Summary.Cell>
+                  <Table.Summary.Cell index={2} align="right"><Text strong>68 111 586 ₽</Text></Table.Summary.Cell>
+                </Table.Summary.Row>
+              </Table.Summary>
+            )}
+          />
+        </Card>
+        <Card size="small">
+          <Title level={5} style={{ marginTop: 0 }}>Фаза 5: Проверка на исторических данных</Title>
+          <Table
+            size="small"
+            pagination={false}
+            dataSource={[
+              { key: '1', role: 'Архитектор решений', hours: 82, cost: '791 772 ₽' },
+              { key: '2', role: 'Ведущий разработчик алгоритмов', hours: 164, cost: '1 470 434 ₽' },
+              { key: '3', role: 'Руководитель проектов', hours: 164, cost: '904 882 ₽' },
+              { key: '4', role: 'Старший DevOps-инженер', hours: 82, cost: '565 552 ₽' },
+              { key: '5', role: 'Аналитик предметной области', hours: 164, cost: '0' },
+              { key: '6', role: 'QA-инженер', hours: 82, cost: '452 441 ₽' },
+              { key: '7', role: 'Бизнес-аналитик', hours: 82, cost: '339 331 ₽' },
+            ]}
+            columns={[
+              { title: 'Роль', dataIndex: 'role', key: 'role' },
+              { title: 'Часов', dataIndex: 'hours', key: 'hours', width: 90, align: 'right' },
+              { title: 'Стоимость (с НДС)', dataIndex: 'cost', key: 'cost', width: 140, align: 'right', render: (v: string) => <Text strong={v !== '0'}>{v}</Text> },
+            ]}
+            summary={() => (
+              <Table.Summary>
+                <Table.Summary.Row>
+                  <Table.Summary.Cell index={0}><Text strong>Итого по фазе 5</Text></Table.Summary.Cell>
+                  <Table.Summary.Cell index={1} align="right"><Text strong>820</Text></Table.Summary.Cell>
+                  <Table.Summary.Cell index={2} align="right"><Text strong>4 524 412 ₽</Text></Table.Summary.Cell>
+                </Table.Summary.Row>
+              </Table.Summary>
+            )}
+          />
+        </Card>
+        <Card size="small">
+          <Title level={5} style={{ marginTop: 0 }}>Фаза 6: Настройка по результатам проверки</Title>
+          <Table
+            size="small"
+            pagination={false}
+            dataSource={[
+              { key: '1', role: 'Архитектор решений', hours: 164, cost: '1 830 872 ₽' },
+              { key: '2', role: 'Ведущий разработчик алгоритмов', hours: 328, cost: '3 400 191 ₽' },
+              { key: '3', role: 'Старший инженер данных', hours: 328, cost: '2 615 532 ₽' },
+              { key: '4', role: 'Разработчик алгоритмов', hours: 328, cost: '2 615 532 ₽' },
+              { key: '5', role: 'Руководитель проектов', hours: 328, cost: '2 092 425 ₽' },
+              { key: '6', role: 'Старший DevOps-инженер', hours: 164, cost: '1 307 766 ₽' },
+              { key: '7', role: 'Аналитик предметной области', hours: 328, cost: '0' },
+              { key: '8', role: 'QA-инженер', hours: 164, cost: '1 046 213 ₽' },
+            ]}
+            columns={[
+              { title: 'Роль', dataIndex: 'role', key: 'role' },
+              { title: 'Часов', dataIndex: 'hours', key: 'hours', width: 90, align: 'right' },
+              { title: 'Стоимость (с НДС)', dataIndex: 'cost', key: 'cost', width: 140, align: 'right', render: (v: string) => <Text strong={v !== '0'}>{v}</Text> },
+            ]}
+            summary={() => (
+              <Table.Summary>
+                <Table.Summary.Row>
+                  <Table.Summary.Cell index={0}><Text strong>Итого по фазе 6</Text></Table.Summary.Cell>
+                  <Table.Summary.Cell index={1} align="right"><Text strong>2 132</Text></Table.Summary.Cell>
+                  <Table.Summary.Cell index={2} align="right"><Text strong>14 908 531 ₽</Text></Table.Summary.Cell>
+                </Table.Summary.Row>
+              </Table.Summary>
+            )}
+          />
+        </Card>
+        <Paragraph style={{ marginBottom: 0 }}><Text strong>Итого по подсистеме предупреждений:</Text> 11 152 ч, 87 544 529 ₽</Paragraph>
+      </Space>
     ),
   },
 
@@ -677,40 +738,39 @@ export const tatneftKpSlides: SlideData[] = [
     content: <Roadmap items={uiPhases} mode="alternate" />,
   },
   {
-    id: 'impl-ui-roles',
-    header: 'Интерфейс оператора: роли по этапам',
+    id: 'impl-ui-roles-cost',
+    header: 'Интерфейс оператора: роли, часы, стоимость',
     content: (
       <Card>
         <Table
           size="small"
           pagination={false}
           dataSource={[
-            { key: '1', phase: 'Разработка графического интерфейса оператора', roles: 'Архитектор решений, Ведущий разработчик алгоритмов, Старший инженер данных, Руководитель проектов, Старший DevOps-инженер, Аналитик предметной области, Бэкенд-разработчик, Фронтенд-разработчик, UX-инженер, QA-инженер' },
+            { key: '1', role: 'Архитектор решений', hours: 164, cost: '1 493 607 ₽' },
+            { key: '2', role: 'Ведущий разработчик алгоритмов', hours: 164, cost: '1 386 920 ₽' },
+            { key: '3', role: 'Старший инженер данных', hours: 164, cost: '1 066 861 ₽' },
+            { key: '4', role: 'Руководитель проектов', hours: 328, cost: '1 706 979 ₽' },
+            { key: '5', role: 'Старший DevOps-инженер', hours: 328, cost: '2 133 724 ₽' },
+            { key: '6', role: 'Аналитик предметной области', hours: 328, cost: '0' },
+            { key: '7', role: 'Бэкенд-разработчик', hours: 328, cost: '2 133 724 ₽' },
+            { key: '8', role: 'Фронтенд-разработчик', hours: 328, cost: '2 133 724 ₽' },
+            { key: '9', role: 'UX-инженер', hours: 328, cost: '1 920 351 ₽' },
+            { key: '10', role: 'QA-инженер', hours: 328, cost: '1 706 979 ₽' },
           ]}
           columns={[
-            { title: 'Этап', dataIndex: 'phase', key: 'phase', width: '35%' },
-            { title: 'Роли', dataIndex: 'roles', key: 'roles' },
+            { title: 'Роль', dataIndex: 'role', key: 'role' },
+            { title: 'Часов', dataIndex: 'hours', key: 'hours', width: 90, align: 'right' },
+            { title: 'Стоимость (с НДС)', dataIndex: 'cost', key: 'cost', width: 140, align: 'right', render: (v: string) => <Text strong={v !== '0'}>{v}</Text> },
           ]}
-        />
-      </Card>
-    ),
-  },
-  {
-    id: 'impl-ui-cost',
-    header: 'Интерфейс оператора: стоимость',
-    content: (
-      <Card>
-        <Table
-          size="small"
-          pagination={false}
-          dataSource={[
-            { key: '1', phase: 'Разработка графического интерфейса оператора', hours: '2 788', cost: '15 682 868 ₽' },
-          ]}
-          columns={[
-            { title: 'Фаза', dataIndex: 'phase', key: 'phase' },
-            { title: 'Часов', dataIndex: 'hours', key: 'hours', width: 90 },
-            { title: 'Стоимость (с НДС)', dataIndex: 'cost', key: 'cost', width: 140, render: (v: string) => <Text strong>{v}</Text> },
-          ]}
+          summary={() => (
+            <Table.Summary>
+              <Table.Summary.Row>
+                <Table.Summary.Cell index={0}><Text strong>Итого</Text></Table.Summary.Cell>
+                <Table.Summary.Cell index={1} align="right"><Text strong>2 788</Text></Table.Summary.Cell>
+                <Table.Summary.Cell index={2} align="right"><Text strong>15 682 868 ₽</Text></Table.Summary.Cell>
+              </Table.Summary.Row>
+            </Table.Summary>
+          )}
         />
       </Card>
     ),
