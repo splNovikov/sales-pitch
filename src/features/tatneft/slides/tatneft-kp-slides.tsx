@@ -11,11 +11,22 @@ const { Title, Paragraph, Text } = Typography;
 
 const dataLakePhases: RoadmapItem[] = [
   {
+    title: 'Подготовительная фаза',
+    duration: 'март – июнь 2026',
+    icon: <CalendarOutlined />,
+    color: 'cyan',
+    completed: true,
+  },
+  {
     title: 'Построение и наполнение единой БД',
     description: 'Развёртывание хранилища, ETL из источников организации, описание структуры данных.',
     duration: 'июль – ноябрь 2026',
     icon: <CalendarOutlined />,
     color: 'blue',
+    subSteps: [
+      { title: 'Разработка ETL-процессов выгрузки данных', start: '01.07.2026', end: '31.10.2026', result: 'Настроенные механизмы сбора' },
+      { title: 'Построение и наполнение единой БД', start: '01.08.2026', end: '31.10.2026', result: 'База данных с историческими данными' },
+    ],
   },
   {
     title: 'Накопление и анализ данных',
@@ -23,15 +34,45 @@ const dataLakePhases: RoadmapItem[] = [
     duration: 'сентябрь – декабрь 2026',
     icon: <CalendarOutlined />,
     color: 'green',
+    subSteps: [
+      { title: 'Загрузка исторических данных', start: '21.09.2026', end: '30.10.2026', result: 'Оцифрованный архив в БД' },
+      { title: 'Накопление данных в реальном времени', start: '01.10.2026', end: '20.12.2026', result: 'Набор оперативных данных' },
+      { title: 'Анализ исторических и накопленных данных', start: '20.10.2026', end: '20.12.2026', result: 'Аналитический отчёт' },
+    ],
+  },
+];
+
+const preparatoryPhases: RoadmapItem[] = [
+  {
+    title: 'Определение набора ДНС',
+    description: 'Согласование списка объектов мониторинга для включения в систему.',
+    duration: 'март 2026',
+    icon: <CalendarOutlined />,
+    color: 'blue',
+  },
+  {
+    title: 'Группировка ДНС',
+    description: 'Формирование структуры групп объектов для последующего мониторинга.',
+    duration: 'апрель 2026',
+    icon: <CalendarOutlined />,
+    color: 'cyan',
+  },
+  {
+    title: 'Подготовка архитектуры системы',
+    description: 'Проектирование технической архитектуры решения для обеспечения масштабируемости.',
+    duration: 'март – июнь 2026',
+    icon: <CalendarOutlined />,
+    color: 'green',
   },
 ];
 
 const analyticsPhases: RoadmapItem[] = [
   {
-    title: 'Подготовительная и Data Lake',
+    title: 'Подготовительная фаза и Data Lake',
     duration: 'март – декабрь 2026',
     icon: <CalendarOutlined />,
     color: 'cyan',
+    completed: true,
   },
   {
     title: 'Построение подсистемы поиска отклонений',
@@ -39,6 +80,10 @@ const analyticsPhases: RoadmapItem[] = [
     duration: 'декабрь 2026 – июнь 2027',
     icon: <CalendarOutlined />,
     color: 'blue',
+    subSteps: [
+      { title: 'Построение алгоритма поиска аномалий', start: '21.12.2026', end: '20.06.2027', result: 'Работающий алгоритм' },
+      { title: 'Разработка интерфейса для проверки подсистемы', start: '01.04.2027', end: '20.06.2027', result: 'Технический UI' },
+    ],
   },
   {
     title: 'Проверка на исторических данных',
@@ -46,6 +91,10 @@ const analyticsPhases: RoadmapItem[] = [
     duration: 'май – июнь 2027',
     icon: <CalendarOutlined />,
     color: 'orange',
+    subSteps: [
+      { title: 'Проверка подсистемы на исторических данных', start: '17.05.2027', end: '20.06.2027', result: 'Отчёт о тестировании' },
+      { title: 'Экспертные сессии с ЕДС: разбор ошибок, уточнение причин FP' },
+    ],
   },
   {
     title: 'Настройка по результатам проверки',
@@ -53,6 +102,10 @@ const analyticsPhases: RoadmapItem[] = [
     duration: 'июнь – сентябрь 2027',
     icon: <CalendarOutlined />,
     color: 'green',
+    subSteps: [
+      { title: 'Настройка системы по результатам проверки', start: '21.06.2027', end: '05.09.2027', result: 'Откалиброванный алгоритм' },
+      { title: 'Подготовка к внедрению: эксплуатационные регламенты, обучение' },
+    ],
   },
 ];
 
@@ -317,7 +370,13 @@ export const tatneftKpSlides: SlideData[] = [
       </Space>
     ),
   },
-  
+  {
+    id: 'impl-preparatory-phases',
+    header: 'Подготовительная фаза: этапы',
+    content: (
+      <Roadmap items={preparatoryPhases} />
+    ),
+  },
   {
     id: 'impl-preparatory-roles-cost',
     header: 'Подготовительная фаза: роли, часы, стоимость',

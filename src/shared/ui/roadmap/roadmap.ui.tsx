@@ -4,6 +4,16 @@ import styles from './roadmap.module.css';
 
 const { Text } = Typography;
 
+export interface RoadmapSubStep {
+  title: string;
+  /** Start date (from phase schedule) */
+  start?: string;
+  /** End date */
+  end?: string;
+  /** Result / deliverable */
+  result?: string;
+}
+
 export interface RoadmapItem {
   /**
    * Title of the roadmap item
@@ -33,6 +43,14 @@ export interface RoadmapItem {
    * Optional cost in rubles
    */
   cost?: number;
+  /**
+   * Optional sub-steps (e.g. phase schedule items from docs).
+   */
+  subSteps?: RoadmapSubStep[];
+  /**
+   * Mark stage as completed (passed). Renders as grey/semi-transparent "past" stage.
+   */
+  completed?: boolean;
 }
 
 export interface RoadmapProps {
@@ -66,47 +84,69 @@ export function Roadmap({
   return (
     <div className={styles.roadmap}>
       <Timeline mode={mode} pending={pending}>
-        {items.map((item, index) => (
-          <Timeline.Item
-            key={index}
-            dot={item.icon}
-            color={item.color || 'blue'}
-          >
-            <Card
-              size="small"
-              className={styles.roadmapCard}
-              style={{
-                marginBottom: 'var(--app-spacing-sm)',
-              }}
+        {items.map((item, index) => {
+          const isCompleted = item.completed === true;
+          return (
+            <Timeline.Item
+              key={index}
+              dot={item.icon}
+              color={isCompleted ? 'gray' : (item.color || 'blue')}
             >
-              <Space
-                direction="vertical"
+              <Card
                 size="small"
-                style={{ width: '100%' }}
+                className={`${styles.roadmapCard} ${isCompleted ? styles.roadmapCardCompleted : ''}`}
+                style={{
+                  marginBottom: 'var(--app-spacing-sm)',
+                }}
               >
                 <Space
-                  style={{ width: '100%', justifyContent: 'space-between' }}
-                  wrap
+                  direction="vertical"
+                  size="small"
+                  style={{ width: '100%' }}
                 >
-                  <Text strong style={{ fontSize: '16px' }}>
-                    {item.title}
-                  </Text>
-                  <Space wrap>
-                    {item.duration && (
-                      <Tag color={item.color || 'blue'}>{item.duration}</Tag>
-                    )}
-                    {item.status && <Tag color="default">{item.status}</Tag>}
+                  <Space
+                    style={{ width: '100%', justifyContent: 'space-between' }}
+                    wrap
+                  >
+                    <Text strong style={{ fontSize: '16px' }}>
+                      {item.title}
+                    </Text>
+                    <Space wrap>
+                      {item.duration && (
+                        <Tag color={isCompleted ? 'default' : (item.color || 'blue')}>
+                          {item.duration}
+                        </Tag>
+                      )}
+                      {item.status && <Tag color="default">{item.status}</Tag>}
+                    </Space>
                   </Space>
-                </Space>
                 {item.description && (
                   <Text type="secondary" style={{ fontSize: '14px' }}>
                     {item.description}
                   </Text>
                 )}
+                {item.subSteps && item.subSteps.length > 0 && (
+                  <ul className={styles.subStepsList}>
+                    {item.subSteps.map((sub, i) => (
+                      <li key={i} className={styles.subStepItem}>
+                        <span className={styles.subStepTitle}>{sub.title}</span>
+                        {(sub.start || sub.end || sub.result) && (
+                          <span className={styles.subStepMeta}>
+                            {(sub.start || sub.end) && (
+                              <> ({[sub.start, sub.end].filter(Boolean).join(' – ')})</>
+                            )}
+                            {sub.result && <> → {sub.result}</>}
+                          </span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </Space>
             </Card>
           </Timeline.Item>
-        ))}
+          );
+        })}
       </Timeline>
     </div>
   );
