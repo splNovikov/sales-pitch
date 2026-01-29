@@ -290,13 +290,13 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
-            <Title level={4}>Масштаб</Title>
+            <Title level={4} style={{ marginTop: 0 }}>Масштаб</Title>
             <Paragraph style={{ marginBottom: 0 }}>
               <Text strong>~60 000 аварийных сигналов в неделю</Text>
             </Paragraph>
           </Card>
           <Card>
-            <Title level={4}>Ложные тревоги и процесс</Title>
+            <Title level={4} style={{ marginTop: 0 }}>Ложные тревоги и процесс</Title>
             <List size="small">
               <List.Item>Неверные уставки — 40%</List.Item>
               <List.Item>Изменение режимов работы — 25%</List.Item>
@@ -321,7 +321,7 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="large" style={{ width: '100%' }}>
           <Card>
-            <Title level={4}>Опережающее реагирование</Title>
+            <Title level={4} style={{ marginTop: 0 }}>Опережающее реагирование</Title>
             <Paragraph style={{ fontSize: 'var(--app-font-size-md)' }}>
               Требуется система{' '}
               <Text strong>
@@ -331,7 +331,7 @@ export const tatneftKpSlides: SlideData[] = [
             </Paragraph>
           </Card>
           <Card>
-            <Title level={4}>До инцидента, не после</Title>
+            <Title level={4} style={{ marginTop: 0 }}>До инцидента, не после</Title>
             <Paragraph style={{ marginBottom: 12 }}>
               Выявлять совокупность факторов, способных привести к срабатыванию
               сигналов, и своевременно рекомендовать корректирующие действия
@@ -371,7 +371,7 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="large" style={{ width: '100%' }}>
           <Card>
-            <Title level={4}>Пользовательский интерфейс</Title>
+            <Title level={4} style={{ marginTop: 0 }}>Пользовательский интерфейс</Title>
             <List size="small">
               <List.Item>
                 Рабочие дашборды и оповещения для операторов и инженеров.
@@ -386,7 +386,7 @@ export const tatneftKpSlides: SlideData[] = [
             </List>
           </Card>
           <Card>
-            <Title level={4}>Раннее предупреждение о рисках</Title>
+            <Title level={4} style={{ marginTop: 0 }}>Раннее предупреждение о рисках</Title>
             <List size="small">
               <List.Item>
                 Алгоритмы заранее находят отклонения в поведении оборудования.
@@ -398,7 +398,7 @@ export const tatneftKpSlides: SlideData[] = [
             </List>
           </Card>
           <Card>
-            <Title level={4}>Хранилище данных</Title>
+            <Title level={4} style={{ marginTop: 0 }}>Хранилище данных</Title>
             <List size="small">
               <List.Item>
                 Единое хранилище телеметрии и информации об инцидентах.
@@ -452,7 +452,7 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
-            <Title level={5}>Почему этот этап необходим</Title>
+            <Title level={5} style={{ marginTop: 0 }}>Почему этот этап необходим</Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Подготовительная фаза обязательна для старта проекта: без
               согласованных требований, перечня объектов мониторинга (ДНС) и
@@ -461,7 +461,7 @@ export const tatneftKpSlides: SlideData[] = [
             </Paragraph>
           </Card>
           <Card>
-            <Title level={5}>Назначение</Title>
+            <Title level={5} style={{ marginTop: 0 }}>Назначение</Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Сбор и формализация бизнес-требований, анализ предметной области и
               определение списка объектов мониторинга (ДНС), проектирование
@@ -469,7 +469,7 @@ export const tatneftKpSlides: SlideData[] = [
             </Paragraph>
           </Card>
           <Card>
-            <Title level={5}>
+            <Title level={5} style={{ marginTop: 0 }}>
               Ценность для организации и доставляемый результат
             </Title>
             <List size="small">
@@ -590,7 +590,7 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
-            <Title level={5}>Почему этот компонент необходим</Title>
+            <Title level={5} style={{ marginTop: 0 }}>Почему этот компонент необходим</Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Data Lake является необходимым фундаментом решения: без единого
               хранилища телеметрии и сведений об инцидентах невозможна работа
@@ -598,7 +598,7 @@ export const tatneftKpSlides: SlideData[] = [
             </Paragraph>
           </Card>
           <Card>
-            <Title level={5}>Назначение</Title>
+            <Title level={5} style={{ marginTop: 0 }}>Назначение</Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Единое хранилище телеметрии с датчиков оборудования и информации
               об инцидентах. Данные выгружаются, очищаются и приводятся к
@@ -606,7 +606,7 @@ export const tatneftKpSlides: SlideData[] = [
             </Paragraph>
           </Card>
           <Card>
-            <Title level={5}>
+            <Title level={5} style={{ marginTop: 0 }}>
               Ценность для организации и доставляемый результат
             </Title>
             <List size="small">
@@ -654,7 +654,7 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
-            <Title level={5}>Построение и наполнение единой БД</Title>
+            <Title level={5} style={{ marginTop: 0 }}>Построение и наполнение единой БД</Title>
             <Table
               size="small"
               pagination={false}
@@ -732,7 +732,7 @@ export const tatneftKpSlides: SlideData[] = [
             />
           </Card>
           <Card>
-            <Title level={5}>Накопление и анализ данных</Title>
+            <Title level={5} style={{ marginTop: 0 }}>Накопление и анализ данных</Title>
             <Table
               size="small"
               pagination={false}
@@ -841,7 +841,7 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
-            <Title level={5}>Почему этот компонент необходим</Title>
+            <Title level={5} style={{ marginTop: 0 }}>Почему этот компонент необходим</Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Подсистема функционирует поверх Data Lake и реализует основную
               цель проекта — заблаговременное выявление отклонений в работе
@@ -850,7 +850,7 @@ export const tatneftKpSlides: SlideData[] = [
             </Paragraph>
           </Card>
           <Card>
-            <Title level={5}>Назначение</Title>
+            <Title level={5} style={{ marginTop: 0 }}>Назначение</Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Набор алгоритмов, которые анализируют данные из хранилища, находят
               отклонения в поведении оборудования и формируют оповещения о
@@ -858,7 +858,7 @@ export const tatneftKpSlides: SlideData[] = [
             </Paragraph>
           </Card>
           <Card>
-            <Title level={5}>
+            <Title level={5} style={{ marginTop: 0 }}>
               Ценность для организации и доставляемый результат
             </Title>
             <List size="small">
@@ -1223,7 +1223,7 @@ export const tatneftKpSlides: SlideData[] = [
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
-            <Title level={5}>Почему этот компонент необходим</Title>
+            <Title level={5} style={{ marginTop: 0 }}>Почему этот компонент необходим</Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Интерфейс обеспечивает доведение результатов работы подсистемы
               предупреждений до операторов и уполномоченных сотрудников. Без
@@ -1232,7 +1232,7 @@ export const tatneftKpSlides: SlideData[] = [
             </Paragraph>
           </Card>
           <Card>
-            <Title level={5}>Назначение</Title>
+            <Title level={5} style={{ marginTop: 0 }}>Назначение</Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Веб-интерфейс, с которым работают диспетчеры и инженеры: дашборды,
               оповещения о рисках, пояснение причин предупреждений, фильтрация
@@ -1241,7 +1241,7 @@ export const tatneftKpSlides: SlideData[] = [
             </Paragraph>
           </Card>
           <Card>
-            <Title level={5}>
+            <Title level={5} style={{ marginTop: 0 }}>
               Ценность для организации и доставляемый результат
             </Title>
             <List size="small">
