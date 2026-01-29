@@ -8,6 +8,7 @@ import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { tatneftKpCreatedAt } from './tatneft-kp.meta';
 import ganttImage from './gantt.png';
 import tatneftLogo from './Tatneft-Logo.png';
+import black_list_tatn from './black_list_tatn.jpeg';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -458,7 +459,12 @@ export const tatneftKpSlides: SlideData[] = [
   {
     id: 'impl-preparatory-section',
     header: undefined,
-    content: <SectionTitleSlide imageIndex={0} title="Подготовительная фаза" />,
+    content: (
+      <SectionTitleSlide
+        imageSrc={black_list_tatn}
+        title="Подготовительная фаза"
+      />
+    ),
   },
   {
     id: 'impl-preparatory-explainer',
@@ -1721,6 +1727,6 @@ export const tatneftKpSlides: SlideData[] = [
   {
     id: 'thank-you',
     header: undefined,
-    content: <MainTitleSlide title="Благодарю за внимание" />,
+    content: <MainTitleSlide title="Благодарим за внимание" />,
   },
 ];
