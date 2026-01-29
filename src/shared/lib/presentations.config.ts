@@ -286,7 +286,7 @@ export const presentations: PresentationMeta[] = [
     slug: 'tatneft-kp',
     title: tatneftKpTitle,
     createdAt: tatneftKpCreatedAt,
-    notificationsEnabled: false,
+    notificationsEnabled: true,
     showOnVisibility: true,
   },
   {
