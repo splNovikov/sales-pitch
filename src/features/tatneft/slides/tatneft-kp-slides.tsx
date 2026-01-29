@@ -1,11 +1,111 @@
 import { Space, Typography, List, Card, Table } from 'antd';
+import { CalendarOutlined } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
+import { Roadmap, type RoadmapItem } from '~shared/ui/roadmap';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { tatneftKpCreatedAt } from './tatneft-kp.meta';
 import tatneftLogo from './Tatneft-Logo.png';
 
 const { Title, Paragraph, Text } = Typography;
+
+const dataLakePhases: RoadmapItem[] = [
+  {
+    title: 'Подготовительная',
+    description: 'Общепроектный этап (обязателен для старта проекта): сбор требований, выбор объектов мониторинга (ДНС), проектирование архитектуры, план-график.',
+    duration: '01.03.2026 – 30.06.2026',
+    icon: <CalendarOutlined />,
+    color: 'default',
+    status: 'Общепроектный этап',
+  },
+  {
+    title: 'Построение и наполнение единой БД',
+    description: 'Развёртывание хранилища, ETL из источников организации, описание структуры данных.',
+    duration: 'июль – ноябрь 2026',
+    icon: <CalendarOutlined />,
+    color: 'blue',
+  },
+  {
+    title: 'Накопление и анализ данных',
+    description: 'Загрузка исторических архивов, накопление оперативных данных, аналитический отчёт и наборы для настройки алгоритмов.',
+    duration: 'сентябрь – декабрь 2026',
+    icon: <CalendarOutlined />,
+    color: 'green',
+  },
+];
+
+const analyticsPhases: RoadmapItem[] = [
+  {
+    title: 'Подготовительная',
+    description: 'Общепроектный этап: сбор требований, выбор объектов мониторинга (ДНС), проектирование архитектуры, план-график.',
+    duration: '01.03.2026 – 30.06.2026',
+    icon: <CalendarOutlined />,
+    color: 'default',
+    status: 'Общепроектный этап',
+  },
+  {
+    title: 'Data Lake (все этапы)',
+    description: 'Построение и наполнение единой БД, накопление и анализ данных — единое хранилище и наборы для настройки алгоритмов.',
+    duration: 'июль – декабрь 2026',
+    icon: <CalendarOutlined />,
+    color: 'cyan',
+  },
+  {
+    title: 'Построение подсистемы поиска отклонений',
+    description: 'Разработка алгоритмов, технический интерфейс для проверки.',
+    duration: 'декабрь 2026 – июнь 2027',
+    icon: <CalendarOutlined />,
+    color: 'blue',
+  },
+  {
+    title: 'Проверка на исторических данных',
+    description: 'Тестирование на архиве, отчёт с метриками точности.',
+    duration: 'май – июнь 2027',
+    icon: <CalendarOutlined />,
+    color: 'orange',
+  },
+  {
+    title: 'Настройка по результатам проверки',
+    description: 'Калибровка порогов и параметров, оптимизированная версия.',
+    duration: 'июнь – сентябрь 2027',
+    icon: <CalendarOutlined />,
+    color: 'green',
+  },
+];
+
+const uiPhases: RoadmapItem[] = [
+  {
+    title: 'Разработка графического интерфейса оператора системы',
+    description: 'Дашборд, карточка события, объяснения, обратная связь (разметка диспетчера), доступы и инструкция пользователя.',
+    duration: 'июнь – август 2027',
+    icon: <CalendarOutlined />,
+    color: 'purple',
+  },
+];
+
+const crossPhases: RoadmapItem[] = [
+  {
+    title: 'Подготовительная (Фаза 1)',
+    description: 'Сбор требований, выбор объектов мониторинга (ДНС), проектирование архитектуры, план-график.',
+    duration: '01.03.2026 – 30.06.2026',
+    icon: <CalendarOutlined />,
+    color: 'blue',
+  },
+  {
+    title: 'Внедрение системы (Фаза 8)',
+    description: 'Развёртывание в промышленной среде, поэтапное подключение групп ДНС, проверка в реальном времени.',
+    duration: '06.09.2027 – 02.04.2028',
+    icon: <CalendarOutlined />,
+    color: 'green',
+  },
+  {
+    title: 'Приёмка системы (Фаза 9)',
+    description: 'Пользовательское тестирование, демонстрация соответствия требованиям, передача документации и прав.',
+    duration: '03.04.2028 – 28.05.2028',
+    icon: <CalendarOutlined />,
+    color: 'gold',
+  },
+];
 
 /**
  * Slides data for Tatneft commercial proposal
@@ -228,14 +328,7 @@ export const tatneftKpSlides: SlideData[] = [
   {
     id: 'impl-data-lake-phases',
     header: 'Data Lake: фазы реализации',
-    content: (
-      <Card>
-        <List size="small">
-          <List.Item><Text strong>Построение и наполнение единой БД</Text> — развёртывание хранилища, ETL из источников организации, описание структуры данных. (июль – ноябрь 2026)</List.Item>
-          <List.Item><Text strong>Накопление и анализ данных</Text> — загрузка исторических архивов, накопление оперативных данных, аналитический отчёт и наборы для настройки алгоритмов. (сентябрь – декабрь 2026)</List.Item>
-        </List>
-      </Card>
-    ),
+    content: <Roadmap items={dataLakePhases} mode="alternate" />,
   },
   {
     id: 'impl-data-lake-roles',
@@ -320,15 +413,7 @@ export const tatneftKpSlides: SlideData[] = [
   {
     id: 'impl-analytics-phases',
     header: 'Подсистема предупреждений: фазы реализации',
-    content: (
-      <Card>
-        <List size="small">
-          <List.Item><Text strong>Построение подсистемы поиска отклонений</Text> — разработка алгоритмов, технический интерфейс для проверки. (декабрь 2026 – июнь 2027)</List.Item>
-          <List.Item><Text strong>Проверка на исторических данных</Text> — тестирование на архиве, отчёт с метриками точности. (май – июнь 2027)</List.Item>
-          <List.Item><Text strong>Настройка по результатам проверки</Text> — калибровка порогов и параметров, оптимизированная версия. (июнь – сентябрь 2027)</List.Item>
-        </List>
-      </Card>
-    ),
+    content: <Roadmap items={analyticsPhases} mode="alternate" />,
   },
   {
     id: 'impl-analytics-roles',
@@ -414,13 +499,7 @@ export const tatneftKpSlides: SlideData[] = [
   {
     id: 'impl-ui-phases',
     header: 'Интерфейс оператора: фазы реализации',
-    content: (
-      <Card>
-        <List size="small">
-          <List.Item><Text strong>Разработка графического интерфейса оператора системы</Text> — дашборд, карточка события, объяснения, обратная связь (разметка диспетчера), доступы и инструкция пользователя. (июнь – август 2027)</List.Item>
-        </List>
-      </Card>
-    ),
+    content: <Roadmap items={uiPhases} mode="alternate" />,
   },
   {
     id: 'impl-ui-roles',
@@ -487,15 +566,7 @@ export const tatneftKpSlides: SlideData[] = [
   {
     id: 'impl-cross-phases',
     header: 'Подготовка, внедрение, приёмка: фазы',
-    content: (
-      <Card>
-        <List size="small">
-          <List.Item>Фаза 1 — Подготовительная: 01.03.2026 – 30.06.2026.</List.Item>
-          <List.Item>Фаза 8 — Внедрение системы: 06.09.2027 – 02.04.2028.</List.Item>
-          <List.Item>Фаза 9 — Приёмка системы: 03.04.2028 – 28.05.2028.</List.Item>
-        </List>
-      </Card>
-    ),
+    content: <Roadmap items={crossPhases} mode="alternate" />,
   },
   {
     id: 'impl-cross-roles-cost',
