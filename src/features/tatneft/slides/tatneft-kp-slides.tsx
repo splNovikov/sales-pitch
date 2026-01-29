@@ -36,17 +36,8 @@ const dataLakePhases: RoadmapItem[] = [
 
 const analyticsPhases: RoadmapItem[] = [
   {
-    title: 'Подготовительная',
-    description: 'Общепроектный этап: сбор требований, выбор объектов мониторинга (ДНС), проектирование архитектуры, план-график.',
-    duration: '01.03.2026 – 30.06.2026',
-    icon: <CalendarOutlined />,
-    color: 'default',
-    status: 'Общепроектный этап',
-  },
-  {
-    title: 'Data Lake (все этапы)',
-    description: 'Построение и наполнение единой БД, накопление и анализ данных — единое хранилище и наборы для настройки алгоритмов.',
-    duration: 'июль – декабрь 2026',
+    title: 'Подготовительная и Data Lake',
+    duration: 'март – декабрь 2026',
     icon: <CalendarOutlined />,
     color: 'cyan',
   },
