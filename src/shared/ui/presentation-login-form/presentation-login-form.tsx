@@ -13,21 +13,12 @@ const SECRET = 'xK9#pL2$vN7@mQ4';
 /** Token validity: 24 hours */
 const TTL_MS = 24 * 60 * 60 * 1000;
 
-/** Credentials: base64 of "login:password" (decoded at runtime for comparison) */
-const CREDENTIALS_B64 = 'YWRtaW46dGF0bmVmdDIwMjU=';
-
 function simpleHash(str: string): string {
   let h = 5381;
   for (let i = 0; i < str.length; i++) {
     h = ((h << 5) + h) + str.charCodeAt(i);
   }
   return (h >>> 0).toString(36);
-}
-
-function getCredentials(): { username: string; password: string } {
-  const decoded = typeof atob !== 'undefined' ? atob(CREDENTIALS_B64) : '';
-  const [username = '', password = ''] = decoded.split(':');
-  return { username, password };
 }
 
 export function getPresentationAuthKey(slug: string): string {
@@ -67,6 +58,8 @@ export function setPresentationAuthenticated(slug: string): void {
 
 export interface PresentationLoginFormProps {
   slug: string;
+  /** Base64 of "login:password" for this presentation */
+  credentialsB64: string;
   title?: string;
   onSuccess: () => void;
   className?: string;
@@ -74,6 +67,7 @@ export interface PresentationLoginFormProps {
 
 export function PresentationLoginForm({
   slug,
+  credentialsB64,
   title = 'Доступ к презентации',
   onSuccess,
   className,
@@ -83,7 +77,11 @@ export function PresentationLoginForm({
 
   const handleFinish = (values: { username: string; password: string }) => {
     setError(null);
-    const { username: expectedUser, password: expectedPass } = getCredentials();
+    const decoded =
+      typeof atob !== 'undefined' ? atob(credentialsB64) : '';
+    const colonIndex = decoded.indexOf(':');
+    const expectedUser = colonIndex === -1 ? decoded : decoded.slice(0, colonIndex);
+    const expectedPass = colonIndex === -1 ? '' : decoded.slice(colonIndex + 1);
     if (
       values.username === expectedUser &&
       values.password === expectedPass

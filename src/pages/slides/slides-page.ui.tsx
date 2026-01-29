@@ -123,14 +123,18 @@ export default function SlidesPage() {
   const presentation = getPresentationBySlug(slug);
   const slides = getSlidesBySlug(slug);
 
-  const requiresAuth = presentation?.requiresAuth === true;
   const isAuthenticated = isPresentationAuthenticated(slug);
 
-  if (requiresAuth && !isAuthenticated) {
+  if (
+    presentation &&
+    presentation.authCredentialsB64 &&
+    !isAuthenticated
+  ) {
     return (
       <PresentationLoginForm
         slug={slug}
-        title={presentation?.title ? `Доступ: ${presentation.title}` : undefined}
+        credentialsB64={presentation.authCredentialsB64}
+        title={presentation.title ? `Доступ: ${presentation.title}` : undefined}
         onSuccess={() => forceUpdate(n => n + 1)}
       />
     );

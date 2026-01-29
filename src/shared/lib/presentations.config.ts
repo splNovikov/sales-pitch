@@ -179,9 +179,9 @@ export interface PresentationMeta {
    */
   showOnVisibility?: boolean;
   /**
-   * Whether this presentation requires login (shows hardcoded login form)
+   * Base64 of "login:password" for protected presentation; when set, login form is shown
    */
-  requiresAuth?: boolean;
+  authCredentialsB64?: string;
 }
 
 /**
@@ -292,7 +292,7 @@ export const presentations: PresentationMeta[] = [
     createdAt: tatneftKpCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
-    requiresAuth: true,
+    authCredentialsB64: 'YWRtaW46dGF0bmVmdDIwMjU=',
   },
   {
     slug: 'solaris-union',
