@@ -48,6 +48,7 @@ import {
 import { networkdevicesSlides } from '~features/networkdevices/slides';
 import { asLedSlides } from '~features/as-led/slides';
 import { huchEntecSlides } from '~features/huch-entec/slides';
+import { megawattSlides } from '~features/megawatt/slides';
 import {
   getPresentationBySlug,
   presentationSlugs,
@@ -100,6 +101,7 @@ const slidesMap: Record<string, SlideData[]> = {
   networkdevices: networkdevicesSlides,
   'as-led': asLedSlides,
   'huch-entec': huchEntecSlides,
+  megawatt: megawattSlides,
 };
 
 /**

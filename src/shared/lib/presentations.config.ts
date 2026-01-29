@@ -149,6 +149,10 @@ import {
   huchEntecCreatedAt,
   huchEntecTitle,
 } from '~features/huch-entec/slides/huch-entec.meta';
+import {
+  megawattCreatedAt,
+  megawattTitle,
+} from '~features/megawatt/slides/megawatt.meta';
 
 /**
  * Presentation metadata
@@ -466,6 +470,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'huch-entec',
     title: huchEntecTitle,
     createdAt: huchEntecCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'megawatt',
+    title: megawattTitle,
+    createdAt: megawattCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
