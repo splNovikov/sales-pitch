@@ -1,16 +1,5 @@
-import {
-  Typography,
-  List,
-  Space,
-  Card,
-  Row,
-  Col,
-} from 'antd';
-import {
-  CheckCircleOutlined,
-  DollarOutlined,
-  RocketOutlined,
-} from '@ant-design/icons';
+import { Typography, List, Space, Card, Row, Col, Divider } from 'antd';
+import { CheckCircleOutlined } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
@@ -85,7 +74,7 @@ export const megawattSlides: SlideData[] = [
     content: (
       <SectionTitleSlide
         title="Варианты стоимости"
-        subtitle="Три пакета на выбор — под ключ"
+        subtitle="Три варианта на выбор — под ключ"
         imageIndex={2}
         imageAlt="Варианты стоимости"
       />
@@ -93,81 +82,189 @@ export const megawattSlides: SlideData[] = [
   },
   {
     id: 'pricing-tiers',
-    header: 'Тарифы',
+    header: 'Стоимость',
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Row gutter={[24, 24]}>
+        <Row gutter={[24, 24]} align="stretch">
           <Col xs={24} md={8}>
-            <Card style={{ height: '100%', backgroundColor: '#e6f7ff' }}>
-              <Title level={4} style={{ marginTop: 0 }}>
-                <DollarOutlined style={{ color: '#1890ff', marginRight: 8 }} />
-                Пакет 1
-              </Title>
-              <Paragraph style={{ fontSize: 'var(--app-font-size-xl)', marginBottom: 16 }}>
-                <Text strong>100 000 ₽</Text>
-              </Paragraph>
-              <List
+            <Card
+              style={{
+                height: '100%',
+                backgroundColor: '#ffffff',
+              }}
+            >
+              <Space
+                direction="vertical"
                 size="small"
-                dataSource={['Базовый набор опций', 'Сайт под ключ']}
-                renderItem={item => (
-                  <List.Item style={{ padding: '4px 0' }}>
-                    <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
-                    <Text>{item}</Text>
-                  </List.Item>
-                )}
-              />
+                style={{ width: '100%' }}
+              >
+                <Title
+                  level={4}
+                  style={{ marginTop: 0, marginBottom: 4, color: '#595959' }}
+                >
+                  Вариант 1 — 100&nbsp;000&nbsp;₽
+                </Title>
+                <Text
+                  type="secondary"
+                  style={{ fontSize: 'var(--app-font-size-sm)' }}
+                >
+                  Главная страница по макету, доведение до production и базовая
+                  настройка.
+                </Text>
+                <List
+                  size="small"
+                  style={{ textAlign: 'left', margin: '12px 0 0' }}
+                  dataSource={[
+                    'Главная страница в стиле макета',
+                    'Адаптивная вёрстка',
+                    'Базовая оптимизация под SEO',
+                    'Сдача проекта под ключ',
+                  ]}
+                  renderItem={item => (
+                    <List.Item
+                      style={{
+                        padding: '4px 0',
+                        border: 'none',
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                      }}
+                    >
+                      <CheckCircleOutlined
+                        style={{ color: '#52c41a', marginRight: 8 }}
+                      />
+                      <Text>{item}</Text>
+                    </List.Item>
+                  )}
+                />
+              </Space>
             </Card>
           </Col>
           <Col xs={24} md={8}>
-            <Card style={{ height: '100%', backgroundColor: '#f6ffed' }}>
-              <Title level={4} style={{ marginTop: 0 }}>
-                <RocketOutlined style={{ color: '#52c41a', marginRight: 8 }} />
-                Пакет 2
-              </Title>
-              <Paragraph style={{ fontSize: 'var(--app-font-size-xl)', marginBottom: 16 }}>
-                <Text strong>120 000 ₽</Text>
-              </Paragraph>
-              <List
+            <Card
+              style={{
+                height: '100%',
+                backgroundColor: '#e6f7ff',
+              }}
+            >
+              <Space
+                direction="vertical"
                 size="small"
-                dataSource={['Расширенный функционал', 'Сайт под ключ']}
-                renderItem={item => (
-                  <List.Item style={{ padding: '4px 0' }}>
-                    <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
-                    <Text>{item}</Text>
-                  </List.Item>
-                )}
-              />
+                style={{ width: '100%' }}
+              >
+                <Text strong type="secondary" style={{ fontSize: 12 }}>
+                  ПРИОРИТЕТНЫЙ ВАРИАНТ
+                </Text>
+                <Title
+                  level={4}
+                  style={{ marginTop: 0, marginBottom: 4, color: '#1890ff' }}
+                >
+                  Вариант 2 — 120&nbsp;000&nbsp;₽
+                </Title>
+                <Text
+                  type="secondary"
+                  style={{ fontSize: 'var(--app-font-size-sm)' }}
+                >
+                  Всё из первого варианта плюс дополнительные страницы и формы
+                  по вашим пожеланиям.
+                </Text>
+                <List
+                  size="small"
+                  style={{ textAlign: 'left', margin: '12px 0 0' }}
+                  dataSource={[
+                    'Всё из варианта 1',
+                    'Частичное обновление дизайна по пожеланиям',
+                    'Детальные страницы (каталог, услуги)',
+                    'Страница контактов',
+                    'Формы обратной связи',
+                  ]}
+                  renderItem={item => (
+                    <List.Item
+                      style={{
+                        padding: '4px 0',
+                        border: 'none',
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                      }}
+                    >
+                      <CheckCircleOutlined
+                        style={{ color: '#1890ff', marginRight: 8 }}
+                      />
+                      <Text>{item}</Text>
+                    </List.Item>
+                  )}
+                />
+              </Space>
             </Card>
           </Col>
           <Col xs={24} md={8}>
-            <Card style={{ height: '100%', backgroundColor: '#fff7e6' }}>
-              <Title level={4} style={{ marginTop: 0 }}>
-                <DollarOutlined style={{ color: '#faad14', marginRight: 8 }} />
-                Пакет 3
-              </Title>
-              <Paragraph style={{ fontSize: 'var(--app-font-size-xl)', marginBottom: 16 }}>
-                <Text strong>150 000 ₽</Text>
-              </Paragraph>
-              <List
+            <Card
+              style={{
+                height: '100%',
+                backgroundColor: '#ffffff',
+              }}
+            >
+              <Space
+                direction="vertical"
                 size="small"
-                dataSource={['Максимальный набор', 'Сайт под ключ']}
-                renderItem={item => (
-                  <List.Item style={{ padding: '4px 0' }}>
-                    <CheckCircleOutlined style={{ color: '#52c41a', marginRight: 8 }} />
-                    <Text>{item}</Text>
-                  </List.Item>
-                )}
-              />
+                style={{ width: '100%' }}
+              >
+                <Title
+                  level={4}
+                  style={{ marginTop: 0, marginBottom: 4, color: '#595959' }}
+                >
+                  Вариант 3 — 150&nbsp;000&nbsp;₽
+                </Title>
+                <Text
+                  type="secondary"
+                  style={{ fontSize: 'var(--app-font-size-sm)' }}
+                >
+                  Максимальный набор: всё из второго варианта плюс расширенный
+                  функционал и возможность управлять контентом.
+                </Text>
+                <List
+                  size="small"
+                  style={{ textAlign: 'left', margin: '12px 0 0' }}
+                  dataSource={[
+                    'Всё из варианта 2',
+                    'Расширенный функционал и разделы',
+                    'Интеграция с CMS для управления контентом',
+                    'Независимость от разработчиков в правках текстов и материалов',
+                    'Готовность к дальнейшему развитию сайта',
+                  ]}
+                  renderItem={item => (
+                    <List.Item
+                      style={{
+                        padding: '4px 0',
+                        border: 'none',
+                        display: 'flex',
+                        justifyContent: 'flex-start',
+                      }}
+                    >
+                      <CheckCircleOutlined
+                        style={{ color: '#52c41a', marginRight: 8 }}
+                      />
+                      <Text>{item}</Text>
+                    </List.Item>
+                  )}
+                />
+              </Space>
             </Card>
           </Col>
         </Row>
-        <Card style={{ backgroundColor: '#f6ffed' }}>
-          <Paragraph style={{ marginBottom: 0 }}>
-            <Text strong>Все пакеты включают:</Text> вёрстку по макету, наполнение
-            контентом, базовую настройку и сдачу проекта под ключ. Детали
-            уточняются индивидуально.
-          </Paragraph>
-        </Card>
+
+        <Divider />
+        <Paragraph
+          style={{
+            marginBottom: 0,
+            fontSize: 'var(--app-font-size-md)',
+            color: '#595959',
+          }}
+        >
+          <Text>
+            Готовы обсудить детали и ответить на все вопросы. Свяжитесь с нами
+            для уточнения сроков и условий работы.
+          </Text>
+        </Paragraph>
       </Space>
     ),
   },
