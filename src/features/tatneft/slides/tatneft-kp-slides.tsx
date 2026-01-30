@@ -9,6 +9,9 @@ import { tatneftKpCreatedAt } from './tatneft-kp.meta';
 import ganttImage from './gantt.png';
 import tatneftLogo from './Tatneft-Logo.png';
 import black_list_tatn from './black_list_tatn.jpeg';
+import highLevelDiagram from './diagrams/high-level.svg';
+import dataLakeDiagram from './diagrams/data_lake.svg';
+import subSystemDiagram from './diagrams/sub-system.svg';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -436,14 +439,16 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Card>
-          <Paragraph style={{ marginBottom: 8 }}>
-            Схема взаимодействия трёх компонентов: хранилище данных, подсистема
-            раннего предупреждения, интерфейс оператора.
-          </Paragraph>
-          <Paragraph type="secondary">
-            TODO: добавить иллюстрацию схемы.
-          </Paragraph>
+          <img
+            src={highLevelDiagram}
+            alt="Общая схема взаимодействия компонентов"
+            style={{ width: '100%', height: 'auto', maxHeight: 500, display: 'block', objectFit: 'contain' }}
+          />
         </Card>
+        <Paragraph style={{ marginTop: 16, marginBottom: 0, textAlign: 'center' }}>
+          Схема взаимодействия трёх компонентов: хранилище данных, подсистема
+          раннего предупреждения, интерфейс оператора.
+        </Paragraph>
       </ConstrainedContent>
     ),
   },
@@ -662,10 +667,15 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Card>
-          <Paragraph type="secondary">
-            TODO: добавить картинку схемы Data Lake (источники, ETL, хранилище).
-          </Paragraph>
+          <img
+            src={dataLakeDiagram}
+            alt="Data Lake: схема"
+            style={{ width: '100%', height: 'auto', maxHeight: 500, display: 'block', objectFit: 'contain' }}
+          />
         </Card>
+        <Paragraph style={{ marginTop: 16, marginBottom: 0, textAlign: 'center' }}>
+          Схема Data Lake: источники данных, ETL, хранилище.
+        </Paragraph>
       </ConstrainedContent>
     ),
   },
@@ -923,11 +933,15 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Card>
-          <Paragraph type="secondary">
-            TODO: добавить картинку схемы подсистемы (данные из Data Lake,
-            алгоритмы, выход в UI).
-          </Paragraph>
+          <img
+            src={subSystemDiagram}
+            alt="Подсистема предупреждений: схема"
+            style={{ width: '100%', height: 'auto', maxHeight: 500, display: 'block', objectFit: 'contain' }}
+          />
         </Card>
+        <Paragraph style={{ marginTop: 16, marginBottom: 0, textAlign: 'center' }}>
+          Схема подсистемы: данные из Data Lake, алгоритмы, выход в UI.
+        </Paragraph>
       </ConstrainedContent>
     ),
   },
@@ -1304,20 +1318,7 @@ export const tatneftKpSlides: SlideData[] = [
       </ConstrainedContent>
     ),
   },
-  {
-    id: 'impl-ui-scheme',
-    header: 'Интерфейс оператора: схема',
-    content: (
-      <ConstrainedContent>
-        <Card>
-          <Paragraph type="secondary">
-            TODO: добавить картинку схемы интерфейса (экраны, роли, связь с
-            подсистемой).
-          </Paragraph>
-        </Card>
-      </ConstrainedContent>
-    ),
-  },
+
   {
     id: 'impl-ui-phases',
     header: 'Интерфейс оператора: фазы реализации',
