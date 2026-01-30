@@ -356,11 +356,69 @@ export const tatneftKpSlides: SlideData[] = [
                 сигналов
               </List.Item>
               <List.Item>
-                Рекомендации по корректирующим действиям для операторов
+                Подготовка к рекомендациям по корректирующим действиям (после
+                этапа сбора обратной связи)
               </List.Item>
               <List.Item>
                 Режим опережающего реагирования вместо реактивного разбора после
                 инцидента
+              </List.Item>
+            </List>
+            <Paragraph type="secondary" style={{ marginTop: 12, marginBottom: 0 }}>
+              Предлагаемое решение не включает в текущей версии рекомендации по
+              корректирующим действиям оператору: необходим этап сбора обратной
+              связи от операторов в ходе работы внедрённой системы.
+            </Paragraph>
+          </Card>
+        </Space>
+      </ConstrainedContent>
+    ),
+  },
+
+  // Объекты мониторинга: ДНС и данные (после Потребность — для понимания рамок КП)
+  {
+    id: 'problem-dns-context',
+    header: 'Объекты мониторинга: ДНС и данные',
+    content: (
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Исходные допущения (ДНС)
+            </Title>
+            <Paragraph style={{ marginBottom: 8 }}>
+              В рамках настоящего КП мы исходим из следующих допущений. На их базе
+              строится расчёт и структура коммерческого предложения.
+            </Paragraph>
+            <List size="small">
+              <List.Item>
+                В рамках КП принимаем: ДНС — ключевой и наиболее многочисленный
+                объект мониторинга для целей настоящего предложения.
+              </List.Item>
+              <List.Item>
+                Оценочный масштаб для расчётов: порядка тысяч единиц ДНС.
+              </List.Item>
+            </List>
+          </Card>
+          <Card>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Текущее состояние данных
+            </Title>
+            <List size="small">
+              <List.Item>
+                Данные с ДНС поступают по разным каналам с разной периодичностью.
+              </List.Item>
+              <List.Item>
+                Данные по ДНС распределены по разным системам хранения и обработки данных.
+              </List.Item>
+              <List.Item>
+                Данные по ДНС разделяются на мгновенные (текущие) и архивные.
+              </List.Item>
+              <List.Item>
+                Данных по ДНС много и они обновляются часто; на данный момент глубина архива исторических данных не более 2 месяцев.
+              </List.Item>
+              <List.Item>
+                Нет единого места хранения и агрегации данных, что значительно усложняет их анализ и обработку.
               </List.Item>
             </List>
           </Card>
@@ -453,6 +511,37 @@ export const tatneftKpSlides: SlideData[] = [
     ),
   },
 
+  {
+    id: 'solution-scalability-scope',
+    header: 'Масштабируемость и область применения',
+    content: (
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Масштабируемость архитектуры
+            </Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Архитектура разрабатываемой системы готова к расширению как
+              количества объектов, так и к добавлению новых типов объектов.
+            </Paragraph>
+          </Card>
+          <Card>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Область текущего КП
+            </Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Текущее КП направлено на внедрение только ДНС. Добавление и
+              внедрение других типов объектов в дальнейшем будет значительно
+              проще за счёт созданного фундамента, методик и практик,
+              разработанных при выполнении текущего решения.
+            </Paragraph>
+          </Card>
+        </Space>
+      </ConstrainedContent>
+    ),
+  },
+
   // === Секция: Реализация ===
   {
     id: 'implementation-section',
@@ -518,6 +607,30 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'impl-preparatory-phases',
     header: 'Подготовительная фаза: этапы',
     content: <Roadmap items={preparatoryPhases} maxWidth={1200} />,
+  },
+  {
+    id: 'impl-data-lake-grouping',
+    header: 'Группировка объектов мониторинга (ДНС)',
+    content: (
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Весь объём ДНС делим на 3 группы
+            </Title>
+            <List size="small">
+              <List.Item>Тестовая группа — сотни ДНС.</List.Item>
+              <List.Item>Первая половина всего множества ДНС.</List.Item>
+              <List.Item>Вторая половина всего множества ДНС.</List.Item>
+            </List>
+            <Paragraph type="secondary" style={{ marginTop: 12, marginBottom: 0 }}>
+              По результатам анализа возможны подгруппы ДНС на основании типа,
+              географической близости и других параметров.
+            </Paragraph>
+          </Card>
+        </Space>
+      </ConstrainedContent>
+    ),
   },
   {
     id: 'impl-preparatory-roles-cost',
@@ -624,9 +737,10 @@ export const tatneftKpSlides: SlideData[] = [
               Почему этот компонент необходим
             </Title>
             <Paragraph style={{ marginBottom: 0 }}>
-              Data Lake является необходимым фундаментом решения: без единого
+              Data Lake является необходимым фундаментом решения. Data Lake —
+              фундамент любой современной аналитической подсистемы: без единого
               хранилища телеметрии и сведений об инцидентах невозможна работа
-              алгоритмов раннего предупреждения и своевременное реагирование
+              алгоритмов раннего предупреждения и своевременное реагирование.
             </Paragraph>
           </Card>
           <Card>
