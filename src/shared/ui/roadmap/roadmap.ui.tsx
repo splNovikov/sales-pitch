@@ -95,7 +95,7 @@ export function Roadmap({
             <Timeline.Item
               key={index}
               dot={item.icon}
-              color={isCompleted ? 'gray' : (item.color || 'blue')}
+              color={isCompleted ? 'gray' : item.color || 'blue'}
             >
               <Card
                 size="small"
@@ -118,38 +118,49 @@ export function Roadmap({
                     </Text>
                     <Space wrap>
                       {item.duration && (
-                        <Tag color={isCompleted ? 'default' : (item.color || 'blue')}>
+                        <Tag
+                          color={isCompleted ? 'default' : item.color || 'blue'}
+                        >
                           {item.duration}
                         </Tag>
                       )}
                       {item.status && <Tag color="default">{item.status}</Tag>}
                     </Space>
                   </Space>
-                {item.description && (
-                  <Text type="secondary" style={{ fontSize: '14px' }}>
-                    {item.description}
-                  </Text>
-                )}
-                {item.subSteps && item.subSteps.length > 0 && (
-                  <ul className={styles.subStepsList}>
-                    {item.subSteps.map((sub, i) => (
-                      <li key={i} className={styles.subStepItem}>
-                        <span className={styles.subStepTitle}>{sub.title}</span>
-                        {(sub.start || sub.end || sub.result) && (
-                          <span className={styles.subStepMeta}>
-                            {(sub.start || sub.end) && (
-                              <> ({[sub.start, sub.end].filter(Boolean).join(' – ')})</>
-                            )}
-                            {sub.result && <> → {sub.result}</>}
+                  {item.description && (
+                    <Text type="secondary" style={{ fontSize: '14px' }}>
+                      {item.description}
+                    </Text>
+                  )}
+                  {item.subSteps && item.subSteps.length > 0 && (
+                    <ul className={styles.subStepsList}>
+                      {item.subSteps.map((sub, i) => (
+                        <li key={i} className={styles.subStepItem}>
+                          <span className={styles.subStepTitle}>
+                            {sub.title}
                           </span>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </Space>
-            </Card>
-          </Timeline.Item>
+                          {(sub.start || sub.end || sub.result) && (
+                            <span className={styles.subStepMeta}>
+                              {(sub.start || sub.end) && (
+                                <>
+                                  {' '}
+                                  (
+                                  {[sub.start, sub.end]
+                                    .filter(Boolean)
+                                    .join(' – ')}
+                                  )
+                                </>
+                              )}
+                              {sub.result && <> → {sub.result}</>}
+                            </span>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </Space>
+              </Card>
+            </Timeline.Item>
           );
         })}
       </Timeline>
@@ -158,9 +169,7 @@ export function Roadmap({
 
   if (maxWidth != null) {
     return (
-      <div style={{ maxWidth, margin: '0 auto', width: '100%' }}>
-        {content}
-      </div>
+      <div style={{ maxWidth, margin: '0 auto', width: '100%' }}>{content}</div>
     );
   }
   return content;

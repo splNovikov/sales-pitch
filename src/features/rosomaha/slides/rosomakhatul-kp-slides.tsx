@@ -22,7 +22,7 @@ import demoAccount from './rosomaha-account.png';
 import demoCatalog from './rosomaha-catalog.png';
 import demoProduct from './rosomaha-product.png';
 import demoOrders from './rosomaha-orders.png';
-import {ContactsSlide} from "~shared/ui/contacts-slide";
+import { ContactsSlide } from '~shared/ui/contacts-slide';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -175,7 +175,6 @@ export const rosomakhatulKpSlides: SlideData[] = [
                 <CheckCircleOutlined style={{ color: '#52c41a' }} /> Быстрый
                 повторный заказ одним кликом
               </List.Item>
-
             </List>
           </Card>
         </Col>
@@ -183,7 +182,8 @@ export const rosomakhatulKpSlides: SlideData[] = [
           <Card style={{ backgroundColor: '#fff7e6' }}>
             <Title level={5}>Оформление заказа</Title>
             <Paragraph style={{ marginBottom: 0 }}>
-              📧 Заказ попадает на почту. Клиент видит статус обработки в личном кабинете.
+              📧 Заказ попадает на почту. Клиент видит статус обработки в личном
+              кабинете.
             </Paragraph>
           </Card>
         </Col>
@@ -321,7 +321,8 @@ export const rosomakhatulKpSlides: SlideData[] = [
                   Персональный менеджер
                 </Title>
                 <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
-                  К каждому зарегистрированному пользователю закреплён персональный менеджер
+                  К каждому зарегистрированному пользователю закреплён
+                  персональный менеджер
                 </Text>
               </Card>
             </Space>
@@ -583,8 +584,8 @@ export const rosomakhatulKpSlides: SlideData[] = [
                   Скачивание счетов
                 </Title>
                 <Text style={{ fontSize: 'var(--app-font-size-sm)' }}>
-                  Скачивание счетов, накладных, актов и других
-                  документов по заказам в различных форматах
+                  Скачивание счетов, накладных, актов и других документов по
+                  заказам в различных форматах
                 </Text>
               </Card>
             </Space>

@@ -127,11 +127,7 @@ export default function SlidesPage() {
 
   const isAuthenticated = isPresentationAuthenticated(slug);
 
-  if (
-    presentation &&
-    presentation.authCredentialsB64 &&
-    !isAuthenticated
-  ) {
+  if (presentation && presentation.authCredentialsB64 && !isAuthenticated) {
     return (
       <PresentationLoginForm
         slug={slug}

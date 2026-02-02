@@ -47,7 +47,10 @@ export function TodoCard({
           }}
         />
         <div style={{ flex: 1, minWidth: 0 }}>
-          <Title level={5} style={{ marginTop: 0, marginBottom: description ? 8 : 0 }}>
+          <Title
+            level={5}
+            style={{ marginTop: 0, marginBottom: description ? 8 : 0 }}
+          >
             todo: {title}
           </Title>
           {description != null &&

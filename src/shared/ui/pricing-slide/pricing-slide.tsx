@@ -1,7 +1,11 @@
 import { useMemo, type ReactNode } from 'react';
 import { Card, Row, Col } from 'antd';
 import clsx from 'clsx';
-import { FeatureCard, type FeatureCardEmoji, type FeatureCardIconColor } from '~shared/ui/feature-card';
+import {
+  FeatureCard,
+  type FeatureCardEmoji,
+  type FeatureCardIconColor,
+} from '~shared/ui/feature-card';
 import styles from './pricing-slide.module.css';
 
 export interface PricingTier {
@@ -135,7 +139,10 @@ export function PricingSlide({
               footer={tier.footer}
               animated={animated}
               animationDelay={animated ? index * baseAnimationDelay : 0}
-              className={clsx(styles.cardWrapper, tier.highlighted && styles.highlighted)}
+              className={clsx(
+                styles.cardWrapper,
+                tier.highlighted && styles.highlighted
+              )}
             />
           </Col>
         );

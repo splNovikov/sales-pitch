@@ -58,7 +58,8 @@ export const asLedSlides: SlideData[] = [
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LinkOutlined /> https://ekranika.ru/montazh-svetodiodnykh-ekranov/
+              <LinkOutlined />{' '}
+              https://ekranika.ru/montazh-svetodiodnykh-ekranov/
             </Link>
           </Space>
         </Card>
@@ -102,7 +103,13 @@ export const asLedSlides: SlideData[] = [
                 '❌ Не показывает реальную ценность',
               ],
               footer: (
-                <div style={{ marginTop: 12, paddingTop: 12, borderTop: '1px solid #f0f0f0' }}>
+                <div
+                  style={{
+                    marginTop: 12,
+                    paddingTop: 12,
+                    borderTop: '1px solid #f0f0f0',
+                  }}
+                >
                   <Text strong>Оценка: </Text>
                   <Text type="warning" strong style={{ fontSize: 16 }}>
                     ⭐ 2/5
@@ -132,7 +139,11 @@ export const asLedSlides: SlideData[] = [
             <Title level={4} style={{ margin: 0 }}>
               Обзор веб-ресурса
             </Title>
-            <Link href="https://apex-led.ru/o-nas/" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://apex-led.ru/o-nas/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <LinkOutlined /> https://apex-led.ru/o-nas/
             </Link>
           </Space>
@@ -177,7 +188,13 @@ export const asLedSlides: SlideData[] = [
                 '❌ Не продает, а только информирует',
               ],
               footer: (
-                <div style={{ marginTop: 12, paddingTop: 12, borderTop: '1px solid #f0f0f0' }}>
+                <div
+                  style={{
+                    marginTop: 12,
+                    paddingTop: 12,
+                    borderTop: '1px solid #f0f0f0',
+                  }}
+                >
                   <Text strong>Оценка: </Text>
                   <Text type="danger" strong style={{ fontSize: 16 }}>
                     ⭐ 1.5/5
@@ -212,7 +229,8 @@ export const asLedSlides: SlideData[] = [
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LinkOutlined /> https://indikotrade.ru/services/ustanovka-videoekranov/
+              <LinkOutlined />{' '}
+              https://indikotrade.ru/services/ustanovka-videoekranov/
             </Link>
           </Space>
         </Card>
@@ -255,7 +273,13 @@ export const asLedSlides: SlideData[] = [
                 '❌ Длительный процесс продаж',
               ],
               footer: (
-                <div style={{ marginTop: 12, paddingTop: 12, borderTop: '1px solid #f0f0f0' }}>
+                <div
+                  style={{
+                    marginTop: 12,
+                    paddingTop: 12,
+                    borderTop: '1px solid #f0f0f0',
+                  }}
+                >
                   <Text strong>Оценка: </Text>
                   <Text type="warning" strong style={{ fontSize: 16 }}>
                     ⭐ 3/5
@@ -372,7 +396,7 @@ export const asLedSlides: SlideData[] = [
               dataIndex: 'criterion',
               key: 'criterion',
               width: '25%',
-              render: (text) => <Text strong>{text}</Text>,
+              render: text => <Text strong>{text}</Text>,
             },
             {
               title: 'EKRANIKA',
@@ -498,7 +522,8 @@ export const asLedSlides: SlideData[] = [
         cards={[
           {
             title: 'Вся информация онлайн',
-            subtitle: 'Конкуренты: нужно звонить и спрашивать. Мы: вся информация доступна на сайте.',
+            subtitle:
+              'Конкуренты: нужно звонить и спрашивать. Мы: вся информация доступна на сайте.',
             items: [
               '❌ Конкуренты: "Позвоните, мы вам расскажем"',
               '✅ Мы: детальные характеристики, цены, кейсы',
@@ -510,7 +535,8 @@ export const asLedSlides: SlideData[] = [
           },
           {
             title: 'Современный UX/UI',
-            subtitle: 'Профессиональный дизайн создает доверие и улучшает конверсию.',
+            subtitle:
+              'Профессиональный дизайн создает доверие и улучшает конверсию.',
             items: [
               '❌ Конкуренты: устаревший дизайн, плохая навигация',
               '✅ Мы: современный интерфейс и типографика',
@@ -522,7 +548,8 @@ export const asLedSlides: SlideData[] = [
           },
           {
             title: 'Интерактивные инструменты',
-            subtitle: 'Калькуляторы, формы, онлайн-чат — все для удобства клиента.',
+            subtitle:
+              'Калькуляторы, формы, онлайн-чат — все для удобства клиента.',
             items: [
               '❌ Конкуренты: статичные сайты без взаимодействия',
               '✅ Мы: калькулятор стоимости, быстрые формы',
@@ -534,7 +561,8 @@ export const asLedSlides: SlideData[] = [
           },
           {
             title: 'Доверие и конверсия',
-            subtitle: 'Качественный лендинг повышает доверие и увеличивает заявки.',
+            subtitle:
+              'Качественный лендинг повышает доверие и увеличивает заявки.',
             items: [
               '❌ Конкуренты: низкое доверие из-за плохого сайта',
               '✅ Мы: профессиональный вид = серьезная компания',
@@ -561,16 +589,23 @@ export const asLedSlides: SlideData[] = [
               <Card
                 size="small"
                 style={{
-                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                  background:
+                    'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                   color: 'white',
                   border: 'none',
                 }}
               >
-                <Space direction="vertical" size="middle" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="middle"
+                  style={{ width: '100%' }}
+                >
                   <Title level={4} style={{ color: 'white', margin: 0 }}>
                     Лендинги конкурентов
                   </Title>
-                  <Paragraph style={{ color: 'white', margin: 0, fontSize: 16 }}>
+                  <Paragraph
+                    style={{ color: 'white', margin: 0, fontSize: 16 }}
+                  >
                     Типичные проблемы:
                   </Paragraph>
                   <Card
@@ -586,19 +621,29 @@ export const asLedSlides: SlideData[] = [
                   </Card>
                   <ul style={{ margin: 0, paddingLeft: 20, color: 'white' }}>
                     <li>
-                      <Text style={{ color: 'white' }}>❌ Устаревший дизайн и структура</Text>
+                      <Text style={{ color: 'white' }}>
+                        ❌ Устаревший дизайн и структура
+                      </Text>
                     </li>
                     <li>
-                      <Text style={{ color: 'white' }}>❌ Минимум информации о продуктах</Text>
+                      <Text style={{ color: 'white' }}>
+                        ❌ Минимум информации о продуктах
+                      </Text>
                     </li>
                     <li>
-                      <Text style={{ color: 'white' }}>❌ Нет интерактивных элементов</Text>
+                      <Text style={{ color: 'white' }}>
+                        ❌ Нет интерактивных элементов
+                      </Text>
                     </li>
                     <li>
-                      <Text style={{ color: 'white' }}>❌ Плохая мобильная адаптация</Text>
+                      <Text style={{ color: 'white' }}>
+                        ❌ Плохая мобильная адаптация
+                      </Text>
                     </li>
                     <li>
-                      <Text style={{ color: 'white' }}>❌ Нужно звонить для получения информации</Text>
+                      <Text style={{ color: 'white' }}>
+                        ❌ Нужно звонить для получения информации
+                      </Text>
                     </li>
                   </ul>
                 </Space>
@@ -608,16 +653,23 @@ export const asLedSlides: SlideData[] = [
               <Card
                 size="small"
                 style={{
-                  background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                  background:
+                    'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
                   color: 'white',
                   border: 'none',
                 }}
               >
-                <Space direction="vertical" size="middle" style={{ width: '100%' }}>
+                <Space
+                  direction="vertical"
+                  size="middle"
+                  style={{ width: '100%' }}
+                >
                   <Title level={4} style={{ color: 'white', margin: 0 }}>
                     Лендинг AS-LED
                   </Title>
-                  <Paragraph style={{ color: 'white', margin: 0, fontSize: 16 }}>
+                  <Paragraph
+                    style={{ color: 'white', margin: 0, fontSize: 16 }}
+                  >
                     Наши преимущества:
                   </Paragraph>
                   <Card
@@ -633,19 +685,29 @@ export const asLedSlides: SlideData[] = [
                   </Card>
                   <ul style={{ margin: 0, paddingLeft: 20, color: 'white' }}>
                     <li>
-                      <Text style={{ color: 'white' }}>✅ Современный UX/UI дизайн</Text>
+                      <Text style={{ color: 'white' }}>
+                        ✅ Современный UX/UI дизайн
+                      </Text>
                     </li>
                     <li>
-                      <Text style={{ color: 'white' }}>✅ Детальная информация о продуктах</Text>
+                      <Text style={{ color: 'white' }}>
+                        ✅ Детальная информация о продуктах
+                      </Text>
                     </li>
                     <li>
-                      <Text style={{ color: 'white' }}>✅ Калькуляторы, формы, онлайн-чат</Text>
+                      <Text style={{ color: 'white' }}>
+                        ✅ Калькуляторы, формы, онлайн-чат
+                      </Text>
                     </li>
                     <li>
-                      <Text style={{ color: 'white' }}>✅ Отличная мобильная адаптация</Text>
+                      <Text style={{ color: 'white' }}>
+                        ✅ Отличная мобильная адаптация
+                      </Text>
                     </li>
                     <li>
-                      <Text style={{ color: 'white' }}>✅ Вся информация доступна онлайн</Text>
+                      <Text style={{ color: 'white' }}>
+                        ✅ Вся информация доступна онлайн
+                      </Text>
                     </li>
                   </ul>
                 </Space>
@@ -659,9 +721,17 @@ export const asLedSlides: SlideData[] = [
             <Title level={3} style={{ margin: 0 }}>
               Качество лендинга = качество компании
             </Title>
-            <Paragraph style={{ fontSize: 18, textAlign: 'center', maxWidth: 800, margin: '16px 0 0 0' }}>
-              Современный лендинг показывает, что компания идет в ногу со временем. Клиенты доверяют компаниям с
-              профессиональным веб-сайтом и получают информацию быстрее.
+            <Paragraph
+              style={{
+                fontSize: 18,
+                textAlign: 'center',
+                maxWidth: 800,
+                margin: '16px 0 0 0',
+              }}
+            >
+              Современный лендинг показывает, что компания идет в ногу со
+              временем. Клиенты доверяют компаниям с профессиональным веб-сайтом
+              и получают информацию быстрее.
             </Paragraph>
           </Space>
         </Card>
@@ -670,7 +740,6 @@ export const asLedSlides: SlideData[] = [
   },
 
   // 12. DELETED
-
 
   // 13. Demo Slide
   {

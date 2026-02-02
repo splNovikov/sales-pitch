@@ -16,7 +16,7 @@ const TTL_MS = 24 * 60 * 60 * 1000;
 function simpleHash(str: string): string {
   let h = 5381;
   for (let i = 0; i < str.length; i++) {
-    h = ((h << 5) + h) + str.charCodeAt(i);
+    h = (h << 5) + h + str.charCodeAt(i);
   }
   return (h >>> 0).toString(36);
 }
@@ -77,15 +77,12 @@ export function PresentationLoginForm({
 
   const handleFinish = (values: { username: string; password: string }) => {
     setError(null);
-    const decoded =
-      typeof atob !== 'undefined' ? atob(credentialsB64) : '';
+    const decoded = typeof atob !== 'undefined' ? atob(credentialsB64) : '';
     const colonIndex = decoded.indexOf(':');
-    const expectedUser = colonIndex === -1 ? decoded : decoded.slice(0, colonIndex);
+    const expectedUser =
+      colonIndex === -1 ? decoded : decoded.slice(0, colonIndex);
     const expectedPass = colonIndex === -1 ? '' : decoded.slice(colonIndex + 1);
-    if (
-      values.username === expectedUser &&
-      values.password === expectedPass
-    ) {
+    if (values.username === expectedUser && values.password === expectedPass) {
       setPresentationAuthenticated(slug);
       onSuccess();
     } else {
@@ -107,7 +104,11 @@ export function PresentationLoginForm({
             label="Логин"
             rules={[{ required: true, message: 'Введите логин' }]}
           >
-            <Input prefix={<UserOutlined />} placeholder="Логин" autoComplete="username" />
+            <Input
+              prefix={<UserOutlined />}
+              placeholder="Логин"
+              autoComplete="username"
+            />
           </Form.Item>
           <Form.Item
             name="password"

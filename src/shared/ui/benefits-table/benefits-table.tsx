@@ -72,7 +72,7 @@ export function BenefitsTable({
           dataIndex: 'result',
           key: 'result',
           width: resultWidth,
-          render: (text) => <Text strong>{text}</Text>,
+          render: text => <Text strong>{text}</Text>,
         },
       ]}
       pagination={false}

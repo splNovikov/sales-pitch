@@ -691,11 +691,7 @@ export const rosomahaB2BPortfolioSlides: SlideData[] = [
     id: 'contacts-title',
     header: undefined,
     content: (
-      <SectionTitleSlide
-        title="Контакты"
-        imageIndex={5}
-        imageAlt="Контакты"
-      />
+      <SectionTitleSlide title="Контакты" imageIndex={5} imageAlt="Контакты" />
     ),
   },
   {

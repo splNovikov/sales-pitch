@@ -310,10 +310,7 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <TodoCard
-            title="Проверить данные"
-            status="done"
-          />
+          <TodoCard title="Проверить данные" status="done" />
           <Card>
             <Paragraph style={{ marginBottom: 0 }}>
               За период 04–10.08.2025 в разрезе НГДУ наибольшее количество
@@ -340,7 +337,6 @@ export const tatneftKpSlides: SlideData[] = [
                 <Text strong>ГЗУ, БГ:</Text> обрыв связи 46%, отклонения по
                 давлению 38%, прочие 13%, сработки ПОС 3%.
               </List.Item>
-
             </List>
           </Card>
           <Card>
@@ -350,13 +346,17 @@ export const tatneftKpSlides: SlideData[] = [
             <Row gutter={24}>
               <Col xs={24} md={12}>
                 <List size="small">
-                  <List.Item>Изменение объёмов перекачиваемой жидкости</List.Item>
+                  <List.Item>
+                    Изменение объёмов перекачиваемой жидкости
+                  </List.Item>
                   <List.Item>
                     Неверное определение значений сигнализаций при формировании
                     перечней блокировок и сигнализаций
                   </List.Item>
                   <List.Item>Износ оборудования</List.Item>
-                  <List.Item>Снижение проходного сечения трубопроводов</List.Item>
+                  <List.Item>
+                    Снижение проходного сечения трубопроводов
+                  </List.Item>
                   <List.Item>Неисправность средств КИПиА</List.Item>
                 </List>
               </Col>
@@ -422,7 +422,10 @@ export const tatneftKpSlides: SlideData[] = [
                 инцидента
               </List.Item>
             </List>
-            <Paragraph type="secondary" style={{ marginTop: 12, marginBottom: 0 }}>
+            <Paragraph
+              type="secondary"
+              style={{ marginTop: 12, marginBottom: 0 }}
+            >
               Предлагаемое решение не включает в текущей версии рекомендации по
               корректирующим действиям оператору: необходим этап сбора обратной
               связи от операторов в ходе работы внедрённой системы.
@@ -432,8 +435,6 @@ export const tatneftKpSlides: SlideData[] = [
       </ConstrainedContent>
     ),
   },
-
-
 
   // Slide 5: Раздел — Пользовательский интерфейс
   {
@@ -511,8 +512,8 @@ export const tatneftKpSlides: SlideData[] = [
               Исходные допущения (ДНС)
             </Title>
             <Paragraph style={{ marginBottom: 8 }}>
-              В рамках настоящего КП мы исходим из следующих допущений. На их базе
-              строится расчёт и структура коммерческого предложения.
+              В рамках настоящего КП мы исходим из следующих допущений. На их
+              базе строится расчёт и структура коммерческого предложения.
             </Paragraph>
             <List size="small">
               <List.Item>
@@ -530,19 +531,23 @@ export const tatneftKpSlides: SlideData[] = [
             </Title>
             <List size="small">
               <List.Item>
-                Данные с ДНС поступают по разным каналам с разной периодичностью.
+                Данные с ДНС поступают по разным каналам с разной
+                периодичностью.
               </List.Item>
               <List.Item>
-                Данные по ДНС распределены по разным системам хранения и обработки данных.
+                Данные по ДНС распределены по разным системам хранения и
+                обработки данных.
               </List.Item>
               <List.Item>
                 Данные по ДНС разделяются на мгновенные (текущие) и архивные.
               </List.Item>
               <List.Item>
-                Данных по ДНС много и они обновляются часто; на данный момент глубина архива исторических данных не более 2 месяцев.
+                Данных по ДНС много и они обновляются часто; на данный момент
+                глубина архива исторических данных не более 2 месяцев.
               </List.Item>
               <List.Item>
-                Нет единого места хранения и агрегации данных, что значительно усложняет их анализ и обработку.
+                Нет единого места хранения и агрегации данных, что значительно
+                усложняет их анализ и обработку.
               </List.Item>
             </List>
           </Card>
@@ -561,10 +566,18 @@ export const tatneftKpSlides: SlideData[] = [
             <img
               src={highLevelDiagram}
               alt="Общая схема взаимодействия компонентов"
-              style={{ width: '100%', height: 'auto', maxHeight: 500, display: 'block', objectFit: 'contain' }}
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 500,
+                display: 'block',
+                objectFit: 'contain',
+              }}
             />
           </Card>
-          <Paragraph style={{ marginTop: 16, marginBottom: 0, textAlign: 'center' }}>
+          <Paragraph
+            style={{ marginTop: 16, marginBottom: 0, textAlign: 'center' }}
+          >
             Схема взаимодействия трёх компонентов: хранилище данных, подсистема
             раннего предупреждения, интерфейс оператора.
           </Paragraph>
@@ -600,11 +613,10 @@ export const tatneftKpSlides: SlideData[] = [
               Почему именно ДНС в первом очереди
             </Title>
             <Paragraph style={{ marginBottom: 0 }}>
-              По данным за период 04–10.08.2025 наибольшее количество
-              аварийных сигналов поступило по{' '}
-              <Text strong>скважинам (38%)</Text> и по объектам{' '}
-              <Text strong>ДНС, ГЗНУ, УПСВ (36%)</Text>. Старт с ДНС даёт
-              быстрый эффект при сохранении возможности масштабирования на
+              По данным за период 04–10.08.2025 наибольшее количество аварийных
+              сигналов поступило по <Text strong>скважинам (38%)</Text> и по
+              объектам <Text strong>ДНС, ГЗНУ, УПСВ (36%)</Text>. Старт с ДНС
+              даёт быстрый эффект при сохранении возможности масштабирования на
               остальные типы объектов.
             </Paragraph>
           </Card>
@@ -615,8 +627,8 @@ export const tatneftKpSlides: SlideData[] = [
             <Paragraph style={{ marginBottom: 0 }}>
               Архитектура готова к расширению: и по количеству объектов, и по
               добавлению новых типов. Фундамент, методики и практики, созданные
-              при внедрении решения для ДНС, упростят подключение скважин,
-              ГЗУ, УПСВ и других объектов в следующих этапах.
+              при внедрении решения для ДНС, упростят подключение скважин, ГЗУ,
+              УПСВ и других объектов в следующих этапах.
             </Paragraph>
           </Card>
         </Space>
@@ -650,8 +662,14 @@ export const tatneftKpSlides: SlideData[] = [
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <span style={iconWrapStyle}><FileText {...iconStyle} /></span>
+              <Space
+                size="small"
+                align="center"
+                style={{ display: 'inline-flex', alignItems: 'center' }}
+              >
+                <span style={iconWrapStyle}>
+                  <FileText {...iconStyle} />
+                </span>
                 Описание
               </Space>
             </Title>
@@ -663,8 +681,14 @@ export const tatneftKpSlides: SlideData[] = [
           </Card>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <span style={iconWrapStyle}><Target {...iconStyle} /></span>
+              <Space
+                size="small"
+                align="center"
+                style={{ display: 'inline-flex', alignItems: 'center' }}
+              >
+                <span style={iconWrapStyle}>
+                  <Target {...iconStyle} />
+                </span>
                 Цель
               </Space>
             </Title>
@@ -677,8 +701,14 @@ export const tatneftKpSlides: SlideData[] = [
           </Card>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <span style={iconWrapStyle}><Award {...iconStyle} /></span>
+              <Space
+                size="small"
+                align="center"
+                style={{ display: 'inline-flex', alignItems: 'center' }}
+              >
+                <span style={iconWrapStyle}>
+                  <Award {...iconStyle} />
+                </span>
                 Ценность
               </Space>
             </Title>
@@ -714,7 +744,10 @@ export const tatneftKpSlides: SlideData[] = [
               <List.Item>Первая половина всего множества ДНС.</List.Item>
               <List.Item>Вторая половина всего множества ДНС.</List.Item>
             </List>
-            <Paragraph type="secondary" style={{ marginTop: 12, marginBottom: 0 }}>
+            <Paragraph
+              type="secondary"
+              style={{ marginTop: 12, marginBottom: 0 }}
+            >
               По результатам анализа возможны подгруппы ДНС на основании типа,
               географической близости и других параметров.
             </Paragraph>
@@ -825,8 +858,14 @@ export const tatneftKpSlides: SlideData[] = [
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <span style={iconWrapStyle}><FileText {...iconStyle} /></span>
+              <Space
+                size="small"
+                align="center"
+                style={{ display: 'inline-flex', alignItems: 'center' }}
+              >
+                <span style={iconWrapStyle}>
+                  <FileText {...iconStyle} />
+                </span>
                 Описание
               </Space>
             </Title>
@@ -838,8 +877,14 @@ export const tatneftKpSlides: SlideData[] = [
           </Card>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <span style={iconWrapStyle}><Target {...iconStyle} /></span>
+              <Space
+                size="small"
+                align="center"
+                style={{ display: 'inline-flex', alignItems: 'center' }}
+              >
+                <span style={iconWrapStyle}>
+                  <Target {...iconStyle} />
+                </span>
                 Цель
               </Space>
             </Title>
@@ -852,8 +897,14 @@ export const tatneftKpSlides: SlideData[] = [
           </Card>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <span style={iconWrapStyle}><Award {...iconStyle} /></span>
+              <Space
+                size="small"
+                align="center"
+                style={{ display: 'inline-flex', alignItems: 'center' }}
+              >
+                <span style={iconWrapStyle}>
+                  <Award {...iconStyle} />
+                </span>
                 Ценность
               </Space>
             </Title>
@@ -885,10 +936,18 @@ export const tatneftKpSlides: SlideData[] = [
             <img
               src={dataLakeDiagram}
               alt="Data Lake: схема"
-              style={{ width: '100%', height: 'auto', maxHeight: 420, display: 'block', objectFit: 'contain' }}
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 420,
+                display: 'block',
+                objectFit: 'contain',
+              }}
             />
           </Card>
-          <Paragraph style={{ marginTop: 0, marginBottom: 0, textAlign: 'center' }}>
+          <Paragraph
+            style={{ marginTop: 0, marginBottom: 0, textAlign: 'center' }}
+          >
             Схема Data Lake: источники данных, ETL, хранилище.
           </Paragraph>
         </Space>
@@ -1099,14 +1158,17 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <TodoCard
-            title="Переформулировать цель"
-            status="done"
-          />
+          <TodoCard title="Переформулировать цель" status="done" />
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <span style={iconWrapStyle}><FileText {...iconStyle} /></span>
+              <Space
+                size="small"
+                align="center"
+                style={{ display: 'inline-flex', alignItems: 'center' }}
+              >
+                <span style={iconWrapStyle}>
+                  <FileText {...iconStyle} />
+                </span>
                 Описание
               </Space>
             </Title>
@@ -1118,8 +1180,14 @@ export const tatneftKpSlides: SlideData[] = [
           </Card>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <span style={iconWrapStyle}><Target {...iconStyle} /></span>
+              <Space
+                size="small"
+                align="center"
+                style={{ display: 'inline-flex', alignItems: 'center' }}
+              >
+                <span style={iconWrapStyle}>
+                  <Target {...iconStyle} />
+                </span>
                 Цель
               </Space>
             </Title>
@@ -1130,8 +1198,8 @@ export const tatneftKpSlides: SlideData[] = [
                 заблаговременное выявление отклонений в работе оборудования до
                 наступления аварии
               </Text>
-              . Без неё решение ограничивается
-              хранением данных и не обеспечивает опережающее реагирование.
+              . Без неё решение ограничивается хранением данных и не
+              обеспечивает опережающее реагирование.
             </Paragraph>
             <Paragraph style={{ marginBottom: 0 }}>
               На старте будет срабатывать много аномалий, при этом по-настоящему
@@ -1142,8 +1210,14 @@ export const tatneftKpSlides: SlideData[] = [
           </Card>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <span style={iconWrapStyle}><Award {...iconStyle} /></span>
+              <Space
+                size="small"
+                align="center"
+                style={{ display: 'inline-flex', alignItems: 'center' }}
+              >
+                <span style={iconWrapStyle}>
+                  <Award {...iconStyle} />
+                </span>
                 Ценность для организации и доставляемый результат
               </Space>
             </Title>
@@ -1176,18 +1250,23 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <TodoCard
-            title="Добавить аннотации к аббревиатурам"
-            status="done"
-          />
+          <TodoCard title="Добавить аннотации к аббревиатурам" status="done" />
           <Card>
             <img
               src={subSystemDiagram}
               alt="Подсистема предупреждений: схема"
-              style={{ width: '100%', height: 'auto', maxHeight: 460, display: 'block', objectFit: 'contain' }}
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 460,
+                display: 'block',
+                objectFit: 'contain',
+              }}
             />
           </Card>
-          <Paragraph style={{ marginTop: 16, marginBottom: 0, textAlign: 'center' }}>
+          <Paragraph
+            style={{ marginTop: 16, marginBottom: 0, textAlign: 'center' }}
+          >
             Схема подсистемы: данные из Data Lake, алгоритмы, выход в UI.
           </Paragraph>
         </Space>
@@ -1524,8 +1603,14 @@ export const tatneftKpSlides: SlideData[] = [
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <span style={iconWrapStyle}><FileText {...iconStyle} /></span>
+              <Space
+                size="small"
+                align="center"
+                style={{ display: 'inline-flex', alignItems: 'center' }}
+              >
+                <span style={iconWrapStyle}>
+                  <FileText {...iconStyle} />
+                </span>
                 Описание
               </Space>
             </Title>
@@ -1538,8 +1623,14 @@ export const tatneftKpSlides: SlideData[] = [
           </Card>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <span style={iconWrapStyle}><Target {...iconStyle} /></span>
+              <Space
+                size="small"
+                align="center"
+                style={{ display: 'inline-flex', alignItems: 'center' }}
+              >
+                <span style={iconWrapStyle}>
+                  <Target {...iconStyle} />
+                </span>
                 Цель
               </Space>
             </Title>
@@ -1552,8 +1643,14 @@ export const tatneftKpSlides: SlideData[] = [
           </Card>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <span style={iconWrapStyle}><Award {...iconStyle} /></span>
+              <Space
+                size="small"
+                align="center"
+                style={{ display: 'inline-flex', alignItems: 'center' }}
+              >
+                <span style={iconWrapStyle}>
+                  <Award {...iconStyle} />
+                </span>
                 Ценность
               </Space>
             </Title>

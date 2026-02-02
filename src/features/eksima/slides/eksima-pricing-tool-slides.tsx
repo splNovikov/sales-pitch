@@ -1,5 +1,15 @@
 import { useState } from 'react';
-import { Typography, List, Space, Card, Tag, Alert, Row, Col, Button } from 'antd';
+import {
+  Typography,
+  List,
+  Space,
+  Card,
+  Tag,
+  Alert,
+  Row,
+  Col,
+  Button,
+} from 'antd';
 import {
   ShopOutlined,
   CheckCircleOutlined,
@@ -277,9 +287,9 @@ export const eksimaPricingToolSlides: SlideData[] = [
               icon: <CheckCircleOutlined />,
               iconColor: 'green',
               items: [
-                  'Гибкая политика показа цен для разных ролей и сценариев',
-                  'Безопасность — оптовые цены видны только тем, у кого есть права',
-                  'Единая модель визуализации для кабинета и шаринга по ссылке',
+                'Гибкая политика показа цен для разных ролей и сценариев',
+                'Безопасность — оптовые цены видны только тем, у кого есть права',
+                'Единая модель визуализации для кабинета и шаринга по ссылке',
               ],
               emoji: 'star',
             },
@@ -288,7 +298,7 @@ export const eksimaPricingToolSlides: SlideData[] = [
               icon: <EyeOutlined />,
               iconColor: 'orange',
               items: [
-                  'Нужно согласовать сценарии использования с отделом продаж',
+                'Нужно согласовать сценарии использования с отделом продаж',
               ],
               emoji: 'wrench',
             },
@@ -368,7 +378,8 @@ export const eksimaPricingToolSlides: SlideData[] = [
                   transition: 'all 0.3s ease',
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.transform = 'translateY(-2px) scale(1.02)';
+                  e.currentTarget.style.transform =
+                    'translateY(-2px) scale(1.02)';
                   e.currentTarget.style.boxShadow =
                     '0 12px 32px rgba(24, 144, 255, 0.5)';
                 }}
@@ -381,7 +392,7 @@ export const eksimaPricingToolSlides: SlideData[] = [
                 Посмотреть шаблон
                 <ArrowRightOutlined style={{ marginLeft: 12 }} />
               </Button>
-      </Space>
+            </Space>
           </Col>
         </Row>
       </Card>
@@ -533,7 +544,7 @@ export const eksimaPricingToolSlides: SlideData[] = [
       </Space>
     ),
   },
-  
+
   {
     id: 'customer-mode-title',
     header: undefined,
@@ -604,11 +615,11 @@ export const eksimaPricingToolSlides: SlideData[] = [
               icon: <EyeOutlined />,
               iconColor: 'green',
               items: [
-                  'Логотип компании партнёра',
-                  'Керамогранит Coliseum Brenta Grey 22,5х90',
-                  'Цена: 1 044 ₽',
-                  '[Добавить в корзину]',
-                  'Далее в каталоге 200+ товаров',
+                'Логотип компании партнёра',
+                'Керамогранит Coliseum Brenta Grey 22,5х90',
+                'Цена: 1 044 ₽',
+                '[Добавить в корзину]',
+                'Далее в каталоге 200+ товаров',
               ],
               emoji: 'star',
             },
@@ -617,10 +628,10 @@ export const eksimaPricingToolSlides: SlideData[] = [
               icon: <EyeInvisibleOutlined />,
               iconColor: 'orange',
               items: [
-                  'Себестоимость (580 ₽)',
-                  'Коэффициент наценки (1.80x)',
-                  'Маржу партнёра (464 ₽)',
-                  'Никаких кнопок управления или админ-панели',
+                'Себестоимость (580 ₽)',
+                'Коэффициент наценки (1.80x)',
+                'Маржу партнёра (464 ₽)',
+                'Никаких кнопок управления или админ-панели',
               ],
               emoji: 'wrench',
             },
@@ -705,11 +716,7 @@ export const eksimaPricingToolSlides: SlideData[] = [
     id: 'contacts-title',
     header: undefined,
     content: (
-      <SectionTitleSlide
-        title="Контакты"
-        imageIndex={8}
-        imageAlt="Контакты"
-      />
+      <SectionTitleSlide title="Контакты" imageIndex={8} imageAlt="Контакты" />
     ),
   },
   {

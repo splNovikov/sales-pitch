@@ -133,7 +133,9 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           </Paragraph>
         </Card>
         <Card>
-          <Title level={5}>Уровень 1: Первичная группировка по странам (80% фильтрации)</Title>
+          <Title level={5}>
+            Уровень 1: Первичная группировка по странам (80% фильтрации)
+          </Title>
           <Paragraph>
             <Text strong>Ключевой момент:</Text> На каждом этапе должно быть
             максимум 8-12 кликабельных элементов. Это ускоряет навигацию.
@@ -156,10 +158,12 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           </List>
         </Card>
         <Card style={{ backgroundColor: '#f6ffed' }}>
-          <Title level={5}>Уровень 2: AI-ассистент для визуального поиска</Title>
+          <Title level={5}>
+            Уровень 2: AI-ассистент для визуального поиска
+          </Title>
           <Paragraph>
-            <Text strong>Триггер:</Text> кнопка "🔍 Помощь в поиске" или "Что вам
-            нужно?" на каждом уровне
+            <Text strong>Триггер:</Text> кнопка "🔍 Помощь в поиске" или "Что
+            вам нужно?" на каждом уровне
           </Paragraph>
           <Row gutter={[16, 16]}>
             <Col span={8}>
@@ -195,7 +199,11 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           gutter={24}
           cards={[
             {
-              title: <><FilterOutlined /> Фильтры</>,
+              title: (
+                <>
+                  <FilterOutlined /> Фильтры
+                </>
+              ),
               items: [
                 'По размеру (30×30, 60×60, 120×60, мозаика)',
                 'По поверхности (матовая, глянцевая, структурированная)',
@@ -216,8 +224,12 @@ export const eksimaDorabotkiSlides: SlideData[] = [
                     История поисков
                   </Title>
                   <List size="small">
-                    <List.Item>Сохранять последние 5-7 поисков специалиста</List.Item>
-                    <List.Item>"Вы ищете: зелёненькая" + quick-add кнопка</List.Item>
+                    <List.Item>
+                      Сохранять последние 5-7 поисков специалиста
+                    </List.Item>
+                    <List.Item>
+                      "Вы ищете: зелёненькая" + quick-add кнопка
+                    </List.Item>
                   </List>
                 </>
               ),
@@ -232,8 +244,8 @@ export const eksimaDorabotkiSlides: SlideData[] = [
             <Text strong>1. Frontend:</Text> текстовое поле + микрофон
             (voice-to-text)
             <br />
-            <Text strong>2. Backend:</Text> интеграция с API визуального
-            поиска (Claude Vision API или аналог)
+            <Text strong>2. Backend:</Text> интеграция с API визуального поиска
+            (Claude Vision API или аналог)
             <br />
             <Text strong>3. База данных плиток:</Text> теги цвета, фактуры,
             стиля для каждой плитки
@@ -269,8 +281,8 @@ export const eksimaDorabotkiSlides: SlideData[] = [
             </List.Item>
             <List.Item>
               <Text strong>Название и описание:</Text> DNA Tiles — испанский
-              производитель с 2010 года. Специализация: минимализм и
-              современный дизайн. (50-100 слов)
+              производитель с 2010 года. Специализация: минимализм и современный
+              дизайн. (50-100 слов)
             </List.Item>
             <List.Item>
               <Text strong>Карточка статистики:</Text>
@@ -294,8 +306,7 @@ export const eksimaDorabotkiSlides: SlideData[] = [
             <Card style={{ backgroundColor: '#e6f7ff' }}>
               <Title level={5}>Сетка коллекций (3 колонны)</Title>
               <Paragraph>
-                Каждая карточка: превью, название, характеристики, цена,
-                кнопка
+                Каждая карточка: превью, название, характеристики, цена, кнопка
               </Paragraph>
             </Card>
           </Col>
@@ -358,18 +369,15 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           <Title level={5}>Блок фильтров</Title>
           <Space direction="vertical" style={{ width: '100%' }}>
             <Text>
-              <Text strong>Размер:</Text>{' '}
-              <Tag>30×90</Tag> <Tag>60×120</Tag> <Tag>45×45</Tag>{' '}
-              <Tag color="blue">Все размеры ✓</Tag>
+              <Text strong>Размер:</Text> <Tag>30×90</Tag> <Tag>60×120</Tag>{' '}
+              <Tag>45×45</Tag> <Tag color="blue">Все размеры ✓</Tag>
             </Text>
             <Text>
-              <Text strong>Цвет:</Text>{' '}
-              <Tag>Белый</Tag> <Tag>Серый</Tag> <Tag>Чёрный</Tag>{' '}
-              <Tag color="blue">Все цвета ✓</Tag>
+              <Text strong>Цвет:</Text> <Tag>Белый</Tag> <Tag>Серый</Tag>{' '}
+              <Tag>Чёрный</Tag> <Tag color="blue">Все цвета ✓</Tag>
             </Text>
             <Text>
-              <Text strong>Наличие:</Text>{' '}
-              <Tag color="green">В наличии ✓</Tag>{' '}
+              <Text strong>Наличие:</Text> <Tag color="green">В наличии ✓</Tag>{' '}
               <Tag color="orange">Под заказ ✓</Tag>
             </Text>
             <Text>
@@ -381,7 +389,9 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           <Title level={5}>Сетка товаров (3 колонны на десктопе)</Title>
           <Paragraph>Каждая карточка содержит:</Paragraph>
           <List size="small">
-            <List.Item>Превью плитки (карусель если несколько ракурсов)</List.Item>
+            <List.Item>
+              Превью плитки (карусель если несколько ракурсов)
+            </List.Item>
             <List.Item>Артикул + название (DRA-WHT-60×120)</List.Item>
             <List.Item>Размер + поверхность + цвет</List.Item>
             <List.Item>
@@ -470,20 +480,27 @@ export const eksimaDorabotkiSlides: SlideData[] = [
                 dataIndex: 'order',
                 key: 'order',
                 width: '25%',
-                render: (text) => <Text strong>{text}</Text>,
+                render: text => <Text strong>{text}</Text>,
               },
               {
                 title: 'Статус',
                 dataIndex: 'status',
                 key: 'status',
                 width: '30%',
-                render: (status) => {
-                  const statusMap: Record<string, { text: string; color: string }> = {
+                render: status => {
+                  const statusMap: Record<
+                    string,
+                    { text: string; color: string }
+                  > = {
                     completed: { text: '✅ Выполнен', color: 'success' },
                     shipping: { text: '📦 Доставляется', color: 'processing' },
                     processing: { text: '🏭 Собирают', color: 'warning' },
                   };
-                  return <Tag color={statusMap[status].color}>{statusMap[status].text}</Tag>;
+                  return (
+                    <Tag color={statusMap[status].color}>
+                      {statusMap[status].text}
+                    </Tag>
+                  );
                 },
               },
               {
@@ -491,7 +508,7 @@ export const eksimaDorabotkiSlides: SlideData[] = [
                 dataIndex: 'sum',
                 key: 'sum',
                 width: '25%',
-                render: (text) => <Text strong>{text}</Text>,
+                render: text => <Text strong>{text}</Text>,
               },
             ]}
             pagination={false}
@@ -531,9 +548,7 @@ export const eksimaDorabotkiSlides: SlideData[] = [
                   <div>
                     <Text strong>🏭 Собирают</Text>
                     <br />
-                    <Text type="secondary">
-                      Товар комплектуется на складе
-                    </Text>
+                    <Text type="secondary">Товар комплектуется на складе</Text>
                   </div>
                 ),
               },
@@ -588,10 +603,19 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           <Title level={5}>Детальная страница заказа</Title>
           <Paragraph>Вызывается по клику на строку заказа.</Paragraph>
           <List size="small">
-            <List.Item>Основная информация (№, дата, статус, предприятие, менеджер, сумма)</List.Item>
-            <List.Item>Товары в заказе (название, цена, количество, общая стоимость)</List.Item>
-            <List.Item>История изменения статусов (timeline с датами и исполнителями)</List.Item>
-            <List.Item>Действия: [Повторить заказ] [Скачать PDF] [Написать в поддержку]</List.Item>
+            <List.Item>
+              Основная информация (№, дата, статус, предприятие, менеджер,
+              сумма)
+            </List.Item>
+            <List.Item>
+              Товары в заказе (название, цена, количество, общая стоимость)
+            </List.Item>
+            <List.Item>
+              История изменения статусов (timeline с датами и исполнителями)
+            </List.Item>
+            <List.Item>
+              Действия: [Повторить заказ] [Скачать PDF] [Написать в поддержку]
+            </List.Item>
           </List>
         </Card>
       </Space>
@@ -667,8 +691,7 @@ export const eksimaDorabotkiSlides: SlideData[] = [
                 <br />
                 <br />
                 👤 ОТВЕТСТВЕННЫЙ МЕНЕДЖЕР:
-                <br />
-                ● Петрова Галина
+                <br />● Петрова Галина
               </Paragraph>
             </Card>
           </Col>
@@ -741,7 +764,9 @@ export const eksimaDorabotkiSlides: SlideData[] = [
                 <Card>
                   <List size="small">
                     <List.Item>• Управление пользователями</List.Item>
-                    <List.Item>• Управление предприятиями (юридические лица)</List.Item>
+                    <List.Item>
+                      • Управление предприятиями (юридические лица)
+                    </List.Item>
                     <List.Item>• Управление менеджерами</List.Item>
                   </List>
                 </Card>
@@ -762,12 +787,31 @@ export const eksimaDorabotkiSlides: SlideData[] = [
                   </Title>
                   <Table
                     dataSource={[
-                      { key: '1', company: 'ООО РемСтройМастер', type: 'Коэф.', value: '1.0x' },
-                      { key: '2', company: 'ЧП Борщов Н.И.', type: 'Коэф.', value: '0.95x' },
-                      { key: '3', company: 'ООО Строй-ТД', type: 'Фиксир.', value: '+200 ₽' },
+                      {
+                        key: '1',
+                        company: 'ООО РемСтройМастер',
+                        type: 'Коэф.',
+                        value: '1.0x',
+                      },
+                      {
+                        key: '2',
+                        company: 'ЧП Борщов Н.И.',
+                        type: 'Коэф.',
+                        value: '0.95x',
+                      },
+                      {
+                        key: '3',
+                        company: 'ООО Строй-ТД',
+                        type: 'Фиксир.',
+                        value: '+200 ₽',
+                      },
                     ]}
                     columns={[
-                      { title: 'Предприятие', dataIndex: 'company', key: 'company' },
+                      {
+                        title: 'Предприятие',
+                        dataIndex: 'company',
+                        key: 'company',
+                      },
                       { title: 'Тип', dataIndex: 'type', key: 'type' },
                       { title: 'Значение', dataIndex: 'value', key: 'value' },
                     ]}
@@ -869,10 +913,25 @@ export const eksimaDorabotkiSlides: SlideData[] = [
               },
             ]}
             columns={[
-              { title: 'Событие', dataIndex: 'event', key: 'event', width: '20%' },
-              { title: 'Кому', dataIndex: 'recipient', key: 'recipient', width: '20%' },
+              {
+                title: 'Событие',
+                dataIndex: 'event',
+                key: 'event',
+                width: '20%',
+              },
+              {
+                title: 'Кому',
+                dataIndex: 'recipient',
+                key: 'recipient',
+                width: '20%',
+              },
               { title: 'Когда', dataIndex: 'when', key: 'when', width: '25%' },
-              { title: 'Содержание', dataIndex: 'content', key: 'content', width: '35%' },
+              {
+                title: 'Содержание',
+                dataIndex: 'content',
+                key: 'content',
+                width: '35%',
+              },
             ]}
             pagination={false}
             size="small"
@@ -910,7 +969,8 @@ export const eksimaDorabotkiSlides: SlideData[] = [
                   🆕 ✅ Заказ готов! <Text type="secondary">13 янв, 16:30</Text>
                 </List.Item>
                 <List.Item>
-                  🆕 🏭 Заказ собирают <Text type="secondary">13 янв, 14:45</Text>
+                  🆕 🏭 Заказ собирают{' '}
+                  <Text type="secondary">13 янв, 14:45</Text>
                 </List.Item>
                 <List.Item>
                   🆕 📋 Заказ принят <Text type="secondary">13 янв, 14:32</Text>
@@ -988,7 +1048,11 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           <img
             src={keramatika1}
             alt="Keramatika Home"
-            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+            style={{
+              width: '100%',
+              border: '1px solid #d9d9d9',
+              borderRadius: '8px',
+            }}
           />
         </Col>
         <Col span={10}>
@@ -1027,7 +1091,11 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           <img
             src={keramatika2}
             alt="Keramatika Orders"
-            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+            style={{
+              width: '100%',
+              border: '1px solid #d9d9d9',
+              borderRadius: '8px',
+            }}
           />
         </Col>
         <Col span={10}>
@@ -1066,7 +1134,11 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           <img
             src={keramatika3}
             alt="Keramatika Catalog"
-            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+            style={{
+              width: '100%',
+              border: '1px solid #d9d9d9',
+              borderRadius: '8px',
+            }}
           />
         </Col>
         <Col span={10}>
@@ -1105,7 +1177,11 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           <img
             src={keramatika4}
             alt="Keramatika Brand"
-            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+            style={{
+              width: '100%',
+              border: '1px solid #d9d9d9',
+              borderRadius: '8px',
+            }}
           />
         </Col>
         <Col span={10}>
@@ -1144,7 +1220,11 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           <img
             src={keramatika5}
             alt="Keramatika Collection"
-            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+            style={{
+              width: '100%',
+              border: '1px solid #d9d9d9',
+              borderRadius: '8px',
+            }}
           />
         </Col>
         <Col span={10}>
@@ -1162,7 +1242,9 @@ export const eksimaDorabotkiSlides: SlideData[] = [
               <Title level={5}>✅ Наше решение:</Title>
               <List size="small">
                 <List.Item>Сетка товаров с крупными превью</List.Item>
-                <List.Item>Встроенный калькулятор (шт ↔ м² ↔ коробки)</List.Item>
+                <List.Item>
+                  Встроенный калькулятор (шт ↔ м² ↔ коробки)
+                </List.Item>
                 <List.Item>Фильтры в sidebar с быстрым доступом</List.Item>
                 <List.Item>Детальная карточка по клику</List.Item>
               </List>
@@ -1183,7 +1265,11 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           <img
             src={keramatika6}
             alt="Keramatika Product"
-            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+            style={{
+              width: '100%',
+              border: '1px solid #d9d9d9',
+              borderRadius: '8px',
+            }}
           />
         </Col>
         <Col span={10}>
@@ -1222,7 +1308,11 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           <img
             src={keramatika7}
             alt="Keramatika Checkout"
-            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+            style={{
+              width: '100%',
+              border: '1px solid #d9d9d9',
+              borderRadius: '8px',
+            }}
           />
         </Col>
         <Col span={10}>
@@ -1240,7 +1330,9 @@ export const eksimaDorabotkiSlides: SlideData[] = [
               <Title level={5}>✅ Наше решение:</Title>
               <List size="small">
                 <List.Item>Multi-step форма (Steps component)</List.Item>
-                <List.Item>Шаг 1: Корзина → Шаг 2: Юр.лицо → Шаг 3: Подтверждение</List.Item>
+                <List.Item>
+                  Шаг 1: Корзина → Шаг 2: Юр.лицо → Шаг 3: Подтверждение
+                </List.Item>
                 <List.Item>Визуальный прогресс-бар</List.Item>
                 <List.Item>Валидация на каждом шаге</List.Item>
               </List>
@@ -1261,7 +1353,11 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           <img
             src={keramatika8}
             alt="Keramatika Settings"
-            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+            style={{
+              width: '100%',
+              border: '1px solid #d9d9d9',
+              borderRadius: '8px',
+            }}
           />
         </Col>
         <Col span={10}>
@@ -1278,7 +1374,9 @@ export const eksimaDorabotkiSlides: SlideData[] = [
             <Card style={{ backgroundColor: '#f6ffed' }}>
               <Title level={5}>✅ Наше решение:</Title>
               <List size="small">
-                <List.Item>Tabs: Основные / Ценообразование / Интеграция</List.Item>
+                <List.Item>
+                  Tabs: Основные / Ценообразование / Интеграция
+                </List.Item>
                 <List.Item>Управление маржой для каждого предприятия</List.Item>
                 <List.Item>Настройки синхронизации с 1С</List.Item>
                 <List.Item>Управление пользователями и правами</List.Item>
@@ -1300,7 +1398,11 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           <img
             src={keramatika9}
             alt="Keramatika Notifications"
-            style={{ width: '100%', border: '1px solid #d9d9d9', borderRadius: '8px' }}
+            style={{
+              width: '100%',
+              border: '1px solid #d9d9d9',
+              borderRadius: '8px',
+            }}
           />
         </Col>
         <Col span={10}>
@@ -1320,7 +1422,9 @@ export const eksimaDorabotkiSlides: SlideData[] = [
                 <List.Item>Отдельная система уведомлений</List.Item>
                 <List.Item>Email + In-app уведомления</List.Item>
                 <List.Item>WebSocket для real-time обновлений</List.Item>
-                <List.Item>Timeline с историей всех изменений статуса</List.Item>
+                <List.Item>
+                  Timeline с историей всех изменений статуса
+                </List.Item>
               </List>
             </Card>
           </Space>
@@ -1368,8 +1472,8 @@ export const eksimaDorabotkiSlides: SlideData[] = [
                   (базовая версия)
                 </List.Item>
                 <List.Item>
-                  <CheckCircleOutlined style={{ color: '#52c41a' }} /> Оформление
-                  заказа (3 шага)
+                  <CheckCircleOutlined style={{ color: '#52c41a' }} />{' '}
+                  Оформление заказа (3 шага)
                 </List.Item>
               </List>
             </Col>
@@ -1423,8 +1527,12 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           <Title level={4}>🎯 Phase 3 (После Phase 2)</Title>
           <List size="small">
             <List.Item>1. Аналитика и отчёты для администратора</List.Item>
-            <List.Item>2. Расширение функций управления предприятиями</List.Item>
-            <List.Item>3. Мобильное приложение (если требуется клиентом)</List.Item>
+            <List.Item>
+              2. Расширение функций управления предприятиями
+            </List.Item>
+            <List.Item>
+              3. Мобильное приложение (если требуется клиентом)
+            </List.Item>
           </List>
         </Card>
       </Space>
@@ -1450,7 +1558,9 @@ export const eksimaDorabotkiSlides: SlideData[] = [
           <Title level={3}>
             <CodeOutlined /> Этот документ используется как гайд для разработки
           </Title>
-          <Paragraph style={{ fontSize: 'var(--app-font-size-md)', marginTop: 24 }}>
+          <Paragraph
+            style={{ fontSize: 'var(--app-font-size-md)', marginTop: 24 }}
+          >
             <Text strong>Обновляй по мере прогресса реализации.</Text>
           </Paragraph>
           <Paragraph style={{ marginTop: 24 }}>
