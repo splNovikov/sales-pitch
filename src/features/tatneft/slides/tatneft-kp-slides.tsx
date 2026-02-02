@@ -12,6 +12,7 @@ import black_list_tatn from './black_list_tatn.jpeg';
 import highLevelDiagram from './diagrams/high-level.svg';
 import dataLakeDiagram from './diagrams/data_lake.svg';
 import subSystemDiagram from './diagrams/sub-system.svg';
+import { TodoCard } from '~shared/ui/todo-card';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -317,6 +318,7 @@ export const tatneftKpSlides: SlideData[] = [
               </List.Item>
             </List>
           </Card>
+          <TodoCard title="Выверить цифры" />
         </Space>
       </ConstrainedContent>
     ),
