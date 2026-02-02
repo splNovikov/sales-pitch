@@ -881,17 +881,6 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <Space direction="vertical" size="small" style={{ width: '100%' }}>
-            <TodoCard
-              title="Упомянуть: используем только импортозамещённые решения"
-              description="Решения должны отвечать требованиям безопасности и прочим."
-              status="pending"
-            />
-            <TodoCard
-              title="Упомянуть: список требований будет утверждён на этапе аналитики и т.д."
-              status="pending"
-            />
-          </Space>
           <Card>
             <img
               src={dataLakeDiagram}
