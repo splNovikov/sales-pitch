@@ -557,24 +557,6 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <Space direction="vertical" size="small" style={{ width: '100%' }}>
-            <TodoCard
-              title="Внедрить терминологию: что такое аномалия"
-              status="pending"
-            />
-            <TodoCard
-              title="Внедрить терминологию: что такое SCADA, сколько типов SCADA бывает"
-              status="pending"
-            />
-            <TodoCard
-              title="Донести: для любой системы необходимо хранение данных"
-              status="pending"
-            />
-            <TodoCard
-              title="Донести: наша задача — in advance предупреждать операторов"
-              status="pending"
-            />
-          </Space>
           <Card>
             <img
               src={highLevelDiagram}
@@ -604,7 +586,7 @@ export const tatneftKpSlides: SlideData[] = [
           />
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              Масштабируемость архитектуры
+              Масштабируемость системы
             </Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Архитектура разрабатываемой системы готова к расширению как
