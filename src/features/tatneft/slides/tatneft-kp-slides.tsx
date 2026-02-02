@@ -295,6 +295,7 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <TodoCard title="Выверить цифры" />
           <Card>
             <Title level={4} style={{ marginTop: 0 }}>
               Масштаб
@@ -318,7 +319,6 @@ export const tatneftKpSlides: SlideData[] = [
               </List.Item>
             </List>
           </Card>
-          <TodoCard title="Выверить цифры" />
         </Space>
       </ConstrainedContent>
     ),
@@ -377,57 +377,7 @@ export const tatneftKpSlides: SlideData[] = [
     ),
   },
 
-  // Объекты мониторинга: ДНС и данные (после Потребность — для понимания рамок КП)
-  {
-    id: 'problem-dns-context',
-    header: 'Объекты мониторинга: ДНС и данные',
-    content: (
-      <ConstrainedContent>
-        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <Card>
-            <Title level={5} style={{ marginTop: 0 }}>
-              Исходные допущения (ДНС)
-            </Title>
-            <Paragraph style={{ marginBottom: 8 }}>
-              В рамках настоящего КП мы исходим из следующих допущений. На их базе
-              строится расчёт и структура коммерческого предложения.
-            </Paragraph>
-            <List size="small">
-              <List.Item>
-                В рамках КП принимаем: ДНС — ключевой и наиболее многочисленный
-                объект мониторинга для целей настоящего предложения.
-              </List.Item>
-              <List.Item>
-                Оценочный масштаб для расчётов: порядка тысяч единиц ДНС.
-              </List.Item>
-            </List>
-          </Card>
-          <Card>
-            <Title level={5} style={{ marginTop: 0 }}>
-              Текущее состояние данных
-            </Title>
-            <List size="small">
-              <List.Item>
-                Данные с ДНС поступают по разным каналам с разной периодичностью.
-              </List.Item>
-              <List.Item>
-                Данные по ДНС распределены по разным системам хранения и обработки данных.
-              </List.Item>
-              <List.Item>
-                Данные по ДНС разделяются на мгновенные (текущие) и архивные.
-              </List.Item>
-              <List.Item>
-                Данных по ДНС много и они обновляются часто; на данный момент глубина архива исторических данных не более 2 месяцев.
-              </List.Item>
-              <List.Item>
-                Нет единого места хранения и агрегации данных, что значительно усложняет их анализ и обработку.
-              </List.Item>
-            </List>
-          </Card>
-        </Space>
-      </ConstrainedContent>
-    ),
-  },
+
 
   // Slide 5: Раздел — Пользовательский интерфейс
   {
@@ -439,7 +389,7 @@ export const tatneftKpSlides: SlideData[] = [
   // Slide 6: Три ключевые ценности решения
   {
     id: 'solution-values',
-    header: 'Три ключевые ценности решения',
+    header: 'Три ключевые ценности итогового решения',
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="large" style={{ width: '100%' }}>
@@ -485,6 +435,58 @@ export const tatneftKpSlides: SlideData[] = [
               <List.Item>
                 Данные могут переиспользоваться в других системах и
                 аналитических витринах.
+              </List.Item>
+            </List>
+          </Card>
+        </Space>
+      </ConstrainedContent>
+    ),
+  },
+
+  // Объекты мониторинга: ДНС и данные (после Потребность — для понимания рамок КП)
+  {
+    id: 'problem-dns-context',
+    header: 'Объекты мониторинга: ДНС и данные',
+    content: (
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Исходные допущения (ДНС)
+            </Title>
+            <Paragraph style={{ marginBottom: 8 }}>
+              В рамках настоящего КП мы исходим из следующих допущений. На их базе
+              строится расчёт и структура коммерческого предложения.
+            </Paragraph>
+            <List size="small">
+              <List.Item>
+                В рамках КП принимаем: ДНС — ключевой и наиболее многочисленный
+                объект мониторинга для целей настоящего предложения.
+              </List.Item>
+              <List.Item>
+                Оценочный масштаб для расчётов: порядка тысяч единиц ДНС.
+              </List.Item>
+            </List>
+          </Card>
+          <Card>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Текущее состояние данных
+            </Title>
+            <List size="small">
+              <List.Item>
+                Данные с ДНС поступают по разным каналам с разной периодичностью.
+              </List.Item>
+              <List.Item>
+                Данные по ДНС распределены по разным системам хранения и обработки данных.
+              </List.Item>
+              <List.Item>
+                Данные по ДНС разделяются на мгновенные (текущие) и архивные.
+              </List.Item>
+              <List.Item>
+                Данных по ДНС много и они обновляются часто; на данный момент глубина архива исторических данных не более 2 месяцев.
+              </List.Item>
+              <List.Item>
+                Нет единого места хранения и агрегации данных, что значительно усложняет их анализ и обработку.
               </List.Item>
             </List>
           </Card>
