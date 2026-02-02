@@ -842,16 +842,29 @@ export const tatneftKpSlides: SlideData[] = [
     header: 'Data Lake: схема',
     content: (
       <ConstrainedContent>
-        <Card>
-          <img
-            src={dataLakeDiagram}
-            alt="Data Lake: схема"
-            style={{ width: '100%', height: 'auto', maxHeight: 500, display: 'block', objectFit: 'contain' }}
-          />
-        </Card>
-        <Paragraph style={{ marginTop: 16, marginBottom: 0, textAlign: 'center' }}>
-          Схема Data Lake: источники данных, ETL, хранилище.
-        </Paragraph>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Space direction="vertical" size="small" style={{ width: '100%' }}>
+            <TodoCard
+              title="Упомянуть: используем только импортозамещённые решения"
+              description="Решения должны отвечать требованиям безопасности и прочим."
+              status="pending"
+            />
+            <TodoCard
+              title="Упомянуть: список требований будет утверждён на этапе аналитики и т.д."
+              status="pending"
+            />
+          </Space>
+          <Card>
+            <img
+              src={dataLakeDiagram}
+              alt="Data Lake: схема"
+              style={{ width: '100%', height: 'auto', maxHeight: 420, display: 'block', objectFit: 'contain' }}
+            />
+          </Card>
+          <Paragraph style={{ marginTop: 0, marginBottom: 0, textAlign: 'center' }}>
+            Схема Data Lake: источники данных, ETL, хранилище.
+          </Paragraph>
+        </Space>
       </ConstrainedContent>
     ),
   },
@@ -1059,6 +1072,18 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <TodoCard
+            title="Переформулировать цель"
+            description={
+              <>
+                Держать в голове: поначалу будут срабатывать много аномалий,
+                много всего, при этом по-настоящему предаварийных — почти нет.
+                Далее соберём информацию о действиях оператора, чтобы впоследствии
+                иметь возможность формулировать рекомендации.
+              </>
+            }
+            status="pending"
+          />
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
               <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
@@ -1117,16 +1142,22 @@ export const tatneftKpSlides: SlideData[] = [
     header: 'Подсистема предупреждений: схема',
     content: (
       <ConstrainedContent>
-        <Card>
-          <img
-            src={subSystemDiagram}
-            alt="Подсистема предупреждений: схема"
-            style={{ width: '100%', height: 'auto', maxHeight: 500, display: 'block', objectFit: 'contain' }}
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <TodoCard
+            title="Добавить аннотации к аббревиатурам"
+            status="pending"
           />
-        </Card>
-        <Paragraph style={{ marginTop: 16, marginBottom: 0, textAlign: 'center' }}>
-          Схема подсистемы: данные из Data Lake, алгоритмы, выход в UI.
-        </Paragraph>
+          <Card>
+            <img
+              src={subSystemDiagram}
+              alt="Подсистема предупреждений: схема"
+              style={{ width: '100%', height: 'auto', maxHeight: 460, display: 'block', objectFit: 'contain' }}
+            />
+          </Card>
+          <Paragraph style={{ marginTop: 16, marginBottom: 0, textAlign: 'center' }}>
+            Схема подсистемы: данные из Data Lake, алгоритмы, выход в UI.
+          </Paragraph>
+        </Space>
       </ConstrainedContent>
     ),
   },
@@ -1839,13 +1870,18 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'summary-gantt',
     header: 'План-график',
     content: (
-      <Card style={{ width: '100%' }}>
-        <img
-          src={ganttImage}
-          alt="План-график проекта"
-          style={{ width: '100%', height: 'auto', display: 'block' }}
-        />
-      </Card>
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <TodoCard title="Перепроверить даты" status="pending" />
+          <Card style={{ width: '100%' }}>
+            <img
+              src={ganttImage}
+              alt="План-график проекта"
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+            />
+          </Card>
+        </Space>
+      </ConstrainedContent>
     ),
   },
   {
