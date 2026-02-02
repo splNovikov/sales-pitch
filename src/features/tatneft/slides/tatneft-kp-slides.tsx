@@ -13,8 +13,23 @@ import highLevelDiagram from './diagrams/high-level.svg';
 import dataLakeDiagram from './diagrams/data_lake.svg';
 import subSystemDiagram from './diagrams/sub-system.svg';
 import { TodoCard } from '~shared/ui/todo-card';
+import { FileText, Target, Award } from 'lucide-react';
 
 const { Title, Paragraph, Text } = Typography;
+
+const iconStyle = {
+  width: 16,
+  height: 16,
+  color: 'var(--ant-color-text-secondary)',
+  flexShrink: 0,
+  display: 'block',
+} as const;
+
+const iconWrapStyle = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  lineHeight: 1,
+} as const;
 
 const dataLakePhases: RoadmapItem[] = [
   {
@@ -500,17 +515,37 @@ export const tatneftKpSlides: SlideData[] = [
     header: 'Общая схема взаимодействия компонентов',
     content: (
       <ConstrainedContent>
-        <Card>
-          <img
-            src={highLevelDiagram}
-            alt="Общая схема взаимодействия компонентов"
-            style={{ width: '100%', height: 'auto', maxHeight: 500, display: 'block', objectFit: 'contain' }}
-          />
-        </Card>
-        <Paragraph style={{ marginTop: 16, marginBottom: 0, textAlign: 'center' }}>
-          Схема взаимодействия трёх компонентов: хранилище данных, подсистема
-          раннего предупреждения, интерфейс оператора.
-        </Paragraph>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Space direction="vertical" size="small" style={{ width: '100%' }}>
+            <TodoCard
+              title="Внедрить терминологию: что такое аномалия"
+              status="pending"
+            />
+            <TodoCard
+              title="Внедрить терминологию: что такое SCADA, сколько типов SCADA бывает"
+              status="pending"
+            />
+            <TodoCard
+              title="Донести: для любой системы необходимо хранение данных"
+              status="pending"
+            />
+            <TodoCard
+              title="Донести: наша задача — in advance предупреждать операторов"
+              status="pending"
+            />
+          </Space>
+          <Card>
+            <img
+              src={highLevelDiagram}
+              alt="Общая схема взаимодействия компонентов"
+              style={{ width: '100%', height: 'auto', maxHeight: 500, display: 'block', objectFit: 'contain' }}
+            />
+          </Card>
+          <Paragraph style={{ marginTop: 16, marginBottom: 0, textAlign: 'center' }}>
+            Схема взаимодействия трёх компонентов: хранилище данных, подсистема
+            раннего предупреждения, интерфейс оператора.
+          </Paragraph>
+        </Space>
       </ConstrainedContent>
     ),
   },
@@ -521,6 +556,11 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <TodoCard
+            title="Фокус слайда: почему именно ДНС"
+            description="ДНС несёт много информации; из 3 слайда оригинальной презентации — 36% общей массы. Важно сфокусировать внимание что мы [донести тезис]."
+            status="pending"
+          />
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
               Масштабируемость архитектуры
@@ -572,7 +612,23 @@ export const tatneftKpSlides: SlideData[] = [
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              Почему этот этап необходим
+              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <span style={iconWrapStyle}><FileText {...iconStyle} /></span>
+                Описание
+              </Space>
+            </Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Сбор и формализация бизнес-требований, анализ предметной области и
+              определение списка объектов мониторинга (ДНС), проектирование
+              технической архитектуры решения для обеспечения масштабируемости.
+            </Paragraph>
+          </Card>
+          <Card>
+            <Title level={5} style={{ marginTop: 0 }}>
+              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <span style={iconWrapStyle}><Target {...iconStyle} /></span>
+                Цель
+              </Space>
             </Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Подготовительная фаза обязательна для старта проекта: без
@@ -583,17 +639,10 @@ export const tatneftKpSlides: SlideData[] = [
           </Card>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              Назначение
-            </Title>
-            <Paragraph style={{ marginBottom: 0 }}>
-              Сбор и формализация бизнес-требований, анализ предметной области и
-              определение списка объектов мониторинга (ДНС), проектирование
-              технической архитектуры решения для обеспечения масштабируемости.
-            </Paragraph>
-          </Card>
-          <Card>
-            <Title level={5} style={{ marginTop: 0 }}>
-              Ценность для организации и доставляемый результат
+              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <span style={iconWrapStyle}><Award {...iconStyle} /></span>
+                Ценность
+              </Space>
             </Title>
             <List size="small">
               <List.Item>Документ с описанием архитектуры системы.</List.Item>
@@ -738,7 +787,23 @@ export const tatneftKpSlides: SlideData[] = [
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              Почему этот компонент необходим
+              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <span style={iconWrapStyle}><FileText {...iconStyle} /></span>
+                Описание
+              </Space>
+            </Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Единое хранилище телеметрии с датчиков оборудования и информации
+              об инцидентах. Данные выгружаются, очищаются и приводятся к
+              единому формату.
+            </Paragraph>
+          </Card>
+          <Card>
+            <Title level={5} style={{ marginTop: 0 }}>
+              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <span style={iconWrapStyle}><Target {...iconStyle} /></span>
+                Цель
+              </Space>
             </Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Data Lake является необходимым фундаментом решения. Data Lake —
@@ -749,17 +814,10 @@ export const tatneftKpSlides: SlideData[] = [
           </Card>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              Назначение
-            </Title>
-            <Paragraph style={{ marginBottom: 0 }}>
-              Единое хранилище телеметрии с датчиков оборудования и информации
-              об инцидентах. Данные выгружаются, очищаются и приводятся к
-              единому формату.
-            </Paragraph>
-          </Card>
-          <Card>
-            <Title level={5} style={{ marginTop: 0 }}>
-              Ценность для организации и доставляемый результат
+              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <span style={iconWrapStyle}><Award {...iconStyle} /></span>
+                Ценность
+              </Space>
             </Title>
             <List size="small">
               <List.Item>
@@ -1003,7 +1061,23 @@ export const tatneftKpSlides: SlideData[] = [
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              Почему этот компонент необходим
+              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <span style={iconWrapStyle}><FileText {...iconStyle} /></span>
+                Описание
+              </Space>
+            </Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Набор алгоритмов, которые анализируют данные из хранилища, находят
+              отклонения в поведении оборудования и формируют оповещения о
+              рисках до наступления инцидента.
+            </Paragraph>
+          </Card>
+          <Card>
+            <Title level={5} style={{ marginTop: 0 }}>
+              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <span style={iconWrapStyle}><Target {...iconStyle} /></span>
+                Цель
+              </Space>
             </Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Подсистема функционирует поверх Data Lake и реализует основную
@@ -1014,17 +1088,10 @@ export const tatneftKpSlides: SlideData[] = [
           </Card>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              Назначение
-            </Title>
-            <Paragraph style={{ marginBottom: 0 }}>
-              Набор алгоритмов, которые анализируют данные из хранилища, находят
-              отклонения в поведении оборудования и формируют оповещения о
-              рисках до наступления инцидента.
-            </Paragraph>
-          </Card>
-          <Card>
-            <Title level={5} style={{ marginTop: 0 }}>
-              Ценность для организации и доставляемый результат
+              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <span style={iconWrapStyle}><Award {...iconStyle} /></span>
+                Ценность для организации и доставляемый результат
+              </Space>
             </Title>
             <List size="small">
               <List.Item>
@@ -1393,18 +1460,10 @@ export const tatneftKpSlides: SlideData[] = [
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              Почему этот компонент необходим
-            </Title>
-            <Paragraph style={{ marginBottom: 0 }}>
-              Интерфейс обеспечивает доведение результатов работы подсистемы
-              предупреждений до операторов и уполномоченных сотрудников. Без
-              него организация не может получать оповещения о рисках, видеть их
-              обоснование и действовать до наступления инцидента.
-            </Paragraph>
-          </Card>
-          <Card>
-            <Title level={5} style={{ marginTop: 0 }}>
-              Назначение
+              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <span style={iconWrapStyle}><FileText {...iconStyle} /></span>
+                Описание
+              </Space>
             </Title>
             <Paragraph style={{ marginBottom: 0 }}>
               Веб-интерфейс, с которым работают диспетчеры и инженеры: дашборды,
@@ -1415,7 +1474,24 @@ export const tatneftKpSlides: SlideData[] = [
           </Card>
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
-              Ценность для организации и доставляемый результат
+              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <span style={iconWrapStyle}><Target {...iconStyle} /></span>
+                Цель
+              </Space>
+            </Title>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Интерфейс обеспечивает доведение результатов работы подсистемы
+              предупреждений до операторов и уполномоченных сотрудников. Без
+              него организация не может получать оповещения о рисках, видеть их
+              обоснование и действовать до наступления инцидента.
+            </Paragraph>
+          </Card>
+          <Card>
+            <Title level={5} style={{ marginTop: 0 }}>
+              <Space size="small" align="center" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <span style={iconWrapStyle}><Award {...iconStyle} /></span>
+                Ценность
+              </Space>
             </Title>
             <List size="small">
               <List.Item>
