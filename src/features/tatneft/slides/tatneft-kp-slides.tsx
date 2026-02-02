@@ -1,4 +1,4 @@
-import { Space, Typography, List, Card, Table } from 'antd';
+import { Space, Typography, List, Card, Table, Row, Col } from 'antd';
 import { CalendarOutlined } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
@@ -303,36 +303,77 @@ export const tatneftKpSlides: SlideData[] = [
     content: <SectionTitleSlide imageIndex={0} title="Постановка задачи" />,
   },
 
-  // Slide 3: Масштаб, причины ложных тревог и текущий процесс
+  // Slide 3: Масштаб, причины аварийных тревог и текущий процесс
   {
     id: 'problem-scale-and-process',
     header: 'Масштаб и текущий процесс',
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <TodoCard title="Выверить цифры" />
+          <TodoCard
+            title="Проверить данные"
+            status="done"
+          />
           <Card>
-            <Title level={4} style={{ marginTop: 0 }}>
-              Масштаб
-            </Title>
             <Paragraph style={{ marginBottom: 0 }}>
-              <Text strong>~60 000 аварийных сигналов в неделю</Text>
+              За период 04–10.08.2025 в разрезе НГДУ наибольшее количество
+              аварийных сигналов поступило по{' '}
+              <Text strong>скважинам (38%)</Text> и{' '}
+              <Text strong>ДНС, ГЗНУ, УПСВ (36%)</Text>.
             </Paragraph>
           </Card>
           <Card>
-            <Title level={4} style={{ marginTop: 0 }}>
-              Ложные тревоги и процесс
+            <Title level={5} style={{ marginTop: 0 }}>
+              Структура причин тревог по типам объектов (период 04–10.08.2025)
             </Title>
             <List size="small">
-              <List.Item>Неверные уставки — 40%</List.Item>
-              <List.Item>Изменение режимов работы — 25%</List.Item>
-              <List.Item>Износ оборудования — 20%</List.Item>
-              <List.Item>Выведенное оборудование — 15%</List.Item>
               <List.Item>
-                Ручной анализ сигналов и трендов,{' '}
-                <Text strong>несколько часов на один объект</Text>
+                <Text strong>ДНС, ЗНУ, УПСВ:</Text> отклонения по давлению 52%,
+                уровни в ёмкости 19%, обрыв связи 10%, прочие 9%, загазованность
+                6%, ДНС 5%.
               </List.Item>
+              <List.Item>
+                <Text strong>Скважины:</Text> обрыв связи 50%, отклонения по
+                давлению 29%, прочие 18%, сработки ПОС 3%.
+              </List.Item>
+              <List.Item>
+                <Text strong>ГЗУ, БГ:</Text> обрыв связи 46%, отклонения по
+                давлению 38%, прочие 13%, сработки ПОС 3%.
+              </List.Item>
+
             </List>
+          </Card>
+          <Card>
+            <Title level={4} style={{ marginTop: 0 }}>
+              Основные причины аварийных тревог
+            </Title>
+            <Row gutter={24}>
+              <Col xs={24} md={12}>
+                <List size="small">
+                  <List.Item>Изменение объёмов перекачиваемой жидкости</List.Item>
+                  <List.Item>
+                    Неверное определение значений сигнализаций при формировании
+                    перечней блокировок и сигнализаций
+                  </List.Item>
+                  <List.Item>Износ оборудования</List.Item>
+                  <List.Item>Снижение проходного сечения трубопроводов</List.Item>
+                  <List.Item>Неисправность средств КИПиА</List.Item>
+                </List>
+              </Col>
+              <Col xs={24} md={12}>
+                <List size="small">
+                  <List.Item>Несовершенство существующей АСУТП</List.Item>
+                  <List.Item>
+                    Временный вывод из эксплуатации оборудования
+                  </List.Item>
+                  <List.Item>Отказ технологического оборудования</List.Item>
+                  <List.Item>
+                    Ручной анализ сигналов и трендов,{' '}
+                    <Text strong>несколько часов на один объект</Text>
+                  </List.Item>
+                </List>
+              </Col>
+            </Row>
           </Card>
         </Space>
       </ConstrainedContent>
