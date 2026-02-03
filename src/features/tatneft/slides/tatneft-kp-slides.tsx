@@ -109,8 +109,7 @@ const solutionValuesRoadmap: RoadmapItem[] = [
     color: 'green',
     subSteps: [
       {
-        title:
-          'Алгоритмы заранее находят отклонения в поведении оборудования',
+        title: 'Алгоритмы заранее находят отклонения в поведении оборудования',
       },
       {
         title:
@@ -493,11 +492,7 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'solution-values',
     header: 'Три ключевые ценности итогового решения',
     content: (
-      <Roadmap
-        items={solutionValuesRoadmap}
-        mode="alternate"
-        maxWidth={1200}
-      />
+      <Roadmap items={solutionValuesRoadmap} mode="alternate" maxWidth={1200} />
     ),
   },
 
@@ -1994,17 +1989,15 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'summary-gantt',
     header: 'План-график',
     content: (
-      <ConstrainedContent>
-        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <Card style={{ width: '100%' }}>
-            <img
-              src={ganttImage}
-              alt="План-график проекта"
-              style={{ width: '100%', height: 'auto', display: 'block' }}
-            />
-          </Card>
-        </Space>
-      </ConstrainedContent>
+      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+        <Card style={{ width: '100%' }}>
+          <img
+            src={ganttImage}
+            alt="План-график проекта"
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+          />
+        </Card>
+      </Space>
     ),
   },
   {
