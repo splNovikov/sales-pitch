@@ -16,7 +16,6 @@ import {
   BuildOutlined,
   ThunderboltOutlined,
   FileTextOutlined,
-  ClockCircleOutlined,
   BarChartOutlined,
   ApiOutlined,
   CreditCardOutlined,
@@ -101,58 +100,61 @@ export const aquastrongB2BCabinetSlides: SlideData[] = [
     id: 'key-needs',
     header: 'Потребности компании',
     content: (
-      <Space
-        orientation="vertical"
-        size="small"
-        style={{ width: '100%', maxHeight: 'calc(100vh - 140px)', overflow: 'hidden' }}
-      >
-        <Card size="small" style={{ backgroundColor: '#fff1f0' }}>
-          <Title level={5} style={{ marginTop: 0, marginBottom: 8 }}>
+      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+        <Card style={{ backgroundColor: '#fff1f0' }}>
+          <Title level={4} style={{ marginTop: 0, marginBottom: 12 }}>
             <RocketOutlined style={{ color: '#ff4d4f', marginRight: 8 }} />
             Критические потребности (Карина Алексеевна)
           </Title>
           <List
-            size="small"
             dataSource={[
               'Остатки — в каталоге и для дилеров.',
               'Выдача — первые места в поиске, «чтоб работал сам на себя».',
               'Дилерский кабинет — каталог, цены, заказы, документы.',
             ]}
             renderItem={item => (
-              <List.Item style={{ padding: '2px 0', borderBlockEnd: 'none' }}>
+              <List.Item style={{ padding: '6px 0', borderBlockEnd: 'none' }}>
                 <CheckCircleOutlined
-                  style={{ color: '#ff4d4f', marginRight: 8 }}
+                  style={{ color: '#ff4d4f', marginRight: 10, fontSize: 16 }}
                 />
-                <Text style={{ fontSize: '13px' }}>{item}</Text>
+                <Text style={{ fontSize: 'var(--app-font-size-md)' }}>
+                  {item}
+                </Text>
               </List.Item>
             )}
           />
         </Card>
-        <Card size="small" style={{ backgroundColor: '#f5f5f5', padding: '8px 12px' }}>
-          <Text style={{ fontSize: '12px' }}>
+        <Card style={{ backgroundColor: '#f5f5f5', padding: '12px 16px' }}>
+          <Text style={{ fontSize: 'var(--app-font-size-md)' }}>
             <Text strong>Конкурент: </Text>
-            <a href="https://cnp-rus.ru/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://cnp-rus.ru/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               cnp-rus.ru
             </a>
           </Text>
         </Card>
-        <Card size="small">
-          <Title level={5} style={{ marginTop: 0, marginBottom: 6 }}>
+        <Card>
+          <Title level={4} style={{ marginTop: 0, marginBottom: 12 }}>
             <BuildOutlined style={{ marginRight: 8 }} />
             MVP
           </Title>
-          <Row gutter={[8, 8]}>
+          <Row gutter={[12, 12]}>
             <Col xs={12} md={6}>
               <Card size="small" style={{ backgroundColor: '#f0f0f0' }}>
-                <Text strong style={{ fontSize: '12px' }}>
-                  <ShopOutlined style={{ marginRight: 4 }} /> Каталог
+                <Text strong style={{ fontSize: 'var(--app-font-size-md)' }}>
+                  <ShopOutlined style={{ marginRight: 6 }} /> Каталог
                 </Text>
                 <List
                   size="small"
                   dataSource={['Остатки', 'Цены', 'Документы']}
                   renderItem={item => (
-                    <List.Item style={{ padding: '1px 0' }}>
-                      <Text style={{ fontSize: '11px' }}>• {item}</Text>
+                    <List.Item style={{ padding: '4px 0' }}>
+                      <Text style={{ fontSize: 'var(--app-font-size-md)' }}>
+                        • {item}
+                      </Text>
                     </List.Item>
                   )}
                 />
@@ -160,15 +162,17 @@ export const aquastrongB2BCabinetSlides: SlideData[] = [
             </Col>
             <Col xs={12} md={6}>
               <Card size="small" style={{ backgroundColor: '#f0f0f0' }}>
-                <Text strong style={{ fontSize: '12px' }}>
-                  <UserOutlined style={{ marginRight: 4 }} /> ЛК
+                <Text strong style={{ fontSize: 'var(--app-font-size-md)' }}>
+                  <UserOutlined style={{ marginRight: 6 }} /> ЛК
                 </Text>
                 <List
                   size="small"
                   dataSource={['Авторизация', 'Заказы', 'Реквизиты']}
                   renderItem={item => (
-                    <List.Item style={{ padding: '1px 0' }}>
-                      <Text style={{ fontSize: '11px' }}>• {item}</Text>
+                    <List.Item style={{ padding: '4px 0' }}>
+                      <Text style={{ fontSize: 'var(--app-font-size-md)' }}>
+                        • {item}
+                      </Text>
                     </List.Item>
                   )}
                 />
@@ -176,15 +180,17 @@ export const aquastrongB2BCabinetSlides: SlideData[] = [
             </Col>
             <Col xs={12} md={6}>
               <Card size="small" style={{ backgroundColor: '#f0f0f0' }}>
-                <Text strong style={{ fontSize: '12px' }}>
-                  <CreditCardOutlined style={{ marginRight: 4 }} /> Заказ
+                <Text strong style={{ fontSize: 'var(--app-font-size-md)' }}>
+                  <CreditCardOutlined style={{ marginRight: 6 }} /> Заказ
                 </Text>
                 <List
                   size="small"
                   dataSource={['Корзина', 'Скидки', 'Доставка']}
                   renderItem={item => (
-                    <List.Item style={{ padding: '1px 0' }}>
-                      <Text style={{ fontSize: '11px' }}>• {item}</Text>
+                    <List.Item style={{ padding: '4px 0' }}>
+                      <Text style={{ fontSize: 'var(--app-font-size-md)' }}>
+                        • {item}
+                      </Text>
                     </List.Item>
                   )}
                 />
@@ -192,15 +198,17 @@ export const aquastrongB2BCabinetSlides: SlideData[] = [
             </Col>
             <Col xs={12} md={6}>
               <Card size="small" style={{ backgroundColor: '#f0f0f0' }}>
-                <Text strong style={{ fontSize: '12px' }}>
-                  <FileTextOutlined style={{ marginRight: 4 }} /> Заказы
+                <Text strong style={{ fontSize: 'var(--app-font-size-md)' }}>
+                  <FileTextOutlined style={{ marginRight: 6 }} /> Заказы
                 </Text>
                 <List
                   size="small"
                   dataSource={['Статус', 'Платежи', 'Печать']}
                   renderItem={item => (
-                    <List.Item style={{ padding: '1px 0' }}>
-                      <Text style={{ fontSize: '11px' }}>• {item}</Text>
+                    <List.Item style={{ padding: '4px 0' }}>
+                      <Text style={{ fontSize: 'var(--app-font-size-md)' }}>
+                        • {item}
+                      </Text>
                     </List.Item>
                   )}
                 />
@@ -488,151 +496,17 @@ export const aquastrongB2BCabinetSlides: SlideData[] = [
       </Space>
     ),
   },
-  {
-    id: 'implementation-phases-title',
-    header: undefined,
-    content: (
-      <SectionTitleSlide
-        title="Этапы реализации проекта"
-        imageSrc="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=1200&h=800&fit=crop"
-        imageAlt="Список задач и этапов проекта"
-      />
-    ),
-  },
-  {
-    id: 'implementation-phases',
-    header: 'Этапы реализации',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <ClockCircleOutlined style={{ marginRight: 8 }} />
-            Фаза 1: Подготовка (Неделя 1-2)
-          </Title>
-          <List
-            dataSource={[
-              'Встреча с ключевыми лицами (ГД, руководитель продаж, CFO)',
-              'Сбор требований и описание функционала под насосы',
-              'Анализ текущих систем (1C, CRM, ERP)',
-              'Проверка финансовой состояния компании',
-              'Дизайн и прототипирование (2 недели)',
-            ]}
-            renderItem={item => (
-              <List.Item style={{ padding: '8px 0' }}>
-                <CheckCircleOutlined
-                  style={{ color: '#1890ff', marginRight: 12, fontSize: 16 }}
-                />
-                <Text style={{ fontSize: 'var(--app-font-size-md)' }}>
-                  {item}
-                </Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <BuildOutlined style={{ marginRight: 8 }} />
-            Фаза 2: Разработка концепции (Неделя 3-4)
-          </Title>
-          <Row gutter={[16, 16]}>
-            <Col xs={24} md={12}>
-              <Card size="small" style={{ backgroundColor: '#f6ffed' }}>
-                <Text strong>MVP (Минимально жизнеспособный продукт)</Text>
-                <List
-                  size="small"
-                  dataSource={[
-                    'Каталог насосов с остатками',
-                    'Личный кабинет',
-                    'Корзина и оформление заказа',
-                    'История заказов',
-                    'Уведомления (Email/SMS)',
-                  ]}
-                  renderItem={item => (
-                    <List.Item style={{ padding: '4px 0' }}>
-                      <Text>• {item}</Text>
-                    </List.Item>
-                  )}
-                />
-              </Card>
-            </Col>
-          </Row>
-        </Card>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <RocketOutlined style={{ marginRight: 8 }} />
-            Фаза 3: Разработка и внедрение (1-3 месяца)
-          </Title>
-          <List
-            dataSource={[
-              'Разработка backend (3-4 недели)',
-              'Разработка frontend (3-4 недели)',
-              'Тестирование и QA (2 недели)',
-              'Миграция и интеграции (1-2 недели)',
-              'Обучение пользователей (1 неделя)',
-              'Запуск в production',
-            ]}
-            renderItem={item => (
-              <List.Item style={{ padding: '8px 0' }}>
-                <ClockCircleOutlined
-                  style={{ color: '#52c41a', marginRight: 12, fontSize: 16 }}
-                />
-                <Text style={{ fontSize: 'var(--app-font-size-md)' }}>
-                  {item}
-                </Text>
-              </List.Item>
-            )}
-          />
-        </Card>
-      </Space>
-    ),
-  },
-  {
-    id: 'key-questions',
-    header: 'Контрольные вопросы для встречи',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            <FileTextOutlined style={{ marginRight: 8 }} />
-            Вопросы для уточнения
-          </Title>
-          <List
-            dataSource={[
-              'Какой текущий объем оптовых поставок насосов в месяц?',
-              'Сколько активных B2B клиентов и дистрибьюторов?',
-              'Какой процент заказов может быть автоматизирован через систему?',
-              'Есть ли текущая 1C или ERP система?',
-              'Какие платежные системы предпочтут клиенты?',
-              'Какой язык программирования предпочитает команда (для поддержки)?',
-              'Какой бюджет выделен на проект?',
-              'Какие сроки реализации критичны?',
-              'Кто будет основным контактом на стороне клиента?',
-              'Какие KPI будут учитывать успех проекта?',
-            ]}
-            renderItem={(item, index) => (
-              <List.Item style={{ padding: '8px 0' }}>
-                <Space>
-                  <Tag
-                    color="blue"
-                    style={{ minWidth: '30px', textAlign: 'center' }}
-                  >
-                    {index + 1}
-                  </Tag>
-                  <Text style={{ fontSize: 'var(--app-font-size-md)' }}>
-                    {item}
-                  </Text>
-                </Space>
-              </List.Item>
-            )}
-          />
-        </Card>
-      </Space>
-    ),
-  },
 
+
+  // Контакты
   {
-    id: 'final',
-    header: 'Контакты',
+    id: 'contacts',
+    header: undefined,
+    content: <SectionTitleSlide title="Контактная информация" imageIndex={0} />,
+  },
+  {
+    id: 'contacts-list',
+    header: undefined,
     content: <ContactsSlide contacts={['Pasha', 'Artem']} />,
   },
 
