@@ -93,6 +93,10 @@ import {
   eksimaDorabotkiTitle,
 } from '~features/eksima/slides/eksima-dorabotki.meta';
 import {
+  aquastrongB2BCabinetCreatedAt,
+  aquastrongB2BCabinetTitle,
+} from '~features/aquastrong/slides/aquastrong-b2b-cabinet.meta';
+import {
   proposalAiCreatedAt,
   proposalAiTitle,
 } from '~features/proposal-ai/slides/proposal-ai.meta';
@@ -351,6 +355,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'eksima-dorabotki',
     title: eksimaDorabotkiTitle,
     createdAt: eksimaDorabotkiCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'aquastrong-b2b-cabinet',
+    title: aquastrongB2BCabinetTitle,
+    createdAt: aquastrongB2BCabinetCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
