@@ -90,6 +90,53 @@ const dataLakePhases: RoadmapItem[] = [
   },
 ];
 
+const solutionValuesRoadmap: RoadmapItem[] = [
+  {
+    title: 'Хранилище данных',
+    icon: <CalendarOutlined />,
+    color: 'blue',
+    subSteps: [
+      { title: 'Единое хранилище телеметрии и информации об инцидентах' },
+      {
+        title:
+          'Данные могут переиспользоваться в других системах и аналитических витринах',
+      },
+    ],
+  },
+  {
+    title: 'Раннее предупреждение о рисках',
+    icon: <CalendarOutlined />,
+    color: 'green',
+    subSteps: [
+      {
+        title:
+          'Алгоритмы заранее находят отклонения в поведении оборудования',
+      },
+      {
+        title:
+          'Система предупреждает о рисках до инцидента, снижая простои и потери',
+      },
+    ],
+  },
+  {
+    title: 'Пользовательский интерфейс',
+    icon: <CalendarOutlined />,
+    color: 'purple',
+    subSteps: [
+      {
+        title: 'Рабочие дашборды и оповещения для операторов и инженеров',
+      },
+      {
+        title: 'Интерфейс показывает причину каждого предупреждения',
+      },
+      { title: 'Фильтрация, в том числе по объекту' },
+      {
+        title: 'Отдельный экран со сводной статистикой и простыми отчётами',
+      },
+    ],
+  },
+];
+
 const preparatoryPhases: RoadmapItem[] = [
   {
     title: 'Определение набора ДНС',
@@ -446,57 +493,11 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'solution-values',
     header: 'Три ключевые ценности итогового решения',
     content: (
-      <ConstrainedContent>
-        <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-          <Card>
-            <Title level={4} style={{ marginTop: 0 }}>
-              Хранилище данных
-            </Title>
-            <List size="small">
-              <List.Item>
-                Единое хранилище телеметрии и информации об инцидентах.
-              </List.Item>
-              <List.Item>
-                Данные могут переиспользоваться в других системах и
-                аналитических витринах.
-              </List.Item>
-            </List>
-          </Card>
-
-          <Card>
-            <Title level={4} style={{ marginTop: 0 }}>
-              Раннее предупреждение о рисках
-            </Title>
-            <List size="small">
-              <List.Item>
-                Алгоритмы заранее находят отклонения в поведении оборудования.
-              </List.Item>
-              <List.Item>
-                Система предупреждает о рисках до инцидента, снижая простои и
-                потери.
-              </List.Item>
-            </List>
-          </Card>
-
-          <Card>
-            <Title level={4} style={{ marginTop: 0 }}>
-              Пользовательский интерфейс
-            </Title>
-            <List size="small">
-              <List.Item>
-                Рабочие дашборды и оповещения для операторов и инженеров.
-              </List.Item>
-              <List.Item>
-                Интерфейс, который показывает причину каждого предупреждения.
-              </List.Item>
-              <List.Item>Фильтрация, в том числе по объекту.</List.Item>
-              <List.Item>
-                Отдельный экран со сводной статистикой и простыми отчётами.
-              </List.Item>
-            </List>
-          </Card>
-        </Space>
-      </ConstrainedContent>
+      <Roadmap
+        items={solutionValuesRoadmap}
+        mode="alternate"
+        maxWidth={1200}
+      />
     ),
   },
 
