@@ -12,7 +12,6 @@ import black_list_tatn from './black_list_tatn.jpeg';
 import highLevelDiagram from './diagrams/high-level.svg';
 import dataLakeDiagram from './diagrams/data_lake.svg';
 import subSystemDiagram from './diagrams/sub-system.svg';
-import { TodoCard } from '~shared/ui/todo-card';
 import { FileText, Target, Award } from 'lucide-react';
 
 const { Title, Paragraph, Text } = Typography;
@@ -310,7 +309,6 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <TodoCard title="Проверить данные" status="done" />
           <Card>
             <Paragraph style={{ marginBottom: 0 }}>
               За период 04–10.08.2025 в разрезе НГДУ наибольшее количество
@@ -592,11 +590,6 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <TodoCard
-            title="Фокус слайда: почему именно ДНС"
-            description="ДНС несёт много информации; из 3 слайда оригинальной презентации — 36% общей массы. Важно сфокусировать внимание что мы [донести тезис]."
-            status="done"
-          />
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
               Не только решение под ДНС
@@ -1158,7 +1151,6 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <TodoCard title="Переформулировать цель" status="done" />
           <Card>
             <Title level={5} style={{ marginTop: 0 }}>
               <Space
@@ -1250,7 +1242,6 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <TodoCard title="Добавить аннотации к аббревиатурам" status="done" />
           <Card>
             <img
               src={subSystemDiagram}
@@ -2002,7 +1993,6 @@ export const tatneftKpSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <TodoCard title="Перепроверить даты" status="pending" />
           <Card style={{ width: '100%' }}>
             <img
               src={ganttImage}
