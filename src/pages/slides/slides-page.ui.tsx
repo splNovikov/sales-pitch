@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { kirovStekloSlides } from '~features/kirov-steklo/slides/kirov-steklo-slides';
 import { niteosSlides } from '~features/niteos/slides/niteos-slides';
@@ -125,7 +125,7 @@ export default function SlidesPage() {
   const { slug } = useLoaderData() as { slug: string };
   const [, forceUpdate] = useState(0);
   const presentation = getPresentationBySlug(slug);
-  const slides = getSlidesBySlug(slug);
+  const slides = useMemo(() => getSlidesBySlug(slug), [slug]);
 
   const isAuthenticated = isPresentationAuthenticated(slug);
 

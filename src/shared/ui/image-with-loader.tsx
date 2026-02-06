@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, memo, useRef, useEffect } from 'react';
 import { Spin } from 'antd';
 
 export interface ImageWithLoaderProps {
@@ -12,8 +12,9 @@ export interface ImageWithLoaderProps {
 /**
  * Image component with loading spinner
  * Shows spinner while image is loading
+ * Checks if image is already cached on mount to avoid unnecessary loading states
  */
-export function ImageWithLoader({
+export const ImageWithLoader = memo(function ImageWithLoader({
   src,
   alt,
   style,
@@ -22,6 +23,16 @@ export function ImageWithLoader({
 }: ImageWithLoaderProps) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // Check if image is already loaded (cached) on mount
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalHeight !== 0) {
+      // Image is already loaded from cache
+      setLoading(false);
+    }
+  }, [src]);
 
   const handleLoad = () => {
     setLoading(false);
@@ -61,6 +72,7 @@ export function ImageWithLoader({
       )}
       {!error && (
         <img
+          ref={imgRef}
           src={src}
           alt={alt}
           onLoad={handleLoad}
@@ -86,4 +98,4 @@ export function ImageWithLoader({
       )}
     </div>
   );
-}
+});

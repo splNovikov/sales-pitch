@@ -1,4 +1,5 @@
 import { Layout } from 'antd';
+import { memo } from 'react';
 import { Slide } from '~widgets/slide';
 import { SlidesFooter } from '~widgets/slides-footer';
 import { useSlidesNavigation, type SlideData } from './slides.hook';
@@ -12,7 +13,7 @@ interface SlidesProps {
   slug: string;
 }
 
-export function Slides({ slides, slug }: SlidesProps) {
+export const Slides = memo(function Slides({ slides, slug }: SlidesProps) {
   const {
     currentSlide,
     currentSlideIndex,
@@ -51,4 +52,4 @@ export function Slides({ slides, slug }: SlidesProps) {
       />
     </Layout>
   );
-}
+});

@@ -1,5 +1,6 @@
 import { Space, Typography, Divider } from 'antd';
 import type { ReactNode } from 'react';
+import { memo } from 'react';
 import { ImageWithLoader } from '~shared/ui/image-with-loader';
 import styles from './section-title-slide.module.css';
 
@@ -33,6 +34,18 @@ const DEFAULT_SECTION_IMAGES: string[] = [
   sectionImage9,
   sectionImage10,
 ];
+
+// Style constants to avoid recreating objects on every render
+const IMAGE_STYLE: React.CSSProperties = {
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+};
+
+const IMAGE_CONTAINER_STYLE: React.CSSProperties = {
+  width: '100%',
+  height: '100%',
+};
 
 export interface SectionTitleSlideProps {
   /**
@@ -69,7 +82,7 @@ export interface SectionTitleSlideProps {
  * Used to separate major sections within a presentation
  * Style matches intermediate title slides pattern from other presentations
  */
-export function SectionTitleSlide({
+export const SectionTitleSlide = memo(function SectionTitleSlide({
   title,
   subtitle,
   imageSrc,
@@ -97,15 +110,8 @@ export function SectionTitleSlide({
           <ImageWithLoader
             src={finalImageSrc}
             alt={imageAlt ?? title}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-            containerStyle={{
-              width: '100%',
-              height: '100%',
-            }}
+            style={IMAGE_STYLE}
+            containerStyle={IMAGE_CONTAINER_STYLE}
           />
         </div>
         <div className={styles.contentContainer}>
@@ -152,4 +158,4 @@ export function SectionTitleSlide({
       )}
     </Space>
   );
-}
+});

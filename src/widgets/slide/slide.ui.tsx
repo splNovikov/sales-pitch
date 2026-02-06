@@ -1,4 +1,5 @@
 import { Layout, Typography } from 'antd';
+import { memo } from 'react';
 import styles from './slide.module.css';
 
 const { Header, Content } = Layout;
@@ -12,7 +13,7 @@ interface SlideProps {
   };
 }
 
-export function Slide({ slide }: SlideProps) {
+export const Slide = memo(function Slide({ slide }: SlideProps) {
   return (
     <Layout className={styles.slide}>
       {/* Header */}
@@ -25,9 +26,7 @@ export function Slide({ slide }: SlideProps) {
       )}
 
       {/* Content */}
-      <Content className={styles.content} key={slide.id}>
-        {slide.content}
-      </Content>
+      <Content className={styles.content}>{slide.content}</Content>
     </Layout>
   );
-}
+});

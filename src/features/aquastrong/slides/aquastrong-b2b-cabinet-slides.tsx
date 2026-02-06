@@ -1,13 +1,4 @@
-import {
-  Typography,
-  List,
-  Space,
-  Card,
-  Row,
-  Col,
-  Tag,
-  Table,
-} from 'antd';
+import { Typography, List, Space, Card, Row, Col, Tag, Table } from 'antd';
 import {
   ShopOutlined,
   CheckCircleOutlined,
@@ -497,7 +488,6 @@ export const aquastrongB2BCabinetSlides: SlideData[] = [
     ),
   },
 
-
   // Контакты
   {
     id: 'contacts',
@@ -509,5 +499,4 @@ export const aquastrongB2BCabinetSlides: SlideData[] = [
     header: undefined,
     content: <ContactsSlide contacts={['Pasha', 'Artem']} />,
   },
-
 ];

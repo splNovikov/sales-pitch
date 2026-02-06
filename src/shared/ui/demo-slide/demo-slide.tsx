@@ -1,6 +1,6 @@
 import { Card, Button, Row, Col } from 'antd';
 import { GlobalOutlined, ArrowRightOutlined } from '@ant-design/icons';
-import { useCallback, useMemo } from 'react';
+import { useCallback, useMemo, memo } from 'react';
 import type { ReactNode } from 'react';
 import { useTelegramNotification } from '~shared/lib/telegram/use-telegram-notification';
 import { useImageFadeAnimation } from './use-image-fade-animation';
@@ -37,7 +37,7 @@ export interface DemoSlideProps {
  * When demoUrl is provided, image and button are displayed side by side
  * Button click sends Telegram notification
  */
-export function DemoSlide({
+export const DemoSlide = memo(function DemoSlide({
   image,
   demoUrl,
   buttonText = 'Посмотреть демо',
@@ -116,4 +116,4 @@ export function DemoSlide({
   }
 
   return content;
-}
+});
