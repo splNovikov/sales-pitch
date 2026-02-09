@@ -157,6 +157,10 @@ import {
   megawattCreatedAt,
   megawattTitle,
 } from '~features/megawatt/slides/megawatt.meta';
+import {
+  akademiyaVkusaCreatedAt,
+  akademiyaVkusaTitle,
+} from '~features/akademiya-vkusa/slides/akademiya-vkusa.meta';
 
 /**
  * Presentation metadata
@@ -488,6 +492,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'megawatt',
     title: megawattTitle,
     createdAt: megawattCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'akademiya-vkusa',
+    title: akademiyaVkusaTitle,
+    createdAt: akademiyaVkusaCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
