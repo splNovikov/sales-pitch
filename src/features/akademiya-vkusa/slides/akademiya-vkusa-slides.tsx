@@ -54,42 +54,53 @@ export const akademiyaVkusaSlides: SlideData[] = [
     id: 'goals',
     header: 'Бизнес-задачи',
     content: (
-      <FeaturesSlide
-        cards={[
-          {
-            title: 'Поиск новых клиентов',
-            items: ['Привлечение целевой аудитории', 'Расширение клиентской базы'],
-            emoji: 'target',
-            iconColor: 'blue',
-          },
-          {
-            title: 'Реклама товара',
-            items: ['Презентация услуг', 'Демонстрация блюд и мероприятий'],
-            emoji: 'sparkles',
-            iconColor: 'orange',
-          },
-          {
-            title: 'Увеличение объемов продаж',
-            items: ['Рост конверсии', 'Улучшение показателей'],
-            emoji: 'chart',
-            iconColor: 'green',
-          },
-          {
-            title: 'Информационная поддержка',
-            items: ['Актуальная информация', 'Быстрая обратная связь'],
-            emoji: 'lightbulb',
-            iconColor: 'purple',
-          },
-          {
-            title: 'Благоприятный имидж',
-            items: ['Современный образ', 'Профессиональная репутация'],
-            emoji: 'star',
-            iconColor: 'gold',
-          },
-        ]}
-        columns={2}
-        animated
-      />
+      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+        <FeaturesSlide
+          cards={[
+            {
+              title: 'Поиск новых клиентов',
+              items: ['Привлечение целевой аудитории', 'Расширение клиентской базы'],
+              emoji: 'target',
+              iconColor: 'blue',
+            },
+            {
+              title: 'Реклама товара',
+              items: ['Презентация услуг', 'Демонстрация блюд и мероприятий'],
+              emoji: 'sparkles',
+              iconColor: 'orange',
+            },
+            {
+              title: 'Увеличение объемов продаж',
+              items: ['Рост конверсии', 'Улучшение показателей'],
+              emoji: 'chart',
+              iconColor: 'green',
+            },
+            {
+              title: 'Информационная поддержка',
+              items: ['Актуальная информация', 'Быстрая обратная связь'],
+              emoji: 'lightbulb',
+              iconColor: 'purple',
+            },
+            {
+              title: 'Благоприятный имидж',
+              items: ['Современный образ', 'Профессиональная репутация'],
+              emoji: 'star',
+              iconColor: 'gold',
+            },
+          ]}
+          columns={2}
+          animated
+        />
+        <Card>
+          <Paragraph style={{ marginBottom: 0 }}>
+            <Text>
+              Клиент выбирает заказ на сайте, оставляет свои контактные данные,
+              а оформление и уточнение деталей происходят после связи с
+              менеджером.
+            </Text>
+          </Paragraph>
+        </Card>
+      </Space>
     ),
   },
 
@@ -181,51 +192,6 @@ export const akademiyaVkusaSlides: SlideData[] = [
     ),
   },
 
-  // Slide 5: User Journey
-  {
-    id: 'user-journey-section-title',
-    header: undefined,
-    content: (
-      <SectionTitleSlide
-        title="User Journey"
-        subtitle="Путь пользователя на сайте"
-        imageIndex={4}
-        imageAlt="User Journey"
-      />
-    ),
-  },
-  {
-    id: 'user-journey',
-    header: 'Путь пользователя',
-    content: (
-      <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <Card>
-          <Space direction="vertical" size="large" style={{ width: '100%' }}>
-            <div style={{ textAlign: 'center' }}>
-              <Title level={4}>Пользователь заходит на сайт</Title>
-              <Text style={{ fontSize: '24px' }}>↓</Text>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <Title level={4}>Просматривает предложения</Title>
-              <Text style={{ fontSize: '24px' }}>↓</Text>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <Title level={4}>Выбирает интересующую услугу/блюдо</Title>
-              <Text style={{ fontSize: '24px' }}>↓</Text>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <Title level={4}>Оставляет контактные данные</Title>
-              <Text style={{ fontSize: '24px' }}>↓</Text>
-            </div>
-            <div style={{ textAlign: 'center' }}>
-              <Title level={4}>Получает обратную связь от менеджера</Title>
-            </div>
-          </Space>
-        </Card>
-      </Space>
-    ),
-  },
-
   // Slide 6: Technical Solution
   {
     id: 'technical-section-title',
@@ -299,6 +265,12 @@ export const akademiyaVkusaSlides: SlideData[] = [
         </Row>
         <Card>
           <Title level={4}>CMS (на выбор)</Title>
+          <Paragraph style={{ marginBottom: 16 }}>
+            <Text type="secondary">
+              CMS — система управления контентом, которая позволяет вам
+              управлять и модерировать контент сайта самостоятельно.
+            </Text>
+          </Paragraph>
           <Row gutter={[16, 16]}>
             <Col xs={24} sm={12} md={6}>
               <Card size="small" style={{ backgroundColor: '#f0f0f0' }}>
@@ -315,24 +287,6 @@ export const akademiyaVkusaSlides: SlideData[] = [
                 <br />
                 <Text type="secondary" style={{ fontSize: 12 }}>
                   Российская разработка
-                </Text>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12} md={6}>
-              <Card size="small" style={{ backgroundColor: '#f0f0f0' }}>
-                <Text strong>Sanity.io</Text>
-                <br />
-                <Text type="secondary" style={{ fontSize: 12 }}>
-                  Альтернатива
-                </Text>
-              </Card>
-            </Col>
-            <Col xs={24} sm={12} md={6}>
-              <Card size="small" style={{ backgroundColor: '#f0f0f0' }}>
-                <Text strong>Contentful</Text>
-                <br />
-                <Text type="secondary" style={{ fontSize: 12 }}>
-                  Альтернатива
                 </Text>
               </Card>
             </Col>
@@ -404,7 +358,7 @@ export const akademiyaVkusaSlides: SlideData[] = [
               icon: <ApiOutlined />,
               color: 'purple',
               description:
-                'Адаптация под production. Интеграция с CMS. Подключение iiko API. Оптимизация производительности.',
+                'Адаптация под production. Интеграция с CMS (система управления контентом). Подключение iiko API. Оптимизация производительности.',
             },
           ]}
         />
@@ -439,12 +393,28 @@ export const akademiyaVkusaSlides: SlideData[] = [
                 'Дизайн по референсам',
                 'Адаптивная верстка',
                 'Интеграция с iiko',
-                'Настройка выбранной CMS',
+                'Настройка выбранной CMS (система управления контентом)',
+                'Обучение персонала пользованию CMS',
                 'Форма обратной связи',
                 'Базовая оптимизация',
               ],
               emoji: 'sparkles',
               iconColor: 'blue',
+            },
+            {
+              name: 'Кастомный дизайн',
+              price: 'от 150 000 ₽',
+              features: [
+                'Дизайн с дизайнерами',
+                'Уникальное визуальное решение',
+                'Адаптивная верстка',
+                'Интеграция с iiko',
+                'Настройка выбранной CMS (система управления контентом)',
+                'Форма обратной связи',
+                'Базовая оптимизация',
+              ],
+              emoji: 'palette',
+              iconColor: 'purple',
             },
             {
               name: 'SEO-оптимизация',
@@ -462,7 +432,7 @@ export const akademiyaVkusaSlides: SlideData[] = [
               iconColor: 'orange',
             },
           ]}
-          columns={2}
+          columns={3}
           animated
         />
         <Divider />
@@ -499,7 +469,7 @@ export const akademiyaVkusaSlides: SlideData[] = [
     header: undefined,
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
-        <ContactsSlide contacts={['Pasha', 'Artem']} />
+        <ContactsSlide contacts={['Pasha', 'Artem', 'Yula']} />
       </Space>
     ),
   },

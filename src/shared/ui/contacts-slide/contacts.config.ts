@@ -1,5 +1,6 @@
 import type { ContactCardProps } from '../contact-card';
 import pavelPhoto from './pavel_official.png';
+import ysaiginaPhoto from './ysaigina.png';
 
 /**
  * Contact information configuration
@@ -21,6 +22,15 @@ export const CONTACTS_CONFIG: Record<string, ContactCardProps> = {
     email: 'p.novikov@proxima.ooo',
     websiteLabel: 'proxima24.ru',
     photo: pavelPhoto,
+    variant: 'neutral',
+  },
+  Yula: {
+    name: 'Сайгина Юлия',
+    role: 'Руководитель проектов',
+    phone: '+7 903 385 6349',
+    email: 'ysaigina@proxima24.ru',
+    websiteLabel: 'proxima24.ru',
+    photo: ysaiginaPhoto,
     variant: 'neutral',
   },
 };
