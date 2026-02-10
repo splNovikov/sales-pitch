@@ -93,6 +93,10 @@ import {
   eksimaDorabotkiTitle,
 } from '~features/eksima/slides/eksima-dorabotki.meta';
 import {
+  eksimaPlatformSpecCreatedAt,
+  eksimaPlatformSpecTitle,
+} from '~features/eksima/slides/eksima-platform-spec.meta';
+import {
   aquastrongB2BCabinetCreatedAt,
   aquastrongB2BCabinetTitle,
 } from '~features/aquastrong/slides/aquastrong-b2b-cabinet.meta';
@@ -359,6 +363,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'eksima-dorabotki',
     title: eksimaDorabotkiTitle,
     createdAt: eksimaDorabotkiCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'eksima-platform-spec',
+    title: eksimaPlatformSpecTitle,
+    createdAt: eksimaPlatformSpecCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
