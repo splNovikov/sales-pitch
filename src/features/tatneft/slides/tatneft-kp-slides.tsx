@@ -12,6 +12,11 @@ import black_list_tatn from './black_list_tatn.jpeg';
 import highLevelDiagram from './diagrams/high-level.svg';
 import dataLakeDiagram from './diagrams/data_lake.svg';
 import subSystemDiagram from './diagrams/sub-system.svg';
+import subSystemDiagram1 from './diagrams/sub-system_1.svg';
+import subSystemDiagram2 from './diagrams/sub-system_2.svg';
+import subSystemDiagram3 from './diagrams/sub-system_3.svg';
+import subSystemDiagram4 from './diagrams/sub-system_4.svg';
+import subSystemDiagram5 from './diagrams/sub-system_5.svg';
 import { FileText, Target, Award } from 'lucide-react';
 
 const { Title, Paragraph, Text } = Typography;
@@ -1263,6 +1268,123 @@ export const tatneftKpSlides: SlideData[] = [
       </ConstrainedContent>
     ),
   },
+
+  {
+    id: 'impl-analytics-scheme1',
+    header: 'Подсистема предупреждений: схема',
+    content: (
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <img
+              src={subSystemDiagram1}
+              alt="Подсистема предупреждений: схема"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 550,
+                display: 'block',
+                objectFit: 'contain',
+              }}
+            />
+          </Card>
+        </Space>
+      </ConstrainedContent>
+    ),
+  },
+  {
+    id: 'impl-analytics-scheme2',
+    header: 'Подсистема предупреждений: схема',
+    content: (
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <img
+              src={subSystemDiagram2}
+              alt="Подсистема предупреждений: схема"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 550,
+                display: 'block',
+                objectFit: 'contain',
+              }}
+            />
+          </Card>
+        </Space>
+      </ConstrainedContent>
+    ),
+  },
+  {
+    id: 'impl-analytics-scheme3',
+    header: 'Подсистема предупреждений: схема',
+    content: (
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <img
+              src={subSystemDiagram3}
+              alt="Подсистема предупреждений: схема"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 550,
+                display: 'block',
+                objectFit: 'contain',
+              }}
+            />
+          </Card>
+        </Space>
+      </ConstrainedContent>
+    ),
+  },
+  {
+    id: 'impl-analytics-scheme4',
+    header: 'Подсистема предупреждений: схема',
+    content: (
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <img
+              src={subSystemDiagram4}
+              alt="Подсистема предупреждений: схема"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 550,
+                display: 'block',
+                objectFit: 'contain',
+              }}
+            />
+          </Card>
+        </Space>
+      </ConstrainedContent>
+    ),
+  },
+  {
+    id: 'impl-analytics-scheme5',
+    header: 'Подсистема предупреждений: схема',
+    content: (
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <img
+              src={subSystemDiagram5}
+              alt="Подсистема предупреждений: схема"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 550,
+                display: 'block',
+                objectFit: 'contain',
+              }}
+            />
+          </Card>
+        </Space>
+      </ConstrainedContent>
+    ),
+  },
+
   {
     id: 'impl-analytics-phases',
     header: 'Подсистема предупреждений: фазы реализации',
