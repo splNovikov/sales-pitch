@@ -19,6 +19,18 @@ import subSystemDiagram4 from './diagrams/sub-system_4.svg';
 import subSystemDiagram5 from './diagrams/sub-system_5.svg';
 import { FileText, Target, Award } from 'lucide-react';
 
+// todo: п.6.
+// 6.  6.  Акцентировать внимание на том, что система после обработки сигналов будет направлять диспетчеру только те сигналы, которые направлены на необходимость контроля за технологическим процессом, остальные направляются в соответствующие службы (технологам, механикам, энергетикам, специалистам КИП).
+// чтоб диспетчеру приходило меньше сигналов и что-то перенаправлялось в техническую службу. Это, кстати, про ролевую модель
+
+// todo: сделать PDF
+// todo: добавить ссылку на шаблон, добавить пару скринов из шаблона, обновить текст презентации, взять из пдф Родина
+// todo: на UI надо ещё добавить текст что там будут храниться session logs
+// todo: в UI сказать что диспетчера в 1 НГДУ 20-30 ДНС. Надо чтоб он видел только их. А Рамиль - видел вообще все
+
+// todo: 10.  Для привлечения дополнительного внимания руководства возможно в конце доклада показать дальнейшие перспективы развития системы (нпр. контроль и автоматическое управление объектами без обслуживающего персонала).
+// Добавим ОПС и Товарные Парки. Всё переезжает в безлюдье и персонал убирается
+
 const { Title, Paragraph, Text } = Typography;
 
 const iconStyle = {
@@ -562,7 +574,7 @@ export const tatneftKpSlides: SlideData[] = [
     id: 'architecture-overview',
     header: 'Общая схема взаимодействия компонентов',
     content: (
-      <ConstrainedContent>
+
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
           <Card>
             <img
@@ -571,20 +583,14 @@ export const tatneftKpSlides: SlideData[] = [
               style={{
                 width: '100%',
                 height: 'auto',
-                maxHeight: 500,
+                maxHeight: 600,
                 display: 'block',
                 objectFit: 'contain',
               }}
             />
           </Card>
-          <Paragraph
-            style={{ marginTop: 16, marginBottom: 0, textAlign: 'center' }}
-          >
-            Схема взаимодействия трёх компонентов: хранилище данных, подсистема
-            раннего предупреждения, интерфейс оператора.
-          </Paragraph>
         </Space>
-      </ConstrainedContent>
+
     ),
   },
 
