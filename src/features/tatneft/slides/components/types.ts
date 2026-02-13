@@ -1,13 +1,4 @@
-import { type JSX } from 'react';
-
-export type Column = {
-  title?: string;
-  dataIndex: string;
-  key: string;
-  width?: number;
-  align?: string;
-  render?: (v: string) => JSX.Element;
-};
+import type { TableColumnType } from 'antd';
 
 export type DataSource = {
   key: string,
@@ -15,6 +6,8 @@ export type DataSource = {
   hours: number,
   cost: string,
 }
+
+export type Column = TableColumnType<DataSource>;
 
 export type Phase = {
   firstColumnHeader?: string;
