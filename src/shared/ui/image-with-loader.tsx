@@ -3,7 +3,7 @@ import { Spin } from 'antd';
 
 export interface ImageWithLoaderProps {
   src: string;
-  alt: string;
+  alt?: string;
   style?: React.CSSProperties;
   className?: string;
   containerStyle?: React.CSSProperties;
