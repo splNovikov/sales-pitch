@@ -25,19 +25,12 @@ import ux3 from './ux/3.png';
 import ux4 from './ux/4.png';
 import { DemoSlide } from '~shared/ui/demo-slide';
 import {
-  DataLakeRolesCostAccum,
-  DataLakeRolesCostDB,
   DataLakeRolesCostTotal,
 } from '~features/tatneft/slides/phase-cost/DataLakeRolesCost.tsx';
 import {
-  AnalyticsRolesCostCheckup,
-  AnalyticsRolesCostSubsystem,
   AnalyticsRolesCostSubsystemTotal,
-  AnalyticsRolesCostTuning,
 } from '~features/tatneft/slides/phase-cost/AnalyticsRolesCost.tsx';
 import {
-  ImplRolesCostACross,
-  ImplRolesCostImpl,
   ImplRolesCostTotal,
 } from '~features/tatneft/slides/phase-cost/ImplCrossRolesCost.tsx';
 
@@ -45,15 +38,11 @@ import {
 //  6. Акцентировать внимание на том, что система после обработки сигналов будет направлять диспетчеру только те сигналы, которые направлены на необходимость контроля за технологическим процессом, остальные направляются в соответствующие службы (технологам, механикам, энергетикам, специалистам КИП).
 //  чтоб диспетчеру приходило меньше сигналов и что-то перенаправлялось в техническую службу. Это, кстати, про ролевую модель
 
-// todo: сделать PDF
-// todo: на UI надо ещё добавить текст что там будут храниться session logs
-//  обновить текст презентации, взять из пдф Родина
+//
 // todo: в UI сказать что диспетчера в 1 НГДУ 20-30 ДНС. Надо чтоб он видел только их. А Рамиль - видел вообще все
+//  обновить текст презентации, взять из пдф Родина
 
-// todo: 10.  Для привлечения дополнительного внимания руководства возможно в конце доклада показать дальнейшие перспективы развития системы (нпр. контроль и автоматическое управление объектами без обслуживающего персонала).
-//  Добавим ОПС и Товарные Парки. Всё переезжает в безлюдье и персонал убирается
 
-// todo: обновить презу, добавить пункт support-a
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -987,22 +976,26 @@ export const tatneftKpSlides: SlideData[] = [
     ),
   },
 
+
+  // old
   // {
   //   id: 'impl-data-lake-roles-cost',
   //   header: 'Data Lake: роли, часы, стоимость',
   //   content: <DataLakeRolesCostAll />,
   // },
-  {
-    id: 'impl-data-lake-roles-cost-1',
-    header:
-      'Data Lake: роли, часы, стоимость. Построение и наполнение единой БД',
-    content: <DataLakeRolesCostDB />,
-  },
-  {
-    id: 'impl-data-lake-roles-cost-2',
-    header: 'Data Lake: роли, часы, стоимость. Накопление и анализ данных',
-    content: <DataLakeRolesCostAccum />,
-  },
+
+
+  // {
+  //   id: 'impl-data-lake-roles-cost-1',
+  //   header:
+  //     'Data Lake: роли, часы, стоимость. Построение и наполнение единой БД',
+  //   content: <DataLakeRolesCostDB />,
+  // },
+  // {
+  //   id: 'impl-data-lake-roles-cost-2',
+  //   header: 'Data Lake: роли, часы, стоимость. Накопление и анализ данных',
+  //   content: <DataLakeRolesCostAccum />,
+  // },
   {
     id: 'impl-data-lake-roles-cost-2',
     header: 'Data Lake: роли, часы, стоимость',
@@ -1264,27 +1257,28 @@ export const tatneftKpSlides: SlideData[] = [
     ),
   },
 
+  // old
   // {
   //   id: 'impl-analytics-roles-cost',
   //   header: 'Подсистема предупреждений: роли, часы, стоимость',
   //   content: <AnalyticsRolesCostAll />,
   // },
 
-  {
-    id: 'impl-analytics-roles-cost-1',
-    header: 'Подсистема предупреждений: роли, часы, стоимость',
-    content: <AnalyticsRolesCostSubsystem />,
-  },
-  {
-    id: 'impl-analytics-roles-cost-2',
-    header: 'Подсистема предупреждений: роли, часы, стоимость',
-    content: <AnalyticsRolesCostCheckup />,
-  },
-  {
-    id: 'impl-analytics-roles-cost-3',
-    header: 'Подсистема предупреждений: роли, часы, стоимость',
-    content: <AnalyticsRolesCostTuning />,
-  },
+  // {
+  //   id: 'impl-analytics-roles-cost-1',
+  //   header: 'Подсистема предупреждений: роли, часы, стоимость',
+  //   content: <AnalyticsRolesCostSubsystem />,
+  // },
+  // {
+  //   id: 'impl-analytics-roles-cost-2',
+  //   header: 'Подсистема предупреждений: роли, часы, стоимость',
+  //   content: <AnalyticsRolesCostCheckup />,
+  // },
+  // {
+  //   id: 'impl-analytics-roles-cost-3',
+  //   header: 'Подсистема предупреждений: роли, часы, стоимость',
+  //   content: <AnalyticsRolesCostTuning />,
+  // },
   {
     id: 'impl-analytics-roles-cost-4',
     header: 'Подсистема предупреждений: роли, часы, стоимость',
@@ -1701,22 +1695,23 @@ export const tatneftKpSlides: SlideData[] = [
     content: <Roadmap items={crossPhases} mode="alternate" maxWidth={1200} />,
   },
 
+  // old
   // {
   //   id: 'impl-cross-roles-cost',
   //   header: 'Внедрение, приёмка, сопровождение: роли, часы, стоимость',
   //   content: <ImplRolesCostAll />,
   // },
 
-  {
-    id: 'impl-cross-roles-cost-1',
-    header: 'Внедрение, приёмка, сопровождение: роли, часы, стоимость',
-    content: <ImplRolesCostImpl />,
-  },
-  {
-    id: 'impl-cross-roles-cost-2',
-    header: 'Внедрение, приёмка, сопровождение: роли, часы, стоимость',
-    content: <ImplRolesCostACross />,
-  },
+  // {
+  //   id: 'impl-cross-roles-cost-1',
+  //   header: 'Внедрение, приёмка, сопровождение: роли, часы, стоимость',
+  //   content: <ImplRolesCostImpl />,
+  // },
+  // {
+  //   id: 'impl-cross-roles-cost-2',
+  //   header: 'Внедрение, приёмка, сопровождение: роли, часы, стоимость',
+  //   content: <ImplRolesCostACross />,
+  // },
   {
     id: 'impl-cross-roles-cost-3',
     header: 'Внедрение, приёмка, сопровождение: роли, часы, стоимость',
@@ -1811,6 +1806,80 @@ export const tatneftKpSlides: SlideData[] = [
             />
           </Space>
         </Card>
+      </ConstrainedContent>
+    ),
+  },
+
+  // Ценность проекта: перспективы и подготовительный расчёт окупаемости
+  {
+    id: 'summary-roi',
+    header: 'Перспективы развития и расчёт окупаемости',
+    content: (
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Перспективы развития: эффективное управление и безлюдная
+              эксплуатация
+            </Title>
+            <List
+              size="small"
+              dataSource={[
+                'Контроль и автоматическое управление объектами без постоянного присутствия персонала на местах.',
+                'Подключение к той же платформе ОПС и Товарные Парки — экономия в перспективе на присутствии персонала.',
+                'Перевод объектов в режим безлюдной эксплуатации при сохранении полного контроля и требований безопасности.',
+              ]}
+              renderItem={(item) => <List.Item>{item}</List.Item>}
+            />
+          </Card>
+          <Card>
+            <Title level={5} style={{ marginTop: 0 }}>
+              ~ Расчёт окупаемости
+            </Title>
+            <Table
+              size="small"
+              pagination={false}
+              dataSource={[
+                {
+                  key: '1',
+                  param:
+                    'Средняя оценка стоимости одного инцидента/простоя на ДНС (или по НГДУ)',
+                  value: '_______ млн ₽',
+                },
+                {
+                  key: '2',
+                  param:
+                    'Трудозатраты на обработку аварийных сигналов (часы/месяц в разрезе диспетчеров/объектов)',
+                  value: '_______',
+                },
+                {
+                  key: '3',
+                  param: 'При ваших данных: окупаемость',
+                  value: '~ _______ лет',
+                },
+                {
+                  key: '4',
+                  param: 'Годовая экономия',
+                  value: 'порядка _______ млн ₽',
+                },
+              ]}
+              columns={[
+                { title: 'Параметр', dataIndex: 'param', key: 'param' },
+                {
+                  title: 'Значение',
+                  dataIndex: 'value',
+                  key: 'value',
+                  width: 200,
+                  render: (v: string) => (
+                    <Text type="secondary" style={{ fontFamily: 'monospace' }}>
+                      {v}
+                    </Text>
+                  ),
+                },
+              ]}
+            />
+          </Card>
+        </Space>
       </ConstrainedContent>
     ),
   },
