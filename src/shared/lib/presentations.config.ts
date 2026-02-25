@@ -61,6 +61,10 @@ import {
   tatneftKpTitle,
 } from '~features/tatneft/slides/tatneft-kp.meta';
 import {
+  tatneftSolutionDetailCreatedAt,
+  tatneftSolutionDetailTitle,
+} from '~features/tatneft/slides/tatneft-solution-detail.meta';
+import {
   solarisUnionCreatedAt,
   solarisUnionTitle,
 } from '~features/solaris-union/slides/solaris-union.meta';
@@ -309,6 +313,13 @@ export const presentations: PresentationMeta[] = [
     notificationsEnabled: true,
     showOnVisibility: true,
     authCredentialsB64: 'YWRtaW46dGF0bmVmdDIwMjU=',
+  },
+  {
+    slug: 'tatneft-solution-detail',
+    title: tatneftSolutionDetailTitle,
+    createdAt: tatneftSolutionDetailCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
   },
   {
     slug: 'solaris-union',

@@ -19,6 +19,7 @@ import {
 import { proximaSlides } from '~features/proxima/slides';
 import { tatneftSlides } from '~features/jaxel/slides';
 import { tatneftKpSlides } from '~features/tatneft/slides/tatneft-kp-slides';
+import { tatneftSolutionDetailSlides } from '~features/tatneft/slides/tatneft-solution-detail-slides';
 import { solarisUnionSlides } from '~features/solaris-union/slides';
 import { targetPitchSlides } from '~features/target-pitch/slides';
 import { eksimaAnalysisSlides } from '~features/eksima/slides/eksima-analysis-slides';
@@ -79,6 +80,7 @@ const slidesMap: Record<string, SlideData[]> = {
   proxima: proximaSlides,
   tatneft: tatneftSlides,
   'tatneft-kp': tatneftKpSlides,
+  'tatneft-solution-detail': tatneftSolutionDetailSlides,
   'solaris-union': solarisUnionSlides,
   'target-pitch': targetPitchSlides,
   'eksima-analysis': eksimaAnalysisSlides,

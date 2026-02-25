@@ -1,0 +1,2 @@
+export const tatneftSolutionDetailCreatedAt = '2026-02-20T00:00:00Z';
+export const tatneftSolutionDetailTitle = 'Архитектура ML - решения';
