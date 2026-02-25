@@ -3,6 +3,12 @@ import { type SlideData } from '~widgets/slides';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { ConstrainedContent } from '~shared/ui/constrained-content';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
+import mlHighLevelDiagram from './ml_diagrams/ml_high-level.svg';
+import mlGraphDiagram from './ml_diagrams/ml_graph.svg';
+import mlAutoencoderDiagram from './ml_diagrams/ml_autoencoder.svg';
+import mlInterpretationDiagram from './ml_diagrams/ml_interpretation.svg';
+import mlClassificatorDiagram from './ml_diagrams/ml_classificator.svg';
+import mlDetailedDiagram from './ml_diagrams/ml_detailed.svg';
 import { tatneftSolutionDetailCreatedAt } from './tatneft-solution-detail.meta';
 import tatneftLogo from './Tatneft-Logo.png';
 
@@ -55,16 +61,49 @@ export const tatneftSolutionDetailSlides: SlideData[] = [
     header: 'Архитектура решения',
     content: (
       <ConstrainedContent>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            Архитектура решения (верхнеуровневая)
-          </Title>
-          <Paragraph>
-            Заглушка под верхнеуровневую диаграмму: поток от источников данных и
-            датчиков к хранилищу/графу, далее к автоэнкодеру, классификатору и
-            модулю интерпретации.
-          </Paragraph>
-        </Card>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <img
+              src={mlHighLevelDiagram}
+              alt="Архитектура ML-решения"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 420,
+                display: 'block',
+                objectFit: 'contain',
+              }}
+            />
+          </Card>
+          <Card>
+            <List
+              size="small"
+              dataSource={[
+                {
+                  title: 'Гетерогенный граф',
+                  desc: 'Объединяет характеристики оборудования, сигналы, временные факторы и связи в единую структуру, где вершины — узлы, а рёбра — их взаимосвязи.',
+                },
+                {
+                  title: 'Автоэнкодер',
+                  desc: 'На базе графовой нейросети выучивает нормальный шаблон поведения всей системы и отдельных узлов.',
+                },
+                {
+                  title: 'Классификация аномалий',
+                  desc: 'Отфильтровывает шум и относит значимые отклонения к вероятным типам сбоев, сокращая долю ложных тревог.',
+                },
+                {
+                  title: 'Модуль интерпретации',
+                  desc: 'Выделяет узлы и связи, внесшие наибольший вклад в аномалию, и группирует их в понятные инженерные цепочки причин.',
+                },
+              ]}
+              renderItem={({ title, desc }) => (
+                <List.Item>
+                  <Text strong>{title}.</Text> {desc}
+                </List.Item>
+              )}
+            />
+          </Card>
+        </Space>
       </ConstrainedContent>
     ),
   },
@@ -75,15 +114,35 @@ export const tatneftSolutionDetailSlides: SlideData[] = [
     header: 'Гетерогенный граф',
     content: (
       <ConstrainedContent>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            Гетерогенный граф
-          </Title>
-          <Paragraph>
-            Заглушка под слайд с описанием структуры графа, типов узлов, рёбер и
-            примеров использования связей в модели.
-          </Paragraph>
-        </Card>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <img
+              src={mlGraphDiagram}
+              alt="Гетерогенный граф"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 420,
+                display: 'block',
+                objectFit: 'contain',
+              }}
+            />
+          </Card>
+          <Card>
+            <Paragraph style={{ marginBottom: 8 }}>
+              Все данные системы — характеристики оборудования, сигналы датчиков,
+              временные факторы и схема взаимодействия узлов — объединяются в
+              единую графовую структуру. Вершины графа соответствуют узлам
+              оборудования, а рёбра описывают взаимосвязи между ними; дополнительные
+              признаки хранятся на вершинах и рёбрах.
+            </Paragraph>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Граф называется <Text strong>гетерогенным</Text>, когда он
+              содержит разные типы вершин и связей — например, разные виды
+              оборудования, событий и отношений между ними.
+            </Paragraph>
+          </Card>
+        </Space>
       </ConstrainedContent>
     ),
   },
@@ -94,16 +153,36 @@ export const tatneftSolutionDetailSlides: SlideData[] = [
     header: 'Автоэнкодер',
     content: (
       <ConstrainedContent>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            Автоэнкодер
-          </Title>
-          <Paragraph>
-            Заглушка под описание роли автоэнкодера: обучение нормального
-            поведения системы, формирование поведенческих эмбеддингов и шаблонов
-            работы.
-          </Paragraph>
-        </Card>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <img
+              src={mlAutoencoderDiagram}
+              alt="Автоэнкодер"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 420,
+                display: 'block',
+                objectFit: 'contain',
+              }}
+            />
+          </Card>
+          <Card>
+            <Paragraph style={{ marginBottom: 8 }}>
+              В основе автоэнкодера — графовая нейронная сеть, которая учится
+              характеру поведения всех устройств в системе: учитывает
+              характеристики узлов, связи между ними, временные факторы и
+              сигналы датчиков.
+            </Paragraph>
+            <Paragraph style={{ marginBottom: 0 }}>
+              На выходе кодировщика для каждого узла формируется поведенческий{' '}
+              <Text strong>эмбеддинг</Text> в общем векторном пространстве, а
+              декодировщик по этим эмбеддингам восстанавливает ожидаемые
+              сигналы — эталон, относительно которого затем измеряются
+              отклонения.
+            </Paragraph>
+          </Card>
+        </Space>
       </ConstrainedContent>
     ),
   },
@@ -114,15 +193,35 @@ export const tatneftSolutionDetailSlides: SlideData[] = [
     header: 'Классификатор',
     content: (
       <ConstrainedContent>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            Классификатор
-          </Title>
-          <Paragraph>
-            Заглушка под описание классификатора аномалий и прогнозирования
-            конкретных типов сбоев на основе выходов автоэнкодера.
-          </Paragraph>
-        </Card>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <img
+              src={mlClassificatorDiagram}
+              alt="Классификатор аномалий"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 420,
+                display: 'block',
+                objectFit: 'contain',
+              }}
+            />
+          </Card>
+          <Card>
+            <Paragraph style={{ marginBottom: 8 }}>
+              Классификатор принимает на вход отклонения от выученного шаблона
+              работы системы и определяет, какие из них являются истинными
+              аномалиями, а какие — фоновым шумом.
+            </Paragraph>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Он сочетает <Text strong>вероятностный анализатор</Text>, который
+              по статистическим критериям отсеивает случайные всплески, и{' '}
+              <Text strong>мультиклассификатор</Text>, который для каждой
+              значимой аномалии оценивает её принадлежность к одному из типов
+              сбоев.
+            </Paragraph>
+          </Card>
+        </Space>
       </ConstrainedContent>
     ),
   },
@@ -133,16 +232,57 @@ export const tatneftSolutionDetailSlides: SlideData[] = [
     header: 'Модуль интерпретации',
     content: (
       <ConstrainedContent>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            Модуль интерпретации
-          </Title>
-          <Paragraph>
-            Заглушка под описание того, как модель переводит математические
-            аномалии в понятные причины и рекомендации для инженеров.
-          </Paragraph>
-        </Card>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <img
+              src={mlInterpretationDiagram}
+              alt="Модуль интерпретации"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 420,
+                display: 'block',
+                objectFit: 'contain',
+              }}
+            />
+          </Card>
+          <Card>
+            <Paragraph style={{ marginBottom: 8 }}>
+              Модуль интерпретации помогает понять, <Text strong>какие именно
+              узлы и связи</Text> привели к аномальному поведению системы.
+            </Paragraph>
+            <Paragraph style={{ marginBottom: 0 }}>
+              Он выделяет наиболее значимые узлы и рёбра, повлиявшие на
+              аномалию, и объединяет их в группы «соучастников» события —
+              чтобы инженер видел не только факт отклонения, но и понятную
+              картину причин.
+            </Paragraph>
+          </Card>
+        </Space>
       </ConstrainedContent>
+    ),
+  },
+
+  // Slide 7b: Детализированная архитектура
+  {
+    id: 'architecture-detailed',
+    header: 'Детализированная архитектура решения',
+    content: (
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <img
+              src={mlDetailedDiagram}
+              alt="Детализированная архитектура ML-решения"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 600,
+                display: 'block',
+                objectFit: 'contain',
+              }}
+            />
+          </Card>
+        </Space>
     ),
   },
 
