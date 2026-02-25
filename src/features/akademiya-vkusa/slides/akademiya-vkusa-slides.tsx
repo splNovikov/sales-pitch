@@ -35,8 +35,6 @@ export const akademiyaVkusaSlides: SlideData[] = [
     ),
   },
 
-
-
   // Slide 3: Project Goals
   {
     id: 'goals-section-title',
@@ -59,7 +57,10 @@ export const akademiyaVkusaSlides: SlideData[] = [
           cards={[
             {
               title: 'Поиск новых клиентов',
-              items: ['Привлечение целевой аудитории', 'Расширение клиентской базы'],
+              items: [
+                'Привлечение целевой аудитории',
+                'Расширение клиентской базы',
+              ],
               emoji: 'target',
               iconColor: 'blue',
             },
@@ -174,11 +175,7 @@ export const akademiyaVkusaSlides: SlideData[] = [
                 gurman-box.ru
               </a>
               ,{' '}
-              <a
-                href="https://eatcatering.ru"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a href="https://eatcatering.ru" target="_blank" rel="noreferrer">
                 eatcatering.ru
               </a>
               ,{' '}
@@ -439,17 +436,14 @@ export const akademiyaVkusaSlides: SlideData[] = [
         <Card style={{ backgroundColor: '#f6ffed' }}>
           <Paragraph style={{ marginBottom: 0 }}>
             <Text>
-              Готовы обсудить детали и ответить на все вопросы. Свяжитесь с
-              нами для уточнения сроков и условий работы.
+              Готовы обсудить детали и ответить на все вопросы. Свяжитесь с нами
+              для уточнения сроков и условий работы.
             </Text>
           </Paragraph>
         </Card>
       </Space>
     ),
   },
-
-
-
 
   // Slide 12: Contacts
   {

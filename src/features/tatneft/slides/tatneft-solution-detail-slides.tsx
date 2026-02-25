@@ -42,5 +42,4 @@ export const tatneftSolutionDetailSlides: SlideData[] = [
       </Space>
     ),
   },
-
 ];

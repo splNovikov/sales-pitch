@@ -24,15 +24,9 @@ import ux2 from './ux/2.png';
 import ux3 from './ux/3.png';
 import ux4 from './ux/4.png';
 import { DemoSlide } from '~shared/ui/demo-slide';
-import {
-  DataLakeRolesCostTotal,
-} from '~features/tatneft/slides/phase-cost/DataLakeRolesCost.tsx';
-import {
-  AnalyticsRolesCostSubsystemTotal,
-} from '~features/tatneft/slides/phase-cost/AnalyticsRolesCost.tsx';
-import {
-  ImplRolesCostTotal,
-} from '~features/tatneft/slides/phase-cost/ImplCrossRolesCost.tsx';
+import { DataLakeRolesCostTotal } from '~features/tatneft/slides/phase-cost/DataLakeRolesCost.tsx';
+import { AnalyticsRolesCostSubsystemTotal } from '~features/tatneft/slides/phase-cost/AnalyticsRolesCost.tsx';
+import { ImplRolesCostTotal } from '~features/tatneft/slides/phase-cost/ImplCrossRolesCost.tsx';
 
 // todo: п.6.
 //  6. Акцентировать внимание на том, что система после обработки сигналов будет направлять диспетчеру только те сигналы, которые направлены на необходимость контроля за технологическим процессом, остальные направляются в соответствующие службы (технологам, механикам, энергетикам, специалистам КИП).
@@ -41,8 +35,6 @@ import {
 //
 // todo: в UI сказать что диспетчера в 1 НГДУ 20-30 ДНС. Надо чтоб он видел только их. А Рамиль - видел вообще все
 //  обновить текст презентации, взять из пдф Родина
-
-
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -976,14 +968,12 @@ export const tatneftKpSlides: SlideData[] = [
     ),
   },
 
-
   // old
   // {
   //   id: 'impl-data-lake-roles-cost',
   //   header: 'Data Lake: роли, часы, стоимость',
   //   content: <DataLakeRolesCostAll />,
   // },
-
 
   // {
   //   id: 'impl-data-lake-roles-cost-1',
@@ -1829,7 +1819,7 @@ export const tatneftKpSlides: SlideData[] = [
                 'Подключение к той же платформе ОПС и Товарные Парки — экономия в перспективе на присутствии персонала.',
                 'Перевод объектов в режим безлюдной эксплуатации при сохранении полного контроля и требований безопасности.',
               ]}
-              renderItem={(item) => <List.Item>{item}</List.Item>}
+              renderItem={item => <List.Item>{item}</List.Item>}
             />
           </Card>
           <Card>

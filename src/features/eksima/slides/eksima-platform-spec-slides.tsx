@@ -6,7 +6,9 @@ import {
   FilterOutlined,
   RocketOutlined,
   CheckCircleOutlined,
-  DollarOutlined, ShopOutlined, CodeOutlined,
+  DollarOutlined,
+  ShopOutlined,
+  CodeOutlined,
 } from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
@@ -278,7 +280,9 @@ export const eksimaPlatformSpecSlides: SlideData[] = [
             <ApiOutlined style={{ marginRight: 8 }} />
             Что входит в наши работы
           </Title>
-          <Paragraph style={{ fontSize: 'var(--app-font-size-md)', marginBottom: 0 }}>
+          <Paragraph
+            style={{ fontSize: 'var(--app-font-size-md)', marginBottom: 0 }}
+          >
             Мы берём на себя полный цикл подготовки интеграции: от согласования
             карточки номенклатуры в 1С до настройки обмена по CommerceML и
             развёртывания Bitrix как backend‑сервиса для инструмента розничных
@@ -331,7 +335,9 @@ export const eksimaPlatformSpecSlides: SlideData[] = [
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card>
-          <Paragraph style={{ fontSize: 'var(--app-font-size-md)', marginBottom: 0 }}>
+          <Paragraph
+            style={{ fontSize: 'var(--app-font-size-md)', marginBottom: 0 }}
+          >
             План ниже построен исходя из старта работ{' '}
             <Text strong>1 марта 2026 года</Text> и охватывает весь этап:
             карточка номенклатуры, CommerceML и Bitrix‑backend для инструмента
@@ -389,9 +395,9 @@ export const eksimaPlatformSpecSlides: SlideData[] = [
         <Card>
           <Paragraph style={{ fontSize: 'var(--app-font-size-md)' }}>
             Ниже приведена ориентировочная оценка трудозатрат по ролям для
-            выполнения этапа интеграции 1С → CommerceML → Bitrix. Ставки
-            указаны для примера; финальная стоимость уточняется после
-            утверждения модели данных и объёма номенклатуры.
+            выполнения этапа интеграции 1С → CommerceML → Bitrix. Ставки указаны
+            для примера; финальная стоимость уточняется после утверждения модели
+            данных и объёма номенклатуры.
           </Paragraph>
         </Card>
         <Table
@@ -459,9 +465,7 @@ export const eksimaPlatformSpecSlides: SlideData[] = [
               key: 'cost',
               width: '20%',
               render: (value: number) => (
-                <Text strong>
-                  {value.toLocaleString('ru-RU')} ₽
-                </Text>
+                <Text strong>{value.toLocaleString('ru-RU')} ₽</Text>
               ),
             },
           ]}
@@ -509,9 +513,11 @@ export const eksimaPlatformSpecSlides: SlideData[] = [
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card>
-          <Paragraph style={{ fontSize: 'var(--app-font-size-md)', marginBottom: 0 }}>
-            Перед реализацией пользовательских сценариев мы выполняем обязательную
-            фазу технической подготовки.{' '}
+          <Paragraph
+            style={{ fontSize: 'var(--app-font-size-md)', marginBottom: 0 }}
+          >
+            Перед реализацией пользовательских сценариев мы выполняем
+            обязательную фазу технической подготовки.{' '}
             <Text strong>
               Результат этого этапа — развёрнутый на тестовом стенде скелет
               приложения
@@ -584,7 +590,9 @@ export const eksimaPlatformSpecSlides: SlideData[] = [
     content: (
       <Space orientation="vertical" size="large" style={{ width: '100%' }}>
         <Card>
-          <Paragraph style={{ fontSize: 'var(--app-font-size-md)', marginBottom: 0 }}>
+          <Paragraph
+            style={{ fontSize: 'var(--app-font-size-md)', marginBottom: 0 }}
+          >
             Дорожная карта ниже относится только к этапу{' '}
             <Text strong>«Техническая подготовка и скелет приложения»</Text> и
             предполагает старт работ сразу после завершения интеграции 1С →
@@ -729,8 +737,8 @@ export const eksimaPlatformSpecSlides: SlideData[] = [
         <Card>
           <Paragraph style={{ fontSize: 'var(--app-font-size-md)' }}>
             На этом этапе мы реализуем каталог и страницы брендов/коллекций
-            инструмента для менеджеров, набивающих заказы за рабочим местом.
-            По результату этапа будут полностью работать три ключевые страницы:
+            инструмента для менеджеров, набивающих заказы за рабочим местом. По
+            результату этапа будут полностью работать три ключевые страницы:
           </Paragraph>
           <List
             size="small"
@@ -1201,5 +1209,4 @@ export const eksimaPlatformSpecSlides: SlideData[] = [
       />
     ),
   },
-
 ];

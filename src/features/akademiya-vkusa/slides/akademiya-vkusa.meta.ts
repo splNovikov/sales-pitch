@@ -4,4 +4,5 @@
  */
 
 export const akademiyaVkusaCreatedAt = '2026-02-09T00:00:00Z';
-export const akademiyaVkusaTitle = '«Академия вкуса» — коммерческое предложение';
+export const akademiyaVkusaTitle =
+  '«Академия вкуса» — коммерческое предложение';
