@@ -21,6 +21,37 @@
   align-items: center;
 }
 
+.toggleWrapper {
+  flex-shrink: 0;
+  margin-left: var(--app-spacing-sm);
+}
+
+.toggleButton {
+  color: var(--app-color-text-secondary, rgba(0, 0, 0, 0.45));
+}
+
+.toggleButton:hover {
+  color: var(--app-color-text, rgba(0, 0, 0, 0.88));
+}
+
+.floatingToggle {
+  position: fixed;
+  bottom: var(--app-spacing-sm, 8px);
+  right: var(--app-spacing-lg, 24px);
+  z-index: 100;
+}
+
+.floatingToggle .toggleButton {
+  background: var(--app-color-bg-container, #fff);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+}
+
+.floatingToggle .toggleButton:hover {
+  background: var(--app-color-bg-container, #fff);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
 /* Hide logo on very small phones to give more space to navigation buttons */
 @media (max-width: 540px) {
   .companyLogo {
