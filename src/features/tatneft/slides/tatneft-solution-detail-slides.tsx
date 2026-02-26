@@ -1,4 +1,11 @@
 import { Space, Typography, List, Card, Row, Col } from 'antd';
+import {
+  ApartmentOutlined,
+  PartitionOutlined,
+  FundProjectionScreenOutlined,
+  ThunderboltOutlined,
+  SearchOutlined,
+} from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { ConstrainedContent } from '~shared/ui/constrained-content';
@@ -9,6 +16,7 @@ import mlAutoencoderDiagram from './ml_diagrams/ml_autoencoder.svg';
 import mlInterpretationDiagram from './ml_diagrams/ml_interpretation.svg';
 import mlClassificatorDiagram from './ml_diagrams/ml_classificator.svg';
 import mlDetailedDiagram from './ml_diagrams/ml_detailed.svg';
+import graphDetailedDiagram from './ml_diagrams/graph_detailed.svg';
 import { tatneftSolutionDetailCreatedAt } from './tatneft-solution-detail.meta';
 import tatneftLogo from './Tatneft-Logo.png';
 
@@ -84,7 +92,7 @@ export const tatneftSolutionDetailSlides: SlideData[] = [
                 dataSource={[
                   {
                     title: '1. Гетерогенный граф',
-                    desc: 'Узлы, время, связи, сигналы датчиков — единая структура.',
+                    desc: 'Структура: узлы (метаданные устройств) и типы связей между ними. Наполняется данными: сигналы устройств, факторы времени, характеристики устройств и связей.',
                   },
                   {
                     title: '2. Автоэнкодер',
@@ -137,9 +145,9 @@ export const tatneftSolutionDetailSlides: SlideData[] = [
           <Col xs={24} md={10}>
             <Card style={{ minHeight: 420 }}>
               <Paragraph style={{ marginBottom: 12 }}>
-                Граф объединяет в единую структуру характеристики узлов, факторы
-                времени, характеристики связей и трансформированные сигналы
-                датчиков.
+                Гетерогенный граф состоит из узлов (метаданные устройств) и
+                типов связей между ними. Граф наполняется данными: сигналы
+                устройств, факторы времени, характеристики устройств и связей.
               </Paragraph>
               <Paragraph style={{ marginBottom: 12 }}>
                 Важны не только узлы, но и типы связей между ними: прямое и
@@ -282,7 +290,8 @@ export const tatneftSolutionDetailSlides: SlideData[] = [
               <Text strong>Выход:</Text>
               <Paragraph style={{ margin: '4px 0 8px' }}>
                 Какие узлы и связи повлияли на аномалию. Группы «соучастников» —
-                мастер понимает, где искать причину и что взять с собой.
+                какая группа связанных устройств требует тщательного
+                рассмотрения мастером для предотвращения возможного сбоя.
               </Paragraph>
               <Text strong>Перспектива:</Text>
               <Paragraph style={{ margin: '4px 0 0' }}>
@@ -332,9 +341,6 @@ export const tatneftSolutionDetailSlides: SlideData[] = [
     content: (
       <ConstrainedContent>
         <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            Классический подход
-          </Title>
           <List
             size="default"
             dataSource={[
@@ -354,61 +360,159 @@ export const tatneftSolutionDetailSlides: SlideData[] = [
     ),
   },
 
-  // Slide 9: Наше решение vs классическое
+  // Slide: Гетерогенный граф + Ключевые отличия от классики
   {
-    id: 'our-vs-classic',
-    header: 'Ключевые отличия от классики',
+    id: 'graph-visualization',
+    header: 'Гетерогенный граф: визуализация',
     content: (
       <ConstrainedContent>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            Ключевые отличия от классики
-          </Title>
-          <List
-            size="default"
-            dataSource={[
-              'Много сигналов как единое целое — каждое устройство в контексте всей системы.',
-              'Связи между устройствами закладываются в модель; граф даёт дополнительную информацию к сигналам.',
-              'Сокращение ложнопозитивных аномалий за счёт комбинирования на уровне модели, а не эвристик.',
-              'Шаблон поведения + вероятностный анализ отклонений + интерпретация узлов и связей.',
-            ]}
-            renderItem={item => (
-              <List.Item>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
+        <Space direction="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <img
+              src={graphDetailedDiagram}
+              alt="Детальная визуализация гетерогенного графа"
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxHeight: 400,
+                display: 'block',
+                objectFit: 'contain',
+              }}
+            />
+          </Card>
+          <Card>
+            <Title level={5} style={{ marginTop: 0, marginBottom: 12 }}>
+              Ключевые отличия от классики
+            </Title>
+            <List
+              size="small"
+              grid={{ gutter: 16, xs: 1, sm: 2 }}
+              dataSource={[
+                'Много сигналов как единое целое — каждое устройство в контексте всей системы.',
+                'Связи между устройствами закладываются в модель; граф даёт дополнительную информацию к сигналам.',
+                'Сокращение ложнопозитивных аномалий за счёт комбинирования на уровне модели, а не эвристик.',
+                'Шаблон поведения + вероятностный анализ отклонений.',
+                'Интерпретация принятых решений моделью с точки зрения степени влияния узлов, связей и их данных.',
+              ]}
+              renderItem={item => (
+                <List.Item>
+                  <Text>{item}</Text>
+                </List.Item>
+              )}
+            />
+          </Card>
+        </Space>
       </ConstrainedContent>
     ),
   },
 
-  // Slide 10: Гетерогенный граф и важность взаимосвязей
+  // Slide: Гетерогенный граф и важность взаимосвязей
   {
     id: 'graph-advantages',
     header: 'Почему важны взаимосвязи',
     content: (
       <ConstrainedContent>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            Почему важны взаимосвязи
-          </Title>
-          <List
-            size="default"
-            dataSource={[
-              'Прямое и косвенное взаимодействие: насос и электродвигатель связаны даже без датчика между ними.',
-              'Типы рёбер и их семантика: веса могут передавать мощность, крутящий момент и т.д.',
-              'Поведенческий эмбеддинг узла — его поведение в контексте всей системы; можно предсказывать без прямых датчиков.',
-              'Связь превращается в сильный сигнал: влияние устройства распространяется по графу на удалённые узлы.',
-              'Интерпретация: какие конкретно узлы и связи повлияли на аномалию — для мастера это критично.',
-            ]}
-            renderItem={item => (
-              <List.Item>
-                <Text>{item}</Text>
-              </List.Item>
-            )}
-          />
-        </Card>
+        <Row gutter={[16, 16]} align="stretch">
+          <Col xs={24} sm={12} lg={8}>
+            <Card style={{ height: '100%', minHeight: 220 }}>
+              <Space
+                direction="vertical"
+                size="middle"
+                style={{
+                  width: '100%',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                }}
+              >
+                <ApartmentOutlined style={{ fontSize: 56, color: '#009900' }} />
+                <Text>
+                  Прямое и косвенное взаимодействие: насос и электродвигатель
+                  связаны даже без датчика между ними.
+                </Text>
+              </Space>
+            </Card>
+          </Col>
+          <Col xs={24} sm={12} lg={8}>
+            <Card style={{ height: '100%', minHeight: 220 }}>
+              <Space
+                direction="vertical"
+                size="middle"
+                style={{
+                  width: '100%',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                }}
+              >
+                <PartitionOutlined style={{ fontSize: 56, color: '#009900' }} />
+                <Text>
+                  Типы рёбер и их семантика: веса могут передавать мощность,
+                  крутящий момент и т.д.
+                </Text>
+              </Space>
+            </Card>
+          </Col>
+          <Col xs={24} sm={12} lg={8}>
+            <Card style={{ height: '100%', minHeight: 220 }}>
+              <Space
+                direction="vertical"
+                size="middle"
+                style={{
+                  width: '100%',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                }}
+              >
+                <FundProjectionScreenOutlined
+                  style={{ fontSize: 56, color: '#009900' }}
+                />
+                <Text>
+                  Поведенческий эмбеддинг узла — его поведение в контексте всей
+                  системы; можно предсказывать без прямых датчиков.
+                </Text>
+              </Space>
+            </Card>
+          </Col>
+          <Col xs={24} sm={12} lg={8}>
+            <Card style={{ height: '100%', minHeight: 220 }}>
+              <Space
+                direction="vertical"
+                size="middle"
+                style={{
+                  width: '100%',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                }}
+              >
+                <ThunderboltOutlined
+                  style={{ fontSize: 56, color: '#009900' }}
+                />
+                <Text>
+                  Связь превращается в сильный сигнал: влияние устройства
+                  распространяется по графу на удалённые узлы.
+                </Text>
+              </Space>
+            </Card>
+          </Col>
+          <Col xs={24} sm={12} lg={8}>
+            <Card style={{ height: '100%', minHeight: 220 }}>
+              <Space
+                direction="vertical"
+                size="middle"
+                style={{
+                  width: '100%',
+                  alignItems: 'center',
+                  textAlign: 'center',
+                }}
+              >
+                <SearchOutlined style={{ fontSize: 56, color: '#009900' }} />
+                <Text>
+                  Интерпретация: какие конкретно узлы и связи повлияли на
+                  аномалию — для мастера это критично.
+                </Text>
+              </Space>
+            </Card>
+          </Col>
+        </Row>
       </ConstrainedContent>
     ),
   },
