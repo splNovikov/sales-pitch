@@ -225,7 +225,7 @@ export const izmetallaKpSlides: SlideData[] = [
   // Slide 6: Frontend rendering and integration
   {
     id: 'frontend-integration',
-    header: 'Отрисовка и интеграция фронтенда',
+    header: 'Отрисовка шаблона',
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="large" style={{ width: '100%' }}>
