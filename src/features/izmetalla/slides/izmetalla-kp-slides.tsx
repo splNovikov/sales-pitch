@@ -87,7 +87,6 @@ export const izmetallaKpSlides: SlideData[] = [
         logo={izmetallaLogo}
         logoAlt="Изметалла"
         logoMaxWidth={400}
-        title="Изметалла"
         subtitle="Коммерческое предложение"
         createdAt={izmetallaKpCreatedAt}
       />
