@@ -24,6 +24,7 @@ import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { Roadmap, type RoadmapItem } from '~shared/ui/roadmap';
 import { FeatureCard } from '~shared/ui/feature-card';
 import { DemoSlide } from '~shared/ui/demo-slide';
+import { ImageWithLoader } from '~shared/ui/image-with-loader';
 import { izmetallaKpCreatedAt } from './izmetalla-kp.meta';
 import izmetallaLogo from './logo-izmetalla.png';
 import izmetalla1 from './izmetalla_1.png';
@@ -107,7 +108,7 @@ export const izmetallaKpSlides: SlideData[] = [
     content: (
       <DemoSlide
         image={
-          <img
+          <ImageWithLoader
             src={izmetalla1}
             alt="Из Металла — главная"
             style={{
@@ -117,6 +118,7 @@ export const izmetallaKpSlides: SlideData[] = [
               objectFit: 'contain',
               borderRadius: 8,
             }}
+            containerStyle={{ minHeight: '300px' }}
           />
         }
         demoUrl={DEMO_URL}
@@ -134,7 +136,7 @@ export const izmetallaKpSlides: SlideData[] = [
     content: (
       <DemoSlide
         image={
-          <img
+          <ImageWithLoader
             src={izmetalla2}
             alt="Из Металла — каталог"
             style={{
@@ -144,6 +146,7 @@ export const izmetallaKpSlides: SlideData[] = [
               objectFit: 'contain',
               borderRadius: 8,
             }}
+            containerStyle={{ minHeight: '300px' }}
           />
         }
         demoUrl={DEMO_URL}
@@ -161,7 +164,7 @@ export const izmetallaKpSlides: SlideData[] = [
     content: (
       <DemoSlide
         image={
-          <img
+          <ImageWithLoader
             src={izmetalla4}
             alt="Из Металла — карточка товара"
             style={{
@@ -171,6 +174,7 @@ export const izmetallaKpSlides: SlideData[] = [
               objectFit: 'contain',
               borderRadius: 8,
             }}
+            containerStyle={{ minHeight: '300px' }}
           />
         }
         demoUrl={DEMO_URL}
@@ -188,7 +192,7 @@ export const izmetallaKpSlides: SlideData[] = [
     content: (
       <DemoSlide
         image={
-          <img
+          <ImageWithLoader
             src={izmetalla5}
             alt="Из Металла — контакты"
             style={{
@@ -198,6 +202,7 @@ export const izmetallaKpSlides: SlideData[] = [
               objectFit: 'contain',
               borderRadius: 8,
             }}
+            containerStyle={{ minHeight: '300px' }}
           />
         }
         demoUrl={DEMO_URL}
