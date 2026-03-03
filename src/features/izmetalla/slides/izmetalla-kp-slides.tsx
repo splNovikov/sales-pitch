@@ -70,7 +70,7 @@ const OTHER_WORKS_ROADMAP: RoadmapItem[] = [
     duration: 'Этап 5',
     color: 'gold',
     icon: <TeamOutlined />,
-    description: '0',
+    description: 'Бесплатно',
     completed: true,
   },
 ];
@@ -320,7 +320,7 @@ export const izmetallaKpSlides: SlideData[] = [
                 { key: '3', block: 'Бекенд и интеграция', cost: '180 000 ₽' },
                 { key: '4', block: 'Корзина, заказ', cost: '120 000 ₽' },
                 { key: '5', block: 'Тестирование', cost: '30 000 ₽' },
-                { key: '6', block: 'Приёмка', cost: '0' },
+                { key: '6', block: 'Приёмка', cost: 'Бесплатно' },
               ]}
               columns={[
                 { title: 'Блок', dataIndex: 'block', key: 'block' },
@@ -330,7 +330,9 @@ export const izmetallaKpSlides: SlideData[] = [
                   key: 'cost',
                   width: 120,
                   align: 'right',
-                  render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
+                  render: (v: string) => (
+                    <Text strong={v !== '0' && v !== 'Бесплатно'}>{v}</Text>
+                  ),
                 },
               ]}
             />
