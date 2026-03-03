@@ -98,12 +98,7 @@ export const izmetallaKpSlides: SlideData[] = [
   {
     id: 'template-section',
     header: undefined,
-    content: (
-      <SectionTitleSlide
-        title="Презентация шаблона"
-        imageIndex={0}
-      />
-    ),
+    content: <SectionTitleSlide title="Презентация шаблона" imageIndex={0} />,
   },
 
   // Slide 3: Template screenshot 1
@@ -219,10 +214,7 @@ export const izmetallaKpSlides: SlideData[] = [
     id: 'kp-pre-title',
     header: undefined,
     content: (
-      <SectionTitleSlide
-        title="Коммерческое предложение"
-        imageIndex={1}
-      />
+      <SectionTitleSlide title="Коммерческое предложение" imageIndex={1} />
     ),
   },
 
@@ -246,7 +238,10 @@ export const izmetallaKpSlides: SlideData[] = [
                     fontSize: 'clamp(28px, 4vw, 40px)',
                   }}
                 />
-                <Paragraph type="secondary" style={{ marginTop: 8, marginBottom: 0 }}>
+                <Paragraph
+                  type="secondary"
+                  style={{ marginTop: 8, marginBottom: 0 }}
+                >
                   Полный объём — 150 000 ₽, 80% уже выполнено
                 </Paragraph>
               </Card>
@@ -261,7 +256,10 @@ export const izmetallaKpSlides: SlideData[] = [
                   strokeColor="var(--app-color-primary)"
                   showInfo
                 />
-                <Text type="secondary" style={{ display: 'block', marginTop: 16 }}>
+                <Text
+                  type="secondary"
+                  style={{ display: 'block', marginTop: 16 }}
+                >
                   Осталось: правки, доработки, адаптивная вёрстка
                 </Text>
               </Card>
@@ -278,11 +276,7 @@ export const izmetallaKpSlides: SlideData[] = [
     header: 'Остальные работы',
     content: (
       <ConstrainedContent>
-        <Roadmap
-          items={OTHER_WORKS_ROADMAP}
-          mode="alternate"
-          maxWidth={900}
-        />
+        <Roadmap items={OTHER_WORKS_ROADMAP} mode="alternate" maxWidth={900} />
       </ConstrainedContent>
     ),
   },
@@ -305,7 +299,10 @@ export const izmetallaKpSlides: SlideData[] = [
                 fontSize: 'clamp(36px, 6vw, 56px)',
               }}
             />
-            <Paragraph type="secondary" style={{ marginTop: 8, marginBottom: 0 }}>
+            <Paragraph
+              type="secondary"
+              style={{ marginTop: 8, marginBottom: 0 }}
+            >
               Без углублённой СЕО-оптимизации
             </Paragraph>
           </Card>
@@ -329,9 +326,7 @@ export const izmetallaKpSlides: SlideData[] = [
                   key: 'cost',
                   width: 120,
                   align: 'right',
-                  render: (v: string) => (
-                    <Text strong={v !== '0'}>{v}</Text>
-                  ),
+                  render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
                 },
               ]}
             />
