@@ -34,7 +34,7 @@ import izmetalla5 from './izmetalla_5.png';
 
 const { Paragraph, Text } = Typography;
 
-const DEMO_URL = 'https://metalbrands.vercel.app/';
+const DEMO_URL = 'https://metalbrands.prox-dev.ru/';
 
 const OTHER_WORKS_ROADMAP: RoadmapItem[] = [
   {
