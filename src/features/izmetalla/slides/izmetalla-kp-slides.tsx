@@ -1,76 +1,69 @@
-import { Space, Typography, Card, Table } from 'antd';
+import {
+  Space,
+  Typography,
+  Card,
+  Table,
+  Row,
+  Col,
+  Statistic,
+  Progress,
+} from 'antd';
+import {
+  CheckCircleOutlined,
+  CodeOutlined,
+  SearchOutlined,
+  ShoppingCartOutlined,
+  ApiOutlined,
+  ExperimentOutlined,
+  TeamOutlined,
+} from '@ant-design/icons';
 import { type SlideData } from '~widgets/slides';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
 import { ConstrainedContent } from '~shared/ui/constrained-content';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
+import { Roadmap, type RoadmapItem } from '~shared/ui/roadmap';
+import { FeatureCard } from '~shared/ui/feature-card';
 import { izmetallaKpCreatedAt } from './izmetalla-kp.meta';
 import izmetallaLogo from './logo-izmetalla.png';
 
-const { Title, Paragraph, Text } = Typography;
+const { Paragraph, Text } = Typography;
 
-const OTHER_WORKS_DATA = [
+const OTHER_WORKS_ROADMAP: RoadmapItem[] = [
   {
-    key: 'a',
-    work: 'Базовая СЕО-оптимизация',
-    stage: 'Этап 2',
-    cost: '25 000 ₽',
+    title: 'Базовая СЕО-оптимизация',
+    duration: 'Этап 2',
+    color: 'blue',
+    icon: <SearchOutlined />,
+    description: '25 000 ₽',
   },
   {
-    key: 'b',
-    work: 'Переход на NestJS, интеграция с бекендом',
-    stage: 'Этап 2',
-    cost: '180 000 ₽',
+    title: 'Переход на NestJS, интеграция с бекендом',
+    duration: 'Этап 2',
+    color: 'purple',
+    icon: <ApiOutlined />,
+    description: '180 000 ₽',
   },
   {
-    key: 'c',
-    work: 'Корзина, оформление заказа, отправка заявки',
-    stage: 'Этап 3',
-    cost: '120 000 ₽',
+    title: 'Корзина, оформление заказа, отправка заявки',
+    duration: 'Этап 3',
+    color: 'green',
+    icon: <ShoppingCartOutlined />,
+    description: '120 000 ₽',
   },
   {
-    key: 'd',
-    work: 'Тестирование и стабилизация',
-    stage: 'Этап 4',
-    cost: '30 000 ₽',
+    title: 'Тестирование и стабилизация',
+    duration: 'Этап 4',
+    color: 'orange',
+    icon: <ExperimentOutlined />,
+    description: '30 000 ₽',
   },
   {
-    key: 'e',
-    work: 'Приёмка и обучение',
-    stage: 'Этап 5',
-    cost: '0',
-  },
-];
-
-const TOTAL_KP_DATA = [
-  {
-    key: '1',
-    block: 'Отрисовка и интеграция фронтенда (остаток работ)',
-    cost: '30 000 ₽',
-  },
-  {
-    key: '2',
-    block: 'Базовая СЕО-оптимизация',
-    cost: '25 000 ₽',
-  },
-  {
-    key: '3',
-    block: 'Переход на NestJS, интеграция с бекендом',
-    cost: '180 000 ₽',
-  },
-  {
-    key: '4',
-    block: 'Корзина, оформление заказа, отправка заявки',
-    cost: '120 000 ₽',
-  },
-  {
-    key: '5',
-    block: 'Тестирование и стабилизация',
-    cost: '30 000 ₽',
-  },
-  {
-    key: '6',
-    block: 'Приёмка и обучение',
-    cost: '0',
+    title: 'Приёмка и обучение',
+    duration: 'Этап 5',
+    color: 'gold',
+    icon: <TeamOutlined />,
+    description: '0',
+    completed: true,
   },
 ];
 
@@ -87,6 +80,7 @@ export const izmetallaKpSlides: SlideData[] = [
         logo={izmetallaLogo}
         logoAlt="Изметалла"
         logoMaxWidth={400}
+        title="Изметалла"
         subtitle="Коммерческое предложение"
         createdAt={izmetallaKpCreatedAt}
       />
@@ -184,30 +178,41 @@ export const izmetallaKpSlides: SlideData[] = [
     header: 'Отрисовка и интеграция фронтенда',
     content: (
       <ConstrainedContent>
-        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <Card>
-            <Title level={5} style={{ marginTop: 0 }}>
-              Текущий статус
-            </Title>
-            <Paragraph style={{ marginBottom: 12 }}>
-              Полный объём работ по отрисовке и интеграции фронтенда оценивался
-              в <Text strong>150 000 ₽</Text>.
-            </Paragraph>
-            <Paragraph style={{ marginBottom: 12 }}>
-              На данный момент выполнено <Text strong>~80%</Text> работ.
-              Осталось доработать:
-            </Paragraph>
-            <ul style={{ marginBottom: 0, paddingLeft: 20 }}>
-              <li>Правки и доработки</li>
-              <li>Адаптивная вёрстка</li>
-            </ul>
-            <Paragraph
-              type="secondary"
-              style={{ marginTop: 16, marginBottom: 0 }}
-            >
-              Оценка оставшихся работ: <Text strong>~30 000 ₽</Text>
-            </Paragraph>
-          </Card>
+        <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+          <Row gutter={[24, 24]} align="middle">
+            <Col xs={24} md={12}>
+              <Card>
+                <Statistic
+                  title="Осталось работ"
+                  value={30}
+                  suffix="000 ₽"
+                  prefix={<CodeOutlined />}
+                  valueStyle={{
+                    color: 'var(--app-color-primary)',
+                    fontSize: 'clamp(28px, 4vw, 40px)',
+                  }}
+                />
+                <Paragraph type="secondary" style={{ marginTop: 8, marginBottom: 0 }}>
+                  Полный объём — 150 000 ₽, 80% уже выполнено
+                </Paragraph>
+              </Card>
+            </Col>
+            <Col xs={24} md={12}>
+              <Card>
+                <Text strong style={{ display: 'block', marginBottom: 12 }}>
+                  Прогресс
+                </Text>
+                <Progress
+                  percent={80}
+                  strokeColor="var(--app-color-primary)"
+                  showInfo
+                />
+                <Text type="secondary" style={{ display: 'block', marginTop: 16 }}>
+                  Осталось: правки, доработки, адаптивная вёрстка
+                </Text>
+              </Card>
+            </Col>
+          </Row>
         </Space>
       </ConstrainedContent>
     ),
@@ -219,33 +224,11 @@ export const izmetallaKpSlides: SlideData[] = [
     header: 'Остальные работы',
     content: (
       <ConstrainedContent>
-        <Card>
-          <Table
-            size="small"
-            pagination={false}
-            dataSource={OTHER_WORKS_DATA}
-            columns={[
-              { title: 'Работа', dataIndex: 'work', key: 'work' },
-              {
-                title: 'Этап',
-                dataIndex: 'stage',
-                key: 'stage',
-                width: 100,
-                align: 'center',
-              },
-              {
-                title: 'Стоимость',
-                dataIndex: 'cost',
-                key: 'cost',
-                width: 130,
-                align: 'right',
-                render: (v: string) => (
-                  <Text strong={v !== '0'}>{v}</Text>
-                ),
-              },
-            ]}
-          />
-        </Card>
+        <Roadmap
+          items={OTHER_WORKS_ROADMAP}
+          mode="alternate"
+          maxWidth={900}
+        />
       </ConstrainedContent>
     ),
   },
@@ -256,41 +239,50 @@ export const izmetallaKpSlides: SlideData[] = [
     header: 'Общая КП (без углублённого СЕО)',
     content: (
       <ConstrainedContent>
-        <Card>
-          <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-            <Paragraph style={{ marginBottom: 0 }}>
-              Сводная стоимость проекта без углублённой СЕО-оптимизации:
+        <Space orientation="vertical" size="large" style={{ width: '100%' }}>
+          <Card>
+            <Statistic
+              title="Итого по проекту"
+              value={385}
+              suffix="000 ₽"
+              prefix={<CheckCircleOutlined />}
+              valueStyle={{
+                color: 'var(--app-color-primary)',
+                fontSize: 'clamp(36px, 6vw, 56px)',
+              }}
+            />
+            <Paragraph type="secondary" style={{ marginTop: 8, marginBottom: 0 }}>
+              Без углублённой СЕО-оптимизации
             </Paragraph>
+          </Card>
+          <Card size="small">
             <Table
               size="small"
               pagination={false}
-              dataSource={TOTAL_KP_DATA}
+              dataSource={[
+                { key: '1', block: 'Фронтенд (остаток)', cost: '30 000 ₽' },
+                { key: '2', block: 'Базовая СЕО', cost: '25 000 ₽' },
+                { key: '3', block: 'NestJS + бекенд', cost: '180 000 ₽' },
+                { key: '4', block: 'Корзина, заказ', cost: '120 000 ₽' },
+                { key: '5', block: 'Тестирование', cost: '30 000 ₽' },
+                { key: '6', block: 'Приёмка', cost: '0' },
+              ]}
               columns={[
-                { title: 'Этап / блок', dataIndex: 'block', key: 'block' },
+                { title: 'Блок', dataIndex: 'block', key: 'block' },
                 {
                   title: 'Стоимость',
                   dataIndex: 'cost',
                   key: 'cost',
-                  width: 140,
+                  width: 120,
                   align: 'right',
-                  render: (v: string) => <Text strong={v !== '0'}>{v}</Text>,
+                  render: (v: string) => (
+                    <Text strong={v !== '0'}>{v}</Text>
+                  ),
                 },
               ]}
-              summary={() => (
-                <Table.Summary>
-                  <Table.Summary.Row>
-                    <Table.Summary.Cell index={0}>
-                      <Text strong>Итого</Text>
-                    </Table.Summary.Cell>
-                    <Table.Summary.Cell index={1} align="right">
-                      <Text strong>385 000 ₽</Text>
-                    </Table.Summary.Cell>
-                  </Table.Summary.Row>
-                </Table.Summary>
-              )}
             />
-          </Space>
-        </Card>
+          </Card>
+        </Space>
       </ConstrainedContent>
     ),
   },
@@ -301,44 +293,34 @@ export const izmetallaKpSlides: SlideData[] = [
     header: 'Сотрудничество по углублённому СЕО',
     content: (
       <ConstrainedContent>
-        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <Card>
-            <Title level={5} style={{ marginTop: 0 }}>
-              Углублённая СЕО-оптимизация
-            </Title>
-            <Paragraph style={{ marginBottom: 12 }}>
-              Отдельное направление сотрудничества по продвижению сайта в
-              поисковых системах.
-            </Paragraph>
-            <Table
-              size="small"
-              pagination={false}
-              dataSource={[
-                {
-                  key: '1',
-                  item: 'Единоразовая настройка и аудит',
-                  cost: '100 000 ₽',
-                },
-                {
-                  key: '2',
-                  item: 'Ежемесячное сопровождение',
-                  cost: '75 000 ₽ / мес',
-                },
+        <Row gutter={[24, 24]}>
+          <Col xs={24} md={12}>
+            <FeatureCard
+              title="Старт"
+              subtitle="100 000 ₽"
+              items={[
+                'Аудит текущего состояния',
+                'Настройка семантики и структуры',
+                'Передача рекомендаций',
               ]}
-              columns={[
-                { title: 'Услуга', dataIndex: 'item', key: 'item' },
-                {
-                  title: 'Стоимость',
-                  dataIndex: 'cost',
-                  key: 'cost',
-                  width: 150,
-                  align: 'right',
-                  render: (v: string) => <Text strong>{v}</Text>,
-                },
-              ]}
+              emoji="rocket"
+              iconColor="blue"
             />
-          </Card>
-        </Space>
+          </Col>
+          <Col xs={24} md={12}>
+            <FeatureCard
+              title="Сопровождение"
+              subtitle="75 000 ₽ / мес"
+              items={[
+                'Мониторинг позиций',
+                'Регулярная оптимизация',
+                'Контент-аналитика',
+              ]}
+              emoji="chart"
+              iconColor="green"
+            />
+          </Col>
+        </Row>
       </ConstrainedContent>
     ),
   },
