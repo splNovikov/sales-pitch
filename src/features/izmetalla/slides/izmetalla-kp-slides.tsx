@@ -23,10 +23,17 @@ import { ConstrainedContent } from '~shared/ui/constrained-content';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { Roadmap, type RoadmapItem } from '~shared/ui/roadmap';
 import { FeatureCard } from '~shared/ui/feature-card';
+import { DemoSlide } from '~shared/ui/demo-slide';
 import { izmetallaKpCreatedAt } from './izmetalla-kp.meta';
 import izmetallaLogo from './logo-izmetalla.png';
+import izmetalla1 from './izmetalla_1.png';
+import izmetalla2 from './izmetalla_2.png';
+import izmetalla4 from './izmetalla_4.png';
+import izmetalla5 from './izmetalla_5.png';
 
 const { Paragraph, Text } = Typography;
+
+const DEMO_URL = 'https://metalbrands.vercel.app/';
 
 const OTHER_WORKS_ROADMAP: RoadmapItem[] = [
   {
@@ -99,68 +106,115 @@ export const izmetallaKpSlides: SlideData[] = [
     ),
   },
 
-  // Slide 3: Template placeholder 1
+  // Slide 3: Template screenshot 1
   {
-    id: 'template-placeholder-1',
+    id: 'template-screenshot-1',
     header: 'Презентация шаблона',
     content: (
-      <ConstrainedContent>
-        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <Card>
-            <div
-              style={{
-                minHeight: 280,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: 'var(--ant-color-fill-tertiary)',
-                borderRadius: 8,
-              }}
-            >
-              <Text type="secondary">
-                Здесь будет скриншот / макет шаблона
-              </Text>
-            </div>
-          </Card>
-          <Card>
-            <Paragraph style={{ marginBottom: 0 }}>
-              <Text type="secondary">Описание шаблона — placeholder</Text>
-            </Paragraph>
-          </Card>
-        </Space>
-      </ConstrainedContent>
+      <DemoSlide
+        image={
+          <img
+            src={izmetalla1}
+            alt="Из Металла — главная"
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxHeight: 'calc(100vh - 200px)',
+              objectFit: 'contain',
+              borderRadius: 8,
+            }}
+          />
+        }
+        demoUrl={DEMO_URL}
+        buttonText="Открыть сайт"
+        presentationSlug="izmetalla-kp"
+        wrapInCard
+      />
     ),
   },
 
-  // Slide 4: Template placeholder 2
+  // Slide 4: Template screenshot 2
   {
-    id: 'template-placeholder-2',
+    id: 'template-screenshot-2',
     header: 'Презентация шаблона',
     content: (
-      <ConstrainedContent>
-        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <Card>
-            <div
-              style={{
-                minHeight: 200,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: 'var(--ant-color-fill-tertiary)',
-                borderRadius: 8,
-              }}
-            >
-              <Text type="secondary">
-                Дополнительные макеты или элементы шаблона
-              </Text>
-            </div>
-          </Card>
-        </Space>
-      </ConstrainedContent>
+      <DemoSlide
+        image={
+          <img
+            src={izmetalla2}
+            alt="Из Металла — каталог"
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxHeight: 'calc(100vh - 200px)',
+              objectFit: 'contain',
+              borderRadius: 8,
+            }}
+          />
+        }
+        demoUrl={DEMO_URL}
+        buttonText="Открыть сайт"
+        presentationSlug="izmetalla-kp"
+        wrapInCard
+      />
     ),
   },
 
-  // Slide 5: KP pre-title
+  // Slide 5: Template screenshot 4
+  {
+    id: 'template-screenshot-4',
+    header: 'Презентация шаблона',
+    content: (
+      <DemoSlide
+        image={
+          <img
+            src={izmetalla4}
+            alt="Из Металла — карточка товара"
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxHeight: 'calc(100vh - 200px)',
+              objectFit: 'contain',
+              borderRadius: 8,
+            }}
+          />
+        }
+        demoUrl={DEMO_URL}
+        buttonText="Открыть сайт"
+        presentationSlug="izmetalla-kp"
+        wrapInCard
+      />
+    ),
+  },
+
+  // Slide 6: Template screenshot 5
+  {
+    id: 'template-screenshot-5',
+    header: 'Презентация шаблона',
+    content: (
+      <DemoSlide
+        image={
+          <img
+            src={izmetalla5}
+            alt="Из Металла — контакты"
+            style={{
+              width: '100%',
+              height: 'auto',
+              maxHeight: 'calc(100vh - 200px)',
+              objectFit: 'contain',
+              borderRadius: 8,
+            }}
+          />
+        }
+        demoUrl={DEMO_URL}
+        buttonText="Открыть сайт"
+        presentationSlug="izmetalla-kp"
+        wrapInCard
+      />
+    ),
+  },
+
+  // Slide 7: KP pre-title
   {
     id: 'kp-pre-title',
     header: undefined,
