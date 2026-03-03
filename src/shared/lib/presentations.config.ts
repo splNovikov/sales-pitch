@@ -169,6 +169,10 @@ import {
   akademiyaVkusaCreatedAt,
   akademiyaVkusaTitle,
 } from '~features/akademiya-vkusa/slides/akademiya-vkusa.meta';
+import {
+  izmetallaKpCreatedAt,
+  izmetallaKpTitle,
+} from '~features/izmetalla/slides/izmetalla-kp.meta';
 
 /**
  * Presentation metadata
@@ -521,6 +525,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'akademiya-vkusa',
     title: akademiyaVkusaTitle,
     createdAt: akademiyaVkusaCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'izmetalla-kp',
+    title: izmetallaKpTitle,
+    createdAt: izmetallaKpCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },
