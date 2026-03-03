@@ -45,7 +45,7 @@ const OTHER_WORKS_ROADMAP: RoadmapItem[] = [
     description: '25 000 ₽',
   },
   {
-    title: 'Переход на NestJS, интеграция с бекендом',
+    title: 'Интеграция с Битрикс',
     duration: 'Этап 2',
     color: 'purple',
     icon: <ApiOutlined />,
@@ -317,7 +317,7 @@ export const izmetallaKpSlides: SlideData[] = [
               dataSource={[
                 { key: '1', block: 'Фронтенд (остаток)', cost: '30 000 ₽' },
                 { key: '2', block: 'Базовая СЕО', cost: '25 000 ₽' },
-                { key: '3', block: 'NestJS + бекенд', cost: '180 000 ₽' },
+                { key: '3', block: 'Бекенд и интеграция', cost: '180 000 ₽' },
                 { key: '4', block: 'Корзина, заказ', cost: '120 000 ₽' },
                 { key: '5', block: 'Тестирование', cost: '30 000 ₽' },
                 { key: '6', block: 'Приёмка', cost: '0' },
