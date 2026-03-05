@@ -1,5 +1,7 @@
-import { useState, memo, useRef, useEffect } from 'react';
+import { useState, memo, useRef, useEffect, useCallback } from 'react';
 import { Spin } from 'antd';
+
+const MIN_SPINNER_MS = 150;
 
 export interface ImageWithLoaderProps {
   src: string;
@@ -12,7 +14,7 @@ export interface ImageWithLoaderProps {
 /**
  * Image component with loading spinner
  * Shows spinner while image is loading
- * Checks if image is already cached on mount to avoid unnecessary loading states
+ * Ensures spinner is visible for at least MIN_SPINNER_MS when switching slides
  */
 export const ImageWithLoader = memo(function ImageWithLoader({
   src,
@@ -24,18 +26,36 @@ export const ImageWithLoader = memo(function ImageWithLoader({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
+  const loadStartRef = useRef<number>(Date.now());
 
-  // Check if image is already loaded (cached) on mount
-  useEffect(() => {
-    const img = imgRef.current;
-    if (img && img.complete && img.naturalHeight !== 0) {
-      // Image is already loaded from cache
+  const trySetLoaded = useCallback(() => {
+    const elapsed = Date.now() - loadStartRef.current;
+    const remaining = Math.max(0, MIN_SPINNER_MS - elapsed);
+    if (remaining > 0) {
+      setTimeout(() => setLoading(false), remaining);
+    } else {
       setLoading(false);
     }
+  }, []);
+
+  useEffect(() => {
+    loadStartRef.current = Date.now();
   }, [src]);
 
+  // Check if image is already loaded (cached) on mount
+  // Defer to next frame so spinner is painted at least once when switching slides
+  useEffect(() => {
+    const img = imgRef.current;
+    const rafId = requestAnimationFrame(() => {
+      if (img && img.complete && img.naturalHeight !== 0) {
+        trySetLoaded();
+      }
+    });
+    return () => cancelAnimationFrame(rafId);
+  }, [src, trySetLoaded]);
+
   const handleLoad = () => {
-    setLoading(false);
+    trySetLoaded();
   };
 
   const handleError = () => {

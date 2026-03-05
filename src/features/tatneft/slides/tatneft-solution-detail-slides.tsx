@@ -17,6 +17,8 @@ import mlInterpretationDiagram from './ml_diagrams/ml_interpretation.svg';
 import mlClassificatorDiagram from './ml_diagrams/ml_classificator.svg';
 import mlDetailedDiagram from './ml_diagrams/ml_detailed.svg';
 import graphDetailedDiagram from './ml_diagrams/graph_detailed.svg';
+import kohlsImage from './images/kohls.webp';
+import vontierImage from './images/vontier.webp';
 import { tatneftSolutionDetailCreatedAt } from './tatneft-solution-detail.meta';
 import tatneftLogo from './Tatneft-Logo.png';
 
@@ -524,21 +526,86 @@ export const tatneftSolutionDetailSlides: SlideData[] = [
     content: <SectionTitleSlide imageIndex={6} title="Реальное применение" />,
   },
 
-  // Slide 11: Кейсы использования
+  // Slide: Кейсы использования
   {
     id: 'use-cases',
     header: 'Кейсы использования',
     content: (
       <ConstrainedContent>
-        <Card>
-          <Title level={4} style={{ marginTop: 0 }}>
-            Кейсы использования
-          </Title>
-          <Paragraph>
-            Заглушка под реальные кейсы применения ML‑платформы: примеры
-            клиентов, достигнутые эффекты и метрики результативности.
-          </Paragraph>
-        </Card>
+        <Row gutter={[24, 24]}>
+          <Col xs={24} md={12}>
+            <Card
+              title={
+                <Text strong>
+                  Kohl's — e-commerce платформа (Милпитас, США)
+                </Text>
+              }
+              cover={
+                <img
+                  src={kohlsImage}
+                  alt="Kohl's"
+                  style={{
+                    width: '100%',
+                    height: 200,
+                    objectFit: 'cover',
+                  }}
+                />
+              }
+            >
+              <Paragraph style={{ marginBottom: 12 }}>
+                Розничная сеть: одежда, обувь, аксессуары, товары для дома.
+                Собственная e-commerce платформа: каталог, умный поиск,
+                рекомендации, сотни виртуальных серверов.
+              </Paragraph>
+              <Text strong>Задача:</Text>
+              <Paragraph style={{ margin: '4px 0 12px' }}>
+                Раннее обнаружение аномального поведения сервисов, приложений и
+                серверов по логам ошибок и метрикам.
+              </Paragraph>
+              <Text strong>Результат:</Text>
+              <Paragraph style={{ margin: '4px 0 0' }}>
+                Своевременная реакция, масштабирование ресурсов. Сокращение
+                финансовых потерь и стоимости поддержки при пиковой нагрузке.
+              </Paragraph>
+            </Card>
+          </Col>
+          <Col xs={24} md={12}>
+            <Card
+              title={
+                <Text strong>
+                  Vontier / Gilbarco Veeder-Root — АЗС (Сиэтл, США)
+                </Text>
+              }
+              cover={
+                <img
+                  src={vontierImage}
+                  alt="Vontier"
+                  style={{
+                    width: '100%',
+                    height: 200,
+                    objectFit: 'cover',
+                  }}
+                />
+              }
+            >
+              <Paragraph style={{ marginBottom: 12 }}>
+                Решения для автозаправочных станций: топливоразливочные
+                колонки, оплата, учёт и автоматизация на АЗС.
+              </Paragraph>
+              <Text strong>Задача:</Text>
+              <Paragraph style={{ margin: '4px 0 12px' }}>
+                Система автоматического поиска аномального поведения устройств
+                топливозаправочного оборудования.
+              </Paragraph>
+              <Text strong>Результат:</Text>
+              <Paragraph style={{ margin: '4px 0 0' }}>
+                Сокращение потерь топлива при некорректной работе измерительных
+                приборов. Своевременное сервисное обслуживание помп топливных
+                танков.
+              </Paragraph>
+            </Card>
+          </Col>
+        </Row>
       </ConstrainedContent>
     ),
   },
