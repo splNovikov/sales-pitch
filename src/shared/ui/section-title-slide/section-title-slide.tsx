@@ -15,6 +15,13 @@ import sectionImage7 from './images/section-title/section-07.jpg';
 import sectionImage8 from './images/section-title/section-08.jpg';
 import sectionImage9 from './images/section-title/section-09.jpg';
 import sectionImage10 from './images/section-title/section-10.jpg';
+import sectionImage11 from './images/section-title/section-11.jpg';
+import sectionImage12 from './images/section-title/section-12.jpg';
+import sectionImage13 from './images/section-title/section-13.jpg';
+import sectionImage14 from './images/section-title/section-14.jpg';
+import sectionImage15 from './images/section-title/section-15.jpg';
+import sectionImage16 from './images/section-title/section-16.jpg';
+import sectionImage17 from './images/section-title/section-17.jpg';
 
 const { Title, Paragraph } = Typography;
 
@@ -33,6 +40,13 @@ const DEFAULT_SECTION_IMAGES: string[] = [
   sectionImage8,
   sectionImage9,
   sectionImage10,
+  sectionImage11,
+  sectionImage12,
+  sectionImage13,
+  sectionImage14,
+  sectionImage15,
+  sectionImage16,
+  sectionImage17,
 ];
 
 // Style constants to avoid recreating objects on every render
