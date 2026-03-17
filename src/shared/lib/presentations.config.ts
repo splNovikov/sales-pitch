@@ -173,6 +173,10 @@ import {
   izmetallaKpCreatedAt,
   izmetallaKpTitle,
 } from '~features/izmetalla/slides/izmetalla-kp.meta';
+import {
+  bwP2RoadmapCreatedAt,
+  bwP2RoadmapTitle,
+} from '~features/bw-p2/slides/bw-p2-roadmap.meta';
 
 /**
  * Presentation metadata
@@ -534,6 +538,13 @@ export const presentations: PresentationMeta[] = [
     createdAt: izmetallaKpCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
+  },
+  {
+    slug: 'bw-p2-roadmap',
+    title: bwP2RoadmapTitle,
+    createdAt: bwP2RoadmapCreatedAt,
+    notificationsEnabled: false,
+    showOnVisibility: false,
   },
 ];
 

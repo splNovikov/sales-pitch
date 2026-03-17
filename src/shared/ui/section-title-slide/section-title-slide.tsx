@@ -15,13 +15,13 @@ import sectionImage7 from './images/section-title/section-07.jpg';
 import sectionImage8 from './images/section-title/section-08.jpg';
 import sectionImage9 from './images/section-title/section-09.jpg';
 import sectionImage10 from './images/section-title/section-10.jpg';
-import sectionImage11 from './images/section-title/section-11.jpg';
-import sectionImage12 from './images/section-title/section-12.jpg';
-import sectionImage13 from './images/section-title/section-13.jpg';
-import sectionImage14 from './images/section-title/section-14.jpg';
-import sectionImage15 from './images/section-title/section-15.jpg';
-import sectionImage16 from './images/section-title/section-16.jpg';
-import sectionImage17 from './images/section-title/section-17.jpg';
+import sectionImage11 from './images/section-title/section-11.jpeg';
+import sectionImage12 from './images/section-title/section-12.jpeg';
+import sectionImage13 from './images/section-title/section-13.jpeg';
+import sectionImage14 from './images/section-title/section-14.jpeg';
+import sectionImage15 from './images/section-title/section-15.jpeg';
+import sectionImage16 from './images/section-title/section-16.jpeg';
+import sectionImage17 from './images/section-title/section-17.jpeg';
 
 const { Title, Paragraph } = Typography;
 

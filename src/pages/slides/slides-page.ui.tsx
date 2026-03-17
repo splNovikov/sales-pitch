@@ -54,6 +54,7 @@ import { huchEntecSlides } from '~features/huch-entec/slides';
 import { megawattSlides } from '~features/megawatt/slides';
 import { akademiyaVkusaSlides } from '~features/akademiya-vkusa/slides';
 import { izmetallaKpSlides } from '~features/izmetalla/slides/izmetalla-kp-slides';
+import { bwP2RoadmapSlides } from '~features/bw-p2/slides';
 import {
   getPresentationBySlug,
   presentationSlugs,
@@ -112,6 +113,7 @@ const slidesMap: Record<string, SlideData[]> = {
   megawatt: megawattSlides,
   'akademiya-vkusa': akademiyaVkusaSlides,
   'izmetalla-kp': izmetallaKpSlides,
+  'bw-p2-roadmap': bwP2RoadmapSlides,
 };
 
 /**
