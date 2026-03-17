@@ -589,8 +589,8 @@ export const tatneftSolutionDetailSlides: SlideData[] = [
               }
             >
               <Paragraph style={{ marginBottom: 12 }}>
-                Решения для автозаправочных станций: топливоразливочные
-                колонки, оплата, учёт и автоматизация на АЗС.
+                Решения для автозаправочных станций: топливоразливочные колонки,
+                оплата, учёт и автоматизация на АЗС.
               </Paragraph>
               <Text strong>Задача:</Text>
               <Paragraph style={{ margin: '4px 0 12px' }}>
