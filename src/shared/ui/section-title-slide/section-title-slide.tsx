@@ -1,9 +1,8 @@
-import { Space, Typography, Divider } from 'antd';
 import type { ReactNode } from 'react';
 import { memo } from 'react';
+import { Space, Typography, Divider } from 'antd';
 import { ImageWithLoader } from '~shared/ui/image-with-loader';
 import styles from './section-title-slide.module.css';
-
 // Import section title images
 import sectionImage1 from './images/section-title/section-01.jpg';
 import sectionImage2 from './images/section-title/section-02.jpg';
@@ -63,9 +62,9 @@ const IMAGE_CONTAINER_STYLE: React.CSSProperties = {
 
 export interface SectionTitleSlideProps {
   /**
-   * Main title text
+   * Main title text (string or rich content, e.g. inline Tag)
    */
-  title: string;
+  title: string | ReactNode;
   /**
    * Optional subtitle text (displayed in italic below divider)
    * Can be a string or ReactNode for custom formatting (e.g., links)
@@ -116,6 +115,9 @@ export const SectionTitleSlide = memo(function SectionTitleSlide({
     }
   }
 
+  const titleAlt =
+    typeof title === 'string' ? title : 'Раздел презентации';
+
   if (finalImageSrc) {
     // Split layout: image on the left, title block on the right
     return (
@@ -123,7 +125,7 @@ export const SectionTitleSlide = memo(function SectionTitleSlide({
         <div className={styles.imageContainer}>
           <ImageWithLoader
             src={finalImageSrc}
-            alt={imageAlt ?? title}
+            alt={imageAlt ?? titleAlt}
             style={IMAGE_STYLE}
             containerStyle={IMAGE_CONTAINER_STYLE}
           />
@@ -135,7 +137,7 @@ export const SectionTitleSlide = memo(function SectionTitleSlide({
             style={{ width: '100%', textAlign: 'center' }}
           >
             <Title level={1} className={styles.title}>
-              {title}
+              <span className={styles.titleInner}>{title}</span>
             </Title>
             {subtitle && (
               <>
@@ -162,7 +164,7 @@ export const SectionTitleSlide = memo(function SectionTitleSlide({
       }}
     >
       <Title level={1} className={styles.centeredTitle}>
-        {title}
+        <span className={styles.titleInner}>{title}</span>
       </Title>
       {subtitle && (
         <>

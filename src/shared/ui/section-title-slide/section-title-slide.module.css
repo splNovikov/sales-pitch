@@ -22,6 +22,14 @@
   margin-bottom: 0;
 }
 
+.titleInner {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
 .divider {
   margin: var(--app-spacing-lg) auto;
   width: 200px;

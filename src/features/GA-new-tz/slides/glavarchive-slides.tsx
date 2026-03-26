@@ -4,6 +4,7 @@ import { ConstrainedContent } from '~shared/ui/constrained-content';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { type SlideData } from '~widgets/slides';
 import { glavarchiveCreatedAt } from './glavarchive.meta';
+import { GlavAccentTag, GlavMaxTag } from './glavarchive-slide-tags';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -193,14 +194,25 @@ export const glavarchiveSlides: SlideData[] = [
             <List size="small">
               <List.Item>управление публикациями и медиаматериалами</List.Item>
               <List.Item>
-                контроль загрузки изображений и статусов обработки
+                <Space size="small" wrap align="start">
+                  <span>
+                    автоматизация загрузки изображений для публикаций с
+                    контролем статусов обработки
+                  </span>
+                  <GlavAccentTag color="cyan">Автозагрузка</GlavAccentTag>
+                </Space>
               </List.Item>
               <List.Item>сопровождение заказов</List.Item>
               <List.Item>
                 единый интерфейс для ежедневной работы сотрудников
               </List.Item>
               <List.Item>
-                выбор фотографий для оживления с использованием ИИ
+                <Space size="small" wrap align="start">
+                  <span>
+                    выбор фотографий для оживления с использованием ИИ
+                  </span>
+                  <GlavAccentTag color="magenta">Оживление фото</GlavAccentTag>
+                </Space>
               </List.Item>
             </List>
           </Card>
@@ -209,11 +221,16 @@ export const glavarchiveSlides: SlideData[] = [
               Почему это важно
             </Title>
             <Paragraph style={{ marginBottom: 0 }}>
-              Функция оживления фотографий через ИИ — это наглядный пример
-              современного цифрового сервиса, встроенного прямо в рабочий
-              процесс. Сотруднику не нужно использовать сторонние сложные
-              инструменты — нужное действие выполняется внутри единой рабочей
-              среды.
+              <Space size="small" wrap align="start">
+                <span>
+                  Функция оживления фотографий через ИИ — это наглядный пример
+                  современного цифрового сервиса, встроенного прямо в рабочий
+                  процесс. Сотруднику не нужно использовать сторонние сложные
+                  инструменты — нужное действие выполняется внутри единой
+                  рабочей среды.
+                </span>
+                <GlavAccentTag color="magenta">Оживление фото</GlavAccentTag>
+              </Space>
             </Paragraph>
           </Card>
         </Space>
@@ -240,7 +257,12 @@ export const glavarchiveSlides: SlideData[] = [
                 система снижает вероятность пропуска шагов и ошибок
               </List.Item>
               <List.Item>
-                проще контролировать статус загрузки и обработки контента
+                <Space size="small" wrap align="start">
+                  <span>
+                    проще контролировать статус загрузки и обработки контента
+                  </span>
+                  <GlavAccentTag color="cyan">Автозагрузка</GlavAccentTag>
+                </Space>
               </List.Item>
               <List.Item>уменьшается зависимость от ручных проверок</List.Item>
               <List.Item>
@@ -303,14 +325,25 @@ export const glavarchiveSlides: SlideData[] = [
     id: 'section-max-mini-app',
     header: undefined,
     content: (
-      <SectionTitleSlide imageIndex={2} title="Мини-приложение в MAX" />
+      <SectionTitleSlide
+        imageIndex={2}
+        title={
+          <>
+            Мини-приложение в MAX
+          </>
+        }
+      />
     ),
   },
 
   // Slide 8
   {
     id: 'max-mini-app',
-    header: 'Мини-приложение в MAX для заказов и поддержки',
+    header: (
+      <>
+        Мини-приложение в MAX для заказов и поддержки
+      </>
+    ),
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
@@ -329,12 +362,23 @@ export const glavarchiveSlides: SlideData[] = [
               Что это даст
             </Title>
             <Paragraph style={{ marginBottom: 8 }}>
-              Мини-приложение в MAX позволит:
+              <Space size="small" wrap align="start">
+                <span>Мини-приложение в</span>
+                <GlavMaxTag />
+                <span>позволит:</span>
+              </Space>
             </Paragraph>
             <List size="small">
               <List.Item>оформлять заказы</List.Item>
               <List.Item>отслеживать статусы</List.Item>
-              <List.Item>получать уведомления</List.Item>
+              <List.Item>
+                <Space size="small" wrap align="start">
+                  <span>получать push-уведомления в</span>
+                  <GlavMaxTag />
+                  <span>вместо SMS</span>
+                  <GlavAccentTag color="volcano">Push вместо SMS</GlavAccentTag>
+                </Space>
+              </List.Item>
               <List.Item>обращаться за поддержкой</List.Item>
               <List.Item>
                 взаимодействовать с Главархивом без поиска информации в разных
@@ -354,7 +398,11 @@ export const glavarchiveSlides: SlideData[] = [
   // Slide 9
   {
     id: 'max-value',
-    header: 'Ценность MAX для Главархива',
+    header: (
+      <>
+        Ценность MAX для Главархива
+      </>
+    ),
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
@@ -436,7 +484,13 @@ export const glavarchiveSlides: SlideData[] = [
               <List.Item>снижение количества уточняющих обращений</List.Item>
               <List.Item>более упорядоченный процесс сопровождения</List.Item>
               <List.Item>
-                основа для дальнейшей автоматизации, включая интеграцию с 1С
+                <Space size="small" wrap align="start">
+                  <span>
+                    основа для дальнейшей автоматизации, включая интеграцию с
+                    1С
+                  </span>
+                  <GlavAccentTag color="gold">Счета · 1С</GlavAccentTag>
+                </Space>
               </List.Item>
             </List>
           </Card>
@@ -459,10 +513,20 @@ export const glavarchiveSlides: SlideData[] = [
             <List size="small">
               <List.Item>данные об организации</List.Item>
               <List.Item>работа с договорами</List.Item>
-              <List.Item>выставление и отображение счетов</List.Item>
+              <List.Item>
+                <Space size="small" wrap align="start">
+                  <span>выставление и отображение счетов</span>
+                  <GlavAccentTag color="gold">Счета · 1С</GlavAccentTag>
+                </Space>
+              </List.Item>
               <List.Item>контроль статусов услуг</List.Item>
               <List.Item>история взаимодействия</List.Item>
-              <List.Item>возможность последующей интеграции с 1С</List.Item>
+              <List.Item>
+                <Space size="small" wrap align="start">
+                  <span>возможность последующей интеграции с 1С</span>
+                  <GlavAccentTag color="gold">Счета · 1С</GlavAccentTag>
+                </Space>
+              </List.Item>
             </List>
           </Card>
           <Card>
@@ -543,6 +607,15 @@ export const glavarchiveSlides: SlideData[] = [
               <List.Item>
                 участие заказчика в формировании новой структуры
               </List.Item>
+              <List.Item>
+                <Space size="small" wrap align="start">
+                  <span>
+                    отдельная версия рубрикатора под сценарии и ограничения
+                    мини-приложения в
+                  </span>
+                  <GlavMaxTag />
+                </Space>
+              </List.Item>
             </List>
           </Card>
           <Card>
@@ -563,7 +636,11 @@ export const glavarchiveSlides: SlideData[] = [
     content: (
       <SectionTitleSlide
         imageIndex={5}
-        title="Информационный сервис в MAX"
+        title={
+          <>
+            Информационный сервис в MAX
+          </>
+        }
       />
     ),
   },
@@ -571,7 +648,11 @@ export const glavarchiveSlides: SlideData[] = [
   // Slide 14
   {
     id: 'max-info-service',
-    header: 'Информационный сервис в MAX: новости, подписки, уведомления',
+    header: (
+      <>
+        Информационный сервис в MAX: новости, подписки, уведомления
+      </>
+    ),
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
@@ -580,8 +661,15 @@ export const glavarchiveSlides: SlideData[] = [
               Зачем он нужен
             </Title>
             <Paragraph style={{ marginBottom: 0 }}>
-              Сегодня важно не только размещать информацию, но и доставлять ее
-              до аудитории в удобном и привычном цифровом канале.
+              <Space size="small" wrap align="start">
+                <span>
+                  Сегодня важно не только размещать информацию, но и доставлять
+                  ее до аудитории в удобном и привычном цифровом канале, в том
+                  числе в мессенджере
+                </span>
+                <GlavMaxTag />
+                <span>.</span>
+              </Space>
             </Paragraph>
           </Card>
           <Card>
@@ -592,6 +680,14 @@ export const glavarchiveSlides: SlideData[] = [
               <List.Item>современную модель коммуникации с аудиторией</List.Item>
               <List.Item>возможность подписки на темы и рубрики</List.Item>
               <List.Item>адресную доставку новостей и анонсов</List.Item>
+              <List.Item>
+                <Space size="small" wrap align="start">
+                  <span>push-уведомления в</span>
+                  <GlavMaxTag />
+                  <span>вместо SMS для доставки новостей и напоминаний</span>
+                  <GlavAccentTag color="volcano">Push вместо SMS</GlavAccentTag>
+                </Space>
+              </List.Item>
               <List.Item>
                 более живое и регулярное взаимодействие с пользователями
               </List.Item>
@@ -616,9 +712,19 @@ export const glavarchiveSlides: SlideData[] = [
                   Пользователь получает
                 </Title>
                 <List size="small">
-                  <List.Item>удобный цифровой канал</List.Item>
                   <List.Item>
-                    новости и уведомления по интересующим темам
+                    <Space size="small" wrap align="start">
+                      <span>удобный цифровой канал в мессенджере</span>
+                      <GlavMaxTag />
+                    </Space>
+                  </List.Item>
+                  <List.Item>
+                    <Space size="small" wrap align="start">
+                      <span>
+                        новости и push-уведомления по интересующим темам
+                      </span>
+                      <GlavAccentTag color="volcano">Push вместо SMS</GlavAccentTag>
+                    </Space>
                   </List.Item>
                   <List.Item>меньше риска пропустить важную информацию</List.Item>
                   <List.Item>
