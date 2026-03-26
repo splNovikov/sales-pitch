@@ -117,6 +117,10 @@ import {
   ppuPipesSolutionTitle,
 } from '~features/ppu-pipes/slides/ppu-pipes-solution.meta';
 import {
+  platonCreatedAt,
+  platonTitle,
+} from '~features/platon/slides/platon.meta';
+import {
   admixSiberiaCreatedAt,
   admixSiberiaTitle,
 } from '~features/admix-siberia/slides/admix-siberia.meta';
@@ -428,6 +432,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'ppu-pipes-solution',
     title: ppuPipesSolutionTitle,
     createdAt: ppuPipesSolutionCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'platon',
+    title: platonTitle,
+    createdAt: platonCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },

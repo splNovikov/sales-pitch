@@ -41,9 +41,7 @@ export const glavarchiveSlides: SlideData[] = [
   {
     id: 'section-context',
     header: undefined,
-    content: (
-      <SectionTitleSlide imageIndex={0} title="Контекст проекта" />
-    ),
+    content: <SectionTitleSlide imageIndex={0} title="Контекст проекта" />,
   },
 
   // Slide 2 — main idea
@@ -65,7 +63,9 @@ export const glavarchiveSlides: SlideData[] = [
             </Title>
             <List size="small">
               <List.Item>удобные инструменты для сотрудников</List.Item>
-              <List.Item>современные цифровые каналы для пользователей</List.Item>
+              <List.Item>
+                современные цифровые каналы для пользователей
+              </List.Item>
               <List.Item>прозрачные сервисы для юридических лиц</List.Item>
               <List.Item>единая логика развития всех новых решений</List.Item>
             </List>
@@ -146,7 +146,9 @@ export const glavarchiveSlides: SlideData[] = [
               действий, постоянного переключения между задачами и высокой
               внимательности на каждом этапе.
             </Paragraph>
-            <Paragraph style={{ marginBottom: 8 }}>Это приводит к тому, что:</Paragraph>
+            <Paragraph style={{ marginBottom: 8 }}>
+              Это приводит к тому, что:
+            </Paragraph>
             <List size="small">
               <List.Item>процессы замедляются</List.Item>
               <List.Item>возрастает нагрузка на операторов</List.Item>
@@ -299,7 +301,9 @@ export const glavarchiveSlides: SlideData[] = [
               Основа подхода
             </Title>
             <List size="small">
-              <List.Item>проектирование интерфейса опытной UX-командой</List.Item>
+              <List.Item>
+                проектирование интерфейса опытной UX-командой
+              </List.Item>
               <List.Item>обязательное участие заказчика</List.Item>
               <List.Item>
                 участие конечных пользователей в проработке сценариев
@@ -311,8 +315,8 @@ export const glavarchiveSlides: SlideData[] = [
           </Card>
           <Card>
             <Paragraph style={{ marginBottom: 0 }}>
-              <Text strong>Результат:</Text> интерфейс помогает работать быстрее,
-              понятнее и увереннее.
+              <Text strong>Результат:</Text> интерфейс помогает работать
+              быстрее, понятнее и увереннее.
             </Paragraph>
           </Card>
         </Space>
@@ -325,25 +329,14 @@ export const glavarchiveSlides: SlideData[] = [
     id: 'section-max-mini-app',
     header: undefined,
     content: (
-      <SectionTitleSlide
-        imageIndex={2}
-        title={
-          <>
-            Мини-приложение в MAX
-          </>
-        }
-      />
+      <SectionTitleSlide imageIndex={2} title={<>Мини-приложение в MAX</>} />
     ),
   },
 
   // Slide 8
   {
     id: 'max-mini-app',
-    header: (
-      <>
-        Мини-приложение в MAX для заказов и поддержки
-      </>
-    ),
+    header: <>Мини-приложение в MAX для заказов и поддержки</>,
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
@@ -398,11 +391,7 @@ export const glavarchiveSlides: SlideData[] = [
   // Slide 9
   {
     id: 'max-value',
-    header: (
-      <>
-        Ценность MAX для Главархива
-      </>
-    ),
+    header: <>Ценность MAX для Главархива</>,
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
@@ -480,14 +469,15 @@ export const glavarchiveSlides: SlideData[] = [
               Что даст Главархиву
             </Title>
             <List size="small">
-              <List.Item>более высокий уровень сервиса для организаций</List.Item>
+              <List.Item>
+                более высокий уровень сервиса для организаций
+              </List.Item>
               <List.Item>снижение количества уточняющих обращений</List.Item>
               <List.Item>более упорядоченный процесс сопровождения</List.Item>
               <List.Item>
                 <Space size="small" wrap align="start">
                   <span>
-                    основа для дальнейшей автоматизации, включая интеграцию с
-                    1С
+                    основа для дальнейшей автоматизации, включая интеграцию с 1С
                   </span>
                   <GlavAccentTag color="gold">Счета · 1С</GlavAccentTag>
                 </Space>
@@ -636,11 +626,7 @@ export const glavarchiveSlides: SlideData[] = [
     content: (
       <SectionTitleSlide
         imageIndex={5}
-        title={
-          <>
-            Информационный сервис в MAX
-          </>
-        }
+        title={<>Информационный сервис в MAX</>}
       />
     ),
   },
@@ -648,11 +634,7 @@ export const glavarchiveSlides: SlideData[] = [
   // Slide 14
   {
     id: 'max-info-service',
-    header: (
-      <>
-        Информационный сервис в MAX: новости, подписки, уведомления
-      </>
-    ),
+    header: <>Информационный сервис в MAX: новости, подписки, уведомления</>,
     content: (
       <ConstrainedContent>
         <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
@@ -677,7 +659,9 @@ export const glavarchiveSlides: SlideData[] = [
               Что это даст Главархиву
             </Title>
             <List size="small">
-              <List.Item>современную модель коммуникации с аудиторией</List.Item>
+              <List.Item>
+                современную модель коммуникации с аудиторией
+              </List.Item>
               <List.Item>возможность подписки на темы и рубрики</List.Item>
               <List.Item>адресную доставку новостей и анонсов</List.Item>
               <List.Item>
@@ -723,10 +707,14 @@ export const glavarchiveSlides: SlideData[] = [
                       <span>
                         новости и push-уведомления по интересующим темам
                       </span>
-                      <GlavAccentTag color="volcano">Push вместо SMS</GlavAccentTag>
+                      <GlavAccentTag color="volcano">
+                        Push вместо SMS
+                      </GlavAccentTag>
                     </Space>
                   </List.Item>
-                  <List.Item>меньше риска пропустить важную информацию</List.Item>
+                  <List.Item>
+                    меньше риска пропустить важную информацию
+                  </List.Item>
                   <List.Item>
                     более современное взаимодействие с учреждением
                   </List.Item>
@@ -744,8 +732,7 @@ export const glavarchiveSlides: SlideData[] = [
                     более заметное присутствие в цифровой среде
                   </List.Item>
                   <List.Item>
-                    возможность системно доносить важную информацию до
-                    аудитории
+                    возможность системно доносить важную информацию до аудитории
                   </List.Item>
                 </List>
               </Card>

@@ -64,6 +64,7 @@ import { akademiyaVkusaSlides } from '~features/akademiya-vkusa/slides';
 import { izmetallaKpSlides } from '~features/izmetalla/slides/izmetalla-kp-slides';
 import { bwP2RoadmapSlides } from '~features/bw-p2/slides';
 import { glavarchiveSlides } from '~features/GA-new-tz/slides/glavarchive-slides';
+import { platonSlides } from '~features/platon/slides/platon-slides';
 import { Slides, type SlideData } from '~widgets/slides';
 
 // Map company slugs to their slide sets
@@ -97,6 +98,7 @@ const slidesMap: Record<string, SlideData[]> = {
   'proposal-ai': proposalAiSlides,
   saratovupakovka: saratovupakovkaSlides,
   'ppu-pipes-solution': ppuPipesSolutionSlides,
+  platon: platonSlides,
   'admix-siberia': admixSiberiaSlides,
   'admix-siberia-quiz': admixSiberiaQuestionnaireSlides,
   'a-tis': atisSlides,

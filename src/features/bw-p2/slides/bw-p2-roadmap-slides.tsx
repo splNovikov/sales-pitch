@@ -171,8 +171,7 @@ const release30ScopeItems: RoadmapItem[] = [
   },
   {
     title: 'Сообщество',
-    description:
-      'Форум, обмен опытом, отраслевые механики взаимодействия.',
+    description: 'Форум, обмен опытом, отраслевые механики взаимодействия.',
     icon: <CalendarOutlined />,
     color: 'green',
   },
@@ -502,8 +501,7 @@ export const bwP2RoadmapSlides: SlideData[] = [
                 key: '4',
                 stage: 'Release 3.0',
                 goal: 'Экосистема и сетевой эффект',
-                includes:
-                  'Каталоги, поиск, исполнители, мобильные приложения',
+                includes: 'Каталоги, поиск, исполнители, мобильные приложения',
                 excludes: 'Корпоративные функции глубокой кастомизации',
               },
               {

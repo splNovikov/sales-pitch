@@ -115,8 +115,7 @@ export const SectionTitleSlide = memo(function SectionTitleSlide({
     }
   }
 
-  const titleAlt =
-    typeof title === 'string' ? title : 'Раздел презентации';
+  const titleAlt = typeof title === 'string' ? title : 'Раздел презентации';
 
   if (finalImageSrc) {
     // Split layout: image on the left, title block on the right
