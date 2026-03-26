@@ -177,6 +177,10 @@ import {
   bwP2RoadmapCreatedAt,
   bwP2RoadmapTitle,
 } from '~features/bw-p2/slides/bw-p2-roadmap.meta';
+import {
+  glavarchiveCreatedAt,
+  glavarchiveTitle,
+} from '~features/GA-new-tz/slides/glavarchive.meta';
 
 /**
  * Presentation metadata
@@ -389,6 +393,13 @@ export const presentations: PresentationMeta[] = [
     slug: 'eksima-platform-spec',
     title: eksimaPlatformSpecTitle,
     createdAt: eksimaPlatformSpecCreatedAt,
+    notificationsEnabled: true,
+    showOnVisibility: true,
+  },
+  {
+    slug: 'glavarchive-digital-services',
+    title: glavarchiveTitle,
+    createdAt: glavarchiveCreatedAt,
     notificationsEnabled: true,
     showOnVisibility: true,
   },

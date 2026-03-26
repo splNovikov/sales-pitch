@@ -1,5 +1,13 @@
 import { useState, useMemo } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import {
+  getPresentationBySlug,
+  presentationSlugs,
+} from '~shared/lib/presentations.config';
+import {
+  PresentationLoginForm,
+  isPresentationAuthenticated,
+} from '~shared/ui/presentation-login-form';
 import { kirovStekloSlides } from '~features/kirov-steklo/slides/kirov-steklo-slides';
 import { niteosSlides } from '~features/niteos/slides/niteos-slides';
 import { niteosShortSlides } from '~features/niteos/slides/niteos-short-slides';
@@ -55,14 +63,7 @@ import { megawattSlides } from '~features/megawatt/slides';
 import { akademiyaVkusaSlides } from '~features/akademiya-vkusa/slides';
 import { izmetallaKpSlides } from '~features/izmetalla/slides/izmetalla-kp-slides';
 import { bwP2RoadmapSlides } from '~features/bw-p2/slides';
-import {
-  getPresentationBySlug,
-  presentationSlugs,
-} from '~shared/lib/presentations.config';
-import {
-  PresentationLoginForm,
-  isPresentationAuthenticated,
-} from '~shared/ui/presentation-login-form';
+import { glavarchiveSlides } from '~features/GA-new-tz/slides/glavarchive-slides';
 import { Slides, type SlideData } from '~widgets/slides';
 
 // Map company slugs to their slide sets
@@ -114,6 +115,7 @@ const slidesMap: Record<string, SlideData[]> = {
   'akademiya-vkusa': akademiyaVkusaSlides,
   'izmetalla-kp': izmetallaKpSlides,
   'bw-p2-roadmap': bwP2RoadmapSlides,
+  'glavarchive-digital-services': glavarchiveSlides,
 };
 
 /**
