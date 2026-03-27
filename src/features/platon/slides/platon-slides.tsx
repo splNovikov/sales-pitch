@@ -32,14 +32,28 @@ import { type SlideData } from '~widgets/slides';
 import { formatDateForSlide } from '~shared/lib/date.utils';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { MainTitleSlide } from '~shared/ui/main-title-slide';
+import { ImageWithLoader } from '~shared/ui/image-with-loader';
 import { platonCreatedAt } from './platon.meta';
-import { PlatonImagePlaceholder } from '../ui/platon-slide-placeholders';
 import platonLogo from '../images/Platon-logo.png';
+import platonScreen1 from '../images/1.png';
+import platonScreen2 from '../images/2.png';
+import platonScreen3 from '../images/3.png';
+import platonScreen4 from '../images/4.png';
+import platonScreen5 from '../images/5.png';
+import platonScreen6 from '../images/6.png';
+import platonScreen7 from '../images/7.png';
+import platonScreen8 from '../images/8.png';
+import platonScreen9 from '../images/9.png';
 
 const { Title, Text } = Typography;
 
-/** Левая колонка со скриншотом (плейсхолдер) — как в портфолио B2B. */
-function PlatonSlideImageColumn() {
+interface PlatonSlideImageColumnProps {
+  src: string;
+  alt: string;
+}
+
+/** Левая колонка со скриншотом интерфейса — как в портфолио B2B. */
+function PlatonSlideImageColumn({ src, alt }: PlatonSlideImageColumnProps) {
   return (
     <Col xs={24} md={14}>
       <div
@@ -60,9 +74,30 @@ function PlatonSlideImageColumn() {
             borderRadius: 8,
             overflow: 'hidden',
             boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            background: '#f5f5f5',
           }}
         >
-          <PlatonImagePlaceholder text="место для картинки" />
+          <ImageWithLoader
+            src={src}
+            alt={alt}
+            style={{
+              maxWidth: '100%',
+              maxHeight: '100%',
+              width: 'auto',
+              height: 'auto',
+              objectFit: 'contain',
+            }}
+            containerStyle={{
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          />
         </div>
       </div>
     </Col>
@@ -93,7 +128,10 @@ export const platonSlides: SlideData[] = [
     content: (
       <Card>
         <Row gutter={[24, 24]} align="stretch">
-          <PlatonSlideImageColumn />
+          <PlatonSlideImageColumn
+            src={platonScreen1}
+            alt="Сводная таблица: продукты и цены конкурентов"
+          />
           <Col xs={24} md={10}>
             <Space
               direction="vertical"
@@ -164,7 +202,10 @@ export const platonSlides: SlideData[] = [
     content: (
       <Card>
         <Row gutter={[24, 24]} align="stretch">
-          <PlatonSlideImageColumn />
+          <PlatonSlideImageColumn
+            src={platonScreen2}
+            alt="Сводная таблица: несколько учётных записей одного конкурента"
+          />
           <Col xs={24} md={10}>
             <Space
               direction="vertical"
@@ -227,7 +268,10 @@ export const platonSlides: SlideData[] = [
     content: (
       <Card>
         <Row gutter={[24, 24]} align="stretch">
-          <PlatonSlideImageColumn />
+          <PlatonSlideImageColumn
+            src={platonScreen3}
+            alt="Модальное окно: динамика цен и остатков по датам"
+          />
           <Col xs={24} md={10}>
             <Space
               direction="vertical"
@@ -282,7 +326,10 @@ export const platonSlides: SlideData[] = [
     content: (
       <Card>
         <Row gutter={[24, 24]} align="stretch">
-          <PlatonSlideImageColumn />
+          <PlatonSlideImageColumn
+            src={platonScreen4}
+            alt="Аналитика: уведомления об изменениях остатков"
+          />
           <Col xs={24} md={10}>
             <Space
               direction="vertical"
@@ -347,7 +394,10 @@ export const platonSlides: SlideData[] = [
     content: (
       <Card>
         <Row gutter={[24, 24]} align="stretch">
-          <PlatonSlideImageColumn />
+          <PlatonSlideImageColumn
+            src={platonScreen5}
+            alt="Парсинг: статус очереди и запуск по источникам"
+          />
           <Col xs={24} md={10}>
             <Space
               direction="vertical"
@@ -398,7 +448,10 @@ export const platonSlides: SlideData[] = [
     content: (
       <Card>
         <Row gutter={[24, 24]} align="stretch">
-          <PlatonSlideImageColumn />
+          <PlatonSlideImageColumn
+            src={platonScreen6}
+            alt="Настройки парсинга: лимиты, антикапча, stealth"
+          />
           <Col xs={24} md={10}>
             <Space
               direction="vertical"
@@ -477,7 +530,10 @@ export const platonSlides: SlideData[] = [
     content: (
       <Card>
         <Row gutter={[24, 24]} align="stretch">
-          <PlatonSlideImageColumn />
+          <PlatonSlideImageColumn
+            src={platonScreen7}
+            alt="Учётные записи для парсеров и роли"
+          />
           <Col xs={24} md={10}>
             <Space
               direction="vertical"
@@ -520,7 +576,10 @@ export const platonSlides: SlideData[] = [
     content: (
       <Card>
         <Row gutter={[24, 24]} align="stretch">
-          <PlatonSlideImageColumn />
+          <PlatonSlideImageColumn
+            src={platonScreen8}
+            alt="Прокси: пул и массовый импорт"
+          />
           <Col xs={24} md={10}>
             <Space
               direction="vertical"
@@ -574,7 +633,10 @@ export const platonSlides: SlideData[] = [
     content: (
       <Card>
         <Row gutter={[24, 24]} align="stretch">
-          <PlatonSlideImageColumn />
+          <PlatonSlideImageColumn
+            src={platonScreen9}
+            alt="Управление продуктами"
+          />
           <Col xs={24} md={10}>
             <Space
               direction="vertical"
