@@ -1,0 +1,130 @@
+/**
+ * BW-p2 roadmap slides: лиды, цепочки ролей, слайд «проблема»
+ */
+
+/** Лид слайда «Какая проблема на рынке» — один размер на весь абзац, без Ant Typography.Text */
+.problemLead {
+  margin-bottom: 0 !important;
+  font-size: clamp(
+    var(--app-font-size-base),
+    0.5rem + 1.65vw,
+    var(--app-font-size-xl)
+  );
+  line-height: 1.4;
+}
+
+.problemLead strong {
+  font-weight: 600;
+}
+
+.leadBlock {
+  padding: var(--app-spacing-lg) var(--app-spacing-md);
+  margin-bottom: var(--app-spacing-md);
+  border-left: 4px solid var(--ant-color-primary);
+  background: var(--ant-color-fill-quaternary);
+  border-radius: 0 var(--app-border-radius-md) var(--app-border-radius-md) 0;
+}
+
+.leadTitle {
+  margin-top: 0;
+  margin-bottom: var(--app-spacing-sm);
+  font-size: var(--app-font-size-lg);
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.leadSubtitle {
+  margin-bottom: 0 !important;
+  font-size: var(--app-font-size-md);
+  color: var(--ant-color-text-secondary);
+}
+
+.roleChain {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--app-spacing-sm);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .roleChain {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: center;
+    gap: var(--app-spacing-xs);
+  }
+}
+
+.roleCard {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+}
+
+.roleCard :global(.ant-card-body) {
+  padding: var(--app-spacing-md);
+}
+
+.roleCardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--app-spacing-sm);
+  margin-bottom: var(--app-spacing-xs);
+}
+
+.roleIcon {
+  font-size: 22px;
+  color: var(--ant-color-primary);
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.roleCardTitle {
+  margin: 0 !important;
+  font-size: 16px !important;
+  line-height: 1.35 !important;
+}
+
+.roleCardText {
+  margin-bottom: 0 !important;
+  font-size: var(--app-font-size-sm);
+  line-height: 1.5;
+  color: var(--ant-color-text-secondary);
+}
+
+.arrowBetween {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: var(--app-spacing-xs) 0;
+  color: var(--ant-color-text-tertiary);
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  .arrowBetween {
+    padding: 0 var(--app-spacing-xs);
+    align-self: center;
+  }
+}
+
+.arrowDesktop {
+  display: none;
+}
+
+.arrowMobile {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .arrowDesktop {
+    display: flex;
+  }
+
+  .arrowMobile {
+    display: none;
+  }
+}
