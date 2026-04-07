@@ -27,8 +27,8 @@
   margin-bottom: var(--app-spacing-xs) !important;
 }
 
-/** Компактный лид и текст цели — чтобы слайд помещался в один экран */
-.phase1LeadBlock {
+/** Слайды этапов (шаг 1–5): компактный лид и сетка карточек */
+.phaseLeadBlock {
   padding: var(--app-spacing-sm) var(--app-spacing-md);
   margin-bottom: var(--app-spacing-sm);
   border-left: 4px solid var(--ant-color-primary);
@@ -36,7 +36,7 @@
   border-radius: 0 var(--app-border-radius-md) var(--app-border-radius-md) 0;
 }
 
-.phase1GoalText {
+.phaseGoalText {
   margin-bottom: 0 !important;
   font-size: clamp(
     var(--app-font-size-xs),
@@ -46,23 +46,37 @@
   line-height: 1.28;
 }
 
-.phase1DeliverablesTitle {
+.phaseDeliverablesTitle {
   margin-top: 0 !important;
   margin-bottom: var(--app-spacing-sm) !important;
   font-size: var(--app-font-size-md) !important;
 }
 
-.phase1Grid :global(.ant-card .ant-card-body) {
+.phaseFeatureGrid :global(.ant-card .ant-card-body) {
   padding: var(--app-spacing-xs) var(--app-spacing-sm) !important;
 }
 
-.phase1Grid :global(.ant-list-item) {
+.phaseFeatureGrid :global(.ant-list-item) {
   padding-block: 2px !important;
 }
 
-.phase1Grid :global(.ant-list-item .ant-typography) {
+.phaseFeatureGrid :global(.ant-list-item .ant-typography) {
   font-size: var(--app-font-size-sm);
   line-height: 1.3;
+}
+
+.phaseNotYetBlock {
+  padding: var(--app-spacing-sm) var(--app-spacing-md);
+  border-radius: var(--app-border-radius-md);
+  background: var(--ant-color-fill-alter);
+  border: 1px solid var(--ant-color-border-secondary);
+}
+
+.phaseNotYetTitle {
+  margin-top: 0 !important;
+  margin-bottom: var(--app-spacing-xs) !important;
+  font-size: var(--app-font-size-sm) !important;
+  color: var(--ant-color-text-secondary);
 }
 
 .leadBlock {

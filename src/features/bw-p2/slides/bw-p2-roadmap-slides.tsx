@@ -2,14 +2,24 @@
 import type { ReactNode } from 'react';
 import { Space, Typography, List, Card, Tag } from 'antd';
 import {
+  ApiOutlined,
   ArrowDownOutlined,
   ArrowRightOutlined,
   BellOutlined,
   CalendarOutlined,
   CarOutlined,
+  CloudServerOutlined,
   DisconnectOutlined,
+  DollarOutlined,
+  FileTextOutlined,
+  GlobalOutlined,
   IdcardOutlined,
+  LayoutOutlined,
+  LineChartOutlined,
+  LinkOutlined,
+  MobileOutlined,
   PhoneOutlined,
+  SafetyOutlined,
   SearchOutlined,
   ShopOutlined,
   TagsOutlined,
@@ -27,7 +37,7 @@ import { type SlideData } from '~widgets/slides';
 import { bwP2RoadmapCreatedAt } from './bw-p2-roadmap.meta';
 import styles from './bw-p2-roadmap-slides.module.css';
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph } = Typography;
 
 function RoleChainArrow() {
   return (
@@ -63,31 +73,36 @@ function RoleCard({
 const roadmapStripItems: RoadmapItem[] = [
   {
     title: 'Шаг 1 — Пилот',
-    description: 'Проверка на реальных бронированиях.',
+    description:
+      'Своя система бронирования: календарь, поиск, прайсы, доступ агентов к ТС; бронь и уведомления.',
     icon: <CalendarOutlined />,
     color: 'cyan',
   },
   {
     title: 'Шаг 2 — Повседневная работа',
-    description: 'Удобный продукт для продаж и учёта.',
+    description:
+      'Ежедневная работа в продукте: подписка, отчёты, расширение правил календаря и каналов агента.',
     icon: <CalendarOutlined />,
     color: 'blue',
   },
   {
     title: 'Шаг 3 — Клиенты и интеграции',
-    description: 'CRM и обмен данными с другими системами.',
+    description:
+      'CRM и связь с внешними системами поверх уже работающего контура брони.',
     icon: <CalendarOutlined />,
     color: 'green',
   },
   {
     title: 'Шаг 4 — Экосистема',
-    description: 'Каталоги, сообщество, мобильные приложения.',
+    description:
+      'Отраслевые каталоги и сообщество, мобильные клиенты после стабильного ядра.',
     icon: <CalendarOutlined />,
     color: 'orange',
   },
   {
     title: 'Шаг 5 — Масштаб',
-    description: 'Несколько стран, надёжность, оплата подписки.',
+    description:
+      'Несколько регионов и валют, надёжность и оплата на зрелом продукте.',
     icon: <CalendarOutlined />,
     color: 'purple',
   },
@@ -125,9 +140,7 @@ const phase1PilotCards: Omit<
     icon: <SearchOutlined />,
     iconColor: 'blue',
     size: 'small',
-    items: [
-      'Поиск и фильтрация транспортных средств в интерфейсе агента.',
-    ],
+    items: ['Поиск и фильтрация транспортных средств в интерфейсе агента.'],
     style: { backgroundColor: '#e6f7ff' },
   },
   {
@@ -152,67 +165,207 @@ const phase1PilotCards: Omit<
   },
 ];
 
-function PhaseIntro({
-  stepTitle,
-  docLabel,
+const phase2Cards: Omit<FeatureCardProps, 'animated' | 'animationDelay'>[] = [
+  {
+    title: 'Разделы и отчёты',
+    icon: <LayoutOutlined />,
+    iconColor: 'purple',
+    size: 'small',
+    items: [
+      'Разделы для постоянной работы: продажи, базовые отчёты, настройки — поверх уже заведённого из пилота каталога, календаря и бронирования.',
+    ],
+    style: { backgroundColor: '#f9f0ff' },
+  },
+  {
+    title: 'Календарь и цены',
+    icon: <CalendarOutlined />,
+    iconColor: 'orange',
+    size: 'small',
+    items: [
+      'Расширение календаря и цен: сезоны, выходные, дополнительные правила — эволюция после базового контура пилота.',
+    ],
+    style: { backgroundColor: '#fff7e6' },
+  },
+  {
+    title: 'Каналы агента',
+    icon: <LinkOutlined />,
+    iconColor: 'blue',
+    size: 'small',
+    items: [
+      'Форма или виджет бронирования для сайта и других каналов агента — подключение к уже существующей в продукте логике брони.',
+    ],
+    style: { backgroundColor: '#e6f7ff' },
+  },
+  {
+    title: 'Монетизация',
+    icon: <DollarOutlined />,
+    iconColor: 'cyan',
+    size: 'small',
+    items: ['Подписка за пользование платформой.'],
+    style: { backgroundColor: '#e6fffb' },
+  },
+];
+
+const phase3Cards: Omit<FeatureCardProps, 'animated' | 'animationDelay'>[] = [
+  {
+    title: 'CRM и история',
+    icon: <TeamOutlined />,
+    iconColor: 'purple',
+    size: 'small',
+    items: ['Учёт клиентов и сделок (CRM), история бронирований.'],
+    style: { backgroundColor: '#f9f0ff' },
+  },
+  {
+    title: 'Документы и рефералы',
+    icon: <FileTextOutlined />,
+    iconColor: 'orange',
+    size: 'small',
+    items: ['Документы по сделкам, реферальные программы по согласованию.'],
+    style: { backgroundColor: '#fff7e6' },
+  },
+  {
+    title: 'Внешние системы',
+    icon: <ApiOutlined />,
+    iconColor: 'blue',
+    size: 'small',
+    items: [
+      'Обмен данными с внешними системами; синхронизация с внешними календарями (отдельно от встроенного календаря пилота).',
+    ],
+    style: { backgroundColor: '#e6f7ff' },
+  },
+];
+
+const phase4Cards: Omit<FeatureCardProps, 'animated' | 'animationDelay'>[] = [
+  {
+    title: 'Отраслевые каталоги',
+    icon: <ShopOutlined />,
+    iconColor: 'purple',
+    size: 'small',
+    items: [
+      'Отраслевые и сетевые каталоги (участники рынка), а не только внутренний каталог ТС и агентов из пилота.',
+    ],
+    style: { backgroundColor: '#f9f0ff' },
+  },
+  {
+    title: 'Сообщество и мобильные',
+    icon: <MobileOutlined />,
+    iconColor: 'orange',
+    size: 'small',
+    items: ['Сообщество (форум, обмен опытом), мобильные приложения.'],
+    style: { backgroundColor: '#fff7e6' },
+  },
+  {
+    title: 'Аналитика',
+    icon: <LineChartOutlined />,
+    iconColor: 'cyan',
+    size: 'small',
+    items: ['Расширенная аналитика.'],
+    style: { backgroundColor: '#e6fffb' },
+  },
+];
+
+const phase5Cards: Omit<FeatureCardProps, 'animated' | 'animationDelay'>[] = [
+  {
+    title: 'Регионы и языки',
+    icon: <GlobalOutlined />,
+    iconColor: 'purple',
+    size: 'small',
+    items: ['Несколько регионов и языков, корректные часовые пояса и валюты.'],
+    style: { backgroundColor: '#f9f0ff' },
+  },
+  {
+    title: 'Надёжность',
+    icon: <CloudServerOutlined />,
+    iconColor: 'blue',
+    size: 'small',
+    items: ['Надёжность: резервные копии, мониторинг работы системы.'],
+    style: { backgroundColor: '#e6f7ff' },
+  },
+  {
+    title: 'Безопасность и оплата',
+    icon: <SafetyOutlined />,
+    iconColor: 'red',
+    size: 'small',
+    items: ['Безопасность, оплата тарифов и модулей.'],
+    style: { backgroundColor: '#fff2f0' },
+  },
+];
+
+function phaseFeatureColumns(count: number): 1 | 2 | 3 | 4 {
+  if (count >= 5) {
+    return 3;
+  }
+  if (count === 4) {
+    return 2;
+  }
+  if (count === 3) {
+    return 3;
+  }
+  if (count === 2) {
+    return 2;
+  }
+  return 1;
+}
+
+/**
+ * Единый макет слайдов этапов (как «Шаг 1 — Пилот»): лид, сетка FeatureCard, опционально «не делаем».
+ */
+function BwP2PhaseSlide({
+  docTag,
+  docTagColor = 'processing',
   goal,
-  gains,
+  cards,
   notYet,
 }: {
-  stepTitle?: string;
-  docLabel?: string;
+  docTag: string;
+  docTagColor?: string;
   goal: string;
-  gains: string[];
-  /** Если не передан или пустой — блок «На этом шаге сознательно не делаем» скрыт */
+  cards: Omit<FeatureCardProps, 'animated' | 'animationDelay'>[];
   notYet?: string[];
 }) {
   const showNotYet = notYet != null && notYet.length > 0;
+  const columns = phaseFeatureColumns(cards.length);
 
   return (
     <ConstrainedContent>
-      <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-        {(stepTitle != null || docLabel != null) && (
-          <div>
-            {stepTitle != null && stepTitle !== '' && (
-              <Title level={4} style={{ marginTop: 0, marginBottom: 8 }}>
-                {stepTitle}
-              </Title>
-            )}
-            {docLabel != null && docLabel !== '' && (
-              <Text type="secondary" style={{ fontSize: 13 }}>
-                Как в техническом задании: {docLabel}
-              </Text>
-            )}
-          </div>
-        )}
-        <Card>
-          <Paragraph
-            style={{ marginBottom: 12, fontSize: 'var(--app-font-size-md)' }}
-          >
-            <Text strong>Цель этапа: </Text>
-            {goal}
-          </Paragraph>
-          <Title level={5} style={{ marginTop: 0 }}>
+      <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+        <div className={styles.phaseLeadBlock}>
+          <Tag color={docTagColor} className={styles.phaseTag}>
+            {docTag}
+          </Tag>
+          <Title level={5} className={styles.phaseGoalHeading}>
+            Цель этапа
+          </Title>
+          <Paragraph className={styles.phaseGoalText}>{goal}</Paragraph>
+        </div>
+        <div>
+          <Title level={5} className={styles.phaseDeliverablesTitle}>
             Что появляется
           </Title>
-          <List
-            size="small"
-            dataSource={gains}
-            renderItem={item => <List.Item>{item}</List.Item>}
-          />
-          {showNotYet && (
-            <>
-              <Title level={5} style={{ marginTop: 16 }}>
-                На этом шаге сознательно не делаем
-              </Title>
-              <List
-                size="small"
-                dataSource={notYet}
-                renderItem={item => <List.Item>{item}</List.Item>}
-              />
-            </>
-          )}
-        </Card>
+          <div className={styles.phaseFeatureGrid}>
+            <FeaturesSlide
+              wrapInCard={false}
+              columns={columns}
+              animated
+              baseAnimationDelay={120}
+              gutter={8}
+              verticalGap={8}
+              cards={cards}
+            />
+          </div>
+        </div>
+        {showNotYet && (
+          <div className={styles.phaseNotYetBlock}>
+            <Title level={5} className={styles.phaseNotYetTitle}>
+              На этом шаге сознательно не делаем
+            </Title>
+            <List
+              size="small"
+              dataSource={notYet}
+              renderItem={item => <List.Item>{item}</List.Item>}
+            />
+          </div>
+        )}
       </Space>
     </ConstrainedContent>
   );
@@ -421,35 +574,12 @@ export const bwP2RoadmapSlides: SlideData[] = [
     id: 'phase-1',
     header: 'Шаг 1 — Пилот',
     content: (
-      <ConstrainedContent>
-        <Space orientation="vertical" size="small" style={{ width: '100%' }}>
-          <div className={styles.phase1LeadBlock}>
-            <Tag color="processing" className={styles.phaseTag}>
-              MVP / Pilot
-            </Tag>
-            <Title level={5} className={styles.phaseGoalHeading}>
-              Цель этапа
-            </Title>
-            <Paragraph className={styles.phase1GoalText}>{PHASE_1_GOAL}</Paragraph>
-          </div>
-          <div>
-            <Title level={5} className={styles.phase1DeliverablesTitle}>
-              Что появляется
-            </Title>
-            <div className={styles.phase1Grid}>
-              <FeaturesSlide
-                wrapInCard={false}
-                columns={3}
-                animated
-                baseAnimationDelay={120}
-                gutter={8}
-                verticalGap={8}
-                cards={phase1PilotCards}
-              />
-            </div>
-          </div>
-        </Space>
-      </ConstrainedContent>
+      <BwP2PhaseSlide
+        docTag="MVP / Pilot"
+        docTagColor="processing"
+        goal={PHASE_1_GOAL}
+        cards={phase1PilotCards}
+      />
     ),
   },
 
@@ -457,16 +587,13 @@ export const bwP2RoadmapSlides: SlideData[] = [
     id: 'phase-2',
     header: 'Шаг 2 — Повседневная работа',
     content: (
-      <PhaseIntro
-        docLabel="версия 1.0"
-        goal="Сделать продукт основным рабочим инструментом: не только для теста, а для постоянных продаж и учёта."
-        gains={[
-          'Удобные разделы: свой парк техники, продажи, отчёты, настройки',
-          'Форма бронирования для сайта агента, расширенный календарь и цены (сезоны, выходные)',
-          'Подписка за пользование платформой, базовые отчёты',
-        ]}
+      <BwP2PhaseSlide
+        docTag="версия 1.0"
+        docTagColor="blue"
+        goal="На базе пилота сделать продукт ежедневным рабочим инструментом: стабильная эксплуатация, монетизация и UX разделов, развитие правил календаря и цен и каналов агента — без повторного «создания с нуля» ядра бронирования."
+        cards={phase2Cards}
         notYet={[
-          'Полный учёт клиентов и воронка продаж внутри продукта',
+          'Полноценный CRM и воронка продаж внутри продукта (это шаг 3)',
           'Маркетплейс исполнителей',
         ]}
       />
@@ -477,17 +604,12 @@ export const bwP2RoadmapSlides: SlideData[] = [
     id: 'phase-3',
     header: 'Шаг 3 — Клиенты и интеграции',
     content: (
-      <PhaseIntro
-        docLabel="версия 2.0"
-        goal="Перейти от чистого бронирования к работе с клиентской базой и связи с внешними программами."
-        gains={[
-          'Учёт клиентов и сделок (CRM), история бронирований',
-          'Документы по сделкам, реферальные программы по согласованию',
-          'Подключение внешних систем и календарей',
-        ]}
-        notYet={[
-          'Сообщества и отраслевые «ярмарки» на платформе как отдельный продукт',
-        ]}
+      <BwP2PhaseSlide
+        docTag="версия 2.0"
+        docTagColor="success"
+        goal="После устойчивого контура брони из пилота и шага 2 — ввести клиентскую базу и сделки, а также обмен данными с внешними программами, не подменяя собственное ядро календаря и бронирования."
+        cards={phase3Cards}
+        notYet={[]}
       />
     ),
   },
@@ -496,14 +618,11 @@ export const bwP2RoadmapSlides: SlideData[] = [
     id: 'phase-4',
     header: 'Шаг 4 — Экосистема',
     content: (
-      <PhaseIntro
-        docLabel="версия 3.0"
-        goal="Собрать вокруг платформы больше участников рынка: каталоги, исполнители, мобильные приложения."
-        gains={[
-          'Каталоги собственников, агентов и техники',
-          'Сообщество (форум, обмен опытом), мобильные приложения',
-          'Расширенная аналитика',
-        ]}
+      <BwP2PhaseSlide
+        docTag="версия 3.0"
+        docTagColor="warning"
+        goal="На стабильно работающем ядре — расширить охват рынка: отраслевые и сетевые каталоги, сообщество, мобильные приложения, углублённая аналитика."
+        cards={phase4Cards}
         notYet={[
           'Этот шаг — только после того, как базовый продукт стабильно используют и окупается',
         ]}
@@ -515,17 +634,12 @@ export const bwP2RoadmapSlides: SlideData[] = [
     id: 'phase-5',
     header: 'Шаг 5 — Масштаб и зрелость',
     content: (
-      <PhaseIntro
-        docLabel="полное решение"
-        goal="Вывести платформу на работу в нескольких странах и валютах с высокой надёжностью и прозрачной оплатой подписки."
-        gains={[
-          'Несколько регионов и языков, корректные часовые пояса и валюты',
-          'Надёжность, резервные копии, мониторинг работы системы',
-          'Безопасность, оплата тарифов и модулей',
-        ]}
-        notYet={[
-          'Опытные функции «на будущее», не влияющие на удержание пользователей',
-        ]}
+      <BwP2PhaseSlide
+        docTag="полное решение"
+        docTagColor="purple"
+        goal="На зрелом продукте — вывести платформу на мультирегиональную работу: языки и валюты, промышленная надёжность и прозрачная оплата тарифов."
+        cards={phase5Cards}
+        notYet={[]}
       />
     ),
   },
