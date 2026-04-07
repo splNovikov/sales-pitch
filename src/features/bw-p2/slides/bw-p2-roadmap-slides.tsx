@@ -1,16 +1,22 @@
 /* eslint-disable react-refresh/only-export-components -- SlideData module: local JSX helpers with exported slides array */
 import type { ReactNode } from 'react';
-import { Space, Typography, List, Card } from 'antd';
+import { Space, Typography, List, Card, Tag } from 'antd';
 import {
   ArrowDownOutlined,
   ArrowRightOutlined,
+  BellOutlined,
   CalendarOutlined,
   CarOutlined,
   DisconnectOutlined,
+  IdcardOutlined,
   PhoneOutlined,
+  SearchOutlined,
   ShopOutlined,
+  TagsOutlined,
   TeamOutlined,
+  ThunderboltOutlined,
 } from '@ant-design/icons';
+import type { FeatureCardProps } from '~shared/ui/feature-card';
 import { ContentWithSectionsSlide } from '~shared/ui/content-with-sections-slide';
 import { ConstrainedContent } from '~shared/ui/constrained-content';
 import { FeaturesSlide } from '~shared/ui/features-slide';
@@ -87,6 +93,65 @@ const roadmapStripItems: RoadmapItem[] = [
   },
 ];
 
+const PHASE_1_GOAL =
+  'Создать независимую от сторонних платформ (Google, Contentful и аналогов как обязательной основы продукта) систему бронирования с собственным календарём и логикой брони, поиском и фильтрацией транспорта для агентов, прайс-листами и сопоставлением агентов с доступными им транспортными средствами.';
+
+const phase1PilotCards: Omit<
+  FeatureCardProps,
+  'animated' | 'animationDelay'
+>[] = [
+  {
+    title: 'Профили и роли',
+    icon: <IdcardOutlined />,
+    iconColor: 'purple',
+    size: 'small',
+    items: [
+      'Профили компаний и роли (собственник / агент): вход в продукт, контакты — в системе видно, кто с кем работает.',
+    ],
+    style: { backgroundColor: '#f9f0ff' },
+  },
+  {
+    title: 'Каталог, календарь, цены',
+    icon: <ThunderboltOutlined />,
+    iconColor: 'orange',
+    size: 'small',
+    items: [
+      'Каталог транспорта, встроенный календарь доступности и цены — ядро пилота: единая картина слотов и стоимости без обязательной опоры на внешние сервисы вроде Google или Contentful; исключение двойных броней на одни и те же даты.',
+    ],
+    style: { backgroundColor: '#fff7e6' },
+  },
+  {
+    title: 'Поиск и фильтрация',
+    icon: <SearchOutlined />,
+    iconColor: 'blue',
+    size: 'small',
+    items: [
+      'Поиск и фильтрация транспортных средств в интерфейсе агента.',
+    ],
+    style: { backgroundColor: '#e6f7ff' },
+  },
+  {
+    title: 'Прайсы и доступ к парку',
+    icon: <TagsOutlined />,
+    iconColor: 'cyan',
+    size: 'small',
+    items: [
+      'Прайс-листы и настройка доступа: какие единицы парка какому агенту видны и доступны для брони.',
+    ],
+    style: { backgroundColor: '#e6fffb' },
+  },
+  {
+    title: 'Бронь и уведомления',
+    icon: <BellOutlined />,
+    iconColor: 'red',
+    size: 'small',
+    items: [
+      'Оформление и подтверждение брони в системе; уведомления по ключевым событиям (в том числе письма).',
+    ],
+    style: { backgroundColor: '#fff2f0' },
+  },
+];
+
 function PhaseIntro({
   stepTitle,
   docLabel,
@@ -98,19 +163,28 @@ function PhaseIntro({
   docLabel?: string;
   goal: string;
   gains: string[];
-  notYet: string[];
+  /** Если не передан или пустой — блок «На этом шаге сознательно не делаем» скрыт */
+  notYet?: string[];
 }) {
+  const showNotYet = notYet != null && notYet.length > 0;
+
   return (
     <ConstrainedContent>
       <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-        <div>
-          <Title level={4} style={{ marginTop: 0, marginBottom: 8 }}>
-            {stepTitle}
-          </Title>
-          <Text type="secondary" style={{ fontSize: 13 }}>
-            Как в техническом задании: {docLabel}
-          </Text>
-        </div>
+        {(stepTitle != null || docLabel != null) && (
+          <div>
+            {stepTitle != null && stepTitle !== '' && (
+              <Title level={4} style={{ marginTop: 0, marginBottom: 8 }}>
+                {stepTitle}
+              </Title>
+            )}
+            {docLabel != null && docLabel !== '' && (
+              <Text type="secondary" style={{ fontSize: 13 }}>
+                Как в техническом задании: {docLabel}
+              </Text>
+            )}
+          </div>
+        )}
         <Card>
           <Paragraph
             style={{ marginBottom: 12, fontSize: 'var(--app-font-size-md)' }}
@@ -126,14 +200,18 @@ function PhaseIntro({
             dataSource={gains}
             renderItem={item => <List.Item>{item}</List.Item>}
           />
-          <Title level={5} style={{ marginTop: 16 }}>
-            На этом шаге сознательно не делаем
-          </Title>
-          <List
-            size="small"
-            dataSource={notYet}
-            renderItem={item => <List.Item>{item}</List.Item>}
-          />
+          {showNotYet && (
+            <>
+              <Title level={5} style={{ marginTop: 16 }}>
+                На этом шаге сознательно не делаем
+              </Title>
+              <List
+                size="small"
+                dataSource={notYet}
+                renderItem={item => <List.Item>{item}</List.Item>}
+              />
+            </>
+          )}
         </Card>
       </Space>
     </ConstrainedContent>
@@ -343,21 +421,35 @@ export const bwP2RoadmapSlides: SlideData[] = [
     id: 'phase-1',
     header: 'Шаг 1 — Пилот',
     content: (
-      <PhaseIntro
-        docLabel="MVP / Pilot"
-        goal="Проверить на практике, что собственник и агент реально работают в одной программе без двойных броней."
-        gains={[
-          'Вход в систему, профили компаний',
-          'Карточки транспорта, календарь, цены, договорённости с агентом (контракт)',
-          'Создание и подтверждение брони, письма о событиях',
-          'Обмен данными с сайтами (интерфейс для подключения)',
-        ]}
-        notYet={[
-          'Отдельные мобильные приложения из магазина',
-          'Полноценный учёт клиентов и сделок (CRM)',
-          'Встроенная оплата между участниками',
-        ]}
-      />
+      <ConstrainedContent>
+        <Space orientation="vertical" size="small" style={{ width: '100%' }}>
+          <div className={styles.phase1LeadBlock}>
+            <Tag color="processing" className={styles.phaseTag}>
+              MVP / Pilot
+            </Tag>
+            <Title level={5} className={styles.phaseGoalHeading}>
+              Цель этапа
+            </Title>
+            <Paragraph className={styles.phase1GoalText}>{PHASE_1_GOAL}</Paragraph>
+          </div>
+          <div>
+            <Title level={5} className={styles.phase1DeliverablesTitle}>
+              Что появляется
+            </Title>
+            <div className={styles.phase1Grid}>
+              <FeaturesSlide
+                wrapInCard={false}
+                columns={3}
+                animated
+                baseAnimationDelay={120}
+                gutter={8}
+                verticalGap={8}
+                cards={phase1PilotCards}
+              />
+            </div>
+          </div>
+        </Space>
+      </ConstrainedContent>
     ),
   },
 
