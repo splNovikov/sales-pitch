@@ -41,6 +41,81 @@ export const glavarchiveSlides: SlideData[] = [
     ),
   },
 
+  // Early executive overview — final products and purpose
+  {
+    id: 'final-products-overview',
+    header: 'Начнём с конца: Что получим в результате',
+    content: (
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <Paragraph style={{ marginBottom: 0 }}>
+              В результате проекта Главархив получает набор готовых цифровых
+              продуктов, которые закрывают внутренние процессы, внешний сервис и
+              коммуникацию с аудиторией.
+            </Paragraph>
+          </Card>
+          <Row gutter={[16, 16]}>
+            <Col xs={24} md={12}>
+              <Card style={{ height: '100%' }}>
+                <Title level={5} style={{ marginTop: 0 }}>
+                  Единая административная панель
+                </Title>
+                <Paragraph style={{ marginBottom: 0 }}>
+                  Снижает ручную нагрузку сотрудников и ускоряет публикации,
+                  обработку контента и заказов.
+                </Paragraph>
+              </Card>
+            </Col>
+            <Col xs={24} md={12}>
+              <Card style={{ height: '100%' }}>
+                <Title level={5} style={{ marginTop: 0 }}>
+                  Мини-приложение в <GlavMaxTag />
+                </Title>
+                <Paragraph style={{ marginBottom: 0 }}>
+                  Упрощает путь пользователя: заказы, статусы, поддержка и
+                  уведомления в привычном канале.
+                </Paragraph>
+              </Card>
+            </Col>
+            <Col xs={24} md={12}>
+              <Card style={{ height: '100%' }}>
+                <Title level={5} style={{ marginTop: 0 }}>
+                  Личный кабинет для юрлиц
+                </Title>
+                <Paragraph style={{ marginBottom: 0 }}>
+                  Повышает уровень B2B-сервиса: счета, статусы и связь с 1С в
+                  прозрачном формате.
+                </Paragraph>
+              </Card>
+            </Col>
+            <Col xs={24} md={12}>
+              <Card style={{ height: '100%' }}>
+                <Title level={5} style={{ marginTop: 0 }}>
+                  Рубрикатор и логика навигации
+                </Title>
+                <Paragraph style={{ marginBottom: 0 }}>
+                  Делает материалы проще для поиска и системно улучшает контентный
+                  опыт аудитории.
+                </Paragraph>
+              </Card>
+            </Col>
+          </Row>
+          <Card>
+            <Space size="small" wrap>
+              <Text strong>Дополнительный слой:</Text>
+              <GlavPwaTag />
+              <Text>
+                для публичного сайта и ЛК юрлиц, чтобы ускорить повторный доступ
+                и дополнить канал в <GlavMaxTag />.
+              </Text>
+            </Space>
+          </Card>
+        </Space>
+      </ConstrainedContent>
+    ),
+  },
+
   // Section — context (outline slides 2–3)
   {
     id: 'section-context',
