@@ -4,7 +4,11 @@ import { ConstrainedContent } from '~shared/ui/constrained-content';
 import { SectionTitleSlide } from '~shared/ui/section-title-slide';
 import { type SlideData } from '~widgets/slides';
 import { glavarchiveCreatedAt } from './glavarchive.meta';
-import { GlavAccentTag, GlavMaxTag } from './glavarchive-slide-tags';
+import {
+  GlavAccentTag,
+  GlavMaxTag,
+  GlavPwaTag,
+} from './glavarchive-slide-tags';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -117,6 +121,7 @@ export const glavarchiveSlides: SlideData[] = [
       </ConstrainedContent>
     ),
   },
+
 
   // Section — admin panel (outline slides 4–7)
   {
@@ -473,6 +478,15 @@ export const glavarchiveSlides: SlideData[] = [
                 более высокий уровень сервиса для организаций
               </List.Item>
               <List.Item>снижение количества уточняющих обращений</List.Item>
+              <List.Item>
+                <Space size="small" wrap align="start">
+                  <span>
+                    установить кабинет на экран устройства и быстрее возвращаться
+                    к рабочим задачам
+                  </span>
+                  <GlavPwaTag />
+                </Space>
+              </List.Item>
               <List.Item>более упорядоченный процесс сопровождения</List.Item>
               <List.Item>
                 <Space size="small" wrap align="start">
@@ -507,6 +521,12 @@ export const glavarchiveSlides: SlideData[] = [
                 <Space size="small" wrap align="start">
                   <span>выставление и отображение счетов</span>
                   <GlavAccentTag color="gold">Счета · 1С</GlavAccentTag>
+                </Space>
+              </List.Item>
+              <List.Item>
+                <Space size="small" wrap align="start">
+                  <span>быстрый доступ к счетам и статусам через веб-PWA</span>
+                  <GlavPwaTag />
                 </Space>
               </List.Item>
               <List.Item>контроль статусов услуг</List.Item>
@@ -565,6 +585,15 @@ export const glavarchiveSlides: SlideData[] = [
               <List.Item>улучшение пользовательского опыта</List.Item>
               <List.Item>упрощение работы сотрудников с контентом</List.Item>
               <List.Item>
+                <Space size="small" wrap align="start">
+                  <span>
+                    быстрый повторный доступ к ключевым разделам сайта через
+                    веб-PWA
+                  </span>
+                  <GlavPwaTag />
+                </Space>
+              </List.Item>
+              <List.Item>
                 более логичное развитие разделов и публикаций
               </List.Item>
             </List>
@@ -604,6 +633,15 @@ export const glavarchiveSlides: SlideData[] = [
                     мини-приложения в
                   </span>
                   <GlavMaxTag />
+                </Space>
+              </List.Item>
+              <List.Item>
+                <Space size="small" wrap align="start">
+                  <span>
+                    отдельная версия рубрикатора для веб-PWA с укороченной
+                    навигацией и быстрым доступом к разделам
+                  </span>
+                  <GlavPwaTag />
                 </Space>
               </List.Item>
             </List>
@@ -786,6 +824,69 @@ export const glavarchiveSlides: SlideData[] = [
               <List.Item>последовательное развитие сервисов</List.Item>
               <List.Item>основа для масштабирования новых инициатив</List.Item>
             </List>
+          </Card>
+        </Space>
+      </ConstrainedContent>
+    ),
+  },
+
+  // PWA overview — move to end as optional extension
+  {
+    id: 'pwa-overview',
+    header: (
+      <Space size="small" wrap>
+        <span>Что такое PWA и зачем это Главархиву</span>
+        <GlavPwaTag />
+      </Space>
+    ),
+    content: (
+      <ConstrainedContent>
+        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+          <Card>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Что такое PWA
+            </Title>
+            <List size="small">
+              <List.Item>
+                <Space size="small" wrap align="start">
+                  <span>
+                    PWA — это веб-приложение, которое можно установить на экран
+                    устройства без публикации в app store.
+                  </span>
+                  <GlavPwaTag />
+                </Space>
+              </List.Item>
+              <List.Item>
+                быстрый повторный вход и стабильный UX за счет кеша web-shell
+              </List.Item>
+              <List.Item>
+                единая кодовая база с вебом, удобная для развития и
+                масштабирования
+              </List.Item>
+            </List>
+          </Card>
+          <Card>
+            <Title level={5} style={{ marginTop: 0 }}>
+              Как используем в проекте
+            </Title>
+            <List size="small">
+              <List.Item>
+                для публичного сайта и рубрикатора — как удобный веб-канал
+              </List.Item>
+              <List.Item>
+                для личного кабинета юрлиц — быстрый доступ к счетам и статусам
+              </List.Item>
+              <List.Item>
+                PWA <Text strong>дополняет</Text> канал в <GlavMaxTag />, а не
+                заменяет его
+              </List.Item>
+            </List>
+          </Card>
+          <Card>
+            <Paragraph style={{ marginBottom: 0 }}>
+              <Text strong>Важно:</Text> офлайн-режим в PWA включается только
+              для заранее определенных сценариев и данных.
+            </Paragraph>
           </Card>
         </Space>
       </ConstrainedContent>

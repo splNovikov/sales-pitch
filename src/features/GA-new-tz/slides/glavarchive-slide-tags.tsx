@@ -16,3 +16,8 @@ export function GlavAccentTag({
 }) {
   return <Tag color={color}>{children}</Tag>;
 }
+
+/** PWA — отдельный бейдж для сценариев веб-приложения */
+export function GlavPwaTag() {
+  return <Tag color="purple">PWA</Tag>;
+}
