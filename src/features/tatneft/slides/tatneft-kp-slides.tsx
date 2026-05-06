@@ -55,7 +55,7 @@ const iconWrapStyle = {
 const dataLakePhases: RoadmapItem[] = [
   {
     title: 'Подготовительная фаза (Фаза 1)',
-    duration: 'март – июнь 2026',
+    duration: 'июнь – сентябрь 2026',
     icon: <CalendarOutlined />,
     color: 'cyan',
     completed: true,
@@ -64,20 +64,20 @@ const dataLakePhases: RoadmapItem[] = [
     title: 'Построение и наполнение единой БД (Фаза 2)',
     description:
       'Развёртывание хранилища, ETL из источников организации, описание структуры данных.',
-    duration: 'июль – ноябрь 2026',
+    duration: 'октябрь 2026 – февраль 2027',
     icon: <CalendarOutlined />,
     color: 'blue',
     subSteps: [
       {
         title: 'Разработка ETL-процессов выгрузки данных',
-        start: '01.07.2026',
-        end: '31.10.2026',
+        start: '01.10.2026',
+        end: '31.01.2027',
         result: 'Настроенные механизмы сбора',
       },
       {
         title: 'Построение и наполнение единой БД',
-        start: '01.08.2026',
-        end: '31.10.2026',
+        start: '01.11.2026',
+        end: '31.01.2027',
         result: 'База данных с историческими данными',
       },
     ],
@@ -86,26 +86,26 @@ const dataLakePhases: RoadmapItem[] = [
     title: 'Накопление и анализ данных (Фаза 3)',
     description:
       'Загрузка исторических архивов, накопление оперативных данных, аналитический отчёт и наборы для настройки алгоритмов.',
-    duration: 'сентябрь – декабрь 2026',
+    duration: 'декабрь 2026 – март 2027',
     icon: <CalendarOutlined />,
     color: 'green',
     subSteps: [
       {
         title: 'Загрузка исторических данных',
-        start: '21.09.2026',
-        end: '30.10.2026',
+        start: '21.12.2026',
+        end: '30.01.2027',
         result: 'Оцифрованный архив в БД',
       },
       {
         title: 'Накопление данных в реальном времени',
-        start: '01.10.2026',
-        end: '20.12.2026',
+        start: '01.01.2027',
+        end: '20.03.2027',
         result: 'Набор оперативных данных',
       },
       {
         title: 'Анализ исторических и накопленных данных',
-        start: '20.10.2026',
-        end: '20.12.2026',
+        start: '20.01.2027',
+        end: '20.03.2027',
         result: 'Аналитический отчёт',
       },
     ],
@@ -163,7 +163,7 @@ const preparatoryPhases: RoadmapItem[] = [
     title: 'Определение набора ДНС',
     description:
       'Согласование списка объектов мониторинга для включения в систему.',
-    duration: 'март 2026',
+    duration: 'июнь 2026',
     icon: <CalendarOutlined />,
     color: 'blue',
   },
@@ -171,7 +171,7 @@ const preparatoryPhases: RoadmapItem[] = [
     title: 'Группировка ДНС',
     description:
       'Формирование структуры групп объектов для последующего мониторинга.',
-    duration: 'апрель 2026',
+    duration: 'июль 2026',
     icon: <CalendarOutlined />,
     color: 'cyan',
   },
@@ -179,7 +179,7 @@ const preparatoryPhases: RoadmapItem[] = [
     title: 'Подготовка архитектуры системы',
     description:
       'Проектирование технической архитектуры решения для обеспечения масштабируемости.',
-    duration: 'март – июнь 2026',
+    duration: 'июнь – сентябрь 2026',
     icon: <CalendarOutlined />,
     color: 'green',
   },
@@ -188,14 +188,14 @@ const preparatoryPhases: RoadmapItem[] = [
 const analyticsPhases: RoadmapItem[] = [
   {
     title: 'Подготовительная фаза (Фаза 1)',
-    duration: 'март – июнь 2026',
+    duration: 'июнь – сентябрь 2026',
     icon: <CalendarOutlined />,
     color: 'cyan',
     completed: true,
   },
   {
     title: 'Data Lake (Фазы 2–3)',
-    duration: 'июль – декабрь 2026',
+    duration: 'октябрь 2026 – март 2027',
     icon: <CalendarOutlined />,
     color: 'blue',
     completed: true,
@@ -203,20 +203,20 @@ const analyticsPhases: RoadmapItem[] = [
   {
     title: 'Построение подсистемы поиска отклонений (Фаза 4)',
     description: 'Разработка алгоритмов, технический интерфейс для проверки.',
-    duration: 'декабрь 2026 – июнь 2027',
+    duration: 'март – октябрь 2027',
     icon: <CalendarOutlined />,
     color: 'blue',
     subSteps: [
       {
         title: 'Построение алгоритма поиска аномалий',
-        start: '21.12.2026',
-        end: '20.06.2027',
+        start: '21.03.2027',
+        end: '20.09.2027',
         result: 'Работающий алгоритм',
       },
       {
         title: 'Разработка интерфейса для проверки подсистемы',
-        start: '01.04.2027',
-        end: '20.06.2027',
+        start: '01.07.2027',
+        end: '20.09.2027',
         result: 'Технический UI',
       },
     ],
@@ -224,14 +224,14 @@ const analyticsPhases: RoadmapItem[] = [
   {
     title: 'Проверка на исторических данных (Фаза 5)',
     description: 'Тестирование на архиве, отчёт с метриками точности.',
-    duration: 'май – июнь 2027',
+    duration: 'август – сентябрь 2027',
     icon: <CalendarOutlined />,
     color: 'orange',
     subSteps: [
       {
         title: 'Проверка подсистемы на исторических данных',
-        start: '17.05.2027',
-        end: '20.06.2027',
+        start: '17.08.2027',
+        end: '20.09.2027',
         result: 'Отчёт о тестировании',
       },
       { title: 'Экспертные сессии с ЕДС: разбор ошибок, уточнение причин FP' },
@@ -240,14 +240,14 @@ const analyticsPhases: RoadmapItem[] = [
   {
     title: 'Настройка по результатам проверки (Фаза 6)',
     description: 'Калибровка порогов и параметров, оптимизированная версия.',
-    duration: 'июнь – сентябрь 2027',
+    duration: 'сентябрь – декабрь 2027',
     icon: <CalendarOutlined />,
     color: 'green',
     subSteps: [
       {
         title: 'Настройка системы по результатам проверки',
-        start: '21.06.2027',
-        end: '05.09.2027',
+        start: '21.09.2027',
+        end: '05.12.2027',
         result: 'Откалиброванный алгоритм',
       },
       {
@@ -260,14 +260,14 @@ const analyticsPhases: RoadmapItem[] = [
 const uiPhases: RoadmapItem[] = [
   {
     title: 'Подготовительная и Data Lake (Фазы 1–3)',
-    duration: 'март – декабрь 2026',
+    duration: 'июнь 2026 – март 2027',
     icon: <CalendarOutlined />,
     color: 'cyan',
     completed: true,
   },
   {
     title: 'Подсистема предупреждений (Фазы 4–6)',
-    duration: 'декабрь 2026 – сентябрь 2027',
+    duration: 'март – декабрь 2027',
     icon: <CalendarOutlined />,
     color: 'blue',
     completed: true,
@@ -276,14 +276,14 @@ const uiPhases: RoadmapItem[] = [
     title: 'Разработка графического интерфейса оператора системы (Фаза 7)',
     description:
       'Дашборд, карточка события, объяснения, обратная связь (разметка диспетчера), доступы и инструкция пользователя.',
-    duration: 'июнь – август 2027',
+    duration: 'сентябрь – ноябрь 2027',
     icon: <CalendarOutlined />,
     color: 'purple',
     subSteps: [
       {
         title: 'Разработка интерфейса оператора',
-        start: '21.06.2027',
-        end: '22.08.2027',
+        start: '21.09.2027',
+        end: '22.11.2027',
         result: 'Пользовательский интерфейс',
       },
       {
@@ -306,7 +306,7 @@ const uiPhases: RoadmapItem[] = [
 const crossPhases: RoadmapItem[] = [
   {
     title: 'Разработка компонентов (Фазы 2–7)',
-    duration: 'июль 2026 – сентябрь 2027',
+    duration: 'октябрь 2026 – декабрь 2027',
     icon: <CalendarOutlined />,
     color: 'purple',
     completed: true,
@@ -315,7 +315,7 @@ const crossPhases: RoadmapItem[] = [
     title: 'Внедрение системы (Фаза 8)',
     description:
       'Развёртывание в промышленной среде, поэтапное подключение групп ДНС, проверка в реальном времени.',
-    duration: 'сентябрь 2027 – апрель 2028',
+    duration: 'декабрь 2027 – июль 2028',
     icon: <CalendarOutlined />,
     color: 'green',
   },
@@ -323,7 +323,7 @@ const crossPhases: RoadmapItem[] = [
     title: 'Приёмка системы (Фаза 9)',
     description:
       'Пользовательское тестирование, демонстрация соответствия требованиям, передача документации и прав.',
-    duration: 'апрель 2028 – май 2028',
+    duration: 'июль 2028 – август 2028',
     icon: <CalendarOutlined />,
     color: 'gold',
   },
@@ -1801,78 +1801,78 @@ export const tatneftKpSlides: SlideData[] = [
   },
 
   // Ценность проекта: перспективы и подготовительный расчёт окупаемости
-  {
-    id: 'summary-roi',
-    header: 'Перспективы развития и расчёт окупаемости',
-    content: (
-      <ConstrainedContent>
-        <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
-          <Card>
-            <Title level={5} style={{ marginTop: 0 }}>
-              Перспективы развития: эффективное управление и безлюдная
-              эксплуатация
-            </Title>
-            <List
-              size="small"
-              dataSource={[
-                'Контроль и автоматическое управление объектами без постоянного присутствия персонала на местах.',
-                'Подключение к той же платформе ОПС и Товарные Парки — экономия в перспективе на присутствии персонала.',
-                'Перевод объектов в режим безлюдной эксплуатации при сохранении полного контроля и требований безопасности.',
-              ]}
-              renderItem={item => <List.Item>{item}</List.Item>}
-            />
-          </Card>
-          <Card>
-            <Title level={5} style={{ marginTop: 0 }}>
-              ~ Расчёт окупаемости
-            </Title>
-            <Table
-              size="small"
-              pagination={false}
-              dataSource={[
-                {
-                  key: '1',
-                  param:
-                    'Средняя оценка стоимости одного инцидента/простоя на ДНС (или по НГДУ)',
-                  value: '_______ млн ₽',
-                },
-                {
-                  key: '2',
-                  param:
-                    'Трудозатраты на обработку аварийных сигналов (часы/месяц в разрезе диспетчеров/объектов)',
-                  value: '_______',
-                },
-                {
-                  key: '3',
-                  param: 'При ваших данных: окупаемость',
-                  value: '~ _______ лет',
-                },
-                {
-                  key: '4',
-                  param: 'Годовая экономия',
-                  value: 'порядка _______ млн ₽',
-                },
-              ]}
-              columns={[
-                { title: 'Параметр', dataIndex: 'param', key: 'param' },
-                {
-                  title: 'Значение',
-                  dataIndex: 'value',
-                  key: 'value',
-                  width: 200,
-                  render: (v: string) => (
-                    <Text type="secondary" style={{ fontFamily: 'monospace' }}>
-                      {v}
-                    </Text>
-                  ),
-                },
-              ]}
-            />
-          </Card>
-        </Space>
-      </ConstrainedContent>
-    ),
-  },
+  // {
+  //   id: 'summary-roi',
+  //   header: 'Перспективы развития и расчёт окупаемости',
+  //   content: (
+  //     <ConstrainedContent>
+  //       <Space orientation="vertical" size="middle" style={{ width: '100%' }}>
+  //         <Card>
+  //           <Title level={5} style={{ marginTop: 0 }}>
+  //             Перспективы развития: эффективное управление и безлюдная
+  //             эксплуатация
+  //           </Title>
+  //           <List
+  //             size="small"
+  //             dataSource={[
+  //               'Контроль и автоматическое управление объектами без постоянного присутствия персонала на местах.',
+  //               'Подключение к той же платформе ОПС и Товарные Парки — экономия в перспективе на присутствии персонала.',
+  //               'Перевод объектов в режим безлюдной эксплуатации при сохранении полного контроля и требований безопасности.',
+  //             ]}
+  //             renderItem={item => <List.Item>{item}</List.Item>}
+  //           />
+  //         </Card>
+  //         <Card>
+  //           <Title level={5} style={{ marginTop: 0 }}>
+  //             ~ Расчёт окупаемости
+  //           </Title>
+  //           <Table
+  //             size="small"
+  //             pagination={false}
+  //             dataSource={[
+  //               {
+  //                 key: '1',
+  //                 param:
+  //                   'Средняя оценка стоимости одного инцидента/простоя на ДНС (или по НГДУ)',
+  //                 value: '_______ млн ₽',
+  //               },
+  //               {
+  //                 key: '2',
+  //                 param:
+  //                   'Трудозатраты на обработку аварийных сигналов (часы/месяц в разрезе диспетчеров/объектов)',
+  //                 value: '_______',
+  //               },
+  //               {
+  //                 key: '3',
+  //                 param: 'При ваших данных: окупаемость',
+  //                 value: '~ _______ лет',
+  //               },
+  //               {
+  //                 key: '4',
+  //                 param: 'Годовая экономия',
+  //                 value: 'порядка _______ млн ₽',
+  //               },
+  //             ]}
+  //             columns={[
+  //               { title: 'Параметр', dataIndex: 'param', key: 'param' },
+  //               {
+  //                 title: 'Значение',
+  //                 dataIndex: 'value',
+  //                 key: 'value',
+  //                 width: 200,
+  //                 render: (v: string) => (
+  //                   <Text type="secondary" style={{ fontFamily: 'monospace' }}>
+  //                     {v}
+  //                   </Text>
+  //                 ),
+  //               },
+  //             ]}
+  //           />
+  //         </Card>
+  //       </Space>
+  //     </ConstrainedContent>
+  //   ),
+  // },
 
   {
     id: 'thank-you',
